@@ -1,0 +1,1 @@
+Em `C:\AutomatizaTestes`, ative a venv 32 bits e defina `PYTHONPATH=src`. Execute `python -m automatiza.sequencias.cli --arquivo tests/sequencias/checagem_leitura.yaml` ou `--seed 42 --passos 8`. Informe seed e caminho do relatório.

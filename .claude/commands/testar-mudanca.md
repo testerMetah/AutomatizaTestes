@@ -1,0 +1,1 @@
+Leia `AGENTS.md`, o arquivo em `docs/mudancas/` e cenários relacionados. Liste casos diretos, regressão e regras abertas. Rode smoke e regressão conforme `CLAUDE.md`, preserve `reports/` e descreva esperado vs obtido.
