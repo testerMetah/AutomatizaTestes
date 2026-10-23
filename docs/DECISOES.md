@@ -9,3 +9,10 @@
 7. **Sem dependência do repositório de referência.** `C:\Referencia\Acessus` não existe nesta máquina nesta sessão. Mapas antigos são pistas, e a UI/banco atual têm precedência. A pasta `referencias/` fica fora do commit por conter checkout independente.
 8. **Saídas fora do Git.** `reports/` contém screenshots e dados de execução; fica ignorado. O código nunca embute credenciais.
 
+## 23/10/2026: base isolada
+
+9. Destino unico: `desk-tec/Acessus_AUTOTEST_20261023` para Acessus e tres servicos; `RHFagundes` permanece origem RH. Schema copiado sem dados da base antiga.
+10. O assistente do Acessus criou a empresa inicial `AUTOTEST_20261023_EMPRESA_INICIAL` e o administrador pela UI. Nenhuma senha entra no Git.
+11. Os tres servicos foram iniciados apos verificar destino nos INIs. Sync exigiu login administrativo previo. API esta Running, mas sem configuracao e sem importacao.
+12. `TFConfigAPI` recusou salvar porque exige pelo menos um coletor. Nao cadastrar coletor ficticio sem saber impacto em dispositivos. Conexao SQL de `RHFagundes` foi salva no Importador.
+13. Gabriel confirmou exclusao logica no Acessus e nova linha ao recriar igual. Coluna e vinculos por entidade ainda pendentes.

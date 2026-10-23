@@ -11,3 +11,11 @@
 | 7 | Qual é o briefing da próxima mudança e os cadastros prioritários? | Define o primeiro cenário completo. | Gabriel / dev |
 | 8 | Quais são as tabelas e chaves de vínculo entre origem e destino para cada entidade? | Comparação completa de importação depende disso. | Dev / administrador SQL |
 
+## Respostas recebidas e bloqueios atuais (23/10/2026)
+
+- Pergunta 1: respondida. Os tres servicos e o Acessus usam somente `Acessus_AUTOTEST_20261023`; RH usa `RHFagundes`. `novo123` e `sm` nao sao destinos atuais.
+- Pergunta 3: parcialmente respondida. Exclusao no Acessus e logica e recriacao gera nova linha; faltam coluna e vinculos por entidade.
+- Pergunta 5: logs em `C:\acesso\Logs`; falta marcador de conclusao por entidade.
+- Pergunta 9: qual coletor de teste pode ser cadastrado sem comunicar com dispositivo real? Impacto: `TFConfigAPI` recusa salvar e a importacao API fica bloqueada. Quem sabe: dev/administrador de equipamentos.
+- Pergunta 10: os erros do atualizador sobre scripts duplicados deixam migracoes necessarias pendentes? Impacto: schema novo nao pode ser considerado aprovado. Quem sabe: dev/DBA.
+- Pergunta 11: quais regras de situacao e fixtures de pessoa/unidade usar? Impacto: CRUD/importacao real ficam bloqueados. Quem sabe: usuario/dev.

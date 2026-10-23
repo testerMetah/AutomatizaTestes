@@ -21,3 +21,9 @@ O próximo passo recomendado é validar uma tela e uma regra de cadastro simples
 ## Permissões Claude Code
 
 Não foi criado `.claude/settings.json` porque o formato de permissão da versão local não foi verificado. Fluxos estão em `docs/FLUXOS.md`. Exigir aprovação para comandos de serviço e SQL de escrita; impedir comandos destrutivos fora de `reports/`. Consultas devem usar SELECT parametrizado e confirmar DB_NAME().
+
+## Continuacao apos base isolada (23/10/2026, 10:16)
+
+O destino antigo descrito acima e historico. Destino atual: `desk-tec/Acessus_AUTOTEST_20261023`, confirmado como teste. Os tres servicos e o Acessus usam esse banco; RH usa `RHFagundes`. A base tem schema sem dados, empresa e administrador iniciais criados no assistente, conexao SQL de origem salva, zero pessoas/unidades/coletores e nenhuma configuracao API. `TFConfigAPI` exige um coletor. Nao criar coletor associado a dispositivo real sem saber impacto.
+
+O atualizador tentou 415 scripts sobre schema atual e reportou erros; auditar. Tres servicos Running; log da API informa `DADOS_IMPORTACAO_API` vazia, sem importacao. Sync exigiu login administrativo antes de iniciar. `scripts/verificar_ambiente.ps1` passou em todos os itens. Robot: 1 PASSOU, 0 FALHOU, 4 BLOQUEADOS. Relatorio: `reports/robot-nova-base/report.html`; checagem detalhada: `reports/20261023-101611-015292-092edd/RELATORIO.html`. Proximo passo: coletor seguro de teste, salvar API, verificar importacao, criar fixture pessoa/unidade e validar soft delete.

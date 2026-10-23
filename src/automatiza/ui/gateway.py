@@ -25,20 +25,32 @@ class Gateway:
         self._event("abrir", None, None, "PASSOU", 0)
         return self.window
 
+    def attach(self, *, process_id, class_name):
+        from pywinauto import Desktop
+        windows = Desktop(backend="win32").windows(process=process_id, class_name=class_name)
+        if not windows: raise UiBlocked(f"Janela {class_name} não encontrada")
+        self.window = windows[0]
+        self._event("abrir", None, None, "PASSOU", 0)
+        return self.window
+
     def _meta(self, control):
         if control is None:
             return {}
         ei = control.element_info
-        return {"tipo": getattr(ei, "control_type", ""), "nome": control.window_text(),
+        # O texto de TEdit pode conter senha; o log guarda o tipo sem ler o valor como rótulo.
+        label = "<campo>" if control.class_name() == "TEdit" else control.window_text()
+        return {"tipo": getattr(ei, "control_type", ""), "nome": label,
                 "auto_id": getattr(ei, "automation_id", ""), "classe": control.class_name(),
                 "found_index": None}
 
-    def _event(self, action, control, value, result, elapsed, before=None, error=None, screenshot=None, dialogs=None):
-        title = self.window.window_text() if self.window else ""
-        cls = self.window.class_name() if self.window else ""
-        return self.report.emit("INTERACAO", tela={"titulo": title, "classe": cls, "menu": self.menu_path},
-                                controle=self._meta(control), acao=action, valor=mask(value, self._meta(control).get("nome", "")),
-                                valor_anterior=mask(before, self._meta(control).get("nome", "")), resultado=result,
+    def _event(self, action, control, value, result, elapsed, before=None, error=None, screenshot=None, dialogs=None,
+               meta_override=None, tela_override=None):
+        meta = meta_override if meta_override is not None else self._meta(control)
+        tela = tela_override if tela_override is not None else {"titulo": self.window.window_text() if self.window else "",
+                                                                    "classe": self.window.class_name() if self.window else "", "menu": self.menu_path}
+        return self.report.emit("INTERACAO", tela=tela,
+                                controle=meta, acao=action, valor=mask(value, meta.get("nome", "")),
+                                valor_anterior=mask(before, meta.get("nome", "")), resultado=result,
                                 erro=str(error) if error else None, avisos=dialogs or [], duracao_ms=round(elapsed * 1000, 2), screenshot=screenshot)
 
     def screenshot(self, label):
@@ -54,13 +66,19 @@ class Gateway:
             self.report.emit("AVISO", regra="captura", motivo=f"Captura indisponível: {type(exc).__name__}")
             return None
 
-    def interact(self, action, selector=None, value=None, important=False):
+    def interact(self, action, selector=None, value=None, important=False, sensitive=False):
         if self.window is None:
             self.connect()
         if selector is None and action not in {"teclar", "fechar", "abrir"}:
             raise UiBlocked(f"Seletor ausente para {action}")
-        control = self.window.child_window(**selector).wrapper_object() if selector else self.window
+        if selector:
+            from pywinauto import Desktop
+            control = Desktop(backend="win32").window(**selector).wrapper_object()
+        else:
+            control = self.window
         before = control.window_text() if action in {"digitar", "selecionar"} else None
+        meta_before = self._meta(control)
+        tela_before = {"titulo": self.window.window_text(), "classe": self.window.class_name(), "menu": self.menu_path}
         start = time.perf_counter()
         try:
             if action == "clique": control.click_input()
@@ -74,15 +92,20 @@ class Gateway:
             else: raise ValueError(f"Ação de interface desconhecida: {action}")
         except Exception as exc:
             shot = self.screenshot("falha")
-            self._event(action, control, value, "FALHOU", time.perf_counter()-start, before, type(exc).__name__, shot)
+            self._event(action, control, "****" if sensitive else value, "FALHOU", time.perf_counter()-start,
+                        "****" if sensitive else before, type(exc).__name__, shot,
+                        meta_override=meta_before, tela_override=tela_before)
             raise
         shot = self.screenshot("passo") if important else None
-        self._event(action, control, value, "PASSOU", time.perf_counter()-start, before, screenshot=shot)
+        self._event(action, control, "****" if sensitive else value, "PASSOU", time.perf_counter()-start,
+                    "****" if sensitive else before, screenshot=shot,
+                    meta_override=meta_before, tela_override=tela_before)
         return before
 
     def read(self, selector):
         if self.window is None: self.connect()
-        return self.window.child_window(**selector).wrapper_object().window_text()
+        from pywinauto import Desktop
+        return Desktop(backend="win32").window(**selector).wrapper_object().window_text()
 
     def inventory(self):
         if self.window is None: self.connect()
@@ -90,3 +113,23 @@ class Gateway:
         self.report.emit("MAPA_TELA", tela={"titulo": self.window.window_text(), "classe": self.window.class_name(), "menu": self.menu_path},
                          controles=items, resultado="PASSOU")
         return items
+
+    def open_menu(self, route):
+        from pywinauto import Desktop
+        if self.window is None: self.connect()
+        self.window.set_focus()
+        panel = Desktop(backend="uia").window(handle=self.window.handle)
+        for caption in route:
+            spec = panel.child_window(title=caption, control_type="MenuItem", visible_only=True)
+            spec.wait("visible enabled", timeout=10)
+            item = spec.wrapper_object()
+            meta = {"tipo": "MenuItem", "nome": caption, "auto_id": getattr(item.element_info, "automation_id", ""),
+                    "classe": item.class_name(), "found_index": None}
+            tela = {"titulo": self.window.window_text(), "classe": self.window.class_name(),
+                    "menu": self.menu_path}
+            start = time.perf_counter()
+            item.click_input()
+            parts = self.menu_path.split(" → ") if self.menu_path else []
+            self.menu_path = " → ".join(parts + [caption])
+            self._event("clique", None, caption, "PASSOU", time.perf_counter()-start,
+                        meta_override=meta, tela_override=tela)

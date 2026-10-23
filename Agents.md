@@ -530,5 +530,6 @@ Salvar em `resultados/<data-hora>/<teste>/`:
 
 > e espere minha aprovação para a Fase 1.
 
+## Estado operacional mais recente (23/10/2026)
 
-
+As fases iniciais ja foram autorizadas pelo Gabriel; a secao 13 e historica. Destino atual: `desk-tec/Acessus_AUTOTEST_20261023`, confirmado como teste; Acessus e tres servicos usam esse unico banco. Origem RH: `desk-tec/RHFagundes`. Tres servicos Running. API bloqueada porque `TFConfigAPI` exige coletor. Consulte `docs/HANDOFF.md`, `docs/AMBIENTE.md` e `docs/PERGUNTAS-ABERTAS.md`. Gabriel confirmou exclusao logica no Acessus e nova linha ao recriar igual; detalhes por entidade pendentes.

@@ -6,4 +6,4 @@ acoes: [cadastrar, alterar, deletar, recriar_igual, cadastrar_em_massa]
 
 # Pessoa
 
-Esperado ao criar, alterar, excluir e recriar: pendente de regra de negócio e observação no build 2.11.1. Este arquivo não autoriza escrita nem define resultado esperado.
+Regra geral **CONFIRMADA pelo Gabriel**: excluir no Acessus é exclusão lógica; a linha antiga permanece no banco e recriar igual cria outra linha. O nome exato do campo de exclusão e o efeito em crachás/vínculos ainda são **NÃO CONFIRMADOS**. O cadastro de pessoa, situação e demais campos requer observação na versão 2.11.1 antes de um oráculo completo.

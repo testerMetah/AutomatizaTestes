@@ -6,15 +6,15 @@ O projeto real é `C:\AutomatizaTestes`; o sistema é Acessus desktop Delphi/VCL
 
 ## b) Mapa do banco (estrutura, sem dados reais)
 
-Ambos SQL Server em `desk-tec` e confirmados como teste em `config/ambiente-teste.json`. Destino `AcessoFagundes`: Acessus e serviços. Origem `RHFagundes`: RH Metadados/Frequência. Metadados consultados em 2026-10-23; confirmar no início de cada cenário. Nenhuma amostra de pessoa/documento foi coletada.
+Ambos SQL Server em `desk-tec` e confirmados como teste em `config/ambiente-teste.json`. Destino `Acessus_AUTOTEST_20261023`: Acessus e serviços. Origem `RHFagundes`: RH Metadados/Frequência. Metadados consultados em 2026-10-23; confirmar no início de cada cenário. Nenhuma amostra de pessoa/documento foi coletada.
 
 | Banco.tabela | Chave observada | Colunas principais observadas | Entidade/tela provável |
 |---|---|---|---|
-| AcessoFagundes.dbo.Pessoas | id | nome, status, cpf, idempresa, idUnidade, excluido | Pessoas |
-| AcessoFagundes.dbo.RegCrachas | id | Codigo, IdPessoa, TipoCracha, DataHoraRegistro, excluido | Crachás |
-| AcessoFagundes.dbo.Unidades | id | idEmpresa, nome, codigo, status | Unidade |
-| AcessoFagundes.dbo.Ocorrencias | id | Nome | Ocorrência |
-| AcessoFagundes.dbo.Afastamentos | Id | IdPessoa, IdFreq, DataInicio, DataTermino, Causa | Férias/afastamento, vínculo ainda incerto |
+| Acessus_AUTOTEST_20261023.dbo.Pessoas | id | nome, status, cpf, idempresa, idUnidade, excluido | Pessoas |
+| Acessus_AUTOTEST_20261023.dbo.RegCrachas | id | Codigo, IdPessoa, TipoCracha, DataHoraRegistro, excluido | Crachás |
+| Acessus_AUTOTEST_20261023.dbo.Unidades | id | idEmpresa, nome, codigo, status | Unidade |
+| Acessus_AUTOTEST_20261023.dbo.Ocorrencias | id | Nome | Ocorrência |
+| Acessus_AUTOTEST_20261023.dbo.Afastamentos | Id | IdPessoa, IdFreq, DataInicio, DataTermino, Causa | Férias/afastamento, vínculo ainda incerto |
 | RHFagundes.dbo.RHPESSOAS | EMPRESA, PESSOA | NOME | Pessoa RH |
 | RHFagundes.dbo.RHCONTRATOS | UNIDADE, CONTRATO | CRACHA, SITUACAO | Contrato/pessoa RH |
 | RHFagundes.dbo.RHCRACHASATIVOS | NROCRACHA, DATAHORAINICIO, DATAHORATERMINO | UNIDADE, CONTRATO, TIPOCRACHAATIVO, PESSOAACESSO | Crachá RH |
@@ -38,7 +38,7 @@ Mapas históricos em `docs/mapeamentos/`, sobretudo `acesso-pessoas*.txt` e `vm-
 
 ## d) Fluxo de importação
 
-Cadastro acontece no RH/Frequência (`RHFagundes`). O serviço de importação API `FrmSyncImpViewsPrincipal` está instalado e estava rodando no diagnóstico; Sync `FrmViewsPrincipalService` e Comunicação `SrvAcessusCom` estão instalados/parados/manuais. O destino do Acessus é `AcessoFagundes`. O gatilho exato por entidade, o tempo até terminar, os checkpoints e a forma de exibição ainda não foram confirmados; portanto nenhuma sequência afirma importação concluída. Consulte `docs/AMBIENTE.md` e nunca inicie Sync/Comunicação sem autorização.
+Cadastro acontece no RH/Frequência (`RHFagundes`). Os três serviços estão em execução e apontam ao destino `Acessus_AUTOTEST_20261023`. A importação API está sem configuração porque a tela exige um coletor. O gatilho exato por entidade, o tempo até terminar, os checkpoints e a forma de exibição ainda não foram confirmados; portanto nenhuma sequência afirma importação concluída. Consulte `docs/AMBIENTE.md` e valide o destino antes de reiniciar serviços.
 
 ## e) Matriz de regras de negócio
 
@@ -71,8 +71,12 @@ Dados de teste usam `AUTOTEST_<timestamp>_`; cada sequência tem seed. Log por e
 
 ## i) Glossário
 
-**Pessoa:** cadastro individual. **Crachá:** identificador ligado à pessoa/contrato. **Unidade:** subdivisão de empresa no RH ou Acessus. **Ocorrência:** evento lançado para pessoa/contrato. **Férias/afastamento:** período de ausência. **Origem:** RHFagundes. **Destino:** AcessoFagundes. **Importação:** transferência processada por serviço entre origem e destino, regras ainda pendentes.
+**Pessoa:** cadastro individual. **Crachá:** identificador ligado à pessoa/contrato. **Unidade:** subdivisão de empresa no RH ou Acessus. **Ocorrência:** evento lançado para pessoa/contrato. **Férias/afastamento:** período de ausência. **Origem:** RHFagundes. **Destino:** Acessus_AUTOTEST_20261023. **Importação:** transferência processada por serviço entre origem e destino, regras ainda pendentes.
 
 ## j) Testar mudança dos devs
 
 Copie `docs/mudancas/MODELO.md` para `docs/mudancas/AAAA-MM-DD-titulo.md`; preencha build, regra esperada, telas, regressão, tabelas e observação. Leia cenário e briefing, liste casos diretos/regressão/dúvidas. Depois rode `scripts/verificar_ambiente.ps1`; `python -m robot --include smoke tests/sequencias/suites.robot`; `python -m robot --include regressao tests/sequencias/suites.robot`; e a sequência YAML específica via `python -m automatiza.sequencias.cli --arquivo tests/sequencias/arquivo.yaml`. Compare o esperado com o obtido, preserve divergências e evidências.
+
+## Atualizacao operacional de 23/10/2026
+
+A base isolada atual recebeu schema sem dados; o assistente adicionou empresa e administrador. A conexao SQL com `RHFagundes` foi salva. `TFConfigAPI` pede URL, e-mail e senha, mas recusou salvar porque nao ha coletor. A senha veio do cofre Windows e nao foi registrada. `DADOS_IMPORTACAO_API` permanece vazia. Tres servicos Running; nenhum dado importado foi comprovado. O atualizador tentou 415 scripts e reportou erros de objetos duplicados: auditar. Exclusao logica e nova linha na recriacao foram confirmadas em nivel geral; detalhes por entidade pendentes.
