@@ -37,6 +37,14 @@ O perfil `auditorias` aponta a `C:\AcessusHostFisico` e `desk-tec/AcessoFagundes
 
 Abra **Execução ao vivo**. A saída chega por consulta periódica, o estado mostra rodando/concluído/falhou, e **PARAR** encerra o processo e os filhos. O painel aceita somente uma execução iniciada por ele por vez. A observação SQL começa em segundo plano para não segurar o painel.
 
+## Pausar e cancelar um teste
+
+O atalho principal é **Pause/Break**. Se o Windows ou a VM já o estiver usando, a sentinela tenta **Ctrl+Shift+F9** e **Ctrl+Shift+P**, nessa ordem. O painel mostra qual foi registrado. Pressione o atalho mesmo com o Acessus em primeiro plano, ou use **Execução ao vivo → Pausar**. A caixa mostra se o teste parou entre ações ou se precisou de congelamento. **Continuar** tenta devolver o foco à janela anterior; **Cancelar teste** exige confirmação. Esc não cancela. O botão **PARAR execução e processos filhos** continua como saída de emergência e não produz o mesmo relatório parcial.
+
+Os avisos de início e fim aparecem por alguns segundos sem ativar a janela. Em **Configuração → Avisos e pausa**, escolha duração, atalho principal e congelamento. **Testar atalho** abre um laço de teste sem Acessus; pressione a tecla e veja o instante no console. Pela CLI: `automatiza pausa-teste` ou `automatiza aviso-teste inicio|fim|cancelado`. A pasta da rodada de Auditorias inclui `pausas.jsonl`, `resumo.json` e `RELATORIO.html`; o diário permanente registra início, retomada e cancelamento.
+
+Não execute dois testes que controlam a mesma sessão Windows ao mesmo tempo. A sentinela não substitui a validação visual de foco e de retomada na VM com o Acessus aberto.
+
 ## Quero investigar um erro
 
 Em **Resultados**, abra a rodada e `RELATORIO.html`. A tabela traz estados por módulo; **Achados agrupados** reúne mensagens semelhantes, com quantidade e ocorrências. Abra `resultados/passo-a-passo.log` para o passo a passo cronológico, ou o JSONL para campos estruturados. Filtre pelo estado (por exemplo `ERRO_APLICACAO`). O screenshot do diálogo é feito antes de clicar em OK. `ERRO_AUTOMACAO` pode indicar seletor, janela ou travamento, então compare o mapa da build.

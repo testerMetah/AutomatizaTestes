@@ -42,9 +42,10 @@ class DiarioAuditorias:
 
     def __exit__(self, exc_type, exc, traceback):
         try:
+            from automatiza.pausa import TesteCancelado
             self._json({
                 "tipo": "fim_execucao",
-                "situacao": "FALHOU" if exc_type else "CONCLUIDA",
+                "situacao": "CANCELADA" if exc_type is TesteCancelado else ("FALHOU" if exc_type else "CONCLUIDA"),
                 "erro": f"{exc_type.__name__}: {exc}" if exc_type else None,
                 "resultados": self.contagem_status,
             })
@@ -99,10 +100,17 @@ class DiarioAuditorias:
         registro["tentativa_id"] = f"{self.execucao_id}-T{uuid4().hex[:10]}"
         self.tentativa_atual = registro
         self._inicio_tentativa = time.perf_counter()
+        from automatiza.pausa import ler, pasta
+        base = pasta()
+        self._pausa_inicial_ms = ler(base / "controle.json").get("pausado_total_ms", 0) if base else 0
 
     def finalizar_tentativa(self, registro):
         registro["fim"] = datetime.now().astimezone().isoformat(timespec="milliseconds")
-        registro["duracao_ms"] = round((time.perf_counter() - self._inicio_tentativa) * 1000, 3)
+        from automatiza.pausa import ler, pasta
+        base = pasta()
+        pausa_atual = ler(base / "controle.json").get("pausado_total_ms", 0) if base else 0
+        registro["duracao_ms"] = round(max(0, (time.perf_counter() - self._inicio_tentativa) * 1000
+                                          - pausa_atual + self._pausa_inicial_ms), 3)
         status = registro.get("status", "SEM_STATUS")
         self.contagem_status[status] = self.contagem_status.get(status, 0) + 1
         self._json({"tipo": "tentativa_finalizada", "tentativa_id": registro["tentativa_id"],

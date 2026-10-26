@@ -7,6 +7,7 @@ import shutil
 import socket
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 import webbrowser
@@ -41,6 +42,8 @@ class Estado:
             env = os.environ.copy()
             env["PYTHONUNBUFFERED"] = "1"
             env["PYTHONIOENCODING"] = "utf-8"
+            self.pause_dir = Path(tempfile.mkdtemp(prefix="automatiza-pausa-"))
+            env["AUTOMATIZA_PAUSA_DIR"] = str(self.pause_dir)
             cmd = [sys.executable, "-u", "-m", "automatiza.nova_cli", *args]
             self.process = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=subprocess.PIPE,
                                             stderr=subprocess.STDOUT, text=True, encoding="utf-8",
@@ -89,8 +92,28 @@ class Estado:
 
     def snapshot(self, from_line=0):
         with self.lock:
+            from automatiza.pausa import ler
+            pause = getattr(self, "pause_dir", None)
+            control = ler(pause / "controle.json") if pause else {}
+            sentinel = ler(pause / "sentinela.json") if pause else {}
+            events = []
+            if pause and (pause / "eventos.jsonl").exists():
+                for line in (pause / "eventos.jsonl").read_text(encoding="utf-8").splitlines()[-30:]:
+                    try: events.append(json.loads(line))
+                    except ValueError: continue
             return {"job": dict(self.job) if self.job else None,
-                    "linhas": self.lines[max(0, from_line):], "total": len(self.lines)}
+                    "linhas": self.lines[max(0, from_line):], "total": len(self.lines),
+                    "pausa": control, "sentinela": sentinel, "eventos_pausa": events}
+
+    def pausar(self, acao):
+        from automatiza.pausa import gravar
+        with self.lock:
+            if not self.process or self.process.poll() is not None:
+                raise ValueError("Nenhum teste em execução.")
+            if acao not in {"pausar", "continuar", "cancelar"}:
+                raise ValueError("Comando de pausa inválido.")
+            gravar(self.pause_dir / "pedido.json", {"acao": acao, "origem": "painel", "instante": time.time_ns()})
+            return {"pedido": acao}
 
 
 def _arquivo_seguro(name):
@@ -156,6 +179,8 @@ def _rodadas():
 
 def _comando(data):
     kind = data.get("tipo")
+    if kind == "pausa-teste":
+        return ["pausa-teste"]
     if kind == "auditorias":
         module = data.get("modulo")
         if module not in {"acesso", "refeitorio", "portaria", "estacionamento", "escola", "administracao", "todos"}:
@@ -294,7 +319,9 @@ def criar_servidor(porta=8765):
                     from automatiza.diagnostico_unificado import executar
                     return self._json(executar())
                 if url.path == "/api/config":
+                    from automatiza.pausa import configuracao
                     return self._json({"perfis": [carregar(n) for n in ("auditorias", "sequencias")],
+                                       "notificacoes": configuracao(),
                                        "env": {key: ("••••" if key in {"TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"}
                                                      and os.getenv(key) else os.getenv(key, ""))
                                                for key in ("TESTE_USUARIO", "TESTE_SENHA", "SQL_SERVER",
@@ -366,6 +393,27 @@ def criar_servidor(porta=8765):
                     return self._json(state.start(args, ui=args[0] in UI_COMMANDS))
                 if url.path == "/api/parar":
                     return self._json(state.stop())
+                if url.path == "/api/pausa":
+                    return self._json(state.pausar(str(data.get("acao", ""))))
+                if url.path == "/api/notificacoes":
+                    from automatiza.pausa import configuracao, gravar, ATALHOS_PERMITIDOS
+                    cfg = configuracao()
+                    for key in ("avisos", "congelamento"):
+                        if key in data:
+                            if not isinstance(data[key], bool): raise ValueError(f"Valor inválido: {key}")
+                            cfg[key] = data[key]
+                    for key in ("inicio_segundos", "fim_segundos"):
+                        if key in data:
+                            value = float(data[key])
+                            if not 1 <= value <= 60: raise ValueError(f"Duração inválida: {key}")
+                            cfg[key] = value
+                    if "atalhos" in data:
+                        keys = data["atalhos"]
+                        if not isinstance(keys, list) or not keys or any(x not in ATALHOS_PERMITIDOS for x in keys):
+                            raise ValueError("Atalhos inválidos.")
+                        cfg["atalhos"] = keys
+                    gravar(ROOT / "config/notificacoes.json", cfg)
+                    return self._json(cfg)
                 if url.path == "/api/perfil":
                     name = data.get("nome")
                     profile = carregar(name)

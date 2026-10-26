@@ -12,6 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 from pywinauto import Application, Desktop, mouse
+from automatiza.pausa import TesteCancelado, ponto, esperar
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def click_tab(item):
     """Clique físico: SelectionItem.Select não dispara OnChange do Delphi."""
     rect = item.rectangle()
+    ponto({"acao": "selecionar aba no levantamento", "aba": item.window_text()})
     mouse.click(coords=((rect.left + rect.right) // 2, (rect.top + rect.bottom) // 2))
 
 
@@ -65,6 +67,7 @@ def survey(pid, module):
     if not upper:
         upper = [None]  # Portaria tem formulário sem abas superiores.
     for index, original in enumerate(upper):
+        ponto({"modulo": module, "acao": "mapear historico", "indice": index})
         title = original.window_text() if original is not None else target.window_text()
         record = {"historico": title, "abriu": False, "filtros": []}
         result["historicos"].append(record)
@@ -73,7 +76,7 @@ def survey(pid, module):
             if original is not None:
                 current = tabs(target.handle, upper=True)
                 click_tab(current[index])
-                record["abriu"] = visible_page(target.handle, title)
+                record["abriu"] = esperar(lambda: visible_page(target.handle, title), 3)
                 if not record["abriu"]:
                     raise RuntimeError(f"A aba {title!r} não ficou visível após o clique")
             else:
@@ -82,6 +85,7 @@ def survey(pid, module):
             target.capture_as_image().save(output / f"{index+1:02d}-{safe_name}.png")
             lower = tabs(target.handle, upper=False)
             for filter_index, filter_item in enumerate(lower):
+                ponto({"modulo": module, "historico": title, "acao": "mapear filtro", "indice": filter_index})
                 current = tabs(target.handle, upper=False)
                 if filter_index >= len(current):
                     raise RuntimeError("Lista de filtros mudou durante o mapeamento")
@@ -109,4 +113,8 @@ def survey(pid, module):
 
 
 if __name__ == "__main__":
-    raise SystemExit(survey(int(sys.argv[1]), sys.argv[2]))
+    try:
+        code = survey(int(sys.argv[1]), sys.argv[2])
+    except TesteCancelado:
+        code = 2
+    raise SystemExit(code)

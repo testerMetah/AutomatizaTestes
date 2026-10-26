@@ -39,3 +39,7 @@ Não foi criado `.claude/settings.json` porque o formato de permissão da versã
 O destino antigo descrito acima e historico. Destino atual: `desk-tec/Acessus_AUTOTEST_20261023`, confirmado como teste. Os tres servicos e o Acessus usam esse banco; RH usa `RHFagundes`. A base tem schema sem dados, empresa e administrador iniciais criados no assistente, conexao SQL de origem salva, zero pessoas/unidades/coletores e nenhuma configuracao API. `TFConfigAPI` exige um coletor. Nao criar coletor associado a dispositivo real sem saber impacto.
 
 O atualizador tentou 415 scripts sobre schema atual e reportou erros; auditar. Tres servicos Running; log da API informa `DADOS_IMPORTACAO_API` vazia, sem importacao. Sync exigiu login administrativo antes de iniciar. `scripts/verificar_ambiente.ps1` passou em todos os itens. Robot: 1 PASSOU, 0 FALHOU, 4 BLOQUEADOS. Relatorio: `reports/robot-nova-base/report.html`; checagem detalhada: `reports/20261023-101611-015292-092edd/RELATORIO.html`. Proximo passo: coletor seguro de teste, salvar API, verificar importacao, criar fixture pessoa/unidade e validar soft delete.
+
+## Pausa e avisos (26/10/2026)
+
+A sentinela registra Pause/Break como atalho principal, com Ctrl+Shift+F9 e Ctrl+Shift+P como alternativas. O teste de integracao com SendInput e laco falso mediu 156 ms entre o pedido e a confirmacao de pausa cooperativa; retomada apos 375 ms. A validacao isolada com Acessus ainda esta pendente porque uma rodada do painel (`auditorias --modulo todos --extremo`) ja controlava a area de trabalho durante os ensaios.

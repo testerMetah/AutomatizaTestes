@@ -5,6 +5,8 @@ import os
 import struct
 import subprocess
 import sys
+import tempfile
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -62,6 +64,9 @@ def parser_cli():
     sub.add_parser("testes-unitarios", help="pytest tests/unit -q")
     sub.add_parser("comandos", help="Catálogo didático")
     sub.add_parser("painel", help="Servidor local")
+    sub.add_parser("pausa-teste", help="Testar sentinela e atalhos globais")
+    a = sub.add_parser("aviso-teste", help="Visualizar aviso sem executar teste")
+    a.add_argument("tipo", choices=("inicio", "fim", "cancelado"))
     return p
 
 
@@ -75,6 +80,9 @@ def _exec(args, *, env=None):
 
 
 def executar(ns):
+    if ns.comando in {"pausa-teste", "aviso-teste"}:
+        from automatiza.sentinela.autoteste import executar as testar
+        return testar(ns)
     if ns.comando == "comandos":
         for item in COMANDOS:
             print(f"\n[{item['tema']}] automatiza {item['comando']} — {item['descricao']}")
@@ -199,6 +207,58 @@ def main(argv=None):
         if argv and argv[0] in legacy:
             return _exec(["-m", "automatiza.cli", *argv])
         ns = parser_cli().parse_args(argv)
+        testes = {"auditorias", "sequencias", "robot", "ciclos", "conferir", "observar", "testes-unitarios"}
+        if ns.comando in testes and not (ns.comando == "observar" and ns.acao in {"status", "anotar", "parar"}):
+            from automatiza.pausa import TesteCancelado, gravar, ler
+            from automatiza.config import ROOT
+            nome = ("Auditorias — " + ns.modulo) if ns.comando == "auditorias" else ns.comando.capitalize()
+            perfil = getattr(ns, "perfil", "auditorias" if ns.comando == "auditorias" else "sequencias")
+            try:
+                from automatiza.perfis_teste import carregar, configuracao as perfil_config
+                from automatiza.database import SqlServer
+                carregar(perfil)
+                banco = SqlServer(perfil_config(perfil)).assert_database()
+            except Exception:
+                banco = "não confirmado"
+            base = Path(os.environ.get("AUTOMATIZA_PAUSA_DIR") or tempfile.mkdtemp(prefix="automatiza-pausa-"))
+            base.mkdir(parents=True, exist_ok=True)
+            os.environ["AUTOMATIZA_PAUSA_DIR"] = str(base)
+            gravar(base / "meta.json", {"nome": nome, "perfil": perfil, "banco": banco,
+                                        "pid": os.getpid(), "inicio_monotonico": time.monotonic()})
+            gravar(base / "controle.json", {"estado": "RODANDO", "instante": time.time()})
+            sentinela = None
+            try:
+                exe = Path(sys.executable).with_name("pythonw.exe")
+                if not exe.exists():
+                    exe = Path(sys.executable)
+                log_sentinela = (base / "sentinela-erro.log").open("w", encoding="utf-8")
+                sentinela = subprocess.Popen([str(exe), "-m", "automatiza.sentinela.runtime", str(base)],
+                                             cwd=ROOT, stdin=subprocess.DEVNULL, stdout=log_sentinela,
+                                             stderr=subprocess.STDOUT, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+                log_sentinela.close()
+                limite = time.monotonic() + 1.5
+                while time.monotonic() < limite and not (base / "sentinela.json").exists() and sentinela.poll() is None:
+                    time.sleep(0.03)
+                if sentinela.poll() is not None:
+                    print("AVISO: sentinela não iniciou; teste continuará sem pausa.", flush=True)
+                else:
+                    print(f"Sentinela: {ler(base / 'sentinela.json').get('atalho') or 'aguardando registro'}; controle: {base}", flush=True)
+            except OSError as exc:
+                print(f"AVISO: sentinela indisponível ({type(exc).__name__}); teste continuará.", flush=True)
+            try:
+                codigo = executar(ns)
+                final = "CANCELADO" if ler(base / "controle.json").get("estado") == "CANCELANDO" else ("CONCLUIDO" if codigo == 0 else "FALHOU")
+                return codigo
+            except TesteCancelado:
+                final = "CANCELADO"
+                print("Teste cancelado pelo usuário.", flush=True)
+                return 2
+            except BaseException:
+                final = "FALHOU"
+                raise
+            finally:
+                gravar(base / "final.json", {"estado": final, "resumo": f"Duração: {int(time.monotonic()-ler(base/'meta.json')['inicio_monotonico'])} s",
+                                              "pasta": str(getattr(ns, "saida", None) or "Consulte Resultados")})
         return executar(ns)
     except (ValueError, RuntimeError, OSError) as exc:
         print(f"ERRO: {exc}", file=sys.stderr)

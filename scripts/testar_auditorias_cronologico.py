@@ -21,6 +21,7 @@ from pywinauto.timings import TimeoutError as WaitTimeoutError, wait_until
 from automatiza.config import Settings
 from automatiza.database import SqlServer
 from automatiza.diario_auditorias import DiarioAuditorias
+from automatiza.pausa import TesteCancelado, ponto
 from levantar_auditorias_runtime import click_tab, tabs
 from testar_filtros_auditorias import (TABLES, application_error, button,
                                        controls_on_page, count_from, date_for,
@@ -44,6 +45,7 @@ def executavel_e_versao(pid):
 def dialogs(pid, emit, screenshot_dir=None):
     found = []
     for _ in range(8):
+        ponto({"modulo": "auditorias", "acao": "tratar dialogo"})
         windows = [w for w in Desktop(backend="win32").windows(process=pid)
                    if w.class_name() == "#32770" and w.is_visible()]
         if not windows:
@@ -74,6 +76,7 @@ def dialogs(pid, emit, screenshot_dir=None):
                        if c.class_name() == "Button" and c.window_text() == "OK"]
             if len(buttons) != 1:
                 raise RuntimeError("Diálogo sem botão OK único")
+            ponto({"modulo": "auditorias", "acao": "fechar dialogo"})
             buttons[0].click()
             emit("Clicou em: OK (fechou o diálogo)")
     return found
@@ -90,6 +93,7 @@ def choose_lower(form, label, emit, pid=None, screenshot_dir=None):
     if visible_sheet(form, label):
         return
     for _ in range(3):
+        ponto({"acao": "selecionar aba", "aba": label})
         form.set_focus()
         items = [t for t in tabs(form.handle, upper=False) if t.window_text() == label]
         if len(items) != 1:
@@ -97,7 +101,8 @@ def choose_lower(form, label, emit, pid=None, screenshot_dir=None):
         click_tab(items[0])
         emit(f"Clicou na aba: {label}")
         try:
-            wait_until(3, 0.1, lambda: visible_sheet(form, label))
+            from automatiza.pausa import esperar
+            esperar(lambda: visible_sheet(form, label), 3)
             return
         except WaitTimeoutError:
             emit(f"Aba {label} não ficou visível; repetirá o clique")
@@ -120,6 +125,7 @@ def set_period(form, moment, variant, emit, pid, extreme=False, screenshot_dir=N
     values = extreme_periods(moment, variant) if extreme else period_values(moment, variant)
     names = ("Data inicial", "Hora inicial", "Data final", "Hora final")
     for edit, name, value in zip(edits, names, values):
+        ponto({"acao": "preencher periodo", "campo": name})
         edit.set_edit_text(value)
         emit(f"Campo {name} preencheu com: {value}")
     return values
@@ -204,6 +210,7 @@ def run(pid, module, output, skip):
         journal.acao(module, "(execução)", "(início)",
                      f"Iniciou execução; evidências da rodada: {output}")
         for hidx, item in enumerate(histories):
+            ponto({"modulo": module, "acao": "abrir historico"})
             if hidx in skip:
                 continue
             history = item.window_text() if item else form.window_text()
@@ -265,9 +272,12 @@ def run(pid, module, output, skip):
                                   "data_referencia": moment.isoformat()}
                         journal.iniciar_tentativa(record)
                         try:
+                            ponto({"modulo": module, "historico": history, "filtro": field_name,
+                                   "tentativa": variant + 1})
                             emit(f"Iniciou tentativa {variant + 1}/5 no campo {subindex + 1}")
                             dialogs(pid, emit, output)
                             form.set_focus()
+                            ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "limpar filtros"})
                             button(form, "Limpar Filtros").click()
                             emit("Clicou em: Limpar Filtros (Ctrl+X)")
                             dialogs(pid, emit, output)
@@ -283,14 +293,17 @@ def run(pid, module, output, skip):
                                 record["retangulo_controle"] = [
                                     rect.left, rect.top, rect.right, rect.bottom]
                                 if kind == "TComboBox":
+                                    ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "selecionar"})
                                     control.select(value)
                                     entered = control.window_text()
                                 else:
+                                    ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "digitar"})
                                     control.set_edit_text(value)
                                     entered = control.window_text()
                                 record["valor_exibido"] = entered
                                 emit(f"Campo {field_name} (posição {subindex + 1}) preencheu com: {entered!r}")
                             form.set_focus()
+                            ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "consultar"})
                             button(form, "Consultar").click()
                             emit("Clicou em: Consultar (F6)")
                             consultation = dialogs(pid, emit, output)
@@ -304,6 +317,7 @@ def run(pid, module, output, skip):
                                        for msg in d["mensagens"]):
                                     history_broken = True
                             else:
+                                ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "contar"})
                                 button(form, "Contar Registros").click()
                                 emit("Clicou em: Contar Registros (F5)")
                                 counted = dialogs(pid, emit, output)
@@ -317,6 +331,9 @@ def run(pid, module, output, skip):
                                     record["oraculo_contagem"] = oracle
                                     emit(f"Oráculo de contagem: {oracle['status']}; "
                                          f"esperado {oracle['esperado']}, obtido {oracle['obtido']}")
+                        except TesteCancelado:
+                            record["status"] = "CANCELADO"
+                            emit("CANCELADO_PELO_USUARIO: tentativa interrompida no ponto seguro")
                         except Exception as exc:
                             record["status"] = "ERRO_AUTOMACAO"
                             record["erro"] = f"{type(exc).__name__}: {exc}"
@@ -335,6 +352,8 @@ def run(pid, module, output, skip):
                             data.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
                             data.flush()
                             os.fsync(data.fileno())
+                        if record["status"] == "CANCELADO":
+                            return 2
                         if history_broken:
                             emit("Histórico interrompido após Access violation; demais filtros exigem reinicialização do módulo")
                             break
@@ -345,5 +364,9 @@ def run(pid, module, output, skip):
 
 
 if __name__ == "__main__":
-    raise SystemExit(run(int(sys.argv[1]), sys.argv[2], Path(sys.argv[3]),
-                         {int(s) for s in sys.argv[4:]}) or 0)
+    try:
+        code = run(int(sys.argv[1]), sys.argv[2], Path(sys.argv[3]),
+                   {int(s) for s in sys.argv[4:]}) or 0
+    except TesteCancelado:
+        code = 2
+    raise SystemExit(code)

@@ -2,6 +2,7 @@ import time
 from pathlib import Path
 
 from automatiza.sequencias.relatorio import mask
+from automatiza.pausa import ponto, tecla_reservada
 
 
 class UiBlocked(RuntimeError):
@@ -67,6 +68,9 @@ class Gateway:
             return None
 
     def interact(self, action, selector=None, value=None, important=False, sensitive=False):
+        if action == "teclar" and tecla_reservada(value):
+            raise UiBlocked("Este atalho está reservado para pausar o teste.")
+        ponto({"acao": action, "seletor": str(selector) if selector else "janela principal"})
         if self.window is None:
             self.connect()
         if selector is None and action not in {"teclar", "fechar", "abrir"}:
@@ -127,6 +131,7 @@ class Gateway:
         self.window.set_focus()
         panel = Desktop(backend="uia").window(handle=self.window.handle)
         for caption in route:
+            ponto({"acao": "abrir menu", "item": caption})
             spec = panel.child_window(title=caption, control_type="MenuItem", visible_only=True)
             spec.wait("visible enabled", timeout=10)
             item = spec.wrapper_object()

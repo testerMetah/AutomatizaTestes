@@ -65,11 +65,13 @@ def load_yaml(path):
 
 
 def run_case(case, report, backend=None, *, stop_on_failure=True, shrink=True):
+    from automatiza.pausa import ponto
     backend = backend or BlockedBackend()
     actions, oracle = Actions(backend, report), Oracle.from_docs()
     report.context = {"sequencia": case["nome"], "seed": case.get("seed")}
     state, error = "PASSOU", None
     for number, step in enumerate(case["passos"], 1):
+        ponto({"sequencia": case["nome"], "passo": number, "acao": step.get("acao")})
         report.context["passo"] = number
         result = actions.execute(step)
         if result.state == "PASSOU" and step.get("entidade"):

@@ -75,9 +75,48 @@ def comparar(anterior, atual):
             "persistentes": ordered(old_errors & new_errors)}
 
 
+def exportar_passo_a_passo(folder, records):
+    """Copia para a rodada as ações dos IDs registrados nas tentativas."""
+    ids = {x.get("execucao_id") for x in records if x.get("execucao_id")}
+    origem = folder.parent / "passo-a-passo-detalhado.jsonl"
+    if not ids or not origem.exists():
+        return None
+    destino = folder / "passo-a-passo.log"
+    detalhado = folder / "passo-a-passo-detalhado.jsonl"
+    total = 0
+    with origem.open(encoding="utf-8") as entrada, destino.open("w", encoding="utf-8") as legivel, detalhado.open("w", encoding="utf-8") as jsonl:
+        for linha in entrada:
+            try:
+                evento = json.loads(linha)
+            except json.JSONDecodeError:
+                continue
+            if evento.get("execucao_id") not in ids:
+                continue
+            jsonl.write(linha)
+            if evento.get("linha_passo_a_passo"):
+                legivel.write(evento["linha_passo_a_passo"] + "\n")
+                total += 1
+    return total
+
+
 def gerar(rodada):
     folder = Path(rodada)
     records = ler(folder)
+    passos = exportar_passo_a_passo(folder, records)
+    import os
+    origem_pausa = os.environ.get("AUTOMATIZA_PAUSA_DIR")
+    if origem_pausa and (Path(origem_pausa) / "eventos.jsonl").exists():
+        (folder / "pausas.jsonl").write_bytes((Path(origem_pausa) / "eventos.jsonl").read_bytes())
+    pausas = []
+    if (folder / "pausas.jsonl").exists():
+        for line in (folder / "pausas.jsonl").read_text(encoding="utf-8").splitlines():
+            try:
+                pausas.append(json.loads(line))
+            except ValueError:
+                continue
+    numero_pausas = sum(x.get("tipo") == "PAUSA_INICIADA" for x in pausas)
+    tempo_pausado_ms = sum(x.get("duracao_ms", 0) for x in pausas if x.get("tipo") == "PAUSA_RETOMADA")
+    cancelada = any(x.get("tipo") == "CANCELADO_PELO_USUARIO" for x in pausas) or any(x.get("status") == "CANCELADO" for x in records)
     counts = defaultdict(Counter)
     for record in records:
         counts[record.get("modulo", "?")][record.get("status", "?")] += 1
@@ -89,7 +128,7 @@ def gerar(rodada):
         return html.escape(str(value if value is not None else ""))
     rows = "".join("<tr><td>" + esc(mod) + "</td>" +
                    "".join("<td>" + str(c[status]) + "</td>" for status in
-                           ("CONSULTADO", "SEM_CONTAGEM", "ERRO_APLICACAO", "ERRO_AUTOMACAO",
+                           ("CONSULTADO", "SEM_CONTAGEM", "ERRO_APLICACAO", "ERRO_AUTOMACAO", "CANCELADO",
                             "ORACULO_PASSOU", "ORACULO_FALHOU")) +
                    "</tr>" for mod, c in sorted(counts.items()))
     errors = []
@@ -114,15 +153,18 @@ table{{border-collapse:collapse;width:100%}}th,td{{border:1px solid #ccd5dd;padd
 th{{background:#e9f2f8}}details{{border:1px solid #ccd5dd;padding:12px;margin:8px 0}}
 a{{color:#065a9c}}</style>
 <h1>Auditorias/Históricos</h1><p>Rodada: {esc(folder.name)} · Tentativas: {len(records)}</p>
+<p>Pausas: {numero_pausas} · Tempo pausado: {round(tempo_pausado_ms / 1000, 1)} s · Cancelada pelo usuário: {'sim' if cancelada else 'não'}</p>
+{f'<p><a href="passo-a-passo.log">Log passo a passo</a> ({passos} ações) · <a href="passo-a-passo-detalhado.jsonl">Log detalhado JSONL</a></p>' if passos is not None else ''}
 <table><tr><th>Módulo</th><th>Consultado</th><th>Sem contagem</th>
-<th>Erro da aplicação</th><th>Erro da automação</th>
+<th>Erro da aplicação</th><th>Erro da automação</th><th>Cancelado</th>
 <th>Oráculo passou</th><th>Oráculo falhou</th></tr>{rows}</table>
 <h2>Achados agrupados</h2>{''.join(errors) or '<p>Nenhum erro registrado.</p>'}
 <p>As contagens são exploratórias quando não há regra CONFIRMADA para o filtro.</p></html>"""
     output = folder / "RELATORIO.html"
     output.write_text(body, encoding="utf-8")
     (folder / "resumo.json").write_text(json.dumps({
-        "rodada": folder.name, "tentativas": len(records),
+        "rodada": folder.name, "tentativas": len(records), "pausas": numero_pausas,
+        "tempo_pausado_ms": tempo_pausado_ms, "cancelada_pelo_usuario": cancelada,
         "modulos": {name: dict(c) for name, c in counts.items()},
         "achados": findings}, ensure_ascii=False, indent=2), encoding="utf-8")
     return output

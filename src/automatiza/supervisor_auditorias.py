@@ -16,9 +16,9 @@ from automatiza.seletores_auditorias import (BOTAO_LOGIN, CLASSE_AUDITORIA,
 
 
 def _esperar(func, timeout, descricao):
-    from pywinauto.timings import wait_until
+    from automatiza.pausa import esperar
     try:
-        wait_until(timeout, 0.3, lambda: bool(func()))
+        esperar(lambda: bool(func()), timeout)
     except Exception as exc:
         raise RuntimeError(f"Tempo esgotado aguardando {descricao} ({timeout}s).") from exc
 
@@ -32,6 +32,8 @@ def _janela(pid, classe):
 
 def _menu(parent, top, prefix):
     from pywinauto import Desktop
+    from automatiza.pausa import ponto
+    ponto({"acao": "abrir menu", "menu": prefix})
     parent.set_focus()
     menu = Desktop(backend="uia").window(handle=parent.handle)
     def matches():
@@ -39,16 +41,20 @@ def _menu(parent, top, prefix):
                 if i.is_visible() and i.window_text().startswith(prefix)]
     items = matches()
     if not items:
+        ponto({"acao": "abrir menu", "menu": top})
         menu.child_window(title=top, control_type="MenuItem", visible_only=True).click_input()
         items = matches()
     if len(items) != 1:
         raise RuntimeError(f"Menu {prefix!r}: encontrados {len(items)} itens; remapeie a tela.")
+    ponto({"acao": "clicar menu", "menu": prefix})
     items[0].click_input()
 
 
 def abrir(modulo, pasta, *, pid=None, timeout=45, evidencias=None):
     """Reutiliza módulo correto ou abre pelo painel da mesma instalação."""
     from pywinauto import Desktop
+    from automatiza.pausa import ponto
+    ponto({"modulo": modulo, "acao": "abrir modulo"})
     exe = pasta / MODULOS[modulo][0]
     if not exe.is_file():
         raise ValueError(f"Executável ausente: {exe}")
@@ -80,11 +86,14 @@ def abrir(modulo, pasta, *, pid=None, timeout=45, evidencias=None):
                                key=lambda x: x.rectangle().top)
                 if len(edits) != 2:
                     raise RuntimeError(f"Login: encontrados {len(edits)} campos TEdit; remapeie.")
+                ponto({"acao": "digitar usuario"})
                 edits[0].set_edit_text(user)
+                ponto({"acao": "digitar senha"})
                 edits[1].set_edit_text(password)
                 buttons = [x for x in login.descendants() if x.window_text() == BOTAO_LOGIN]
                 if len(buttons) != 1:
                     raise RuntimeError("Botão Login não identificado; remapeie.")
+                ponto({"acao": "entrar"})
                 buttons[0].click_input()
             _esperar(lambda: _janela(panel_pid, CLASSE_PAINEL), timeout, "painel autenticado")
             panel = _janela(panel_pid, CLASSE_PAINEL)
@@ -107,6 +116,7 @@ def abrir(modulo, pasta, *, pid=None, timeout=45, evidencias=None):
             image = Path(evidencias) / f"dialogo-inicial-{datetime.now():%Y%m%d-%H%M%S}.png"
             dialog.capture_as_image().save(image)
         print(f"{modulo}: aviso modal existente: {message or dialog.window_text()}", flush=True)
+        ponto({"modulo": modulo, "acao": "fechar aviso modal"})
         buttons[0].click_input()
     _esperar(lambda: _janela(pid, CLASSE_JANELA_PRINCIPAL), timeout, "janela principal")
     main = _janela(pid, CLASSE_JANELA_PRINCIPAL)
@@ -149,8 +159,25 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
     tamanho = diario.stat().st_size if diario.exists() else 0
     try:
         while True:
+            from automatiza.pausa import ler, pasta, gravar
+            base = pasta()
+            if base and ler(base / "controle.json").get("estado") == "PAUSADO":
+                if time.time() - ler(base / "heartbeat.json").get("instante", 0) > 2:
+                    import ctypes
+                    handle = ctypes.windll.kernel32.OpenProcess(0x0800, False, proc.pid)
+                    if handle:
+                        ctypes.windll.ntdll.NtResumeProcess(handle)
+                        ctypes.windll.kernel32.CloseHandle(handle)
+                    gravar(base / "controle.json", {"estado": "RODANDO", "instante": time.time()})
+                    print("AVISO: sentinela parou; automação retomada sem pausa.", flush=True)
+                    continue
+                ultimo = time.monotonic()
+                try:
+                    return proc.wait(timeout=0.1)
+                except subprocess.TimeoutExpired:
+                    continue
             try:
-                return proc.wait(timeout=0.5)
+                return proc.wait(timeout=0.1)
             except subprocess.TimeoutExpired:
                 pass
             try:
@@ -173,7 +200,7 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
                            capture_output=True, timeout=15)
 
 
-def _marcar_restante(module, module_output, reason, *, only_filter=None, skip=""):
+def _marcar_restante(module, module_output, reason, *, only_filter=None, skip="", status="ERRO_AUTOMACAO"):
     """Usa o mapa da tela para registrar os filtros que ficaram sem execução."""
     from automatiza.diario_auditorias import DiarioAuditorias
     maps = sorted((ROOT / "resultados").glob(f"auditorias-runtime-*/{module}/resultado.json"))
@@ -183,7 +210,8 @@ def _marcar_restante(module, module_output, reason, *, only_filter=None, skip=""
         for line in file.read_text(encoding="utf-8").splitlines():
             try:
                 item = json.loads(line)
-                completed.add((item.get("historico"), item.get("filtro")))
+                completed.add((item.get("historico"), item.get("filtro"),
+                               item.get("subcampo"), item.get("tentativa")))
             except ValueError:
                 continue
     remaining = []
@@ -196,18 +224,22 @@ def _marcar_restante(module, module_output, reason, *, only_filter=None, skip=""
             for filt in history.get("filtros", []):
                 if only_filter and not filt.get("nome", "").startswith(only_filter):
                     continue
-                key = (history.get("historico"), filt.get("nome"))
-                if key not in completed:
-                    remaining.append(key)
+                name = "Período" if filt.get("nome", "").startswith("Per") else filt.get("nome")
+                fields = 2 if "Coletor/Fun" in name else 1
+                for subcampo in range(fields):
+                    for tentativa in range(1, 6):
+                        key = (history.get("historico"), name, subcampo, tentativa)
+                        if key not in completed:
+                            remaining.append(key)
     if not remaining:
-        remaining = [("(módulo)", "(restante não mapeado)")]
+        remaining = [("(módulo)", "(restante não mapeado)", 0, 0)]
     with DiarioAuditorias(ROOT / "resultados", {"modulo": module,
                                                 "motivo_interrupcao": reason,
                                                 "pasta_evidencias": str(module_output)}) as diary:
-        for history, filt in remaining:
+        for history, filt, subcampo, tentativa in remaining:
             record = {"modulo": module, "historico": history, "filtro": filt,
-                      "status": "ERRO_AUTOMACAO", "erro": reason,
-                      "tentativa": 0, "nao_executado": True}
+                      "status": status, "erro": reason,
+                      "subcampo": subcampo, "tentativa": tentativa, "nao_executado": True}
             diary.iniciar_tentativa(record)
             diary.acao(module, history, filt, f"Não executado: {reason}")
             diary.finalizar_tentativa(record)
@@ -223,23 +255,40 @@ def executar(ns):
     folder = Path(profile["pasta_executaveis"])
     output = Path(ns.saida) if ns.saida else ROOT / "resultados" / f"auditorias-{datetime.now():%Y%m%d-%H%M%S}"
     output.mkdir(parents=True, exist_ok=True)
+    os.environ["AUTOMATIZA_RESULTADO_DIR"] = str(output)
     modules = list(MODULOS) if ns.modulo == "todos" else [ns.modulo]
     (output / "opcoes.json").write_text(json.dumps({
         "perfil": ns.perfil, "modulos": modules, "extremo": ns.extremo,
         "filtro": ns.filtro, "pular": ns.pular, "timeout": ns.timeout,
         "reinicios": ns.reinicios}, ensure_ascii=False, indent=2), encoding="utf-8")
     had_error = False
+    cancelada = False
     for module in modules:
+        from automatiza.pausa import TesteCancelado, ler, pasta, ponto
+        base = pasta()
+        if base and ler(base / "controle.json").get("estado") == "CANCELANDO":
+            cancelada = True
+            module_output = output / module
+            module_output.mkdir(exist_ok=True)
+            _marcar_restante(module, module_output, "Cancelado pelo usuário",
+                            only_filter=ns.filtro, skip=ns.pular, status="CANCELADO")
+            continue
         module_output = output / module
         module_output.mkdir(exist_ok=True)
         pid = ns.pid if ns.modulo != "todos" else None
         for restart in range(ns.reinicios + 1):
             try:
+                ponto({"modulo": module, "acao": "iniciar ou retomar"})
                 pid = abrir(module, folder, pid=pid, timeout=ns.timeout,
                             evidencias=module_output)
                 print(f"{module}: PID {pid}, levantamento da tela", flush=True)
                 survey = subprocess.run([sys.executable, str(ROOT / "scripts/levantar_auditorias_runtime.py"),
                                          str(pid), module], cwd=ROOT, timeout=ns.timeout * 5)
+                if survey.returncode == 2:
+                    cancelada = True
+                    _marcar_restante(module, module_output, "Cancelado pelo usuário",
+                                    only_filter=ns.filtro, skip=ns.pular, status="CANCELADO")
+                    break
                 if survey.returncode:
                     raise RuntimeError(f"Levantamento falhou com código {survey.returncode}.")
                 path = module_output / "tentativas.jsonl"
@@ -259,6 +308,11 @@ def executar(ns):
                 result_code = _executar_monitorado(
                     args, env=env, pid=pid, timeout=ns.timeout,
                     diario=ROOT / "resultados/passo-a-passo-detalhado.jsonl")
+                if result_code == 2 or (base and ler(base / "controle.json").get("estado") == "CANCELANDO"):
+                    cancelada = True
+                    _marcar_restante(module, module_output, "Cancelado pelo usuário",
+                                    only_filter=ns.filtro, skip=ns.pular, status="CANCELADO")
+                    break
                 recent = _tail(path, start)
                 av = any("Access violation" in str(x.get("mensagens_consulta", "")) for x in recent)
                 if result_code == 0 and not av:
@@ -270,6 +324,11 @@ def executar(ns):
                 _capturar(pid, module_output)
                 subprocess.run(["taskkill", "/PID", str(pid), "/F", "/T"], capture_output=True, timeout=10)
                 pid = None
+            except TesteCancelado:
+                cancelada = True
+                _marcar_restante(module, module_output, "Cancelado pelo usuário",
+                                only_filter=ns.filtro, skip=ns.pular, status="CANCELADO")
+                break
             except (RuntimeError, ValueError, subprocess.TimeoutExpired, OSError) as exc:
                 print(f"{module}: {type(exc).__name__}: {exc}", flush=True)
                 if pid:
@@ -297,4 +356,4 @@ def executar(ns):
                 print(f"{module}: limite de {ns.reinicios} reinícios; restante ERRO_AUTOMACAO", flush=True)
     report = gerar(output)
     print(f"Relatório: {report}", flush=True)
-    return 1 if had_error else 0
+    return 2 if cancelada else (1 if had_error else 0)

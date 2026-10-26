@@ -27,3 +27,9 @@
 19. Ao editar um perfil e mudar o banco, a marca `confirmado_como_teste` vira falsa; a escrita só volta após confirmação explícita no arquivo de configuração.
 20. Contagens de históricos permanecem exploratórias até existir regra `CONFIRMADA` com SQL de contagem restrito e parametrizado em `docs/cenarios/`; nenhuma contagem esperada foi inferida do banco.
 21. Scripts legados sem formulário seguro aparecem no Catálogo com comando e pré-requisitos, mas o botão Executar fica desabilitado com motivo visível; isso evita iniciar scripts que exigem PID ou dados de teste sem validação pelo painel.
+
+## Pausa e avisos (26/10/2026)
+
+22. A sentinela roda em processo separado e usa arquivos JSON atomicos locais; falha da sentinela libera os pontos de pausa para o teste seguir.
+23. RegisterHotKey usa Pause/Break, Ctrl+Shift+F9 e Ctrl+Shift+P; se o registro falhar, o gancho Win32 de teclado de baixo nivel mantem a tecla fora do Acessus.
+24. O congelamento so atinge filhos da execucao apos 1,35 s sem confirmacao de ponto seguro; avisos usam janela Tk sem ativacao e a pausa usa dialogo com foco.
