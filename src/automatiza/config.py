@@ -4,7 +4,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-ROOT = Path(__file__).resolve().parents[2]
+from automatiza.caminhos import raiz
+
+ROOT = raiz()
 
 
 def odbc_value(value: str) -> str:
