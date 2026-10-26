@@ -16,3 +16,9 @@
 11. Os tres servicos foram iniciados apos verificar destino nos INIs. Sync exigiu login administrativo previo. API esta Running, mas sem configuracao e sem importacao.
 12. `TFConfigAPI` recusou salvar porque exige pelo menos um coletor. Nao cadastrar coletor ficticio sem saber impacto em dispositivos. Conexao SQL de `RHFagundes` foi salva no Importador.
 13. Gabriel confirmou exclusao logica no Acessus e nova linha ao recriar igual. Coluna e vinculos por entidade ainda pendentes.
+
+## Autonomia da CLI e do painel (26/10/2026)
+
+14. A CLI nova usa `automatiza.nova_cli` como entrada principal e delega comandos históricos a `automatiza.cli`; preserva scripts e compatibilidade sem reescrever fluxos maduros.
+15. Dois perfis declarativos separam a cópia de auditorias (`AcessoFagundes`) da instalação principal (`Acessus_AUTOTEST_20261023`); evita banco fixado dentro da suíte.
+16. `psutil` não instala na venv Windows/Python 32 bits atual sem compilar C++; descoberta de processos usa pywin32 já instalado e serviços usam `sc.exe`, sem dependência nova.
