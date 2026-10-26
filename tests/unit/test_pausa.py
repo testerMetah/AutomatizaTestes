@@ -6,7 +6,12 @@ import time
 import pytest
 
 from automatiza.pausa import RelogioAtivo, TesteCancelado, gravar, ponto, tecla_reservada
-from automatiza.sentinela.runtime import Antirrepique, escolher_atalho
+from automatiza.sentinela.runtime import Antirrepique, escolher_atalho, _arvore_do_teste
+
+
+def test_congelamento_inclui_supervisor_e_exclui_sentinela():
+    pairs = [(10, 1), (20, 10), (30, 10), (40, 20), (50, 30)]
+    assert set(_arvore_do_teste(10, pairs, {30}, 30)) == {10, 20, 40}
 
 
 def test_atribuicao_de_atalho_alternativo():

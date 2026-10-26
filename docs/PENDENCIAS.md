@@ -8,5 +8,7 @@
 
 ## Validacao da pausa na VM (26/10/2026)
 
+- Após relato de que Pause/Break não segurava a automação, foi corrigido o congelamento do supervisor (antes apenas os filhos eram suspensos). Testes unitários e dois testes de integração desktop passaram; o teste novo confirmou que um processo ocupado para de avançar após 1,35 s e volta a avançar ao continuar. Falta repetir uma auditoria real isolada com Pause/Break, Continuar e Cancelar para confirmar o comportamento no teclado físico da VM.
+
 - Uma rodada do painel `auditorias --modulo todos --extremo` ja estava em execucao e clicava no Acessus. Duas auditorias curtas tentadas (`administracao` e `refeitorio`, filtro `Per`) disputaram o foco e nao validam aviso, realinhamento nem cancelamento. Repetir uma unica rodada curta quando o painel estiver ocioso, observando o foco, o dialogo, a tecla que nao chega ao Acessus, ausencia de teclas presas e o relatorio parcial apos cancelar.
 - O teste de integracao isolado com SendInput confirmou pausa cooperativa em 156 ms, mas a mesma sessao desktop tinha a rodada acima. Medir novamente sem concorrencia para concluir o limite de 1,5 s no Acessus real.

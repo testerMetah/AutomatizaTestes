@@ -62,3 +62,50 @@ def test_pause_break_para_laco_falso(monkeypatch, tmp_path):
         gravar(tmp_path / "final.json", {"estado": "CONCLUIDO", "resumo": "Teste", "pasta": str(tmp_path)})
         proc.terminate()
         proc.wait(timeout=5)
+
+
+@pytest.mark.desktop
+def test_congelamento_segura_processo_principal(tmp_path):
+    if os.name != "nt":
+        pytest.skip("Windows necessário")
+    contador = tmp_path / "contador.txt"
+    script = ("import pathlib,time,sys\n"
+              "p=pathlib.Path(sys.argv[1]); n=0\n"
+              "while True:\n n+=1; p.write_text(str(n)); time.sleep(.02)\n")
+    worker = subprocess.Popen([sys.executable, "-c", script, str(contador)])
+    gravar(tmp_path / "meta.json", {"nome": "Congelamento", "perfil": "teste",
+                                      "banco": "sem banco", "pid": worker.pid,
+                                      "inicio_monotonico": time.monotonic()})
+    gravar(tmp_path / "controle.json", {"estado": "RODANDO", "instante": time.time()})
+    log = (tmp_path / "sentinela-erro.log").open("w", encoding="utf-8")
+    sentinela = subprocess.Popen([sys.executable, "-m", "automatiza.sentinela.runtime", str(tmp_path)],
+                                stdout=log, stderr=subprocess.STDOUT)
+    log.close()
+    try:
+        limite = time.monotonic() + 5
+        while not (tmp_path / "sentinela.json").exists() and time.monotonic() < limite:
+            time.sleep(.03)
+        assert ler(tmp_path / "sentinela.json").get("estado") == "ATIVA"
+        gravar(tmp_path / "pedido.json", {"acao": "pausar", "origem": "teste", "instante": time.time_ns()})
+        limite = time.monotonic() + 3
+        while time.monotonic() < limite:
+            events = (tmp_path / "eventos.jsonl")
+            if events.exists() and "Pausado à força" in events.read_text(encoding="utf-8"):
+                break
+            time.sleep(.03)
+        assert "Pausado à força" in (tmp_path / "eventos.jsonl").read_text(encoding="utf-8")
+        antes = contador.read_text()
+        time.sleep(.2)
+        assert contador.read_text() == antes
+        gravar(tmp_path / "pedido.json", {"acao": "continuar", "origem": "teste", "instante": time.time_ns()})
+        limite = time.monotonic() + 2
+        while contador.read_text() == antes and time.monotonic() < limite:
+            time.sleep(.03)
+        assert contador.read_text() != antes
+    finally:
+        gravar(tmp_path / "pedido.json", {"acao": "continuar", "origem": "teste", "instante": time.time_ns()})
+        time.sleep(.1)
+        worker.terminate()
+        worker.wait(timeout=5)
+        sentinela.terminate()
+        sentinela.wait(timeout=5)

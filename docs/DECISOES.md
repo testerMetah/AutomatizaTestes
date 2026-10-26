@@ -33,3 +33,6 @@
 22. A sentinela roda em processo separado e usa arquivos JSON atomicos locais; falha da sentinela libera os pontos de pausa para o teste seguir.
 23. RegisterHotKey usa Pause/Break, Ctrl+Shift+F9 e Ctrl+Shift+P; se o registro falhar, o gancho Win32 de teclado de baixo nivel mantem a tecla fora do Acessus.
 24. O congelamento so atinge filhos da execucao apos 1,35 s sem confirmacao de ponto seguro; avisos usam janela Tk sem ativacao e a pausa usa dialogo com foco.
+# Correção da pausa durante auditorias (26/10/2026)
+
+- O congelamento de segurança inclui o processo supervisor do teste e seus filhos; o sentinela e seus filhos ficam fora da árvore suspensa. O supervisor também envia ações à interface, portanto suspender somente os filhos deixava a automação continuar após o atalho.

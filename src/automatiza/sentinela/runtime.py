@@ -52,8 +52,8 @@ class Antirrepique:
         return True
 
 
-def _filhos(pid):
-    """Enumera descendentes por Toolhelp32, sem dependência de psutil."""
+def _filhos(pid, excluir=()):
+    """Enumera a árvore do teste, excluindo o sentinela e seus descendentes."""
     if os.name != "nt":
         return []
     class ENTRY(ctypes.Structure):
@@ -75,13 +75,24 @@ def _filhos(pid):
             ok = KERNEL32.Process32Next(snap, ctypes.byref(entry))
     finally:
         KERNEL32.CloseHandle(snap)
-    found = {pid}
+    return _arvore_do_teste(pid, pairs, excluir, os.getpid())
+
+
+def _arvore_do_teste(pid, pairs, excluir=(), proprio=None):
+    """Inclui o supervisor; nunca inclui a árvore do sentinela."""
+    excluidos = set(excluir)
     for _ in range(len(pairs)):
-        newer = found | {child for child, parent in pairs if parent in found}
+        novos = excluidos | {child for child, parent in pairs if parent in excluidos}
+        if novos == excluidos:
+            break
+        excluidos = novos
+    found = {pid} - excluidos
+    for _ in range(len(pairs)):
+        newer = found | {child for child, parent in pairs if parent in found and child not in excluidos}
         if newer == found:
             break
         found = newer
-    return [x for x in found if x not in {pid, os.getpid()}]
+    return [x for x in found if x != proprio]
 
 
 def _suspender(pid, pausa):
@@ -324,7 +335,8 @@ class Sentinela:
                     self._evento("PAUSA_INICIADA", origem=self.origem, modo=self.modo,
                                  latencia_ms=round((time.monotonic()-self.inicio_pausa)*1000, 1))
             elif time.monotonic() - self.inicio_pausa >= 1.35 and self.modo == "Aguardando ponto seguro" and self.cfg["congelamento"]:
-                self.suspensos = [p for p in reversed(_filhos(self.meta["pid"])) if _suspender(p, True)]
+                # Filhos primeiro; o processo supervisor também pode enviar entradas.
+                self.suspensos = [p for p in reversed(_filhos(self.meta["pid"], {os.getpid()})) if _suspender(p, True)]
                 self.modo = "Pausado à força" if self.suspensos else "Pausa solicitada; congelamento indisponível"
                 self._evento("PAUSA_INICIADA", origem=self.origem, modo=self.modo,
                              latencia_ms=round((time.monotonic()-self.inicio_pausa)*1000, 1))
