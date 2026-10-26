@@ -67,7 +67,7 @@ def parser_cli():
 
 def require_32():
     if struct.calcsize("P") * 8 != 32:
-        raise RuntimeError("Python 32 bits obrigatório. Execute C:\\python32b\\venv32\\Scripts\\automatiza.exe.")
+        raise RuntimeError("O painel não abriu porque este Python não é 32 bits. O Acessus exige a versão 32 bits. Use Abrir-Painel.bat ou C:\\python32b\\venv32\\Scripts\\automatiza.exe.")
 
 
 def _exec(args, *, env=None):
@@ -194,12 +194,11 @@ def main(argv=None):
               "rh", "iniciar", "observar-status", "parar-observacao", "anotar", "mapear-delphi",
               "analisar", "seguir-analise", "analise-status", "parar-analise",
               "registrar-caso", "exportar-evidencias", "atualizar-referencias"}
-    if argv and argv[0] in legacy:
-        require_32()
-        return _exec(["-m", "automatiza.cli", *argv])
-    ns = parser_cli().parse_args(argv)
-    require_32()
     try:
+        require_32()
+        if argv and argv[0] in legacy:
+            return _exec(["-m", "automatiza.cli", *argv])
+        ns = parser_cli().parse_args(argv)
         return executar(ns)
     except (ValueError, RuntimeError, OSError) as exc:
         print(f"ERRO: {exc}", file=sys.stderr)

@@ -2,6 +2,10 @@
 
 ## Atualização de 26/10/2026 — CLI e painel autônomos
 
+### Ajuda contextual do painel
+
+O painel agora lê `src/automatiza/painel_ajuda.json`: textos dos ícones ⓘ, glossário, resumos de cada tela e cartões do Catálogo de Testes. O menu destaca o catálogo; filtros por tipo, risco e busca ajudam a escolher. Os cartões mostram também o que cada teste não cobre. Casos legados sem formulário seguro no site exibem o comando real e o motivo pelo qual o botão Executar está desabilitado. `tests/unit/test_painel_ajuda.py` verifica cobertura e textos sem uso. O guia em `docs/GUIA-DE-USO.md` explica como acrescentar novas chaves. Mensagens de erro do site usam linguagem direta e guardam detalhes técnicos em área recolhida.
+
 O projeto agora tem `Abrir-Painel.bat` e `automatiza.nova_cli` como entrada única. A CLI anterior permanece disponível para comandos históricos. Os perfis `profiles/auditorias.json` (`AcessoFagundes`, cópia `C:\AcessusHostFisico`) e `profiles/sequencias.json` (`Acessus_AUTOTEST_20261023`, instalação principal) substituem o banco fixado na suíte cronológica. A checagem `automatiza ambiente` valida bitness, executáveis, INIs, ODBC, SQL e serviços; `automatiza comandos` imprime o catálogo usado pelo painel.
 
 O supervisor de Auditorias/Históricos encontra PID pelo executável, abre painel/login com credenciais locais, navega, monitora processo/janela/diário, retoma tentativas concluídas após travamento e gera `RELATORIO.html`. Os dois logs permanentes mantêm formato e modo de acréscimo. O painel serve apenas em `127.0.0.1`, oferece execução ao vivo, resultados, build, perfis e confirmação de escrita com `DB_NAME()`. Ações de escrita em ciclos também verificam destino do manifesto/plano contra o perfil; o exemplo antigo `novo123` é bloqueado. O processo filho recebe o servidor e banco já validados pelo perfil.

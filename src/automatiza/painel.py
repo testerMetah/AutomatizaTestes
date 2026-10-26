@@ -20,6 +20,7 @@ from automatiza.config import ROOT
 from automatiza.perfis_teste import carregar, configuracao, validar_escrita
 
 STATIC = Path(__file__).with_name("painel.html")
+AJUDA = Path(__file__).with_name("painel_ajuda.json")
 ROOTS = (ROOT / "resultados", ROOT / "reports")
 UI_COMMANDS = {"auditorias", "robot", "sequencias", "ciclos", "testes-unitarios"}
 
@@ -57,7 +58,12 @@ class Estado:
         try:
             for line in proc.stdout:
                 with self.lock:
-                    self.lines.append(line.rstrip("\r\n"))
+                    clean = line.rstrip("\r\n")
+                    for key in ("TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"):
+                        secret = os.getenv(key)
+                        if secret:
+                            clean = clean.replace(secret, "[oculto]")
+                    self.lines.append(clean)
                     if len(self.lines) > 10000:
                         self.lines = self.lines[-10000:]
             code = proc.wait()
@@ -94,6 +100,35 @@ def _arquivo_seguro(name):
     if not path.is_file():
         raise ValueError("Arquivo não encontrado.")
     return path
+
+
+def _erro_publico(exc):
+    """Explicação curta na tela; detalhes técnicos sem segredos, sob demanda."""
+    raw = str(exc)
+    for key in ("TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"):
+        secret = os.getenv(key)
+        if secret:
+            raw = raw.replace(secret, "[oculto]")
+    lower = raw.casefold()
+    if "teste_usuario" in lower or "teste_senha" in lower:
+        message = ("Não foi possível entrar no Acessus. A conta de teste não está configurada. "
+                   "Preencha TESTE_USUARIO e TESTE_SENHA no arquivo .env local e tente novamente.")
+    elif "confirm" in lower or "escrita recusada" in lower or "banco efetivo" in lower:
+        message = ("A operação foi bloqueada para proteger o banco. O destino ou a confirmação "
+                   "não corresponde ao banco de teste. Confira o perfil, o plano e o banco mostrado no topo.")
+    elif "arquivo yaml" in lower or "arquivo não encontrado" in lower:
+        message = ("O arquivo escolhido não foi encontrado ou não é válido. Confira o caminho "
+                   "dentro de C:\\AutomatizaTestes e tente novamente.")
+    elif "execução em andamento" in lower:
+        message = ("Já existe um teste em andamento. Aguarde terminar ou abra Execução ao vivo "
+                   "e use PARAR antes de iniciar outro.")
+    elif "porta" in lower:
+        message = ("O painel não conseguiu reservar uma porta local. Feche outra janela do "
+                   "painel ou altere PAINEL_PORTA no .env e tente novamente.")
+    else:
+        message = ("A ação não terminou. Pode faltar um arquivo, uma conexão ou uma janela do Acessus. "
+                   "Confira a checagem do ambiente e tente novamente.")
+    return {"erro": message, "detalhe": f"{type(exc).__name__}: {raw}"}
 
 
 def _rodadas():
@@ -267,6 +302,8 @@ def criar_servidor(porta=8765):
                                                            "RH_USER", "RH_PASSWORD")}})
                 if url.path == "/api/catalogo":
                     return self._json(COMANDOS + POWERSHELL)
+                if url.path == "/api/ajuda":
+                    return self._json(json.loads(AJUDA.read_text(encoding="utf-8")))
                 if url.path == "/api/job":
                     return self._json(state.snapshot(int(qs.get("de", ["0"])[0])))
                 if url.path == "/api/resultados":
@@ -314,8 +351,10 @@ def criar_servidor(porta=8765):
                 if url.path == "/api/build":
                     return self._json(_build_info())
                 self._json({"erro": "Rota não encontrada."}, 404)
+            except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError):
+                return
             except Exception as exc:
-                self._json({"erro": str(exc)}, 400)
+                self._json(_erro_publico(exc), 400)
 
         def do_POST(self):
             try:
@@ -346,8 +385,10 @@ def criar_servidor(porta=8765):
                         raise ValueError("Confirme a substituição digitando COPIAR BUILD.")
                     return self._json(_copiar_build())
                 self._json({"erro": "Rota não encontrada."}, 404)
+            except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError):
+                return
             except Exception as exc:
-                self._json({"erro": str(exc)}, 400)
+                self._json(_erro_publico(exc), 400)
 
     server = ThreadingHTTPServer(("127.0.0.1", porta), Handler)
     server.daemon_threads = True
@@ -411,7 +452,7 @@ def iniciar():
         except OSError:
             continue
     else:
-        raise RuntimeError("Nenhuma porta local disponível.")
+        raise RuntimeError("As 20 portas locais tentadas estão ocupadas. Feche outra janela do painel ou defina PAINEL_PORTA no .env.")
     url = f"http://127.0.0.1:{server.server_port}/"
     print(f"Painel: {url}\nFeche esta janela para encerrar.", flush=True)
     webbrowser.open(url)

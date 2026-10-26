@@ -1,5 +1,13 @@
 # Guia de uso: escolha o que quer fazer
 
+## Ajuda dentro do painel
+
+O painel tem um ícone **ⓘ** ao lado dos campos, botões, cartões e estados. Passe o mouse para ler uma explicação rápida. Clique no ícone para manter o balão aberto. Use **Tab** para chegar ao ícone e **Enter** para abri-lo pelo teclado. Clique fora ou aperte **Esc** para fechar. O link **Ver no glossário** explica palavras técnicas.
+
+O botão fixo **Explicar esta tela** abre instruções curtas para a página atual. **Modo ajuda** mostra uma frase curta sob os campos e vem ligado na primeira visita. Sua escolha fica guardada no navegador. A página **Catálogo de Testes**, destacada no menu, mostra o alcance, o risco, o banco e os requisitos de cada teste. Comece pelo roteiro de cinco passos no topo.
+
+Para adicionar ajuda a um controle novo, acrescente uma chave em `src/automatiza/painel_ajuda.json`, dentro de `ajudas`, com título, o que é, o que acontece, quando usar, exemplo, risco e como saber se deu certo. Coloque `data-ajuda="sua.chave"` no rótulo, botão ou título em `src/automatiza/painel.html`. O teste `tests/unit/test_painel_ajuda.py` detecta chaves faltantes e textos sem uso. Cartões do Catálogo ficam no mesmo JSON, em `catalogo`; termos ficam em `glossario`.
+
 ## Quero abrir o painel
 
 Dê duplo clique em `Abrir-Painel.bat` na raiz do projeto. Ele usa o Python 32 bits de `C:\python32b\venv32`, escolhe `127.0.0.1:8765` ou a próxima porta livre e abre o navegador. O console mostra a URL; **fechar o console encerra o painel**. A automação desktop deve rodar na sua sessão Windows interativa, com a tela desbloqueada.

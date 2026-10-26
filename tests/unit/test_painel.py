@@ -28,6 +28,10 @@ def test_rotas_basicas_do_painel():
         assert any(x["comando"] == "auditorias" for x in commands)
         request = urllib.request.Request(base + "/api/resultados", headers={"X-Painel-Token": token})
         assert isinstance(json.load(urllib.request.urlopen(request, timeout=10)), list)
+        request = urllib.request.Request(base + "/api/ajuda", headers={"X-Painel-Token": token})
+        ajuda = json.load(urllib.request.urlopen(request, timeout=10))
+        assert "auditorias.extremo" in ajuda["ajudas"]
+        assert len(ajuda["catalogo"]) >= 25
     finally:
         server.shutdown()
         server.server_close()

@@ -10,6 +10,23 @@ nav{background:#183b59;padding:16px;display:flex;flex-direction:column;gap:5px}
 nav button{background:transparent;color:#fff;border:0;text-align:left;padding:12px;border-radius:6px;cursor:pointer}
 nav button:hover,nav button.active{background:#2b648c}
 main{padding:24px;max-width:1300px;width:100%;margin:auto}
+.help-icon{border:1px solid #356587;background:#e8f4ff;color:#123c60;border-radius:50%;width:25px;height:25px;padding:0;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-weight:800;cursor:pointer;margin-left:7px;vertical-align:middle;flex:none}
+.help-icon:focus-visible{outline:3px solid #ffbb36;outline-offset:2px}
+.help-short{display:block;color:#3f586b;font-size:.85rem;margin:2px 0 8px}
+body:not(.modo-ajuda) .help-short{display:none}
+#balao-ajuda{position:fixed;z-index:20;width:min(370px,calc(100vw - 20px));max-height:min(65vh,520px);overflow:auto;background:#fff;color:#172a3a;border:2px solid #175178;box-shadow:0 10px 35px #061a2d55;border-radius:10px;padding:16px}
+#balao-ajuda p{margin:8px 0;line-height:1.42}#balao-ajuda strong{color:#123c60}
+.risk-read,.risk-write{display:inline-block;padding:4px 8px;border-radius:5px;font-weight:700}.risk-read{background:#d9f2e0;color:#145329}.risk-write{background:#ffe0df;color:#86211e}
+#explicar{position:fixed;right:16px;bottom:18px;background:#075b96;color:#fff;border:0;border-radius:30px;padding:12px 16px;z-index:5;cursor:pointer}
+#modo-ajuda-label{position:fixed;right:170px;bottom:19px;background:#fff;border:1px solid #9badbb;border-radius:20px;padding:8px 10px;z-index:5}
+#painel-explica{position:fixed;right:0;top:0;bottom:0;width:min(410px,100vw);background:#fff;border-left:2px solid #175178;box-shadow:0 0 25px #061a2d44;z-index:15;padding:24px;overflow:auto}
+#painel-explica[hidden],#balao-ajuda[hidden]{display:none}
+#aviso-painel{display:none;border-left:5px solid #b02727;background:#fff0ee;padding:12px;margin-bottom:16px}#aviso-painel.show{display:block}
+.nav-feature{background:#ffe8a3!important;color:#352800!important;font-weight:800}
+.nav-item{display:flex;align-items:center}.nav-item>button:first-child{flex:1}.nav-item .help-icon{margin:0 4px;padding:0;color:#123c60}
+.bank-help{display:inline-flex;align-items:center;gap:5px;max-width:100%;vertical-align:middle}.bank-help #banco{margin-left:10px}
+.catalog-card{border-left:5px solid #175178}.catalog-card p{margin:7px 0}.catalog-actions{display:flex;flex-wrap:wrap;gap:7px}.catalog-actions button{padding:7px;border:1px solid #356587;border-radius:5px;background:white;cursor:pointer}
+.catalog-actions button:disabled{cursor:not-allowed;opacity:.65}
 section{display:none}section.active{display:block}h1{margin:0 0 20px;font-size:1.7rem}h2{font-size:1.15rem;margin-top:28px}
 .card{background:white;border:1px solid #d5dfe8;border-radius:9px;padding:18px;margin:12px 0;box-shadow:0 2px 5px #1b3a5210}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
@@ -24,92 +41,101 @@ code{background:#edf2f7;padding:2px 4px}table{width:100%;border-collapse:collaps
 a{color:#075b96}.small{font-size:.9rem;color:#4b5c6c}details{border:1px solid #d5dfe8;padding:10px;margin:8px 0;border-radius:5px}
 @media(max-width:800px){.layout{display:block}nav{flex-direction:row;overflow:auto}nav button{white-space:nowrap}main{padding:15px}#banco{display:block;margin:10px 0 0}}
 </style></head><body>
-<header><strong>Painel de Testes Acessus</strong><span id="banco">Banco efetivo: verificando…</span></header>
+<header><strong>Painel de Testes Acessus</strong><span id="banco" data-ajuda="topo.banco">Banco efetivo: verificando…</span></header>
 <div class="layout"><nav id="nav">
-<button data-page="inicio">Início</button><button data-page="auditorias">Auditorias/Históricos</button>
-<button data-page="sequencias">Sequências e Robot</button><button data-page="observacao">Observação SQL</button>
-<button data-page="conferir">Comparar consultas</button><button data-page="ciclos">Ciclos RH/SIRH</button>
-<button data-page="execucao">Execução ao vivo</button><button data-page="resultados">Resultados</button>
-<button data-page="comandos">Comandos</button><button data-page="build">Preparar nova build</button>
-<button data-page="config">Configuração</button>
-</nav><main>
-<section id="inicio"><h1>Início</h1><p>Estado do ambiente de teste e última rodada.</p>
-<button class="primary" onclick="ambiente()">Rodar checagem do ambiente</button>
-<div id="ambiente" class="grid"></div><h2>Última rodada</h2><div id="ultima" class="card">Carregando…</div></section>
-<section id="auditorias"><h1>Auditorias/Históricos</h1><p class="warn">Esta automação controla o mouse na sessão Windows. Mantenha a tela desbloqueada.</p>
-<div class="grid"><div><label>Módulo</label><select id="a-modulo"><option>acesso</option><option>refeitorio</option><option>portaria</option><option>estacionamento</option><option>escola</option><option>administracao</option><option>todos</option></select></div>
-<div><label>Perfil / banco</label><select id="a-perfil"><option>auditorias</option><option>sequencias</option></select></div></div>
-<label><input type="checkbox" id="a-extremo">Variações extremas</label>
-<div class="grid"><div><label>Filtrar nome da aba (opcional)</label><input id="a-filtro" placeholder="Ex.: Pessoa"></div>
-<div><label>Índices de históricos a pular (opcional)</label><input id="a-pular" placeholder="Ex.: 1,3"></div></div>
-<p>Comando equivalente:</p><div class="preview" id="a-preview"></div><button class="copy" onclick="copiar('a-preview')">Copiar comando</button>
-<button class="primary" data-run onclick="rodar(auditoriaDados())">Executar</button></section>
-<section id="sequencias"><h1>Sequências e Robot</h1><div class="card">
-<label>Arquivo YAML do projeto</label><input id="s-arquivo" value="tests/sequencias/checagem_leitura.yaml">
+<button data-page="inicio" data-ajuda="pagina.inicio">Início</button><button data-page="auditorias" data-ajuda="pagina.auditorias">Auditorias/Históricos</button>
+<button data-page="sequencias" data-ajuda="pagina.sequencias">Sequências e Robot</button><button data-page="observacao" data-ajuda="pagina.observacao">Observação SQL</button>
+<button data-page="conferir" data-ajuda="pagina.conferir">Comparar consultas</button><button data-page="ciclos" data-ajuda="pagina.ciclos">Ciclos RH/SIRH</button>
+<button data-page="execucao" data-ajuda="pagina.execucao">Execução ao vivo</button><button data-page="resultados" data-ajuda="pagina.resultados">Resultados</button>
+<button data-page="catalogo_testes" data-ajuda="pagina.catalogo_testes" class="nav-feature">Catálogo de Testes</button><button data-page="glossario" data-ajuda="pagina.glossario">Glossário</button>
+<button data-page="comandos" data-ajuda="pagina.comandos">Comandos</button><button data-page="build" data-ajuda="pagina.build">Preparar nova build</button>
+<button data-page="config" data-ajuda="pagina.config">Configuração</button>
+</nav><main><div id="aviso-painel" role="alert"></div>
+<section id="inicio"><h1 data-ajuda="pagina.inicio">Início</h1><p>Estado do ambiente de teste e última rodada. <span data-ajuda="estado.OK">OK</span> · <span data-ajuda="estado.ALERTA">ALERTA</span> · <span data-ajuda="estado.ERRO">ERRO</span></p>
+<button data-ajuda="inicio.checar" class="primary" onclick="ambiente()">Rodar checagem do ambiente</button>
+<div id="ambiente" data-ajuda="inicio.ambiente" class="grid"></div><h2 data-ajuda="inicio.ultima">Última rodada</h2><div id="ultima" data-ajuda="inicio.ultima" class="card">Carregando…</div></section>
+<section id="auditorias"><h1 data-ajuda="pagina.auditorias">Auditorias/Históricos</h1><p class="warn">Esta automação controla o mouse na sessão Windows. Mantenha a tela desbloqueada.</p>
+<div class="grid"><div><label data-ajuda="auditorias.modulo">Módulo</label><select id="a-modulo"><option>acesso</option><option>refeitorio</option><option>portaria</option><option>estacionamento</option><option>escola</option><option>administracao</option><option>todos</option></select></div>
+<div><label data-ajuda="auditorias.perfil">Perfil / banco</label><select id="a-perfil"><option>auditorias</option><option>sequencias</option></select></div></div>
+<label data-ajuda="auditorias.extremo"><input type="checkbox" id="a-extremo">Variações extremas</label>
+<div class="grid"><div><label data-ajuda="auditorias.filtro">Filtrar nome da aba (opcional)</label><input id="a-filtro" placeholder="Ex.: Pessoa"></div>
+<div><label data-ajuda="auditorias.pular">Índices de históricos a pular (opcional)</label><input id="a-pular" placeholder="Ex.: 1,3"></div></div>
+<p>Comando equivalente:</p><div class="preview" id="a-preview"></div><button data-ajuda="auditorias.copiar" class="copy" onclick="copiar('a-preview')">Copiar comando</button>
+<button data-ajuda="auditorias.executar" class="primary" data-run onclick="rodar(auditoriaDados())">Executar</button></section>
+<section id="sequencias"><h1 data-ajuda="pagina.sequencias">Sequências e Robot</h1><div class="card">
+<label data-ajuda="sequencias.arquivo">Arquivo YAML do projeto</label><input id="s-arquivo" value="tests/sequencias/checagem_leitura.yaml">
 <p>Ou use uma semente para gerar uma sequência:</p><div class="grid">
-<div><label>Seed</label><input id="s-seed" type="number" placeholder="4242"></div>
-<div><label>Passos</label><input id="s-passos" type="number" value="8"></div>
-<div><label>Massa</label><input id="s-massa" type="number" value="5"></div></div>
+<div><label data-ajuda="sequencias.seed">Seed</label><input id="s-seed" type="number" placeholder="4242"></div>
+<div><label data-ajuda="sequencias.passos">Passos</label><input id="s-passos" type="number" value="8"></div>
+<div><label data-ajuda="sequencias.massa">Massa</label><input id="s-massa" type="number" value="5"></div></div>
 <p class="small">Para usar a seed, apague o caminho YAML.</p><div class="preview" id="s-preview"></div>
-<button class="copy" onclick="copiar('s-preview')">Copiar</button>
-<button class="primary" data-run onclick="rodar({tipo:'sequencias',arquivo:v('s-arquivo'),seed:v('s-seed'),passos:v('s-passos'),massa:v('s-massa')})">Executar sequência</button></div>
-<div class="card"><label>Tag Robot</label><input id="r-tag" value="smoke"><div class="preview" id="r-preview">automatiza robot --tag smoke</div>
-<button class="primary" data-run onclick="rodar({tipo:'robot',tag:v('r-tag')})">Rodar Robot</button></div></section>
-<section id="observacao"><h1>Observação SQL</h1><p>Monitora o banco enquanto você testa manualmente. O processo não usa o mouse.</p>
-<div class="grid"><div><label>Duração (segundos)</label><input id="o-duracao" type="number" value="1800"></div><div><label>Intervalo (segundos)</label><input id="o-intervalo" type="number" value="15"></div></div>
-<label>Nota da ação manual</label><input id="o-nota" placeholder="O que você fez no RH?">
+<button data-ajuda="sequencias.copiar" class="copy" onclick="copiar('s-preview')">Copiar</button>
+<button data-ajuda="sequencias.executar" class="primary" data-run onclick="rodar({tipo:'sequencias',arquivo:v('s-arquivo'),seed:v('s-seed'),passos:v('s-passos'),massa:v('s-massa')})">Executar sequência</button></div>
+<div class="card"><label data-ajuda="robot.tag">Tag Robot</label><input id="r-tag" value="smoke"><div class="preview" id="r-preview">automatiza robot --tag smoke</div>
+<button data-ajuda="robot.executar" class="primary" data-run onclick="rodar({tipo:'robot',tag:v('r-tag')})">Rodar Robot</button></div></section>
+<section id="observacao"><h1 data-ajuda="pagina.observacao">Observação SQL</h1><p>Monitora o banco enquanto você testa manualmente. O processo não usa o mouse.</p>
+<div class="grid"><div><label data-ajuda="observacao.duracao">Duração (segundos)</label><input id="o-duracao" type="number" value="1800"></div><div><label data-ajuda="observacao.intervalo">Intervalo (segundos)</label><input id="o-intervalo" type="number" value="15"></div></div>
+<label data-ajuda="observacao.nota">Nota da ação manual</label><input id="o-nota" placeholder="O que você fez no RH?">
 <div class="preview" id="o-preview">automatiza observar iniciar --duracao 1800 --intervalo 15</div>
-<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'iniciar',duracao:v('o-duracao'),intervalo:v('o-intervalo')})">Iniciar</button>
-<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'anotar',nota:v('o-nota')})">Anotar</button>
-<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'status'})">Status</button>
-<button class="danger" data-run onclick="rodar({tipo:'observar',acao:'parar'})">Parar observação</button></section>
-<section id="conferir"><h1>Comparar consultas</h1>
-<label>Arquivo JSON de filtros no projeto</label><input id="c-filtros" placeholder="examples/meus-filtros.json">
-<div class="grid"><div><label>Saída antes</label><input id="c-antes" value="reports/antes.json"></div><div><label>Saída depois</label><input id="c-depois" value="reports/depois.json"></div><div><label>Diferenças</label><input id="c-diff" value="reports/diferencas.json"></div></div>
-<div class="preview" id="c-preview"></div><button class="copy" onclick="copiar('c-preview')">Copiar</button>
-<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-antes')})">Salvar antes</button>
-<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-depois')})">Salvar depois</button>
-<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'comparar',antes:v('c-antes'),depois:v('c-depois'),saida:v('c-diff')})">Comparar</button></section>
-<section id="ciclos"><h1>Ciclos RH/SIRH</h1><p class="warn">Executar e suite alteram dados. O painel valida DB_NAME() e exige confirmação do banco efetivo.</p>
-<label>Perfil</label><select id="y-perfil"><option>sequencias</option><option>auditorias</option></select>
-<label>Manifesto/plano JSON</label><input id="y-arquivo" value="examples/ciclos-sirh.json">
-<label>Saída</label><input id="y-saida" value="reports/ciclos/plano.json">
-<div class="preview" id="y-preview"></div><button class="copy" onclick="copiar('y-preview')">Copiar</button>
-<button class="primary" data-run onclick="rodar(cicloDados('planejar'))">Planejar (sem escrita)</button>
-<button class="danger" data-run onclick="cicloEscrita('executar')">Executar</button>
-<button class="danger" data-run onclick="cicloEscrita('suite')">Suite</button></section>
-<section id="execucao"><h1>Execução ao vivo</h1><p id="job-estado">Nenhuma execução iniciada.</p>
-<button class="danger" id="parar-job" onclick="pararJob()">PARAR execução e processos filhos</button>
-<pre id="console">A saída do comando aparece aqui.</pre></section>
-<section id="resultados"><h1>Resultados</h1><button class="primary" onclick="resultados()">Atualizar lista</button>
-<div id="lista-resultados"></div><h2>Logs permanentes</h2><label>Filtrar por estado/texto</label><input id="log-filtro" placeholder="ERRO_APLICACAO">
-<button class="primary" onclick="abrirLog('resultados/passo-a-passo.log')">Passo a passo</button>
-<button class="primary" onclick="abrirLog('resultados/passo-a-passo-detalhado.jsonl')">JSONL detalhado</button>
-<pre id="log-conteudo"></pre><h2>Comparar rodadas</h2><div class="grid">
-<div><label>Rodada anterior</label><select id="comp-a"></select></div>
-<div><label>Rodada atual</label><select id="comp-b"></select></div></div>
-<button class="primary" data-run onclick="rodar({tipo:'comparar-rodadas',anterior:v('comp-a'),atual:v('comp-b')})">Comparar</button></section>
-<section id="comandos"><h1>Comandos — cola didática</h1><input id="busca" placeholder="Buscar comando, tema ou descrição" oninput="mostrarComandos()"><div id="catalogo"></div></section>
-<section id="build"><h1>Preparar nova build</h1><p class="warn">Feche todos os módulos da cópia antes de substituir arquivos. O assistente cria um backup completo e valida os arquivos principais.</p>
-<div id="build-info" class="card">Carregando…</div>
-<button class="primary" onclick="buildInfo()">Atualizar comparação</button>
-<button class="danger" onclick="copiarBuild()">Fazer backup e copiar build</button></section>
-<section id="config"><h1>Configuração</h1><p>Somente perfis e caminhos não secretos podem ser editados aqui. Senhas ficam no arquivo <code>.env</code> e nunca são exibidas.</p>
-<div id="config-info"></div></section>
-</main></div>
+<button data-ajuda="observacao.iniciar" class="primary" data-run onclick="rodar({tipo:'observar',acao:'iniciar',duracao:v('o-duracao'),intervalo:v('o-intervalo')})">Iniciar</button>
+<button data-ajuda="observacao.anotar" class="primary" data-run onclick="rodar({tipo:'observar',acao:'anotar',nota:v('o-nota')})">Anotar</button>
+<button data-ajuda="observacao.status" class="primary" data-run onclick="rodar({tipo:'observar',acao:'status'})">Status</button>
+<button data-ajuda="observacao.parar" class="danger" data-run onclick="rodar({tipo:'observar',acao:'parar'})">Parar observação</button></section>
+<section id="conferir"><h1 data-ajuda="pagina.conferir">Comparar consultas</h1>
+<label data-ajuda="conferir.filtros">Arquivo JSON de filtros no projeto</label><input id="c-filtros" placeholder="examples/meus-filtros.json">
+<div class="grid"><div><label data-ajuda="conferir.antes">Saída antes</label><input id="c-antes" value="reports/antes.json"></div><div><label data-ajuda="conferir.depois">Saída depois</label><input id="c-depois" value="reports/depois.json"></div><div><label data-ajuda="conferir.diferencas">Diferenças</label><input id="c-diff" value="reports/diferencas.json"></div></div>
+<div class="preview" id="c-preview"></div><button data-ajuda="conferir.copiar" class="copy" onclick="copiar('c-preview')">Copiar</button>
+<button data-ajuda="conferir.antes" class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-antes')})">Salvar antes</button>
+<button data-ajuda="conferir.depois" class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-depois')})">Salvar depois</button>
+<button data-ajuda="conferir.comparar" class="primary" data-run onclick="rodar({tipo:'conferir',acao:'comparar',antes:v('c-antes'),depois:v('c-depois'),saida:v('c-diff')})">Comparar</button></section>
+<section id="ciclos"><h1 data-ajuda="pagina.ciclos">Ciclos RH/SIRH</h1><p class="warn">Executar e suite alteram dados. O painel valida DB_NAME() e exige confirmação do banco efetivo.</p>
+<label data-ajuda="ciclos.perfil">Perfil</label><select id="y-perfil"><option>sequencias</option><option>auditorias</option></select>
+<label data-ajuda="ciclos.arquivo">Manifesto/plano JSON</label><input id="y-arquivo" value="examples/ciclos-sirh.json">
+<label data-ajuda="ciclos.saida">Saída</label><input id="y-saida" value="reports/ciclos/plano.json">
+<div class="preview" id="y-preview"></div><button data-ajuda="ciclos.copiar" class="copy" onclick="copiar('y-preview')">Copiar</button>
+<button data-ajuda="ciclos.planejar" class="primary" data-run onclick="rodar(cicloDados('planejar'))">Planejar (sem escrita)</button>
+<button data-ajuda="ciclos.executar" class="danger" data-run onclick="cicloEscrita('executar')">Executar</button>
+<button data-ajuda="ciclos.suite" class="danger" data-run onclick="cicloEscrita('suite')">Suite</button></section>
+<section id="execucao"><h1 data-ajuda="pagina.execucao">Execução ao vivo</h1><p id="job-estado" data-ajuda="execucao.estado">Nenhuma execução iniciada.</p>
+<button data-ajuda="execucao.parar" class="danger" id="parar-job" onclick="pararJob()">PARAR execução e processos filhos</button>
+<pre id="console" data-ajuda="execucao.console">A saída do comando aparece aqui.</pre><details><summary data-ajuda="execucao.console">Ver detalhes técnicos</summary><pre id="console-tecnico"></pre></details></section>
+<section id="resultados"><h1 data-ajuda="pagina.resultados">Resultados</h1><p>Estados: <span data-ajuda="estado.CONSULTADO">CONSULTADO</span> · <span data-ajuda="estado.SEM_CONTAGEM">SEM_CONTAGEM</span> · <span data-ajuda="estado.ERRO_APLICACAO">ERRO_APLICACAO</span> · <span data-ajuda="estado.ERRO_AUTOMACAO">ERRO_AUTOMACAO</span> · <span data-ajuda="estado.PASSOU">PASSOU</span> · <span data-ajuda="estado.FALHOU">FALHOU</span> · <span data-ajuda="estado.BLOQUEADO">BLOQUEADO</span></p><button data-ajuda="resultados.atualizar" class="primary" onclick="resultados()">Atualizar lista</button>
+<div id="lista-resultados" data-ajuda="resultados.lista"></div><h2 data-ajuda="resultados.log">Logs permanentes</h2><label data-ajuda="resultados.logfiltro">Filtrar por estado/texto</label><input id="log-filtro" placeholder="ERRO_APLICACAO">
+<button data-ajuda="resultados.log" class="primary" onclick="abrirLog('resultados/passo-a-passo.log')">Passo a passo</button>
+<button data-ajuda="resultados.jsonl" class="primary" onclick="abrirLog('resultados/passo-a-passo-detalhado.jsonl')">JSONL detalhado</button>
+<pre id="log-conteudo" data-ajuda="resultados.log"></pre><h2 data-ajuda="resultados.comparar">Comparar rodadas</h2><div class="grid">
+<div><label data-ajuda="resultados.anterior">Rodada anterior</label><select id="comp-a"></select></div>
+<div><label data-ajuda="resultados.atual">Rodada atual</label><select id="comp-b"></select></div></div>
+<button data-ajuda="resultados.comparar" class="primary" data-run onclick="rodar({tipo:'comparar-rodadas',anterior:v('comp-a'),atual:v('comp-b')})">Comparar</button></section>
+<section id="catalogo_testes"><h1 data-ajuda="pagina.catalogo_testes">Catálogo de Testes</h1><div class="card"><h2 data-ajuda="pagina.catalogo_testes">Por onde começo?</h2><ol><li><a href="#" data-go="inicio">Cheque o ambiente.</a></li><li><a href="#" data-go="auditorias" data-module="refeitorio">Rode apenas Refeitório.</a></li><li><a href="#" data-go="resultados">Leia o relatório.</a></li><li><a href="#" data-go="auditorias" data-module="todos">Rode todos os módulos.</a></li><li><a href="#" data-go="auditorias" data-extreme="1">Depois tente variações extremas.</a></li></ol></div><div class="grid"><div><label data-ajuda="catalogo.tipo">Tipo</label><select id="cat-tipo"><option value="">Todos</option><option>Interface</option><option>Banco</option><option>RH</option><option>Unitário</option></select></div><div><label data-ajuda="catalogo.risco">Risco</label><select id="cat-risco"><option value="">Todos</option><option>Só leitura</option><option>Pode alterar dados</option></select></div><div><label data-ajuda="catalogo.busca">Buscar teste</label><input id="cat-busca" placeholder="Ex.: Portaria"></div></div><div id="catalogo-testes" data-ajuda="catalogo.lista"></div></section>
+<section id="glossario"><h1 data-ajuda="pagina.glossario">Glossário</h1><div id="termos" class="grid"></div></section>
+<section id="comandos"><h1 data-ajuda="pagina.comandos">Comandos — cola didática</h1><input data-ajuda="comandos.busca" id="busca" placeholder="Buscar comando, tema ou descrição" oninput="mostrarComandos()"><div id="catalogo" data-ajuda="comandos.lista"></div></section>
+<section id="build"><h1 data-ajuda="pagina.build">Preparar nova build</h1><p class="warn">Feche todos os módulos da cópia antes de substituir arquivos. O assistente cria um backup completo e valida os arquivos principais.</p>
+<div id="build-info" data-ajuda="build.info" class="card">Carregando…</div>
+<button data-ajuda="build.atualizar" class="primary" onclick="buildInfo()">Atualizar comparação</button>
+<button data-ajuda="build.copiar" class="danger" onclick="copiarBuild()">Fazer backup e copiar build</button></section>
+<section id="config"><h1 data-ajuda="pagina.config">Configuração</h1><p>Somente perfis e caminhos não secretos podem ser editados aqui. Senhas ficam no arquivo <code>.env</code> e nunca são exibidas.</p>
+<div id="config-info" data-ajuda="config.env"></div></section>
+</main></div><button id="explicar" data-ajuda="ajuda.explicar" type="button">Explicar esta tela</button><label id="modo-ajuda-label" data-ajuda="ajuda.modo"><input type="checkbox" id="modo-ajuda" checked> Modo ajuda</label><aside id="painel-explica" aria-label="Explicação desta tela" hidden><button type="button" id="fechar-explica" data-ajuda="ajuda.fechar">Fechar</button><h2 data-ajuda="ajuda.explicar">Como usar esta tela</h2><ol id="explicacao"></ol></aside><div id="balao-ajuda" role="tooltip" hidden></div>
 <script>
 const TOKEN='__TOKEN__'; const $=id=>document.getElementById(id); const v=id=>$(id).value.trim();
-let linhas=0,ocupado=false,catalogo=[],perfis=[];
+let linhas=0,ocupado=false,catalogo=[],perfis=[],conteudoAjuda=null,paginaAtual='inicio',balaoFixo=false,iconeAtual=null,falhaAvisada=0;
 async function api(path,body){
  const opts={headers:{'X-Painel-Token':TOKEN}};
  if(body!==undefined){opts.method='POST';opts.headers['Content-Type']='application/json';opts.body=JSON.stringify(body)}
  const res=await fetch(path,opts), data=await res.json();
- if(!res.ok)throw Error(data.erro||'Falha no painel'); return data;
+ if(!res.ok){let erro=Error(data.erro||'A ação falhou. Confira a checagem do ambiente e tente novamente.');erro.detalhe=data.detalhe||'';throw erro} return data;
 }
-function avisar(err){alert(err.message||String(err))}
+function avisar(err){let caixa=$('aviso-painel');caixa.replaceChildren();
+ let mensagem=err instanceof TypeError?'O painel não respondeu. A janela do servidor pode ter sido fechada. Abra Abrir-Painel.bat novamente e atualize esta página.':err.message||'A ação não terminou. Confira o ambiente e tente de novo.';
+ let titulo=document.createElement('strong');titulo.textContent=mensagem;caixa.append(titulo);
+ let detalhes=document.createElement('details'),resumo=document.createElement('summary');resumo.textContent='Ver detalhes técnicos';detalhes.append(resumo);
+ let pre=document.createElement('pre');pre.textContent=err.detalhe||String(err);detalhes.append(pre);caixa.append(detalhes);caixa.classList.add('show');window.scrollTo({top:0,behavior:'smooth'})}
 function mostrar(page){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id===page));
  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
- if(page==='resultados')resultados(); if(page==='build')buildInfo(); if(page==='config')configInfo()}
+ paginaAtual=page;fecharBalao();$('painel-explica').hidden=true;
+ if(page==='resultados')resultados(); if(page==='build')buildInfo(); if(page==='config')configInfo();
+ if(page==='catalogo_testes')mostrarCatalogoTestes();if(page==='glossario')mostrarGlossario()}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>mostrar(b.dataset.page));
 function comando(text,id){$(id).textContent=text}
 function auditoriaDados(){return {tipo:'auditorias',modulo:v('a-modulo'),perfil:v('a-perfil'),extremo:$('a-extremo').checked,filtro:v('a-filtro'),pular:v('a-pular')}}
@@ -125,30 +151,61 @@ function atualizarPreviews(){
 }
 document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',atualizarPreviews));
 async function copiar(id){await navigator.clipboard.writeText($(id).textContent)}
-async function rodar(data){try{let job=await api('/api/iniciar',data);linhas=0;mostrar('execucao');$('console').textContent='';await atualizarJob()}catch(e){avisar(e)}}
-async function atualizarJob(){try{let x=await api('/api/job?de='+linhas); if(x.linhas.length){$('console').textContent+=x.linhas.join('\n')+'\n';$('console').scrollTop=$('console').scrollHeight}linhas=x.total;
+async function rodar(data){try{let job=await api('/api/iniciar',data);linhas=0;mostrar('execucao');$('console').textContent='';$('console-tecnico').textContent='';await atualizarJob()}catch(e){avisar(e)}}
+function linhaTecnica(line){return /^\s*(Traceback|File "|at |\^|[A-Za-z_.]+(?:Error|Exception):)/.test(line)||line.includes('site-packages\\')}
+async function atualizarJob(){try{let x=await api('/api/job?de='+linhas); if(x.linhas.length){let normal=[],technical=[];for(let line of x.linhas)(linhaTecnica(line)?technical:normal).push(line);if(normal.length)$('console').textContent+=normal.join('\n')+'\n';if(technical.length){$('console-tecnico').textContent+=technical.join('\n')+'\n';$('console').textContent+='Houve um erro técnico. Abra “Ver detalhes técnicos” ou o relatório.\n'}$('console').scrollTop=$('console').scrollHeight}linhas=x.total;
  let job=x.job;ocupado=!!job&&job.estado==='rodando';$('job-estado').textContent=job?job.comando+' — '+job.estado:'Nenhuma execução iniciada.';
- document.querySelectorAll('[data-run]').forEach(b=>b.disabled=ocupado);$('parar-job').disabled=!ocupado}catch(e){$('job-estado').textContent=e.message}}
+ document.querySelectorAll('[data-run]').forEach(b=>b.disabled=ocupado);$('parar-job').disabled=!ocupado;
+ if(job&&job.estado==='falhou'&&falhaAvisada!==job.id){falhaAvisada=job.id;avisar({message:'O teste terminou com falha. Pode haver erro no Acessus, na conexão ou na automação. Abra Resultados e o relatório da rodada para ver a causa.',detalhe:x.linhas.slice(-10).join('\n')})}
+ }catch(e){avisar(e)}}
 async function pararJob(){try{await api('/api/parar',{});await atualizarJob()}catch(e){avisar(e)}}
-async function ambiente(){try{let items=await api('/api/ambiente');$('ambiente').innerHTML=items.map(x=>'<div class="card"><strong>'+esc(x.estado)+'</strong> · '+esc(x.item)+'<p>'+esc(x.detalhe)+'</p></div>').join('');
- let sql=items.find(x=>x.item==='auditorias: SQL'&&x.estado==='OK');if(sql)$('banco').textContent='Banco efetivo: '+sql.detalhe}catch(e){$('ambiente').textContent=e.message}}
-async function resultados(){try{let rows=await api('/api/resultados');$('ultima').textContent=rows[0]?rows[0].pasta+' — '+JSON.stringify(rows[0].resumo):'Nenhuma rodada';
- $('lista-resultados').innerHTML=rows.map(x=>'<div class="card"><strong>'+esc(x.pasta)+'</strong> · '+esc(x.data)+'<p>'+esc(JSON.stringify(x.resumo))+'</p>'+(x.relatorio?'<a target="_blank" href="/evidencia/'+encodeURI(x.relatorio)+'">Abrir relatório</a>':'')+' <button class="copy" data-folder="'+esc(x.pasta)+'">Arquivos e screenshots</button><div id="files-'+esc(x.pasta.replaceAll('/','-'))+'"></div></div>').join('');
+function chaveCard(item){if(item==='Python')return 'card.python';if(item==='Driver ODBC')return 'card.odbc';if(item.includes('executável'))return 'card.executavel';if(item.includes('.ini'))return 'card.inis';if(item.startsWith('serviço'))return 'card.servicos';if(item==='sql_origem: SQL')return 'card.origem';if(item.includes('SQL'))return 'card.sql';return 'inicio.ambiente'}
+async function ambiente(){try{let items=await api('/api/ambiente');$('ambiente').innerHTML=items.map(x=>'<div class="card" data-ajuda="'+chaveCard(x.item)+'"><strong data-ajuda="estado.'+esc(x.estado)+'">'+esc(x.estado)+'</strong> · '+esc(x.item)+'<p>'+esc(x.detalhe)+'</p></div>').join('');decorarAjuda();
+ let sql=items.find(x=>x.item==='auditorias: SQL'&&x.estado==='OK');if(sql)$('banco').textContent='Banco efetivo: '+sql.detalhe}catch(e){$('ambiente').textContent='Checagem indisponível. Veja o aviso acima.';avisar(e)}}
+function resumoHtml(resumo){return Object.entries(resumo||{}).map(([mod,contagens])=>'<p><strong>'+esc(mod)+'</strong>: '+Object.entries(contagens).map(([estado,n])=>{let chave=estado.replace(/^ORACULO_/,'');return '<span data-ajuda="estado.'+esc(chave)+'">'+esc(estado)+': '+esc(n)+'</span>'}).join(' · ')+'</p>').join('')}
+async function resultados(){try{let rows=await api('/api/resultados');$('ultima').innerHTML=rows[0]?'<strong>'+esc(rows[0].pasta)+'</strong>'+resumoHtml(rows[0].resumo):'Nenhuma rodada';
+ $('lista-resultados').innerHTML='<table><thead><tr><th data-ajuda="coluna.resultados.data">Data</th><th data-ajuda="coluna.resultados.modulo">Rodada / módulo</th><th data-ajuda="coluna.resultados.resumo">Resumo</th><th data-ajuda="coluna.resultados.relatorio">Relatório</th><th data-ajuda="coluna.resultados.arquivos">Arquivos</th></tr></thead><tbody>'+rows.map(x=>'<tr><td>'+esc(x.data)+'</td><td>'+esc(x.pasta)+'</td><td>'+resumoHtml(x.resumo)+'</td><td>'+(x.relatorio?'<a data-ajuda="resultados.relatorio" target="_blank" href="/evidencia/'+encodeURI(x.relatorio)+'">Abrir relatório</a>':'Sem relatório')+'</td><td><button class="copy" data-ajuda="resultados.arquivos" data-folder="'+esc(x.pasta)+'">Arquivos e screenshots</button><div id="files-'+esc(x.pasta.replaceAll('/','-'))+'"></div></td></tr>').join('')+'</tbody></table>';decorarAjuda();
  document.querySelectorAll('[data-folder]').forEach(b=>b.onclick=()=>listarArquivos(b.dataset.folder));
  let options=rows.filter(x=>x.pasta.startsWith('resultados/')).map(x=>'<option>'+esc(x.pasta)+'</option>').join('');$('comp-a').innerHTML=options;$('comp-b').innerHTML=options}catch(e){avisar(e)}}
 async function listarArquivos(pasta){try{let files=await api('/api/arquivos?pasta='+encodeURIComponent(pasta));let id='files-'+pasta.replaceAll('/','-');$(id).innerHTML=files.map(x=>'<p><a target="_blank" href="/evidencia/'+encodeURI(x)+'">'+esc(x)+'</a></p>').join('')}catch(e){avisar(e)}}
 async function abrirLog(arquivo){try{let x=await api('/api/log?arquivo='+encodeURIComponent(arquivo)+'&estado='+encodeURIComponent(v('log-filtro')));$('log-conteudo').textContent=x.linhas.join('\n')}catch(e){avisar(e)}}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function mostrarComandos(){let q=v('busca').toLowerCase();$('catalogo').innerHTML=catalogo.filter(x=>JSON.stringify(x).toLowerCase().includes(q)).map(x=>'<div class="card"><small>'+esc(x.tema)+'</small><h2>'+esc(x.comando)+'</h2><p>'+esc(x.descricao)+'</p><p><strong>Opções:</strong> '+esc(x.opcoes)+'</p><div class="preview">'+esc(x.exemplo)+'</div><button class="copy" data-cmd="'+esc(x.exemplo)+'">Copiar</button></div>').join('');document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.dataset.cmd))}
-async function buildInfo(){try{let x=await api('/api/build');$('build-info').innerHTML='<p>Origem: '+esc(x.origem)+' — versão '+esc(x.versao_origem)+'</p><p>Destino: '+esc(x.destino)+' — versão '+esc(x.versao_destino)+'</p><p>product.key: origem '+x.product_key_origem+', destino '+x.product_key_destino+'</p><p>INIs no destino: '+esc(JSON.stringify(x.inis_destino))+'</p>'}catch(e){$('build-info').textContent=e.message}}
+function mostrarComandos(){let q=v('busca').toLowerCase();$('catalogo').innerHTML=catalogo.filter(x=>JSON.stringify(x).toLowerCase().includes(q)).map(x=>'<div class="card" data-ajuda="comandos.lista"><small>'+esc(x.tema)+'</small><h2 data-ajuda="comandos.lista">'+esc(x.comando)+'</h2><p>'+esc(x.descricao)+'</p><p><strong>Opções:</strong> '+esc(x.opcoes)+'</p><div class="preview">'+esc(x.exemplo)+'</div><button class="copy" data-ajuda="comandos.copiar" data-cmd="'+esc(x.exemplo)+'">Copiar</button></div>').join('');document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.dataset.cmd));decorarAjuda()}
+async function buildInfo(){try{let x=await api('/api/build');$('build-info').innerHTML='<p>Origem: '+esc(x.origem)+' — versão '+esc(x.versao_origem)+'</p><p>Destino: '+esc(x.destino)+' — versão '+esc(x.versao_destino)+'</p><p>product.key: origem '+x.product_key_origem+', destino '+x.product_key_destino+'</p><p>INIs no destino: '+esc(JSON.stringify(x.inis_destino))+'</p>'}catch(e){$('build-info').textContent='Não foi possível comparar as versões. Veja o aviso acima.';avisar(e)}}
 async function copiarBuild(){let conf=prompt('A cópia substituirá arquivos no destino após backup. Digite COPIAR BUILD:');if(conf!=='COPIAR BUILD')return;
  try{let x=await api('/api/build',{confirmacao:conf});alert('Backup: '+x.backup+'\nVersão nova: '+x.resultado.versao_destino);buildInfo()}catch(e){avisar(e)}}
-async function configInfo(){try{let x=await api('/api/config');$('config-info').innerHTML=x.perfis.map(p=>'<div class="card"><h2>'+esc(p.nome)+'</h2><p>Banco: '+esc(p.banco)+' · Teste confirmado: '+p.confirmado_como_teste+'</p><label>Pasta executáveis</label><input id="cfg-'+p.nome+'-pasta" value="'+esc(p.pasta_executaveis)+'"><label>Servidor</label><input id="cfg-'+p.nome+'-server" value="'+esc(p.servidor)+'"><label>Banco</label><input id="cfg-'+p.nome+'-banco" value="'+esc(p.banco)+'"><button class="primary" data-profile="'+esc(p.nome)+'">Salvar perfil</button></div>').join('')+'<div class="card"><h2>.env (segredos mascarados)</h2><pre>'+esc(JSON.stringify(x.env,null,2))+'</pre><p>Edite credenciais somente no arquivo .env local.</p></div>';document.querySelectorAll('[data-profile]').forEach(b=>b.onclick=()=>salvarPerfil(b.dataset.profile))}catch(e){avisar(e)}}
+async function configInfo(){try{let x=await api('/api/config');$('config-info').innerHTML=x.perfis.map(p=>'<div class="card" data-ajuda="pagina.config"><h2 data-ajuda="pagina.config">'+esc(p.nome)+'</h2><p data-ajuda="topo.banco">Banco: '+esc(p.banco)+' · Teste confirmado: '+p.confirmado_como_teste+'</p><label data-ajuda="config.pasta">Pasta executáveis</label><input id="cfg-'+p.nome+'-pasta" value="'+esc(p.pasta_executaveis)+'"><label data-ajuda="config.servidor">Servidor</label><input id="cfg-'+p.nome+'-server" value="'+esc(p.servidor)+'"><label data-ajuda="config.banco">Banco</label><input id="cfg-'+p.nome+'-banco" value="'+esc(p.banco)+'"><button class="primary" data-ajuda="config.salvar" data-profile="'+esc(p.nome)+'">Salvar perfil</button></div>').join('')+'<div class="card" data-ajuda="config.env"><h2 data-ajuda="config.env">.env (segredos mascarados)</h2><pre>'+esc(JSON.stringify(x.env,null,2))+'</pre><p>Edite credenciais somente no arquivo .env local.</p></div>';document.querySelectorAll('[data-profile]').forEach(b=>b.onclick=()=>salvarPerfil(b.dataset.profile));decorarAjuda()}catch(e){avisar(e)}}
 async function salvarPerfil(nome){try{let x=await api('/api/perfil',{nome,pasta_executaveis:v('cfg-'+nome+'-pasta'),servidor:v('cfg-'+nome+'-server'),banco:v('cfg-'+nome+'-banco')});alert('Salvo. Banco de teste confirmado: '+x.confirmado_como_teste);configInfo()}catch(e){avisar(e)}}
 async function cicloEscrita(acao){try{let p=await api('/api/banco?perfil='+encodeURIComponent(v('y-perfil')));
  let banco=prompt('Banco EFETIVO: '+p.servidor+'/'+p.banco+'. Confirme digitando o nome do banco:');
  if(banco!==p.banco)return;let frase=prompt('Digite: Entendo que isto altera dados');if(frase!=='Entendo que isto altera dados')return;
  await rodar({...cicloDados(acao),confirmacao:frase,banco_confirmado:banco})}catch(e){avisar(e)}}
-async function iniciar(){try{perfis=await api('/api/perfis');catalogo=await api('/api/catalogo');mostrarComandos();atualizarPreviews();mostrar('inicio');await Promise.all([ambiente(),resultados()]);setInterval(atualizarJob,1000)}catch(e){avisar(e)}}
+function posicionarBalao(icone){let box=$('balao-ajuda'),r=icone.getBoundingClientRect();box.style.left=Math.max(10,Math.min(r.left,innerWidth-box.offsetWidth-10))+'px';let below=r.bottom+8,above=r.top-box.offsetHeight-8;box.style.top=(below+box.offsetHeight<=innerHeight-8?below:Math.max(8,above))+'px'}
+function fecharBalao(){if(iconeAtual){iconeAtual.setAttribute('aria-expanded','false');iconeAtual.removeAttribute('aria-describedby')}balaoFixo=false;iconeAtual=null;$('balao-ajuda').hidden=true}
+function abrirBalao(icone,fixar=false){if(!conteudoAjuda)return;let data=conteudoAjuda.ajudas[icone.dataset.helpKey];if(!data)return;
+ let box=$('balao-ajuda');box.replaceChildren();let title=document.createElement('h2');title.textContent=data.titulo;box.append(title);
+ for(let [label,key] of [['O que é','o_que_e'],['O que acontece','o_que_acontece'],['Quando usar','quando_usar'],['Valores aceitos / exemplo','exemplo'],['Cuidado','cuidado'],['Como saber se deu certo','como_saber']])if(data[key]){let p=document.createElement('p'),b=document.createElement('strong');b.textContent=label+': ';p.append(b,document.createTextNode(data[key]));box.append(p)}
+ let risk=document.createElement('span');risk.className=data.risco==='Pode alterar dados'?'risk-write':'risk-read';risk.textContent=data.risco;box.append(risk);
+ let link=document.createElement('p'),a=document.createElement('a');a.href='#';a.textContent='Ver no glossário';a.onclick=e=>{e.preventDefault();fecharBalao();mostrar('glossario');let term=data.glossario;if(term)document.getElementById('termo-'+slug(term))?.scrollIntoView({block:'center'})};link.append(a);box.append(link);
+ box.hidden=false;iconeAtual=icone;balaoFixo=fixar;box.id='balao-ajuda';icone.setAttribute('aria-expanded','true');icone.setAttribute('aria-describedby','balao-ajuda');requestAnimationFrame(()=>posicionarBalao(icone))}
+function slug(text){return String(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-')}
+function decorarAjuda(){if(!conteudoAjuda)return;document.querySelectorAll('[data-ajuda]').forEach(el=>{if(el.dataset.ajudaReady)return;let key=el.dataset.ajuda;if(!conteudoAjuda.ajudas[key]){console.error('Ajuda ausente: '+key);return}
+ el.dataset.ajudaReady='1';let icon=document.createElement('button');icon.type='button';icon.className='help-icon';icon.textContent='ⓘ';icon.dataset.helpKey=key;icon.setAttribute('aria-label','Ajuda: '+conteudoAjuda.ajudas[key].titulo);icon.setAttribute('aria-haspopup','true');icon.setAttribute('aria-expanded','false');
+ icon.onmouseenter=()=>{if(!balaoFixo)abrirBalao(icon)};icon.onmouseleave=()=>{if(!balaoFixo)fecharBalao()};icon.onfocus=()=>{if(!balaoFixo)abrirBalao(icon)};icon.onclick=e=>{e.stopPropagation();if(balaoFixo&&iconeAtual===icon)fecharBalao();else abrirBalao(icon,true)};
+ if(el.matches('nav button')){let wrap=document.createElement('div');wrap.className='nav-item';el.parentNode.insertBefore(wrap,el);wrap.append(el,icon)}else if(el.id==='banco'){let wrap=document.createElement('span');wrap.className='bank-help';el.parentNode.insertBefore(wrap,el);wrap.append(el,icon)}else if(el.matches('label,h1,h2'))el.append(icon);else if(el.matches('.card,th,td,#ambiente,#lista-resultados,#catalogo-testes,#config-info,#termos'))el.prepend(icon);else el.insertAdjacentElement('afterend',icon);
+ if(el.matches('label')&&el.querySelector('input[type=checkbox]')===null){let hint=document.createElement('small');hint.className='help-short';hint.textContent=conteudoAjuda.ajudas[key].o_que_e;el.insertAdjacentElement('afterend',hint)}
+ })}
+function mostrarGlossario(){if(!conteudoAjuda)return;$('termos').innerHTML=Object.entries(conteudoAjuda.glossario).map(([term,desc])=>'<div class="card" id="termo-'+slug(term)+'" data-ajuda="glossario.'+esc(term)+'"><h2 data-ajuda="glossario.'+esc(term)+'">'+esc(term)+'</h2><p>'+esc(desc)+'</p></div>').join('');decorarAjuda()}
+function mostrarCatalogoTestes(){if(!conteudoAjuda)return;let q=v('cat-busca').toLocaleLowerCase('pt-BR'),tipo=v('cat-tipo'),risco=v('cat-risco');
+ $('catalogo-testes').innerHTML=conteudoAjuda.catalogo.filter(x=>(!tipo||x.tipo===tipo)&&(!risco||x.risco===risco)&&JSON.stringify(x).toLocaleLowerCase('pt-BR').includes(q)).map(x=>{let manual=x.destino==='comandos';return '<article class="card catalog-card" data-ajuda="catalogo.lista"><h2 data-ajuda="catalogo.lista">'+esc(x.nome)+'</h2><p><strong>Serve para:</strong> '+esc(x.serve)+'</p><p><strong>Testa de verdade:</strong> '+esc(x.testa)+'</p><p><strong>Não testa:</strong> '+esc(x.nao_testa)+'</p><p><span class="'+(x.risco==='Pode alterar dados'?'risk-write':'risk-read')+'" data-ajuda="coluna.catalogo.risco">'+esc(x.risco)+'</span> · <strong>Banco/perfil:</strong> '+esc(x.banco)+'</p><p><strong>Antes de rodar:</strong> '+esc(x.antes)+'</p><p><strong>Duração:</strong> '+esc(x.tempo)+'</p><p><strong>Resultado:</strong> '+esc(x.interpreta)+'</p><div class="catalog-actions"><button data-ajuda="catalogo.executar" data-catalog-open="'+esc(x.id)+'" '+(manual?'disabled title="Este teste ainda não tem formulário no painel; veja o comando equivalente."':'')+'>Executar</button><button data-ajuda="catalogo.comando" data-catalog-command="'+esc(x.id)+'">Ver comando equivalente</button><button data-ajuda="catalogo.resultados" data-catalog-results="'+esc(x.id)+'">Ver resultados anteriores</button></div>'+(manual?'<p class="small">Sem formulário no painel: abra o comando equivalente e siga as instruções do script.</p>':'')+'<pre class="catalog-command" id="cmd-'+esc(x.id)+'" hidden>'+esc(x.comando)+'</pre></article>'}).join('');
+ document.querySelectorAll('[data-catalog-open]').forEach(b=>b.onclick=()=>abrirTeste(b.dataset.catalogOpen));document.querySelectorAll('[data-catalog-command]').forEach(b=>b.onclick=()=>{$('cmd-'+b.dataset.catalogCommand).hidden=!$('cmd-'+b.dataset.catalogCommand).hidden});document.querySelectorAll('[data-catalog-results]').forEach(b=>b.onclick=()=>mostrar('resultados'));decorarAjuda()}
+function abrirTeste(id){let x=conteudoAjuda.catalogo.find(c=>c.id===id);if(!x)return;if(id==='unitarios'){rodar({tipo:'testes-unitarios'});return}if(x.modulo){$('a-modulo').value=x.modulo;$('a-extremo').checked=!!x.extremo}if(id==='seed'){$('s-arquivo').value='';$('s-seed').value='4242'}if(id==='yaml')$('s-arquivo').value='tests/sequencias/checagem_leitura.yaml';if(id==='ciclo-exec'||id==='ciclo-suite')avisar({message:'Este ciclo altera dados. Revise o plano e confirme o banco de teste antes de executar no formulário.',detalhe:'O exemplo antigo do projeto aponta para outro banco e será bloqueado.'});atualizarPreviews();mostrar(x.destino)}
+async function iniciarAjuda(){try{conteudoAjuda=await api('/api/ajuda');let saved=localStorage.getItem('painel-modo-ajuda');$('modo-ajuda').checked=saved===null||saved==='1';document.body.classList.toggle('modo-ajuda',$('modo-ajuda').checked);$('modo-ajuda').onchange=()=>{localStorage.setItem('painel-modo-ajuda',$('modo-ajuda').checked?'1':'0');document.body.classList.toggle('modo-ajuda',$('modo-ajuda').checked)};
+ $('explicar').onclick=()=>{let target=$('painel-explica');$('explicacao').replaceChildren();for(let line of conteudoAjuda.telas[paginaAtual]||[]){let li=document.createElement('li');li.textContent=line;$('explicacao').append(li)}target.hidden=!target.hidden};$('fechar-explica').onclick=()=>$('painel-explica').hidden=true;
+ document.querySelectorAll('[data-go]').forEach(a=>a.onclick=e=>{e.preventDefault();if(a.dataset.module)$('a-modulo').value=a.dataset.module;if(a.dataset.extreme)$('a-extremo').checked=true;atualizarPreviews();mostrar(a.dataset.go)});
+ for(let id of ['cat-tipo','cat-risco','cat-busca'])$(id).addEventListener('input',mostrarCatalogoTestes);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){fecharBalao();$('painel-explica').hidden=true}});document.addEventListener('click',e=>{if(!e.target.closest('.help-icon,#balao-ajuda'))fecharBalao()});addEventListener('resize',()=>{if(iconeAtual)posicionarBalao(iconeAtual)});addEventListener('scroll',()=>{if(iconeAtual)posicionarBalao(iconeAtual)},true);
+ decorarAjuda()}catch(e){avisar(e)}}
+async function iniciar(){try{await iniciarAjuda();perfis=await api('/api/perfis');catalogo=await api('/api/catalogo');mostrarComandos();atualizarPreviews();mostrar('inicio');await Promise.all([ambiente(),resultados()]);setInterval(atualizarJob,1000)}catch(e){avisar(e)}}
 iniciar();
 </script></body></html>

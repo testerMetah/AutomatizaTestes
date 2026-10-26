@@ -26,3 +26,4 @@
 18. O comando `observar iniciar` cria um processo em segundo plano; assim a coleta SQL não impede iniciar testes de interface pelo painel.
 19. Ao editar um perfil e mudar o banco, a marca `confirmado_como_teste` vira falsa; a escrita só volta após confirmação explícita no arquivo de configuração.
 20. Contagens de históricos permanecem exploratórias até existir regra `CONFIRMADA` com SQL de contagem restrito e parametrizado em `docs/cenarios/`; nenhuma contagem esperada foi inferida do banco.
+21. Scripts legados sem formulário seguro aparecem no Catálogo com comando e pré-requisitos, mas o botão Executar fica desabilitado com motivo visível; isso evita iniciar scripts que exigem PID ou dados de teste sem validação pelo painel.
