@@ -174,6 +174,17 @@ def run(pid, module, output, skip):
     extreme = os.environ.get("AUDITORIA_EXTREME") == "1"
     histories = tabs(form.handle, upper=True) or [None]
     datafile = output / "tentativas.jsonl"
+    completed = set()
+    if os.environ.get("AUDITORIA_RESUME") == "1" and datafile.exists():
+        with datafile.open(encoding="utf-8") as previous:
+            for line in previous:
+                try:
+                    old = json.loads(line)
+                    if old.get("modulo") == module:
+                        completed.add((old["indice_historico"], old["filtro"],
+                                       old["subcampo"], old["tentativa"]))
+                except (ValueError, KeyError, TypeError):
+                    continue
     executavel, versao = executavel_e_versao(pid)
     pasta_resultados = Path(__file__).resolve().parents[1] / "resultados"
     contexto = {
@@ -243,6 +254,8 @@ def run(pid, module, output, skip):
                     continue
                 for subindex, kind, values in fields:
                     for variant, value in enumerate(values):
+                        if (hidx, field_name, subindex, variant + 1) in completed:
+                            continue
                         started = datetime.now().astimezone().isoformat(timespec="milliseconds")
                         record = {"modulo": module, "historico": history, "filtro": field_name,
                                   "subcampo": subindex, "tentativa": variant + 1,
@@ -320,7 +333,11 @@ def run(pid, module, output, skip):
                             emit("Histórico interrompido após Access violation; demais filtros exigem reinicialização do módulo")
                             break
             emit_history(f"Concluiu histórico; bloqueado por exceção: {history_broken}")
+            if history_broken and os.environ.get("AUDITORIA_STOP_ON_AV") == "1":
+                journal.acao(module, history, "(supervisor)", "Access violation: solicitou reinício e retomada")
+                return 75
 
 
 if __name__ == "__main__":
-    run(int(sys.argv[1]), sys.argv[2], Path(sys.argv[3]), {int(s) for s in sys.argv[4:]})
+    raise SystemExit(run(int(sys.argv[1]), sys.argv[2], Path(sys.argv[3]),
+                         {int(s) for s in sys.argv[4:]}) or 0)

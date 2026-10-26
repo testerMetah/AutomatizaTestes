@@ -1,0 +1,192 @@
+"""Abre a cópia, executa a suíte e retoma tentativas após falha da UI."""
+import json
+import os
+import subprocess
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+
+from automatiza.config import ROOT
+from automatiza.perfis_teste import carregar
+from automatiza.processos_auditorias import descobrir, validar_pid
+from automatiza.seletores_auditorias import (BOTAO_LOGIN, CLASSE_AUDITORIA,
+    CLASSE_JANELA_PRINCIPAL, CLASSE_LOGIN, CLASSE_PAINEL, MENU_AUDITORIAS,
+    MENU_CONSULTAS, MENU_MODULOS, MODULOS, PAINEL)
+
+
+def _esperar(func, timeout, descricao):
+    from pywinauto.timings import wait_until
+    try:
+        wait_until(timeout, 0.3, func)
+    except Exception as exc:
+        raise RuntimeError(f"Tempo esgotado aguardando {descricao} ({timeout}s).") from exc
+
+
+def _janela(pid, classe):
+    from pywinauto import Desktop
+    windows = [w for w in Desktop(backend="win32").windows(process=pid)
+               if classe in w.class_name() and w.is_visible()]
+    return windows[0] if len(windows) == 1 else None
+
+
+def _menu(parent, top, prefix):
+    from pywinauto import Desktop
+    parent.set_focus()
+    menu = Desktop(backend="uia").window(handle=parent.handle)
+    def matches():
+        return [i for i in menu.descendants(control_type="MenuItem")
+                if i.is_visible() and i.window_text().startswith(prefix)]
+    items = matches()
+    if not items:
+        menu.child_window(title=top, control_type="MenuItem", visible_only=True).click_input()
+        items = matches()
+    if len(items) != 1:
+        raise RuntimeError(f"Menu {prefix!r}: encontrados {len(items)} itens; remapeie a tela.")
+    items[0].click_input()
+
+
+def abrir(modulo, pasta, *, pid=None, timeout=45):
+    """Reutiliza módulo correto ou abre pelo painel da mesma instalação."""
+    from pywinauto import Desktop
+    exe = pasta / MODULOS[modulo][0]
+    if not exe.is_file():
+        raise ValueError(f"Executável ausente: {exe}")
+    if pid is not None:
+        validar_pid(pid, exe)
+    else:
+        pid = descobrir(exe)
+    if pid is None:
+        panel_exe = pasta / PAINEL
+        if not panel_exe.is_file():
+            raise ValueError(f"Painel ausente: {panel_exe}")
+        panel_pid = descobrir(panel_exe)
+        if panel_pid is None:
+            subprocess.Popen([str(panel_exe)], cwd=pasta)
+            _esperar(lambda: descobrir(panel_exe) is not None, timeout, "processo do painel")
+            panel_pid = descobrir(panel_exe)
+        panel = _janela(panel_pid, CLASSE_PAINEL)
+        if panel is None:
+            login = _janela(panel_pid, CLASSE_LOGIN)
+            _esperar(lambda: _janela(panel_pid, CLASSE_LOGIN) or _janela(panel_pid, CLASSE_PAINEL),
+                     timeout, "login ou painel")
+            login = _janela(panel_pid, CLASSE_LOGIN)
+            if login:
+                user = os.getenv("TESTE_USUARIO")
+                password = os.getenv("TESTE_SENHA")
+                if not user or not password:
+                    raise ValueError("Login automático requer TESTE_USUARIO e TESTE_SENHA no .env.")
+                edits = sorted([x for x in login.descendants() if x.class_name() == "TEdit" and x.is_visible()],
+                               key=lambda x: x.rectangle().top)
+                if len(edits) != 2:
+                    raise RuntimeError(f"Login: encontrados {len(edits)} campos TEdit; remapeie.")
+                edits[0].set_edit_text(user)
+                edits[1].set_edit_text(password)
+                buttons = [x for x in login.descendants() if x.window_text() == BOTAO_LOGIN]
+                if len(buttons) != 1:
+                    raise RuntimeError("Botão Login não identificado; remapeie.")
+                buttons[0].click_input()
+            _esperar(lambda: _janela(panel_pid, CLASSE_PAINEL), timeout, "painel autenticado")
+            panel = _janela(panel_pid, CLASSE_PAINEL)
+        _menu(panel, MENU_MODULOS, MODULOS[modulo][1])
+        _esperar(lambda: descobrir(exe) is not None, timeout, f"módulo {modulo}")
+        pid = descobrir(exe)
+    _esperar(lambda: _janela(pid, CLASSE_JANELA_PRINCIPAL), timeout, "janela principal")
+    main = _janela(pid, CLASSE_JANELA_PRINCIPAL)
+    if not any(CLASSE_AUDITORIA in c.class_name() and c.is_visible() for c in main.descendants()):
+        _menu(main, MENU_CONSULTAS, MENU_AUDITORIAS)
+    _esperar(lambda: any(CLASSE_AUDITORIA in c.class_name() and c.is_visible()
+                         for c in _janela(pid, CLASSE_JANELA_PRINCIPAL).descendants()),
+             timeout, "Auditorias/Históricos")
+    return pid
+
+
+def _tail(path, start):
+    if not path.is_file():
+        return []
+    with path.open(encoding="utf-8") as f:
+        f.seek(start)
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def _capturar(pid, output):
+    from pywinauto import Desktop
+    try:
+        windows = Desktop(backend="win32").windows(process=pid)
+        if windows:
+            path = output / f"travamento-{datetime.now():%Y%m%d-%H%M%S}.png"
+            windows[0].capture_as_image().save(path)
+            return str(path)
+    except Exception:
+        pass
+    return None
+
+
+def executar(ns):
+    from dotenv import load_dotenv
+    from automatiza.relatorio_auditorias import gerar
+    load_dotenv(ROOT / ".env", override=False)
+    profile = carregar(ns.perfil)
+    folder = Path(profile["pasta_executaveis"])
+    output = Path(ns.saida) if ns.saida else ROOT / "resultados" / f"auditorias-{datetime.now():%Y%m%d-%H%M%S}"
+    output.mkdir(parents=True, exist_ok=True)
+    modules = list(MODULOS) if ns.modulo == "todos" else [ns.modulo]
+    (output / "opcoes.json").write_text(json.dumps({
+        "perfil": ns.perfil, "modulos": modules, "extremo": ns.extremo,
+        "filtro": ns.filtro, "pular": ns.pular, "timeout": ns.timeout,
+        "reinicios": ns.reinicios}, ensure_ascii=False, indent=2), encoding="utf-8")
+    had_error = False
+    for module in modules:
+        module_output = output / module
+        module_output.mkdir(exist_ok=True)
+        pid = ns.pid if ns.modulo != "todos" else None
+        for restart in range(ns.reinicios + 1):
+            try:
+                pid = abrir(module, folder, pid=pid, timeout=ns.timeout)
+                print(f"{module}: PID {pid}, levantamento da tela", flush=True)
+                survey = subprocess.run([sys.executable, str(ROOT / "scripts/levantar_auditorias_runtime.py"),
+                                         str(pid), module], cwd=ROOT, timeout=ns.timeout * 5)
+                if survey.returncode:
+                    raise RuntimeError(f"Levantamento falhou com código {survey.returncode}.")
+                path = module_output / "tentativas.jsonl"
+                start = path.stat().st_size if path.exists() else 0
+                env = os.environ.copy()
+                env["AUTOMATIZA_PERFIL"] = ns.perfil
+                env["AUDITORIA_EXTREME"] = "1" if ns.extremo else "0"
+                env["AUDITORIA_STOP_ON_AV"] = "1"
+                env["AUDITORIA_RESUME"] = "1"
+                if ns.filtro:
+                    env["AUDITORIA_ONLY_FILTER"] = ns.filtro
+                else:
+                    env.pop("AUDITORIA_ONLY_FILTER", None)
+                args = [sys.executable, str(ROOT / "scripts/testar_auditorias_cronologico.py"),
+                        str(pid), module, str(module_output)]
+                args += [x.strip() for x in ns.pular.split(",") if x.strip()]
+                result = subprocess.run(args, cwd=ROOT, env=env, timeout=ns.timeout * 120)
+                recent = _tail(path, start)
+                av = any("Access violation" in str(x.get("mensagens_consulta", "")) for x in recent)
+                if result.returncode == 0 and not av:
+                    print(f"{module}: concluído ({len(recent)} novas tentativas)", flush=True)
+                    break
+                if result.returncode != 75 and not av:
+                    raise RuntimeError(f"Suíte encerrada com código {result.returncode}.")
+                print(f"{module}: Access violation; retomada após reinício {restart + 1}", flush=True)
+                _capturar(pid, module_output)
+                subprocess.run(["taskkill", "/PID", str(pid), "/F", "/T"], capture_output=True, timeout=10)
+                pid = None
+            except (RuntimeError, ValueError, subprocess.TimeoutExpired, OSError) as exc:
+                print(f"{module}: {type(exc).__name__}: {exc}", flush=True)
+                if pid:
+                    _capturar(pid, module_output)
+                pid = None
+                if restart == ns.reinicios:
+                    had_error = True
+                    (module_output / "supervisor-erro.txt").write_text(str(exc), encoding="utf-8")
+                else:
+                    continue
+            if restart == ns.reinicios:
+                had_error = True
+                print(f"{module}: limite de {ns.reinicios} reinícios; restante ERRO_AUTOMACAO", flush=True)
+    report = gerar(output)
+    print(f"Relatório: {report}", flush=True)
+    return 1 if had_error else 0
