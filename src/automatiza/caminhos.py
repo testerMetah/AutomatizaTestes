@@ -44,6 +44,19 @@ def arquivo_legado():
     return saidas() / "arquivo-legado"
 
 
+def preparar():
+    """Cria somente diretórios e guias; não altera evidências existentes."""
+    for folder in (rodadas(), logs_permanentes(), observacao(), mapas(), comparacoes(), exportacoes(), arquivo_legado()):
+        folder.mkdir(parents=True, exist_ok=True)
+    guias = {
+        saidas() / "LEIA-ME.md": "# Saídas\n\nrodadas/: execuções com manifesto. logs-permanentes/: diário contínuo.\nobservacao/, mapas/, comparacoes/ e exportacoes/: resultados específicos.\narquivo-legado/: originais preservados da migração.\n",
+        logs_permanentes() / "LEIA-ME.md": "# Logs permanentes\n\npasso-a-passo.log e passo-a-passo-detalhado.jsonl são escritos somente em acréscimo. Consulte o ID da rodada no manifesto para localizar o trecho.\n",
+    }
+    for path, conteudo in guias.items():
+        if not path.exists():
+            path.write_text(conteudo, encoding="utf-8")
+
+
 def docs():
     return raiz() / "docs"
 
