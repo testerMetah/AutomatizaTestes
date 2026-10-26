@@ -1,0 +1,929 @@
+{
+  "classe": "TFrm_RHAC4640",
+  "nome": "Frm_RHAC4640",
+  "herdado": true,
+  "propriedades": {
+    "Left": 538,
+    "Top": 198,
+    "Caption": "Cadastramento de Visitantes e Terceiros",
+    "ClientHeight": 538,
+    "ClientWidth": 606
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Pessoa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 606,
+        "Height": 48,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 16,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Novo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 177,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Novo Visitante/Terceiro (Ctrl+N)",
+            "ShowHint": true,
+            "OnClick": "Act_InserirVisitaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 153,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_RG",
+          "herdado": false,
+          "propriedades": {
+            "Left": 336,
+            "Top": 16,
+            "Width": 19,
+            "Height": 13,
+            "Caption": "RG:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btnCopiarCadastro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 201,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Copiar Visitante/Terceiro",
+            "Enabled": false,
+            "ShowHint": true,
+            "OnClick": "btnCopiarCadastroClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 12,
+            "Width": 94,
+            "Height": 21,
+            "MaxLength": 6,
+            "TabOrder": 0,
+            "OnChange": "Edt_PessoaChange",
+            "OnExit": "Edt_PessoaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Edt_RG",
+          "herdado": false,
+          "propriedades": {
+            "Left": 364,
+            "Top": 12,
+            "Width": 121,
+            "Height": 21,
+            "MaxLength": 15,
+            "TabOrder": 1,
+            "OnChange": "Edt_RGChange",
+            "OnExit": "Edt_RGExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 800,
+            "Top": 12,
+            "Width": 21,
+            "Height": 21,
+            "TabOrder": 2,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Visitante",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 48,
+        "Width": 606,
+        "Height": 490,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Pnl_VisitanteEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Nome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 16,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "Nome:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Email",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 138,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "E-mail:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DataCadastramento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 381,
+            "Top": 10,
+            "Width": 74,
+            "Height": 13,
+            "Caption": "Cadastramento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "Img_FotoAux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 402,
+            "Top": 85,
+            "Width": 72,
+            "Height": 81,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 162,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 159,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 163,
+            "Width": 86,
+            "Height": 13,
+            "Caption": "Lbl_DescEmpresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 41,
+            "Width": 19,
+            "Height": 13,
+            "Caption": "RG:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 381,
+            "Top": 36,
+            "Width": 24,
+            "Height": 13,
+            "Caption": "Tipo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Telefone",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 113,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Telefone:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 122,
+            "Top": 114,
+            "Width": 5,
+            "Height": 13,
+            "Caption": "/"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 86,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Escala:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 83,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 87,
+            "Width": 77,
+            "Height": 13,
+            "Caption": "Lbl_DescEscala"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 62,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Crachá:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescrSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 167,
+            "Top": 62,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Lbl_DescrSituacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Fotografia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 386,
+            "Top": 64,
+            "Width": 200,
+            "Height": 140,
+            "Caption": "Fotografia",
+            "TabOrder": 11
+          },
+          "filhos": [
+            {
+              "classe": "TShape",
+              "nome": "Shp_Fotografia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 23,
+                "Top": 22,
+                "Width": 74,
+                "Height": 101
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TVideo",
+              "nome": "Video",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 23,
+                "Width": 72,
+                "Height": 99
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Procurar",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 2,
+                "Left": 109,
+                "Top": 21,
+                "Width": 79,
+                "Height": 25,
+                "Hint": "Procurar",
+                "Caption": "&Procurar...",
+                "ShowHint": true,
+                "TabOrder": 0,
+                "OnClick": "Btn_ProcurarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Colar",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 2,
+                "Left": 109,
+                "Top": 48,
+                "Width": 79,
+                "Height": 25,
+                "Hint": "Colar",
+                "Caption": "&Colar",
+                "ShowHint": true,
+                "TabOrder": 1,
+                "OnClick": "Btn_ColarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Limpar",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 2,
+                "Left": 109,
+                "Top": 101,
+                "Width": 79,
+                "Height": 25,
+                "Hint": "Limpar",
+                "Caption": "&Limpar",
+                "ShowHint": true,
+                "TabOrder": 3,
+                "OnClick": "Btn_LimparClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Foto",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 2,
+                "Left": 109,
+                "Top": 74,
+                "Width": 79,
+                "Height": 25,
+                "Caption": "Foto",
+                "TabOrder": 2,
+                "OnClick": "Btn_FotoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Fotografia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 23,
+                "Width": 72,
+                "Height": 99,
+                "TabOrder": 5
+              },
+              "filhos": [
+                {
+                  "classe": "TImage",
+                  "nome": "Img_FotoPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 72,
+                    "Height": 99,
+                    "Align": "alClient"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DataCadastramento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 465,
+            "Top": 7,
+            "Width": 68,
+            "Height": 21,
+            "TabStop": false,
+            "DataField": "DATACADASTRAMENTO",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "Enabled": false,
+            "ReadOnly": true,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Nome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 8,
+            "Width": 269,
+            "Height": 21,
+            "DataField": "NOME",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Email",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 134,
+            "Width": 269,
+            "Height": 21,
+            "DataField": "EMAIL",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 159,
+            "Width": 60,
+            "Height": 21,
+            "DataField": "EMPRESAACESSO",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 9,
+            "OnChange": "Dbe_EmpresaChange",
+            "OnExit": "Dbe_EmpresaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_Grata",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 187,
+            "Width": 97,
+            "Height": 17,
+            "Caption": "Não grata",
+            "DataField": "NAOGRATA",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 10
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 800,
+            "Top": 240,
+            "Width": 33,
+            "Height": 21,
+            "TabOrder": 13,
+            "OnEnter": "Edt_Aux2Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_RG",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 33,
+            "Width": 121,
+            "Height": 21,
+            "DataField": "IDENTIDADE",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 2,
+            "OnExit": "Dbe_RGExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 465,
+            "Top": 32,
+            "Width": 122,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 3,
+            "OnChange": "Cmb_TipoChange",
+            "Items.Strings": [
+              "Visitante",
+              "Terceiro"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Grupos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 220,
+            "Width": 573,
+            "Height": 237,
+            "Caption": "Duallist com grupos de acesso",
+            "TabOrder": 14,
+            "OnEnter": "Pnl_GruposEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DDD",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 109,
+            "Width": 41,
+            "Height": 21,
+            "DataField": "DDD",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Telefone",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 109,
+            "Width": 83,
+            "Height": 21,
+            "DataField": "TELEFONE",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 7
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 83,
+            "Width": 60,
+            "Height": 21,
+            "DataField": "ESCALA",
+            "DataSource": "Dts_RHPessoasAcesso",
+            "TabOrder": 5,
+            "OnChange": "Dbe_EscalaChange",
+            "OnExit": "Dbe_EscalaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Cracha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 58,
+            "Width": 84,
+            "Height": 21,
+            "MaxLength": 12,
+            "TabOrder": 4,
+            "OnChange": "Edt_CrachaChange",
+            "OnExit": "Edt_CrachaExit",
+            "OnKeyPress": "Edt_CrachaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 208,
+            "Width": 595,
+            "Height": 253,
+            "Caption": "Panel1",
+            "TabOrder": 12
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 4,
+                "Width": 87,
+                "Height": 13,
+                "Caption": "Grupos de Acesso"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDualList",
+              "nome": "Lst_Grupos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 22,
+                "Width": 577,
+                "Height": 227,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Text_Diretiva",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 461,
+            "Width": 568,
+            "Height": 17,
+            "BorderStyle": "sbsSunken",
+            "Caption": "A diretriz de geração de acesso não está habilitada - Acesso não será gerado.",
+            "TabOrder": 15
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 248,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHPessoasAcesso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 279,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenPictureDialog",
+      "nome": "Opn_PictureDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 445,
+        "Top": 114
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Disponiveis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 132,
+        "Top": 352
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DisponiveisGRUPOACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOACESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DisponiveisDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Selecionados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 376,
+        "Top": 364
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SelecionadosGRUPOACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOACESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SelecionadosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHCrachaHistorico",
+      "herdado": false,
+      "propriedades": {
+        "Left": 312,
+        "Top": 104
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 528,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "NovoVisitanteTerceiro1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Novo Visitante/Terceiro",
+            "ShortCut": 16462,
+            "OnClick": "Act_InserirVisitaExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUpCamera",
+      "herdado": false,
+      "propriedades": {
+        "Left": 392,
+        "Top": 136
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "PopUpMnuAjustarImagem",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Ajustar imagem",
+            "Hint": "Ajusta a imagem da câmera e da foto tirada ao quadro.",
+            "OnClick": "PopUpMnuAjustarImagemClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "PopUpMnuFormatoDeVideo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Formato de vídeo",
+            "OnClick": "PopUpMnuFormatoDeVideoClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

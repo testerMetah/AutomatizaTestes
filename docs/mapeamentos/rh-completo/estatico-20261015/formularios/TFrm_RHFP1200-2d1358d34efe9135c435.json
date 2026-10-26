@@ -1,0 +1,3505 @@
+{
+  "classe": "TFrm_RHFP1200",
+  "nome": "Frm_RHFP1200",
+  "herdado": false,
+  "propriedades": {
+    "Left": 465,
+    "Top": 200,
+    "BorderStyle": "bsSingle",
+    "Caption": "Pensionistas",
+    "ClientHeight": 471,
+    "ClientWidth": 668,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 668,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 11,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 153,
+            "Top": 10,
+            "Width": 400,
+            "Height": 17,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 62,
+            "Top": 7,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 668,
+        "Height": 430,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Pensionistas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 660,
+            "Height": 422,
+            "ActivePage": "Tbs_DadosPensionista",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_PensionistasChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Pensionistas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pensionistas"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBGrid",
+                  "nome": "DBGrid1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 652,
+                    "Height": 394,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "PENSIONISTA",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSexo",
+                        "Title.Caption": "Sexo ",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NASCIMENTO",
+                        "Title.Caption": "Data de Nascimento ",
+                        "Width": 111,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_DadosPensionista",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Dados do Pensionista",
+                "ImageIndex": 1,
+                "OnShow": "Tbs_DadosPensionistaShow"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 15,
+                    "Width": 57,
+                    "Height": 13,
+                    "Caption": "Pensionista:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 151,
+                    "Top": 15,
+                    "Width": 31,
+                    "Height": 13,
+                    "Caption": "Nome:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 75,
+                    "Width": 59,
+                    "Height": 13,
+                    "Caption": "Nascimento:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label21",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 102,
+                    "Width": 23,
+                    "Height": 13,
+                    "Caption": "CPF:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "btn_PensionistaAnterior",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 98,
+                    "Top": 11,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Pensionista Anterior",
+                    "ShowHint": true,
+                    "OnClick": "btn_PensionistaAnteriorClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "btn_PensionistaProximo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 121,
+                    "Top": 11,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Próximo Pensionista",
+                    "ShowHint": true,
+                    "OnClick": "btn_PensionistaProximoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mtd_Nascimento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 140,
+                    "Top": 70,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Fornecedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 369,
+                    "Width": 144,
+                    "Height": 13,
+                    "Caption": "Fornecedor p/Contas a Pagar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_Fornecedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 198,
+                    "Top": 365,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "Btn_FornecedorClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_FornecedorNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 226,
+                    "Top": 369,
+                    "Width": 315,
+                    "Height": 14,
+                    "Caption": "Lbl_FornecedorNome"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label27",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 133,
+                    "Width": 57,
+                    "Height": 13,
+                    "Caption": "Parentesco:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label65",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 44,
+                    "Width": 78,
+                    "Height": 13,
+                    "Caption": "Nome Completo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_TrocaAba1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 170,
+                    "Top": 285,
+                    "Width": 0,
+                    "Height": 0,
+                    "TabOrder": 11,
+                    "OnEnter": "Edt_TrocaAba1Enter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Pensionista",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 2,
+                    "Left": 69,
+                    "Top": 11,
+                    "Width": 28,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_PensionistaExit",
+                    "OnKeyPress": "Edt_PensionistaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Nome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 187,
+                    "Top": 11,
+                    "Width": 294,
+                    "Height": 21,
+                    "DataField": "NOME",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "dbr_Sexo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 498,
+                    "Top": 3,
+                    "Width": 155,
+                    "Height": 56,
+                    "Caption": "Sexo",
+                    "Columns": 2,
+                    "DataField": "SEXO",
+                    "DataSource": "Dts_Pensionistas",
+                    "Items.Strings": [
+                      "Masculino",
+                      "Feminino"
+                    ],
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Validade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 449,
+                    "Top": 64,
+                    "Width": 204,
+                    "Height": 85,
+                    "Caption": "Validade da Pensão",
+                    "TabOrder": 8
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 28,
+                        "Top": 20,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Início:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 28,
+                        "Top": 50,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Término:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataTermino",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 47,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DataInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 15,
+                        "Width": 74,
+                        "Height": 21,
+                        "DataField": "DATAINICIO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0,
+                        "OnChange": "Dbe_DataInicioChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DataTermino",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 47,
+                        "Width": 74,
+                        "Height": 21,
+                        "DataField": "DATATERMINO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 1,
+                        "OnChange": "Dbe_DataTerminoChange"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Nascimento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 69,
+                    "Top": 70,
+                    "Width": 70,
+                    "Height": 21,
+                    "DataField": "NASCIMENTO",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 4,
+                    "OnChange": "Dbe_NascimentoChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CPF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 69,
+                    "Top": 100,
+                    "Width": 89,
+                    "Height": 21,
+                    "DataField": "CPF",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "grb_Identidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 225,
+                    "Top": 64,
+                    "Width": 209,
+                    "Height": 85,
+                    "Caption": "Identidade",
+                    "TabOrder": 7
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 20,
+                        "Top": 20,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "Número:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 20,
+                        "Top": 50,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "Tipo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_Identidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 67,
+                        "Top": 15,
+                        "Width": 117,
+                        "Height": 21,
+                        "DataField": "IDENTIDADE",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "dbr_TipoIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 67,
+                        "Top": 39,
+                        "Width": 118,
+                        "Height": 36,
+                        "Columns": 2,
+                        "DataField": "TIPOIDENTIDADE",
+                        "DataSource": "Dts_Pensionistas",
+                        "Items.Strings": [
+                          "RG",
+                          "RE"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Banco",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 161,
+                    "Width": 647,
+                    "Height": 196,
+                    "Caption": "Informações para Pagamento",
+                    "TabOrder": 9
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 46,
+                        "Width": 97,
+                        "Height": 13,
+                        "Caption": "Número da Agência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 21,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Número do Banco:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 174,
+                        "Top": 46,
+                        "Width": 3,
+                        "Height": 13,
+                        "Caption": "-"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 401,
+                        "Top": 71,
+                        "Width": 74,
+                        "Height": 13,
+                        "Caption": "Conta Corrente:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 71,
+                        "Width": 104,
+                        "Height": 13,
+                        "Caption": "Forma de Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 227,
+                        "Top": 21,
+                        "Width": 80,
+                        "Height": 13,
+                        "Caption": "Nome do Banco:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 227,
+                        "Top": 47,
+                        "Width": 88,
+                        "Height": 13,
+                        "Caption": "Nome da Agência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_ChavePix",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 324,
+                        "Top": 170,
+                        "Width": 54,
+                        "Height": 13,
+                        "Caption": "Chave PIX:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TipoDeChave",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 121,
+                        "Top": 170,
+                        "Width": 73,
+                        "Height": 13,
+                        "Caption": "Tipo de Chave:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_CodAgenciaMega",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 508,
+                        "Top": 46,
+                        "Width": 74,
+                        "Height": 13,
+                        "Caption": "Cod. Ag. Mega:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_ContaCorrente",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 481,
+                        "Top": 67,
+                        "Width": 152,
+                        "Height": 21,
+                        "DataField": "CONTACORRENTE",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 7
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_NroAgencia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 42,
+                        "Width": 42,
+                        "Height": 21,
+                        "DataField": "NROAGENCIA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DigAge",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 42,
+                        "Width": 19,
+                        "Height": 21,
+                        "DataField": "DIGITOAGENCIA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_NroBanco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 18,
+                        "Width": 34,
+                        "Height": 21,
+                        "DataField": "NROBANCO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_FormaPagto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 67,
+                        "Width": 220,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "FORMAPAGTO",
+                        "DataSource": "Dts_Pensionistas",
+                        "Items.Strings": [
+                          "Em Espécie",
+                          "Em Cheque",
+                          "Documento de Compensação - DOC",
+                          "Depósito em Conta Corrente",
+                          "Depósito na Poupança",
+                          "Depósito para Saque por Cartão"
+                        ],
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_BancoPensionista",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 324,
+                        "Top": 18,
+                        "Width": 309,
+                        "Height": 21,
+                        "DataField": "BANCOPENSIONISTA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Agencia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 324,
+                        "Top": 42,
+                        "Width": 144,
+                        "Height": 21,
+                        "DataField": "AGENCIA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_Responsavel",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 90,
+                        "Width": 618,
+                        "Height": 71,
+                        "Caption": "Responsável",
+                        "TabOrder": 8
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 38,
+                            "Top": 19,
+                            "Width": 31,
+                            "Height": 13,
+                            "Caption": "Nome:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 417,
+                            "Top": 18,
+                            "Width": 23,
+                            "Height": 13,
+                            "Caption": "CPF:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 38,
+                            "Top": 48,
+                            "Width": 53,
+                            "Height": 13,
+                            "Caption": "Identidade:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_NOMERESPPEN",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 96,
+                            "Top": 15,
+                            "Width": 284,
+                            "Height": 21,
+                            "DataField": "NOMERESPPEN",
+                            "DataSource": "Dts_Pensionistas",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_CPFRESPPEN",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 446,
+                            "Top": 14,
+                            "Width": 89,
+                            "Height": 21,
+                            "DataField": "CPFRESPPEN",
+                            "DataSource": "Dts_Pensionistas",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_IDENTIDADERESPPEN",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 96,
+                            "Top": 44,
+                            "Width": 117,
+                            "Height": 21,
+                            "DataField": "IDENTIDADERESPPEN",
+                            "DataSource": "Dts_Pensionistas",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_ChavePix",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 384,
+                        "Top": 166,
+                        "Width": 249,
+                        "Height": 21,
+                        "DataField": "CHAVEPIX",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 11,
+                        "OnKeyPress": "Dbe_ChavePixKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_TipoChavePIX",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 198,
+                        "Top": 166,
+                        "Width": 117,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "TIPOCHAVEPIX",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 10,
+                        "OnChange": "Dbc_TipoChavePIXChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_IndicPagtoPix",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 168,
+                        "Width": 97,
+                        "Height": 17,
+                        "TabStop": false,
+                        "Caption": "Recebe por PIX",
+                        "TabOrder": 9,
+                        "OnClick": "Chk_IndicPagtoPixClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_CodAgenciaMega",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 591,
+                        "Top": 42,
+                        "Width": 42,
+                        "Height": 21,
+                        "DataField": "CODAGENCIAMEGA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Fornecedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 155,
+                    "Top": 365,
+                    "Width": 42,
+                    "Height": 21,
+                    "DataField": "FORNECEDOR",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 10,
+                    "OnEnter": "Dbe_FornecedorEnter",
+                    "OnExit": "Dbe_FornecedorExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_GrauParentesco",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 69,
+                    "Top": 129,
+                    "Width": 135,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "GRAUPARENTESCO",
+                    "DataSource": "Dts_Pensionistas",
+                    "Items.Strings": [
+                      "Filho(a) ou Enteado(a)",
+                      "Neto(a)",
+                      "Bisneto(a)",
+                      "Esposo(a)",
+                      "Pai ou Mãe",
+                      "Avô ou Avó",
+                      "Bisavô ou Bisavó",
+                      "Outro parentesco",
+                      "Nenhum parentesco "
+                    ],
+                    "TabOrder": 6
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_NomeCompleto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 88,
+                    "Top": 40,
+                    "Width": 393,
+                    "Height": 21,
+                    "DataField": "NOMECOMPLETO",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_EnviarParaMega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 540,
+                    "Top": 364,
+                    "Width": 99,
+                    "Height": 25,
+                    "Caption": "Enviar para Mega",
+                    "TabOrder": 12,
+                    "OnClick": "Btn_EnviarParaMegaClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_InformacoesCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Informações p/Cálculo",
+                "ImageIndex": 3,
+                "OnEnter": "Tbs_InformacoesCalculoEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 7,
+                    "Width": 76,
+                    "Height": 13,
+                    "Caption": "Base p/Cálculo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label10",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 243,
+                    "Top": 7,
+                    "Width": 28,
+                    "Height": 13,
+                    "Caption": "Perc.:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label23",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 331,
+                    "Width": 553,
+                    "Height": 13,
+                    "Caption": "Percentual de Pensão Alimentícia p/constar no Termo de Rescisão (campo 27), referente à Multa Rescisória (FGTS):"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label25",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 341,
+                    "Top": 7,
+                    "Width": 49,
+                    "Height": 13,
+                    "Caption": "Valor Fixo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_TrocaAba2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 575,
+                    "Top": 332,
+                    "Width": 14,
+                    "Height": 12,
+                    "TabOrder": 9,
+                    "OnEnter": "Edt_TrocaAba2Enter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Informacoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 28,
+                    "Width": 641,
+                    "Height": 75,
+                    "Caption": "VDB para Lançar Pensão sobre",
+                    "TabOrder": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 22,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "Salários:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_VdbPensao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 116,
+                        "Top": 21,
+                        "Width": 192,
+                        "Height": 14,
+                        "Caption": "Lbl_Vdbpensao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 49,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "Férias:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_VdbPensaoFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 116,
+                        "Top": 48,
+                        "Width": 192,
+                        "Height": 14,
+                        "Caption": "Lbl_Vdbpensao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 315,
+                        "Top": 20,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "13º Sal.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_VdbPensao13Sal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 423,
+                        "Top": 19,
+                        "Width": 192,
+                        "Height": 14,
+                        "Caption": "Lbl_Vdbpensao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 315,
+                        "Top": 48,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Lucros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_VdbPensaoLucros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 423,
+                        "Top": 47,
+                        "Width": 192,
+                        "Height": 14,
+                        "Caption": "Lbl_Vdbpensao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "btn_VdBPensao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 90,
+                        "Top": 17,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "btn_VdBPensaoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_VdbPensao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 51,
+                        "Top": 18,
+                        "Width": 38,
+                        "Height": 21,
+                        "DataField": "VDBPENSAO",
+                        "DataSource": "Dts_Pensionistas",
+                        "MaxLength": 5,
+                        "TabOrder": 0,
+                        "OnEnter": "DBE_VdbPensaoEnter",
+                        "OnExit": "DBE_VdbPensaoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "btn_VdBPensaoFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 90,
+                        "Top": 46,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "btn_VdBPensaoFeriasClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_VdbPensaoFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 51,
+                        "Top": 45,
+                        "Width": 38,
+                        "Height": 21,
+                        "DataField": "VDBPENSAOFERIAS",
+                        "DataSource": "Dts_Pensionistas",
+                        "MaxLength": 5,
+                        "TabOrder": 2,
+                        "OnEnter": "DBE_VdbPensaoFeriasEnter",
+                        "OnExit": "DBE_VdbPensaoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "btn_VdBPensao13Sal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 396,
+                        "Top": 14,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 5,
+                        "TabStop": false,
+                        "OnClick": "btn_VdBPensao13SalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_VdbPensao13Sal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 358,
+                        "Top": 16,
+                        "Width": 38,
+                        "Height": 21,
+                        "DataField": "VDBPENSAO13SAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "MaxLength": 5,
+                        "TabOrder": 4,
+                        "OnEnter": "DBE_VdbPensao13SalEnter",
+                        "OnExit": "DBE_VdbPensaoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "btn_VdBPensaoLucros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 396,
+                        "Top": 43,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 7,
+                        "TabStop": false,
+                        "OnClick": "btn_VdBPensaoLucrosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_VdbPensaoLucros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 358,
+                        "Top": 44,
+                        "Width": 38,
+                        "Height": 21,
+                        "DataField": "VDBPENSAOLD",
+                        "DataSource": "Dts_Pensionistas",
+                        "MaxLength": 5,
+                        "TabOrder": 6,
+                        "OnEnter": "DBE_VdbPensaoLucrosEnter",
+                        "OnExit": "DBE_VdbPensaoExit"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Folhas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 243,
+                    "Width": 641,
+                    "Height": 76,
+                    "Caption": "Recebe Pensão nas Folhas",
+                    "TabOrder": 6
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaMensal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 14,
+                        "Width": 85,
+                        "Height": 17,
+                        "Caption": "Mensal",
+                        "DataField": "FOLHAMENSAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaQuinzenal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 32,
+                        "Width": 111,
+                        "Height": 17,
+                        "Caption": "Quinzenal - 1º Qzn",
+                        "DataField": "FOLHAQUINZENAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaAdianto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 292,
+                        "Top": 14,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Adiantamento",
+                        "DataField": "FOLHAADIANTO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_Folha13Salario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 292,
+                        "Top": 32,
+                        "Width": 123,
+                        "Height": 17,
+                        "Caption": "13ºSalário - Antec.",
+                        "DataField": "FOLHA13SALARIO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 7
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaSemanal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 136,
+                        "Top": 14,
+                        "Width": 120,
+                        "Height": 17,
+                        "Caption": "Semanal - 1º Semana",
+                        "DataField": "FOLHASEMANAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaSuplementar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 14,
+                        "Width": 89,
+                        "Height": 17,
+                        "Caption": "Suplementar",
+                        "DataField": "FOLHASUPLEMENTAR",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 9
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_Avulsa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 32,
+                        "Width": 62,
+                        "Height": 17,
+                        "Caption": "Avulsa",
+                        "DataField": "FOLHAAVULSA",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 10
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_Ferias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 51,
+                        "Width": 58,
+                        "Height": 17,
+                        "Caption": "Férias",
+                        "DataField": "FOLHAFERIAS",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 11
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaQuinzenal2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 51,
+                        "Width": 111,
+                        "Height": 17,
+                        "Caption": "Quinzenal - 2º Qzn",
+                        "DataField": "FOLHA2AQZN",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaSemanalInterm",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 136,
+                        "Top": 32,
+                        "Width": 132,
+                        "Height": 17,
+                        "Caption": "Semanal - Sem. Interm.",
+                        "DataField": "FOLHASEMINT",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_FolhaSemanalUlt",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 136,
+                        "Top": 51,
+                        "Width": 120,
+                        "Height": 17,
+                        "Caption": "Semanal - Últ. Sem.",
+                        "DataField": "FOLHAULTSEM",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "dbk_Folha13SalarioCompl",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 292,
+                        "Top": 51,
+                        "Width": 123,
+                        "Height": 17,
+                        "Caption": "13ºSalário - Compl.",
+                        "DataField": "FOLHA13COMPL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 8
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "Dbk_Rescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 545,
+                        "Top": 14,
+                        "Width": 70,
+                        "Height": 17,
+                        "Caption": "Rescisão",
+                        "DataField": "FOLHARESCISAO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 12
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_PensaoSobre",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 90,
+                    "Top": 3,
+                    "Width": 140,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "PENSAOSOBRE",
+                    "DataSource": "Dts_Pensionistas",
+                    "Items.Strings": [
+                      "Salário contratual",
+                      "Salário + Adicionais",
+                      "Base IR",
+                      "Líquido da Folha",
+                      "Salário Mínimo"
+                    ],
+                    "TabOrder": 0,
+                    "OnChange": "Dbc_PensaoSobreChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_PercPensao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 274,
+                    "Top": 3,
+                    "Width": 55,
+                    "Height": 21,
+                    "DataField": "PERCPENSAO",
+                    "DataSource": "Dts_Pensionistas",
+                    "MaxLength": 8,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Formulas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 107,
+                    "Width": 641,
+                    "Height": 132,
+                    "Caption": "Fórmula para Apurar Base",
+                    "TabOrder": 5
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 20,
+                        "Width": 71,
+                        "Height": 13,
+                        "Caption": "Sobre Salários:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 47,
+                        "Width": 62,
+                        "Height": 13,
+                        "Caption": "Sobre Férias:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label28",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 75,
+                        "Width": 71,
+                        "Height": 13,
+                        "Caption": "Sobre 13º Sal.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label31",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 103,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Sobre Lucros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_FormulaPensaoSal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 505,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 23,
+                        "OnClick": "Btn_FormulaPensaoSalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_FormulaPensaoFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 505,
+                        "Top": 42,
+                        "Width": 23,
+                        "Height": 23,
+                        "OnClick": "Btn_FormulaPensaoFeriasClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_FormulaPensao13Sal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 505,
+                        "Top": 70,
+                        "Width": 23,
+                        "Height": 23,
+                        "OnClick": "Btn_FormulaPensao13SalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_FormulaPensaoLucros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 505,
+                        "Top": 98,
+                        "Width": 23,
+                        "Height": 23,
+                        "OnClick": "Btn_FormulaPensaoLucrosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_FormulaPensaoSal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 85,
+                        "Top": 16,
+                        "Width": 419,
+                        "Height": 21,
+                        "DataField": "FORMULAPENSAOSALARIO",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0,
+                        "OnEnter": "DBE_FormulaPensaoSalEnter",
+                        "OnExit": "DBE_FormulaPensaoSalExit",
+                        "OnKeyPress": "DBE_FormulaPensaoSalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_FormulaPensaoFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 2,
+                        "Left": 85,
+                        "Top": 43,
+                        "Width": 419,
+                        "Height": 21,
+                        "DataField": "FORMULAPENSAOFERIAS",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 1,
+                        "OnEnter": "DBE_FormulaPensaoSalEnter",
+                        "OnExit": "DBE_FormulaPensaoSalExit",
+                        "OnKeyPress": "DBE_FormulaPensaoSalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_FormulaPensao13Sal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 3,
+                        "Left": 85,
+                        "Top": 71,
+                        "Width": 419,
+                        "Height": 21,
+                        "DataField": "FORMULAPENSAO13SAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 2,
+                        "OnEnter": "DBE_FormulaPensaoSalEnter",
+                        "OnExit": "DBE_FormulaPensaoSalExit",
+                        "OnKeyPress": "DBE_FormulaPensaoSalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_FormulaPensaoLucros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 4,
+                        "Left": 85,
+                        "Top": 99,
+                        "Width": 419,
+                        "Height": 21,
+                        "DataField": "FORMULAPENSAOLD",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 3,
+                        "OnEnter": "DBE_FormulaPensaoSalEnter",
+                        "OnExit": "DBE_FormulaPensaoSalExit",
+                        "OnKeyPress": "DBE_FormulaPensaoSalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_HabilitaHint",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 534,
+                        "Top": 105,
+                        "Width": 80,
+                        "Height": 17,
+                        "Hint": "Utilizar o Interpretador de Fórmulas",
+                        "TabStop": false,
+                        "Caption": "Interpretador",
+                        "Checked": true,
+                        "ShowHint": true,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "dbr_Regime",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 474,
+                    "Top": 0,
+                    "Width": 176,
+                    "Height": 32,
+                    "Caption": "Regime",
+                    "Columns": 2,
+                    "DataField": "REGIMEAPURACAO",
+                    "DataSource": "Dts_Pensionistas",
+                    "Items.Strings": [
+                      "Caixa",
+                      "Competência"
+                    ],
+                    "TabOrder": 3,
+                    "TabStop": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "pnl_HintAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 326,
+                    "Top": 152,
+                    "Width": 128,
+                    "Height": 97,
+                    "Caption": "pnl_Hint",
+                    "TabOrder": 7,
+                    "Visible": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_TituloHintAux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 2,
+                        "Width": 54,
+                        "Height": 13,
+                        "Align": "alTop",
+                        "Caption": "Condição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_HintAux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 15,
+                        "Width": 35,
+                        "Height": 13,
+                        "Align": "alClient",
+                        "Caption": "lbl_Hint"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_PercPensaoFGTS",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 572,
+                    "Top": 326,
+                    "Width": 62,
+                    "Height": 21,
+                    "DataField": "PERCPENSAOFGTS",
+                    "DataSource": "Dts_Pensionistas",
+                    "MaxLength": 8,
+                    "TabOrder": 8
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Valor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 393,
+                    "Top": 3,
+                    "Width": 70,
+                    "Height": 21,
+                    "DataField": "VALOR",
+                    "DataSource": "Dts_Pensionistas",
+                    "MaxLength": 8,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_eSocial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 348,
+                    "Width": 641,
+                    "Height": 42,
+                    "Caption": "eSocial",
+                    "TabOrder": 10
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 15,
+                        "Width": 305,
+                        "Height": 13,
+                        "Caption": "Indicativo de pensão alimentícia para fins de retenção de FGTS:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_INDICATIVOPENSAOALIMENTICIA",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 317,
+                        "Top": 12,
+                        "Width": 296,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "INDICATIVOPENSAOALIMENTICIA",
+                        "DataSource": "Dts_Pensionistas",
+                        "Items.Strings": [
+                          "Salário contratual",
+                          "Salário + Adicionais",
+                          "Base IR",
+                          "Líquido da Folha",
+                          "Salário Mínimo"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Endereco",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Endereço",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label29",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 35,
+                    "Top": 52,
+                    "Width": 23,
+                    "Height": 13,
+                    "Caption": "Rua:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label37",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 498,
+                    "Top": 52,
+                    "Width": 40,
+                    "Height": 13,
+                    "Caption": "Número:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label39",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 35,
+                    "Top": 98,
+                    "Width": 67,
+                    "Height": 13,
+                    "Caption": "Complemento:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label38",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 325,
+                    "Top": 98,
+                    "Width": 30,
+                    "Height": 13,
+                    "Caption": "Bairro:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label45",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 37,
+                    "Top": 144,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Cidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label44",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 325,
+                    "Top": 145,
+                    "Width": 30,
+                    "Height": 13,
+                    "Caption": "C.E.P:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label46",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 498,
+                    "Top": 145,
+                    "Width": 17,
+                    "Height": 13,
+                    "Caption": "UF:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBE_Rua",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 113,
+                    "Top": 48,
+                    "Width": 290,
+                    "Height": 21,
+                    "DataField": "RUA",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBE_Numero",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 548,
+                    "Top": 48,
+                    "Width": 69,
+                    "Height": 21,
+                    "DataField": "NRORUA",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBE_Complemento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 113,
+                    "Top": 94,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "COMPLEMENTO",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Bairro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 366,
+                    "Top": 94,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "BAIRRO",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Cidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 113,
+                    "Top": 140,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "CIDADE",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 4,
+                    "OnChange": "Dbe_CidadeChange",
+                    "OnEnter": "Dbe_CidadeEnter",
+                    "OnExit": "Dbe_CidadeExit",
+                    "OnKeyPress": "Dbe_CidadeKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBE_CEP",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 366,
+                    "Top": 141,
+                    "Width": 82,
+                    "Height": 21,
+                    "DataField": "CEP",
+                    "DataSource": "Dts_Pensionistas",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboBox",
+                  "nome": "DBC_Uf",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 550,
+                    "Top": 141,
+                    "Width": 45,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "UF",
+                    "DataSource": "Dts_Pensionistas",
+                    "Items.Strings": [
+                      "AC",
+                      "AL",
+                      "AP",
+                      "AM",
+                      "BA",
+                      "CE",
+                      "DF",
+                      "ES",
+                      "GO",
+                      "MA",
+                      "MT",
+                      "MS",
+                      "MG",
+                      "PA",
+                      "PB",
+                      "PR",
+                      "PE",
+                      "PI",
+                      "RJ",
+                      "RN",
+                      "RS",
+                      "RO",
+                      "RR",
+                      "SC",
+                      "SP",
+                      "SE",
+                      "TO"
+                    ],
+                    "TabOrder": 6
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Telefone",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 38,
+                    "Top": 192,
+                    "Width": 587,
+                    "Height": 69,
+                    "Caption": "Telefone",
+                    "TabOrder": 7
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label47",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 409,
+                        "Top": 34,
+                        "Width": 33,
+                        "Height": 13,
+                        "Caption": "Ramal:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label48",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 172,
+                        "Top": 34,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "Número:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label49",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 23,
+                        "Top": 34,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "DDD:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Aux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 462,
+                        "Top": 34,
+                        "Width": 17,
+                        "Height": 12,
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_AuxEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Ramal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 450,
+                        "Top": 30,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "RAMAL",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DDD",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 58,
+                        "Top": 30,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "DDD",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Telefone",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 30,
+                        "Width": 117,
+                        "Height": 21,
+                        "DataField": "TELEFONE",
+                        "DataSource": "Dts_Pensionistas",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TLocalizarMeta",
+                  "nome": "Btn_Municipios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 265,
+                    "Top": 139,
+                    "Width": 23,
+                    "Height": 23,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "TabOrder": 8,
+                    "TabStop": false,
+                    "OnClick": "Btn_MunicipiosClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 452,
+        "Top": 6
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PessoasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGraphicField",
+          "nome": "Qry_PessoasFOTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FOTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPENSIONISTASCADASTRADOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PENSIONISTASCADASTRADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pensionistas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 176,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasPENSIONISTA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pensionista",
+            "FieldName": "PENSIONISTA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PensionistasDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Início da Validade",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PensionistasDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Término da Validade ",
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PensionistasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Nascimento",
+            "FieldName": "NASCIMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasSEXO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sexo",
+            "FieldName": "SEXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasRUA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Rua",
+            "FieldName": "RUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNRORUA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Rua",
+            "FieldName": "NRORUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Complemento",
+            "FieldName": "COMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasBAIRRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Bairro",
+            "FieldName": "BAIRRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cidade",
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCEP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasDDD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasTELEFONE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Telefone",
+            "FieldName": "TELEFONE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasRAMAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Ramal",
+            "FieldName": "RAMAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasTIPOIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Identidade",
+            "FieldName": "TIPOIDENTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Identidade",
+            "FieldName": "IDENTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORMAPAGTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Forma de Pagamento",
+            "FieldName": "FORMAPAGTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNROBANCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Banco",
+            "FieldName": "NROBANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNROAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Agência",
+            "FieldName": "NROAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasDIGITOAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dígito Agência",
+            "FieldName": "DIGITOAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCONTACORRENTE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Conta Corrente",
+            "FieldName": "CONTACORRENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasPENSAOSOBRE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Base p/Cálculo",
+            "FieldName": "PENSAOSOBRE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasVDBPENSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "VDB Pensão s/Salários",
+            "FieldName": "VDBPENSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAMENSAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Mensal",
+            "FieldName": "FOLHAMENSAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAQUINZENAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Quinzenal - 1ª Quinz.",
+            "FieldName": "FOLHAQUINZENAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHASEMANAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Semanal - 1ª Sem.",
+            "FieldName": "FOLHASEMANAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAADIANTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha de Adiantamento",
+            "FieldName": "FOLHAADIANTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHA13SALARIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha 13º Salário - Antecip.",
+            "FieldName": "FOLHA13SALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHASUPLEMENTAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Suplementar",
+            "FieldName": "FOLHASUPLEMENTAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAAVULSA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Avulsa",
+            "FieldName": "FOLHAAVULSA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha de Férias",
+            "FieldName": "FOLHAFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha de Rescisão",
+            "FieldName": "FOLHARESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasDescSexo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescSexo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasVDBPENSAOFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "VDB Pensão s/Férias",
+            "FieldName": "VDBPENSAOFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasVDBPENSAO13SAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "VDB Pensão s/13º Sal.",
+            "FieldName": "VDBPENSAO13SAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PensionistasVDBPENSAOLD",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "VDB Pensão s/Lucros",
+            "FieldName": "VDBPENSAOLD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHA2AQZN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Quinzenal - 2ª Quinz.",
+            "FieldName": "FOLHA2AQZN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHASEMINT",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Semanal - Sem. Interm.",
+            "FieldName": "FOLHASEMINT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHAULTSEM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha Semanal - Última Sem.",
+            "FieldName": "FOLHAULTSEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFOLHA13COMPL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha 13º Salário - Compl.",
+            "FieldName": "FOLHA13COMPL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasREGIMEAPURACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Regime de Apuração",
+            "FieldName": "REGIMEAPURACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_PensionistasPERCPENSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "% Pensão",
+            "FieldName": "PERCPENSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORMULAPENSAOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fórmula p/Base s/Salários",
+            "FieldName": "FORMULAPENSAOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORMULAPENSAOFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fórmula p/Base s/Férias",
+            "FieldName": "FORMULAPENSAOFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORMULAPENSAO13SAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fórmula p/Base s/13º Sal.",
+            "FieldName": "FORMULAPENSAO13SAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORMULAPENSAOLD",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fórmula p/Base s/Lucros",
+            "FieldName": "FORMULAPENSAOLD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasBANCOPENSIONISTA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome do Banco",
+            "FieldName": "BANCOPENSIONISTA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome da Agencia",
+            "FieldName": "AGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasRECEBEPENSAOPPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECEBEPENSAOPPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_PensionistasPERCPENSAOFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCPENSAOFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_PensionistasVALOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Valor Fixo",
+            "FieldName": "VALOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fornecedor",
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNOMERESPPEN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome do Responsável",
+            "FieldName": "NOMERESPPEN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCPFRESPPEN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "CPF do Responsável",
+            "FieldName": "CPFRESPPEN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasIDENTIDADERESPPEN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Identidade do Responsável ",
+            "FieldName": "IDENTIDADERESPPEN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasGRAUPARENTESCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grau de Parentesco",
+            "FieldName": "GRAUPARENTESCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasNOMECOMPLETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome Completo",
+            "FieldName": "NOMECOMPLETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasINDICPAGTOPIX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICPAGTOPIX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasTIPOCHAVEPIX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCHAVEPIX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCHAVEPIX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CHAVEPIX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldQry_PensionistasINDICATIVOPENSAOALIMENTICIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICATIVOPENSAOALIMENTICIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PensionistasCODAGENCIAMEGA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODAGENCIAMEGA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pensionistas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 273,
+        "Top": 6
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 420,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBCLASSIFICACAOIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 380,
+        "Top": 6
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosNROPENSIONISTAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROPENSIONISTAS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ConsultaPensionistas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 551,
+        "Top": 6
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ConsultaPensionistasDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ConsultaPensionistasDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATATERMINO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaPensionistasPENSIONISTA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PENSIONISTA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDBUsado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 506,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 598,
+        "Top": 127
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDBAux",
+      "herdado": false,
+      "propriedades": {
+        "Left": 601,
+        "Top": 11
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBAuxVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBAuxDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBAuxTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBAuxATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Municipios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 614,
+        "Top": 70
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cidade",
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Fornecedores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 542,
+        "Top": 344
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FornecedoresFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fornecedor",
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FornecedoresNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FornecedoresINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Inscrição",
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FornecedoresUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

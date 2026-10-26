@@ -1,0 +1,903 @@
+{
+  "classe": "TFrm_RH2130AcertosRefeicoesPes",
+  "nome": "Frm_RH2130AcertosRefeicoesPes",
+  "herdado": true,
+  "propriedades": {
+    "Left": 400,
+    "Top": 290,
+    "Caption": "Acertos de Refeições por Pré-cadastros, Visitantes e Terceiros",
+    "ClientHeight": 461,
+    "ClientWidth": 779
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 426,
+        "Width": 779,
+        "Height": 35,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_DataAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 237,
+            "Top": 3,
+            "Width": 25,
+            "Height": 25,
+            "Hint": "Move o perído para ",
+            "ShowHint": true,
+            "OnClick": "Btn_DataAnteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_PeriodoNavegacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 261,
+            "Top": 3,
+            "Width": 71,
+            "Height": 25,
+            "Caption": "Período",
+            "OnClick": "Btn_PeriodoNavegacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_DataPosterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 331,
+            "Top": 3,
+            "Width": 25,
+            "Height": 25,
+            "ShowHint": true,
+            "OnClick": "Btn_DataPosteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_MarcacoesOriginaisRef",
+          "herdado": false,
+          "propriedades": {
+            "Left": 385,
+            "Top": 3,
+            "Width": 119,
+            "Height": 25,
+            "Caption": "Marcações",
+            "OnClick": "Btn_MarcacoesOriginaisRefClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_CorpoTela",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 35,
+        "Width": 779,
+        "Height": 391,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Marcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 2,
+            "Width": 648,
+            "Height": 383,
+            "Align": "alClient",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_MarcacoesRef",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 293,
+                "Width": 640,
+                "Height": 84,
+                "Align": "alBottom",
+                "TabOrder": 0,
+                "OnExit": "Pnl_MarcacoesRefExit"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_MarcacaoRefRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 215,
+                    "Top": 18,
+                    "Width": 160,
+                    "Height": 21,
+                    "DataField": "DSCREFEITORIO",
+                    "DataSource": "Dts_Marcacoes"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_MarcacaoRefRefeicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 466,
+                    "Top": 18,
+                    "Width": 160,
+                    "Height": 21,
+                    "DataField": "DSCREFEICAO",
+                    "DataSource": "Dts_Marcacoes"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_MarcacaoRefCardapio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 216,
+                    "Top": 58,
+                    "Width": 160,
+                    "Height": 21,
+                    "DataField": "DSCCARDAPIO",
+                    "DataSource": "Dts_Marcacoes"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MarcacaoRefRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 191,
+                    "Top": 17,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MarcacaoRefRefeicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 439,
+                    "Top": 17,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MarcacaoRefCardapio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 191,
+                    "Top": 57,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_MarcacaoRefUnidadeRefeicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 466,
+                    "Top": 58,
+                    "Width": 160,
+                    "Height": 21,
+                    "DataField": "DSCUNIDADEREFEICAO",
+                    "DataSource": "Dts_Marcacoes"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Btn_MarcacaoData",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 17,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Spd_MarcacaoRefInserir",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 17,
+                    "Width": 23,
+                    "Height": 22,
+                    "Action": "Act_CtrlN",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 138,
+                    "Top": 4,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Refeitório:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 32,
+                    "Top": 4,
+                    "Width": 26,
+                    "Height": 13,
+                    "Caption": "Data:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 386,
+                    "Top": 4,
+                    "Width": 46,
+                    "Height": 13,
+                    "Caption": "Refeição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 386,
+                    "Top": 44,
+                    "Width": 58,
+                    "Height": 13,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 138,
+                    "Top": 44,
+                    "Width": 45,
+                    "Height": 13,
+                    "Caption": "Cardápio:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Enter",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -100,
+                    "Top": -100,
+                    "Width": 23,
+                    "Height": 15,
+                    "TabOrder": 5,
+                    "OnEnter": "Edt_EnterEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_MarcacaoRefRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 138,
+                    "Top": 18,
+                    "Width": 52,
+                    "Height": 21,
+                    "DataField": "REFEITORIO",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_MarcacaoRefRefeicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 386,
+                    "Top": 18,
+                    "Width": 52,
+                    "Height": 21,
+                    "DataField": "REFEICAO",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_MarcacaoRefCardapio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 138,
+                    "Top": 58,
+                    "Width": 52,
+                    "Height": 21,
+                    "DataField": "CARDAPIO",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_MarcacaoRefQuantidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 386,
+                    "Top": 58,
+                    "Width": 75,
+                    "Height": 21,
+                    "DataField": "QUANTIDADECONSUMIDA",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_MarcacaoData",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 32,
+                    "Top": 18,
+                    "Width": 71,
+                    "Height": 21,
+                    "DataField": "DATAAPURACAO",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 0,
+                    "OnKeyPress": "Dbe_MarcacaoDataKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Gbx_Marcacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 2,
+                "Width": 640,
+                "Height": 291,
+                "Align": "alClient",
+                "Caption": "Marcações de Refeitório ",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_MarcacaoRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 15,
+                    "Width": 636,
+                    "Height": 274,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Marcacoes",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "Width": 11,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "LONGREFEITORIO",
+                        "Width": 134,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "LONGREFEICAO",
+                        "Width": 134,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "LONGCARDAPIO",
+                        "Width": 134,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCQUANTIDADECONSUMIDA",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAMARCACAO",
+                        "Width": 67,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORAMARCACAO",
+                        "Width": 45,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NROCRACHA",
+                        "Title.Caption": "Crachá",
+                        "Width": 109,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "LONGCOLETOR",
+                        "Title.Caption": "Coletor/Função",
+                        "Width": 134,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCORIGEMMARCACAO",
+                        "Width": 62,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Mestre",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 123,
+            "Height": 383,
+            "Align": "alLeft",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_MestreDatas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 2,
+                "Width": 115,
+                "Height": 375,
+                "TabStop": false,
+                "Align": "alClient",
+                "DataSource": "Dts_Mestre",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DataSemana",
+                    "Title.Caption": "Data",
+                    "Width": 95,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 779,
+        "Height": 35,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 153,
+            "Top": 8,
+            "Width": 318,
+            "Height": 16,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EscPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalizarPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 5,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Legenda",
+          "herdado": false,
+          "propriedades": {
+            "Left": 708,
+            "Top": 15,
+            "Width": 64,
+            "Height": 14,
+            "Hint": "Exibe Legenda De Cores",
+            "AllowAllUp": true,
+            "GroupIndex": 647,
+            "Caption": "Legenda",
+            "ShowHint": true,
+            "OnClick": "Btn_LegendaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 548,
+            "Top": 8,
+            "Width": 141,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 6,
+            "Width": 65,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_PessoaChange",
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Legenda",
+      "herdado": false,
+      "propriedades": {
+        "Left": 540,
+        "Top": 10,
+        "Width": 120,
+        "Height": 40,
+        "TabOrder": 3,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TShape",
+          "nome": "Shp_MRRLegenda",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 120,
+            "Height": 40,
+            "Align": "alClient"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_RCConsumo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 7,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Consumo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lvl_RCRAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 21,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Reserva"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TShape",
+          "nome": "Shp_RCConsumo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 8,
+            "Width": 46,
+            "Height": 10
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TShape",
+          "nome": "Shp_RCAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 22,
+            "Width": 46,
+            "Height": 10
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 3
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 288,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_MarcPessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 493,
+        "Top": 15
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_InserirLinhaRef",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Inserir Registro",
+            "ImageIndex": 0
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_InserirReservaMenu",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Caption": "Reserva",
+                "OnClick": "Pop_InserirReservaClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_InserirConsumoMenu",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 2,
+                "Caption": "Consumo",
+                "OnClick": "Pop_InserirConsumoClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ExcluirLinha",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Excluir Registro Selecionado",
+            "ImageIndex": 1,
+            "OnClick": "Pop_ExcluirLinhaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_LimparTudo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Excluir Todos os Registros Digitados",
+            "ImageIndex": 2,
+            "OnClick": "Pop_LimparTudoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Marcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 212,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_InserirRefeitorio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 437,
+        "Top": 13
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_InserirReserva",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Caption": "Reserva",
+            "OnClick": "Pop_InserirReservaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_InserirConsumo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Caption": "Consumo",
+            "OnClick": "Pop_InserirConsumoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Mestre",
+      "herdado": false,
+      "propriedades": {
+        "Left": 164,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 351,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlN",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "ShortCut": 16462,
+            "OnExecute": "Act_CtrlNExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DataProximo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "Caption": "Act_DataProximo",
+            "ShortCut": 16423,
+            "OnExecute": "Act_DataProximoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DataAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "Caption": "Act_DataAnterior",
+            "ShortCut": 16421,
+            "OnExecute": "Act_DataAnteriorExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

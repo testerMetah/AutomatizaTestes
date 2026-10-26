@@ -1,0 +1,498 @@
+{
+  "classe": "TFrm_AtualizaDimepCom",
+  "nome": "Frm_AtualizaDimepCom",
+  "herdado": false,
+  "propriedades": {
+    "Left": 405,
+    "Top": 291,
+    "BorderStyle": "bsSingle",
+    "Caption": "Atualizador do DimepCom",
+    "ClientHeight": 343,
+    "ClientWidth": 687,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 307,
+        "Width": 687,
+        "Height": 36,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ConfigSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 7,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_ConfigSalvar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ConfigCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 7,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_ConfigCancelar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Fechar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 7,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Fechar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 7,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_OK"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 69,
+        "Width": 687,
+        "Height": 238,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Items",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 679,
+            "Height": 230,
+            "ActivePage": "Tbs_Configuracao",
+            "Align": "alClient",
+            "Style": "tsButtons",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Configuracao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Configuração",
+                "OnShow": "Tbs_ConfiguracaoShow"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 8,
+                    "Width": 100,
+                    "Height": 13,
+                    "Caption": "Diretório no servidor: "
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 36,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "Usuário:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 62,
+                    "Width": 123,
+                    "Height": 13,
+                    "Caption": "Horários para atualização:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 186,
+                    "Width": 375,
+                    "Height": 13,
+                    "Caption": "Obs.: Os horários informados devem ser períodos em que o sistema não estiver "
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 37,
+                    "Top": 202,
+                    "Width": 247,
+                    "Height": 13,
+                    "Caption": "sendo atualizado e estiver preferencialmente ocioso."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_ConfigMetaUsuario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 34,
+                    "Width": 56,
+                    "Height": 21,
+                    "DataField": "METAUSUARIO",
+                    "DataSource": "Dts_Configuracoes",
+                    "MaxLength": 4,
+                    "TabOrder": 1,
+                    "OnKeyPress": "Edt_ConfigMetaUsuarioKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_ConfigMetaDiretorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 6,
+                    "Width": 308,
+                    "Height": 21,
+                    "DataField": "DIRSERVIDOR",
+                    "DataSource": "Dts_Configuracoes",
+                    "MaxLength": 255,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Edt_P2Horario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 60,
+                    "Width": 42,
+                    "Height": 21,
+                    "EditMask": "!99:99;1; ",
+                    "MaxLength": 5,
+                    "TabOrder": 2,
+                    "OnExit": "Edt_P2HorarioExit",
+                    "OnKeyPress": "Edt_P2HorarioKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBoxMeta",
+                  "nome": "Lst_P2Horarios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 87,
+                    "Width": 42,
+                    "Height": 25,
+                    "TabOrder": 3,
+                    "OnClick": "Lst_P2HorariosClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -100,
+                    "Top": -100,
+                    "Width": 29,
+                    "Height": 21,
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Atualizacao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Atualização",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Log",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 671,
+                    "Height": 199,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Log",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 687,
+        "Height": 69,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Atualizacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 542,
+            "Top": 10,
+            "Width": 100,
+            "Height": 45,
+            "Action": "Act_Atualizar",
+            "AllowAllUp": true,
+            "GroupIndex": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Configuracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 34,
+            "Top": 10,
+            "Width": 100,
+            "Height": 45,
+            "Action": "Act_Configuracoes",
+            "AllowAllUp": true,
+            "GroupIndex": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NaFrente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 655,
+            "Top": 4,
+            "Width": 23,
+            "Height": 22,
+            "AllowAllUp": true,
+            "GroupIndex": 36541,
+            "OnClick": "Btn_NaFrenteClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Configuracoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 15
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 456,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_ConfigSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configuracoes",
+            "Caption": "Salvar",
+            "ImageIndex": 0,
+            "ShortCut": 16467,
+            "OnExecute": "Act_ConfigSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConfigCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configuracoes",
+            "Caption": "Cancelar",
+            "ImageIndex": 7,
+            "OnExecute": "Act_ConfigCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Menus",
+            "Caption": "Atualização",
+            "GroupIndex": 3,
+            "ImageIndex": 1,
+            "OnExecute": "Act_AtualizarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Configuracoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Menus",
+            "Caption": "Configuração",
+            "GroupIndex": 3,
+            "ImageIndex": 0,
+            "OnExecute": "Act_ConfiguracoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEditCut",
+          "nome": "Act_OK",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atializacao",
+            "Caption": "Atualizar",
+            "ImageIndex": 0,
+            "ShortCut": 16472,
+            "OnExecute": "Act_OKExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Fechar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atializacao",
+            "Caption": "Cancelar",
+            "OnExecute": "Act_FecharExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_P2Horarios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_P2ExcluirHorario",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Excluir horário",
+            "OnClick": "Pop_P2ExcluirHorarioClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Log",
+      "herdado": false,
+      "propriedades": {
+        "Left": 312,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMREnter",
+      "nome": "MREnter",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": true,
+        "Left": 475,
+        "Top": 28
+      },
+      "filhos": []
+    }
+  ]
+}

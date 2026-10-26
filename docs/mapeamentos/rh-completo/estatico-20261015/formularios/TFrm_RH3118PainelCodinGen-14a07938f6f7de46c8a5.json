@@ -1,0 +1,584 @@
+{
+  "classe": "TFrm_RH3118PainelCodinGen",
+  "nome": "Frm_RH3118PainelCodinGen",
+  "herdado": false,
+  "propriedades": {
+    "Left": 508,
+    "Top": 236,
+    "BorderStyle": "bsDialog",
+    "Caption": "Painel de Controle Codin - Genérico",
+    "ClientHeight": 340,
+    "ClientWidth": 478,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 478,
+        "Height": 340,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ComandosStatus",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 470,
+            "Height": 332,
+            "ActivePage": "Tbs_Comandos",
+            "Align": "alClient",
+            "Style": "tsFlatButtons",
+            "TabOrder": 0,
+            "OnChange": "Pgc_ComandosStatusChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Comandos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Comandos"
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckListBox",
+                  "nome": "Lst_ColetoresCodin",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 17,
+                    "Width": 462,
+                    "Height": 138,
+                    "Align": "alClient",
+                    "Columns": 2,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "HeaderControl1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 462,
+                    "Height": 17,
+                    "Style": "hsFlat"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Campos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 155,
+                    "Width": 462,
+                    "Height": 113,
+                    "Align": "alBottom",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_StatusComando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 12,
+                        "Width": 95,
+                        "Height": 13,
+                        "Caption": "Status do comando:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Comando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 38,
+                        "Width": 48,
+                        "Height": 13,
+                        "Caption": "Comando:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TipoComando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 64,
+                        "Width": 86,
+                        "Height": 13,
+                        "Caption": "Tipo de comando:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InformacoesAdicionais",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 90,
+                        "Width": 111,
+                        "Height": 13,
+                        "Caption": "Informações adicionais:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_InformacoesAdicionais",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 86,
+                        "Width": 192,
+                        "Height": 21,
+                        "MaxLength": 15,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_StatusComando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 8,
+                        "Width": 145,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "Items.Strings": [
+                          "0 - Executado",
+                          "1 - A Executar",
+                          "2 - Em Execução",
+                          "3 - Pendente"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Comando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 34,
+                        "Width": 331,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 1,
+                        "Items.Strings": [
+                          "00 - Nulo",
+                          "01 - Pedido de status de bloqueio",
+                          "02 - Pedido de status de data-hora",
+                          "03 - Pedido de status de característica dos CODINs",
+                          "04 - Pedido de status de buffer & func on-off",
+                          "05 - Pedido de status de erros",
+                          "06 - Pedido de status de aplicativo",
+                          "07 - Pedido de status de lista branca",
+                          "08 - Pedido de status de lista negra",
+                          "10 - Pedido de status de liberação incondicional",
+                          "11 - Desbloqueio da leitora CODIN",
+                          "12 - Bloqueio da leitora CODIN",
+                          "13 - Reset de erros no CODIN",
+                          "14 - Apagar back-up no CODIN",
+                          "15 - Finalização de liberação incondicional",
+                          "16 - Apagar lista branca no CODIN",
+                          "17 - Apagar lista negra no CODIN",
+                          "18 - Alterar senha eeprom no CODIN",
+                          "19 - Carga de data-hora no CODIN",
+                          "20 - Carga de aplicativo",
+                          "21 - Carga da lista branca no CODIN",
+                          "22 - Carga da lista negra no CODIN",
+                          "23 - Recepção de back-up no CODIN",
+                          "24 - Liberação incondicional",
+                          "25 - Desconexão lógica de CODIN (desativar)",
+                          "26 - Conexão lógica de CODIN",
+                          "27 - Para o CODIN entrar em modo de consulta parcial",
+                          "28 - Para o CODIN voltar ao modo de consulta on-line",
+                          "29 - Interrupção de coleta (abort coleta)",
+                          "31 - Coleta off-line",
+                          "32 - Coleta off-line com mudança para consulta parcial",
+                          "35 - Apagar aplicativo",
+                          "36 - Coleta logs on-line",
+                          "38 - Carregar lista de templates normal",
+                          "39 - Carregar lista de templates especial",
+                          "40 - Status Lista Templates Normal (Sony e VeriPrint)",
+                          "41 - Status Lista Templates Especial (Sony)",
+                          "42 - Status da Leitora da digital",
+                          "43 - Carga de lista de visitantes",
+                          "44 - Status de lista de visitantes",
+                          "45 - Apagar lista de visitantes",
+                          "46 - Carga de lista de senhas",
+                          "47 - Status de lista de senhas",
+                          "48 - Apagar lista de senhas",
+                          "51 - Ativar monitoração de alarmes de codin",
+                          "52 - Desativar monitoração de alarmes de codin",
+                          "53 - Exclusão de templates normal com uso de lista",
+                          "54 - Exclusão de templates especial com uso de lista",
+                          "55 - Exclusão total de templates normal e especial",
+                          "56 - Alteração de Nível de Templates Normal",
+                          "57 - Alteração de Nível de Templates Especial",
+                          "58 - Ativar monitoração de alarme por entrada (01 a 24)",
+                          "59 - Desativar monitoração de alarme por entrada (01 a 24)",
+                          "60 - Ativar saída (01 a 06) por tempo determinado",
+                          "61 - Ativar saída (01 a 06) por tempo indeterminado",
+                          "62 - Ativar saída (01 a 06) por tempo indeterminado",
+                          "63 - Status das 24 entradas",
+                          "64 - Versão eprom-aplicativo",
+                          "65 - Carga de horário de verão",
+                          "66 - Atualizacao de crachá Smartcard",
+                          "67 - Apagar atualização de crachá Smartcard (específico)",
+                          "68 - Carga de Tabela de Grupos (smartcard)",
+                          "69 - Status de Tabela de Grupos (smartcard)",
+                          "70 - Apagar Tabela de Grupos (smartcard)",
+                          "72 - Status de horário de verão",
+                          "73 - Apagar horário de verão",
+                          "74 - Status de qtde de comandos pendentes (smartcard)",
+                          "75 - Apagar todos os comandos pendentes (smartcard)",
+                          "79 - Download de Software (linha pró)",
+                          "80 - Status de Software (linha pró)",
+                          "81 - Carga de tabela Matrícula x Veículo",
+                          "82 - Status de tabela Matrícula x Veículo",
+                          "83 - Apagar tabela Matrícula x Veículo",
+                          "84 - Coleta de pendências de atualização smartcard"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_TipoComando",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 60,
+                        "Width": 202,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 2,
+                        "Items.Strings": [
+                          "0 - Comando",
+                          "1 - Interrupção do comando válido"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Executar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 268,
+                    "Width": 462,
+                    "Height": 33,
+                    "Align": "alBottom",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_Executar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 5,
+                        "Width": 125,
+                        "Height": 25,
+                        "Caption": "OK",
+                        "TabOrder": 0,
+                        "OnClick": "Btn_ExecutarClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_StatusEnvio",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Status de Envio",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_StatusEnvio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 462,
+                    "Height": 301,
+                    "Align": "alClient",
+                    "DataSource": "Dts_StatusEnvio",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "COLETOR",
+                        "Title.Caption": "Coletor",
+                        "Width": 114,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescStatus",
+                        "Title.Caption": "Status",
+                        "Width": 92,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescComando",
+                        "Title.Caption": "Comando",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "INFADICIONAL",
+                        "Title.Caption": "Inf. Adicional",
+                        "Width": 137,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_StatusRetorno",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Status de Retorno",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_StatusRetorno",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 462,
+                    "Height": 301,
+                    "Align": "alClient",
+                    "DataSource": "Dts_StatusRetorno",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "COLETOR",
+                        "Title.Caption": "Coletor",
+                        "Width": 114,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescStatus",
+                        "Title.Caption": "Status",
+                        "Width": 92,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescComando",
+                        "Title.Caption": "Aviso",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "INFADICIONAL",
+                        "Title.Caption": "Inf. Adicional",
+                        "Width": 137,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_StatusEnvio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_StatusEnvio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioSTATUS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioCOMANDO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMANDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioINFADICIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INFADICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioDescStatus",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "DescStatus"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioDescComando",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 60,
+            "FieldName": "DescComando"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_StatusRetorno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoComsndo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMANDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoInfAdicional",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INFADICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoDescStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescStatus"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoDescComandos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescComando"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_StatusRetorno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 32
+      },
+      "filhos": []
+    }
+  ]
+}

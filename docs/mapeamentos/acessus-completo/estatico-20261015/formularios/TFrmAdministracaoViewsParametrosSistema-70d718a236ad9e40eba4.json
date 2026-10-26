@@ -1,0 +1,810 @@
+{
+  "classe": "TFrmAdministracaoViewsParametrosSistema",
+  "nome": "FrmAdministracaoViewsParametrosSistema",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Parâmetros do Sistema",
+    "ClientHeight": 441,
+    "ClientWidth": 624,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnlFundoCadastro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 377,
+        "Width": 624,
+        "Height": 64,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnOk",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 13,
+            "Width": 142,
+            "Height": 38,
+            "Caption": "Salvar (Ctrl+S)",
+            "TabOrder": 0,
+            "OnClick": "actSalvarExecute",
+            "Action": "actSalvar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 13,
+            "Width": 162,
+            "Height": 38,
+            "Caption": "Fechar (Ctrl+F4)",
+            "TabOrder": 1,
+            "OnClick": "actFecharExecute",
+            "Action": "actFechar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlParametros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 624,
+        "Height": 377,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "PaginaModulos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 624,
+            "Height": 377,
+            "ActivePage": "tsImportacaoApi",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "tsGeral",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Geral"
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckBox",
+                  "nome": "prmUtilizarMDITabs",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 0,
+                    "Width": 190,
+                    "Height": 17,
+                    "Caption": "Utilizar controle MDI para Tabs.",
+                    "TabOrder": 0,
+                    "OnClick": "prmUtilizarMDITabsClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckListBox",
+                  "nome": "prmModulosUtilizarMDITabs",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 23,
+                    "Width": 190,
+                    "Height": 106,
+                    "Items.Strings": [
+                      "Acessus",
+                      "Portaria",
+                      "Refeitório",
+                      "Estacionamento",
+                      "Escola",
+                      "Administração"
+                    ],
+                    "TabOrder": 1,
+                    "OnClick": "prmUtilizarMDITabsClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "prmAlterarSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 142,
+                    "Width": 190,
+                    "Height": 17,
+                    "Caption": "Alterar senha no primeiro login",
+                    "TabOrder": 2,
+                    "OnClick": "prmUtilizarMDITabsClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsClassApp",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "ClassApp API",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckBox",
+                  "nome": "prmAtivarClassAppAPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 11,
+                    "Width": 142,
+                    "Height": 17,
+                    "Caption": "Ativar ClassApp API",
+                    "TabOrder": 0,
+                    "OnClick": "prmAtivarClassAppAPIClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbxClassAppAPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 34,
+                    "Width": 326,
+                    "Height": 111,
+                    "Caption": "Parâmetros ClassApp API",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblUrl",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 24,
+                        "Width": 27,
+                        "Height": 15,
+                        "Caption": "URL: "
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblToken",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 53,
+                        "Width": 38,
+                        "Height": 15,
+                        "Caption": "Token: "
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblTipoVinculoClassApp",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 82,
+                        "Width": 89,
+                        "Height": 15,
+                        "Caption": "Tipo de Vínculo: "
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmURLClassAppAPI",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 21,
+                        "Width": 242,
+                        "Height": 23,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmValorTokenClassApp",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 50,
+                        "Width": 242,
+                        "Height": 23,
+                        "PasswordChar": "*",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "prmTipoVinculoClassApp",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 106,
+                        "Top": 79,
+                        "Width": 191,
+                        "Height": 23,
+                        "Style": "csDropDownList",
+                        "TabOrder": 2,
+                        "Items.Strings": [
+                          "Id",
+                          "Matrícula"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsPortaria",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Portaria",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckBox",
+                  "nome": "prmNovaTelaVisitantesTerceiros",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 16,
+                    "Top": 16,
+                    "Width": 281,
+                    "Height": 17,
+                    "Caption": "Usar nova tela de cadastro de visitantes/terceiros",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsRefeitorio",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Refeitório",
+                "ImageIndex": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbConfigReservas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 11,
+                    "Width": 446,
+                    "Height": 78,
+                    "Caption": "Configuração das Reservas de Refeição",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "prmExcluirAcessosAoReservar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 25,
+                        "Width": 236,
+                        "Height": 17,
+                        "Caption": "Excluir acessos de regras ao reservar",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "prmAutorizarReservasDurantePeriodoConsumo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 48,
+                        "Width": 428,
+                        "Height": 17,
+                        "Caption": "Permitir autorização de reservas de consumo durante o período de consumo",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbConfigRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 95,
+                    "Width": 278,
+                    "Height": 74,
+                    "Caption": "Configuração do Refeitório",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "prmAgruparColetoresRefeitorio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 32,
+                        "Width": 236,
+                        "Height": 17,
+                        "Caption": "Agrupar coletores por refeitório",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsEmail",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "E-Mail",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbxEmailConfig",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 3,
+                    "Width": 610,
+                    "Height": 174,
+                    "Caption": "Configuração do Servidor SMTP",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpHost",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 27,
+                        "Width": 80,
+                        "Height": 15,
+                        "Caption": "Servidor SMTP:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpPort",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 56,
+                        "Width": 31,
+                        "Height": 15,
+                        "Caption": "Porta:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpUsername",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 85,
+                        "Width": 43,
+                        "Height": 15,
+                        "Caption": "Usuário:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpPassword",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 114,
+                        "Width": 35,
+                        "Height": 15,
+                        "Caption": "Senha:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpFromName",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 280,
+                        "Top": 27,
+                        "Width": 113,
+                        "Height": 15,
+                        "Caption": "Nome do Remetente:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSmtpFromEmail",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 280,
+                        "Top": 56,
+                        "Width": 97,
+                        "Height": 15,
+                        "Caption": "E-mail Remetente:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmSmtpHost",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 120,
+                        "Top": 24,
+                        "Width": 145,
+                        "Height": 23,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpinEdit",
+                      "nome": "prmSmtpPort",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 120,
+                        "Top": 53,
+                        "Width": 65,
+                        "Height": 24,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmSmtpUsername",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 120,
+                        "Top": 82,
+                        "Width": 145,
+                        "Height": 23,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmSmtpPassword",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 120,
+                        "Top": 111,
+                        "Width": 145,
+                        "Height": 23,
+                        "PasswordChar": "*",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmSmtpFromName",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 400,
+                        "Top": 24,
+                        "Width": 185,
+                        "Height": 23,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "prmSmtpFromEmail",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 400,
+                        "Top": 53,
+                        "Width": 185,
+                        "Height": 23,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "chkSmtpUseSSL",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 400,
+                        "Top": 85,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Usar SSL",
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "chkSmtpUseTLS",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 400,
+                        "Top": 110,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Usar TLS",
+                        "Checked": true,
+                        "TabOrder": 7
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbxEmailDestinatarios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 183,
+                    "Width": 610,
+                    "Height": 155,
+                    "Caption": "Destinatários (um por linha)",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblDestinatarios",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 24,
+                        "Width": 68,
+                        "Height": 15,
+                        "Caption": "E-mails para:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMemo",
+                      "nome": "mmDestinatarios",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 45,
+                        "Width": 577,
+                        "Height": 70,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "THoverSpeedButton",
+                      "nome": "btnTestarEmail",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 121,
+                        "Width": 113,
+                        "Height": 28,
+                        "Caption": "Testar Envio",
+                        "TabOrder": 1,
+                        "OnClick": "btnTestarEmailClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsGeracaoAcesso",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Geração de Acesso",
+                "ImageIndex": 5
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "gbConfigGeracaoAcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 3,
+                    "Width": 365,
+                    "Height": 78,
+                    "Caption": "Configuração da Geração de Acesso",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblNroDiasGeracaoAcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 32,
+                        "Width": 304,
+                        "Height": 18,
+                        "Caption": "Quantidade padrão de dias a gerar acesso:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpinEdit",
+                      "nome": "prmNroDiasGeracaoAcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 308,
+                        "Top": 29,
+                        "Width": 43,
+                        "Height": 28,
+                        "MaxLength": 2,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsImportacaoApi",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Importação API",
+                "ImageIndex": 6
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 19,
+                    "Top": 11,
+                    "Width": 365,
+                    "Height": 78,
+                    "Caption": " Afastamentos ",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 32,
+                        "Width": 232,
+                        "Height": 18,
+                        "Caption": "Quantidade de anos a considerar"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpinEdit",
+                      "nome": "prmQuantidadeAnosConsiderar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 308,
+                        "Top": 29,
+                        "Width": 43,
+                        "Height": 28,
+                        "MaxLength": 2,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 572,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "actSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Salvar (Ctrl+S)",
+            "ShortCut": 16467,
+            "OnExecute": "actSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actFechar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fechar (Ctrl+F4)",
+            "ShortCut": 16499,
+            "OnExecute": "actFecharExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 564,
+        "Top": 259
+      },
+      "filhos": []
+    }
+  ]
+}

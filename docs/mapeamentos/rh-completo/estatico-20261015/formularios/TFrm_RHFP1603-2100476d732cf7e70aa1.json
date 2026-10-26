@@ -1,0 +1,444 @@
+{
+  "classe": "TFrm_RHFP1603",
+  "nome": "Frm_RHFP1603",
+  "herdado": false,
+  "propriedades": {
+    "Left": 415,
+    "Top": 219,
+    "BorderStyle": "bsSingle",
+    "Caption": "Anotações Pendentes designadas para o Operador",
+    "ClientHeight": 352,
+    "ClientWidth": 781,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 781,
+        "Height": 311,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label17",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 216,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 57,
+            "Top": 216,
+            "Width": 305,
+            "Height": 13,
+            "Caption": "0001 - Matriz"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label21",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 240,
+            "Width": 30,
+            "Height": 13,
+            "Caption": "Texto:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TitOperador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 456,
+            "Top": 216,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Operador designado:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_OperadorDesignado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 562,
+            "Top": 216,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Operador"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Consulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 773,
+            "Height": 206,
+            "Align": "alTop",
+            "DataSource": "Dts_Consulta",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATACADASTRAMENTO",
+                "Width": 79,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Width": 142,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAVENCIMENTO",
+                "Width": 107,
+                "Visible": true
+              },
+              {
+                "FieldName": "SituacaoAnotacaoTexto",
+                "Width": 59,
+                "Visible": true
+              },
+              {
+                "FieldName": "Vinculo",
+                "Width": 301,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_TextoPadrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 240,
+            "Width": 708,
+            "Height": 59,
+            "DataField": "TEXTOPADRAO",
+            "DataSource": "Dts_Consulta",
+            "ReadOnly": true,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "ChkBox_OrdenarEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 644,
+            "Top": 216,
+            "Width": 121,
+            "Height": 17,
+            "Caption": "Ordenar por Empresa",
+            "TabOrder": 2,
+            "OnClick": "ChkBox_OrdenarEmpresaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 311,
+        "Width": 781,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Consultar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 99,
+            "Top": 6,
+            "Width": 359,
+            "Height": 25,
+            "Caption": "Mostrar todas as Anotações Pendentes",
+            "TabOrder": 1,
+            "OnClick": "Btn_ConsultarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Finalizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 463,
+            "Top": 6,
+            "Width": 249,
+            "Height": 25,
+            "Caption": "Concluir as Anotações Selecionadas",
+            "Default": true,
+            "TabOrder": 2,
+            "OnClick": "Btn_FinalizarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 449,
+        "Top": 104
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 376,
+        "Top": 108
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaORIGEMANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaDATACADASTRAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cadastramento",
+            "FieldName": "DATACADASTRAMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Assunto",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaTEXTOPADRAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TEXTOPADRAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador Designado",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaSITUACAOANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaUNIDADEANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADEANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaDESCRESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaDESCRUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRUNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaESTABDOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABDOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaSituacaoAnotacaoTexto",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SituacaoAnotacaoTexto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaVinculo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Vínculo",
+            "FieldName": "Vinculo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaDATAVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Limite",
+            "FieldName": "DATAVENCIMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Empresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 304,
+        "Top": 104
+      },
+      "filhos": []
+    }
+  ]
+}

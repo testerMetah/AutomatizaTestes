@@ -1,0 +1,1117 @@
+{
+  "classe": "TFrm_RHFP0635",
+  "nome": "Frm_RHFP0635",
+  "herdado": false,
+  "propriedades": {
+    "Left": 630,
+    "Top": 371,
+    "Width": 423,
+    "Height": 323,
+    "Caption": "Incluir novo Início de Validade",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 407,
+        "Height": 243,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 26,
+            "Top": 27,
+            "Width": 118,
+            "Height": 13,
+            "Caption": "Novo Início de Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 26,
+            "Top": 67,
+            "Width": 104,
+            "Height": 26,
+            "Caption": "Copiar Parâmetros do Início de Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_InicioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 169,
+            "Top": 24,
+            "Width": 52,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "dbg_MesesAnos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 169,
+            "Top": 70,
+            "Width": 127,
+            "Height": 166,
+            "TabStop": false,
+            "DataSource": "Dts_AnoMesBase",
+            "Enabled": false,
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "ANOMESBASE",
+                "Title.Caption": "Início da Validade",
+                "Width": 93,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Stt_MensagemValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 26,
+            "Top": 195,
+            "Width": 139,
+            "Height": 43,
+            "Caption": "Os parâmetros serão copiados do início de validade mais recente (atual)",
+            "TabOrder": 2,
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 243,
+        "Width": 407,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "OK",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AnoMesBase",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_HistParGPSSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 75
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_HistParGPSSefipANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipEMITEGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMITEGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipGERASEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GERASEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCODCENTRALIZASEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODCENTRALIZASEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipTIPOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCODIGOFPAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOFPAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCODIGOTERCEIROS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOTERCEIROS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCODIGOPAGTOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOPAGTOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCODIGORECOLHESEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGORECOLHESEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipMODALIDADEFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODALIDADEFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNROBANCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROBANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNROAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDIGITOAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIGITOAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCONTACORRENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTACORRENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipBANCOFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BANCOFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipAGENCIAFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AGENCIAFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNROBANCOFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROBANCOFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNROAGENCIAFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROAGENCIAFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDIGITOAGENCIAFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIGITOAGENCIAFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCADASTROEMPRESACEF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CADASTROEMPRESACEF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipOPCAOAVISOINDENIZADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPCAOAVISOINDENIZADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDEDUZSALFAMILIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEDUZSALFAMILIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDEDUZSALMATERNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEDUZSALMATERNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDEDUZSALEDUCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEDUZSALEDUCACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCEMPCOOPTRAB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCEMPCOOPTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCNFAGNOC15",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCNFAGNOC15"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCNFAGNOC20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCNFAGNOC20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCNFAGNOC25",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCNFAGNOC25"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSATAGNOC15",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSATAGNOC15"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSATAGNOC20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSATAGNOC20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSATAGNOC25",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSATAGNOC25"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSALEDUCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSALEDUCACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCINCRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCINCRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSENAI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSENAI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSESI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSESI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSENAC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSENAC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSEBRAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSEBRAE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCDPC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCDPC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCFAER",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCFAER"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSENAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSENAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSEST",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSEST"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSENAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSENAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSESCOOP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSESCOOP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCTOTALTERCEIROS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCTOTALTERCEIROS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSESTFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSESTFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCSENATFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCSENATFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCTERCEIROSPJ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCTERCEIROSPJ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCTERCEIROSPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCTERCEIROSPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCPRODUTOSRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCPRODUTOSRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCPRODUTOSRURAISPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCPRODUTOSRURAISPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCFILANTROPIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCFILANTROPIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCLIENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLIENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDESCRICAOMEMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOMEMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSALEDUCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSALEDUCACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVINCRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVINCRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSENAI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSENAI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSESI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSESI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSENAC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSENAC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSEBRAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSEBRAE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVDPC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVDPC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVFAER",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVFAER"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSENAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSENAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSEST",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSEST"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSENAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSENAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDCONVSESCOOP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDCONVSESCOOP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCTOTTERCFPAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCTOTTERCFPAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCEMPSALCONTREMPR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Perc. s/Salários e Férias",
+            "FieldName": "PERCEMPSALCONTREMPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCEMPRESA13SALEMPR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Perc. s/13º Salário",
+            "FieldName": "PERCEMPRESA13SALEMPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCEMPPROLABORE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Perc. Pró-Labore",
+            "FieldName": "PERCEMPPROLABORE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCAUTONOMOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Perc. Autônomos",
+            "FieldName": "PERCAUTONOMOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_HistParGPSSefipPERCEMP13DESONERADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCEMP13DESONERADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_HistParGPSSefipDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_HistParGPSSefipDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipTIPOLOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOLOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipTIPOINSCRICAOLOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCRICAOLOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINSCRICAOLOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAOLOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipTIPOINSCCONTRATANTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCCONTRATANTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINSCRICAOCONTRATANTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAOCONTRATANTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipTIPOINSCPROPRIETARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCPROPRIETARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINSCRICAOPROPRIETARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAOPROPRIETARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDICSUBSTCONTROBRA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de Substituição da Contribuição Patronal de Obras",
+            "FieldName": "INDICSUBSTCONTROBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDICSUBSTCONTRSIMPLES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de Substituição da Contribuição Patronal do SIMPLES",
+            "FieldName": "INDICSUBSTCONTRSIMPLES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_HistParGPSSefipCNAEPREPONDERANTEOBRA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "CNAE Preponderante",
+            "FieldName": "CNAEPREPONDERANTEOBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipLOTACAOINCLUSAOVALID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOTACAOINCLUSAOVALID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNRPROCESSOFAP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRPROCESSOFAP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipNRPROCESSORAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRPROCESSORAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipFATORCALCCONTRIBPATRONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FATORCALCCONTRIBPATRONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipFATORCALCCONTRIBPATRONAL13",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FATORCALCCONTRIBPATRONAL13"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipDESCONSIDERARAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCONSIDERARAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipCNPJCADASTROOBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CNPJCADASTROOBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipLOTACAODESONERADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOTACAODESONERADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipENVIAFAP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENVIAFAP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_HistParGPSSefipINDICATIVODESONERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICATIVODESONERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipPERCENTNAODESONERADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCENTNAODESONERADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipVALORREONERACAO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORREONERACAO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipVALORREONERACAO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORREONERACAO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_HistParGPSSefipVALORREONERACAO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORREONERACAO3"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3098 @@
+{
+  "classe": "TFrm_RHFP5780",
+  "nome": "Frm_RHFP5780",
+  "herdado": false,
+  "propriedades": {
+    "Left": 367,
+    "Top": 243,
+    "BorderStyle": "bsSingle",
+    "Caption": "GPS's Emitidas da Empresa",
+    "ClientHeight": 337,
+    "ClientWidth": 650,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 650,
+        "Height": 46,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 14,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Classificação GPS:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_GPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 14,
+            "Width": 72,
+            "Height": 13,
+            "Caption": "Lbl_GPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_GPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_GPSSEFIPClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_GPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 10,
+            "Width": 34,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "Edt_GPSSEFIPChange",
+            "OnEnter": "Edt_GPSSEFIPEnter",
+            "OnExit": "Edt_GPSSEFIPExit",
+            "OnKeyPress": "Edt_GPSSEFIPKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 650,
+        "Height": 291,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 9,
+            "Width": 104,
+            "Height": 271,
+            "TabStop": false,
+            "DataSource": "Dts_GPSSEFIP",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "MesAnoCompetencia",
+                "Title.Caption": "Competência",
+                "Width": 71,
+                "Visible": true
+              },
+              {
+                "FieldName": "NROBANCO",
+                "Title.Caption": "Nº Banco",
+                "Visible": true
+              },
+              {
+                "FieldName": "NROAGENCIA",
+                "Title.Caption": "Agência",
+                "Visible": true
+              },
+              {
+                "FieldName": "DIGITOAGENCIA",
+                "Title.Caption": "Dígito Ag.",
+                "Visible": true
+              },
+              {
+                "FieldName": "NROREMESSA",
+                "Title.Caption": "Nº Remessa",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_GPSEmitidas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 8,
+            "Width": 524,
+            "Height": 277,
+            "ActivePage": "Tbs_GPSPrincipal",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_GPSPrincipal",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "GPS Principal"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 516,
+                    "Height": 249,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 23,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "ValorEmpresaRecalc",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 54,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORSEGURADOS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 85,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORTERCEIROS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 23,
+                        "Width": 86,
+                        "Height": 13,
+                        "Caption": "Valor da Empresa:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 54,
+                        "Width": 96,
+                        "Height": 13,
+                        "Caption": "Valor de Segurados:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 85,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Valor de Terceiros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 220,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORCOMPENSAR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 23,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "LIQUIDOCOMPETENCIA",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 117,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORCOOPERATIVAS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 152,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORRETIDO",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 187,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORDEDUZIR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 54,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "VALORMULTAJUROS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 220,
+                        "Width": 92,
+                        "Height": 13,
+                        "Caption": "Valor Compensado:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 23,
+                        "Width": 119,
+                        "Height": 13,
+                        "Caption": "Líquido da Competência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 54,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Valor de Multa/Juros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 117,
+                        "Width": 107,
+                        "Height": 13,
+                        "Caption": "Valor de Cooperativas:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 152,
+                        "Width": 84,
+                        "Height": 13,
+                        "Caption": "Valor Retido N.F.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 187,
+                        "Width": 94,
+                        "Height": 13,
+                        "Caption": "Valor de Deduções:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 85,
+                        "Width": 107,
+                        "Height": 13,
+                        "Caption": "Líquido da GPS Pago:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 117,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Recolhimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataVencimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 468,
+                        "Top": 154,
+                        "Width": 21,
+                        "Height": 21,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 154,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "Vencimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 220,
+                        "Width": 95,
+                        "Height": 13,
+                        "Caption": "Saldo a Compensar:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 220,
+                        "Width": 78,
+                        "Height": 12,
+                        "DataField": "SALDOCOMPENSACAO",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label40",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 187,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText27",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 187,
+                        "Width": 64,
+                        "Height": 12,
+                        "DataField": "DATAPAGAMENTO",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBEdit1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 81,
+                        "Width": 83,
+                        "Height": 21,
+                        "DataField": "LIQUIDOGPSPAGO",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 0,
+                        "OnKeyPress": "DBEdit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_Recolhimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 117,
+                        "Width": 51,
+                        "Height": 21,
+                        "EditMask": "99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 1,
+                        "OnChange": "Msk_RecolhimentoChange",
+                        "OnEnter": "Msk_RecolhimentoEnter",
+                        "OnExit": "Msk_RecolhimentoExit",
+                        "OnKeyPress": "Msk_RecolhimentoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_TrocaAba1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 406,
+                        "Top": 158,
+                        "Width": 49,
+                        "Height": 12,
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_TrocaAba1Enter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DataVencimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 154,
+                        "Width": 85,
+                        "Height": 21,
+                        "DataField": "DATAVENCIMENTO",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 2,
+                        "OnChange": "Dbe_DataVencimentoChange",
+                        "OnKeyPress": "DBEdit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_GPSPrincipal_Covid19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 142,
+                        "Width": 248,
+                        "Height": 68,
+                        "Caption": "Guias",
+                        "TabOrder": 4,
+                        "Visible": false
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label44",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Vencimento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText31",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "ValorGuiaGPSPrincipalPrazo",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label45",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Valor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText32",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCIMENTO",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText33",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCTOCOVID19",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText34",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "VALORGUIACOVID19",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label46",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 32,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "No prazo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label47",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 49,
+                            "Width": 52,
+                            "Height": 13,
+                            "Caption": "Prorrogado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label48",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Pagamento"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_DifDissidio",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Diferenças de Dissídio/Rescisões Complementares",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 516,
+                    "Height": 249,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 46,
+                        "Width": 86,
+                        "Height": 13,
+                        "Caption": "Valor da Empresa:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 80,
+                        "Width": 96,
+                        "Height": 13,
+                        "Caption": "Valor de Segurados:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label21",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 115,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Valor de Terceiros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 184,
+                        "Width": 119,
+                        "Height": 13,
+                        "Caption": "Líquido da Competência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label23",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 46,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Valor de Multa/Juros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 80,
+                        "Width": 107,
+                        "Height": 13,
+                        "Caption": "Líquido da GPS Pago:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 46,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "VALOREMPRESADIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 80,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "VALORSEGURADOSDIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 115,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "VALORTERCEIROSDIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 184,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "LIQUIDODISSIDIO",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 46,
+                        "Width": 78,
+                        "Height": 13,
+                        "DataField": "MULTAJUROSDISSIDIO",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 114,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Recolhimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 262,
+                        "Top": 149,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "Vencimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataVencimentoDis",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 445,
+                        "Top": 149,
+                        "Width": 21,
+                        "Height": 21,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label27",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 262,
+                        "Top": 184,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 376,
+                        "Top": 184,
+                        "Width": 63,
+                        "Height": 12,
+                        "DataField": "DATAPAGAMENTODIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label43",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 149,
+                        "Width": 92,
+                        "Height": 13,
+                        "Caption": "Valor Compensado:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText30",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 152,
+                        "Top": 149,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORCOMPENSARDIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_TrocaAba2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 389,
+                        "Top": 154,
+                        "Width": 49,
+                        "Height": 12,
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_TrocaAba2Enter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_LiquidoPagoDissidio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 376,
+                        "Top": 80,
+                        "Width": 76,
+                        "Height": 21,
+                        "DataField": "LIQUIDODISSIDIOPAGO",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 0,
+                        "OnKeyPress": "DBEdit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_RecolheDissidio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 376,
+                        "Top": 114,
+                        "Width": 50,
+                        "Height": 21,
+                        "EditMask": "99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 1,
+                        "OnChange": "Msk_RecolheDissidioChange",
+                        "OnExit": "Msk_RecolhimentoExit",
+                        "OnKeyPress": "Msk_RecolhimentoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBEdit4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 376,
+                        "Top": 149,
+                        "Width": 68,
+                        "Height": 21,
+                        "DataField": "DATAVENCIMENTODIS",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_GPSDissidio_Covid19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 258,
+                        "Top": 142,
+                        "Width": 248,
+                        "Height": 68,
+                        "Caption": "Guias",
+                        "TabOrder": 4,
+                        "Visible": false
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label49",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Vencimento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText35",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "ValorGuiaGPSDissidioPrazo",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label50",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Valor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText36",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCIMENTODIS",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText37",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCTOCOVID19DIS",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText38",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "VALORGUIACOVID19DIS",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label51",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 32,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "No prazo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label52",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 49,
+                            "Width": 52,
+                            "Height": 13,
+                            "Caption": "Prorrogado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label53",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Pagamento"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_ProdutosRurais",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Produtos Rurais",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 516,
+                    "Height": 249,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 32,
+                        "Width": 120,
+                        "Height": 13,
+                        "Caption": "Valor de Produtos Rurais:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 32,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORPRODUTOSRURAIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 262,
+                        "Top": 73,
+                        "Width": 107,
+                        "Height": 13,
+                        "Caption": "Líquido da GPS Pago:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 262,
+                        "Top": 114,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Recolhimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label28",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 198,
+                        "Width": 119,
+                        "Height": 13,
+                        "Caption": "Líquido da Competência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 198,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "LIQUIDOPRODRURAIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label29",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 32,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Valor de Multa/Juros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 384,
+                        "Top": 32,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "MULTAJUROSPRODRURAIS",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label30",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 275,
+                        "Top": 156,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "Vencimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label31",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 275,
+                        "Top": 198,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label39",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 73,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Valor de Terceiros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 73,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORTERCEIROSPRODR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 384,
+                        "Top": 198,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "DATAPAGAMENTOPR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataVencimentoPR",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 447,
+                        "Top": 152,
+                        "Width": 21,
+                        "Height": 21,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label41",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 114,
+                        "Width": 84,
+                        "Height": 13,
+                        "Caption": "Valor Retido N.F.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText28",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 114,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORRETIDOPR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label42",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 156,
+                        "Width": 92,
+                        "Height": 13,
+                        "Caption": "Valor Compensado:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText29",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 153,
+                        "Top": 156,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORCOMPENSARPR",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_TrocaAba3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 388,
+                        "Top": 77,
+                        "Width": 49,
+                        "Height": 12,
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_TrocaAba3Enter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_LiquidoPagoProdRurais",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 378,
+                        "Top": 69,
+                        "Width": 83,
+                        "Height": 21,
+                        "DataField": "LIQUIDOPRURAISPAGO",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 0,
+                        "OnKeyPress": "DBEdit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_RecolhimentoProdRurais",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 378,
+                        "Top": 110,
+                        "Width": 51,
+                        "Height": 21,
+                        "EditMask": "99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 1,
+                        "OnChange": "Msk_RecolhimentoProdRuraisChange",
+                        "OnExit": "Msk_RecolhimentoExit",
+                        "OnKeyPress": "Msk_RecolhimentoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBEdit2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 378,
+                        "Top": 152,
+                        "Width": 68,
+                        "Height": 21,
+                        "DataField": "DATAVENCIMENTOPR",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_GPSPRurais_Covid19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 144,
+                        "Width": 248,
+                        "Height": 68,
+                        "Caption": "Guias",
+                        "TabOrder": 4,
+                        "Visible": false
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label54",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Vencimento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText39",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "ValorGuiaGPSPRuraisPrazo",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label55",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Valor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText40",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCIMENTOPR",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText41",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCTOCOVID19PRURAIS",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText42",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "VALORGUIACOVID19PRURAIS",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label56",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 32,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "No prazo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label57",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 49,
+                            "Width": 52,
+                            "Height": 13,
+                            "Caption": "Prorrogado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label58",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Pagamento"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Fretes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Fretes (SIMPLES)",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 516,
+                    "Height": 249,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 277,
+                        "Top": 49,
+                        "Width": 107,
+                        "Height": 13,
+                        "Caption": "Líquido da GPS Pago:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label32",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 49,
+                        "Width": 96,
+                        "Height": 13,
+                        "Caption": "Valor de Segurados:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText21",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 147,
+                        "Top": 49,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORSEGFRETES",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label33",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 90,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Valor de Terceiros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 147,
+                        "Top": 90,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "VALORTERCFRETES",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label34",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 132,
+                        "Width": 119,
+                        "Height": 13,
+                        "Caption": "Líquido da Competência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label35",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 29,
+                        "Top": 174,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Valor de Multa/Juros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText23",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 147,
+                        "Top": 174,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "MULTAJUROSTERCFRETES",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 147,
+                        "Top": 132,
+                        "Width": 77,
+                        "Height": 12,
+                        "DataField": "LIQUIDOTERCFRETES",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label36",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 277,
+                        "Top": 90,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Recolhimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label37",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 277,
+                        "Top": 132,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "Vencimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataVencimentoFretes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 464,
+                        "Top": 128,
+                        "Width": 20,
+                        "Height": 21,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label38",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 277,
+                        "Top": 174,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 395,
+                        "Top": 174,
+                        "Width": 62,
+                        "Height": 12,
+                        "DataField": "DATAPAGAMENTOFRETES",
+                        "DataSource": "Dts_GPSSEFIP"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Aux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 441,
+                        "Top": 137,
+                        "Width": 13,
+                        "Height": 11,
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_AuxEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_LiquidoPagoFretes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 395,
+                        "Top": 45,
+                        "Width": 83,
+                        "Height": 21,
+                        "DataField": "LIQUIDOTERCFRETESPAGO",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 0,
+                        "OnKeyPress": "DBEdit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_RecolhimentoFretes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 395,
+                        "Top": 86,
+                        "Width": 51,
+                        "Height": 21,
+                        "EditMask": "99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 1,
+                        "OnChange": "Msk_RecolhimentoFretesChange",
+                        "OnExit": "Msk_RecolhimentoExit",
+                        "OnKeyPress": "Msk_RecolhimentoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBEdit7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 395,
+                        "Top": 128,
+                        "Width": 68,
+                        "Height": 21,
+                        "DataField": "DATAVENCIMENTOFRETES",
+                        "DataSource": "Dts_GPSSEFIP",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_GPSFretes_Covid19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 125,
+                        "Width": 248,
+                        "Height": 68,
+                        "Caption": "Guias",
+                        "TabOrder": 4,
+                        "Visible": false
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label59",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Vencimento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText43",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "ValorGuiaGPSFretePrazo",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label60",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Valor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText44",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 32,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCIMENTOFRETES",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText45",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "DATAVENCTOCOVID19FRETES",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText46",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 180,
+                            "Top": 49,
+                            "Width": 60,
+                            "Height": 12,
+                            "DataField": "VALORGUIACOVID19FRETES",
+                            "DataSource": "Dts_GPSSEFIP"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label61",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 32,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "No prazo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label62",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 49,
+                            "Width": 52,
+                            "Height": 13,
+                            "Caption": "Prorrogado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label63",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 14,
+                            "Width": 60,
+                            "Height": 13,
+                            "Caption": "Pagamento"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GPSSEFIP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 305,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPANOMESCOMPETENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESCOMPETENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORPRODUTOSRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORPRODUTOSRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORCOMPENSAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORCOMPENSAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOGPSPAGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIQUIDOGPSPAGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOCOMPETENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIQUIDOCOMPETENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPSALDOCOMPENSACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDOCOMPENSACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPANOMESRECOLHIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESRECOLHIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPMesAnoCompetencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MesAnoCompetencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPAnoCompetencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AnoCompetencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPMesCompetencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MesCompetencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPMesAnoRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MesAnoRecolhimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPAnoRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AnoRecolhimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPMesRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MesRecolhimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGURADOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGURADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORTERCEIROS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORTERCEIROS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORCOOPERATIVAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORCOOPERATIVAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORRETIDO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORRETIDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORDEDUZIR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORDEDUZIR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORTERCEIROSPRODR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORTERCEIROSPRODR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPTotalProdutosRurais",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TotalProdutosRurais"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_GPSSEFIPDATAVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTO",
+            "OnChange": "Qry_GPSSEFIPDATAVENCIMENTOChange",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_GPSSEFIPDATAPAGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPNROBANCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROBANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPNROAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPDIGITOAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIGITOAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPCONTACORRENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTACORRENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPVALORMULTAJUROS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORMULTAJUROS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_GPSSEFIPNROREMESSA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROREMESSA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPValorEmpresaRecalc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorEmpresaRecalc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLiquidoCompetenciaRecalc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LiquidoCompetenciaRecalc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPValorMultaJurosRecalc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorMultaJurosRecalc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOPRODRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Prod. Rurais",
+            "FieldName": "LIQUIDOPRODRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOTERCFRETES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Terc. Fretes",
+            "FieldName": "LIQUIDOTERCFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPMULTAJUROSPRODRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Multa/Juros Prod. Rurais",
+            "FieldName": "MULTAJUROSPRODRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPMULTAJUROSTERCFRETES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Multa/Juros Terc. Fretes",
+            "FieldName": "MULTAJUROSTERCFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOPRURAISPAGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Prod. Rurais Pago",
+            "FieldName": "LIQUIDOPRURAISPAGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDOTERCFRETESPAGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Terc. Fretes Pago",
+            "FieldName": "LIQUIDOTERCFRETESPAGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPANOMESRECOLHIMENTOPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESRECOLHIMENTOPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRESADIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRESADIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGURADOSDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGURADOSDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORTERCEIROSDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORTERCEIROSDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORRATDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORRATDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDODISSIDIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIQUIDODISSIDIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPMULTAJUROSDISSIDIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MULTAJUROSDISSIDIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPLIQUIDODISSIDIOPAGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIQUIDODISSIDIOPAGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPANOMESRECOLHEDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESRECOLHEDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCIMENTODIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTODIS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAPAGAMENTODIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTODIS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORTERCFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORTERCFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPANOMESRECOLHEFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESRECOLHEFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCIMENTOFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTOFRETES",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAPAGAMENTOFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTOFRETES",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCIMENTOPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTOPR",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAPAGAMENTOPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTOPR",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORRETIDOPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORRETIDOPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORCOMPENSARPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORCOMPENSARPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORCOMPENSARDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORCOMPENSARDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDORETIDO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDORETIDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASESALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASESALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASEPROLABORE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASEPROLABORE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASEAUTONOMOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASEAUTONOMOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASEFRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASEFRETES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASECOOPERATIVAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASECOOPERATIVAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORBASEPRODRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORBASEPRODRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGSALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGSALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGPROLABORE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGPROLABORE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSEGAUTONOMOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSEGAUTONOMOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRSALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRSALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRPROLABORE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRPROLABORE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOREMPRAUTONOMOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOREMPRAUTONOMOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORTERCSALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORTERCSALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSALFAM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSALFAM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDOSALFAM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDOSALFAM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSALMAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSALMAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDOSALMAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDOSALMAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOR13SALMAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOR13SALMAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDO13SALMAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDO13SALMAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORRAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORRAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GPSSEFIPCOMPENSOUATELIMITE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPENSOUATELIMITE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORSALMATDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORSALMATDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDOSALMATDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDOSALMATDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALOR13SALMATDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOR13SALMATDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPSALDO13SALMATDIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALDO13SALMATDIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCTOCOVID19",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCTOCOVID19",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCTOCOVID19DIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCTOCOVID19DIS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCTOCOVID19PRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCTOCOVID19PRURAIS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_GPSSEFIPDATAVENCTOCOVID19FRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCTOCOVID19FRETES",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_GPSSEFIPValorGuiaGPSPrincipalPrazo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorGuiaGPSPrincipalPrazo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_GPSSEFIPValorGuiaGPSDissidioPrazo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorGuiaGPSDissidioPrazo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_GPSSEFIPValorGuiaGPSPRuraisPrazo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorGuiaGPSPRuraisPrazo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_GPSSEFIPValorGuiaGPSFretePrazo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorGuiaGPSFretePrazo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORGUIACOVID19",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORGUIACOVID19"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORGUIACOVID19DIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORGUIACOVID19DIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORGUIACOVID19PRURAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORGUIACOVID19PRURAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_GPSSEFIPVALORGUIACOVID19FRETES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORGUIACOVID19FRETES"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_GPSSEFIP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ProcuraEmpresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 543,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraEmpresasCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação GPS/SEFIP",
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraEmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Descricao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 448,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescricaoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_BuscaEstabelecimento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 200,
+        "Top": 10
+      },
+      "filhos": []
+    }
+  ]
+}

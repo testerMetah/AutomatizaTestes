@@ -1,0 +1,706 @@
+{
+  "classe": "TFrm_RHSO8250",
+  "nome": "Frm_RHSO8250",
+  "herdado": true,
+  "propriedades": {
+    "Left": 497,
+    "Top": 261,
+    "Caption": "Agenda por Exame Médico",
+    "ClientHeight": 479,
+    "ClientWidth": 772
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 772,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Desc_Profissional",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 12,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Exame:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Exame",
+          "herdado": false,
+          "propriedades": {
+            "Left": 117,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ExameClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Exame",
+          "herdado": false,
+          "propriedades": {
+            "Left": 145,
+            "Top": 12,
+            "Width": 145,
+            "Height": 16,
+            "Caption": "Descrição do Exame"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Exame",
+          "herdado": false,
+          "propriedades": {
+            "Left": 47,
+            "Top": 8,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnExit": "Edt_ExameExit",
+            "OnKeyPress": "Edt_ExameKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 438,
+        "Width": 772,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AnotarResultado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 150,
+            "Height": 25,
+            "Caption": "Anotar Res&ultado",
+            "TabOrder": 0,
+            "OnClick": "Btn_AnotarResultadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_TransferirExame",
+          "herdado": false,
+          "propriedades": {
+            "Left": 174,
+            "Top": 6,
+            "Width": 150,
+            "Height": 25,
+            "Caption": "&Transferir Exame",
+            "TabOrder": 1,
+            "OnClick": "Btn_TransferirExameClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AgendarExames",
+          "herdado": false,
+          "propriedades": {
+            "Left": 333,
+            "Top": 6,
+            "Width": 150,
+            "Height": 25,
+            "Caption": "Agendar &Novos Exames",
+            "TabOrder": 2,
+            "OnClick": "Btn_AgendarExamesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AjustarExames",
+          "herdado": false,
+          "propriedades": {
+            "Left": 491,
+            "Top": 6,
+            "Width": 145,
+            "Height": 25,
+            "Caption": "Ajustar Exames",
+            "TabOrder": 3,
+            "OnClick": "Btn_AjustarExamesClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Grade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 772,
+        "Height": 398,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_AgendaExame",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 764,
+            "Height": 333,
+            "ActivePage": "Tbs_PorPessoa",
+            "Align": "alTop",
+            "TabOrder": 0,
+            "OnChange": "Pgc_AgendaExameChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Geral",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Geral"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Parcial",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Parcial",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_DataHora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 756,
+                    "Height": 40,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_DataInicial",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 152,
+                        "Top": 10,
+                        "Width": 20,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Desc_Periodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 14,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "Período de :"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Desc_Ate",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 179,
+                        "Top": 14,
+                        "Width": 15,
+                        "Height": 13,
+                        "Caption": "até"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_DataFinal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 272,
+                        "Top": 10,
+                        "Width": 20,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_DataInicial",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 80,
+                        "Top": 10,
+                        "Width": 71,
+                        "Height": 21,
+                        "EditMask": "99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnExit": "Msk_DataInicialExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_DataFinal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 200,
+                        "Top": 10,
+                        "Width": 71,
+                        "Height": 21,
+                        "EditMask": "99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 1,
+                        "OnEnter": "Msk_DataFinalEnter",
+                        "OnExit": "Msk_DataFinalExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_Selecionar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 304,
+                        "Top": 7,
+                        "Width": 102,
+                        "Height": 25,
+                        "Caption": "&Selecionar",
+                        "TabOrder": 2,
+                        "OnClick": "Btn_SelecionarClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_PorPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "por Pessoa",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Pessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 756,
+                    "Height": 40,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_PrimeiraPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 135,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Primeiro",
+                        "ShowHint": true,
+                        "OnClick": "Btn_PrimeiraPessoaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_ProximaPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 204,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Próximo",
+                        "ShowHint": true,
+                        "OnClick": "Btn_ProximaPessoaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_UltimaPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 227,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Último",
+                        "ShowHint": true,
+                        "OnClick": "Btn_UltimaPessoaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_PessoaAnterior",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 158,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Anterior",
+                        "ShowHint": true,
+                        "OnClick": "Btn_PessoaAnteriorClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Desc_Pessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 14,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Pessoa:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHLocalizarPessoa",
+                      "nome": "Btn_Pessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 181,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Pessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 252,
+                        "Top": 14,
+                        "Width": 320,
+                        "Height": 16,
+                        "Caption": "Nome da Pessoa"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TFiltroPessoa",
+                      "nome": "FiltroPessoa1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 112,
+                        "Top": 10,
+                        "Width": 23,
+                        "Height": 22,
+                        "OnClick": "FiltroPessoa1Click"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Pessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 51,
+                        "Top": 10,
+                        "Width": 60,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 0,
+                        "OnChange": "Edt_PessoaChange",
+                        "OnExit": "Edt_PessoaExit",
+                        "OnKeyPress": "Edt_PessoaKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TFrmTrocaContrato",
+                      "nome": "FrmTrocaContrato1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 506,
+                        "Top": 2,
+                        "Width": 245,
+                        "Height": 34,
+                        "TabOrder": 1,
+                        "OnEnter": "FrmTrocaContrato1Enter"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_ExamesAgendados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 59,
+            "Width": 753,
+            "Height": 272,
+            "DataSource": "Dts_ExamesAgendados",
+            "ReadOnly": true,
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "ORIGEMAGENDAMENTO",
+                "Title.Caption": "   ",
+                "Width": 11,
+                "Visible": true
+              },
+              {
+                "FieldName": "DataExame",
+                "Title.Caption": "Data",
+                "Width": 72,
+                "Visible": true
+              },
+              {
+                "FieldName": "HoraExame",
+                "Title.Caption": "Hora",
+                "Width": 38,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoPessoa",
+                "Title.Caption": "Pessoa",
+                "Width": 289,
+                "Visible": true
+              },
+              {
+                "FieldName": "SituacaoPessoa",
+                "Title.Caption": "Ativo/Afast.",
+                "Width": 63,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoTipoExame",
+                "Title.Caption": "Tipo do Exame",
+                "Width": 151,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoResponsavel",
+                "Title.Caption": "Profissional",
+                "Width": 289,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoServicoMedico",
+                "Title.Caption": "Serviço Médico",
+                "Width": 289,
+                "Visible": true
+              },
+              {
+                "FieldName": "DataUltExameRealizado",
+                "Title.Caption": "Ult. Ex. Realizado",
+                "Width": 88,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoOrigAgend",
+                "Title.Caption": "Origem Agendamento",
+                "Width": 110,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoHorAjust",
+                "Title.Caption": "Horário Ajustado",
+                "Width": 120,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Legenda",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 340,
+            "Width": 746,
+            "Height": 45,
+            "Align": "alCustom",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 543,
+                "Top": 16,
+                "Width": 152,
+                "Height": 13,
+                "Caption": "Número de Exames Agendados:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NumExames",
+              "herdado": false,
+              "propriedades": {
+                "Left": 701,
+                "Top": 16,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "0"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "lbl_LegendaVerde",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 5,
+                "Width": 161,
+                "Height": 17,
+                "Caption": "Marcações em Verde = À Vencer",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "lbl_LegendaAzul",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 26,
+                "Width": 131,
+                "Height": 17,
+                "Caption": "Marcações em Azul = Hoje",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "Lbl_LegendaVermelha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 260,
+                "Top": 5,
+                "Width": 183,
+                "Height": 17,
+                "Caption": "Marcações em Vermelho = Vencida(s)",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "StaticText1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 260,
+                "Top": 26,
+                "Width": 196,
+                "Height": 17,
+                "Caption": "Marcações em Cinza = Desnecessária(s)",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 692,
+        "Top": 66
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ExamesAgendados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 532,
+        "Top": 171
+      },
+      "filhos": []
+    }
+  ]
+}

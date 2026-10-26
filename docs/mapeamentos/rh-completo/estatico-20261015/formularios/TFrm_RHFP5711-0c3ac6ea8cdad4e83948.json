@@ -1,0 +1,258 @@
+{
+  "classe": "TFrm_RHFP5711",
+  "nome": "Frm_RHFP5711",
+  "herdado": false,
+  "propriedades": {
+    "Left": 731,
+    "Top": 425,
+    "BorderStyle": "bsSingle",
+    "Caption": "Período para Apuração do Ponto",
+    "ClientHeight": 119,
+    "ClientWidth": 321,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Data",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 321,
+        "Height": 79,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 21,
+            "Width": 17,
+            "Height": 13,
+            "Caption": "De:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataDe",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 17,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataAte",
+          "herdado": false,
+          "propriedades": {
+            "Left": 261,
+            "Top": 17,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 21,
+            "Width": 19,
+            "Height": 13,
+            "Caption": "Até:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataDe",
+          "herdado": false,
+          "propriedades": {
+            "Left": 46,
+            "Top": 17,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Msk_DataDeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataAte",
+          "herdado": false,
+          "propriedades": {
+            "Left": 191,
+            "Top": 17,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 1,
+            "OnExit": "Msk_DataDeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_PontoConcluido",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 47,
+            "Width": 175,
+            "Height": 17,
+            "TabStop": false,
+            "Caption": "Ponto concluído para o Portal",
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 79,
+        "Width": 321,
+        "Height": 40,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 5,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 289,
+        "Top": 76
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Folhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 254,
+        "Top": 74
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_FolhasUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_FolhasDATAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data",
+            "FieldName": "DATAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_FolhasCODIGOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha",
+            "FieldName": "CODIGOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_FolhasDATAINICIOPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOPONTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_FolhasDATAFIMPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAFIMPONTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_FolhasPONTOCONCLUIDOPORTAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PONTOCONCLUIDOPORTAL"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

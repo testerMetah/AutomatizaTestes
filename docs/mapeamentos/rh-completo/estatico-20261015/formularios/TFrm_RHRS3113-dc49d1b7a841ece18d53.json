@@ -1,0 +1,85 @@
+{
+  "classe": "TFrm_RHRS3113",
+  "nome": "Frm_RHRS3113",
+  "herdado": false,
+  "propriedades": {
+    "Left": 219,
+    "Top": 257,
+    "BorderStyle": "bsSingle",
+    "Caption": "Requisições",
+    "ClientHeight": 224,
+    "ClientWidth": 423,
+    "FormStyle": "fsStayOnTop",
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TDBMetaGrid",
+      "nome": "Dbg_Requisicoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 423,
+        "Height": 224,
+        "Align": "alClient",
+        "DataSource": "Dts_Requisicoes",
+        "TabOrder": 0,
+        "Columns": [
+          {
+            "FieldName": "Requisicao",
+            "Title.Caption": "Requisição",
+            "Width": 93,
+            "Visible": true
+          },
+          {
+            "FieldName": "Descricao",
+            "Title.Caption": "Descrição",
+            "Width": 295,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Requisicoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 180,
+        "Top": 108
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Requisicoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 320,
+        "Top": 108
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RequisicoesRequisicao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Requisicao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RequisicoesDescricao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "classe": "TFrm_OcorrenciasImportacao01",
+  "nome": "Frm_OcorrenciasImportacao01",
+  "herdado": false,
+  "propriedades": {
+    "Left": 183,
+    "Top": 177,
+    "Width": 645,
+    "Height": 434,
+    "Caption": "Ocorrências da Importação",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 368,
+        "Width": 637,
+        "Height": 39,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Sair",
+          "herdado": false,
+          "propriedades": {
+            "Left": 160,
+            "Top": 7,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "Fechar",
+            "TabOrder": 0,
+            "OnClick": "Btn_SairClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 7,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "&Visualizar Impressão",
+            "TabOrder": 1,
+            "OnClick": "Btn_ImprimirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Princ",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 637,
+        "Height": 368,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Ocorrencias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 633,
+            "Height": 364,
+            "Align": "alClient",
+            "DataSource": "Dts_LogErros",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "Linha",
+                "Width": 57,
+                "Visible": true
+              },
+              {
+                "FieldName": "Tabela",
+                "Width": 189,
+                "Visible": true
+              },
+              {
+                "FieldName": "MsgErro",
+                "Title.Caption": "Mensagem",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LogErros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 524,
+        "Top": 48
+      },
+      "filhos": []
+    }
+  ]
+}

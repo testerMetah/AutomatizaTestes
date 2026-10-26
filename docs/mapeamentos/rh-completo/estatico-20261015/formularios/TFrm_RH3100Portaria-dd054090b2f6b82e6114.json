@@ -1,0 +1,423 @@
+{
+  "classe": "TFrm_RH3100Portaria",
+  "nome": "Frm_RH3100Portaria",
+  "herdado": true,
+  "propriedades": {
+    "Left": 277,
+    "Top": 252,
+    "Caption": "Portarias",
+    "ClientHeight": 166,
+    "ClientWidth": 415
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Portarias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 415,
+        "Height": 166,
+        "ActivePage": "Tbs_Cadastro",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "OnChange": "Pgc_PortariasChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Cadastro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cadastro",
+            "OnEnter": "Tbs_CadastroEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Chave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 407,
+                "Height": 40,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Portaria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 12,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "Portaria:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Portaria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 8,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Portaria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 8,
+                    "Width": 41,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_PortariaExit",
+                    "OnKeyPress": "CodigoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Dbk_Ativa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 345,
+                    "Top": 10,
+                    "Width": 42,
+                    "Height": 17,
+                    "Caption": "Ativa",
+                    "DataField": "ATIVADESATIVADA",
+                    "DataSource": "Dts_RHPortarias",
+                    "TabOrder": 1,
+                    "OnEnter": "Pnl_DadosEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Dados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 40,
+                "Width": 407,
+                "Height": 98,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1,
+                "OnEnter": "Pnl_DadosEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 10,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescReduzida",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 38,
+                    "Width": 79,
+                    "Height": 13,
+                    "Caption": "Desc. Reduzida:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Grupo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 66,
+                    "Width": 32,
+                    "Height": 13,
+                    "Caption": "Grupo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaLocalizar",
+                  "nome": "Btn_Grupo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 62,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_GrupoPortaria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 66,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Lbl_GrupoPortaria"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 62,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 3,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 6,
+                    "Width": 289,
+                    "Height": 21,
+                    "DataField": "DESCRICAO40",
+                    "DataSource": "Dts_RHPortarias",
+                    "TabOrder": 0,
+                    "OnExit": "Dbe_DescricaoExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_DescReduzida",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 34,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "DESCRICAO20",
+                    "DataSource": "Dts_RHPortarias",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Grupo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 62,
+                    "Width": 27,
+                    "Height": 21,
+                    "DataField": "GRUPOPORTARIA",
+                    "DataSource": "Dts_RHPortarias",
+                    "TabOrder": 2,
+                    "OnKeyPress": "CodigoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Grupos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Grupos",
+            "ImageIndex": 1,
+            "OnEnter": "Tbs_GruposEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Grupos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 407,
+                "Height": 138,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 97,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Código"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 57,
+                    "Top": 97,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_GAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 60,
+                    "Top": 110,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 3,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_GrupoPortaria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 110,
+                    "Width": 41,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 1,
+                    "OnExit": "Edt_GrupoPortariaExit",
+                    "OnKeyPress": "CodigoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_GDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 57,
+                    "Top": 110,
+                    "Width": 150,
+                    "Height": 21,
+                    "DataField": "DESCRICAO20",
+                    "DataSource": "Dts_RHGruposPortarias",
+                    "TabOrder": 2,
+                    "OnEnter": "Pnl_DadosEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_Grupo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 399,
+                    "Height": 94,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_RHGruposPortarias",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbg_GrupoEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "GRUPOPORTARIA",
+                        "Title.Caption": "Código",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO20",
+                        "Width": 150,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 372,
+        "Top": 111
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHPortarias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 310,
+        "Top": 110
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHGruposPortarias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 340,
+        "Top": 110
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "classe": "TFrmPortariaViewsPrincipal",
+  "nome": "FrmPortariaViewsPrincipal",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Módulo de Portaria",
+    "ClientHeight": 567,
+    "ClientWidth": 913,
+    "FormStyle": "fsMDIForm",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TImage",
+      "nome": "imgFundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 25,
+        "Width": 913,
+        "Height": 523,
+        "Align": "alClient"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionMainMenuBar",
+      "nome": "ActionMainMenuBar1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 913,
+        "Height": 25
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TStatusBar",
+      "nome": "RodapeStatus",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 548,
+        "Width": 913,
+        "Height": 19
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTabControl",
+      "nome": "TabControlMDI",
+      "herdado": false,
+      "propriedades": {
+        "Left": 128,
+        "Top": 152,
+        "Width": 9,
+        "Height": 17,
+        "TabOrder": 2,
+        "Visible": false
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionManager",
+      "nome": "actManagerPortaria",
+      "herdado": false,
+      "propriedades": {
+        "ActionBars": [
+          {
+            "Items": [
+              {
+                "Action": "actVisitaRapida",
+                "Caption": "&Visita Rápida"
+              },
+              {
+                "Items": [
+                  {
+                    "Tag": 11,
+                    "Action": "acCadEmpresaAcesso",
+                    "Caption": "&Empresa de Acesso..."
+                  },
+                  {
+                    "Tag": 12,
+                    "Action": "acCadVisitantesTerceiros",
+                    "Caption": "&Visitantes e Terceiros..."
+                  },
+                  {
+                    "Tag": -1,
+                    "Caption": "-"
+                  }
+                ],
+                "Caption": "&Cadastro"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acConsMarcacoesOnline",
+                    "Caption": "&Marcações OnLine..."
+                  },
+                  {
+                    "Action": "acConsAudiHist",
+                    "Caption": "&Auditorias/Históricos..."
+                  }
+                ],
+                "Tag": 3,
+                "Caption": "C&onsultas"
+              },
+              {
+                "Items": [
+                  {
+                    "Tag": 3,
+                    "Action": "acConfEtiqueta",
+                    "Caption": "&Etiqueta"
+                  },
+                  {
+                    "Tag": 4,
+                    "Action": "acConfImportacao",
+                    "Caption": "&Importação"
+                  },
+                  {
+                    "Action": "acConfImportacaoCSV",
+                    "Caption": "I&mportação CSV"
+                  }
+                ],
+                "Tag": 5,
+                "Caption": "&Ferramentas"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acRelDigitaisFaces",
+                    "Caption": "&Digitais e Faces..."
+                  },
+                  {
+                    "Action": "ActVisitantesTerceiros",
+                    "Caption": "&Visitantes e Terceiros..."
+                  },
+                  {
+                    "Tag": 9,
+                    "Action": "actAcessoVisitantesTerceiros",
+                    "Caption": "&Acesso de Visitantes e Terceiros..."
+                  },
+                  {
+                    "Tag": 7,
+                    "Action": "acRelReservasConsumos",
+                    "Caption": "&Reservas e Consumos..."
+                  }
+                ],
+                "Tag": 7,
+                "Caption": "&Relatórios"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acAjuSobre",
+                    "Caption": "&Sobre..."
+                  },
+                  {
+                    "Action": "acAjuSair",
+                    "Caption": "S&air"
+                  }
+                ],
+                "Tag": -1,
+                "Caption": "&Ajuda"
+              }
+            ],
+            "ActionBar": "ActionMainMenuBar1"
+          }
+        ],
+        "Left": 616,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "acCadEmpresaAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cadastro",
+            "Caption": "Empresa de Acesso...",
+            "OnExecute": "acCadEmpresaAcessoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadVisitantesTerceiros",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cadastro",
+            "Caption": "Visitantes e Terceiros...",
+            "OnExecute": "acCadVisitantesTerceirosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConsMarcacoesOnline",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consultas",
+            "Caption": "Marcações OnLine...",
+            "OnExecute": "acConsMarcacoesOnlineExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelDigitaisFaces",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Relatórios",
+            "Caption": "Digitais e Faces...",
+            "OnExecute": "acRelDigitaisFacesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelReservasConsumos",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Relatórios",
+            "Caption": "Reservas e Consumos...",
+            "OnExecute": "acRelReservasConsumosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actAcessoVisitantesTerceiros",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Relatórios",
+            "Caption": "Acesso de Visitantes e Terceiros...",
+            "OnExecute": "actAcessoVisitantesTerceirosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAjuLogOff",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ajuda",
+            "Caption": "LogOff..."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAjuSobre",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ajuda",
+            "Caption": "Sobre...",
+            "OnExecute": "acAjuSobreExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAjuSair",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ajuda",
+            "Caption": "Sair",
+            "OnExecute": "acCadSairExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConfEtiqueta",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configurações",
+            "Caption": "Etiqueta",
+            "OnExecute": "acConfEtiquetaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConfImportacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configurações",
+            "Caption": "Importação",
+            "OnExecute": "acConfImportacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConfImportacaoCSV",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configurações",
+            "Caption": "Importação CSV",
+            "OnExecute": "acConfImportacaoCSVExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActVisitantesTerceiros",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Relatórios",
+            "Caption": "Visitantes e Terceiros...",
+            "OnExecute": "ActVisitantesTerceirosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actVisitaRapida",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Visita Rápida",
+            "OnExecute": "actVisitaRapidaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConsAudiHist",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consultas",
+            "Caption": "Auditorias/Históricos...",
+            "OnExecute": "acConsAudiHistExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

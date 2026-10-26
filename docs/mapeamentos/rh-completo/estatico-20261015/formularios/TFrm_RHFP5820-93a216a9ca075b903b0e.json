@@ -1,0 +1,424 @@
+{
+  "classe": "TFrm_RHFP5820",
+  "nome": "Frm_RHFP5820",
+  "herdado": false,
+  "propriedades": {
+    "Left": 535,
+    "Top": 338,
+    "BorderStyle": "bsSingle",
+    "Caption": "Valores Negativos",
+    "ClientHeight": 478,
+    "ClientWidth": 787,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 80,
+        "Width": 787,
+        "Height": 398,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Folhas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 6,
+            "Width": 197,
+            "Height": 379,
+            "DataSource": "dts_Folhas",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DescCodigo",
+                "Title.Caption": "Folha  ",
+                "Width": 95,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAFOLHA",
+                "Title.Caption": "Data-base",
+                "Width": 68,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_VDBFolha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 208,
+            "Top": 6,
+            "Width": 567,
+            "Height": 379,
+            "DataSource": "dts_VdbFolhaNegativos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "DescrContrato",
+                "Title.Caption": "Contrato",
+                "Width": 225,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescrCodigo",
+                "Title.Caption": "Código",
+                "Width": 175,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORASQUANTIDADE",
+                "Title.Caption": "Horas/Qtde",
+                "Width": 65,
+                "Visible": true
+              },
+              {
+                "FieldName": "VALOR",
+                "Title.Caption": "Valor",
+                "Width": 65,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 787,
+        "Height": 80,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 306,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_UnidadeClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 13,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Unidade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 333,
+            "Top": 13,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "Lbl_Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label9",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 47,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 262,
+            "Top": 47,
+            "Width": 61,
+            "Height": 13,
+            "Caption": "Lbl_Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 262,
+            "Top": 9,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnEnter": "Edt_UnidadeEnter",
+            "OnExit": "Edt_UnidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 151,
+            "Height": 64,
+            "Caption": "Seleção:",
+            "Items.Strings": [
+              "Unidade informada",
+              "Todas as Unidades"
+            ],
+            "TabOrder": 0,
+            "OnClick": "Rdg_SelecaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Folhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 39,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasDescCodigo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Folha",
+            "DisplayWidth": 21,
+            "FieldName": "DescCodigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasDATAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCODIGOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOFOLHA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Folhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 34,
+        "Top": 258
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VdbFolhaNegativos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 136,
+        "Top": 210
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbFolhaNegativosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbFolhaNegativosVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_VdbFolhaNegativosHORASQUANTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORASQUANTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_VdbFolhaNegativosVALOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosDescrContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescrContrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosDescrCodigo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescrCodigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbFolhaNegativosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_VdbFolhaNegativos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 134,
+        "Top": 256
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Unidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 37,
+        "Top": 148
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

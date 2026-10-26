@@ -1,0 +1,324 @@
+{
+  "classe": "TFrmContratoLotacao",
+  "nome": "FrmContratoLotacao",
+  "herdado": false,
+  "propriedades": {
+    "Left": 370,
+    "Top": 304,
+    "BorderStyle": "bsSingle",
+    "ClientHeight": 265,
+    "ClientWidth": 392,
+    "FormStyle": "fsStayOnTop",
+    "OnKeyPress": "FormKeyPress",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Items",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 392,
+        "Height": 265,
+        "Align": "alClient",
+        "TabOrder": 1,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 237,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 1,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 237,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "TabOrder": 2,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDualList",
+          "nome": "Lst_Items",
+          "herdado": false,
+          "propriedades": {
+            "Left": 3,
+            "Top": -3,
+            "Width": 387,
+            "Height": 221,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Padrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 290,
+            "Top": 237,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "Restaurar",
+            "TabOrder": 3,
+            "OnClick": "Btn_PadraoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_FotoPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 218,
+            "Width": 139,
+            "Height": 15,
+            "Caption": "Exibir a Foto da Pessoa",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 392,
+        "Height": 265,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TShape",
+          "nome": "Shp_Foto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 3,
+            "Top": 5,
+            "Width": 76,
+            "Height": 102,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TShape",
+          "nome": "Shp_SeparaFoto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 82,
+            "Top": 0,
+            "Width": 2,
+            "Height": 266
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Lotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 84,
+            "Top": 6,
+            "Width": 382,
+            "Height": 257,
+            "BorderStyle": "bsNone",
+            "DataSource": "Dts_Lotacao",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "TITULO",
+                "Width": 160,
+                "Visible": true
+              },
+              {
+                "FieldName": "VALORDESCRICAO",
+                "Width": 186,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Foto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 6,
+            "Width": 74,
+            "Height": 100,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TImage",
+              "nome": "img_FotoPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 74,
+                "Height": 100,
+                "Align": "alClient"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Lotacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 84,
+        "Top": 63
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Lotacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 210,
+        "Top": 71
+      },
+      "filhos": [
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_LotacaoSEPARADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "É Separador",
+            "FieldName": "SEPARADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LotacaoVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Variável",
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LotacaoINFORMACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Título",
+            "FieldName": "TITULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LotacaoVALOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Valor",
+            "FieldName": "VALOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LotacaoDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LotacaoVALORDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Valor",
+            "FieldName": "VALORDESCRICAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Variaveis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 150
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 206,
+        "Top": 152
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 140,
+        "Top": 20
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ConfiguraGrid",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Configura Items",
+            "OnClick": "Pop_ConfiguraGridClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

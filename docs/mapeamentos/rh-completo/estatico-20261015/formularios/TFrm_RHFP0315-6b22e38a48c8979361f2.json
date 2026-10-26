@@ -1,0 +1,394 @@
+{
+  "classe": "TFrm_RHFP0315",
+  "nome": "Frm_RHFP0315",
+  "herdado": false,
+  "propriedades": {
+    "Left": 545,
+    "Top": 382,
+    "Width": 677,
+    "Height": 269,
+    "Caption": "Exceções do Sindicato",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 661,
+        "Height": 185,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 89,
+            "Top": 151,
+            "Width": 377,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 155,
+            "Width": 369,
+            "Height": 13,
+            "Caption": "Lbl_DescricaoEscala"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Sindicato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 64,
+            "Top": 150,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_SindicatoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 21,
+            "Top": 134,
+            "Width": 32,
+            "Height": 13,
+            "Caption": "Escala"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 89,
+            "Top": 134,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 470,
+            "Top": 134,
+            "Width": 68,
+            "Height": 13,
+            "Caption": "Hora de Início"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 546,
+            "Top": 134,
+            "Width": 79,
+            "Height": 13,
+            "Caption": "Hora de Término"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Escalas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 9,
+            "Width": 641,
+            "Height": 120,
+            "DataSource": "Dts_EscalasSindicatos",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "ESCALA",
+                "Width": 63,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO",
+                "Width": 383,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORAINICIO",
+                "Visible": true
+              },
+              {
+                "FieldName": "HORATERMINO",
+                "Width": 84,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 21,
+            "Top": 151,
+            "Width": 41,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnExit": "Edt_EscalaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_HoraInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 470,
+            "Top": 151,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "HORAINICIO",
+            "DataSource": "Dts_EscalasSindicatos",
+            "MaxLength": 5,
+            "TabOrder": 2,
+            "OnKeyPress": "Dbe_HoraInicioKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_HoraTermino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 546,
+            "Top": 151,
+            "Width": 79,
+            "Height": 21,
+            "DataField": "HORATERMINO",
+            "DataSource": "Dts_EscalasSindicatos",
+            "TabOrder": 3,
+            "OnKeyPress": "Dbe_HoraTerminoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 185,
+        "Width": 661,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 9,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Salvar",
+            "TabOrder": 0,
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 9,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 180,
+            "Top": 9,
+            "Width": 75,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "Excluir",
+            "TabOrder": 2,
+            "OnClick": "Btn_ExcluirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EscalasSindicatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 52
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_EscalasSindicatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 320,
+        "Top": 52
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasSindicatosSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasSindicatosESCALA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Escala",
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasSindicatosHORAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Hora de Início",
+            "FieldName": "HORAINICIO",
+            "EditMask": "!99:99;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasSindicatosHORATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Hora de Término",
+            "FieldName": "HORATERMINO",
+            "EditMask": "!99:99;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasSindicatosDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Escalas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 320,
+        "Top": 96
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasESCALA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Escala",
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalasDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Atalhos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 444,
+        "Top": 68
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

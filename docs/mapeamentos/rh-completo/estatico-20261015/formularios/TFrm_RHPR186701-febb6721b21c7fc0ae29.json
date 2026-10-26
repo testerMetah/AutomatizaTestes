@@ -1,0 +1,498 @@
+{
+  "classe": "TFrm_RHPR186701",
+  "nome": "Frm_RHPR186701",
+  "herdado": false,
+  "propriedades": {
+    "Left": 646,
+    "Top": 313,
+    "BorderStyle": "bsSingle",
+    "Caption": "Rateio Contábil Coletivo",
+    "ClientHeight": 412,
+    "ClientWidth": 593,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 371,
+        "Width": 593,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 23,
+            "Top": 6,
+            "Width": 115,
+            "Height": 26,
+            "Caption": "Gerar Rateio",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 593,
+        "Height": 371,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_OpcoesSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 585,
+            "Height": 363,
+            "ActivePage": "Tbs_Definicao",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Definicao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Definição"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Definicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 577,
+                    "Height": 335,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 18,
+                        "Width": 89,
+                        "Height": 13,
+                        "Caption": "Início da Validade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_InicioValidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 176,
+                        "Top": 14,
+                        "Width": 22,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_InicioValidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 107,
+                        "Top": 14,
+                        "Width": 68,
+                        "Height": 21,
+                        "EditMask": "99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnExit": "Msk_InicioValidadeExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grp_1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 54,
+                        "Width": 554,
+                        "Height": 272,
+                        "Caption": "Classificações Contábeis",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TBevel",
+                          "nome": "Bvl_1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 155,
+                            "Top": 244,
+                            "Width": 277,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 35,
+                            "Top": 229,
+                            "Width": 103,
+                            "Height": 13,
+                            "Caption": "Classificação Contábil"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 156,
+                            "Top": 229,
+                            "Width": 48,
+                            "Height": 13,
+                            "Caption": "Descrição"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbl_DescricaoClassContabil",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 160,
+                            "Top": 247,
+                            "Width": 267,
+                            "Height": 13,
+                            "DataField": "DescClassContabil",
+                            "DataSource": "Dts_ClassificacoesRateio"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 451,
+                            "Top": 229,
+                            "Width": 51,
+                            "Height": 13,
+                            "Caption": "Percentual"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_Excluir",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 8,
+                            "Top": 243,
+                            "Width": 23,
+                            "Height": 21,
+                            "Hint": "Excluir Processo",
+                            "ShowHint": true,
+                            "OnClick": "Btn_ExcluirClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_ClassContabil",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 123,
+                            "Top": 243,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_ClassContabilClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Aux",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 483,
+                            "Top": 150,
+                            "Width": 10,
+                            "Height": 21,
+                            "MaxLength": 5,
+                            "TabOrder": 2,
+                            "OnEnter": "Edt_AuxEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_ClassContabil",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 34,
+                            "Top": 244,
+                            "Width": 87,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnEnter": "Edt_ClassContabilEnter",
+                            "OnExit": "Edt_ClassContabilExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Percentual",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 444,
+                            "Top": 244,
+                            "Width": 73,
+                            "Height": 21,
+                            "DataField": "Percentual",
+                            "DataSource": "Dts_ClassificacoesRateio",
+                            "MaxLength": 16,
+                            "TabOrder": 1,
+                            "OnEnter": "Dbe_PercentualEnter",
+                            "OnExit": "Dbe_PercentualExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBGrid",
+                          "nome": "Dbg_Rateio",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 33,
+                            "Top": 19,
+                            "Width": 498,
+                            "Height": 201,
+                            "DataSource": "Dts_ClassificacoesRateio",
+                            "TabOrder": 3,
+                            "Columns": [
+                              {
+                                "FieldName": "ClassContabil",
+                                "Title.Caption": "Classificação Contábil",
+                                "Width": 110,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescClassContabil",
+                                "Title.Caption": "Descrição",
+                                "Width": 275,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "Percentual",
+                                "Width": 71,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Seleção",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "Frm_SelecaoLotacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 577,
+                    "Height": 334,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ClassificacoesRateio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 424,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacoesRateioClassContabil",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ClassContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacoesRateioDescClassContabil",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescClassContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ClassificacoesRateioPercentual",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Percentual"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ClassificacaoContabil",
+      "herdado": false,
+      "propriedades": {
+        "Left": 367,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação Contábil",
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ClassificacoesRateio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 462,
+        "Top": 13
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Atalhos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "classe": "TFrm_RHTR6460",
+  "nome": "Frm_RHTR6460",
+  "herdado": true,
+  "propriedades": {
+    "Left": 374,
+    "Top": 132,
+    "Caption": "Aprovação de Treinamento",
+    "ClientHeight": 358,
+    "ClientWidth": 593
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 593,
+        "Height": 156,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 93,
+            "Width": 129,
+            "Height": 13,
+            "Caption": "Exibir logotipo da empresa: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 187,
+            "Top": 90,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 215,
+            "Top": 94,
+            "Width": 326,
+            "Height": 13,
+            "Caption": "Lbl_Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Evento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 4,
+            "Width": 586,
+            "Height": 76,
+            "Caption": "Evento",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TFrmSelecaoEventoTR",
+              "nome": "FrmSelecaoEventoTR1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 18,
+                "Width": 579,
+                "Height": 49,
+                "TabOrder": 0,
+                "OnExit": "FrmSelecaoEventoTR1Exit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ExibirData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 124,
+            "Width": 202,
+            "Height": 17,
+            "Caption": "Exibir a data de emissão do relatório",
+            "Checked": true,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 145,
+            "Top": 90,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnChange": "Edt_EmpresaChange",
+            "OnExit": "Edt_EmpresaExit",
+            "OnKeyPress": "Edt_EmpresaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ExibirPrevistoEm",
+          "herdado": false,
+          "propriedades": {
+            "Left": 260,
+            "Top": 124,
+            "Width": 233,
+            "Height": 17,
+            "Caption": "Exibir o campo Previsto Em: __/__/___",
+            "Checked": true,
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 156,
+        "Width": 593,
+        "Height": 202,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 585,
+            "Height": 194,
+            "TabStop": false,
+            "Align": "alClient",
+            "DataSource": "dts_PessoaCursos",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOA",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 300,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 504,
+        "Top": 172
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_PessoaCursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 206,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_PessoaCursosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_PessoaCursosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_PessoaCursosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_PessoaCursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 170,
+        "Top": 196
+      },
+      "filhos": []
+    }
+  ]
+}

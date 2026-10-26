@@ -1,0 +1,397 @@
+{
+  "classe": "TFrm_RH0251LogRiscosAmbientais",
+  "nome": "Frm_RH0251LogRiscosAmbientais",
+  "herdado": false,
+  "propriedades": {
+    "Left": 327,
+    "Top": 129,
+    "Width": 1080,
+    "Height": 515,
+    "Caption": "Histórico Deve Conter Risco ASO",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1064,
+        "Height": 46,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Cabecalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 14,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Risco: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_RiscoDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 48,
+            "Top": 14,
+            "Width": 374,
+            "Height": 13,
+            "Caption": "Lbl_Risco"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Filtros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 1064,
+        "Height": 155,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 9,
+            "Width": 1038,
+            "Height": 129,
+            "Caption": "Opções:",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Localizar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 40,
+                "Width": 100,
+                "Height": 49,
+                "Caption": "Localizar",
+                "TabOrder": 0,
+                "OnClick": "Btn_LocalizarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Criar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 129,
+                "Top": 40,
+                "Width": 100,
+                "Height": 49,
+                "Caption": "Criar",
+                "TabOrder": 1,
+                "OnClick": "Btn_CriarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Inseri",
+              "herdado": false,
+              "propriedades": {
+                "Left": 336,
+                "Top": 12,
+                "Width": 581,
+                "Height": 93,
+                "Caption": "Inserir: ",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DataHoraAlteracao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 32,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Data Hora Alteração: "
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ConterRiscoAso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 60,
+                    "Width": 220,
+                    "Height": 13,
+                    "Caption": "Trocar o campo Deve Conter Risco Aso Para: "
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_DataHoraAlteracao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 121,
+                    "Top": 28,
+                    "Width": 110,
+                    "Height": 21,
+                    "EditMask": "99/99/9999 99:99;1;_",
+                    "MaxLength": 16,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Salvar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 492,
+                    "Top": 53,
+                    "Width": 75,
+                    "Height": 25,
+                    "Caption": "&Salvar",
+                    "Default": true,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_SalvarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_ConterRiscoAso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 240,
+                    "Top": 56,
+                    "Width": 245,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "Items.Strings": [
+                      "Sim",
+                      "Não",
+                      "Acima do Limite de Tolerância",
+                      "Acima do Limite de Ação",
+                      "A partir da Classificação da Severidade do Risco"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDBMetaGrid",
+      "nome": "Dbg_LogEntregaEPI",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 201,
+        "Width": 1064,
+        "Height": 229,
+        "TabStop": false,
+        "Align": "alClient",
+        "DataSource": "Dts_LogConterRiscoAso",
+        "TabOrder": 2,
+        "Columns": [
+          {
+            "FieldName": "DATAHORAALTERACAO",
+            "Title.Caption": "Data Hora Alteração",
+            "Width": 131,
+            "Visible": true
+          },
+          {
+            "FieldName": "TIPOOPERACAO",
+            "Title.Caption": "Tipo Operação",
+            "Width": 130,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORALTERACAO",
+            "Title.Caption": "Operador",
+            "Width": 136,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAGERACAO",
+            "Title.Caption": "Data Criação Log",
+            "Width": 148,
+            "Visible": true
+          },
+          {
+            "FieldName": "CAMPOCALCULADO",
+            "Title.Caption": "De / Para",
+            "Width": 312,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 430,
+        "Width": 1064,
+        "Height": 46,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 9,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Voltar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_LogConterRiscoAso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 296,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_LogConterRiscoAsoDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogConterRiscoAsoTIPOOPERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOOPERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogConterRiscoAsoOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_LogConterRiscoAsoDATAHORAGERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAGERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogConterRiscoAsoCONTEUDOTEXTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTEUDOTEXTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogConterRiscoAsoRISCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogConterRiscoAsoCAMPOCALCULADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 90,
+            "FieldName": "CAMPOCALCULADO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LogConterRiscoAso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 440
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 436
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Calendario",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Calendario",
+            "ShortCut": 16452
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

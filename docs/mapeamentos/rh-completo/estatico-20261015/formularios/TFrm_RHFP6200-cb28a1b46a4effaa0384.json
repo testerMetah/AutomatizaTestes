@@ -1,0 +1,259 @@
+{
+  "classe": "TFrm_RHFP6200",
+  "nome": "Frm_RHFP6200",
+  "herdado": false,
+  "propriedades": {
+    "Left": 444,
+    "Top": 356,
+    "BorderStyle": "bsSingle",
+    "Caption": "Contratos com mais de um ano do último reajuste",
+    "ClientHeight": 358,
+    "ClientWidth": 708,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 708,
+        "Height": 317,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Consulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 700,
+            "Height": 309,
+            "Align": "alClient",
+            "DataSource": "Dts_Consulta",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "UNIDADE",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 300,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAULTIMOREAJUSTE",
+                "Title.Caption": "Data do   Último Reajuste",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAADMISSAO",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "SALARIOCONTRATUAL",
+                "Title.Caption": "Salário Contratual",
+                "Width": 80,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 317,
+        "Width": 708,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_VisualizarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 88,
+            "Top": 7,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Visualizar Impressão",
+            "ShowHint": true,
+            "OnClick": "Btn_VisualizarImpressaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_UltimaAtualizacaoContratual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 174,
+            "Top": 12,
+            "Width": 318,
+            "Height": 13,
+            "Caption": "Última atualização dos Dados Contratuais: 14/06/2017"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_OrdenarNome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 575,
+            "Top": 12,
+            "Width": 114,
+            "Height": 17,
+            "Caption": "Ordenar por Nome",
+            "TabOrder": 1,
+            "OnClick": "Chk_OrdenarNomeClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 650,
+        "Top": 323
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 617,
+        "Top": 323
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaDATAULTIMOREAJUSTE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Último Reajuste",
+            "FieldName": "DATAULTIMOREAJUSTE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Admissão",
+            "FieldName": "DATAADMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_ConsultaSALARIOCONTRATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIOCONTRATUAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_UltimaAtualizacaoContratual",
+      "herdado": false,
+      "propriedades": {
+        "Left": 586,
+        "Top": 324
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_UltimaAtualizacaoContratualPOSICAOCADASTRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSICAOCADASTRO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

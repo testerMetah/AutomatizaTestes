@@ -1,0 +1,444 @@
+{
+  "classe": "TFrm_RH110012InconsistenciaItenAval",
+  "nome": "Frm_RH110012InconsistenciaItenAval",
+  "herdado": true,
+  "propriedades": {
+    "Left": 443,
+    "Top": 190,
+    "Caption": "Inconsistências no Cargo/Função",
+    "ClientHeight": 545,
+    "ClientWidth": 769,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 769,
+        "Height": 504,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 11,
+            "Width": 121,
+            "Height": 13,
+            "Caption": "Período de Competência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Periodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 141,
+            "Top": 11,
+            "Width": 56,
+            "Height": 13,
+            "Caption": "Lbl_Periodo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_CargoFuncao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 35,
+            "Width": 741,
+            "Height": 227,
+            "Caption": "Cargo/Função com itens inconsistentes",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_CargoFuncao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 18,
+                "Width": 725,
+                "Height": 201,
+                "DataSource": "Dts_CargoFuncoes",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DescCargoFuncao",
+                    "Title.Caption": "Cargo/Função",
+                    "Width": 309,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Revisao",
+                    "Title.Caption": "Revisão do Descritivo",
+                    "Width": 376,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_Itens",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 267,
+            "Width": 741,
+            "Height": 227,
+            "Caption": "Itens do Cargo/Função com inconsistências",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Itens",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 18,
+                "Width": 725,
+                "Height": 201,
+                "DataSource": "Dts_Itens",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "ItemDesc",
+                    "Title.Caption": "Item",
+                    "Width": 236,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DesempenhoUsado",
+                    "Title.Caption": "Desempenho",
+                    "Width": 205,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DesempenhoCorreto",
+                    "Title.Caption": "Desempenho Necessário",
+                    "Width": 245,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 504,
+        "Width": 769,
+        "Height": 41,
+        "Align": "alBottom",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Iniciar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 9,
+            "Width": 209,
+            "Height": 25,
+            "Caption": "&Gerar nova Descrição do Descritivo",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 226,
+            "Top": 9,
+            "Width": 85,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_CargosFuncoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 552,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargosFuncoesCargoFuncao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CargoFuncao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargosFuncoesRevisao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Revisao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargosFuncoesDescCargoFuncao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescCargoFuncao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargosFuncoestipo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "tipo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CargoFuncoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 510,
+        "Top": 7
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Itens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 386,
+        "Top": 11
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Itens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 421,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensItemDesc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ItemDesc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDesempenhoUsado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DesempenhoUsado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDesempenhoCorreto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DesempenhoCorreto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensCargoFuncao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CargoFuncao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensITEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ITEM"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_DesempenhoDesc",
+      "herdado": false,
+      "propriedades": {
+        "Left": 711,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DesempenhoDescDESEMPENHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESEMPENHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DesempenhoDescDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_CargoDesc",
+      "herdado": false,
+      "propriedades": {
+        "Left": 712,
+        "Top": 48
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargoDescCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CargoDescDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_FuncaoDesc",
+      "herdado": false,
+      "propriedades": {
+        "Left": 716,
+        "Top": 100
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncaoDescFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncaoDescDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_ItensDesc",
+      "herdado": false,
+      "propriedades": {
+        "Left": 716,
+        "Top": 135
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDescITEMAVALIACAOFATOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ITEMAVALIACAOFATOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDescDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

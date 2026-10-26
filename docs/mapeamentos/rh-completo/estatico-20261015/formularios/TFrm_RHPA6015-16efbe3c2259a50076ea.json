@@ -1,0 +1,973 @@
+{
+  "classe": "TFrm_RHPA6015",
+  "nome": "Frm_RHPA6015",
+  "herdado": false,
+  "propriedades": {
+    "Left": 233,
+    "Top": 237,
+    "BorderStyle": "bsSingle",
+    "Caption": "Fechamento Manual do Banco de Horas",
+    "ClientHeight": 340,
+    "ClientWidth": 642,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 302,
+        "Width": 642,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 5,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&OK",
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 94,
+            "Top": 5,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_FundoGeral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 642,
+        "Height": 302,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Opcoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 634,
+            "Height": 294,
+            "ActivePage": "Tab_Remover",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Adicionar"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Itens",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 626,
+                    "Height": 266,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Gbx_BancoHoras",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 626,
+                        "Height": 172,
+                        "Align": "alTop",
+                        "Caption": "Banco de Horas",
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TCheckListBox",
+                          "nome": "Clb_Bancos",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 19,
+                            "Width": 604,
+                            "Height": 143,
+                            "Columns": 2,
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_SaldoFinal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 319,
+                        "Top": 172,
+                        "Width": 307,
+                        "Height": 94,
+                        "Align": "alClient",
+                        "Caption": "Saldo restante deve estar entre",
+                        "TabOrder": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_FechamentoHoras",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 303,
+                            "Height": 77,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_InfMaximoPositivo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 15,
+                                "Width": 79,
+                                "Height": 13,
+                                "Caption": "Máximo Positivo:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_InfMaximoNegativo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 42,
+                                "Width": 85,
+                                "Height": 13,
+                                "Caption": "Máximo Negativo:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_MaximoPositivo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 3,
+                                "Left": 99,
+                                "Top": 11,
+                                "Width": 54,
+                                "Height": 21,
+                                "EditMask": "9999:99;1; ",
+                                "MaxLength": 7,
+                                "TabOrder": 0,
+                                "OnExit": "Edt_MaximoPositivoExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_MaximoNegativo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 3,
+                                "Left": 99,
+                                "Top": 38,
+                                "Width": 53,
+                                "Height": 21,
+                                "EditMask": "9999:99;1; ",
+                                "MaxLength": 7,
+                                "TabOrder": 1,
+                                "OnExit": "Edt_MaximoPositivoExit"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_FechamentoPercentual",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 303,
+                            "Height": 77,
+                            "Align": "alClient",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Percentual",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 32,
+                                "Width": 54,
+                                "Height": 13,
+                                "Caption": "Percentual:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Perc",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 116,
+                                "Top": 32,
+                                "Width": 8,
+                                "Height": 13,
+                                "Caption": "%"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_Percentual",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 72,
+                                "Top": 28,
+                                "Width": 41,
+                                "Height": 21,
+                                "EditMask": "!999,99;1; ",
+                                "MaxLength": 6,
+                                "TabOrder": 0,
+                                "OnExit": "Edt_PercentualExit"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_HorasDeFechamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 303,
+                            "Height": 77,
+                            "Align": "alClient",
+                            "TabOrder": 2
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_SaldoHoras",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 8,
+                                "Width": 31,
+                                "Height": 13,
+                                "Caption": "Horas:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_HoraDe",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 50,
+                                "Width": 24,
+                                "Height": 13,
+                                "Caption": "entre"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_HoraAte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 147,
+                                "Top": 50,
+                                "Width": 6,
+                                "Height": 13,
+                                "Caption": "e"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ContratosTiveremSaldo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 30,
+                                "Width": 194,
+                                "Height": 13,
+                                "Caption": "Para contratos que tiverem saldo na data"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_SaldosHoras",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 3,
+                                "Left": 46,
+                                "Top": 4,
+                                "Width": 54,
+                                "Height": 21,
+                                "EditMask": "9999:99;1; ",
+                                "MaxLength": 7,
+                                "TabOrder": 0,
+                                "OnExit": "Edt_MaximoPositivoExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_SaldoHorasDe",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 3,
+                                "Left": 87,
+                                "Top": 46,
+                                "Width": 54,
+                                "Height": 21,
+                                "EditMask": "9999:99;1; ",
+                                "MaxLength": 7,
+                                "TabOrder": 2,
+                                "OnExit": "Edt_MaximoPositivoExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Edt_SaldoHorasAte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 3,
+                                "Left": 200,
+                                "Top": 46,
+                                "Width": 54,
+                                "Height": 21,
+                                "EditMask": "9999:99;1; ",
+                                "MaxLength": 7,
+                                "TabOrder": 4,
+                                "OnExit": "Edt_MaximoPositivoExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TComboBox",
+                              "nome": "Cmb_SinalHoraDe",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 46,
+                                "Top": 46,
+                                "Width": 39,
+                                "Height": 21,
+                                "Style": "csDropDownList",
+                                "TabOrder": 1,
+                                "Items.Strings": [
+                                  "+",
+                                  "-"
+                                ]
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TComboBox",
+                              "nome": "Cmb_SinalHoraAte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 159,
+                                "Top": 46,
+                                "Width": 39,
+                                "Height": 21,
+                                "Style": "csDropDownList",
+                                "TabOrder": 3,
+                                "Items.Strings": [
+                                  "+",
+                                  "-"
+                                ]
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_Datas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 172,
+                        "Width": 319,
+                        "Height": 94,
+                        "Align": "alLeft",
+                        "Caption": "Datas",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_InfDataLancamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 46,
+                            "Width": 103,
+                            "Height": 13,
+                            "Caption": "Data de Lançamento:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMetaData",
+                          "nome": "Btn_DataLancamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 190,
+                            "Top": 41,
+                            "Width": 21,
+                            "Height": 22,
+                            "Hint": "Localizar Data(Ctrl + D)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMetaData",
+                          "nome": "Btn_DataFechamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 190,
+                            "Top": 15,
+                            "Width": 20,
+                            "Height": 22,
+                            "Hint": "Localizar Data(Ctrl + D)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_InfDataFechamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 20,
+                            "Width": 103,
+                            "Height": 13,
+                            "Caption": "Data de Fechamento:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 72,
+                            "Width": 104,
+                            "Height": 13,
+                            "Caption": "Tipo de  Fechamento:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Edt_DataLancamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 119,
+                            "Top": 42,
+                            "Width": 70,
+                            "Height": 21,
+                            "EditMask": "99/99/9999;1; ",
+                            "MaxLength": 10,
+                            "TabOrder": 1,
+                            "OnExit": "Edt_DataLancamentoExit",
+                            "OnKeyPress": "Edt_DataFechamentoKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Edt_DataFechamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 119,
+                            "Top": 16,
+                            "Width": 70,
+                            "Height": 21,
+                            "EditMask": "99/99/9999;1; ",
+                            "MaxLength": 10,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_DataFechamentoExit",
+                            "OnKeyPress": "Edt_DataFechamentoKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_TipoFechamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 119,
+                            "Top": 68,
+                            "Width": 153,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 2,
+                            "OnChange": "Cmb_TipoFechamentoChange",
+                            "Items.Strings": [
+                              "Horas Remanescentes",
+                              "Percentual de Fechamento",
+                              "Horas de Fechamento"
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Adicionar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -10,
+                    "Top": -10,
+                    "Width": 0,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_AdicionarRemoverEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Remover",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "THeaderControl",
+                  "nome": "Hdc_Remover",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 2,
+                    "Width": 445,
+                    "Height": 17,
+                    "Align": "alNone",
+                    "Enabled": false,
+                    "Style": "hsFlat"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Remover",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 17,
+                    "Width": 617,
+                    "Height": 246,
+                    "DataSource": "Dts_RHBancoHorasFecham",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "REMOVER",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "FULLBANCOHORAS",
+                        "Width": 123,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAAPURACAO",
+                        "Title.Caption": "Fechamento",
+                        "Width": 67,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATALANCAMENTO",
+                        "Title.Caption": "Lançamento",
+                        "Width": 67,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescFechamentoBH",
+                        "Title.Caption": "Tipo",
+                        "Width": 85,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "FAIXA",
+                        "Title.Caption": "Parâmetros",
+                        "Width": 140,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCORIGEMPROGRAMACAO",
+                        "Width": 50,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Remover",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -10,
+                    "Top": -10,
+                    "Width": 0,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_AdicionarRemoverEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Seleção de Contratos",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "Pnl_SelecaoContratos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 626,
+                    "Height": 266,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -10,
+                    "Top": -10,
+                    "Width": 0,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_SelecaoEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Atalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 282,
+        "Top": 103
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActionCtrlD",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalho",
+            "Caption": "ActionCtrlD",
+            "ShortCut": 16452,
+            "OnExecute": "ActionCtrlDExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_RHBancoHorasFecham",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 92
+      },
+      "filhos": [
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_RHBancoHorasFechamREMOVER",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Remover",
+            "FieldName": "REMOVER"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamBANCOHORAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Banco de Horas",
+            "FieldName": "BANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamFULLBANCOHORAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Banco de Horas",
+            "FieldName": "FULLBANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_RHBancoHorasFechamDATAAPURACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Fechamento",
+            "FieldName": "DATAAPURACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_RHBancoHorasFechamDATALANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Lançamento",
+            "FieldName": "DATALANCAMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamTIPOFECHAMENTOBH",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo do Fechamento",
+            "FieldName": "TIPOFECHAMENTOBH"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RHBancoHorasFechamMAXIMOPOSITIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Máximo Positivo",
+            "FieldName": "MAXIMOPOSITIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RHBancoHorasFechamMAXIMONEGATIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Máximo Negativo",
+            "FieldName": "MAXIMONEGATIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Cds_RHBancoHorasFechamPERCFECHAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Percentual",
+            "FieldName": "PERCFECHAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamFAIXA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 60,
+            "FieldName": "FAIXA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamORIGEMPROGRAMACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "ORIGEMPROGRAMACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamDSCORIGEMPROGRAMACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "DSCORIGEMPROGRAMACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RHBancoHorasFechamMINUTOSFECHAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Minutos de Fechamento",
+            "FieldName": "MINUTOSFECHAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RHBancoHorasFechamMINUTOSDE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Minutos De",
+            "FieldName": "MINUTOSDE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RHBancoHorasFechamMINUTOSATE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Minutos Até",
+            "FieldName": "MINUTOSATE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamSINALDE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sinal De",
+            "FieldName": "SINALDE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamSINALATE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sinal Até",
+            "FieldName": "SINALATE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RHBancoHorasFechamDescFechamentoBH",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "DescFechamentoBH"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHBancoHorasFecham",
+      "herdado": false,
+      "propriedades": {
+        "Left": 108,
+        "Top": 88
+      },
+      "filhos": []
+    }
+  ]
+}

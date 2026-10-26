@@ -1,0 +1,287 @@
+{
+  "classe": "TFrm_RH2240",
+  "nome": "Frm_RH2240",
+  "herdado": true,
+  "propriedades": {
+    "Left": 583,
+    "Top": 175,
+    "Caption": "MOB - Cercas Virtuais",
+    "ClientHeight": 443,
+    "ClientWidth": 746
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_CodigoArea",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 746,
+        "Height": 53,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Cerca",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 18,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_area",
+          "herdado": false,
+          "propriedades": {
+            "Left": 141,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Cerca",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 14,
+            "Width": 66,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnExit": "Edt_CercaExit",
+            "OnKeyPress": "Edt_CercaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "chk_ativa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 683,
+            "Top": 18,
+            "Width": 53,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVO",
+            "DataSource": "dts_areas",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Area",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 53,
+        "Width": 746,
+        "Height": 390,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 16,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Edt_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 12,
+            "Width": 656,
+            "Height": 21,
+            "DataField": "DESCRICAO100",
+            "DataSource": "dts_areas",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_areas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 44,
+            "Width": 719,
+            "Height": 240,
+            "Caption": "Áreas",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 24,
+                "Width": 79,
+                "Height": 25,
+                "Caption": "Adicionar",
+                "ShowHint": true,
+                "OnClick": "Btn_adicionarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "dbg_areas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 64,
+                "Width": 701,
+                "Height": 164,
+                "DataSource": "dts_areascerca",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "AREA",
+                    "Title.Caption": "Código",
+                    "Width": 67,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO100",
+                    "Title.Caption": "Descrição",
+                    "Width": 180,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "LATITUDE",
+                    "Title.Caption": "Latitude",
+                    "Width": 84,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "LONGITUDE",
+                    "Title.Caption": "Longitude",
+                    "Width": 84,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "RAIO",
+                    "Title.Caption": "Raio (m)",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATIVO",
+                    "Title.Caption": "Ativo",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "chk_enviado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 662,
+            "Top": 357,
+            "Width": 67,
+            "Height": 17,
+            "Caption": "Enviado",
+            "DataField": "ENVIADO",
+            "Enabled": false,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrm_FormaSelecao",
+          "nome": "Frm_FormaSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 292,
+            "Width": 392,
+            "Height": 85,
+            "TabOrder": 3,
+            "ReadOnly": false,
+            "Caption": "Pessoas Vinculadas a Cerca Virtual"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 412,
+        "Top": 16
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_areas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_areascerca",
+      "herdado": false,
+      "propriedades": {
+        "Left": 348,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionList1Update",
+        "Left": 500,
+        "Top": 376
+      },
+      "filhos": []
+    }
+  ]
+}

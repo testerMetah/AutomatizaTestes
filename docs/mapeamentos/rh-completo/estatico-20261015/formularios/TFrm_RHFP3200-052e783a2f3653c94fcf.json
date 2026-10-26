@@ -1,0 +1,1865 @@
+{
+  "classe": "TFrm_RHFP3200",
+  "nome": "Frm_RHFP3200",
+  "herdado": false,
+  "propriedades": {
+    "Left": 495,
+    "Top": 241,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cálculo Individual de Férias",
+    "ClientHeight": 419,
+    "ClientWidth": 716,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TSpeedButton",
+      "nome": "SpeedButton3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 450,
+        "Top": 295,
+        "Width": 23,
+        "Height": 22
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TLabel",
+      "nome": "",
+      "herdado": false,
+      "propriedades": {
+        "Left": 430,
+        "Top": 190,
+        "Width": 37,
+        "Height": 13,
+        "Caption": "Lbl_Media"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 716,
+        "Height": 57,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "Caption": "Panel1",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 20,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 15,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 145,
+            "Top": 17,
+            "Width": 351,
+            "Height": 17,
+            "Caption": "lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 4,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Admissão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbt_DataAdmissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 552,
+            "Top": 4,
+            "Width": 66,
+            "Height": 13,
+            "DataField": "DATAADMISSAO",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 20,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Lotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 37,
+            "Width": 25,
+            "Height": 10,
+            "Hint": "Exibir Lotação do Contrato",
+            "Caption": ":::",
+            "ShowHint": true,
+            "OnClick": "Btn_LotacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBTxtSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 552,
+            "Top": 20,
+            "Width": 72,
+            "Height": 13,
+            "DataField": "DescricaoSituacao",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 56,
+            "Top": 15,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "edt_ContratoEnter",
+            "OnExit": "edt_ContratoExit",
+            "OnKeyPress": "edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 57,
+        "Width": 716,
+        "Height": 362,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Ferias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 708,
+            "Height": 354,
+            "ActivePage": "Tbs_Ferias",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_FeriasChange",
+            "OnEnter": "Pgc_FeriasEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Ferias",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Períodos"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label23",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 106,
+                    "Top": 11,
+                    "Width": 52,
+                    "Height": 13,
+                    "Caption": "Data-base:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label26",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 359,
+                    "Top": 11,
+                    "Width": 98,
+                    "Height": 13,
+                    "Caption": "Data do Pagamento:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mtd_DataBase",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 234,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mtd_DataPagamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 534,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_PeriodosAquisitivos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 50,
+                    "Width": 700,
+                    "Height": 111,
+                    "TabStop": false,
+                    "DataSource": "dts_PerAquisitivos",
+                    "TabOrder": 4,
+                    "Columns": [
+                      {
+                        "FieldName": "INICIOPERAQUISITIVO",
+                        "Width": 73,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TERMINOPERAQUISITIVO",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MEDIAHORASEXTRAS",
+                        "Width": 53,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MEDIAHORASNOTURNAS",
+                        "Width": 53,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MEDIAPRECOM",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASFALTADOSPERIODO",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASPERDIDOSPERIODO",
+                        "Width": 54,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASSUSPENSOSPERIODO",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASCEDIDOSPERIODO",
+                        "Width": 56,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASABONOPERIODO",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIASPENDENTESPERIODO",
+                        "Width": 49,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 514,
+                    "Top": 162,
+                    "Width": 184,
+                    "Height": 110,
+                    "Caption": "Férias Cedidas",
+                    "TabOrder": 7
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBGrid",
+                      "nome": "Dbg_FeriasCedidas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 15,
+                        "Width": 180,
+                        "Height": 93,
+                        "TabStop": false,
+                        "Align": "alClient",
+                        "DataSource": "dts_FeriasCedidas",
+                        "Enabled": false,
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "INICIOGOZOFERIAS",
+                            "Title.Caption": "Início",
+                            "Width": 63,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DIASFERIASRECIBO",
+                            "Title.Caption": "Férias",
+                            "Width": 40,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DIASABONORECIBO",
+                            "Title.Caption": "Abono",
+                            "Width": 40,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "grp_DadosFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 162,
+                    "Width": 257,
+                    "Height": 66,
+                    "Caption": "Férias Atuais:",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 27,
+                        "Top": 12,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Início:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Ferias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 134,
+                        "Top": 12,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "Férias:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Abono",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 207,
+                        "Top": 12,
+                        "Width": 34,
+                        "Height": 13,
+                        "Caption": "Abono:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataInicioFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 77,
+                        "Top": 25,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_OpcaoPagto13Fer",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 47,
+                        "Width": 125,
+                        "Height": 17,
+                        "Caption": "Antecipar 13° Salário",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_InicioFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 25,
+                        "Width": 68,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnEnter": "Msk_InicioFeriasEnter",
+                        "OnExit": "Msk_InicioFeriasExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TNumericEdit",
+                      "nome": "Edt_DiasFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 130,
+                        "Top": 25,
+                        "Width": 44,
+                        "Height": 21,
+                        "MaxLength": 5,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TNumericEdit",
+                      "nome": "Edt_DiasAbono",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 205,
+                        "Top": 25,
+                        "Width": 44,
+                        "Height": 21,
+                        "MaxLength": 5,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_FeriasColetivas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 155,
+                        "Top": 47,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Férias Coletivas",
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "HeaderControl1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 35,
+                    "Width": 698,
+                    "Height": 17,
+                    "Align": "alNone",
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 292,
+                    "Top": 162,
+                    "Width": 184,
+                    "Height": 110,
+                    "Caption": "Férias Programadas",
+                    "TabOrder": 5
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBGrid",
+                      "nome": "dbg_FeriasProgramadas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 15,
+                        "Width": 180,
+                        "Height": 93,
+                        "TabStop": false,
+                        "Align": "alClient",
+                        "DataSource": "dts_FeriasProgramadas",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "INICIOPROGFERIAS",
+                            "Width": 67,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DIASFERIASPROGRAMADOS",
+                            "Width": 37,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DIASABONOPROGRAMADOS",
+                            "Width": 38,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "msk_DataBase",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 165,
+                    "Top": 7,
+                    "Width": 68,
+                    "Height": 21,
+                    "EditMask": "!99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 0,
+                    "OnExit": "msk_DataBaseExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "msk_DataPagamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 465,
+                    "Top": 7,
+                    "Width": 68,
+                    "Height": 21,
+                    "EditMask": "!99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 1,
+                    "OnExit": "msk_DataPagamentoExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 285,
+                    "Width": 700,
+                    "Height": 41,
+                    "Align": "alBottom",
+                    "BorderStyle": "bsSingle",
+                    "TabOrder": 8
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btn_CancelarFerias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 137,
+                        "Top": 7,
+                        "Width": 205,
+                        "Height": 25,
+                        "Cancel": true,
+                        "Caption": "Cancelar as últimas Férias Cedidas",
+                        "TabOrder": 1,
+                        "OnClick": "btn_CancelarFeriasClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_IniciarCalculo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 7,
+                        "Width": 116,
+                        "Height": 25,
+                        "Caption": "Iniciar Cálculo",
+                        "ModalResult": 1,
+                        "TabOrder": 0,
+                        "OnClick": "Btn_IniciarCalculoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_Anima",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 613,
+                        "Top": 11,
+                        "Width": 71,
+                        "Height": 17,
+                        "TabStop": false,
+                        "Caption": "A&nimação",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_OrgaoPublico",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 227,
+                    "Width": 210,
+                    "Height": 56,
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 5,
+                        "Top": 13,
+                        "Width": 92,
+                        "Height": 13,
+                        "Caption": "Pagamento Parcial:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 5,
+                        "Top": 35,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "Valor:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_PagamentoParcial",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 9,
+                        "Width": 104,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_PagamentoParcialChange",
+                        "Items.Strings": [
+                          "1 - Não",
+                          "2 - Pagar 1/3",
+                          "3 - Informar valor"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TNumericEdit",
+                      "nome": "Ned_Valor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 31,
+                        "Width": 104,
+                        "Height": 21,
+                        "MaxLength": 11,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Lancamentos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Lançamentos",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label18",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 239,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Código:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "btn_VdB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 54,
+                    "Top": 254,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "OnClick": "btn_VdBClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label19",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 299,
+                    "Top": 239,
+                    "Width": 60,
+                    "Height": 13,
+                    "Caption": "Horas/Valor:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label20",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 410,
+                    "Top": 239,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Tipo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "edt_Invisivel",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 535,
+                    "Top": 247,
+                    "Width": 71,
+                    "Height": 21,
+                    "TabOrder": 3,
+                    "OnEnter": "edt_InvisivelEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "Cmb_TipoInfoLancamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 384,
+                    "Top": 254,
+                    "Width": 80,
+                    "Height": 21,
+                    "Style": "csOwnerDrawFixed",
+                    "TabOrder": 2,
+                    "Items.Strings": [
+                      "Valor",
+                      "Horas",
+                      "Dias",
+                      "Tarefas"
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDrawGrid",
+                  "nome": "Stg_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 5,
+                    "Width": 630,
+                    "Height": 231,
+                    "TabStop": false,
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_Valor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 277,
+                    "Top": 254,
+                    "Width": 104,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 254,
+                    "Width": 46,
+                    "Height": 21,
+                    "MaxLength": 3,
+                    "TabOrder": 0,
+                    "OnEnter": "Edt_VDBEnter",
+                    "OnExit": "Edt_VDBExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 81,
+                    "Top": 255,
+                    "Width": 191,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_VDB",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 285,
+                    "Width": 700,
+                    "Height": 41,
+                    "Align": "alBottom",
+                    "BorderStyle": "bsSingle",
+                    "TabOrder": 6
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_VoltarLancto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 7,
+                        "Width": 75,
+                        "Height": 25,
+                        "Hint": "Voltar para os períodos, as alterações feitas nos lançamentos serão perdidas.",
+                        "Caption": "&Voltar",
+                        "ShowHint": true,
+                        "TabOrder": 0,
+                        "TabStop": false,
+                        "OnClick": "Btn_VoltarLanctoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AvancarLancto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 7,
+                        "Width": 75,
+                        "Height": 25,
+                        "Hint": "Mostra o resultado do cálculo.",
+                        "Caption": "&Avançar",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "OnClick": "Btn_AvancarLanctoClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado do Cálculo",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 373,
+                    "Top": 279,
+                    "Width": 32,
+                    "Height": 13,
+                    "Caption": "Totais:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 470,
+                    "Top": 306,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "Líquido:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_Bases",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 290,
+                    "Width": 111,
+                    "Height": 17,
+                    "Caption": "Visualizar as Bases",
+                    "TabOrder": 0,
+                    "OnClick": "Chk_BasesClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStringGrid",
+                  "nome": "Stg_ValoresCalc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 630,
+                    "Height": 269,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_Liquido",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 513,
+                    "Top": 304,
+                    "Width": 98,
+                    "Height": 17,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_Liquido",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_TotalDescontos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 513,
+                    "Top": 277,
+                    "Width": 98,
+                    "Height": 17,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_TotalDescontos",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_TotalVencimentos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 409,
+                    "Top": 277,
+                    "Width": 98,
+                    "Height": 17,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_TotalVencimentos",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "pnl_Salario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 140,
+                    "Top": 279,
+                    "Width": 209,
+                    "Height": 41,
+                    "BorderStyle": "bsSingle",
+                    "TabOrder": 5
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label101",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 5,
+                        "Top": 11,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Salário:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_Salario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 45,
+                        "Top": 11,
+                        "Width": 124,
+                        "Height": 13,
+                        "Caption": "999.999.999 / TipoSalario"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 540,
+        "Top": 124
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_ContratosCONTRATOPRINCIPAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato Principal",
+            "FieldName": "CONTRATOPRINCIPAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Contrato",
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Admissão",
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosCAUSAAFASTFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Causa Afast. p/ Folha",
+            "FieldName": "CAUSAAFASTFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_ContratosSALARIOCONTRATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIOCONTRATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosTIPOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_ContratosHORASDIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORASDIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosRECEBEFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECEBEFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATAULTIMOAFASTAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAULTIMOAFASTAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATAINICIOFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_ContratosTOTAL13ANTECIPADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TOTAL13ANTECIPADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATAULTIMORETORNO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAULTIMORETORNO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosDescricaoSituacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoSituacao",
+            "ReadOnly": true,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosCATEGORIATRABALHADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CATEGORIATRABALHADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_ContratosDATAEXERCMANDELETIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEXERCMANDELETIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_ContratosDATAADMEMPRCED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMEMPRCED"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 540,
+        "Top": 176
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_FeriasCedidas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 453,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_PerAquisitivos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 375,
+        "Top": 168
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_PerAquisitivosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_PerAquisitivosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_PerAquisitivosINICIOPERAQUISITIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "De",
+            "DisplayWidth": 10,
+            "FieldName": "INICIOPERAQUISITIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_PerAquisitivosTERMINOPERAQUISITIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Até",
+            "DisplayWidth": 10,
+            "FieldName": "TERMINOPERAQUISITIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_PerAquisitivosNROMESESDECORRIDOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROMESESDECORRIDOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_PerAquisitivosDATABASEPERAQUI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATABASEPERAQUI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosMEDIAHORASEXTRAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "H.Extras",
+            "FieldName": "MEDIAHORASEXTRAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosMEDIAHORASNOTURNAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "H.Not.",
+            "FieldName": "MEDIAHORASNOTURNAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosMEDIAPRECOM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Prêmios/Comiss.",
+            "FieldName": "MEDIAPRECOM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASFALTADOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Faltados",
+            "FieldName": "DIASFALTADOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASPERDIDOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Perdidos",
+            "FieldName": "DIASPERDIDOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASCEDIDOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cedidos",
+            "FieldName": "DIASCEDIDOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASINDENIZADOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indenizados",
+            "FieldName": "DIASINDENIZADOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASABONOPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Abono",
+            "FieldName": "DIASABONOPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASPENDENTESPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Saldo",
+            "FieldName": "DIASPENDENTESPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_PerAquisitivosULTFOLCONSDATAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTFOLCONSDATAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_PerAquisitivosULTFOLCONSCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTFOLCONSCODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_PerAquisitivosNROMESESMEDIASPER",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Meses Médias Período",
+            "FieldName": "NROMESESMEDIASPER"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosMEDIAHORASTRABALHADAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDIAHORASTRABALHADAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_PerAquisitivosDIASSUSPENSOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Suspensos",
+            "FieldName": "DIASSUSPENSOSPERIODO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_PerAquisitivos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 425,
+        "Top": 167
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_FeriasProgramadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 225,
+        "Top": 126
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_FeriasProgramadasUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_FeriasProgramadasCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_FeriasProgramadasINICIOPROGFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início",
+            "FieldName": "INICIOPROGFERIAS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_FeriasProgramadasTERMINOPROGFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TERMINOPROGFERIAS",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_FeriasProgramadasDIASFERIASPROGRAMADOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Férias",
+            "FieldName": "DIASFERIASPROGRAMADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_FeriasProgramadasDIASABONOPROGRAMADOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Abono",
+            "FieldName": "DIASABONOPROGRAMADOS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_FeriasProgramadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 226,
+        "Top": 177
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 258,
+        "Top": 20
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOINFOVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINFOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBCLASSIFICACAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_VDBPERCVALORHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCVALORHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CodigosFixos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 355,
+        "Top": 20
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_CodigosFixosCODIGOFIXO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOFIXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_CodigosFixosVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_ContratosFolha",
+      "herdado": false,
+      "propriedades": {
+        "Left": 176,
+        "Top": 35
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "pop_CancelarResultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 67,
+        "Top": 163
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "mpo_AlterarLcto",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Alterar Lançamentos",
+            "OnClick": "Mnm_AlterarLcto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mpo_AbandonarCalc",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Abandonar Cálculo",
+            "OnClick": "Mnm_AbandonarCalc"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FeriasCedidasSubcontratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 522,
+        "Top": 303
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Subcontratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 584,
+        "Top": 120
+      },
+      "filhos": []
+    }
+  ]
+}

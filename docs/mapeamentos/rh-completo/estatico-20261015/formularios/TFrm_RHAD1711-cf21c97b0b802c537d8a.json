@@ -1,0 +1,297 @@
+{
+  "classe": "TFrm_RHAD1711",
+  "nome": "Frm_RHAD1711",
+  "herdado": false,
+  "propriedades": {
+    "Left": 446,
+    "Top": 208,
+    "BorderStyle": "bsSingle",
+    "Caption": "Configurações para Envio de E-mail utilizando Autenticação Moderna (Microsoft)",
+    "ClientHeight": 165,
+    "ClientWidth": 627,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 627,
+        "Height": 38,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AutModMicCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 11,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_AutModMicCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_AutModMicCodigoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AutModMicCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 90,
+            "Top": 7,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_AutModMicCodigoEnter",
+            "OnExit": "Edt_AutModMicCodigoExit",
+            "OnKeyPress": "Edt_AutModMicCodigoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 38,
+        "Width": 627,
+        "Height": 127,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 15,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ClientId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 42,
+            "Width": 103,
+            "Height": 13,
+            "Caption": "Application (client) ID:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TenantId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 68,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Directory (tenant) ID:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ClientSecret",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 95,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Client Secret:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 590,
+            "Top": 96,
+            "Width": 10,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 4,
+            "OnExit": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AutModMicDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 11,
+            "Width": 485,
+            "Height": 21,
+            "DataField": "AutModMicDescricao",
+            "DataSource": "Dts_RHAutModMicEmailConfig",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AutModMicClientSecret",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 91,
+            "Width": 485,
+            "Height": 21,
+            "MaxLength": 240,
+            "TabOrder": 3,
+            "OnChange": "Edt_AutModMicClientSecretChange",
+            "OnEnter": "Edt_AutModMicClientSecretEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AutModMicClientId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 38,
+            "Width": 485,
+            "Height": 21,
+            "DataField": "AutModMicClientId",
+            "DataSource": "Dts_RHAutModMicEmailConfig",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AutModMicTenantId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 64,
+            "Width": 485,
+            "Height": 21,
+            "DataField": "AutModMicTenantId",
+            "DataSource": "Dts_RHAutModMicEmailConfig",
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAutModMicEmailConfig",
+      "herdado": false,
+      "propriedades": {
+        "Left": 437,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_RHAutModMicEmailConfig",
+      "herdado": false,
+      "propriedades": {
+        "Left": 402,
+        "Top": 5
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHAutModMicEmailConfigAutModMicCodigo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "AutModMicCodigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHAutModMicEmailConfigAutModMicDescricao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "AutModMicDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHAutModMicEmailConfigAutModMicClientId",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Application (client) ID",
+            "FieldName": "AutModMicClientId"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHAutModMicEmailConfigAutModMicTenantId",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Directory (tenant) ID",
+            "FieldName": "AutModMicTenantId"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHAutModMicEmailConfigAutModMicClientSecret",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Client Secret",
+            "FieldName": "AutModMicClientSecret"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

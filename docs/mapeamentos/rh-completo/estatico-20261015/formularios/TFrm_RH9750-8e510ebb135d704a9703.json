@@ -1,0 +1,274 @@
+{
+  "classe": "TFrm_RH9750",
+  "nome": "Frm_RH9750",
+  "herdado": true,
+  "propriedades": {
+    "Left": 513,
+    "Top": 246,
+    "Caption": "Gerenciador de Avaliação de Experiência",
+    "ClientHeight": 435,
+    "ClientWidth": 1116
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Grid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1116,
+        "Height": 394,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Avaliacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 1108,
+            "Height": 386,
+            "ActivePage": "Tbs_NaoRealizadas",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_AvaliacoesChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Realizados",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Avaliações Realizadas"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "DBG_RHAvaliacoesPortal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 1100,
+                    "Height": 358,
+                    "Align": "alClient",
+                    "DataSource": "Dts_RHAvaliacaoExperiencia",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "FormularioDesc",
+                        "Title.Caption": "Formulário",
+                        "Width": 177,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Periodo",
+                        "Title.Caption": "Período de Experiência",
+                        "Width": 172,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ContratoCompleto",
+                        "Title.Caption": "Contrato",
+                        "Width": 289,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ContratoCompletoAvaliador",
+                        "Title.Caption": "Contrato Avaliador",
+                        "Width": 289,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ResultadoAval",
+                        "Title.Caption": "Resultado Avaliador",
+                        "Width": 133,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_NaoRealizadas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Avaliações Não Realizadas",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "DBG_RHAvaliacoesNaoRealizadasPortal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 1100,
+                    "Height": 358,
+                    "Align": "alClient",
+                    "DataSource": "Dts_RHAvaliacaoExperienciaNaoRealizadas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "CONTRATOAVALIADO",
+                        "Title.Caption": "Contrato",
+                        "Width": 433,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATOAVALIADORCOMPLETO",
+                        "Title.Caption": "Contrato Avaliador",
+                        "Width": 392,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TIPO",
+                        "Title.Caption": "Situação",
+                        "Width": 233,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 394,
+        "Width": 1116,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Editar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Editar",
+            "TabOrder": 0,
+            "OnClick": "Btn_EditarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 695,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "TabOrder": 1,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Prorrogar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 184,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Prorrogar",
+            "TabOrder": 2,
+            "OnClick": "Btn_ProrrogarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Contratar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 354,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Contratar",
+            "TabOrder": 3,
+            "OnClick": "Btn_ContratarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Rescindir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 524,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Rescindir",
+            "TabOrder": 4,
+            "OnClick": "Btn_RescindirClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 65524,
+        "Top": 65532
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAvaliacaoExperiencia",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 212
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAvaliacaoExperienciaNaoRealizadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 405,
+        "Top": 214
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "classe": "TFrm_RHAD1020",
+  "nome": "Frm_RHAD1020",
+  "herdado": true,
+  "propriedades": {
+    "Left": 240,
+    "Top": 187,
+    "Caption": "Grupos de Operadores",
+    "ClientHeight": 330,
+    "ClientWidth": 554
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 554,
+        "Height": 330,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Panel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 546,
+            "Height": 273,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Capitulos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 546,
+                "Height": 273,
+                "TabStop": false,
+                "Align": "alClient",
+                "DataSource": "Dts_RHOpeGrupos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "GRUPOOPERADOR",
+                    "Width": 68,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO40",
+                    "Width": 297,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO20",
+                    "Width": 147,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 275,
+            "Width": 546,
+            "Height": 49,
+            "Align": "alBottom",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 2,
+                "Width": 29,
+                "Height": 13,
+                "Caption": "Grupo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_CadCapitulos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 60,
+                "Top": 20,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_CodGrupo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 20,
+                "Width": 45,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnExit": "Edt_CodGrupoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_CadCap",
+              "herdado": false,
+              "propriedades": {
+                "Left": 83,
+                "Top": 2,
+                "Width": 460,
+                "Height": 54,
+                "TabOrder": 1,
+                "OnEnter": "Pnl_CadCapEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 0,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 295,
+                    "Top": 0,
+                    "Width": 96,
+                    "Height": 13,
+                    "Caption": "Descrição Reduzida"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 428,
+                    "Top": 18,
+                    "Width": 17,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Desc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 18,
+                    "Width": 290,
+                    "Height": 21,
+                    "DataField": "DESCRICAO40",
+                    "DataSource": "Dts_RHOpeGrupos",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_DescRed",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 295,
+                    "Top": 18,
+                    "Width": 154,
+                    "Height": 21,
+                    "DataField": "DESCRICAO20",
+                    "DataSource": "Dts_RHOpeGrupos",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 420,
+        "Top": 44
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHOpeGrupos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 340,
+        "Top": 84
+      },
+      "filhos": []
+    }
+  ]
+}

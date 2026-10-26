@@ -1,0 +1,991 @@
+{
+  "classe": "TFrm_RHPA6010",
+  "nome": "Frm_RHPA6010",
+  "herdado": true,
+  "propriedades": {
+    "Left": 509,
+    "Top": 306,
+    "Width": 952,
+    "Height": 506,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Histórico do Banco de Horas"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ChaveContrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 936,
+        "Height": 45,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 153,
+            "Top": 9,
+            "Width": 432,
+            "Height": 16,
+            "Caption": "Lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DscContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 11,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalizarContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DscBanco",
+          "herdado": false,
+          "propriedades": {
+            "Left": 585,
+            "Top": 11,
+            "Width": 65,
+            "Height": 13,
+            "Caption": "Banco Horas:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Lbl_CodDscBancoHora",
+          "herdado": false,
+          "propriedades": {
+            "Left": 656,
+            "Top": 7,
+            "Width": 266,
+            "Height": 21,
+            "DataField": "BANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBtnContratosLotacao",
+          "nome": "Btn_ContratoLotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 28,
+            "Width": 23,
+            "Height": 8,
+            "Hint": "Exibir Lotação do Contrato",
+            "AllowAllUp": true,
+            "GroupIndex": 240,
+            "Caption": ":::",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 7,
+            "Width": 65,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_ContratoChange",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLComboBox",
+          "nome": "Cbm_BancoHoras",
+          "herdado": false,
+          "propriedades": {
+            "Left": 656,
+            "Top": 7,
+            "Width": 266,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 45,
+        "Width": 936,
+        "Height": 379,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Periodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 279,
+            "Height": 371,
+            "Align": "alLeft",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Periodo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 1,
+                "Width": 248,
+                "Height": 13,
+                "Caption": "Lbl_Periodo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Total",
+              "herdado": false,
+              "propriedades": {
+                "Left": 140,
+                "Top": 350,
+                "Width": 82,
+                "Height": 13
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBeveledLabel",
+              "nome": "Lbl_Saldo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 140,
+                "Top": 352,
+                "Width": 82,
+                "Height": 18
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TotalData",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 340,
+                "Width": 82,
+                "Height": 13,
+                "Caption": "em 12/12/2006"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBeveledLabel",
+              "nome": "Lbl_SaldoData",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 352,
+                "Width": 82,
+                "Height": 18
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_BancoHoras",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 14,
+                "Width": 275,
+                "Height": 322,
+                "DataSource": "Dts_BancoHorasCreditoDebito",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DATAAPURACAO",
+                    "Title.Caption": "Data",
+                    "Width": 74,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORASTOTAIS",
+                    "Title.Caption": "Horas",
+                    "Width": 52,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORASCOMPENSADAS",
+                    "Title.Caption": "Comp.",
+                    "Width": 52,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORASSALDO",
+                    "Title.Caption": "Saldo",
+                    "Width": 52,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Eventos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 281,
+            "Top": 2,
+            "Width": 649,
+            "Height": 371,
+            "Align": "alClient",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TSplitter",
+              "nome": "Spt_Eventos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 246,
+                "Width": 649,
+                "Height": 5,
+                "Align": "alBottom"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Lancamentos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 649,
+                "Height": 246,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Data",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 5,
+                    "Width": 646,
+                    "Height": 13,
+                    "Caption": "Lbl_Data"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Lancamentos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 20,
+                    "Width": 637,
+                    "Height": 235,
+                    "TabStop": false,
+                    "DataSource": "Dts_LanctosEventosPonto",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "DATAAPURACAOEVENTO",
+                        "Title.Caption": "Data do Evento",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "EVENTOPONTO",
+                        "Title.Caption": "Evento",
+                        "Width": 27,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCEVENTOPONTO",
+                        "Title.Caption": "Descrição",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASDIURNAS",
+                        "Title.Caption": "Diurnas",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASNOTURNAS",
+                        "Title.Caption": "Noturnas",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASTOTAL",
+                        "Title.Caption": "Total",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "INDICE",
+                        "Title.Caption": "Multiplicador",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASDIURNASMULT",
+                        "Title.Caption": "Diurnas",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASNOTURNASMULT",
+                        "Title.Caption": "Noturnas",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORASTOTALMULT",
+                        "Title.Caption": "Total",
+                        "Width": 52,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Fechamentos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 251,
+                "Width": 649,
+                "Height": 120,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DataFechamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 5,
+                    "Width": 646,
+                    "Height": 13,
+                    "Caption": "Lbl_DataFechamento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_LancamentoFechamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 21,
+                    "Width": 646,
+                    "Height": 96,
+                    "DataSource": "Dts_BancoHorasFechEven",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "DATAAPURACAOEVENTO",
+                        "Title.Caption": "Data do Evento",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "EVENTOPONTO",
+                        "Title.Caption": "Evento",
+                        "Width": 27,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCEVENTOPONTO",
+                        "Title.Caption": "Descrição do Evento",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MINUTOSDIURNOS",
+                        "Title.Caption": "Diurnos",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MINUTOSNOTURNOS",
+                        "Title.Caption": "Noturnos",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MINUTOSTOTAL",
+                        "Title.Caption": "Total",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DIURNOSCOMPENSADOS",
+                        "Title.Caption": "Diurnos",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOTURNOSCOMPENSADOS",
+                        "Title.Caption": "Noturnos",
+                        "Width": 47,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TOTALCOMPENSADOS",
+                        "Title.Caption": "Total",
+                        "Width": 47,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_BtnLegenda",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 1,
+                    "Width": 19,
+                    "Height": 19,
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_Legenda",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 19,
+                        "Height": 19,
+                        "Hint": "Exibe Legenda De Cores",
+                        "AllowAllUp": true,
+                        "GroupIndex": 647,
+                        "ShowHint": true,
+                        "OnClick": "Btn_LegendaClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Legenda",
+              "herdado": false,
+              "propriedades": {
+                "Left": 96,
+                "Top": 172,
+                "Width": 399,
+                "Height": 63,
+                "TabOrder": 2,
+                "Visible": false
+              },
+              "filhos": [
+                {
+                  "classe": "TShape",
+                  "nome": "Shp_HintMarcacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 399,
+                    "Height": 63,
+                    "Align": "alClient"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MarcRefeicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": 17,
+                    "Width": 115,
+                    "Height": 13,
+                    "Caption": "Fechamento Automático"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MarcRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": 31,
+                    "Width": 97,
+                    "Height": 13,
+                    "Caption": "Fechamento Manual"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MarcLiberada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": 46,
+                    "Width": 85,
+                    "Height": 13,
+                    "Caption": "Cálculo de Limites"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shp_MarcPonto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 17,
+                    "Top": 18,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shp_MarcRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 17,
+                    "Top": 32,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shp_MarcBloqueada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 17,
+                    "Top": 47,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_HintTitulo1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 3,
+                    "Width": 171,
+                    "Height": 13,
+                    "Caption": "Para as Datas e Fechamentos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_HintTitulo2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 192,
+                    "Top": 3,
+                    "Width": 94,
+                    "Height": 13,
+                    "Caption": "Para os Eventos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shape1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 201,
+                    "Top": 18,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 250,
+                    "Top": 17,
+                    "Width": 70,
+                    "Height": 13,
+                    "Caption": "Evento Normal"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shape2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 201,
+                    "Top": 32,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 250,
+                    "Top": 31,
+                    "Width": 143,
+                    "Height": 13,
+                    "Caption": "Evento de Fechamento/Limite"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TShape",
+                  "nome": "Shape3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 201,
+                    "Top": 47,
+                    "Width": 46,
+                    "Height": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 250,
+                    "Top": 46,
+                    "Width": 115,
+                    "Height": 13,
+                    "Caption": "Evento de Saldo/Acerto"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBevel",
+                  "nome": "Bevel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 185,
+                    "Top": 7,
+                    "Width": 5,
+                    "Height": 50
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 424,
+        "Width": 936,
+        "Height": 43,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_BotoesFundo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 51,
+            "Top": 5,
+            "Width": 857,
+            "Height": 32,
+            "Align": "alCustom",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_PeriodoAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 2,
+                "Width": 120,
+                "Height": 29,
+                "Caption": "Período Anterior",
+                "TabOrder": 0,
+                "OnClick": "Btn_PeriodoAnteriorClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_ProximoPeriodo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 127,
+                "Top": 2,
+                "Width": 120,
+                "Height": 29,
+                "Caption": "Próximo Período",
+                "TabOrder": 1,
+                "OnClick": "Btn_ProximoPeriodoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_LancarSaldos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 374,
+                "Top": 2,
+                "Width": 180,
+                "Height": 29,
+                "Caption": "Pagamento do Banco de Horas",
+                "TabOrder": 2,
+                "OnClick": "Btn_LancarSaldosClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_EfetuarAcertos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 558,
+                "Top": 2,
+                "Width": 180,
+                "Height": 29,
+                "Caption": "Efetuar Acertos",
+                "TabOrder": 3,
+                "OnClick": "Btn_EfetuarAcertosClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_AlterarPeriodo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 251,
+                "Top": 2,
+                "Width": 120,
+                "Height": 29,
+                "Caption": "Alterar Período",
+                "TabOrder": 4,
+                "OnClick": "Btn_AlterarPeriodoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_ExibirSegundos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 744,
+                "Top": 8,
+                "Width": 97,
+                "Height": 17,
+                "Caption": "Exibir segundos",
+                "TabOrder": 5,
+                "OnClick": "Chk_ExibirSegundosClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 272,
+        "Top": 154
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BancoHorasCreditoDebito",
+      "herdado": false,
+      "propriedades": {
+        "Left": 134,
+        "Top": 162
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LanctosEventosPonto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 712,
+        "Top": 130
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BancoHorasFechEven",
+      "herdado": false,
+      "propriedades": {
+        "Left": 452,
+        "Top": 368
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 372,
+        "Top": 156
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_FechamentoIndividual",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Pagamento Individual"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_FechamentoIndividualAdicionar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Adicionar...",
+                "OnClick": "Pop_FechamentoColetivoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_FechamentoIndividualRemover",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Remover...",
+                "OnClick": "Pop_FechamentoColetivoClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_FechamentoColetivo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Pagamento Coletivo"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_FechamentoColetivoAdicionar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Adicionar...",
+                "OnClick": "Pop_FechamentoColetivoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_FechamentoColetivoRemover",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Remover...",
+                "OnClick": "Pop_FechamentoColetivoClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

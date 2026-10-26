@@ -1,0 +1,371 @@
+{
+  "classe": "TFrm_RHTR9500",
+  "nome": "Frm_RHTR9500",
+  "herdado": true,
+  "propriedades": {
+    "Left": 637,
+    "Top": 228,
+    "Caption": "Eventos com Checklist Incompleto",
+    "ClientHeight": 422,
+    "ClientWidth": 744
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 377,
+        "Width": 744,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 135,
+            "Top": 8,
+            "Width": 150,
+            "Height": 26,
+            "Caption": "&Realizar Checklist",
+            "TabOrder": 1,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 8,
+            "Width": 113,
+            "Height": 26,
+            "Caption": "&Iniciar Consulta",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarConsultaClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 744,
+        "Height": 377,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ChecklistIncompletos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 736,
+            "Height": 369,
+            "ActivePage": "Tbs_Resultado",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_ChecklistIncompletosChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Definicao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Definição"
+              },
+              "filhos": [
+                {
+                  "classe": "TFrmSelecaoTR",
+                  "nome": "FrmSelecaoTR1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 7,
+                    "Top": 0,
+                    "Width": 733,
+                    "Height": 337,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 728,
+                    "Height": 341,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TSplitter",
+                      "nome": "Splitter1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 162,
+                        "Width": 728,
+                        "Height": 3,
+                        "Align": "alBottom"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_EventosAtraso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 165,
+                        "Width": 728,
+                        "Height": 176,
+                        "Align": "alBottom",
+                        "Caption": "Eventos com Checklist em Atraso",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_Atraso",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 724,
+                            "Height": 159,
+                            "TabStop": false,
+                            "Align": "alClient",
+                            "DataSource": "Dts_EventosAtrasados",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbg_AtrasoEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "EVENTO",
+                                "Title.Caption": "Evento",
+                                "Width": 65,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescCurso",
+                                "Title.Caption": "Curso",
+                                "Width": 308,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DT_INICIO",
+                                "Title.Caption": "Início",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DT_ENCERRA",
+                                "Title.Caption": "Encerramento",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DataPrazo",
+                                "Title.Caption": "Vencimento",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "Participantes",
+                                "Width": 73,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "QtdCheckFinalizados",
+                                "Title.Caption": "Finalizados",
+                                "Width": 73,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_EventosAVencer",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 728,
+                        "Height": 159,
+                        "Align": "alClient",
+                        "Caption": "Eventos com Checklist a Vencer",
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_AVencer",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 724,
+                            "Height": 142,
+                            "TabStop": false,
+                            "Align": "alClient",
+                            "DataSource": "Dts_EventosAVencer",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbg_AVencerEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "EVENTO",
+                                "Title.Caption": "Evento",
+                                "Width": 65,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescCurso",
+                                "Title.Caption": "Curso",
+                                "Width": 308,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DT_INICIO",
+                                "Title.Caption": "Início",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DT_ENCERRA",
+                                "Title.Caption": "Encerramento",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DataPrazo",
+                                "Title.Caption": "Vencimento",
+                                "Width": 85,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "Participantes",
+                                "Width": 73,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "QtdCheckFinalizados",
+                                "Title.Caption": "Finalizados",
+                                "Width": 73,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Panel2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 159,
+                        "Width": 728,
+                        "Height": 3,
+                        "Align": "alBottom",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EventosAVencer",
+      "herdado": false,
+      "propriedades": {
+        "Left": 397,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EventosAtrasados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 428,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Vencimento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 461,
+        "Top": 7
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_VencimentoVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VENCIMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

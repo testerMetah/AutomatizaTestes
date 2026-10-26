@@ -1,0 +1,496 @@
+{
+  "classe": "TFrm_RHFP050025",
+  "nome": "Frm_RHFP050025",
+  "herdado": false,
+  "propriedades": {
+    "Left": 568,
+    "Top": 280,
+    "BorderStyle": "bsSingle",
+    "Caption": "Parametrização para Homolognet",
+    "ClientHeight": 368,
+    "ClientWidth": 583,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 583,
+        "Height": 49,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 18,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Referente ao VDB:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_VDBDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 223,
+            "Top": 18,
+            "Width": 348,
+            "Height": 13,
+            "Caption": "Descrição do VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Anterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Anterior",
+            "ShowHint": true,
+            "OnClick": "Btn_AnteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 172,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_VdbClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Proximo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Próximo",
+            "ShowHint": true,
+            "OnClick": "Btn_ProximoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 14,
+            "Width": 44,
+            "Height": 21,
+            "MaxLength": 3,
+            "TabOrder": 0,
+            "OnEnter": "Edt_VdbEnter",
+            "OnExit": "Edt_VdbExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 49,
+        "Width": 583,
+        "Height": 278,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 8,
+            "Width": 545,
+            "Height": 160,
+            "Caption": "Somente para Vencimentos e Bases de Cálculo",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 22,
+                "Top": 31,
+                "Width": 40,
+                "Height": 13,
+                "Caption": "Rubrica:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grp_2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 64,
+                "Width": 520,
+                "Height": 77,
+                "Caption": "Informação para as outras verbas rescisórias (que não tenham o Código da Rubrica informado)",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 42,
+                    "Width": 206,
+                    "Height": 13,
+                    "Caption": "Código para o Homolognet (a partir de 100):"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grp_3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 267,
+                    "Top": 26,
+                    "Width": 245,
+                    "Height": 43,
+                    "Caption": "Indicador de integração de Base de Cálculo",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DbChk_Ferias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 19,
+                        "Width": 55,
+                        "Height": 17,
+                        "Caption": "Férias",
+                        "DataField": "INDICFERIASHOMOLOGNET",
+                        "DataSource": "Dts_Vdb",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DbChk_13Salario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 70,
+                        "Top": 19,
+                        "Width": 75,
+                        "Height": 17,
+                        "Caption": "13° Salário",
+                        "DataField": "INDIC13SALHOMOLOGNET",
+                        "DataSource": "Dts_Vdb",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DbChk_AvisoPrevio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 158,
+                        "Top": 19,
+                        "Width": 81,
+                        "Height": 17,
+                        "Caption": "Aviso Prévio",
+                        "DataField": "INDICAVISOHOMOLOGNET",
+                        "DataSource": "Dts_Vdb",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CodigoHomolognet",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 217,
+                    "Top": 38,
+                    "Width": 35,
+                    "Height": 21,
+                    "DataField": "CODIGOVERBAHOMOLOGNET",
+                    "DataSource": "Dts_Vdb",
+                    "MaxLength": 3,
+                    "TabOrder": 0,
+                    "OnKeyPress": "Dbe_CodigoHomolognetKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_Rubrica",
+              "herdado": false,
+              "propriedades": {
+                "Left": 71,
+                "Top": 27,
+                "Width": 380,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "RUBRICAHOMOLOGNET",
+                "DataSource": "Dts_Vdb",
+                "TabOrder": 0,
+                "OnChange": "Dbc_RubricaChange"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 185,
+            "Width": 545,
+            "Height": 70,
+            "Caption": "Somente para Descontos",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 32,
+                "Width": 129,
+                "Height": 13,
+                "Caption": "Código para o Homolognet:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_CodigoHomolognetDesconto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 161,
+                "Top": 28,
+                "Width": 35,
+                "Height": 21,
+                "DataField": "CODIGODESCONTOHOMOLOGNET",
+                "DataSource": "Dts_Vdb",
+                "MaxLength": 3,
+                "TabOrder": 0,
+                "OnKeyPress": "Dbe_CodigoHomolognetDescontoKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Rodape",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 327,
+        "Width": 583,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 536,
+        "Top": 333
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Vdb",
+      "herdado": false,
+      "propriedades": {
+        "Left": 427,
+        "Top": 333
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbRUBRICAHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RUBRICAHOMOLOGNET"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbCODIGOVERBAHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOVERBAHOMOLOGNET"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbINDICFERIASHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICFERIASHOMOLOGNET"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbINDIC13SALHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDIC13SALHOMOLOGNET"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbINDICAVISOHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICAVISOHOMOLOGNET"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbCODIGODESCONTOHOMOLOGNET",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGODESCONTOHOMOLOGNET"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Vdb",
+      "herdado": false,
+      "propriedades": {
+        "Left": 463,
+        "Top": 333
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 499,
+        "Top": 333
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

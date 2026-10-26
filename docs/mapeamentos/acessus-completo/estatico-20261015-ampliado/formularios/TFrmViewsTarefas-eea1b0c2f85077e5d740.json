@@ -1,0 +1,1526 @@
+{
+  "classe": "TFrmViewsTarefas",
+  "nome": "FrmViewsTarefas",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "BorderStyle": "bsSingle",
+    "Caption": "Montagem da Tarefa",
+    "ClientHeight": 685,
+    "ClientWidth": 1102,
+    "FormStyle": "fsStayOnTop",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "PnlFundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1102,
+        "Height": 89,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "LblNomeTarefa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 12,
+            "Width": 319,
+            "Height": 24,
+            "Caption": "Nome da Tarefa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lblComando",
+          "herdado": false,
+          "propriedades": {
+            "Left": 367,
+            "Top": 12,
+            "Width": 178,
+            "Height": 24,
+            "Caption": "Comando:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lblFrequencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 535,
+            "Top": 12,
+            "Width": 171,
+            "Height": 24,
+            "Caption": "Frequência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lblStatus",
+          "herdado": false,
+          "propriedades": {
+            "Left": 712,
+            "Top": 12,
+            "Width": 171,
+            "Height": 24,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "cmbComando",
+          "herdado": false,
+          "propriedades": {
+            "Left": 367,
+            "Top": 42,
+            "Width": 162,
+            "Height": 27,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "cmbComandoChange",
+            "Items.Strings": [
+              "Exportação AFD",
+              "Coletar Digitais",
+              "Coletar Faces"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edtTarefa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 42,
+            "Width": 349,
+            "Height": 27,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "cmbFrequencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 535,
+            "Top": 42,
+            "Width": 171,
+            "Height": 27,
+            "Style": "csDropDownList",
+            "TabOrder": 2,
+            "OnChange": "cmbFrequenciaChange",
+            "Items.Strings": [
+              "Diário",
+              "Semanal"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "cmbStatus",
+          "herdado": false,
+          "propriedades": {
+            "Left": 712,
+            "Top": 42,
+            "Width": 105,
+            "Height": 27,
+            "Style": "csDropDownList",
+            "TabOrder": 3,
+            "Items.Strings": [
+              "Ativo",
+              "Inativo"
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "PnlBottomTarefas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 631,
+        "Width": 1102,
+        "Height": 54,
+        "Align": "alBottom",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnCancelarSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 175,
+            "Top": 6,
+            "Width": 165,
+            "Height": 38,
+            "Caption": "Cancelar (Alt+F4)",
+            "TabOrder": 0,
+            "OnClick": "ActCancelarExecute",
+            "Action": "ActCancelar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 346,
+            "Top": 6,
+            "Width": 162,
+            "Height": 38,
+            "Caption": "Salvar (Ctrl+S)",
+            "TabOrder": 1,
+            "OnClick": "ActSalvarExecute",
+            "Action": "ActSalvar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 89,
+        "Width": 1102,
+        "Height": 542,
+        "Align": "alClient",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "pcComando",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 706,
+            "Height": 542,
+            "ActivePage": "tsFiltros",
+            "Align": "alLeft",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "tsEquipamentos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Equipamentos",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckListBox",
+                  "nome": "ChkEquipamentos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 41,
+                    "Width": 698,
+                    "Height": 467,
+                    "Align": "alClient",
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "pnlEquipamentos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 698,
+                    "Height": 41,
+                    "Align": "alTop",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblEquipamentos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 6,
+                        "Width": 193,
+                        "Height": 29,
+                        "Caption": "Selecionar Equipamentos"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsFiltros",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Filtros",
+                "ImageIndex": 2,
+                "OnShow": "tsFiltrosShow"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "pnlFiltrosTopo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 698,
+                    "Height": 41,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblInfoFiltros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 6,
+                        "Width": 400,
+                        "Height": 29,
+                        "Caption": "Selecione os filtros que serão aplicados nesta tarefa"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "pnlFiltrosGrid",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 41,
+                    "Width": 698,
+                    "Height": 467,
+                    "Align": "alClient",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDrawGrid",
+                      "nome": "dgFiltros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 345,
+                        "Height": 467,
+                        "Align": "alLeft",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "pnlDetalhesFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 345,
+                        "Top": 0,
+                        "Width": 353,
+                        "Height": 467,
+                        "Align": "alClient",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "lblFiltroSelecionado",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 5,
+                            "Width": 333,
+                            "Height": 24,
+                            "Align": "alTop",
+                            "Caption": "Filtro Selecionado:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lblNomeFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 29,
+                            "Width": 333,
+                            "Height": 19,
+                            "Align": "alTop",
+                            "Caption": "Nenhum filtro selecionado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMemo",
+                          "nome": "mmoDescricaoFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 168,
+                            "Width": 333,
+                            "Height": 200,
+                            "Align": "alTop",
+                            "BorderStyle": "bsNone",
+                            "ReadOnly": true,
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnlInfoFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 48,
+                            "Width": 333,
+                            "Height": 120,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "lblTipoFiltro",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 333,
+                                "Height": 21,
+                                "Align": "alTop",
+                                "Caption": "Tipo: "
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "lblQtdeItens",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 21,
+                                "Width": 333,
+                                "Height": 21,
+                                "Align": "alTop",
+                                "Caption": "Quantidade de itens: "
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "lblStatusFiltro",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 42,
+                                "Width": 333,
+                                "Height": 21,
+                                "Align": "alTop",
+                                "Caption": "Status: "
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "lblDataCriacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 63,
+                                "Width": 333,
+                                "Height": 21,
+                                "Align": "alTop",
+                                "Caption": "Criado em: "
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "lblDataAlteracao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 84,
+                                "Width": 333,
+                                "Height": 17,
+                                "Align": "alTop",
+                                "Caption": "Alterado em: "
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnVerDetalhesFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 371,
+                            "Width": 333,
+                            "Height": 40,
+                            "Caption": "Ver Detalhes Completos",
+                            "TabOrder": 2,
+                            "OnClick": "btnVerDetalhesFiltroClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "tsExportacaoAFD",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Configuração AFD",
+                "ImageIndex": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "pnlTipoAFD",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 698,
+                    "Height": 41,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblTipoAFD",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 6,
+                        "Width": 100,
+                        "Height": 29,
+                        "Caption": "Tipo de AFD:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblFormatoCustomizado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 257,
+                        "Top": 6,
+                        "Width": 73,
+                        "Height": 29,
+                        "Caption": "Formato:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "cmbTipoAFD",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 8,
+                        "Width": 150,
+                        "Height": 27,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "cmbTipoAFDChange",
+                        "Items.Strings": [
+                          "Normal",
+                          "Customizado"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "cmbFormatoCustomizado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 324,
+                        "Top": 6,
+                        "Width": 180,
+                        "Height": 27,
+                        "Style": "csDropDownList",
+                        "TabOrder": 1,
+                        "Items.Strings": [
+                          "Normal",
+                          "Customizado"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "chkMesmoCaminho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 47,
+                    "Width": 400,
+                    "Height": 25,
+                    "Caption": "Usar mesmo caminho para todos equipamentos",
+                    "TabOrder": 1,
+                    "OnClick": "chkMesmoCaminhoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "edtCaminhoUnico",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 78,
+                    "Width": 400,
+                    "Height": 27,
+                    "Enabled": false,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "btnSelecionarCaminho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 414,
+                    "Top": 78,
+                    "Width": 35,
+                    "Height": 27,
+                    "Caption": "...",
+                    "Enabled": false,
+                    "TabOrder": 3,
+                    "OnClick": "btnSelecionarCaminhoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStringGrid",
+                  "nome": "grdEquipamentosCaminho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 111,
+                    "Width": 698,
+                    "Height": 397,
+                    "Align": "alBottom",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 706,
+            "Top": 0,
+            "Width": 396,
+            "Height": 542,
+            "Align": "alClient",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "pcFrequencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 19,
+                "Width": 394,
+                "Height": 240,
+                "ActivePage": "tsSemanal",
+                "Align": "alBottom",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "tsDiario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "tsDiario"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "pnlDiasSemana",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 288,
+                        "Height": 209,
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "lblDiasSemana",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 30,
+                            "Top": 0,
+                            "Width": 191,
+                            "Height": 24,
+                            "Caption": "Selecione os dias da semana"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TImage",
+                          "nome": "imgDiasSemana",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 24,
+                            "Height": 24
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 25,
+                            "Width": 121,
+                            "Height": 25,
+                            "Caption": "Segunda-Feira",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 56,
+                            "Width": 97,
+                            "Height": 25,
+                            "Caption": "Terça-Feira",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 87,
+                            "Width": 121,
+                            "Height": 25,
+                            "Caption": "Quarta-Feira",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 118,
+                            "Width": 121,
+                            "Height": 25,
+                            "Caption": "Quinta-Feira",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox5",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 151,
+                            "Top": 25,
+                            "Width": 97,
+                            "Height": 25,
+                            "Caption": "Sexta-Feira",
+                            "TabOrder": 4
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 151,
+                            "Top": 56,
+                            "Width": 97,
+                            "Height": 25,
+                            "Caption": "Sábado",
+                            "TabOrder": 5
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "CheckBox7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 151,
+                            "Top": 87,
+                            "Width": 97,
+                            "Height": 25,
+                            "Caption": "Domingo",
+                            "TabOrder": 6
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "tsSemanal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "tsSemanal",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "pnlSemanal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 288,
+                        "Height": 209,
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl01",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 6,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "01",
+                            "TabOrder": 0,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl02",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 46,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "02",
+                            "TabOrder": 1,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl03",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "03",
+                            "TabOrder": 2,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl04",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 126,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "04",
+                            "TabOrder": 3,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl05",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 166,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "05",
+                            "TabOrder": 4,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl06",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 206,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "06",
+                            "TabOrder": 5,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl07",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 246,
+                            "Top": 4,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "07",
+                            "TabOrder": 6,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl08",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 6,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "08",
+                            "TabOrder": 7,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl09",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 46,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "09",
+                            "TabOrder": 8,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl10",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "10",
+                            "TabOrder": 9,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 126,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "11",
+                            "TabOrder": 10,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl12",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 166,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "12",
+                            "TabOrder": 11,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 206,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "13",
+                            "TabOrder": 12,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 246,
+                            "Top": 45,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "14",
+                            "TabOrder": 13,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl15",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 6,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "15",
+                            "TabOrder": 14,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl16",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 46,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "16",
+                            "TabOrder": 15,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl17",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "17",
+                            "TabOrder": 16,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl18",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 126,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "18",
+                            "TabOrder": 17,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl19",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 166,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "19",
+                            "TabOrder": 18,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl20",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 206,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "20",
+                            "TabOrder": 19,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl21",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 246,
+                            "Top": 86,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "21",
+                            "TabOrder": 20,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl22",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 6,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "22",
+                            "TabOrder": 21,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl23",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 46,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "23",
+                            "TabOrder": 22,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl24",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "24",
+                            "TabOrder": 23,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl25",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 126,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "25",
+                            "TabOrder": 24,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl26",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 166,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "26",
+                            "TabOrder": 25,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl27",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 206,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "27",
+                            "TabOrder": 26,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl28",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 246,
+                            "Top": 127,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "28",
+                            "TabOrder": 27,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl29",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 6,
+                            "Top": 168,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "29",
+                            "TabOrder": 28,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl30",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 46,
+                            "Top": 168,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "30",
+                            "TabOrder": 29,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl31",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 168,
+                            "Width": 36,
+                            "Height": 36,
+                            "Caption": "31",
+                            "TabOrder": 30,
+                            "OnClick": "pnlDiaClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlHorarios",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 259,
+                "Width": 394,
+                "Height": 282,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 0,
+                    "Width": 35,
+                    "Height": 24,
+                    "Caption": "Hora"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "lbxHorarios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 63,
+                    "Width": 68,
+                    "Height": 186,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "edtHora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 30,
+                    "Width": 68,
+                    "Height": 27,
+                    "EditMask": "!90:00;1;_",
+                    "MaxLength": 5,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnAdicionarHora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 30,
+                    "Width": 24,
+                    "Height": 27,
+                    "Caption": "",
+                    "TabOrder": 2,
+                    "OnClick": "btnAdicionarHoraClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnRemoverHorario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 63,
+                    "Width": 24,
+                    "Height": 27,
+                    "Caption": "",
+                    "TabOrder": 3,
+                    "OnClick": "btnRemoverHorarioClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 384,
+        "Top": 67
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActProximo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Próximo (Ctrl+N)",
+            "ImageIndex": 2,
+            "ShortCut": 16462
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Cancelar (Alt+F4)",
+            "ImageIndex": 3,
+            "ShortCut": 32883,
+            "OnExecute": "ActCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Salvar (Ctrl+S)",
+            "ImageIndex": 4,
+            "ShortCut": 16467,
+            "OnExecute": "ActSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActVoltar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Voltar (Ctrl+B)",
+            "ImageIndex": 1,
+            "ShortCut": 16450,
+            "OnExecute": "ActVoltarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActNovoLayout",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CdExportacaoMarcacoes",
+            "Caption": "Novo Layout (Ctrl+I)",
+            "ImageIndex": 6,
+            "ShortCut": 16457
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEditarLayout",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CdExportacaoMarcacoes",
+            "Caption": "Editar Layout (Ctrl+E)",
+            "ImageIndex": 7,
+            "ShortCut": 16453
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAdicionarDiretorio",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CdExportacaoMarcacoes",
+            "ImageIndex": 6
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 447,
+        "Top": 75
+      },
+      "filhos": []
+    }
+  ]
+}

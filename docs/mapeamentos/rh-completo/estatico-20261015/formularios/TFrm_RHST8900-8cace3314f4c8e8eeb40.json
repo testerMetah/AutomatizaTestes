@@ -1,0 +1,325 @@
+{
+  "classe": "TFrm_RHST8900",
+  "nome": "Frm_RHST8900",
+  "herdado": true,
+  "propriedades": {
+    "Left": 523,
+    "Top": 421,
+    "Caption": "Programação de EPIs para Visitantes",
+    "ClientHeight": 389,
+    "ClientWidth": 576
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 576,
+        "Height": 347,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TMetaData",
+          "nome": "MetaData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 221,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 13,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Data:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 298,
+            "Width": 17,
+            "Height": 13,
+            "Caption": "EPI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_EPI",
+          "herdado": false,
+          "propriedades": {
+            "Left": 241,
+            "Top": 314,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 269,
+            "Top": 298,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Bdl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 269,
+            "Top": 314,
+            "Width": 185,
+            "Height": 21,
+            "Caption": "Bdl_Descricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Uso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 459,
+            "Top": 298,
+            "Width": 19,
+            "Height": 13,
+            "Caption": "Uso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 368,
+            "Top": 217,
+            "Width": 9,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_DatasProgramacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 9,
+            "Width": 105,
+            "Height": 326,
+            "TabStop": false,
+            "DataSource": "Dts_Datas",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_DatasProgramacaoEnter",
+            "Columns": [
+              {
+                "FieldName": "DATAHORA",
+                "Title.Caption": "Data",
+                "Width": 72,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_EpisProgramados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 38,
+            "Width": 447,
+            "Height": 256,
+            "TabStop": false,
+            "DataSource": "Dts_ProgramacaoEPIs",
+            "TabOrder": 1,
+            "OnEnter": "Dbg_EpisProgramadosEnter",
+            "Columns": [
+              {
+                "FieldName": "CodDescEPI",
+                "Title.Caption": "EPI",
+                "Width": 324,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescUsoEPI",
+                "Title.Caption": "Uso",
+                "Width": 89,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 10,
+            "Width": 68,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 2,
+            "OnChange": "Msk_DataChange",
+            "OnExit": "Msk_DataExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_EPI",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 314,
+            "Width": 122,
+            "Height": 21,
+            "MaxLength": 16,
+            "TabOrder": 3,
+            "OnExit": "Edt_EPIExit",
+            "OnKeyPress": "Edt_EPIKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Uso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 459,
+            "Top": 314,
+            "Width": 106,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "USOEPI",
+            "DataSource": "Dts_ProgramacaoEPIs",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Selecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 347,
+        "Width": 576,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_SelecionaEPIs",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 160,
+            "Height": 25,
+            "Hint": "Seleção Coletiva de EPIs",
+            "Caption": "&Seleção Coletiva de EPIs",
+            "ShowHint": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_SelecionaEPIsClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 516,
+        "Top": 164
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ProgramacaoEPIs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Datas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 40,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_DatasDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Datas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 40,
+        "Top": 104
+      },
+      "filhos": []
+    }
+  ]
+}

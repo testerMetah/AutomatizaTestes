@@ -1,0 +1,296 @@
+{
+  "classe": "TFrm_RHFP5700",
+  "nome": "Frm_RHFP5700",
+  "herdado": false,
+  "propriedades": {
+    "Left": 515,
+    "Top": 261,
+    "BorderStyle": "bsSingle",
+    "Caption": "Resumo de Pagamentos",
+    "ClientHeight": 341,
+    "ClientWidth": 529,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 529,
+        "Height": 300,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TRadioGroup",
+          "nome": "rdg_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 140,
+            "Width": 277,
+            "Height": 142,
+            "Caption": "Seleção",
+            "Items.Strings": [
+              "Por Unidade",
+              "Por Grupo de Unidades",
+              "Por Empresa",
+              "Por Grupo de Empresas",
+              "Geral"
+            ],
+            "TabOrder": 2,
+            "OnClick": "rdg_SelecaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 303,
+            "Top": 140,
+            "Width": 208,
+            "Height": 142,
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TListBox",
+              "nome": "lst_Unidades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 15,
+                "Width": 193,
+                "Height": 120,
+                "TabStop": false,
+                "TabOrder": 0,
+                "Visible": false
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_OpcoesDatas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 10,
+            "Width": 277,
+            "Height": 112,
+            "Caption": "Opções",
+            "Items.Strings": [
+              "Folhas Pagas no Período",
+              "Folhas Pagas fora da Data-base",
+              "Folhas de outras Datas-base Pagas no Período",
+              "Todas as Folhas da Data-base"
+            ],
+            "TabOrder": 0,
+            "OnClick": "Rdg_OpcoesDatasClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Periodos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 303,
+            "Top": 10,
+            "Width": 208,
+            "Height": 112,
+            "Caption": "Período de Pagamentos",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 44,
+                "Top": 33,
+                "Width": 17,
+                "Height": 13,
+                "Caption": "De:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 44,
+                "Top": 65,
+                "Width": 19,
+                "Height": 13,
+                "Caption": "Até:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataInicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 141,
+                "Top": 29,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataFim",
+              "herdado": false,
+              "propriedades": {
+                "Left": 142,
+                "Top": 61,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataInicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 72,
+                "Top": 29,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0,
+                "OnExit": "Msk_DataInicioExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataFim",
+              "herdado": false,
+              "propriedades": {
+                "Left": 72,
+                "Top": 61,
+                "Width": 69,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "Msk_DataFimExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 300,
+        "Width": 529,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 6,
+            "Width": 120,
+            "Height": 25,
+            "Caption": "Iniciar Consulta",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarConsultaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GruposUnidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 222,
+        "Top": 178
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposUnidadesGRUPOUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOUNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposUnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_GruposEmpresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 228,
+        "Top": 240
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_GruposEmpresasGRUPOEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOEMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_GruposEmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

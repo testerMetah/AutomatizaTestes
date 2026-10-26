@@ -1,0 +1,41 @@
+{
+  "versao": 1,
+  "tipo": "planejamento_reserva_sirh",
+  "preparado": false,
+  "perfil": "RHFagundes_para_novo123",
+  "origem": {
+    "alias": "RHFagundes",
+    "unidade_candidata": "0001",
+    "contrato_candidato": 129,
+    "pessoa_candidata": 10900129,
+    "nome_candidato": "Cleonice Licheski",
+    "selecao_confirmada": false,
+    "inicio": null,
+    "termino": null,
+    "refeitorio": null,
+    "refeicao": null,
+    "tipo_refeicao": null,
+    "cardapio": null
+  },
+  "destino": {
+    "servidor": "desk-tec",
+    "banco": "novo123",
+    "ids_pessoa_candidatos": [7, 8, 9],
+    "id_pessoa_confirmado": null,
+    "filtros_reserva_confirmados": null
+  },
+  "expectativa": {
+    "antes": "reserva exata ausente no RH e no Acessus",
+    "depois": "uma reserva correspondente no Acessus, com pessoa, refeitorio, refeicao e periodo iguais ao esperado",
+    "conferencia_visual": "Reserva/Consumo no Frequencia e relatorio Reservas e Consumos no Acessus",
+    "conferencia_sql": "dbo.RefeicoesReservas",
+    "evidencia_importador": "novas linhas do ciclo atual em AcessusSyncProcessoService.log"
+  },
+  "pendencias": [
+    "Confirmar que a API configurada atende a origem RHFagundes",
+    "Resolver correspondencia dos cadastros duplicados no Acessus sem apagar dados",
+    "Confirmar dados e periodo do caso antes de gravar",
+    "Mapear e validar gravacao da reserva na tela",
+    "Iniciar servico e conferir resultado real na tela, SQL e logs"
+  ]
+}

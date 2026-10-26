@@ -1,0 +1,1371 @@
+{
+  "classe": "TFrm_RHFP1240",
+  "nome": "Frm_RHFP1240",
+  "herdado": false,
+  "propriedades": {
+    "Left": 355,
+    "Top": 176,
+    "BorderStyle": "bsSingle",
+    "Caption": "Manutenção de Contratos por Projeto",
+    "ClientHeight": 445,
+    "ClientWidth": 775,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 775,
+        "Height": 77,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 12,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 45,
+            "Width": 73,
+            "Height": 13,
+            "Caption": "Mês/Ano-base:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TotalHorasContratuais",
+          "herdado": false,
+          "propriedades": {
+            "Left": 582,
+            "Top": 45,
+            "Width": 132,
+            "Height": 13,
+            "Caption": "Limite de Horas Contratuais:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 173,
+            "Top": 12,
+            "Width": 309,
+            "Height": 24,
+            "Caption": "Lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 84,
+            "Top": 8,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_MesAnoBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 85,
+            "Top": 41,
+            "Width": 58,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnEnter": "Msk_MesAnoBaseEnter",
+            "OnExit": "Msk_MesAnoBaseExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_TotalDeHorasContratuais",
+          "herdado": false,
+          "propriedades": {
+            "Left": 716,
+            "Top": 41,
+            "Width": 45,
+            "Height": 21,
+            "MaxLength": 5,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 77,
+        "Width": 775,
+        "Height": 368,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 196,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Projeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 196,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 336,
+            "Top": 196,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Horas Trabalhadas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_DescricaoProjeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 211,
+            "Width": 177,
+            "Height": 21,
+            "DataField": "DescricaoProjeto",
+            "DataSource": "Dts_ProjetosTrabalhados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 237,
+            "Width": 101,
+            "Height": 13,
+            "Caption": "Classficação Contábil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_DescricaoClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 252,
+            "Width": 177,
+            "Height": 21,
+            "DataField": "DescricaoClassificacaoContabil",
+            "DataSource": "Dts_ProjetosTrabalhados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 278,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Classificação p/GPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_DescricaoClassificaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 293,
+            "Width": 177,
+            "Height": 21,
+            "DataField": "DescricaoClassificacaoGPS",
+            "DataSource": "Dts_ProjetosTrabalhados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 321,
+            "Width": 106,
+            "Height": 13,
+            "Caption": "Classificação p/SEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_DescricaoClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 336,
+            "Width": 177,
+            "Height": 21,
+            "DataField": "DescricaoClassificacaoSefip",
+            "DataSource": "Dts_ProjetosTrabalhados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 408,
+            "Top": 211,
+            "Width": 10,
+            "Height": 21,
+            "MaxLength": 5,
+            "TabOrder": 9,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Projetos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 767,
+            "Height": 185,
+            "Align": "alTop",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "TabOrder": 10,
+            "Columns": [
+              {
+                "FieldName": "Projeto",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoProjeto",
+                "Title.Caption": "Descrição",
+                "Width": 248,
+                "Visible": true
+              },
+              {
+                "FieldName": "HorasTrabalhadas",
+                "Title.Caption": "Horas Trabalhadas",
+                "Width": 96,
+                "Visible": true
+              },
+              {
+                "FieldName": "CodDescClassificacaoContabil",
+                "Title.Caption": "Classificação Contábil",
+                "Width": 220,
+                "Visible": true
+              },
+              {
+                "FieldName": "CodDescClassificacaoGPS",
+                "Title.Caption": "Classificação p/GPS",
+                "Width": 155,
+                "Visible": true
+              },
+              {
+                "FieldName": "CodDescClassificacaoSefip",
+                "Title.Caption": "Classificação p/Sefip",
+                "Width": 155,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_HorasTrabalhadas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 336,
+            "Top": 211,
+            "Width": 90,
+            "Height": 21,
+            "DataField": "HorasTrabalhadas",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "MaxLength": 12,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Projeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 211,
+            "Width": 67,
+            "Height": 21,
+            "DataField": "Projeto",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "Enabled": false,
+            "TabOrder": 0,
+            "OnEnter": "Dbe_ProjetoEnter",
+            "OnExit": "Dbe_ProjetoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Projeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 209,
+            "Width": 23,
+            "Height": 24,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "Btn_ProjetoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 252,
+            "Width": 67,
+            "Height": 21,
+            "DataField": "ClassificacaoContabil",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "TabOrder": 3,
+            "OnEnter": "Dbe_ClassificacaoContabilEnter",
+            "OnExit": "Dbe_ClassificacaoContabilExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 250,
+            "Width": 23,
+            "Height": 24,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 4,
+            "TabStop": false,
+            "OnClick": "Btn_ClassificacaoContabilClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_ClassificacaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 293,
+            "Width": 67,
+            "Height": 21,
+            "DataField": "ClassificacaoGPS",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "TabOrder": 5,
+            "OnEnter": "Dbe_ClassificacaoGPSEnter",
+            "OnExit": "Dbe_ClassificacaoGPSExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_ClassificacaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 291,
+            "Width": 23,
+            "Height": 24,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 6,
+            "TabStop": false,
+            "OnClick": "Btn_ClassificacaoGPSClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_ClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 334,
+            "Width": 23,
+            "Height": 24,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 8,
+            "TabStop": false,
+            "OnClick": "Btn_ClassificacaoSefipClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_ClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 336,
+            "Width": 67,
+            "Height": 21,
+            "DataField": "ClassificacaoSefip",
+            "DataSource": "Dts_ProjetosTrabalhados",
+            "TabOrder": 7,
+            "OnEnter": "Dbe_ClassificacaoSefipEnter",
+            "OnExit": "Dbe_ClassificacaoSefipExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 292,
+        "Top": 11
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosDATAINICIOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Início",
+            "FieldName": "DATAINICIOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosCONTRATOPRINCIPAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATOPRINCIPAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_ContratosHORASCONTRATUAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORASCONTRATUAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ContratosProjeto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 432,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_ContratosProjetoHORASCONTRATUAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Horas Contratuais",
+            "FieldName": "HORASCONTRATUAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto",
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosProjetoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosProjetoDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Inicio",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosProjetoDATAINICIOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoDESCRICAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoCLASSIFICACAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoDESCRICAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoCLASSIFICACAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoDESCRICAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosProjetoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosProjetoPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Projetos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 280
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Porjeto",
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosPROJETOESTRUTURADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto Estruturado",
+            "FieldName": "PROJETOESTRUTURADO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ManutencaoDosContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 468,
+        "Top": 11
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ContratosRateioProjeto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 700,
+        "Top": 358
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosRateioProjetoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosRateioProjetoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosRateioProjetoINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosRateioProjetoPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_ContratosRateioProjetoPERCENTUALRATEIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCENTUALRATEIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosRateioProjetoTERMINOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TERMINOVALIDADE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ProjetosTrabalhados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 432,
+        "Top": 46
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosUnidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ProjetosTrabalhadosContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosProjeto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Projeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosDescricaoProjeto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoProjeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ProjetosTrabalhadosHorasTrabalhadas",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HorasTrabalhadas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 8,
+            "FieldName": "ClassificacaoContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosDescricaoClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoClassificacaoContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosCodDescClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodDescClassificacaoContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosClassificacaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 4,
+            "FieldName": "ClassificacaoGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosDescricaoClassificacaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoClassificacaoGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosCodDescClassificacaoGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodDescClassificacaoGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 4,
+            "FieldName": "ClassificacaoSefip"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosDescricaoClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoClassificacaoSefip"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProjetosTrabalhadosCodDescClassificacaoSefip",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodDescClassificacaoSefip"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProjetosTrabalhadosDataInicioSubcontrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataInicioSubcontrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProjetosTrabalhadosDataTerminoSubcontrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataTerminoSubcontrato"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ProjetosTrabalhados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 468,
+        "Top": 45
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 728,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ClassificacaoGPS",
+      "herdado": false,
+      "propriedades": {
+        "Left": 672,
+        "Top": 280
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoGPSCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação para a GPS",
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoGPSDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoGPSATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ClassificacaoSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 708,
+        "Top": 280
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoSefipCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação para a SEFIP",
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoSefipDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoSefipATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ClassificacaoContabil",
+      "herdado": false,
+      "propriedades": {
+        "Left": 636,
+        "Top": 280
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação Contábil",
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ClassificacaoContabilDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 360
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_VinculosEmpregaticio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 360
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VinculosEmpregaticioVINCULOEMPREGATICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VINCULOEMPREGATICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VinculosEmpregaticioDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VinculosEmpregaticioRECEBEFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECEBEFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VinculosEmpregaticioREGIMETEMPOPARCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REGIMETEMPOPARCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ContratoPrincipal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 633,
+        "Top": 360
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_AlteracoesCadatrais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 666,
+        "Top": 359
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Relatorio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 720,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "IntegerField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Projeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoProjeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_RelatorioHorasContratuais",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HorasContratuais"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_RelatorioDataInicioSubContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataInicioSubContrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_RelatorioDataTerminoSubContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataTerminoSubContrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RelatorioTipoOperacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoOperacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RelatorioNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "classe": "TFrm_RHTR301011",
+  "nome": "Frm_RHTR301011",
+  "herdado": true,
+  "propriedades": {
+    "Left": 534,
+    "Top": 402,
+    "Caption": "Copiar Turma",
+    "ClientHeight": 237,
+    "ClientWidth": 573,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 196,
+        "Width": 573,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_SelecionarUm",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 85,
+            "Height": 25,
+            "Caption": "&Selecionar",
+            "TabOrder": 0,
+            "OnClick": "Btn_SelecionarUmClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_SelecionarTodos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 6,
+            "Width": 120,
+            "Height": 25,
+            "Caption": "Selecionar &Todos",
+            "TabOrder": 1,
+            "OnClick": "Btn_SelecionarTodosClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 573,
+        "Height": 196,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 16,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Evento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Evento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Evento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 147,
+            "Top": 16,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Matemática Básica"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 42,
+            "Width": 206,
+            "Height": 13,
+            "Caption": "Relação de Participantes do Evento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "DBMetaGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 59,
+            "Width": 565,
+            "Height": 131,
+            "Align": "alBottom",
+            "DataSource": "Dts_Eventos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOA",
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Visible": true
+              },
+              {
+                "FieldName": "ContratoUnidade",
+                "Title.Caption": "Unid./Contrato",
+                "Width": 96,
+                "Visible": true
+              },
+              {
+                "FieldName": "SituacaoDesc",
+                "Title.Caption": "Situação",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Evento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 12,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnExit": "Edt_EventoExit",
+            "OnKeyPress": "Edt_EventoKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 372,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Eventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 228,
+        "Top": 116
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Eventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 116
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_EventosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCURSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_EventosREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EventosDT_REVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_REVISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EventosDT_INICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_INICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EventosDT_ENCERRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_ENCERRA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosSTATUS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCONCEITO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONCEITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNOTA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOTA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_EventosFREQUENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FREQUENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_EventosCAR_HORARIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAR_HORARIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosVALIDO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALIDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosFEITOPELAEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FEITOPELAEMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosOBSERVACOES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSERVACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosAVALIACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AVALIACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosEVENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EVENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosITEM_AVALIACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ITEM_AVALIACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_EventosINDICEEFICACIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICEEFICACIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosINSTRUTORES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSTRUTORES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosFORNECEDORDESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORNECEDORDESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_EventosMEDIAAVALREACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDIAAVALREACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosPARTICIPAEFICACIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PARTICIPAEFICACIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosDESCAVALIACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCAVALIACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_EventosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosContratoUnidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ContratoUnidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosUNIDADECONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADECONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosSituacaoDesc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SituacaoDesc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

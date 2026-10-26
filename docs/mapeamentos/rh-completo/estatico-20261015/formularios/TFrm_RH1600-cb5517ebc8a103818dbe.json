@@ -1,0 +1,231 @@
+{
+  "classe": "TFrm_RH1600",
+  "nome": "Frm_RH1600",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Frequências de Risco",
+    "ClientHeight": 372,
+    "ClientWidth": 581
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 581,
+        "Height": 372,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 316,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Frequência Risco"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 327,
+            "Top": 316,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Descrição Reduzida"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 316,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_CodFreQuenciaRisco",
+          "herdado": false,
+          "propriedades": {
+            "Left": 80,
+            "Top": 336,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 464,
+            "Top": 316,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 328,
+            "Top": 168,
+            "Width": 13,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_FrequenciasRisco",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 573,
+            "Height": 310,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "dts_FrequenciasRisco",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_FrequenciasRiscoEnter",
+            "Columns": [
+              {
+                "FieldName": "CODFREQUENCIARISCO",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 217,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO25",
+                "Width": 139,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVADESATIVADA",
+                "Width": 94,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 464,
+            "Top": 336,
+            "Width": 100,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "dts_FrequenciasRisco",
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CodFrequenciaRisco",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 336,
+            "Width": 64,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_CodFrequenciaRiscoExit",
+            "OnKeyPress": "Edt_CodFrequenciaRiscoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 336,
+            "Width": 218,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "dts_FrequenciasRisco",
+            "MaxLength": 40,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao25",
+          "herdado": false,
+          "propriedades": {
+            "Left": 327,
+            "Top": 336,
+            "Width": 133,
+            "Height": 21,
+            "DataField": "DESCRICAO25",
+            "DataSource": "dts_FrequenciasRisco",
+            "MaxLength": 25,
+            "TabOrder": 3,
+            "OnEnter": "Dbe_Descricao25Enter"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_FrequenciasRisco",
+      "herdado": false,
+      "propriedades": {
+        "Left": 36,
+        "Top": 40
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+# TFrmRelPresenca
+
+Mapa estático, sem validação em execução.
+
+| Caminho Delphi | Classe | Legenda | Campo | Ação/evento |
+|---|---|---|---|---|
+| /FrmRelPresenca | TFrmRelPresenca | Relatório de Presença |  |  |
+| /FrmRelPresenca/PgRelatorio | TPageControl |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1 | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao | TPageControl |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Filtros | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Filtros/PnGrupoAcesso | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Setor | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Setor/PnSetor | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Pessoa | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Pessoa/PnPessoa | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Geral | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Geral/lblTodosGeral | TLabel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/Panel2 | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/Panel2/SBGrids | TSearchBox |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao | TPanel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/lbOrdenar | TLabel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/lbOrdem | TLabel |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/cmbOrdenar | TComboBox |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/cmbOrdem | TComboBox |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo | TGroupBox |            Período |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/Image12 | TImage |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/lblAte | TLabel | Até |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdDataIni | TMaskEdit |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdDataFim | TMaskEdit |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPessoas | TGroupBox |            Presença |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPessoas/Image2 | TImage |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbPessoas/CmbPessoas | TComboBox |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbAfastamentos | TGroupBox |            Afastamentos |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbAfastamentos/Image1 | TImage |  |  |  |
+| /FrmRelPresenca/PgRelatorio/TabDefiniÃ§Ãµes/GbAfastamentos/ChkAfastamentos | TCheckBox | Exibir afastamentos |  |  |
+| /FrmRelPresenca/PgRelatorio/Selecao | TTabSheet |  |  |  |
+| /FrmRelPresenca/PgRelatorio/Selecao/Label1 | TLabel |  |  |  |
+| /FrmRelPresenca/PnBotao | TPanel |  |  |  |
+| /FrmRelPresenca/PnBotao/BtnImpressao | THoverSpeedButton |  |  |  |
+| /FrmRelPresenca/frxPDFExport1 | TfrxPDFExport |  |  |  |
+| /FrmRelPresenca/ActionList1 | TActionList |  |  |  |
+| /FrmRelPresenca/ActionList1/ActLimparUnidade | TAction | Action1 |  |  |
+| /FrmRelPresenca/DefaultIcons | TImageList |  |  |  |
+| /FrmRelPresenca/frxRelUnidade | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelUnidade/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelUnidade/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelUnidade/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelUnidade/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPessoas | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelPessoas/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelPessoas/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelPessoas/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPessoas/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelMarcacoesOnline | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelMarcacoesOnline/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelMarcacoesOnline/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelMarcacoesOnline/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelMarcacoesOnline/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelAcessoVisitantesTerceiros | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelAcessoVisitantesTerceiros/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelAvaliacaoRefeicao | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelAvaliacaoRefeicao/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelAvaliacaoRefeicao/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelAvaliacaoRefeicao/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelAvaliacaoRefeicao/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelCracha | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelCracha/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelCracha/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelCracha/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelCracha/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelCreditos | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelCreditos/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelCreditos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelCreditos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelCreditos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelEmpresas | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelEmpresas/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelEmpresas/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelEmpresas/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelEmpresas/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelHistoricoAcessoRapido | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelHistoricoAcessoRapido/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelHistoricoAcessoRapido/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelHistoricoAcessoRapido/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelHistoricoAcessoRapido/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPresenca | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelPresenca/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelPresenca/Page1/Cabecalho | TfrxHeader |  |  |  |
+| /FrmRelPresenca/frxRelPresenca/Page1/Cabecalho/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPresenca/Page1/Cabecalho/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPreCadastro | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelPreCadastro/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelPreCadastro/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelPreCadastro/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelPreCadastro/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1/GroupHeader1 | TfrxGroupHeader |  |  |  |
+| /FrmRelPresenca/frxRelRefeicoesTotal/Page1/GroupHeader1/fxRelatorioSelecao | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelResCon | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelResCon/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelResCon/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelResCon/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelResCon/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelReservasRefeicoes/Page1/GroupHeader1 | TfrxGroupHeader |  |  |  |
+| /FrmRelPresenca/frxRelSetor | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelSetor/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelSetor/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelSetor/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelSetor/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelMonitoramentoColaboradorVinculadoEstacionamento | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelOcorrenciasVeiculos | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelOcorrenciasVeiculos/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelOcorrenciasVeiculos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelOcorrenciasVeiculos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelOcorrenciasVeiculos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelVeiculosAcessos | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelVeiculosAcessos/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelVeiculosAcessos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelVeiculosAcessos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelVeiculosAcessos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/CdsRelVeiculosAcessos | TClientDataSet |  |  |  |
+| /FrmRelPresenca/frxRelVisitantesTerceiros | TfrxReport |  |  |  |
+| /FrmRelPresenca/frxRelVisitantesTerceiros/Page1 | TfrxReportPage |  |  |  |
+| /FrmRelPresenca/frxRelVisitantesTerceiros/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmRelPresenca/frxRelVisitantesTerceiros/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmRelPresenca/frxRelVisitantesTerceiros/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |

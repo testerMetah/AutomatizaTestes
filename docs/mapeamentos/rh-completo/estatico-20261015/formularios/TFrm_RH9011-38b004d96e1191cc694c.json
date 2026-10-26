@@ -1,0 +1,1302 @@
+{
+  "classe": "TFrm_RH9011",
+  "nome": "Frm_RH9011",
+  "herdado": false,
+  "propriedades": {
+    "Left": 520,
+    "Top": 335,
+    "BorderStyle": "bsSingle",
+    "Caption": "Aproveitamento de Informações para Reabertura da CAT",
+    "ClientHeight": 323,
+    "ClientWidth": 386
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 386,
+        "Height": 282,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 8,
+            "Width": 364,
+            "Height": 71,
+            "Caption": "Você está informando uma CAT de reabertura, se desejar, pode aproveitar os dados de outra CAT já cadastrada para este funcionário, basta selecionar o Registro da CAT que deseja aproveitar, marcando as opções desejadas para cópia dos dados."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 82,
+            "Width": 367,
+            "Height": 148,
+            "DataSource": "Dts_Cats",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAHORA",
+                "Width": 79,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_Testemunhas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 236,
+            "Width": 91,
+            "Height": 17,
+            "Caption": "Testemunhas",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_Atestado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 256,
+            "Width": 105,
+            "Height": 17,
+            "Caption": "Atestado Médico",
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 282,
+        "Width": 386,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Ok",
+            "TabOrder": 0,
+            "OnClick": "BitBtn1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Cats",
+      "herdado": false,
+      "propriedades": {
+        "Left": 340,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Cats",
+      "herdado": false,
+      "propriedades": {
+        "Left": 256,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Cats",
+      "herdado": false,
+      "propriedades": {
+        "Left": 312,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CatsPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data",
+            "FieldName": "DATAHORA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Identificação da CAT",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CatsCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsCBO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CBO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CatsANOSCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOSCARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CatsMESESCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MESESCARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsTIPOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_CatsHORASMES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORASMES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_CatsREMUNERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REMUNERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsVINCULOPREVIDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VINCULOPREVIDENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsAPOSENTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "APOSENTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsAREAAPOSENTADORIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AREAAPOSENTADORIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsTIPOCAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsEMITENTECAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMITENTECAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsTIPOACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOACIDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAHORAACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Hora do Acidente",
+            "FieldName": "DATAHORAACIDENTE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsAPOSHORASTRABALHADAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "APOSHORASTRABALHADAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsHOUVEAFASTAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HOUVEAFASTAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsOCORRENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsULTDIATRABALHADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTDIATRABALHADO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATARETORNO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARETORNO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsLOCALACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOCALACIDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsESPECIFICACAOLOCAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESPECIFICACAOLOCAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsCIDADELOCAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADELOCAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsPARTECORPOATINGIDA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PARTECORPOATINGIDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsAGENTECAUSADORACID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AGENTECAUSADORACID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsHOUVEREGISTROPOLICIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HOUVEREGISTROPOLICIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsHOUVEMORTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HOUVEMORTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAOBITO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAOBITO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsUFLOCAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UFLOCAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsNOMEPROFISSIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEPROFISSIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsNOMESERVICOMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMESERVICOMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsDESCSITUACAOGERADORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCSITUACAOGERADORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsDATAHORAORIGEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAORIGEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsSITUACAOGERADORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOGERADORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsEMISSORCATESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMISSORCATESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsLOGRADOURO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOGRADOURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsNROLOGRADOURO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROLOGRADOURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsTIPOINSCREGISTRADORESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCREGISTRADORESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsTIPOREGISTRADORESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOREGISTRADORESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CatsINSCRICAOREGISTRADORESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAOREGISTRADORESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsBAIRROLOCALACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BAIRROLOCALACIDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsCOMPLEMENTOLOCALACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPLEMENTOLOCALACIDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsTIPOINSCRICAOLOCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCRICAOLOCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "intgrfldCds_CatsCODIGOPAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOPAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsCODIGOPOSTAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOPOSTAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CatsINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_CatsTIPOLOGRADOURO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOLOGRADOURO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_Cats",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Testemunhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 258,
+        "Top": 54
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_Testemunhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 286,
+        "Top": 54
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Testemunhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 314,
+        "Top": 54
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_TestemunhasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_TestemunhasDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_TestemunhasNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasRUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasNRORUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRORUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasBAIRRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BAIRRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasCEP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasDDD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasTELEFONE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasRAMAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAMAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasTELEFONERECADOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONERECADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TestemunhasEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Atestado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 259,
+        "Top": 99
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_Atestado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 287,
+        "Top": 99
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Atestado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 315,
+        "Top": 99
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AtestadoPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AtestadoDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AtestadoDATAHORAATENDIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAATENDIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoHOUVEINTERNACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HOUVEINTERNACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_AtestadoDIASTRATAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASTRATAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoAFASTADOTRATAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AFASTADOTRATAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoNATUREZALESAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NATUREZALESAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoDIAGNOSTICOPROVAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIAGNOSTICOPROVAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoCID10",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CID10"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoOBSERVACOES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSERVACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoREGISTROCONSELHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REGISTROCONSELHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AtestadoDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoNOMESERVICOMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMESERVICOMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoNOMEPROFISSIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEPROFISSIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoORGAOCLASSEESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORGAOCLASSEESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoLESAOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LESAOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoCNES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CNES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoCID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AtestadoUFCONSELHO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "UF Conselho",
+            "FieldName": "UFCONSELHO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_ParteCorpoAtingida",
+      "herdado": false,
+      "propriedades": {
+        "Left": 287,
+        "Top": 139
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_AgenteCausador",
+      "herdado": false,
+      "propriedades": {
+        "Left": 259,
+        "Top": 175
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_AgenteCausador",
+      "herdado": false,
+      "propriedades": {
+        "Left": 287,
+        "Top": 175
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_AgenteCausador",
+      "herdado": false,
+      "propriedades": {
+        "Left": 315,
+        "Top": 175
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "IntegerField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "SQLTimeStampField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AgenteCausadorAGENTECAUSADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AGENTECAUSADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AgenteCausadorCONSTARESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONSTARESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_ParteCorpoAtingida",
+      "herdado": false,
+      "propriedades": {
+        "Left": 256,
+        "Top": 136
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ParteCorpoAtingida",
+      "herdado": false,
+      "propriedades": {
+        "Left": 320,
+        "Top": 136
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ParteCorpoAtingidaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ParteCorpoAtingidaPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ParteCorpoAtingidaDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ParteCorpoAtingidaPARTECORPO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PARTECORPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ParteCorpoAtingidaLATERALIDADEESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LATERALIDADEESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ParteCorpoAtingidaCONSTARESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONSTARESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

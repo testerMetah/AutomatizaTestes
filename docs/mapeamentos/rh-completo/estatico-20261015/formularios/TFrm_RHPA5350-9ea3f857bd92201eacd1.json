@@ -1,0 +1,400 @@
+{
+  "classe": "TFrm_RHPA5350",
+  "nome": "Frm_RHPA5350",
+  "herdado": true,
+  "propriedades": {
+    "Left": 481,
+    "Top": 233,
+    "Caption": "Regras de Realocação de Marcações RUMO/ALL",
+    "ClientHeight": 493,
+    "ClientWidth": 694
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 694,
+        "Height": 44,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_CabecalhoEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 15,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Regras",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 11,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Regra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 11,
+            "Width": 55,
+            "Height": 21,
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Edt_RegraExit",
+            "OnKeyPress": "Edt_RegraKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 539,
+            "Top": 12,
+            "Width": 47,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_RHRegrRealocMarc",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Conteudo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 44,
+        "Width": 694,
+        "Height": 449,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_SequenciaAtv",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 16,
+            "Width": 667,
+            "Height": 381,
+            "Caption": " Sequência das Atividades ",
+            "TabOrder": 0,
+            "OnEnter": "Grb_SequenciaAtvEnter",
+            "OnExit": "Grb_SequenciaAtvExit"
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_InserirAtividade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 18,
+                "Top": 23,
+                "Width": 23,
+                "Height": 22,
+                "ShowHint": true,
+                "OnClick": "Btn_InserirAtividadeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_Atividades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 170,
+                "Top": 24,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_AtvCima",
+              "herdado": false,
+              "propriedades": {
+                "Left": 630,
+                "Top": 217,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Mover linha para cima. (Ctrl+Cima)",
+                "ShowHint": true,
+                "OnClick": "Btn_AtvCimaClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_AtvBaixo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 630,
+                "Top": 239,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Mover linha para baixo. (Ctrl+Baixo)",
+                "ShowHint": true,
+                "OnClick": "Btn_AtvBaixoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 44,
+                "Top": 28,
+                "Width": 44,
+                "Height": 13,
+                "Caption": "Atividade"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_Atividades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 18,
+                "Top": 115,
+                "Width": 603,
+                "Height": 251,
+                "TabStop": false,
+                "DataSource": "Dts_RHRegrRealocAtv",
+                "TabOrder": 4,
+                "Columns": [
+                  {
+                    "FieldName": "NROSEQUENCIA",
+                    "Title.Caption": "Sequência",
+                    "Width": 71,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATIVIDADE",
+                    "Title.Caption": "Atividade",
+                    "Width": 60,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO60",
+                    "Title.Caption": "Descrição",
+                    "Width": 236,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATVREFERENCIA",
+                    "Title.Caption": "Referência",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATVENCERRAMENTO",
+                    "Title.Caption": "Encerramento",
+                    "Width": 80,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATVALTERNADA",
+                    "Title.Caption": "Alternada",
+                    "Width": 69,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Atividade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 92,
+                "Top": 24,
+                "Width": 77,
+                "Height": 21,
+                "DataField": "ATIVIDADE",
+                "DataSource": "Dts_RHRegrRealocAtv",
+                "MaxLength": 4,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbckb_AtvReferencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 53,
+                "Width": 510,
+                "Height": 17,
+                "Caption": "Considerar a Atividade como referência para alocar demais marcações",
+                "DataField": "ATVREFERENCIA",
+                "DataSource": "Dts_RHRegrRealocAtv",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbckb_AtvEncerramento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 73,
+                "Width": 314,
+                "Height": 17,
+                "Caption": "Considerar a Atividade como de Encerramento",
+                "DataField": "ATVENCERRAMENTO",
+                "DataSource": "Dts_RHRegrRealocAtv",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbckb_AtvAlternada",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 93,
+                "Width": 522,
+                "Height": 17,
+                "Caption": "Atividade que pode aparecer em qualquer sequência, exceto após atividades de Encerramento",
+                "DataField": "ATVALTERNADA",
+                "DataSource": "Dts_RHRegrRealocAtv",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_InfoRegra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 396,
+            "Width": 531,
+            "Height": 41,
+            "TabOrder": 1,
+            "OnEnter": "Pnl_InfoRegraEnter",
+            "OnExit": "Pnl_InfoRegraExit"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 17,
+                "Width": 50,
+                "Height": 13,
+                "Caption": "Considerar"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 114,
+                "Top": 12,
+                "Width": 379,
+                "Height": 26,
+                "Caption": "horas a mais, a partir da hora da marcação, para buscar a próxima marcação da sequência de atividades."
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_HorasMais",
+              "herdado": false,
+              "propriedades": {
+                "Left": 55,
+                "Top": 14,
+                "Width": 53,
+                "Height": 21,
+                "DataField": "QTDHORASMAIS",
+                "DataSource": "Dts_RHRegrRealocMarc",
+                "MaxLength": 4,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 336,
+        "Top": 7
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHRegrRealocMarc",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 7
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHRegrRealocAtv",
+      "herdado": false,
+      "propriedades": {
+        "Left": 392,
+        "Top": 7
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "classe": "TFrm_RHPR182001",
+  "nome": "Frm_RHPR182001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 225,
+    "Top": 178,
+    "BorderStyle": "bsSingle",
+    "Caption": "Frm_RHPR182001",
+    "ClientHeight": 356,
+    "ClientWidth": 706,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 706,
+        "Height": 356,
+        "ActivePage": "Tbs_Definicao",
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Definicao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Definição"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Dados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 698,
+                "Height": 328,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Cheques",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 160,
+                    "Top": 51,
+                    "Width": 375,
+                    "Height": 227,
+                    "ActivePage": "tbs_Impressao",
+                    "Style": "tsButtons",
+                    "TabOrder": 0,
+                    "OnChange": "Pgc_ChequesChange"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "tbs_Emissao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Gerar/Selecionar Emissão"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl_Emissao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 367,
+                            "Height": 196,
+                            "Align": "alClient",
+                            "BorderStyle": "bsSingle",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "btn_Processar",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 159,
+                                "Width": 114,
+                                "Height": 25,
+                                "Caption": "Iniciar Gravação",
+                                "TabOrder": 2,
+                                "OnClick": "btn_ProcessarClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TGroupBox",
+                              "nome": "GroupBox2",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 17,
+                                "Width": 340,
+                                "Height": 52,
+                                "Caption": "Emissão",
+                                "TabOrder": 0
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label1",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 25,
+                                    "Top": 22,
+                                    "Width": 26,
+                                    "Height": 13,
+                                    "Caption": "Data:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label8",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 162,
+                                    "Top": 23,
+                                    "Width": 40,
+                                    "Height": 13,
+                                    "Caption": "Número:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TMetaData",
+                                  "nome": "Mtd_DataEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 126,
+                                    "Top": 18,
+                                    "Width": 23,
+                                    "Height": 22,
+                                    "Hint": "Localizar Data(Ctrl + D)",
+                                    "ShowHint": true
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TMaskEdit",
+                                  "nome": "Msk_DataEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 57,
+                                    "Top": 18,
+                                    "Width": 68,
+                                    "Height": 21,
+                                    "EditMask": "99/99/9999;1; ",
+                                    "MaxLength": 10,
+                                    "TabOrder": 0
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TSpinEdit",
+                                  "nome": "spe_NroEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 237,
+                                    "Top": 18,
+                                    "Width": 67,
+                                    "Height": 22,
+                                    "MaxLength": 6,
+                                    "TabOrder": 1,
+                                    "OnExit": "spe_NroEmissaoExit"
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "classe": "TGroupBox",
+                              "nome": "grb_SerieNro",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 91,
+                                "Width": 340,
+                                "Height": 53,
+                                "Caption": "Cheque",
+                                "TabOrder": 1
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_TituloSerie",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 25,
+                                    "Top": 22,
+                                    "Width": 27,
+                                    "Height": 13,
+                                    "Caption": "Série:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_TituloNroPrimeiro",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 162,
+                                    "Top": 23,
+                                    "Width": 69,
+                                    "Height": 13,
+                                    "Caption": "Nº do primeiro:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_TituloIncremento",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 260,
+                                    "Top": 23,
+                                    "Width": 24,
+                                    "Height": 13,
+                                    "Caption": "Incr.:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TSpinEdit",
+                                  "nome": "spe_NroCheque",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 237,
+                                    "Top": 18,
+                                    "Width": 67,
+                                    "Height": 22,
+                                    "MaxLength": 9,
+                                    "TabOrder": 1
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TEdit",
+                                  "nome": "edt_SerieCheque",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 57,
+                                    "Top": 19,
+                                    "Width": 82,
+                                    "Height": 21,
+                                    "MaxLength": 6,
+                                    "TabOrder": 0
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TSpinEdit",
+                                  "nome": "Spe_Incremento",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 286,
+                                    "Top": 18,
+                                    "Width": 31,
+                                    "Height": 22,
+                                    "MaxLength": 9,
+                                    "TabOrder": 2
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "tbs_Impressao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Emissão",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnl_Imprimir",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 367,
+                            "Height": 196,
+                            "Align": "alClient",
+                            "BorderStyle": "bsSingle",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TGroupBox",
+                              "nome": "grb_EscopoImpressao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 89,
+                                "Width": 341,
+                                "Height": 64,
+                                "Caption": "Imprimir",
+                                "TabOrder": 2
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label3",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 167,
+                                    "Top": 39,
+                                    "Width": 18,
+                                    "Height": 13,
+                                    "Caption": " ao "
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label7",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 257,
+                                    "Top": 39,
+                                    "Width": 74,
+                                    "Height": 13,
+                                    "Caption": "(Nº Sequencial)"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TRadioButton",
+                                  "nome": "rdg_TodosDaEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 15,
+                                    "Top": 15,
+                                    "Width": 113,
+                                    "Height": 17,
+                                    "Caption": "Todos da Emissão",
+                                    "Checked": true,
+                                    "TabOrder": 0,
+                                    "TabStop": true,
+                                    "OnClick": "rdg_TodosDaEmissaoClick"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TRadioButton",
+                                  "nome": "rdg_Parcial",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 15,
+                                    "Top": 38,
+                                    "Width": 85,
+                                    "Height": 17,
+                                    "Caption": "Parcial, do nº",
+                                    "TabOrder": 1,
+                                    "OnClick": "rdg_ParcialClick"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TSpinEdit",
+                                  "nome": "spe_ParcialDe",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 102,
+                                    "Top": 35,
+                                    "Width": 63,
+                                    "Height": 22,
+                                    "MaxLength": 9,
+                                    "TabOrder": 2
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TSpinEdit",
+                                  "nome": "spe_ParcialAte",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 188,
+                                    "Top": 35,
+                                    "Width": 63,
+                                    "Height": 22,
+                                    "MaxLength": 9,
+                                    "TabOrder": 3
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "btn_Imprimir",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 159,
+                                "Width": 114,
+                                "Height": 25,
+                                "Caption": "Iniciar Impressão",
+                                "TabOrder": 3,
+                                "OnClick": "btn_ImprimirClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TGroupBox",
+                              "nome": "GroupBox4",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 4,
+                                "Width": 341,
+                                "Height": 40,
+                                "Caption": "Emissão",
+                                "TabOrder": 0
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label2",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 14,
+                                    "Top": 18,
+                                    "Width": 26,
+                                    "Height": 13,
+                                    "Caption": "Data:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label4",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 164,
+                                    "Top": 18,
+                                    "Width": 40,
+                                    "Height": 13,
+                                    "Caption": "Número:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "lbl_DataEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 44,
+                                    "Top": 18,
+                                    "Width": 58,
+                                    "Height": 13,
+                                    "Caption": "08/08/2000"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "lbl_NroEmissao",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 237,
+                                    "Top": 18,
+                                    "Width": 54,
+                                    "Height": 13,
+                                    "Caption": "999999999"
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "classe": "TGroupBox",
+                              "nome": "grb_SerieImpressao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 12,
+                                "Top": 47,
+                                "Width": 341,
+                                "Height": 40,
+                                "Caption": "Cheque",
+                                "TabOrder": 1
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label5",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 14,
+                                    "Top": 18,
+                                    "Width": 27,
+                                    "Height": 13,
+                                    "Caption": "Série:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Label6",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 164,
+                                    "Top": 18,
+                                    "Width": 69,
+                                    "Height": 13,
+                                    "Caption": "Nº do primeiro:"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "lbl_SerieCheque",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 47,
+                                    "Top": 18,
+                                    "Width": 78,
+                                    "Height": 13,
+                                    "Caption": "56AW45GH78U"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "lbl_NroCheque",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 237,
+                                    "Top": 18,
+                                    "Width": 54,
+                                    "Height": 13,
+                                    "Caption": "567853465"
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Seleção",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TFrmSelecaoLotacao",
+              "nome": "FrmSelecaoLotacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 698,
+                "Height": 328,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Temp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 297,
+        "Top": 33
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_EstabelecimentoPagador",
+      "herdado": false,
+      "propriedades": {
+        "Left": 37,
+        "Top": 1
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorNROBANCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROBANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorNOMEBANCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEBANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorNROAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorDIGITOAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIGITOAGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorAGENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AGENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoPagadorCONTACORRENTEESTPAG",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Conta Corrente",
+            "FieldName": "CONTACORRENTEESTPAG"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Relatorios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 250,
+        "Top": 1
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosFORMULACHEQUEDOC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMULACHEQUEDOC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE5",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE5"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RelatoriosPERCRATEIOCHEQUE6",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE6"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_RelatoriosVALORMINIMOCHEQUE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORMINIMOCHEQUE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosFORMAARREDONDAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMAARREDONDAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosORIGEMVALORES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMVALORES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosETIQUETA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ETIQUETA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosTIPOEMISSOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOEMISSOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RelatoriosCONSOLIDACONTRVINC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONSOLIDACONTRVINC"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_ContaContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 281,
+        "Top": 17
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 200,
+        "Top": 17
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 334,
+        "Top": 9
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

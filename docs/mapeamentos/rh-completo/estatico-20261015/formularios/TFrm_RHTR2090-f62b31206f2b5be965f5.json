@@ -1,0 +1,320 @@
+{
+  "classe": "TFrm_RHTR2090",
+  "nome": "Frm_RHTR2090",
+  "herdado": true,
+  "propriedades": {
+    "Left": 291,
+    "Top": 189,
+    "Caption": "Necessidade de Cursos por Posto de Trabalho",
+    "ClientHeight": 260,
+    "ClientWidth": 654
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 654,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Posto de Trabalho:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 174,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescPostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 202,
+            "Top": 12,
+            "Width": 320,
+            "Height": 13,
+            "Caption": "Lbl_DescPostoTrabalho"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 108,
+            "Top": 8,
+            "Width": 65,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnExit": "Edt_PostoTrabalhoExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 654,
+        "Height": 219,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Panel2Enter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 30,
+            "Height": 13,
+            "Caption": "Curso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescCurso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 194,
+            "Top": 12,
+            "Width": 351,
+            "Height": 13,
+            "Caption": "Lbl_DescCurso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 480,
+            "Top": 108,
+            "Width": 111,
+            "Height": 13,
+            "Caption": "Última Revisão Exigida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 48,
+            "Top": 8,
+            "Width": 117,
+            "Height": 21,
+            "MaxLength": 15,
+            "TabOrder": 0,
+            "OnChange": "Edt_CursoChange",
+            "OnEnter": "Edt_CursoEnter",
+            "OnExit": "Edt_CursoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Grb_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 36,
+            "Width": 456,
+            "Height": 166,
+            "TabStop": false,
+            "DataSource": "Dts_Cursos",
+            "TabOrder": 1,
+            "OnEnter": "Grb_CursoEnter",
+            "Columns": [
+              {
+                "FieldName": "CURSO",
+                "Width": 117,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescCurso",
+                "Title.Caption": "Descrição",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "Dbr_Necessidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 480,
+            "Top": 36,
+            "Width": 137,
+            "Height": 68,
+            "Caption": "Necessidade ",
+            "DataField": "NECESSIDADE",
+            "DataSource": "Dts_Cursos",
+            "Items.Strings": [
+              "Obrigatório",
+              "Recomendável"
+            ],
+            "TabOrder": 2,
+            "OnEnter": "Dbr_NecessidadeEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_UltRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 472,
+            "Top": 121,
+            "Width": 173,
+            "Height": 35,
+            "TabOrder": 3,
+            "OnEnter": "Pnl_UltRevisaoEnter",
+            "OnExit": "Pnl_UltRevisaoExit"
+          },
+          "filhos": [
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_Revisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Revisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 2,
+                "Width": 41,
+                "Height": 21,
+                "DataField": "REVISAO",
+                "DataSource": "Dts_Cursos",
+                "TabOrder": 0,
+                "OnExit": "Dbe_RevisaoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboBox",
+              "nome": "Dbc_DtRevisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 2,
+                "Width": 93,
+                "Height": 21,
+                "DataField": "DT_REVISAO",
+                "DataSource": "Dts_Cursos",
+                "TabOrder": 1,
+                "OnEnter": "Dbc_DtRevisaoEnter"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 625,
+            "Top": 189,
+            "Width": 20,
+            "Height": 21,
+            "BorderStyle": "bsNone",
+            "TabOrder": 4,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 424,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Cursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 352,
+        "Top": 16
+      },
+      "filhos": []
+    }
+  ]
+}

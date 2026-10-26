@@ -1,0 +1,464 @@
+{
+  "classe": "TFrm_RHAD1200",
+  "nome": "Frm_RHAD1200",
+  "herdado": true,
+  "propriedades": {
+    "Left": 374,
+    "Top": 158,
+    "Caption": "Importar Informações do Ponto",
+    "ClientHeight": 371,
+    "ClientWidth": 622
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 329,
+        "Width": 622,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 6,
+            "Width": 141,
+            "Height": 27,
+            "Action": "Act_Importar",
+            "Caption": "Iniciar Importação",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 505,
+            "Top": 6,
+            "Width": 109,
+            "Height": 25,
+            "Caption": "&Imprimir",
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "Btn_ImprimirClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 622,
+        "Height": 329,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_AdicionarRemover",
+          "herdado": false,
+          "propriedades": {
+            "Left": 285,
+            "Top": 90,
+            "Width": 36,
+            "Height": 146,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 44,
+                "Width": 24,
+                "Height": 24,
+                "Action": "Act_Adicionar",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 75,
+                "Width": 24,
+                "Height": 26,
+                "Action": "Act_Remover",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Limpar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 106,
+                "Width": 24,
+                "Height": 26,
+                "Action": "Act_Limpar",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Incluir",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 15,
+                "Width": 24,
+                "Height": 24,
+                "Action": "Act_Incluir",
+                "ShowHint": true
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Origem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 9,
+            "Width": 281,
+            "Height": 310,
+            "ActivePage": "Tbs_Pastas",
+            "Style": "tsFlatButtons",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Pastas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Local"
+              },
+              "filhos": [
+                {
+                  "classe": "TSplitter",
+                  "nome": "Splitter",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 121,
+                    "Width": 273,
+                    "Height": 2,
+                    "Align": "alTop"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_FundoPasta",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 273,
+                    "Height": 121,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfPasta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 8,
+                        "Width": 49,
+                        "Height": 13,
+                        "Caption": "Endereço:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TShellTreeView",
+                      "nome": "Stv_OrigemPasta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 30,
+                        "Width": 265,
+                        "Height": 87,
+                        "TabOrder": 1,
+                        "OnChange": "Stv_OrigemPastaChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TShellComboBox",
+                      "nome": "Scb_OrigemDrive",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 54,
+                        "Top": 4,
+                        "Width": 213,
+                        "Height": 22,
+                        "TabOrder": 0,
+                        "OnExit": "Scb_OrigemDriveExit",
+                        "OnKeyPress": "Scb_OrigemDriveKeyPress"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_FundoArquivos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 123,
+                    "Width": 273,
+                    "Height": 156,
+                    "Align": "alClient",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TListView",
+                      "nome": "Lst_OrigemArqPasta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 3,
+                        "Width": 265,
+                        "Height": 149,
+                        "Columns": [
+                          {
+                            "Caption": "Arquivo"
+                          }
+                        ],
+                        "ReadOnly": true,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_FTP",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "FTP",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfFTP",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 8,
+                    "Width": 23,
+                    "Height": 13,
+                    "Caption": "FTP:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_ListaFTP",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 28,
+                    "Top": 4,
+                    "Width": 239,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_ListaFTPChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListView",
+                  "nome": "Lst_OrigemArqFTP",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 30,
+                    "Width": 265,
+                    "Height": 245,
+                    "Columns": [
+                      {
+                        "Caption": "Arquivo"
+                      }
+                    ],
+                    "ReadOnly": true,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TListView",
+          "nome": "Lst_Selecionados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 324,
+            "Top": 38,
+            "Width": 286,
+            "Height": 273,
+            "Columns": [
+              {
+                "Caption": "Arquivo",
+                "Width": 262
+              },
+              {
+                "Caption": "IdxFTP"
+              }
+            ],
+            "ReadOnly": true,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 388,
+        "Top": 222
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 402,
+        "Top": 156
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Adicionar",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16423,
+            "OnExecute": "Act_AdicionarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Remover",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Limpar lista de Selecionados.",
+            "ShortCut": 16421,
+            "OnExecute": "Act_RemoverExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Limpar",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 24613,
+            "OnExecute": "Act_LimparExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Importar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Iniciar Importação",
+            "OnExecute": "Act_ImportarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Incluir",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_IncluirExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList32",
+      "herdado": false,
+      "propriedades": {
+        "Height": 32,
+        "Width": 32,
+        "Left": 50,
+        "Top": 218
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList16",
+      "herdado": false,
+      "propriedades": {
+        "Left": 134,
+        "Top": 218
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_LancamentosTmp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 524,
+        "Top": 144
+      },
+      "filhos": []
+    }
+  ]
+}

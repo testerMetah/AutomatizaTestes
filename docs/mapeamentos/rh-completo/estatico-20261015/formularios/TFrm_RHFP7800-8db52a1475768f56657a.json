@@ -1,0 +1,611 @@
+{
+  "classe": "TFrm_RHFP7800",
+  "nome": "Frm_RHFP7800",
+  "herdado": false,
+  "propriedades": {
+    "Left": 292,
+    "Top": 176,
+    "BorderStyle": "bsSingle",
+    "Caption": "Alterações Contratuais Solicitadas pelo Portal",
+    "ClientHeight": 322,
+    "ClientWidth": 662,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 662,
+        "Height": 277,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_AlteracoesContratuais",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 654,
+            "Height": 269,
+            "Align": "alClient",
+            "DataSource": "Dts_AlteracoesContratos",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "CONTRATO",
+                "Title.Caption": "Contrato",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Title.Caption": "Nome",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAADMISSAO",
+                "Title.Caption": "Data de Admissão",
+                "Width": 93,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAALTERACAO",
+                "Title.Caption": "Data de Alteração",
+                "Width": 93,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSTATUSALTERACAO",
+                "Title.Caption": "Status da Alteração",
+                "Width": 121,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 277,
+        "Width": 662,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Consultar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "Consultar",
+            "TabOrder": 0,
+            "OnClick": "Btn_ConsultarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_GerarAlteracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 158,
+            "Top": 8,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "Gerar Alteração",
+            "TabOrder": 1,
+            "OnClick": "Btn_GerarAlteracaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 301,
+            "Top": 8,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "Cancelar Alteração",
+            "TabOrder": 2,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 444,
+            "Top": 8,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "TabOrder": 3,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Editar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 574,
+            "Top": 8,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "Editar",
+            "TabOrder": 4,
+            "Visible": false,
+            "OnClick": "Btn_EditarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AlteracoesContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 596,
+        "Top": 196
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_AlteracoesContrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 612,
+        "Top": 152
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AlteracoesContratoPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AlteracoesContratoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Cds_AlteracoesContratoSALARIOCONTRATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIOCONTRATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoESCALA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCLASSIFICACAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCLASSIFICACAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AlteracoesContratoDATAEFEITOLEIACORDOCONV",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEFEITOLEIACORDOCONV",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCRICAOALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoJUSTPRORROGTRABTEMP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "JUSTPRORROGTRABTEMP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoMOTIVOALTCARGOFUNCAOSP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVOALTCARGOFUNCAOSP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoMOTIVOALTSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVOALTSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoSTATUSALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUSALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AlteracoesContratoDATAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAALTERACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCSTATUSALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCSTATUSALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCFUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCESCALA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_AlteracoesContratoHORASCONTRATUAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORASCONTRATUAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCLASSIFICACAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCLASSIFICACAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCLASSIFICACAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCLASSIFICACAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_AlteracoesContratoDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCCLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoPLANOCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PLANOCARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoFAIXASALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAIXASALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoCLASSESALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSESALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCSETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlteracoesContratoDESCPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCPOSTOTRABALHO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

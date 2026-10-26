@@ -1,0 +1,266 @@
+{
+  "classe": "TFrm_AnexarDocumento",
+  "nome": "Frm_AnexarDocumento",
+  "herdado": false,
+  "propriedades": {
+    "Left": 859,
+    "Top": 321,
+    "BorderStyle": "bsSingle",
+    "Caption": "Anexar Documento",
+    "ClientHeight": 382,
+    "ClientWidth": 527,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 527,
+        "Height": 68,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 335,
+        "Width": 527,
+        "Height": 47,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 10,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 10,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Anexar",
+            "TabOrder": 0,
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Geral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 68,
+        "Width": 527,
+        "Height": 267,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 15,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Descrição do Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 58,
+            "Width": 67,
+            "Height": 13,
+            "Caption": "Nome Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 100,
+            "Width": 65,
+            "Height": 13,
+            "Caption": "Local Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 122,
+            "Width": 401,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 143,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Observações"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalizarArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 118,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 32,
+            "Width": 493,
+            "Height": 21,
+            "DataField": "DESCRICAO60",
+            "DataSource": "Dts_Arquivos",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NomeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 74,
+            "Width": 493,
+            "Height": 21,
+            "DataField": "NOMEARQUIVO",
+            "DataSource": "Dts_Arquivos",
+            "TabOrder": 1,
+            "OnKeyPress": "Dbe_NomeArquivoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 118,
+            "Width": 60,
+            "Height": 21,
+            "DataField": "LOCALARQUIVO",
+            "DataSource": "Dts_Arquivos",
+            "TabOrder": 2,
+            "OnExit": "Dbe_LocalArquivoExit",
+            "OnKeyPress": "Dbe_LocalArquivoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_Observacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 160,
+            "Width": 493,
+            "Height": 89,
+            "DataField": "OBSERVACOES",
+            "DataSource": "Dts_Arquivos",
+            "MaxLength": 800,
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Arquivos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 128
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 404,
+        "Top": 188
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActionMetalocalizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActionMetalocalizar",
+            "ShortCut": 16460,
+            "OnExecute": "ActionMetalocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

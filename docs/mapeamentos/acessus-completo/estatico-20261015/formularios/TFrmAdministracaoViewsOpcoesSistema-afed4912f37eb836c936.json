@@ -1,0 +1,351 @@
+{
+  "classe": "TFrmAdministracaoViewsOpcoesSistema",
+  "nome": "FrmAdministracaoViewsOpcoesSistema",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Opções do Sistema",
+    "ClientHeight": 504,
+    "ClientWidth": 825,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnlFundoCadastro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 440,
+        "Width": 825,
+        "Height": 64,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnOk",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 13,
+            "Width": 142,
+            "Height": 38,
+            "Caption": "Salvar (Ctrl+S)",
+            "TabOrder": 0,
+            "OnClick": "actSalvarExecute",
+            "Action": "actSalvar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 13,
+            "Width": 162,
+            "Height": 38,
+            "Caption": "Fechar (Ctrl+F4)",
+            "TabOrder": 1,
+            "OnClick": "actFecharExecute",
+            "Action": "actFechar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlOpcoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 825,
+        "Height": 440,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "PaginaModulos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 825,
+            "Height": 440,
+            "ActivePage": "tsAdministracao",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "tsAdministracao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Administração"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "lbQuantidadeCaracteresSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 3,
+                    "Width": 283,
+                    "Height": 15,
+                    "Caption": "Quantidade mínima de caracteres para senha usuário:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbQuantidadeCaracteresEspeciaisSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 221,
+                    "Top": 33,
+                    "Width": 65,
+                    "Height": 15,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbQuantidadeLetraMaiusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 221,
+                    "Top": 63,
+                    "Width": 65,
+                    "Height": 15,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbQuantidadeLetraMinusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 221,
+                    "Top": 93,
+                    "Width": 65,
+                    "Height": 15,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbQuantidadeNumerosSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 221,
+                    "Top": 123,
+                    "Width": 65,
+                    "Height": 15,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "opcQuantidadeCaracteresSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 290,
+                    "Top": 0,
+                    "Width": 49,
+                    "Height": 24,
+                    "TabOrder": 0,
+                    "OnChange": "opcQuantidadeCaracteresSenhaChange",
+                    "OnKeyPress": "opcQuantidadeCaracteresSenhaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "opcQuantidadeCaracteresEspeciaisSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 290,
+                    "Top": 30,
+                    "Width": 49,
+                    "Height": 24,
+                    "TabOrder": 1,
+                    "OnChange": "opcQuantidadeCaracteresEspeciaisSenhaChange",
+                    "OnKeyPress": "opcQuantidadeCaracteresEspeciaisSenhaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "opcExigirCaracteresEspeciaisSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 33,
+                    "Width": 214,
+                    "Height": 17,
+                    "Caption": "Exigir caracteres especiais na senha.",
+                    "TabOrder": 2,
+                    "OnClick": "opcExigirCaracteresEspeciaisSenhaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "opcExigirLetraMaiusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 63,
+                    "Width": 214,
+                    "Height": 17,
+                    "Caption": "Exigir letra maiúscula na senha.",
+                    "TabOrder": 3,
+                    "OnClick": "opcExigirLetraMaiusculaSenhaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "opcQuantidadeLetraMaiusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 290,
+                    "Top": 60,
+                    "Width": 49,
+                    "Height": 24,
+                    "TabOrder": 4,
+                    "OnChange": "opcQuantidadeLetraMaiusculaSenhaChange",
+                    "OnKeyPress": "opcQuantidadeLetraMaiusculaSenhaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "opcQuantidadeLetraMinusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 290,
+                    "Top": 90,
+                    "Width": 49,
+                    "Height": 24,
+                    "TabOrder": 5,
+                    "OnChange": "opcQuantidadeLetraMinusculaSenhaChange",
+                    "OnKeyPress": "opcQuantidadeLetraMinusculaSenhaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "opcExigirLetraMinusculaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 93,
+                    "Width": 214,
+                    "Height": 17,
+                    "Caption": "Exigir letra minúscula na senha.",
+                    "TabOrder": 6,
+                    "OnClick": "opcExigirLetraMinusculaSenhaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "opcExigirNumerosSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 123,
+                    "Width": 214,
+                    "Height": 17,
+                    "Caption": "Exigir números na senha.",
+                    "TabOrder": 7,
+                    "OnClick": "opcExigirNumerosSenhaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "opcQuantidadeNumerosSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 290,
+                    "Top": 120,
+                    "Width": 49,
+                    "Height": 24,
+                    "TabOrder": 8,
+                    "OnChange": "opcQuantidadeNumerosSenhaChange",
+                    "OnKeyPress": "opcQuantidadeNumerosSenhaKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 564,
+        "Top": 259
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 572,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "actSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Salvar (Ctrl+S)",
+            "ShortCut": 16467,
+            "OnExecute": "actSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actFechar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fechar (Ctrl+F4)",
+            "ShortCut": 16499,
+            "OnExecute": "actFecharExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

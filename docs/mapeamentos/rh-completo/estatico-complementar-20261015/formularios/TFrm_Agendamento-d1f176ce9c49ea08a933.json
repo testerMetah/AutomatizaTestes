@@ -1,0 +1,1316 @@
+{
+  "classe": "TFrm_Agendamento",
+  "nome": "Frm_Agendamento",
+  "herdado": false,
+  "propriedades": {
+    "Left": 611,
+    "Top": 316,
+    "BorderStyle": "bsSingle",
+    "Caption": "Agendamento",
+    "ClientHeight": 236,
+    "ClientWidth": 428,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 202,
+        "Width": 428,
+        "Height": 34,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Botoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 428,
+            "Height": 6,
+            "Align": "alTop"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Avancar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 235,
+            "Top": 10,
+            "Width": 90,
+            "Height": 22,
+            "Action": "Act_Avancar",
+            "Caption": "Avançar",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Concluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 235,
+            "Top": 10,
+            "Width": 90,
+            "Height": 22,
+            "Action": "Act_Concluir",
+            "Caption": "Concluir",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Voltar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 145,
+            "Top": 10,
+            "Width": 90,
+            "Height": 22,
+            "Action": "Act_Voltar",
+            "Caption": "Voltar",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 335,
+            "Top": 10,
+            "Width": 90,
+            "Height": 22,
+            "Action": "Act_Cancelar",
+            "Cancel": true,
+            "Caption": "Cancel",
+            "ModalResult": 2,
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Passos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 428,
+        "Height": 202,
+        "ActivePage": "Tbs_Passo1",
+        "Align": "alClient",
+        "TabOrder": 1,
+        "TabStop": false,
+        "OnChange": "Pgc_PassosChange",
+        "OnEnter": "Pgc_PassosEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Passo1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "1",
+            "OnShow": "Tbs_Passo1Show"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfP1Tarefa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 12,
+                "Width": 88,
+                "Height": 13,
+                "Caption": "Seleção da Tarefa"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TListBoxMeta",
+              "nome": "Lst_P1Tarefa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 28,
+                "Width": 308,
+                "Height": 157,
+                "TabOrder": 0,
+                "OnClick": "Lst_P1TarefaClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Passo2",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "2",
+            "ImageIndex": 1,
+            "OnShow": "Tbs_Passo2Show"
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_Tempo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 401,
+                "Height": 194,
+                "ActivePage": "Tbs_Horario",
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Horario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Horario",
+                    "OnShow": "Tbs_HorarioShow"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfP2HorariosSelecionados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 87,
+                        "Width": 109,
+                        "Height": 13,
+                        "Caption": "Horários Selecionados:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfP2Hora",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 48,
+                        "Width": 133,
+                        "Height": 13,
+                        "Caption": "Hora de execução da tarefa"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_ExecucaoIntervaloMinutos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 240,
+                        "Top": 4,
+                        "Width": 36,
+                        "Height": 13,
+                        "Caption": "minutos"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRadioGroup",
+                      "nome": "Rdg_P2Periodicidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 193,
+                        "Top": 28,
+                        "Width": 185,
+                        "Height": 109,
+                        "Caption": "Periodicidade",
+                        "Items.Strings": [
+                          "Diário",
+                          "Semanal",
+                          "Específica"
+                        ],
+                        "TabOrder": 4,
+                        "OnClick": "Rdg_P2PeriodicidadeClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "Lst_P2Horarios",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 102,
+                        "Width": 42,
+                        "Height": 24,
+                        "TabOrder": 3,
+                        "OnClick": "Lst_P2HorariosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Edt_P2Horario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 63,
+                        "Width": 42,
+                        "Height": 21,
+                        "EditMask": "!99:99;1; ",
+                        "MaxLength": 5,
+                        "TabOrder": 2,
+                        "OnExit": "Edt_P2HorarioExit",
+                        "OnKeyPress": "Edt_P2HorarioKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRadioButton",
+                      "nome": "Rdb_ExecucaoIntervalo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 4,
+                        "Width": 177,
+                        "Height": 17,
+                        "Caption": "Intervalo de execução da tarefa",
+                        "TabOrder": 0,
+                        "OnClick": "Rdb_ExecucaoIntervaloClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRadioButton",
+                      "nome": "Rdb_ExecucaoPorHora",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 27,
+                        "Width": 161,
+                        "Height": 17,
+                        "Caption": "Hora de execução da tarefa",
+                        "Checked": true,
+                        "TabOrder": 5,
+                        "TabStop": true,
+                        "OnClick": "Rdb_ExecucaoPorHoraClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_IntervaloExecucaoTarefa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 192,
+                        "Top": 0,
+                        "Width": 41,
+                        "Height": 21,
+                        "Enabled": false,
+                        "TabOrder": 1,
+                        "OnChange": "Edt_IntervaloExecucaoTarefaChange"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Intervalo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Intervalo",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TempoServico",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 14,
+                        "Top": 31,
+                        "Width": 228,
+                        "Height": 13,
+                        "Caption": "Interválo de tempo para Verificação do Diretório:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TempoServicoMin",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 299,
+                        "Top": 31,
+                        "Width": 36,
+                        "Height": 13,
+                        "Caption": "minutos"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBSpinEdit",
+                      "nome": "Dbs_TempoServico",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 246,
+                        "Top": 26,
+                        "Width": 48,
+                        "Height": 22,
+                        "MaxLength": 3,
+                        "TabOrder": 0,
+                        "DataField": "TEMPOINTERVALO",
+                        "DataSource": "Dts_Agendamento"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Passo3",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "3",
+            "ImageIndex": 2,
+            "OnShow": "Tbs_Passo3Show"
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_Passo3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 401,
+                "Height": 194,
+                "ActivePage": "Tbs_Passo3Diario",
+                "Align": "alClient",
+                "TabOrder": 0,
+                "TabStop": false,
+                "OnChange": "Pgc_Passo3Change"
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Passo3Diario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Passo3Diario",
+                    "OnShow": "Tbs_Passo3DiarioShow"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario01",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "01",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario02",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 34,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "02",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario03",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "03",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario04",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "04",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario05",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "05",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario06",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "06",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario07",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 144,
+                        "Top": 24,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "07",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario08",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "08",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario09",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 34,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "09",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "10",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "11",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "12",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "13",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 144,
+                        "Top": 45,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "14",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "15",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 34,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "16",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "17",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "18",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "19",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "20",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario21",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 144,
+                        "Top": 66,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "21",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "22",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario23",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 34,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "23",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "24",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 78,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "25",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 100,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "26",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario27",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 122,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "27",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario28",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 144,
+                        "Top": 87,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "28",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario29",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 108,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "29",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario30",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 34,
+                        "Top": 108,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "30",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_P3Diario31",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 108,
+                        "Width": 23,
+                        "Height": 22,
+                        "AllowAllUp": true,
+                        "Caption": "31",
+                        "OnClick": "Btn_P3DiarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfP3Diario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 4,
+                        "Width": 123,
+                        "Height": 13,
+                        "Caption": "Selecione os Dias do Mes"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Passo3Semanal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Passo3Semanal",
+                    "ImageIndex": 1,
+                    "OnShow": "Tbs_Passo3SemanalShow"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfP3Semanal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 4,
+                        "Width": 142,
+                        "Height": 13,
+                        "Caption": "Selecione os Dias da Semana"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Segunda",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 25,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Segunda-feira",
+                        "TabOrder": 0,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Terca",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 48,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Terça-feira",
+                        "TabOrder": 1,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Quarta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 71,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Quarta-feira",
+                        "TabOrder": 2,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Quinta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 95,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Quinta-feira",
+                        "TabOrder": 3,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Sexta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 128,
+                        "Top": 25,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Sexta-feira",
+                        "TabOrder": 4,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Sabado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 128,
+                        "Top": 48,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Sábado",
+                        "TabOrder": 5,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_P3Domingo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 128,
+                        "Top": 71,
+                        "Width": 97,
+                        "Height": 17,
+                        "Caption": "Domingo",
+                        "TabOrder": 6,
+                        "OnClick": "Chk_P3QuintaClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Passo3Especifico",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Passo3Especifico",
+                    "ImageIndex": 2,
+                    "OnShow": "Tbs_Passo3EspecificoShow"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfP3Especifico",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 64,
+                        "Width": 124,
+                        "Height": 13,
+                        "Caption": "Informe a Data Específica"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Edt_P3Data",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 81,
+                        "Width": 67,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnChange": "Edt_P3DataChange",
+                        "OnExit": "Edt_P3DataExit"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Passo4",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "4",
+            "ImageIndex": 3,
+            "OnShow": "Tbs_Passo4Show"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 4,
+                "Width": 109,
+                "Height": 13,
+                "Caption": "Email de destino do log"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Edt_P4EMail",
+              "herdado": false,
+              "propriedades": {
+                "Left": 80,
+                "Top": 44,
+                "Width": 300,
+                "Height": 21,
+                "DataField": "EMAIL",
+                "DataSource": "Dts_Agendamento",
+                "TabOrder": 0,
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Email",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 20,
+                "Width": 205,
+                "Height": 21,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "btnAdicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 60,
+                "Width": 75,
+                "Height": 25,
+                "Caption": "Adicionar",
+                "TabOrder": 2,
+                "OnClick": "btnAdicionarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "btnRemover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 88,
+                "Top": 60,
+                "Width": 75,
+                "Height": 25,
+                "Caption": "Remover",
+                "TabOrder": 3,
+                "OnClick": "btnRemoverClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaStringGrid",
+              "nome": "gridEmails",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 88,
+                "Width": 393,
+                "Height": 102,
+                "TabOrder": 4
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRadioGroup",
+              "nome": "rgOpcoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 214,
+                "Top": 3,
+                "Width": 180,
+                "Height": 49,
+                "Items.Strings": [
+                  "Sempre",
+                  "Somente com Exceções"
+                ],
+                "TabOrder": 5
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 48,
+        "Top": 206
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 76,
+        "Top": 206
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Avancar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Avançar",
+            "ImageIndex": 0,
+            "OnExecute": "Act_AvancarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Voltar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Voltar",
+            "ImageIndex": 1,
+            "OnExecute": "Act_VoltarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Concluir",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Concluir",
+            "ImageIndex": 2,
+            "OnExecute": "Act_ConcluirExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar",
+            "ImageIndex": 3,
+            "OnExecute": "Act_CancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ExcluirHorario",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_ExcluirHorario",
+            "ShortCut": 16430,
+            "OnExecute": "Act_ExcluirHorarioExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Agendamento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 206
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_P2Horarios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 104,
+        "Top": 206
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_P2ExcluirHorario",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Excluir horário",
+            "OnClick": "Pop_P2ExcluirHorarioClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

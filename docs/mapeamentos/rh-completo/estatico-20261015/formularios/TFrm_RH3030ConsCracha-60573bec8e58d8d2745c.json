@@ -1,0 +1,718 @@
+{
+  "classe": "TFrm_RH3030ConsCracha",
+  "nome": "Frm_RH3030ConsCracha",
+  "herdado": true,
+  "propriedades": {
+    "Left": 327,
+    "Top": 178,
+    "Caption": "Consulta de Crachás",
+    "ClientHeight": 452,
+    "ClientWidth": 962
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 384,
+        "Width": 962,
+        "Height": 68,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Historico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 32,
+            "Width": 80,
+            "Height": 24,
+            "Caption": "&Histórico",
+            "Enabled": false,
+            "OnClick": "Btn_HistoricoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Spb_VerCrachas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 95,
+            "Top": 32,
+            "Width": 150,
+            "Height": 24,
+            "Caption": "Ver Registros do Crachá",
+            "Enabled": false,
+            "OnClick": "Spb_VerCrachasClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Spb_Disponibilizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 253,
+            "Top": 32,
+            "Width": 176,
+            "Height": 24,
+            "Caption": "Disponibilizar todos os crachás",
+            "Enabled": false,
+            "OnClick": "Spb_DisponibilizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_CrachasAtivos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 442,
+            "Top": 40,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Contratos Ativos:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_LimiteDisponivel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 594,
+            "Top": 40,
+            "Width": 103,
+            "Height": 13,
+            "Caption": "Limite Disponível:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Txt_CrachasAtivos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 543,
+            "Top": 40,
+            "Width": 47,
+            "Height": 17,
+            "Caption": "999999",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Txt_LimiteDisponivel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 701,
+            "Top": 40,
+            "Width": 47,
+            "Height": 17,
+            "Caption": "999999",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_Crachas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 9,
+            "Width": 166,
+            "Height": 17,
+            "Caption": "Exibir crachás Fora das Faixas",
+            "TabOrder": 2,
+            "OnClick": "Chk_CrachasClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ContratosAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 259,
+            "Top": 9,
+            "Width": 194,
+            "Height": 17,
+            "Caption": "Exibir contratos com aviso prévio",
+            "TabOrder": 3,
+            "OnClick": "Chk_ContratosAvisoPrevioClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 962,
+        "Height": 384,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "Caption": "Panel1",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ConsultaCrachas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 954,
+            "Height": 376,
+            "ActivePage": "Tbs_AtivosRescindidos",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_ConsultaCrachasChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Provisorios",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Provisórios"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_Provisorios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 26,
+                    "Width": 946,
+                    "Height": 322,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ConsultaCracha",
+                    "TabOrder": 1,
+                    "Columns": [
+                      {
+                        "FieldName": "NROCRACHA",
+                        "Title.Caption": "Nro Crachá",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Data",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Hora",
+                        "Width": 35,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADE",
+                        "Title.Caption": "Unidade",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Title.Caption": "Contrato",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "PESSOAACESSO",
+                        "Title.Caption": "Pré-cad.",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescCrachaRegistroTipo",
+                        "Title.Caption": "Tipo Cad.",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Title.Caption": "Pessoa",
+                        "Width": 245,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSitCracha",
+                        "Width": 100,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 946,
+                    "Height": 26,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 23,
+                        "Top": 6,
+                        "Width": 45,
+                        "Height": 13,
+                        "Caption": "Situação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Provisorio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 76,
+                        "Top": 3,
+                        "Width": 121,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_ProvisorioChange"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_ExtBloqCanc",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Extraviados, Bloqueados e Cancelados",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 946,
+                    "Height": 26,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 23,
+                        "Top": 6,
+                        "Width": 45,
+                        "Height": 13,
+                        "Caption": "Situação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_ExtBloqCanc",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 76,
+                        "Top": 3,
+                        "Width": 121,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_ExtBloqCancChange"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_ExtBloqCanc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 26,
+                    "Width": 946,
+                    "Height": 322,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ConsultaCracha",
+                    "TabOrder": 1,
+                    "Columns": [
+                      {
+                        "FieldName": "NROCRACHA",
+                        "Title.Caption": "Nro Crachá",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Data",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Hora",
+                        "Width": 35,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADE",
+                        "Title.Caption": "Unidade",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Title.Caption": "Contrato",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "PESSOAACESSO",
+                        "Title.Caption": "Pré-cad.",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescCrachaRegistroTipo",
+                        "Title.Caption": "Tipo Cad.",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Title.Caption": "Pessoa",
+                        "Width": 245,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSitCracha",
+                        "Width": 100,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_AtivosRescindidos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Ativos c/ Contratos Rescindidos",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_AtivosRescindidos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 946,
+                    "Height": 348,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ConsultaCracha",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "NROCRACHA",
+                        "Title.Caption": "Nro Crachá",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Data",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Hora",
+                        "Width": 35,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADE",
+                        "Title.Caption": "Unidade",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Title.Caption": "Contrato",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "PESSOAACESSO",
+                        "Title.Caption": "Pré-cad.",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescCrachaRegistroTipo",
+                        "Title.Caption": "Tipo Cad.",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Title.Caption": "Pessoa",
+                        "Width": 245,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 236,
+        "Top": 158
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_ConsultaCrachas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 150,
+        "Top": 164
+      },
+      "filhos": [
+        {
+          "classe": "TFloatField",
+          "nome": "Qry_ConsultaCrachasNROCRACHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROCRACHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaCrachasDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaCrachasCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasTIPOREGCRACHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOREGCRACHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaCrachasPESSOAACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOAACESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEPESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasNOMEPESSOAACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEPESSOAACESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasSTATUSPESSOAACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUSPESSOAACESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ConsultaCrachasDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasSITUACAOCRACHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOCRACHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasUSOCRACHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USOCRACHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasDESCUSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCUSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasData",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Data"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Hora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasNOME2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasDescSitCracha",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "DescSitCracha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasDescCrachaRegistroTipo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 20,
+            "FieldName": "DescCrachaRegistroTipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaCrachasSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ConsultaCracha",
+      "herdado": false,
+      "propriedades": {
+        "Left": 150,
+        "Top": 212
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "classe": "TFrm_RHST1160",
+  "nome": "Frm_RHST1160",
+  "herdado": true,
+  "propriedades": {
+    "Left": 404,
+    "Top": 224,
+    "Caption": "Ocupações para a CIPA",
+    "ClientHeight": 369,
+    "ClientWidth": 784
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 369,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 319,
+            "Width": 50,
+            "Height": 13,
+            "Caption": "Ocupação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 319,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Descrição Reduzida"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 319,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Responsabilidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 73,
+            "Top": 335,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 426,
+            "Top": 319,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Gera Estabilidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 697,
+            "Top": 319,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 515,
+            "Top": 319,
+            "Width": 136,
+            "Height": 13,
+            "Caption": "Ocorrência para Estabilidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Ocorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 559,
+            "Top": 335,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "bvld_Ocorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 583,
+            "Top": 335,
+            "Width": 110,
+            "Height": 21,
+            "Caption": "Membro da CIPA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 328,
+            "Top": 168,
+            "Width": 13,
+            "Height": 21,
+            "TabOrder": 7,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_ResponsabildadesCIPA",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 776,
+            "Height": 310,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_ResponsabildadesCIPAEnter",
+            "Columns": [
+              {
+                "FieldName": "RESPCIPA",
+                "Title.Caption": "Ocupação",
+                "Width": 89,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 190,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Width": 125,
+                "Visible": true
+              },
+              {
+                "FieldName": "GERAESTABILIDADE",
+                "Width": 92,
+                "Visible": true
+              },
+              {
+                "FieldName": "OCORRENCIA",
+                "Width": 180,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVADESATIVADA",
+                "Width": 65,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_GeraEstabilidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 426,
+            "Top": 335,
+            "Width": 86,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "GERAESTABILIDADE",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 4,
+            "OnChange": "Dbc_GeraEstabilidadeChange",
+            "OnClick": "Dbc_GeraEstabilidadeClick",
+            "OnExit": "Dbc_GeraEstabilidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 697,
+            "Top": 335,
+            "Width": 75,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Responsabilidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 335,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_ResponsabilidadeExit",
+            "OnKeyPress": "Edt_ResponsabilidadeKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 335,
+            "Width": 195,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 335,
+            "Width": 125,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 3,
+            "OnEnter": "Dbe_Descricao20Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_Ocorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 515,
+            "Top": 335,
+            "Width": 43,
+            "Height": 21,
+            "DataField": "OCORRENCIA",
+            "DataSource": "Dts_ResponsabilidadesCipa",
+            "TabOrder": 5,
+            "OnExit": "dbe_OcorrenciaExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 536,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ResponsabilidadesCipa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 64
+      },
+      "filhos": []
+    }
+  ]
+}

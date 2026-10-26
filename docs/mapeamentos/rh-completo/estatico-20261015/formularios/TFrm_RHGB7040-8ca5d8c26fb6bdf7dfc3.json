@@ -1,0 +1,1089 @@
+{
+  "classe": "TFrm_RHGB7040",
+  "nome": "Frm_RHGB7040",
+  "herdado": false,
+  "propriedades": {
+    "Left": 383,
+    "Top": 211,
+    "Width": 793,
+    "Height": 418,
+    "Caption": "Atualização de Pedidos da VT Soluções",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Importacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 777,
+        "Height": 379,
+        "ActivePage": "Tbs_Arquivo",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "TabStop": false
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Arquivo"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_BotoesArq",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 306,
+                "Width": 769,
+                "Height": 45,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_IniciarImportacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 9,
+                    "Width": 130,
+                    "Height": 25,
+                    "Caption": "&Iniciar Importação",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_IniciarImportacaoClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Arq",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 769,
+                "Height": 306,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 125,
+                    "Top": 142,
+                    "Width": 134,
+                    "Height": 13,
+                    "Align": "alCustom",
+                    "Caption": "Informe o arquivo a importar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LocalizarArquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 584,
+                    "Top": 138,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar arquivo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_LocalizarArquivoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Aviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 189,
+                    "Top": 239,
+                    "Width": 419,
+                    "Height": 26,
+                    "Caption": "Importe o arquivo no formato .TXT gerado pela VT Soluções para atualizar no SIRH\r\na quantidade de passagens realmente solicitadas para cada trabalhador na VT soluções."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 262,
+                    "Top": 138,
+                    "Width": 320,
+                    "Height": 21,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Conferencia",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Conferência",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Conferencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 4,
+                "Width": 156,
+                "Height": 13,
+                "Caption": "Registros Para Conferência"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_Conferencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 30,
+                "Width": 751,
+                "Height": 271,
+                "Align": "alCustom",
+                "DataSource": "Dts_Arq",
+                "ReadOnly": true,
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "Competencia",
+                    "Title.Caption": "Competência",
+                    "Width": 90,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CodFilial",
+                    "Title.Caption": "Cód.Filial",
+                    "Width": 70,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Filial",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CPF",
+                    "Width": 85,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Width": 250,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Setor",
+                    "Width": 200,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CodLinha",
+                    "Title.Caption": "Cód.Linha",
+                    "Width": 75,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Linha",
+                    "Width": 230,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ValorUnitario",
+                    "Title.Caption": "Valor Unitário",
+                    "Width": 85,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ValorTotal",
+                    "Title.Caption": "Valor Total",
+                    "Width": 85,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ValorRetido",
+                    "Title.Caption": "Valor Retido",
+                    "Width": 85,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ValorCreditado",
+                    "Title.Caption": "Valor Creditado",
+                    "Width": 95,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Cartao",
+                    "Title.Caption": "Cartão",
+                    "Width": 150,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_BotoesConf",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 306,
+                "Width": 769,
+                "Height": 45,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_AvancarConf",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 657,
+                    "Top": 9,
+                    "Width": 95,
+                    "Height": 25,
+                    "Caption": "&Avançar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_AvancarConfClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_RetornarConf",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 551,
+                    "Top": 9,
+                    "Width": 95,
+                    "Height": 25,
+                    "Caption": "&Retornar",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_RetornarConfClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_SelecaoVT",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Seleção do Cálculo/Pedido de VT a ser atualizado",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TFilterDateButton",
+              "nome": "Fdb_CalculosVT",
+              "herdado": false,
+              "propriedades": {
+                "Left": 735,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Período de Filtro dos Cálculos do VT",
+                "AllowAllUp": true,
+                "GroupIndex": 512,
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 4,
+                "Width": 126,
+                "Height": 13,
+                "Caption": "Cálculo/Pedido de VT"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TImage",
+              "nome": "Img_HintCal",
+              "herdado": false,
+              "propriedades": {
+                "Left": 704,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Para cada registro do arquivo, o sistema irá buscar a combinação \r\nCPF + Cartão + Código Oficial da Linha de Transporte no cálculo/pedido \r\nselecionado e, quando houver correspondência, atualizará o saldo no SIRH \r\nconforme os valores informados no arquivo.",
+                "Align": "alCustom",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_CalculosVT",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 30,
+                "Width": 751,
+                "Height": 271,
+                "TabStop": false,
+                "Align": "alCustom",
+                "DataSource": "Dts_CalculosVT",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "Marcado",
+                    "Title.Caption": "þ",
+                    "Width": 23,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Data",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Hora",
+                    "Width": 46,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Descricao",
+                    "Title.Caption": "Descrição",
+                    "Width": 170,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DiasTrabDe",
+                    "Title.Caption": "De",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DiasTrabAte",
+                    "Title.Caption": "Até",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DiasNaoTrabDe",
+                    "Title.Caption": "De",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DiasNaoTrabAte",
+                    "Title.Caption": "Até",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "SituacaoDesc",
+                    "Title.Caption": "Situação",
+                    "Width": 70,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Operador",
+                    "Width": 70,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_BotoesSele",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 306,
+                "Width": 769,
+                "Height": 45,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_RetornarSele",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 551,
+                    "Top": 9,
+                    "Width": 95,
+                    "Height": 25,
+                    "Caption": "&Retornar",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_RetornarConfClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Confirmar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 657,
+                    "Top": 9,
+                    "Width": 95,
+                    "Height": 25,
+                    "Caption": "Confirmar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_ConfirmarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Resultado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Resultado",
+            "ImageIndex": 3
+          },
+          "filhos": [
+            {
+              "classe": "TSplitter",
+              "nome": "Splitter",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 189,
+                "Width": 769,
+                "Height": 5,
+                "Align": "alBottom"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 769,
+                "Height": 33,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Calculo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 7,
+                    "Width": 159,
+                    "Height": 13,
+                    "Caption": "Cálculo/Pedido de VT atualizado:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "Img_HintResult",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 735,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Registros importados: são aqueles em que o saldo do cálculo selecionado foi atualizado \r\nconforme os valores informados no arquivo.\r\n\r\nRegistros não importados: são aqueles em que o saldo do cálculo não foi atualizado, \r\ndevido à ausência de correspondência entre CPF + Código do Cartão + Código Oficial \r\nda Linha de Transporte informados no arquivo e no cálculo selecionado.\r\n\r\nCaso tenha algum problema, revise o arquivo da VT Soluções, ajuste o arquivo e importe \r\no arquivo novamente.",
+                    "Align": "alCustom",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Importados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 33,
+                "Width": 769,
+                "Height": 156,
+                "Align": "alClient",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Importados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 3,
+                    "Width": 120,
+                    "Height": 13,
+                    "Caption": "Registros Importados"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Grd_Importados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 21,
+                    "Width": 752,
+                    "Height": 128,
+                    "Align": "alCustom",
+                    "DataSource": "Dts_Import",
+                    "ReadOnly": true,
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Data",
+                        "Width": 70,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Hora",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Contrato",
+                        "Width": 66,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Width": 300,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CPF",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CodFilial",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Filial",
+                        "Width": 230,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CodLinha",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Linha",
+                        "Width": 230,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_NaoImportados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 194,
+                "Width": 769,
+                "Height": 157,
+                "Align": "alBottom",
+                "Caption": "Pnl_NaoImportados",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_NaoImportados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 2,
+                    "Width": 147,
+                    "Height": 13,
+                    "Caption": "Registros Não Importados"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Grd_NaoImportados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 21,
+                    "Width": 752,
+                    "Height": 129,
+                    "Align": "alCustom",
+                    "DataSource": "Dts_NaoImport",
+                    "ReadOnly": true,
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Data",
+                        "Width": 70,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Hora",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Width": 300,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CPF",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CodFilial",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Filial",
+                        "Width": 230,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CodLinha",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Linha",
+                        "Width": 230,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 569,
+        "Top": 1
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Arq",
+      "herdado": false,
+      "propriedades": {
+        "Left": 576,
+        "Top": 37
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CalculosVT",
+      "herdado": false,
+      "propriedades": {
+        "Left": 545,
+        "Top": 37
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Import",
+      "herdado": false,
+      "propriedades": {
+        "Left": 509
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ImportData",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Data"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ImportHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Hora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ImportContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportCodFilial",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cód.Filial",
+            "FieldName": "CodFilial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportFilial",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Filial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportCodLinha",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cód.Linha",
+            "FieldName": "CodLinha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Linha"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_NaoImport",
+      "herdado": false,
+      "propriedades": {
+        "Left": 480
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_NaoImportData",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Data"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_NaoImportHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Hora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_NaoImportContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportCodFilial",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cód.Filial",
+            "FieldName": "CodFilial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportFilial",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Filial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportCodLinha",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cód.Linha",
+            "FieldName": "CodLinha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Linha"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Arq",
+      "herdado": false,
+      "propriedades": {
+        "Left": 540
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqCompetencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Competencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqCodFilial",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodFilial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqFilial",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Filial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqSetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Setor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqCodLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodLinha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Linha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ArqValorUnitario",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorUnitario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ArqValorTotal",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorTotal"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ArqValorRetido",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorRetido"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ArqValorCreditado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorCreditado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqCartao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Cartao"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_NaoImport",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 35
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Import",
+      "herdado": false,
+      "propriedades": {
+        "Left": 488,
+        "Top": 36
+      },
+      "filhos": []
+    }
+  ]
+}

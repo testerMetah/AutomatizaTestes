@@ -1,0 +1,242 @@
+{
+  "classe": "TFrm_RHPA7045",
+  "nome": "Frm_RHPA7045",
+  "herdado": true,
+  "propriedades": {
+    "Left": 710,
+    "Top": 429,
+    "Width": 470,
+    "Height": 333,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Localizar",
+    "OnKeyPress": "FormKeyPress"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Pesquisa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 454,
+        "Height": 47,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_PesquisaEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lblPEsquisa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 18,
+            "Width": 49,
+            "Height": 13,
+            "Caption": "Pesquisar:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TButton",
+          "nome": "Btn_Padrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 0,
+            "Height": 0,
+            "Caption": "Act_Padrao",
+            "TabOrder": 0,
+            "TabStop": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Procura",
+          "herdado": false,
+          "propriedades": {
+            "Left": 68,
+            "Top": 14,
+            "Width": 289,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnKeyPress": "Edt_ProcuraKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Procura",
+          "herdado": false,
+          "propriedades": {
+            "Left": 361,
+            "Top": 12,
+            "Width": 81,
+            "Height": 25,
+            "Caption": "Localizar",
+            "TabOrder": 2,
+            "OnClick": "Btn_ProcuraClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_PesquisaResultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 47,
+        "Width": 454,
+        "Height": 247,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Pnl_PesquisaResultadoEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "DBG_Procura",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 446,
+            "Height": 239,
+            "Align": "alClient",
+            "DataSource": "Dts_Procura",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "OnKeyPress": "DBG_ProcuraKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 334,
+        "Top": 80
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLDataSet",
+      "nome": "SQLDataSet",
+      "herdado": false,
+      "propriedades": {
+        "Left": 46,
+        "Top": 122
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "SQLDataSetCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "SQLDataSetNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "DisplayWidth": 40,
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "SQLDataSetDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Admissão",
+            "FieldName": "DATAADMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "SQLDataSetSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "DisplayWidth": 2,
+            "FieldName": "SITUACAO",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "SQLDataSetSITUACAOCALC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "DisplayWidth": 15,
+            "FieldName": "SITUACAOCALC"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "DSProvider",
+      "herdado": false,
+      "propriedades": {
+        "Left": 128,
+        "Top": 122
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "ClientDataSet",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 122
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Procura",
+      "herdado": false,
+      "propriedades": {
+        "Left": 294,
+        "Top": 122
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 387,
+        "Top": 117
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "classe": "TFrm_RH0870ExportarLanctosFolha",
+  "nome": "Frm_RH0870ExportarLanctosFolha",
+  "herdado": true,
+  "propriedades": {
+    "Left": 572,
+    "Top": 266,
+    "Caption": "Exportar Lançamentos do Convênios",
+    "ClientHeight": 502,
+    "ClientWidth": 697
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 697,
+        "Height": 502,
+        "ActivePage": "Tab_Parametros",
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Parametros",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Tab_Parametros"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Rodape",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 451,
+                "Width": 689,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "btn_OK",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 5,
+                    "Width": 147,
+                    "Height": 26,
+                    "Caption": "&Iniciar Exportação",
+                    "TabOrder": 0,
+                    "OnClick": "btn_OKClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_DIRF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 200,
+                    "Top": 12,
+                    "Width": 265,
+                    "Height": 17,
+                    "Caption": "Exportar os Valores dos Convênios para a DIRF",
+                    "Checked": true,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_SelecaoGB",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 689,
+                "Height": 451,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Ordenacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 98,
+                    "Width": 113,
+                    "Height": 13,
+                    "Caption": "Ordenar o Relatório por:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_TipoFolha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 6,
+                    "Width": 327,
+                    "Height": 80,
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 51,
+                        "Width": 78,
+                        "Height": 13,
+                        "Caption": "Até Vencimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 19,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Tipo de Folha:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "MetaData1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 174,
+                        "Top": 47,
+                        "Width": 22,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_DataVencimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 105,
+                        "Top": 47,
+                        "Width": 68,
+                        "Height": 21,
+                        "EditMask": "99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 1,
+                        "OnExit": "Msk_DataVencimentoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_TipoFolha",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 105,
+                        "Top": 15,
+                        "Width": 161,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_TipoFolhaChange",
+                        "Items.Strings": [
+                          "Folha Mensal",
+                          "Folha Quinzenal",
+                          "Folha Semanal",
+                          "Folha Adiantamento",
+                          "13º Salário",
+                          "Folha Suplementar",
+                          "Folha Rescisão"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "Frm_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 121,
+                    "Width": 673,
+                    "Height": 319,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_OrdenarPor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 124,
+                    "Top": 94,
+                    "Width": 129,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 2,
+                    "OnChange": "Cmb_OrdenarPorChange",
+                    "Items.Strings": [
+                      "Código do Contrato",
+                      "Nome do Funcionário"
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Executando",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 337,
+                    "Top": 6,
+                    "Width": 342,
+                    "Height": 111,
+                    "Caption": "Executando... ",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TAnimate",
+                      "nome": "Animate",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 27,
+                        "Top": 16,
+                        "Width": 272,
+                        "Height": 60
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TProgressBar",
+                      "nome": "Prg_Progresso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 27,
+                        "Top": 85,
+                        "Width": 273,
+                        "Height": 17,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Relatorio",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Tab_Relatorio",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 451,
+                "Width": 689,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Voltar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 6,
+                    "Width": 108,
+                    "Height": 26,
+                    "Caption": "&Voltar",
+                    "Default": true,
+                    "ModalResult": 1,
+                    "TabOrder": 0,
+                    "OnClick": "Btn_VoltarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TMemo",
+              "nome": "Mem_Relatorio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 689,
+                "Height": 451,
+                "Align": "alClient",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 566,
+        "Top": 254
+      },
+      "filhos": []
+    }
+  ]
+}

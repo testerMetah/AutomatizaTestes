@@ -1,0 +1,213 @@
+{
+  "classe": "TFrm_RHTR402010",
+  "nome": "Frm_RHTR402010",
+  "herdado": false,
+  "propriedades": {
+    "Left": 424,
+    "Top": 228,
+    "BorderStyle": "bsSingle",
+    "Caption": "Inconsistências no Cadastro do Participante",
+    "ClientHeight": 306,
+    "ClientWidth": 783,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 783,
+        "Height": 265,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 428,
+            "Height": 13,
+            "Caption": "Os seguintes Participantes não foram inseridos na Programação do Evento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_PessoasInconsistentes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 28,
+            "Width": 779,
+            "Height": 235,
+            "Align": "alBottom",
+            "DataSource": "Dts_Lista",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "Empresa",
+                "Width": 53,
+                "Visible": true
+              },
+              {
+                "FieldName": "Pessoa",
+                "Width": 54,
+                "Visible": true
+              },
+              {
+                "FieldName": "Nome",
+                "Width": 214,
+                "Visible": true
+              },
+              {
+                "FieldName": "Curso",
+                "Width": 242,
+                "Visible": true
+              },
+              {
+                "FieldName": "Revisao",
+                "Title.Caption": "Revisão",
+                "Width": 108,
+                "Visible": true
+              },
+              {
+                "FieldName": "DtInicio",
+                "Title.Caption": "Início",
+                "Width": 65,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 265,
+        "Width": 783,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 12,
+            "Width": 603,
+            "Height": 13,
+            "Caption": "Obs.: Verifique se o Curso não se encontra registrado para esta(s) Pessoa(s) com a mesma Revisão na mesma Data do Evento. "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Retornar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "&Retornar",
+            "ModalResult": 1,
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Lista",
+      "herdado": false,
+      "propriedades": {
+        "Left": 568,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ErroInsertPessoaCursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 676,
+        "Top": 48
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErroInsertPessoaCursosEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErroInsertPessoaCursosPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErroInsertPessoaCursosNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErroInsertPessoaCursosCurso",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Curso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErroInsertPessoaCursosrevisao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Revisao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ErroInsertPessoaCursosDtInicio",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 20,
+            "FieldName": "DtInicio"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

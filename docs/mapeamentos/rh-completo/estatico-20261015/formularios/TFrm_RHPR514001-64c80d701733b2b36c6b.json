@@ -1,0 +1,773 @@
+{
+  "classe": "TFrm_RHPR514001",
+  "nome": "Frm_RHPR514001",
+  "herdado": true,
+  "propriedades": {
+    "Left": 717,
+    "Top": 224,
+    "Caption": "Definição",
+    "ClientHeight": 400,
+    "ClientWidth": 484,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 359,
+        "Width": 484,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 120,
+            "Height": 25,
+            "Caption": "&Iniciar Impressão",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarImpressaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_CancelarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 144,
+            "Top": 6,
+            "Width": 120,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 484,
+        "Height": 359,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 94,
+            "Width": 125,
+            "Height": 250,
+            "Caption": "Filtrar por ",
+            "Items.Strings": [
+              "Por Local",
+              "Por Tipo",
+              "Por Classificação",
+              "Geral"
+            ],
+            "TabOrder": 1,
+            "OnClick": "Rdg_SelecaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 147,
+            "Top": 94,
+            "Width": 317,
+            "Height": 250,
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TNotebook",
+              "nome": "Ntb_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 15,
+                "Width": 313,
+                "Height": 233,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TPage",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Caption": "Local"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 6,
+                        "Width": 29,
+                        "Height": 13,
+                        "Caption": "Local:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Local",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 6,
+                        "Width": 158,
+                        "Height": 13,
+                        "Caption": "Lbl_Local"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaLocalizar",
+                      "nome": "Btn_Local",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 111,
+                        "Top": 2,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Local",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 69,
+                        "Top": 2,
+                        "Width": 41,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 0,
+                        "OnEnter": "Edt_ClassificacaoEnter",
+                        "OnExit": "Edt_LocalExit",
+                        "OnKeyPress": "Edt_LocalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "Lsb_Local",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 78,
+                        "Width": 289,
+                        "Height": 147,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AdicionarLocal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Hint": "Adicionar Item Escolhidos (Ctrl + Down)",
+                        "Caption": "Adicionar",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "Btn_AdicionarLocalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoverLocal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Hint": "Remover Item(s) Escolhidos(s) (Ctrl + Up)",
+                        "Caption": "Remover",
+                        "ShowHint": true,
+                        "TabOrder": 2,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoverLocalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoverTodosLocais",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 191,
+                        "Top": 38,
+                        "Width": 110,
+                        "Height": 25,
+                        "Hint": "Remover Todos Items (Shift + Ctrl + Up)",
+                        "Caption": "Remover Todos",
+                        "ShowHint": true,
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoverTodosLocaisClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPage",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Caption": "Tipo"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 6,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "Tipo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Tipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 6,
+                        "Width": 158,
+                        "Height": 13,
+                        "Caption": "Lbl_Tipo"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaLocalizar",
+                      "nome": "Btn_Tipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 111,
+                        "Top": 2,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Tipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 69,
+                        "Top": 2,
+                        "Width": 41,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 0,
+                        "OnEnter": "Edt_ClassificacaoEnter",
+                        "OnExit": "Edt_TipoExit",
+                        "OnKeyPress": "Edt_TipoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "Lsb_Tipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 78,
+                        "Width": 289,
+                        "Height": 147,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AdicionarTipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Hint": "Adicionar Item Escolhidos (Ctrl + Down)",
+                        "Caption": "Adicionar",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "Btn_AdicionarTipoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoverTipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Hint": "Remover Item(s) Escolhidos(s) (Ctrl + Up)",
+                        "Caption": "Remover",
+                        "ShowHint": true,
+                        "TabOrder": 2,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoverTipoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoverTodosTipos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 191,
+                        "Top": 38,
+                        "Width": 110,
+                        "Height": 25,
+                        "Hint": "Remover Todos Items (Shift + Ctrl + Up)",
+                        "Caption": "Remover Todos",
+                        "ShowHint": true,
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoverTodosTiposClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPage",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Caption": "Classificacao"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 13,
+                        "Top": 6,
+                        "Width": 53,
+                        "Height": 13,
+                        "Caption": "Classifição:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaLocalizar",
+                      "nome": "Btn_Classificacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 111,
+                        "Top": 2,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Classificacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 6,
+                        "Width": 159,
+                        "Height": 13,
+                        "Caption": "Lbl_Classificacao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "Lsb_Classificacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 78,
+                        "Width": 289,
+                        "Height": 147,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Classificacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 69,
+                        "Top": 2,
+                        "Width": 41,
+                        "Height": 21,
+                        "TabOrder": 0,
+                        "OnEnter": "Edt_ClassificacaoEnter",
+                        "OnExit": "Edt_ClassificacaoExit",
+                        "OnKeyPress": "Edt_ClassificacaoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_InsereClass",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Caption": "Adicionar",
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "Btn_InsereClassClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoveClass",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 38,
+                        "Width": 79,
+                        "Height": 25,
+                        "Caption": "Remover",
+                        "TabOrder": 2,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoveClassClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_RemoveTdsClass",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 191,
+                        "Top": 38,
+                        "Width": 110,
+                        "Height": 25,
+                        "Caption": "Remover Todos",
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "Btn_RemoveTdsClassClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 398,
+            "Height": 81,
+            "Caption": "Seleção ",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 15,
+                "Top": 54,
+                "Width": 52,
+                "Height": 13,
+                "Caption": "Data-base:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "md_DataIni",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 144,
+                "Top": 50,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "md_DataFim",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 295,
+                "Top": 50,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 188,
+                "Top": 24,
+                "Width": 28,
+                "Height": 13,
+                "Caption": "Listar:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 24,
+                "Width": 45,
+                "Height": 13,
+                "Caption": "Situação:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Ate",
+              "herdado": false,
+              "propriedades": {
+                "Left": 198,
+                "Top": 54,
+                "Width": 22,
+                "Height": 13,
+                "Caption": "Até: "
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "me_DataIni",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 73,
+                "Top": 50,
+                "Width": 70,
+                "Height": 21,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "me_DataFim",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 224,
+                "Top": 50,
+                "Width": 70,
+                "Height": 21,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "cmb_Situacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 65,
+                "Top": 20,
+                "Width": 101,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "cmb_SituacaoChange",
+                "Items.Strings": [
+                  "Todos",
+                  "Vencidos",
+                  "à Vencer",
+                  "Inspecionados"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "cmb_Listar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 223,
+                "Top": 20,
+                "Width": 110,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 1,
+                "OnChange": "cmb_ListarChange",
+                "Items.Strings": [
+                  "Todos",
+                  "Recargas",
+                  "Inspeções",
+                  "Trocas de Casco",
+                  "Manutenções"
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 266,
+        "Top": 226
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 220,
+        "Top": 220
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Ad",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Ad",
+            "ShortCut": 16424,
+            "OnExecute": "AdExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Rm",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Rm",
+            "ShortCut": 16422,
+            "OnExecute": "RmExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "RmTodos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "RmTodos",
+            "ShortCut": 24614,
+            "OnExecute": "RmTodosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

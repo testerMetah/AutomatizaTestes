@@ -1,0 +1,529 @@
+{
+  "classe": "TFrm_RH0300Variaveis",
+  "nome": "Frm_RH0300Variaveis",
+  "herdado": true,
+  "propriedades": {
+    "Left": 213,
+    "Top": 140,
+    "Caption": "Variáveis",
+    "ClientHeight": 247,
+    "ClientWidth": 641
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 641,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label11",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 12,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_Variavel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Box",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 14,
+            "Width": 21,
+            "Height": 10,
+            "TabOrder": 1,
+            "OnEnter": "Edt_BoxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Variavel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 69,
+            "Top": 8,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_VariavelExit",
+            "OnKeyPress": "Edt_VariavelKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 641,
+        "Height": 206,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Panel2Enter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 13,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 60,
+            "Top": 50,
+            "Width": 18,
+            "Height": 13,
+            "TabOrder": 6,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "DBE_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 69,
+            "Top": 9,
+            "Width": 290,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_Variaveis",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "Rdg_Variavel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 35,
+            "Width": 163,
+            "Height": 33,
+            "Caption": "Vinculada à",
+            "Columns": 2,
+            "DataField": "TABELAORIGEM",
+            "DataSource": "Dts_Variaveis",
+            "Items.Strings": [
+              "Pessoa",
+              "Contrato"
+            ],
+            "TabOrder": 3,
+            "OnChange": "Rdg_VariavelChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_Habilitada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 376,
+            "Top": 11,
+            "Width": 73,
+            "Height": 17,
+            "Caption": "Habilitada",
+            "DataField": "HABILITADA",
+            "DataSource": "Dts_Variaveis",
+            "TabOrder": 1,
+            "OnClick": "Dbc_HabilitadaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "dbc_Alterar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 456,
+            "Top": 11,
+            "Width": 57,
+            "Height": 17,
+            "Caption": "Alterar",
+            "DataField": "ALTERAR",
+            "DataSource": "Dts_Variaveis",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 183,
+            "Top": 35,
+            "Width": 98,
+            "Height": 143,
+            "Caption": "Opções de Uso",
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 20,
+                "Width": 66,
+                "Height": 17,
+                "Caption": "Seleção",
+                "DataField": "USASELECAO",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Classificacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 53,
+                "Width": 81,
+                "Height": 17,
+                "Caption": "Classificação",
+                "DataField": "USACLASSIFICACAO",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Tabulacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 86,
+                "Width": 81,
+                "Height": 14,
+                "Caption": "Tabulação",
+                "DataField": "USATABULACAO",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Calculos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 120,
+                "Width": 65,
+                "Height": 15,
+                "Caption": "Cálculos",
+                "DataField": "USACALCULOS",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 288,
+            "Top": 35,
+            "Width": 340,
+            "Height": 162,
+            "Caption": "Módulos que Acessam",
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Folha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 21,
+                "Width": 120,
+                "Height": 18,
+                "Caption": "Folha de Pagamento",
+                "DataField": "USAMODULO01",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Ponto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 40,
+                "Width": 135,
+                "Height": 18,
+                "Caption": "Frequência",
+                "DataField": "USAMODULO02",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_CargosSal",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 120,
+                "Width": 118,
+                "Height": 18,
+                "Caption": "Gestão de Salários",
+                "DataField": "USAMODULO03",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 5
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Treinamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 100,
+                "Width": 175,
+                "Height": 18,
+                "Caption": "Treinamento e Desenvolvimento",
+                "DataField": "USAMODULO04",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 4
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Seguranca",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 140,
+                "Width": 138,
+                "Height": 17,
+                "Caption": "Segurança do Trabalho",
+                "DataField": "USAMODULO07",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 6
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_PCMSO",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 40,
+                "Width": 149,
+                "Height": 18,
+                "Caption": "PCMSO",
+                "DataField": "USAMODULO06",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 8
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "DBK_Recrutamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 80,
+                "Width": 138,
+                "Height": 18,
+                "Caption": "Recrutamento e Seleção",
+                "DataField": "USAMODULO10",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_ValeTransp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 21,
+                "Width": 99,
+                "Height": 18,
+                "Hint": "Vale-Transporte",
+                "Caption": "Vale-transporte",
+                "DataField": "USAMODULO11",
+                "DataSource": "Dts_Variaveis",
+                "ShowHint": true,
+                "TabOrder": 7
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_Convenios",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 80,
+                "Width": 79,
+                "Height": 18,
+                "Hint": "Convênios",
+                "Caption": "Convênios",
+                "DataField": "USAMODULO12",
+                "DataSource": "Dts_Variaveis",
+                "ShowHint": true,
+                "TabOrder": 10
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_Beneficios",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 100,
+                "Width": 123,
+                "Height": 18,
+                "Caption": "Benefícios",
+                "DataField": "USAMODULO09",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 11
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_Avaliacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 120,
+                "Width": 150,
+                "Height": 18,
+                "Caption": "Avaliação de Desempenho",
+                "DataField": "USAMODULO14",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 12
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_PPP",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 60,
+                "Width": 149,
+                "Height": 18,
+                "Caption": "PPP",
+                "DataField": "USAMODULO08",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 9
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbk_Acesso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 60,
+                "Width": 135,
+                "Height": 18,
+                "Caption": "Acesso",
+                "DataField": "USAMODULO16",
+                "DataSource": "Dts_Variaveis",
+                "TabOrder": 2
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 64,
+        "Top": 134
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Variaveis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 138,
+        "Top": 134
+      },
+      "filhos": []
+    }
+  ]
+}

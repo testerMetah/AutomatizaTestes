@@ -1,0 +1,667 @@
+{
+  "classe": "TFrm_RH4080",
+  "nome": "Frm_RH4080",
+  "herdado": true,
+  "propriedades": {
+    "Left": 297,
+    "Top": 65,
+    "Width": 1202,
+    "Height": 633,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Gerenciador de Atestados Médicos"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Grid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1186,
+        "Height": 553,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "DBG_RHAtestadosPortal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 1178,
+            "Height": 545,
+            "Align": "alClient",
+            "DataSource": "Dts_RHAtestadosPortal",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "PESSOA",
+                "Title.Caption": "Pessoa",
+                "Visible": true
+              },
+              {
+                "FieldName": "ESTABELECIMENTO",
+                "Title.Caption": "Estab.",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Title.Caption": "Desc. Estabelecimento",
+                "Width": 137,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADECONTRATO",
+                "Title.Caption": "Contrato",
+                "Width": 77,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Title.Caption": "Nome",
+                "Width": 240,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATACADASTRO",
+                "Title.Caption": "Data Cadastro",
+                "Width": 126,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAEMISSAO",
+                "Title.Caption": "Data Atestado",
+                "Width": 82,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPOMEDICAO",
+                "Title.Caption": "Tipo Atestado",
+                "Width": 82,
+                "Visible": true
+              },
+              {
+                "FieldName": "DURACAO",
+                "Title.Caption": "Duração",
+                "Width": 83,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSITUACAOATESTADO",
+                "Title.Caption": "Situação",
+                "Width": 103,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 553,
+        "Width": 1186,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Editar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Editar",
+            "TabOrder": 0,
+            "OnClick": "Btn_EditarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_GerarAtestado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 194,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Gerar Atestado",
+            "TabOrder": 1,
+            "OnClick": "Btn_GerarAtestadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Retornar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 374,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Retornar para Alteração",
+            "TabOrder": 2,
+            "OnClick": "Btn_RetornarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 554,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Cancelar Atestado",
+            "TabOrder": 3,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 734,
+            "Top": 7,
+            "Width": 161,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "TabOrder": 4,
+            "OnClick": "MetaEventosAfterTrocaUniEmp"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 168,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAtestadosPortal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 211
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_GridAtestados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 848,
+        "Top": 196
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_GridAtestadosDATACADASTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Cadastro",
+            "FieldName": "DATACADASTRO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_GridAtestadosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_GridAtestadosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosSITUACAOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCLASSIFICACAOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosTIPOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosBENEFICIARIOSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BENEFICIARIOSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Cds_GridAtestadosNRODIASATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Dias de Atestado",
+            "FieldName": "NRODIASATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_GridAtestadosFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_GridAtestadosDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Atestado",
+            "FieldName": "DATAEMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosTIPOINFOATEST",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINFOATEST"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosHORAINICIOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORAINICIOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosHORATERMINOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORATERMINOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosPROFISSIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PROFISSIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosSERVICOMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SERVICOMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosMOTIVOATENDIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVOATENDIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosMOTIVOCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVOCOMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemoField",
+          "nome": "Cds_GridAtestadosJUSTIFICATIVA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "JUSTIFICATIVA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemoField",
+          "nome": "Cds_GridAtestadosOBSERVACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSERVACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosOCORRENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosTIPOACIDENTETRANSITO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOACIDENTETRANSITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosINFOMESMOMOTIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INFOMESMOMOTIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosOCORRENCIAVINCULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OCORRENCIAVINCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_GridAtestadosDATAINICIOOCORRENCIAVINCULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOOCORRENCIAVINCULO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCLASSIFICACAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCLASSIFICACAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosGERAAFASTAMENTODOENCAACIDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GERAAFASTAMENTODOENCAACIDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosDESCSITUACAOATESTADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "DESCSITUACAOATESTADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Desc. Estabelecimento",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosUnidadeContrato",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "UnidadeContrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosTipoMedicao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo Atestado",
+            "FieldName": "TipoMedicao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_GridAtestadosDuracao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Duração",
+            "FieldName": "Duracao"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

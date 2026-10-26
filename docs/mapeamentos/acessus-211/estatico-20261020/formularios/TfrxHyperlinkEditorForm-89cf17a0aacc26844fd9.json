@@ -1,0 +1,727 @@
+{
+  "classe": "TfrxHyperlinkEditorForm",
+  "nome": "frxHyperlinkEditorForm",
+  "herdado": false,
+  "propriedades": {
+    "Left": 191,
+    "Top": 116,
+    "BorderStyle": "bsDialog",
+    "Caption": "Hyperlink Editor",
+    "ClientHeight": 382,
+    "ClientWidth": 655,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TButton",
+      "nome": "OKB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 488,
+        "Top": 348,
+        "Width": 75,
+        "Height": 25,
+        "Caption": "OK",
+        "ModalResult": 1,
+        "TabOrder": 0
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TButton",
+      "nome": "CancelB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 572,
+        "Top": 348,
+        "Width": 75,
+        "Height": 25,
+        "Cancel": true,
+        "Caption": "Cancel",
+        "ModalResult": 2,
+        "TabOrder": 1
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TGroupBox",
+      "nome": "KindGB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 8,
+        "Top": 8,
+        "Width": 217,
+        "Height": 325,
+        "Caption": "Hyperlink kind",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TRadioButton",
+          "nome": "UrlRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 20,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "URL",
+            "Checked": true,
+            "TabOrder": 0,
+            "TabStop": true,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "PageNumberRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 40,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "Page number",
+            "TabOrder": 1,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "AnchorRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 60,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "Anchor",
+            "TabOrder": 2,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "ReportRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 80,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "Report",
+            "TabOrder": 3,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "ReportPageRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 100,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "Report page",
+            "TabOrder": 4,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "CustomRB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 120,
+            "Width": 200,
+            "Height": 17,
+            "Caption": "Custom",
+            "TabOrder": 5,
+            "OnClick": "UrlRBClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TGroupBox",
+      "nome": "PropertiesGB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 232,
+        "Top": 8,
+        "Width": 417,
+        "Height": 325,
+        "Caption": "Properties",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Hint1L",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 256,
+            "Width": 393,
+            "Height": 30,
+            "Caption": "What will happen when you click this object in the preview window:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Hint2L",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 286,
+            "Width": 393,
+            "Height": 30,
+            "Caption": "Hint"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "UrlP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 348,
+            "Top": 16,
+            "Width": 393,
+            "Height": 105,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "UrlL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 229,
+                "Height": 13,
+                "Caption": "Specify an URL (example: http://www.url.com):"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "UrlExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 215,
+                "Height": 13,
+                "Caption": "or enter the expression that returns an URL:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "UrlE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "UrlExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "PageNumberP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 328,
+            "Top": 40,
+            "Width": 393,
+            "Height": 105,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "PageNumberL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 105,
+                "Height": 13,
+                "Caption": "Specify page number:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "PageNumberExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 253,
+                "Height": 13,
+                "Caption": "or enter the expression that returns a page number:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "PageNumberE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "PageNumberExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "AnchorP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 312,
+            "Top": 64,
+            "Width": 393,
+            "Height": 105,
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "AnchorL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 119,
+                "Height": 13,
+                "Caption": "Specify an anchor name:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "AnchorExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 258,
+                "Height": 13,
+                "Caption": "or enter the expression that returns an anchor name:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "AnchorE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "AnchorExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "CustomP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 296,
+            "Top": 88,
+            "Width": 393,
+            "Height": 105,
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "CustomL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 127,
+                "Height": 13,
+                "Caption": "Specify a hyperlink value::"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "CustomExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 262,
+                "Height": 13,
+                "Caption": "or enter the expression that returns a hyperlink value:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "CustomE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "CustomExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "ReportP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 276,
+            "Top": 116,
+            "Width": 393,
+            "Height": 221,
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "ReportValueL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 112,
+                "Width": 130,
+                "Height": 13,
+                "Caption": "Specify a parameter value:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 168,
+                "Width": 269,
+                "Height": 13,
+                "Caption": "or enter the expression that returns a parameter value:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportNameL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 66,
+                "Height": 13,
+                "Caption": "Report name:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportParamL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 90,
+                "Height": 13,
+                "Caption": "Report parameter:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "ReportValueE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 132,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "ReportExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 188,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "ReportNameE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "ReportParamCB",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "ReportPageP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 256,
+            "Top": 140,
+            "Width": 393,
+            "Height": 221,
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "ReportPageValueL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 112,
+                "Width": 130,
+                "Height": 13,
+                "Caption": "Specify a parameter value:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportPageExprL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 168,
+                "Width": 269,
+                "Height": 13,
+                "Caption": "or enter the expression that returns a parameter value:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportPageL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 64,
+                "Height": 13,
+                "Caption": "Report page:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "ReportPageParamL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 90,
+                "Height": 13,
+                "Caption": "Report parameter:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "ReportPageValueE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 132,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TfrxComboEdit",
+              "nome": "ReportPageExprE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 188,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csSimple",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "ReportPageParamCB",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 76,
+                "Width": 393,
+                "Height": 21,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "ReportPageCB",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 20,
+                "Width": 393,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TCheckBox",
+      "nome": "ModifyAppearanceCB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 8,
+        "Top": 348,
+        "Width": 465,
+        "Height": 17,
+        "Caption": "Modify appearance",
+        "TabOrder": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 292,
+        "Top": 352
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "classe": "TFrm_RHPEALTERACPF01",
+  "nome": "Frm_RHPEALTERACPF01",
+  "herdado": false,
+  "propriedades": {
+    "Left": 452,
+    "Top": 241,
+    "BorderStyle": "bsSingle",
+    "Caption": "Alteração de CPF do Trabalhador",
+    "ClientHeight": 260,
+    "ClientWidth": 457,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 457,
+        "Height": 65,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaTitulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 12,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EmpresaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 196,
+            "Top": 13,
+            "Width": 250,
+            "Height": 13,
+            "Caption": "Lbl_EmpresaDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_PessoaTitulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 37,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 33,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_PessoaDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 196,
+            "Top": 38,
+            "Width": 250,
+            "Height": 13,
+            "Caption": "Lbl_PessoaDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 107,
+            "Top": 8,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_EmpresaEnter",
+            "OnExit": "Edt_EmpresaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 107,
+            "Top": 33,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 1,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 214,
+        "Width": 457,
+        "Height": 46,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Alterar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 10,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Alterar",
+            "TabOrder": 0,
+            "OnClick": "Btn_AlterarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Erros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 10,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Ver Inconsistências",
+            "TabOrder": 1,
+            "Visible": false,
+            "OnClick": "Btn_ErrosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 65,
+        "Width": 457,
+        "Height": 149,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataAlteracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 177,
+            "Top": 8,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true,
+            "OnClick": "Mtd_DataAlteracaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AlteradoEm",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 12,
+            "Width": 89,
+            "Height": 13,
+            "Caption": "Data de Alteração:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_CPF",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 37,
+            "Width": 56,
+            "Height": 13,
+            "Caption": "CPF (novo):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Observacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 62,
+            "Width": 61,
+            "Height": 13,
+            "Caption": "Observação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataAlteracao",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 107,
+            "Top": 8,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Msk_DataAlteracaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CPF",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 107,
+            "Top": 33,
+            "Width": 91,
+            "Height": 21,
+            "MaxLength": 11,
+            "TabOrder": 1,
+            "OnExit": "Edt_CPFExit",
+            "OnKeyPress": "Edt_CPFKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemo",
+          "nome": "Mem_Observacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 107,
+            "Top": 58,
+            "Width": 336,
+            "Height": 81,
+            "MaxLength": 255,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_EmpresaENCERRAMENTOATIVIDADES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENCERRAMENTOATIVIDADES"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 394,
+        "Top": 222
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_LocalizarData",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Localizar &Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_LocalizarDataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ErrosValidacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 363,
+        "Top": 222
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoDescricaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoTipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacaoSequencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacaoSequencia"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 365,
+        "Top": 28
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "DisplayWidth": 60,
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

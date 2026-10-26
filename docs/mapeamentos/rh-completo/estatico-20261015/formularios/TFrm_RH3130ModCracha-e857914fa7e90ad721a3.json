@@ -1,0 +1,222 @@
+{
+  "classe": "TFrm_RH3130ModCracha",
+  "nome": "Frm_RH3130ModCracha",
+  "herdado": true,
+  "propriedades": {
+    "Left": 599,
+    "Top": 296,
+    "Caption": "Modelos de Crachás",
+    "ClientHeight": 294,
+    "ClientWidth": 277
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 277,
+        "Height": 294,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_FundoCampos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 247,
+            "Width": 269,
+            "Height": 41,
+            "Align": "alBottom",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_FundoCamposChave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 70,
+                "Height": 41,
+                "Align": "alLeft",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ModeloCracha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 0,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Modelo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_ModeloCracha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 45,
+                    "Top": 15,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_ModeloCracha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 16,
+                    "Top": 15,
+                    "Width": 28,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_ModeloCrachaExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_FundoCamposOutros",
+              "herdado": false,
+              "propriedades": {
+                "Left": 70,
+                "Top": 0,
+                "Width": 199,
+                "Height": 41,
+                "Align": "alClient",
+                "TabOrder": 1,
+                "OnEnter": "Pnl_FundoCamposOutrosEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Descricao20",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 0,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Descricao20",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 15,
+                    "Width": 174,
+                    "Height": 21,
+                    "DataField": "DESCRICAO20",
+                    "DataSource": "Dts_CrachasModelos",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Enter",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -20,
+                    "Top": -20,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_EnterEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_FundoGrid",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 269,
+            "Height": 245,
+            "Align": "alClient",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_CrachasModelos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 7,
+                "Width": 257,
+                "Height": 231,
+                "DataSource": "Dts_CrachasModelos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "MODELOCRACHA",
+                    "Width": 48,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO20",
+                    "Width": 175,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 60,
+        "Top": 76
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CrachasModelos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 148,
+        "Top": 76
+      },
+      "filhos": []
+    }
+  ]
+}

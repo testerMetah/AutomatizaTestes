@@ -1,0 +1,324 @@
+{
+  "classe": "TFrm_RHCS1083",
+  "nome": "Frm_RHCS1083",
+  "herdado": true,
+  "propriedades": {
+    "Left": 473,
+    "Top": 265,
+    "Caption": "Valores Individuais de",
+    "ClientHeight": 425,
+    "ClientWidth": 519
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 519,
+        "Height": 384,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSplitter",
+          "nome": "Splitter1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 175,
+            "Width": 511,
+            "Height": 6,
+            "Align": "alBottom"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Superior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 511,
+            "Height": 173,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Contratos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 511,
+                "Height": 173,
+                "TabStop": false,
+                "Align": "alClient",
+                "DataSource": "Dts_Contratos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "UNIDADEORCAMENTACAO",
+                    "Title.Caption": "Unidade",
+                    "Width": 51,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CONTRATOORCAMENTACAO",
+                    "Title.Caption": "Contrato",
+                    "Width": 65,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Width": 280,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "VALORFUNCIONARIOATUAL",
+                    "Title.Caption": "Valor",
+                    "Width": 78,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Inferior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 181,
+            "Width": 511,
+            "Height": 197,
+            "Align": "alBottom",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 154,
+                "Width": 65,
+                "Height": 13,
+                "Caption": "Item de Custo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 131,
+                "Top": 154,
+                "Width": 48,
+                "Height": 13,
+                "Caption": "Descrição"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 376,
+                "Top": 154,
+                "Width": 24,
+                "Height": 13,
+                "Caption": "Valor"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_ItemCusto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 104,
+                "Top": 169,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBeveledLabel",
+              "nome": "Bvl_DescItem",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 169,
+                "Width": 240,
+                "Height": 21
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Itens",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 511,
+                "Height": 148,
+                "TabStop": false,
+                "Align": "alTop",
+                "DataSource": "Dts_Itens",
+                "TabOrder": 3,
+                "Columns": [
+                  {
+                    "FieldName": "ITEMCUSTO",
+                    "Title.Caption": "Item de Custo",
+                    "Width": 117,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DescItem",
+                    "Title.Caption": "Descrição",
+                    "Width": 247,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "VALORFUNCIONARIOATUAL",
+                    "Title.Caption": "Valor",
+                    "Width": 111,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_ItemCusto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 169,
+                "Width": 88,
+                "Height": 21,
+                "MaxLength": 8,
+                "TabOrder": 0,
+                "OnChange": "Edt_ItemCustoChange",
+                "OnExit": "Edt_ItemCustoExit",
+                "OnKeyPress": "Edt_ItemCustoKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_ValorItem",
+              "herdado": false,
+              "propriedades": {
+                "Left": 376,
+                "Top": 169,
+                "Width": 121,
+                "Height": 21,
+                "DataField": "VALORFUNCIONARIOATUAL",
+                "DataSource": "Dts_Itens",
+                "MaxLength": 14,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_AuxItem",
+              "herdado": false,
+              "propriedades": {
+                "Left": 504,
+                "Top": 168,
+                "Width": 0,
+                "Height": 21,
+                "TabOrder": 2,
+                "OnEnter": "Edt_AuxItemEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 384,
+        "Width": 519,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Retornar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 89,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "Retornar",
+            "ModalResult": 2,
+            "TabOrder": 0,
+            "OnClick": "Btn_RetornarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Itens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 280,
+        "Top": 248
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 60
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "classe": "TFrm_RHAC5320",
+  "nome": "Frm_RHAC5320",
+  "herdado": true,
+  "propriedades": {
+    "Left": 276,
+    "Top": 185,
+    "Caption": "Lista de Supervisores",
+    "ClientHeight": 334,
+    "ClientWidth": 312
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Codigo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 312,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_CodigoEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Codigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 101,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ListaSupervisor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 8,
+            "Width": 46,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_ListaSupervisorExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Corpo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 312,
+        "Height": 294,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 304,
+            "Height": 39,
+            "Align": "alTop",
+            "TabOrder": 0,
+            "OnEnter": "Pnl_CodigoEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 12,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 70,
+                "Top": 8,
+                "Width": 228,
+                "Height": 21,
+                "DataField": "DESCRICAO30",
+                "DataSource": "Dts_ListaSupervisores",
+                "MaxLength": 30,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Cracha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 41,
+            "Width": 304,
+            "Height": 247,
+            "Align": "alClient",
+            "TabOrder": 1,
+            "OnEnter": "Pnl_CrachaEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Cracha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 56,
+                "Top": 202,
+                "Width": 37,
+                "Height": 13,
+                "Caption": "Crachá:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Senha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 165,
+                "Top": 202,
+                "Width": 34,
+                "Height": 13,
+                "Caption": "Senha:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Cracha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 55,
+                "Top": 217,
+                "Width": 96,
+                "Height": 21,
+                "MaxLength": 12,
+                "TabOrder": 0,
+                "OnExit": "Edt_CrachaExit",
+                "OnKeyPress": "Edt_CrachaKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Edt_Senha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 164,
+                "Top": 217,
+                "Width": 79,
+                "Height": 21,
+                "DataField": "SENHACONTRATO",
+                "DataSource": "Dts_ListaSupervCra",
+                "MaxLength": 6,
+                "PasswordChar": "*",
+                "TabOrder": 1,
+                "OnKeyPress": "Edt_CrachaKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "dbg_Crachas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 51,
+                "Top": 4,
+                "Width": 199,
+                "Height": 191,
+                "TabStop": false,
+                "DataSource": "Dts_ListaSupervCra",
+                "TabOrder": 2,
+                "Columns": [
+                  {
+                    "FieldName": "NROCRACHA",
+                    "Title.Caption": "Crachá",
+                    "Width": 81,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Senha",
+                    "Width": 83,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_AuxCracha",
+              "herdado": false,
+              "propriedades": {
+                "Left": -100,
+                "Top": 198,
+                "Width": 24,
+                "Height": 21,
+                "TabOrder": 3,
+                "OnEnter": "Edt_AuxCrachaEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 196,
+        "Top": 29
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ListaSupervisores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 196
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ListaSupervCra",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 176
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_ListaSupervCra",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 225
+      },
+      "filhos": []
+    }
+  ]
+}

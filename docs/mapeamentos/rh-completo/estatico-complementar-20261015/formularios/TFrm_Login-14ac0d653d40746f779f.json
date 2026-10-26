@@ -1,0 +1,232 @@
+{
+  "classe": "TFrm_Login",
+  "nome": "Frm_Login",
+  "herdado": false,
+  "propriedades": {
+    "Left": 295,
+    "Top": 261,
+    "BorderStyle": "bsDialog",
+    "Caption": "Login",
+    "ClientHeight": 199,
+    "ClientWidth": 305,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Login",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 305,
+        "Height": 199,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_CfgSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 160,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Salvar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_CfgCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 160,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Cancelar",
+            "Caption": "Cancelar",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_Configuracoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 14,
+            "Width": 282,
+            "Height": 136,
+            "Caption": "Usuário",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfConfigMetaUsuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 20,
+                "Width": 36,
+                "Height": 13,
+                "Caption": "Usuário"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfConfigMetaOperador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 49,
+                "Width": 44,
+                "Height": 13,
+                "Caption": "Operador"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfConfigMetaSenha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 78,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Senha"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Usuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 68,
+                "Top": 16,
+                "Width": 90,
+                "Height": 21,
+                "DataField": "METAUSUARIO",
+                "DataSource": "Dts_Configuracoes",
+                "MaxLength": 4,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 68,
+                "Top": 45,
+                "Width": 90,
+                "Height": 21,
+                "DataField": "METAOPERADOR",
+                "DataSource": "Dts_Configuracoes",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Senha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 68,
+                "Top": 74,
+                "Width": 90,
+                "Height": 21,
+                "DataField": "METASENHA",
+                "DataSource": "Dts_Configuracoes",
+                "PasswordChar": "*",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbc_LogarAutomaticamente",
+              "herdado": false,
+              "propriedades": {
+                "Left": 21,
+                "Top": 109,
+                "Width": 210,
+                "Height": 17,
+                "Caption": "Logar automaticamente na inicialização",
+                "DataField": "LOGARAUTOMATICAMENTE",
+                "DataSource": "Dts_Configuracoes",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 244,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Salvar",
+            "ShortCut": 16467,
+            "OnExecute": "Act_SalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar",
+            "OnExecute": "Act_CancelarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Configuracoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 244,
+        "Top": 45
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMREnter",
+      "nome": "MrEnter",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": true,
+        "Left": 212,
+        "Top": 16
+      },
+      "filhos": []
+    }
+  ]
+}

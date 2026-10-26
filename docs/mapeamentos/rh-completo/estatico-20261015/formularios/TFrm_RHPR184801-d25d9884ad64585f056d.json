@@ -1,0 +1,785 @@
+{
+  "classe": "TFrm_RHPR184801",
+  "nome": "Frm_RHPR184801",
+  "herdado": false,
+  "propriedades": {
+    "Left": 278,
+    "Top": 167,
+    "BorderStyle": "bsSingle",
+    "Caption": "Grava Arquivo SEFIP em Meio Magnético",
+    "ClientHeight": 341,
+    "ClientWidth": 518,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 518,
+        "Height": 300,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 439,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Selecionar Arquivo...",
+            "Caption": "...",
+            "ShowHint": true,
+            "OnClick": "btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 10,
+            "Width": 72,
+            "Height": 13,
+            "Caption": "Arquivo SEFIP:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 42,
+            "Width": 119,
+            "Height": 13,
+            "Caption": "Código de Recolhimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 68,
+            "Width": 146,
+            "Height": 13,
+            "Caption": "Estabelecimento Responsável:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 206,
+            "Top": 64,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EstabelecimentoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_RazaoSocial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 237,
+            "Top": 68,
+            "Width": 236,
+            "Height": 13,
+            "Caption": "lbl_RazaoSocial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 196,
+            "Width": 491,
+            "Height": 92,
+            "Caption": "Listar",
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TRadioGroup",
+              "nome": "rdg_Impressao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 314,
+                "Top": 21,
+                "Width": 161,
+                "Height": 57,
+                "Items.Strings": [
+                  "Imprimir",
+                  "Visualizar Impressão"
+                ],
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRadioGroup",
+              "nome": "rdg_TipoRelatorio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 12,
+                "Width": 185,
+                "Height": 74,
+                "Items.Strings": [
+                  "Não Imprimir",
+                  "Imprimir relatório completo",
+                  "Imprimir somente ocorrências"
+                ],
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_NomeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 162,
+            "Top": 7,
+            "Width": 268,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnChange": "edt_NomeArquivoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_CodigoRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 162,
+            "Top": 37,
+            "Width": 268,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnExit": "Cmb_CodigoRecolhimentoExit",
+            "Items.Strings": [
+              "115 - FGTS e INSS",
+              "150 - Prestadora de Serviços",
+              "155 - Obras",
+              "307 - Parcelamento FGTS",
+              "317 - Parcelamento FGTS Tom.Serv.",
+              "608 - Dirigente Sindical",
+              "650 - FGTS/INSS Dissídio/Reclamatória Trab.",
+              "904 - INSS/FGTS Dissídio/Reclamatória Trab.",
+              "905 - Declaração à Previdência Social/FGTS",
+              "907 - INSS/FGTS Prest. Serv. cessão Mão-de-Obra",
+              "908 - INSS/FGTS Obra de Construção Civil",
+              "910 - INSS/FGTS de Dirigente Sindical",
+              "911 - Decl. INSS Coop.Trab."
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 89,
+            "Width": 491,
+            "Height": 49,
+            "Caption": "Recolhimento em atraso",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 23,
+                "Width": 125,
+                "Height": 13,
+                "Caption": "Data Recolhimento FGTS:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 254,
+                "Top": 23,
+                "Width": 122,
+                "Height": 13,
+                "Caption": "Data Recolhimento INSS:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataFGTS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 225,
+                "Top": 18,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataINSS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 458,
+                "Top": 18,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataFGTS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 150,
+                "Top": 18,
+                "Width": 74,
+                "Height": 21,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0,
+                "OnExit": "Msk_DataFGTSExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataINSS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 383,
+                "Top": 18,
+                "Width": 74,
+                "Height": 21,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "Msk_DataINSSExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 163,
+            "Top": 64,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 2,
+            "OnEnter": "Edt_EstabelecimentoEnter",
+            "OnExit": "Edt_EstabelecimentoExit",
+            "OnKeyPress": "Edt_EstabelecimentoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 145,
+            "Width": 491,
+            "Height": 49,
+            "Caption": "Dissídio Coletivo/Reclamatória Trabalhista",
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 23,
+                "Width": 92,
+                "Height": 13,
+                "Caption": "Mês/Ano de Início:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 254,
+                "Top": 23,
+                "Width": 81,
+                "Height": 13,
+                "Caption": "Mês/Ano de Fim:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataInicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 150,
+                "Top": 18,
+                "Width": 54,
+                "Height": 21,
+                "EditMask": "!99/9999;1; ",
+                "MaxLength": 7,
+                "TabOrder": 0,
+                "OnExit": "Msk_DataInicioExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataFim",
+              "herdado": false,
+              "propriedades": {
+                "Left": 383,
+                "Top": 18,
+                "Width": 54,
+                "Height": 21,
+                "EditMask": "!99/9999;1; ",
+                "MaxLength": 7,
+                "TabOrder": 1,
+                "OnExit": "Msk_DataFimExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 300,
+        "Width": 518,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_IniciarProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 6,
+            "Width": 122,
+            "Height": 25,
+            "Caption": "Iniciar Processo",
+            "TabOrder": 0,
+            "OnClick": "btn_IniciarProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_VisualizarArquivos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 6,
+            "Width": 122,
+            "Height": 25,
+            "Caption": "Visualizar Arquivo",
+            "TabOrder": 1,
+            "OnClick": "btn_VisualizarArquivosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 467,
+        "Top": 13
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_SEFIP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Estabelecimentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 117,
+        "Top": 3
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosTIPOINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosNOMERESPONSAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMERESPONSAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosRUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosNRORUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRORUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosBAIRRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BAIRRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosCEP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosDDD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosTELEFONE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosCALENDARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CALENDARIO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_GPSSEFIP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 47,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Alteracoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 426,
+        "Top": 7
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CompetenciasAnteriores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 54
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Total13Antecipado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 303,
+        "Top": 6
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_MotivosRescisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 149,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Ocorrencias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 401,
+        "Top": 44
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_AlteracoesContrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 473,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_BasesInss13Sal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 187,
+        "Top": 7
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_OcorrenciasAux",
+      "herdado": false,
+      "propriedades": {
+        "Left": 83,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_GPSSefipSaldo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 253,
+        "Top": 2
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FGTS",
+      "herdado": false,
+      "propriedades": {
+        "Left": 16,
+        "Top": 6
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FGTSCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FGTSANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_FGTSLIQUIDOCOMPETENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIQUIDOCOMPETENCIA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 10,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

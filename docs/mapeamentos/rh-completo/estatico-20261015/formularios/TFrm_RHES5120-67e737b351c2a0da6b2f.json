@@ -1,0 +1,254 @@
+{
+  "classe": "TFrm_RHES5120",
+  "nome": "Frm_RHES5120",
+  "herdado": true,
+  "propriedades": {
+    "Left": 341,
+    "Top": 244,
+    "Caption": "Transmissores",
+    "ClientHeight": 424,
+    "ClientWidth": 627
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 627,
+        "Height": 424,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 342,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 342,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Bvl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 360,
+            "Width": 242,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 72,
+            "Top": 359,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 347,
+            "Top": 342,
+            "Width": 82,
+            "Height": 13,
+            "Caption": "Tipo de Inscrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 453,
+            "Top": 342,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Inscrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 384,
+            "Top": 289,
+            "Width": 57,
+            "Height": 21,
+            "TabOrder": 4,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Transmissores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 619,
+            "Height": 334,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_Transmissores",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_TransmissoresEnter",
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Title.Caption": "Empresa",
+                "Width": 76,
+                "Visible": true
+              },
+              {
+                "FieldName": "RAZAOSOCIAL",
+                "Title.Caption": "Descrição",
+                "Width": 250,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAOTIPO",
+                "Title.Caption": "Tipo de Inscrição",
+                "Width": 90,
+                "Visible": true
+              },
+              {
+                "FieldName": "INSCRICAOSEMMASCARA",
+                "Title.Caption": "Inscrição",
+                "Width": 166,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 360,
+            "Width": 56,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_EmpresaExit",
+            "OnKeyPress": "Edt_EmpresaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_TipoInscricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 347,
+            "Top": 360,
+            "Width": 103,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOINSCRICAOTRANSMISSOR",
+            "DataSource": "Dts_Transmissores",
+            "TabOrder": 2,
+            "OnChange": "Dbc_TipoInscricaoChange",
+            "OnEnter": "Dbc_TipoInscricaoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Inscricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 453,
+            "Top": 360,
+            "Width": 158,
+            "Height": 21,
+            "DataField": "INSCRICAOTRANSMISSOR",
+            "DataSource": "Dts_Transmissores",
+            "MaxLength": 16,
+            "TabOrder": 3,
+            "OnEnter": "Dbe_InscricaoEnter",
+            "OnExit": "Dbe_InscricaoExit",
+            "OnKeyPress": "Dbe_InscricaoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TButton",
+          "nome": "Btn_AdicionarTransmissorMultiplasEmpresas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 388,
+            "Width": 272,
+            "Height": 25,
+            "Caption": "Inclusão de Transmissor para Múltiplas Empresas",
+            "TabOrder": 5,
+            "OnClick": "Btn_AdicionarTransmissorMultiplasEmpresasClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 494,
+        "Top": 56
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Transmissores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 285,
+        "Top": 204
+      },
+      "filhos": []
+    }
+  ]
+}

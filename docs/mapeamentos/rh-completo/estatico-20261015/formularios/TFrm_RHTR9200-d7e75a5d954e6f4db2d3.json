@@ -1,0 +1,3318 @@
+{
+  "classe": "TFrm_RHTR9200",
+  "nome": "Frm_RHTR9200",
+  "herdado": true,
+  "propriedades": {
+    "Left": 507,
+    "Top": 163,
+    "Width": 800,
+    "Height": 503,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Registro de Treinamento de Atividades"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_PessoaAtividades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 464,
+        "ActivePage": "Tbs_Pessoas",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "TabStop": false,
+        "OnChange": "Pgc_PessoaAtividadesChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Pessoas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Pessoa",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_PessoaPessoaAtividade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 243,
+                "Width": 776,
+                "Height": 193,
+                "ActivePage": "Tbs_PessoaAvaliacao",
+                "Align": "alBottom",
+                "TabOrder": 0,
+                "TabStop": false,
+                "OnChange": "Pgc_PessoaPessoaAtividadeChange",
+                "OnEnter": "Pgc_PessoaPessoaAtividadeEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_PessoaObjetivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Objetivos",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_Objetivo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 165,
+                        "Align": "alClient",
+                        "DataField": "OBJETIVOCURSO",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 800,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_PessoaInstrutores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Instrutores",
+                    "ImageIndex": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 122,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Instrutor"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 86,
+                        "Top": 122,
+                        "Width": 28,
+                        "Height": 13,
+                        "Caption": "Nome"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 397,
+                        "Top": 2,
+                        "Width": 63,
+                        "Height": 13,
+                        "Caption": "Observações"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_PessoaInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 57,
+                        "Top": 139,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_PessoaDescInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 85,
+                        "Top": 139,
+                        "Width": 282,
+                        "Height": 21,
+                        "Caption": "Descrição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_PessoaInstObs",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 397,
+                        "Top": 20,
+                        "Width": 368,
+                        "Height": 143,
+                        "DataField": "TEXTOPADRAO",
+                        "DataSource": "Dts_PessoaInstrutores",
+                        "MaxLength": 800,
+                        "TabOrder": 2,
+                        "OnEnter": "Mmo_PessoaInstObsEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_PessoaInstrutores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 392,
+                        "Height": 116,
+                        "TabStop": false,
+                        "DataSource": "Dts_PessoaInstrutores",
+                        "TabOrder": 0,
+                        "OnEnter": "Dbg_AtividadePessoasEnter",
+                        "Columns": [
+                          {
+                            "FieldName": "INSTRUTOR",
+                            "Width": 63,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NomeInstrutor",
+                            "Width": 294,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 139,
+                        "Width": 48,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 1,
+                        "OnExit": "Edt_PessoaInstrutorExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaInstAux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 367,
+                        "Top": 140,
+                        "Width": 16,
+                        "Height": 21,
+                        "BorderStyle": "bsNone",
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_PessoaInstAuxEnter"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_PessoaAvaliacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Avaliação",
+                    "ImageIndex": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 68,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Avaliação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label23",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 32,
+                        "Width": 50,
+                        "Height": 26,
+                        "Caption": "Escala de Avaliação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_PessoaEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 103,
+                        "Top": 36,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_PessoaDescEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 129,
+                        "Top": 40,
+                        "Width": 202,
+                        "Height": 13,
+                        "Caption": "desc. da escala"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 96,
+                        "Width": 33,
+                        "Height": 13,
+                        "Caption": "Status:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 333,
+                        "Top": 2,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Observações:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Cmb_PessoaAvaliacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 62,
+                        "Width": 119,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "ITEM_AVALIACAO",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "TabOrder": 1,
+                        "OnEnter": "Cmb_PessoaAvaliacaoEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 36,
+                        "Width": 39,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 0,
+                        "OnExit": "Edt_PessoaEscalaAvalExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Cmb_PessoaStatusAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 90,
+                        "Width": 119,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "STATUSATIVIDADE",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_PessoaObservacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 333,
+                        "Top": 19,
+                        "Width": 432,
+                        "Height": 143,
+                        "DataField": "TEXTOPADRAO",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 800,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_PessoaHoraMes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Horas/Mês",
+                    "ImageIndex": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 170,
+                        "Top": 0,
+                        "Width": 598,
+                        "Height": 165,
+                        "Align": "alClient",
+                        "Caption": "Horas/Mês Treinamento dos Instrutores",
+                        "TabOrder": 1,
+                        "OnEnter": "GroupBox1Enter",
+                        "OnExit": "GroupBox1Exit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label27",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 119,
+                            "Width": 44,
+                            "Height": 13,
+                            "Caption": "Mês/Ano"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label28",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 481,
+                            "Top": 119,
+                            "Width": 65,
+                            "Height": 13,
+                            "Caption": "Carga Horária"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label29",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 542,
+                            "Top": 140,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Horas"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Lbl_PessoaMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 160,
+                            "Top": 136,
+                            "Width": 320,
+                            "Height": 21,
+                            "Caption": "Lbl_PessoaMesAnoInst"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_PessoaMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 133,
+                            "Top": 136,
+                            "Width": 22,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label55",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 157,
+                            "Top": 119,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Nome"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label58",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 68,
+                            "Top": 119,
+                            "Width": 38,
+                            "Height": 13,
+                            "Caption": "Instrutor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_PessoaHorasInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 594,
+                            "Height": 97,
+                            "TabStop": false,
+                            "Align": "alTop",
+                            "DataSource": "Dts_PessoaAtivInstHoras",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbg_AtividadePessoasEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "MESANO",
+                                "Title.Caption": "Mês/Ano",
+                                "Width": 75,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "INSTRUTOR",
+                                "Title.Caption": "Instrutor",
+                                "Width": 75,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "NomeInstrutor",
+                                "Title.Caption": "Nome",
+                                "Width": 312,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CAR_HORARIA",
+                                "Title.Caption": "Carga Horária",
+                                "Width": 95,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_PessoaCarHorariaInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 481,
+                            "Top": 136,
+                            "Width": 59,
+                            "Height": 21,
+                            "DataField": "CAR_HORARIA",
+                            "DataSource": "Dts_PessoaAtivInstHoras",
+                            "MaxLength": 5,
+                            "TabOrder": 3,
+                            "OnEnter": "Dbe_PessoaCarHorariaInstEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Msk_PessoaMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 136,
+                            "Width": 50,
+                            "Height": 21,
+                            "EditMask": "99/9999;1; ",
+                            "MaxLength": 7,
+                            "TabOrder": 1,
+                            "OnExit": "Msk_PessoaMesAnoInstExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_PessoaMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 68,
+                            "Top": 136,
+                            "Width": 64,
+                            "Height": 21,
+                            "MaxLength": 4,
+                            "TabOrder": 2,
+                            "OnExit": "Edt_AtividadeMesAnoInstExit",
+                            "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_PesssoaMesAnoInstAux",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 566,
+                            "Top": 117,
+                            "Width": 19,
+                            "Height": 19,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 4,
+                            "OnEnter": "Edt_PesssoaMesAnoInstAuxEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 170,
+                        "Height": 165,
+                        "Align": "alLeft",
+                        "Caption": "Horas/Mês Treinamento ",
+                        "TabOrder": 0,
+                        "OnEnter": "GroupBox2Enter",
+                        "OnExit": "GroupBox2Exit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label30",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 119,
+                            "Width": 44,
+                            "Height": 13,
+                            "Caption": "Mês/Ano"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label36",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 69,
+                            "Top": 119,
+                            "Width": 65,
+                            "Height": 13,
+                            "Caption": "Carga Horária"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label37",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 129,
+                            "Top": 140,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Horas"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_PessoaHoraMes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 166,
+                            "Height": 97,
+                            "TabStop": false,
+                            "Align": "alTop",
+                            "DataSource": "Dts_PessoaAtivHoras",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbg_AtividadePessoasEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "MESANO",
+                                "Title.Caption": "Mês/Ano",
+                                "Width": 56,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CAR_HORARIA",
+                                "Width": 76,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Msk_PessoaMesAno",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 136,
+                            "Width": 50,
+                            "Height": 21,
+                            "EditMask": "99/9999;1; ",
+                            "MaxLength": 7,
+                            "TabOrder": 1,
+                            "OnExit": "Msk_PessoaMesAnoExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_PessoaCarHoraria",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 69,
+                            "Top": 136,
+                            "Width": 58,
+                            "Height": 21,
+                            "DataField": "CAR_HORARIA",
+                            "DataSource": "Dts_PessoaAtivHoras",
+                            "MaxLength": 5,
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AuxPessoaMesAno",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 147,
+                            "Top": 121,
+                            "Width": 4,
+                            "Height": 16,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 3,
+                            "OnEnter": "Edt_AuxPessoaMesAnoEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_PessoaTreinamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Cursos Necessários para Execução da Atividade",
+                    "ImageIndex": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_PessoaTreinamento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 165,
+                        "TabStop": false,
+                        "Align": "alClient",
+                        "DataSource": "Dts_PessoaTreinamentos",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "CURSO",
+                            "Title.Caption": "Curso",
+                            "Width": 117,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCCURSO",
+                            "Title.Caption": "Descrição",
+                            "Width": 261,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCNEC",
+                            "Title.Caption": "Necessidade",
+                            "Width": 94,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCSITUACAOCURSO",
+                            "Title.Caption": "Situação",
+                            "Width": 98,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "INICIO",
+                            "Title.Caption": "Início",
+                            "Width": 88,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CAR_HORARIA",
+                            "Title.Caption": "Carga Horária",
+                            "Width": 74,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 776,
+                "Height": 44,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 13,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Pessoa:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_NomePessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 200,
+                    "Top": 13,
+                    "Width": 28,
+                    "Height": 13,
+                    "Caption": "Nome"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TFiltroPessoa",
+                  "nome": "FiltroPessoa1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 125,
+                    "Top": 9,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "FiltroPessoa1Click"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHLocalizarPessoa",
+                  "nome": "Btn_Pessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 147,
+                    "Top": 9,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_PessoaPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 54,
+                    "Top": 9,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_PessoaPessoaChange",
+                    "OnExit": "Edt_PessoaPessoaExit",
+                    "OnKeyPress": "Edt_PessoaPessoaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TFrmTrocaContrato",
+                  "nome": "FrmTrocaContrato",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 392,
+                    "Top": 3,
+                    "Width": 336,
+                    "Height": 35,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 44,
+                "Width": 776,
+                "Height": 199,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_PessoaAtividade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 768,
+                    "Height": 112,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_PessoaProcessoAtividades",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbg_AtividadePessoasEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "PROCESSO",
+                        "Width": 71,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescProcesso",
+                        "Title.Caption": "Descrição",
+                        "Width": 257,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescRevisao",
+                        "Width": 90,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ATIVIDADE",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescAtividade",
+                        "Title.Caption": "Descrição",
+                        "Width": 276,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DT_INICIO",
+                        "Title.Caption": "Início",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DT_ENCERRA",
+                        "Title.Caption": "Término",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CAR_HORARIA",
+                        "Title.Caption": "Car. Horária",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescItemAval",
+                        "Title.Caption": "Avaliação",
+                        "Width": 116,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 114,
+                    "Width": 768,
+                    "Height": 79,
+                    "Align": "alBottom",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 2,
+                        "Width": 44,
+                        "Height": 13,
+                        "Caption": "Processo"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 386,
+                        "Top": 2,
+                        "Width": 39,
+                        "Height": 13,
+                        "Caption": "Revisão"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_PessoaProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 77,
+                        "Top": 16,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_PessoaDescProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 105,
+                        "Top": 16,
+                        "Width": 274,
+                        "Height": 21,
+                        "Caption": "Descrição do Processo"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_PessoaRevisaoProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 442,
+                        "Top": 16,
+                        "Width": 74,
+                        "Height": 21,
+                        "Caption": "Lbl_PessoaRevisaoProcesso"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_PessoaRevisaoProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 414,
+                        "Top": 16,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 41,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "Início"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 505,
+                        "Top": 41,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Término"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 597,
+                        "Top": 41,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Car. Horária"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 665,
+                        "Top": 41,
+                        "Width": 47,
+                        "Height": 13,
+                        "Caption": "Avaliação"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 41,
+                        "Width": 44,
+                        "Height": 13,
+                        "Caption": "Atividade"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_PessoDtInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 430,
+                        "Top": 54,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_PessoDtFim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 571,
+                        "Top": 54,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Edt_PessoaAvaliacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 665,
+                        "Top": 55,
+                        "Width": 97,
+                        "Height": 21
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_PessoaNovaAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 338,
+                        "Top": 54,
+                        "Width": 23,
+                        "Height": 22,
+                        "Action": "Act_Novo",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_PessoaAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 77,
+                        "Top": 55,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_PessoaDescAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 105,
+                        "Top": 55,
+                        "Width": 228,
+                        "Height": 21,
+                        "Caption": "Descrição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 457,
+                        "Top": 41,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Duração"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaRevisaoProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 386,
+                        "Top": 16,
+                        "Width": 27,
+                        "Height": 21,
+                        "MaxLength": 3,
+                        "TabOrder": 1,
+                        "OnExit": "Edt_PessoaRevisaoProcessoExit",
+                        "OnKeyPress": "Edt_PessoaRevisaoProcessoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaProcesso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 16,
+                        "Width": 69,
+                        "Height": 21,
+                        "MaxLength": 12,
+                        "TabOrder": 0,
+                        "OnExit": "Edt_PessoaProcessoExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_PessoaDtInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 364,
+                        "Top": 55,
+                        "Width": 65,
+                        "Height": 21,
+                        "DataField": "DT_INICIO",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 10,
+                        "TabOrder": 3,
+                        "OnEnter": "Msk_PessoaDtInicioEnter",
+                        "OnExit": "Msk_PessoaDtInicioExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_PessoaDtFim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 505,
+                        "Top": 55,
+                        "Width": 65,
+                        "Height": 21,
+                        "DataField": "DT_ENCERRA",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 10,
+                        "TabOrder": 5,
+                        "OnEnter": "Msk_PessoaDtInicioEnter",
+                        "OnExit": "Msk_PessoaDtInicioExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_PessoaCarHoraria",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 597,
+                        "Top": 55,
+                        "Width": 64,
+                        "Height": 21,
+                        "DataField": "CAR_HORARIA",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 5,
+                        "TabOrder": 6,
+                        "OnEnter": "Msk_PessoaDtInicioEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_PessoaAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 55,
+                        "Width": 69,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 2,
+                        "OnExit": "Edt_PessoaAtividadeExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AuxPessoProcessoAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 686,
+                        "Top": 59,
+                        "Width": 27,
+                        "Height": 17,
+                        "BorderStyle": "bsNone",
+                        "TabOrder": 7,
+                        "OnEnter": "Edt_AuxPessoProcessoAtividadeEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBEdt_CAR_HORARIA",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 457,
+                        "Top": 56,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "DURACAO",
+                        "DataSource": "Dts_PessoaProcessoAtividades",
+                        "MaxLength": 5,
+                        "TabOrder": 4,
+                        "OnEnter": "Msk_PessoaDtInicioEnter"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Atividades",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Atividade"
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_AtividadePessoaAtividade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 243,
+                "Width": 776,
+                "Height": 193,
+                "ActivePage": "Tbs_AtividadeAvaliacao",
+                "Align": "alBottom",
+                "TabOrder": 0,
+                "TabStop": false,
+                "OnChange": "Pgc_AtividadePessoaAtividadeChange",
+                "OnEnter": "Pgc_PessoaPessoaAtividadeEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_AtividadeObjetivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Objetivos",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_AtividadeObjetivo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 165,
+                        "Align": "alClient",
+                        "DataField": "OBJETIVOCURSO",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "MaxLength": 800,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_AtividadeInstrutor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Instrutores",
+                    "ImageIndex": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 122,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Instrutor"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 83,
+                        "Top": 122,
+                        "Width": 28,
+                        "Height": 13,
+                        "Caption": "Nome"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label32",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 397,
+                        "Top": 2,
+                        "Width": 63,
+                        "Height": 13,
+                        "Caption": "Observações"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_AtividadeInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 57,
+                        "Top": 139,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_AtividadeDescInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 85,
+                        "Top": 139,
+                        "Width": 278,
+                        "Height": 21,
+                        "Caption": "Descrição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_AtividadeInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 397,
+                        "Top": 20,
+                        "Width": 368,
+                        "Height": 143,
+                        "DataField": "TEXTOPADRAO",
+                        "DataSource": "Dts_PessoaInstrutores",
+                        "MaxLength": 800,
+                        "TabOrder": 2,
+                        "OnEnter": "Mmo_AtividadeInstrutorEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_AtividadeInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 392,
+                        "Height": 116,
+                        "TabStop": false,
+                        "DataSource": "Dts_PessoaInstrutores",
+                        "TabOrder": 0,
+                        "OnEnter": "Dbg_AtividadePessoasEnter",
+                        "Columns": [
+                          {
+                            "FieldName": "INSTRUTOR",
+                            "Width": 63,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NomeInstrutor",
+                            "Width": 294,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AtividadeInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 139,
+                        "Width": 48,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 1,
+                        "OnExit": "Edt_PessoaInstrutorExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AuxAtividadeInstrutor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 140,
+                        "Width": 16,
+                        "Height": 21,
+                        "BorderStyle": "bsNone",
+                        "TabOrder": 3,
+                        "OnEnter": "Edt_PessoaInstAuxEnter"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_AtividadeAvaliacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Avaliação",
+                    "ImageIndex": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 68,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Avaliação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label31",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 32,
+                        "Width": 50,
+                        "Height": 26,
+                        "Caption": "Escala de Avaliação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_AtividadeEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 103,
+                        "Top": 36,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_AtividadeEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 129,
+                        "Top": 40,
+                        "Width": 202,
+                        "Height": 13,
+                        "Caption": "desc. da escala"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label33",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 96,
+                        "Width": 33,
+                        "Height": 13,
+                        "Caption": "Status:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label34",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 333,
+                        "Top": 2,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Observações:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Cmb_AtividadeAvaliacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 62,
+                        "Width": 119,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "ITEM_AVALIACAO",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "TabOrder": 1,
+                        "OnEnter": "Cmb_AtividadeAvaliacaoEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AtividadeEscalaAval",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 36,
+                        "Width": 39,
+                        "Height": 21,
+                        "MaxLength": 4,
+                        "TabOrder": 0,
+                        "OnExit": "Edt_AtividadeEscalaAvalExit",
+                        "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Cmb_AtividadeStatusAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 63,
+                        "Top": 90,
+                        "Width": 119,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "STATUSATIVIDADE",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "Items.Strings": [
+                          "Aprovado",
+                          "Reprovado",
+                          "Programado",
+                          "Cancelado"
+                        ],
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Mmo_AtividadeObservacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 333,
+                        "Top": 19,
+                        "Width": 432,
+                        "Height": 143,
+                        "DataField": "TEXTOPADRAO",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "MaxLength": 800,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_AtividadeHoraMes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Horas/Mês",
+                    "ImageIndex": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 170,
+                        "Top": 0,
+                        "Width": 598,
+                        "Height": 165,
+                        "Align": "alClient",
+                        "Caption": "Horas/Mês Treinamento dos Instrutores ",
+                        "TabOrder": 1,
+                        "OnEnter": "GroupBox1Enter",
+                        "OnExit": "GroupBox4Exit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label38",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 119,
+                            "Width": 44,
+                            "Height": 13,
+                            "Caption": "Mês/Ano"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label41",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 497,
+                            "Top": 119,
+                            "Width": 65,
+                            "Height": 13,
+                            "Caption": "Carga Horária"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label42",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 557,
+                            "Top": 140,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Horas"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Lbl_AtividadeMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 161,
+                            "Top": 136,
+                            "Width": 320,
+                            "Height": 21,
+                            "Caption": "Lbl_PessoaMesAnoInst"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_AtividadeMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 133,
+                            "Top": 136,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label56",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 167,
+                            "Top": 119,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Nome"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label59",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 68,
+                            "Top": 119,
+                            "Width": 38,
+                            "Height": 13,
+                            "Caption": "Instrutor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_AtividadeHoraMesInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 594,
+                            "Height": 97,
+                            "TabStop": false,
+                            "Align": "alTop",
+                            "DataSource": "Dts_PessoaAtivInstHoras",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "MESANO",
+                                "Title.Caption": "Mês/Ano",
+                                "Width": 75,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "INSTRUTOR",
+                                "Title.Caption": "Instrutor",
+                                "Width": 75,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "NomeInstrutor",
+                                "Title.Caption": "Nome",
+                                "Width": 312,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CAR_HORARIA",
+                                "Title.Caption": "Carga Horária",
+                                "Width": 95,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_AtividadeCarHorariaInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 499,
+                            "Top": 136,
+                            "Width": 57,
+                            "Height": 21,
+                            "DataField": "CAR_HORARIA",
+                            "DataSource": "Dts_PessoaAtivInstHoras",
+                            "MaxLength": 5,
+                            "TabOrder": 3,
+                            "OnEnter": "Dbe_AtividadeCarHorariaInstEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Msk_AtividadeMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 136,
+                            "Width": 50,
+                            "Height": 21,
+                            "EditMask": "99/9999;1; ",
+                            "MaxLength": 7,
+                            "TabOrder": 1,
+                            "OnExit": "Msk_PessoaMesAnoInstExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AtividadeMesAnoInst",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 68,
+                            "Top": 136,
+                            "Width": 64,
+                            "Height": 21,
+                            "MaxLength": 4,
+                            "TabOrder": 2,
+                            "OnExit": "Edt_AtividadeMesAnoInstExit",
+                            "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AtividadeMesAnoInstAux",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 567,
+                            "Top": 121,
+                            "Width": 24,
+                            "Height": 20,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 4,
+                            "OnEnter": "Edt_AtividadeMesAnoInstAuxEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Gbd_AtividadeHoraMes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 170,
+                        "Height": 165,
+                        "Align": "alLeft",
+                        "Caption": "Horas/Mês Treinamento ",
+                        "TabOrder": 0,
+                        "OnEnter": "Gbd_AtividadeHoraMesEnter",
+                        "OnExit": "Gbd_AtividadeHoraMesExit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label39",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 119,
+                            "Width": 44,
+                            "Height": 13,
+                            "Caption": "Mês/Ano"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label40",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 69,
+                            "Top": 119,
+                            "Width": 65,
+                            "Height": 13,
+                            "Caption": "Carga Horária"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label43",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 130,
+                            "Top": 140,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Horas"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbg_AtividadeHorasMes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 2,
+                            "Top": 15,
+                            "Width": 166,
+                            "Height": 97,
+                            "TabStop": false,
+                            "Align": "alTop",
+                            "DataSource": "Dts_PessoaAtivHoras",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbg_AtividadePessoasEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "MESANO",
+                                "Title.Caption": "Mês/Ano",
+                                "Width": 56,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CAR_HORARIA",
+                                "Width": 76,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "Msk_AtividadeMesAno",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 136,
+                            "Width": 48,
+                            "Height": 21,
+                            "EditMask": "99/9999;1; ",
+                            "MaxLength": 7,
+                            "TabOrder": 1,
+                            "OnExit": "Msk_PessoaMesAnoExit"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_AtividadeCarHoraria",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 69,
+                            "Top": 136,
+                            "Width": 58,
+                            "Height": 21,
+                            "DataField": "CAR_HORARIA",
+                            "DataSource": "Dts_PessoaAtivHoras",
+                            "MaxLength": 5,
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AuxAtividadeMesAno",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 141,
+                            "Top": 117,
+                            "Width": 20,
+                            "Height": 18,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 3,
+                            "OnEnter": "Edt_AuxPessoaMesAnoEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_AtividadeTreinamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Cursos Necessários para Execução da Atividade",
+                    "ImageIndex": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_AtividadeTreinamento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 165,
+                        "TabStop": false,
+                        "Align": "alClient",
+                        "DataSource": "Dts_AtividadeTreinamentos",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "CURSO",
+                            "Title.Caption": "Curso",
+                            "Width": 117,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCCURSO",
+                            "Title.Caption": "Descrição",
+                            "Width": 261,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCNEC",
+                            "Title.Caption": "Necessidade",
+                            "Width": 94,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCSITUACAOCURSO",
+                            "Title.Caption": "Situação",
+                            "Width": 98,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "INICIO",
+                            "Title.Caption": "Início",
+                            "Width": 88,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CAR_HORARIA",
+                            "Title.Caption": "Carga Horária",
+                            "Width": 74,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 776,
+                "Height": 63,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 38,
+                    "Width": 47,
+                    "Height": 13,
+                    "Caption": "Atividade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_AtividadeAtividade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 34,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_AtividadeDescAtividade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 38,
+                    "Width": 110,
+                    "Height": 13,
+                    "Caption": "Descrição da Atividade"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 11,
+                    "Width": 47,
+                    "Height": 13,
+                    "Caption": "Processo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_AtividadeProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 152,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_AtividadeDescProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 180,
+                    "Top": 11,
+                    "Width": 110,
+                    "Height": 13,
+                    "Caption": "Descrição do Processo"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label21",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 503,
+                    "Top": 11,
+                    "Width": 42,
+                    "Height": 13,
+                    "Caption": "Revisão:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_AtividadeRevisaoProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 603,
+                    "Top": 11,
+                    "Width": 80,
+                    "Height": 13,
+                    "Caption": "Lbl_AtividadeRevisaoProcesso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_AtividadeRevisaoProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 575,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_AtividadeFiltroProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 129,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "ShowHint": true,
+                    "OnClick": "Btn_AtividadeFiltroProcessoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AtividadeAtividade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 34,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_AtividadeAtividadeEnter",
+                    "OnExit": "Edt_AtividadeAtividadeExit",
+                    "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AtividadeProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 7,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_AtividadeProcessoExit",
+                    "OnKeyPress": "Edt_PessoaEscalaAvalKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AtividadeRevisaoProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 547,
+                    "Top": 7,
+                    "Width": 27,
+                    "Height": 21,
+                    "MaxLength": 3,
+                    "TabOrder": 1,
+                    "OnExit": "Edt_AtividadeRevisaoProcessoExit",
+                    "OnKeyPress": "Edt_PessoaRevisaoProcessoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 63,
+                "Width": 776,
+                "Height": 180,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_AtividadePessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 768,
+                    "Height": 130,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_AtividadeProcessoAtividade",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbg_AtividadePessoasEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "PESSOA",
+                        "Width": 68,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NomePessoa",
+                        "Width": 303,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DT_INICIO",
+                        "Title.Caption": "Início",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DT_ENCERRA",
+                        "Title.Caption": "Término",
+                        "Width": 81,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CAR_HORARIA",
+                        "Title.Caption": "Car. Horária",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescItemAval",
+                        "Title.Caption": "Avaliação",
+                        "Width": 116,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 132,
+                    "Width": 768,
+                    "Height": 42,
+                    "Align": "alBottom",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 398,
+                        "Top": 2,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "Início"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 490,
+                        "Top": 2,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Término"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 582,
+                        "Top": 2,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Car. Horária"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 650,
+                        "Top": 2,
+                        "Width": 47,
+                        "Height": 13,
+                        "Caption": "Avaliação"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 2,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Pessoa"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_AtividadeDtInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 464,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_AtividadeDtFim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 556,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_AtividadeAvaliacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 650,
+                        "Top": 18,
+                        "Width": 110,
+                        "Height": 21
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_AtividadeNovaPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 373,
+                        "Top": 17,
+                        "Width": 23,
+                        "Height": 22,
+                        "Action": "Act_Novo",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_AtividadePessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 73,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_AtividadeNomePessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 18,
+                        "Width": 274,
+                        "Height": 21,
+                        "Caption": "Nome"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_AtividadeDtFim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 490,
+                        "Top": 18,
+                        "Width": 65,
+                        "Height": 21,
+                        "DataField": "DT_ENCERRA",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "MaxLength": 10,
+                        "TabOrder": 2,
+                        "OnEnter": "Msk_AtividadeDtInicioEnter",
+                        "OnExit": "Msk_PessoaDtInicioExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_AtividadeCarHoraria",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 582,
+                        "Top": 18,
+                        "Width": 64,
+                        "Height": 21,
+                        "DataField": "CAR_HORARIA",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "MaxLength": 7,
+                        "TabOrder": 3,
+                        "OnEnter": "Msk_AtividadeDtInicioEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_AtividadeDtInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 398,
+                        "Top": 18,
+                        "Width": 65,
+                        "Height": 21,
+                        "DataField": "DT_INICIO",
+                        "DataSource": "Dts_AtividadeProcessoAtividade",
+                        "TabOrder": 1,
+                        "OnEnter": "Msk_AtividadeDtInicioEnter",
+                        "OnExit": "Msk_PessoaDtInicioExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AuxAtividade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 735,
+                        "Top": 32,
+                        "Width": 8,
+                        "Height": 11,
+                        "BorderStyle": "bsNone",
+                        "TabOrder": 4,
+                        "OnEnter": "Edt_AuxAtividadeEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_AtividadePessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 18,
+                        "Width": 65,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 0,
+                        "OnExit": "Edt_AtividadePessoaExit",
+                        "OnKeyPress": "Edt_PessoaPessoaKeyPress"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Coletiva",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Coletiva",
+            "ImageIndex": 3
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_Coletiva",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 776,
+                "Height": 388,
+                "ActivePage": "Tbs_Selecao",
+                "Align": "alTop",
+                "Style": "tsButtons",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Opcoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Opções"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label44",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 19,
+                        "Top": 44,
+                        "Width": 47,
+                        "Height": 13,
+                        "Caption": "Atividade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "RHMetalocalizar13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 42,
+                        "Width": 21,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label45",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 165,
+                        "Top": 46,
+                        "Width": 110,
+                        "Height": 13,
+                        "Caption": "Descrição da Atividade"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label46",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 19,
+                        "Top": 20,
+                        "Width": 47,
+                        "Height": 13,
+                        "Caption": "Processo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "RHMetalocalizar14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 15,
+                        "Width": 21,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label47",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 166,
+                        "Top": 19,
+                        "Width": 110,
+                        "Height": 13,
+                        "Caption": "Descrição do Processo"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label48",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 532,
+                        "Top": 20,
+                        "Width": 42,
+                        "Height": 13,
+                        "Caption": "Revisão:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label49",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 19,
+                        "Top": 74,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Início:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label50",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 74,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Término:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label51",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 397,
+                        "Top": 74,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Car.Horária:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "MetaData6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 135,
+                        "Top": 68,
+                        "Width": 20,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "MetaData7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 334,
+                        "Top": 68,
+                        "Width": 20,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label52",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 116,
+                        "Width": 100,
+                        "Height": 13,
+                        "Caption": "Escala de Avaliação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "RHMetalocalizar15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 161,
+                        "Top": 113,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label53",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 189,
+                        "Top": 117,
+                        "Width": 75,
+                        "Height": 13,
+                        "Caption": "desc. da escala"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edit16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 71,
+                        "Top": 42,
+                        "Width": 67,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edit17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 72,
+                        "Top": 15,
+                        "Width": 67,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "ComboBox8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 576,
+                        "Top": 15,
+                        "Width": 119,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "MaskEdit6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 70,
+                        "Top": 69,
+                        "Width": 64,
+                        "Height": 21,
+                        "MaxLength": 10,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "MaskEdit7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 265,
+                        "Top": 69,
+                        "Width": 68,
+                        "Height": 21,
+                        "MaxLength": 10,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edit18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 457,
+                        "Top": 69,
+                        "Width": 50,
+                        "Height": 21,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edit19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 121,
+                        "Top": 113,
+                        "Width": 39,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 22,
+                        "Top": 160,
+                        "Width": 466,
+                        "Height": 148,
+                        "Caption": "Instrutores ",
+                        "TabOrder": 7
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label54",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 25,
+                            "Width": 41,
+                            "Height": 13,
+                            "Caption": "Instrutor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "RHMetalocalizar16",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 425,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edit20",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 63,
+                            "Top": 20,
+                            "Width": 361,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "BitBtn7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 48,
+                            "Width": 75,
+                            "Height": 25,
+                            "Caption": "Adicionar",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "BitBtn8",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 93,
+                            "Top": 48,
+                            "Width": 75,
+                            "Height": 25,
+                            "Caption": "Remover",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TListBox",
+                          "nome": "ListBox3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 14,
+                            "Top": 80,
+                            "Width": 439,
+                            "Height": 59,
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Seleção",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TFrmSelecaoLotacao",
+                      "nome": "FrmSelecaoLotacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 357,
+                        "Align": "alClient",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_IniciarInclusao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 395,
+                "Width": 139,
+                "Height": 25,
+                "Caption": "Iniciar Inclusão",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 735,
+        "Top": 387
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaProcessoAtividades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 619,
+        "Top": 387
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AtividadeProcessoAtividade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 648,
+        "Top": 387
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_List",
+      "herdado": false,
+      "propriedades": {
+        "Left": 619,
+        "Top": 358
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Novo",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovoExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaAtivHoras",
+      "herdado": false,
+      "propriedades": {
+        "Left": 677,
+        "Top": 387
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaInstrutores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 648,
+        "Top": 358
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaAtivInstHoras",
+      "herdado": false,
+      "propriedades": {
+        "Left": 677,
+        "Top": 358
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pup_FiltroProcesso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 706,
+        "Top": 387
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_Todos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Todos",
+            "Hint": "Todos os Processos",
+            "OnClick": "Mnm_TodosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ComTreinamento",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Somente com Treinamentos",
+            "Hint": "Somente os Processos com Treinamentos",
+            "OnClick": "Mnm_TodosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaTreinamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 735,
+        "Top": 358
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AtividadeTreinamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 706,
+        "Top": 358
+      },
+      "filhos": []
+    }
+  ]
+}

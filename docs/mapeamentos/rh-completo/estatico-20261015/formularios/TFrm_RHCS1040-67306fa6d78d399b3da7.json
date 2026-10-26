@@ -1,0 +1,900 @@
+{
+  "classe": "TFrm_RHCS1040",
+  "nome": "Frm_RHCS1040",
+  "herdado": true,
+  "propriedades": {
+    "Left": 532,
+    "Top": 225,
+    "Caption": "Itens de Custo",
+    "ClientHeight": 530,
+    "ClientWidth": 454
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Superior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 454,
+        "Height": 52,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Codigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 18,
+            "Width": 68,
+            "Height": 13,
+            "Caption": "Item de Custo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_ItemCusto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 157,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_SugerirCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 182,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Código Livre",
+            "ShowHint": true,
+            "OnClick": "Btn_SugerirCodigoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ItemCusto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 87,
+            "Top": 14,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_ItemCustoChange",
+            "OnExit": "Edt_ItemCustoExit",
+            "OnKeyPress": "Edt_ItemCustoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_Ativo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 394,
+            "Top": 17,
+            "Width": 45,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_ItensCustoOrcament",
+            "Enabled": false,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Inferior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 52,
+        "Width": 454,
+        "Height": 478,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 20,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 49,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Descrição Reduzida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 77,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Origem:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 17,
+            "Width": 318,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_ItensCustoOrcament",
+            "Enabled": false,
+            "TabOrder": 0,
+            "OnExit": "Dbe_DescricaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 45,
+            "Width": 318,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_ItensCustoOrcament",
+            "Enabled": false,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Origem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 73,
+            "Width": 185,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ORIGEMVALORORCAMENTACAO",
+            "DataSource": "Dts_ItensCustoOrcament",
+            "Enabled": false,
+            "TabOrder": 2,
+            "OnChange": "Dbc_OrigemChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Gbx_Composicao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 104,
+            "Width": 422,
+            "Height": 357,
+            "Caption": " Composição do Item de Custo ",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 29,
+                "Width": 42,
+                "Height": 13,
+                "Caption": "Revisão:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Novo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 209,
+                "Top": 24,
+                "Width": 23,
+                "Height": 22,
+                "Enabled": false,
+                "OnClick": "Btn_NovoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Transferir",
+              "herdado": false,
+              "propriedades": {
+                "Left": 234,
+                "Top": 24,
+                "Width": 23,
+                "Height": 22,
+                "Enabled": false,
+                "OnClick": "Btn_TransferirClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Gbx_CustosReal",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 54,
+                "Width": 392,
+                "Height": 181,
+                "Caption": " Fórmula para Estimativa de Custo Real ",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 19,
+                    "Width": 198,
+                    "Height": 13,
+                    "Caption": "Expressão Aritmética para o Planejamento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_LupaVariavelCustoRealPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 211,
+                    "Top": 12,
+                    "Width": 80,
+                    "Height": 25,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "Caption": "Variável",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_LupaVDBCustoRealPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 293,
+                    "Top": 12,
+                    "Width": 80,
+                    "Height": 25,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "Caption": "VDB",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_LupaVariavelCustoRealAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 310,
+                    "Top": 93,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_LupaVDBCustoRealAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 342,
+                    "Top": 93,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 99,
+                    "Width": 220,
+                    "Height": 13,
+                    "Caption": "Expressão Aritmética para o Acompanhamento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxLupaPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 264,
+                    "Top": 64,
+                    "Width": 109,
+                    "Height": 21,
+                    "TabStop": false,
+                    "TabOrder": 3,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_EstCustRealPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 35,
+                    "Width": 362,
+                    "Height": 22,
+                    "DataField": "EXPRESSAOARITMETICAREAL",
+                    "DataSource": "Dts_ItensCurstoRevisoes",
+                    "Enabled": false,
+                    "MaxLength": 500,
+                    "TabOrder": 0,
+                    "OnChange": "Dbm_EstCustRealPlanChange",
+                    "OnEnter": "Dbm_EstCustRealPlanEnter",
+                    "OnExit": "Dbm_EstCustRealPlanExit",
+                    "OnKeyPress": "Dbm_EstCustRealPlanKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_VariavelCustoRealPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 61,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "Variável",
+                    "Enabled": false,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_VariavelCustoRealPlanClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_VDBCustoRealPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 130,
+                    "Top": 61,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "VDB",
+                    "Enabled": false,
+                    "TabOrder": 2,
+                    "OnClick": "Btn_VDBCustoRealPlanClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_VariavelCustoRealAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 141,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "Variável",
+                    "Enabled": false,
+                    "TabOrder": 5,
+                    "OnClick": "Btn_VariavelCustoRealAcompClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_VDBCustoRealAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 130,
+                    "Top": 141,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "VDB",
+                    "Enabled": false,
+                    "TabOrder": 6,
+                    "OnClick": "Btn_VDBCustoRealAcompClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxLupaAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 256,
+                    "Top": 141,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 7,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_EstCustRealAcomp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 116,
+                    "Width": 362,
+                    "Height": 22,
+                    "DataField": "EXPRESSAOARITMETICAREALACOMP",
+                    "DataSource": "Dts_ItensCurstoRevisoes",
+                    "Enabled": false,
+                    "MaxLength": 500,
+                    "TabOrder": 4,
+                    "OnChange": "Dbm_EstCustRealAcompChange",
+                    "OnEnter": "Dbm_EstCustRealAcompEnter",
+                    "OnExit": "Dbm_EstCustRealAcompExit",
+                    "OnKeyPress": "Dbm_EstCustRealAcompKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Gbx_CustosProv",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 245,
+                "Width": 392,
+                "Height": 98,
+                "Caption": " Fórmula para Estimativa de Custo Provisionado ",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 19,
+                    "Width": 98,
+                    "Height": 13,
+                    "Caption": "Expressão Aritmética"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_VariavelAuxProvis",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 303,
+                    "Top": 8,
+                    "Width": 80,
+                    "Height": 25,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "Caption": "Variável",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_SalarioPlan",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 130,
+                    "Top": 61,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "Salário Planejado",
+                    "Enabled": false,
+                    "TabOrder": 2,
+                    "OnClick": "Btn_SalarioPlanClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_EstCustProv",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 35,
+                    "Width": 362,
+                    "Height": 22,
+                    "DataField": "EXPRESSAOARITMETICAPROVISIONAD",
+                    "DataSource": "Dts_ItensCurstoRevisoes",
+                    "Enabled": false,
+                    "MaxLength": 500,
+                    "TabOrder": 0,
+                    "OnChange": "Dbm_EstCustProvChange",
+                    "OnEnter": "Dbm_EstCustProvEnter",
+                    "OnExit": "Dbm_EstCustProvExit",
+                    "OnKeyPress": "Dbm_EstCustProvKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "btn_Variavel_Provis",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 61,
+                    "Width": 110,
+                    "Height": 25,
+                    "Caption": "Variável",
+                    "Enabled": false,
+                    "TabOrder": 1,
+                    "OnClick": "btn_Variavel_ProvisClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxLupaProvis",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 256,
+                    "Top": 60,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabStop": false,
+                    "TabOrder": 3,
+                    "Visible": false
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cmb_Revisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 25,
+                "Width": 145,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "Enabled": false,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_RevisoesAux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 296,
+                "Top": 248,
+                "Width": 0,
+                "Height": 21,
+                "TabOrder": 3,
+                "OnEnter": "Edt_RevisoesAuxEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_HintCustoRealPlan",
+      "herdado": false,
+      "propriedades": {
+        "Left": 47,
+        "Top": 228,
+        "Width": 270,
+        "Height": 17,
+        "TabOrder": 2,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 268,
+            "Height": 13,
+            "Align": "alTop",
+            "Caption": "Expressão Aritmética"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 14,
+            "Width": 268,
+            "Height": 2,
+            "Align": "alTop"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TListBox",
+          "nome": "Lst_HintCustoRealPlan",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 16,
+            "Width": 268,
+            "Height": 0,
+            "Align": "alClient",
+            "BorderStyle": "bsNone",
+            "Items.Strings": [
+              "Teste"
+            ],
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_HintCustoRealAcomp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 47,
+        "Top": 309,
+        "Width": 270,
+        "Height": 17,
+        "TabOrder": 3,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 268,
+            "Height": 13,
+            "Align": "alTop",
+            "Caption": "Expressão Aritmética"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label9",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 14,
+            "Width": 268,
+            "Height": 2,
+            "Align": "alTop"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TListBox",
+          "nome": "Lst_HintCustoRealAcomp",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 16,
+            "Width": 268,
+            "Height": 0,
+            "Align": "alClient",
+            "BorderStyle": "bsNone",
+            "Items.Strings": [
+              "Teste"
+            ],
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 3
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_HintProvisionado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 47,
+        "Top": 419,
+        "Width": 270,
+        "Height": 17,
+        "TabOrder": 4,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 268,
+            "Height": 13,
+            "Align": "alTop",
+            "Caption": "Expressão Aritmética"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 14,
+            "Width": 268,
+            "Height": 2,
+            "Align": "alTop"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TListBox",
+          "nome": "Lst_HintProvisionado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 16,
+            "Width": 268,
+            "Height": 0,
+            "Align": "alClient",
+            "BorderStyle": "bsNone",
+            "Items.Strings": [
+              "Teste"
+            ],
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 4
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 236,
+        "Top": 64
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItensCustoOrcament",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItensCurstoRevisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 304,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_HintCustoRealPlan",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 340,
+        "Top": 68
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_HintCustoProv",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 340,
+        "Top": 104
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_HintCustoRealAcomp",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 340,
+        "Top": 136
+      },
+      "filhos": []
+    }
+  ]
+}

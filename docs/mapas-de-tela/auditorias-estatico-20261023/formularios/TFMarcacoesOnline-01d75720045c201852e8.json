@@ -1,0 +1,931 @@
+{
+  "classe": "TFMarcacoesOnline",
+  "nome": "FMarcacoesOnline",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Consulta de Marcações Online",
+    "ClientHeight": 578,
+    "ClientWidth": 1130,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TMetaEquipLocalizar",
+      "nome": "MetaEquipLocalizar1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 256,
+        "Width": 29,
+        "Height": 29,
+        "ImageIndex": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "GridConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1130,
+        "Height": 463,
+        "Align": "alClient",
+        "DataSource": "DSMarcacoesOnline",
+        "ReadOnly": true,
+        "TabOrder": 0,
+        "Columns": [
+          {
+            "FieldName": "DATAHORA",
+            "Title.Caption": "Data/Hora",
+            "Width": 110,
+            "Visible": true
+          },
+          {
+            "FieldName": "IDCRACHA",
+            "Width": 85,
+            "Visible": true
+          },
+          {
+            "FieldName": "FUNCAO",
+            "Width": 48,
+            "Visible": true
+          },
+          {
+            "FieldName": "IDCOLETOR",
+            "Width": 173,
+            "Visible": true
+          },
+          {
+            "FieldName": "PESSOA",
+            "Width": 214,
+            "Visible": true
+          },
+          {
+            "FieldName": "TipoPessoa",
+            "Title.Caption": "Tipo",
+            "Width": 70,
+            "Visible": true
+          },
+          {
+            "FieldName": "SENTIDO",
+            "Width": 100,
+            "Visible": true
+          },
+          {
+            "FieldName": "TIPOCOLETA",
+            "Width": 75,
+            "Visible": true
+          },
+          {
+            "FieldName": "SITUACAO",
+            "Width": 90,
+            "Visible": true
+          },
+          {
+            "FieldName": "MSG",
+            "Width": 120,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "PnlFundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 521,
+        "Width": 1130,
+        "Height": 57,
+        "Align": "alBottom",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "BtnContarRegistros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 10,
+            "Width": 189,
+            "Height": 38,
+            "Caption": "Contar Registros (F5)",
+            "TabOrder": 0,
+            "OnClick": "ActContarRegistrosExecute",
+            "Action": "ActContarRegistros"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "BtnConsultar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 207,
+            "Top": 10,
+            "Width": 146,
+            "Height": 38,
+            "Caption": "Consultar (F6)",
+            "TabOrder": 1,
+            "OnClick": "ActConsultarExecute",
+            "Action": "ActConsultar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 463,
+        "Width": 1130,
+        "Height": 58,
+        "Align": "alBottom",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "PaginaLoc",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 1130,
+            "Height": 58,
+            "ActivePage": "TbsPessoa",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsPeriodo",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Período (Ctrl+A)",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblDe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 2,
+                    "Width": 20,
+                    "Height": 27,
+                    "Caption": "De"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "LblAte",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 187,
+                    "Top": 2,
+                    "Width": 25,
+                    "Height": 27,
+                    "Caption": "Até"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "dtInicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 34,
+                    "Top": 2,
+                    "Width": 91,
+                    "Height": 26,
+                    "EditMask": "!99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 0,
+                    "OnExit": "dtInicioExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "DtTermino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 218,
+                    "Top": 2,
+                    "Width": 92,
+                    "Height": 26,
+                    "EditMask": "!99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 2,
+                    "OnExit": "dtInicioExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "tmInicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 131,
+                    "Top": 2,
+                    "Width": 50,
+                    "Height": 26,
+                    "EditMask": "!99:99;1; ",
+                    "MaxLength": 5,
+                    "TabOrder": 1,
+                    "OnExit": "tmInicioExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "TmTermino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 316,
+                    "Top": 2,
+                    "Width": 50,
+                    "Height": 26,
+                    "EditMask": "!99:99;1; ",
+                    "MaxLength": 5,
+                    "TabOrder": 3,
+                    "OnExit": "tmInicioExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsCracha",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Crachá (Ctrl+B)"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblCracha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 1,
+                    "Width": 129,
+                    "Height": 27,
+                    "Caption": "Número de Crachá"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "ednrocracha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 143,
+                    "Top": 2,
+                    "Width": 123,
+                    "Height": 27,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsColetorFuncao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Coletor/Função (Ctrl+D)",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "lblCampoColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 2,
+                    "Width": 53,
+                    "Height": 27,
+                    "Caption": "Coletor"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "LblFuncao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 311,
+                    "Top": 2,
+                    "Width": 51,
+                    "Height": 27,
+                    "Caption": "Função"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 123,
+                    "Top": 2,
+                    "Width": 48,
+                    "Height": 27,
+                    "Caption": "F4",
+                    "ImageIndex": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lblColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 177,
+                    "Top": 2,
+                    "Width": 72,
+                    "Height": 27,
+                    "Caption": "lblColetor"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "edColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": 2,
+                    "Width": 52,
+                    "Height": 27,
+                    "TabOrder": 0,
+                    "OnExit": "edColetorExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "EdFuncao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 368,
+                    "Top": 2,
+                    "Width": 83,
+                    "Height": 27,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsSentido",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Sentido (Ctrl+E)",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblSentido",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 2,
+                    "Width": 53,
+                    "Height": 27,
+                    "Caption": "Sentido"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "CmbSentido",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 2,
+                    "Width": 145,
+                    "Height": 26,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "Items.Strings": [
+                      "Entrada",
+                      "Saída",
+                      "Não Concluído",
+                      "Todos"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsTipoColeta",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tipo de Coleta (Ctrl+F)",
+                "ImageIndex": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblTipoColeta",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 2,
+                    "Width": 100,
+                    "Height": 27,
+                    "Caption": "Tipo de Coleta"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "CmbTipoColeta",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 114,
+                    "Top": 2,
+                    "Width": 145,
+                    "Height": 26,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "Items.Strings": [
+                      "Offline",
+                      "Online",
+                      "Todas"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsSituacao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Situação (Ctrl+G)",
+                "ImageIndex": 5
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblSituacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 2,
+                    "Width": 59,
+                    "Height": 27,
+                    "Caption": "Situação"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "CmbSituacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 73,
+                    "Top": 2,
+                    "Width": 145,
+                    "Height": 26,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "Items.Strings": [
+                      "Bloqueado",
+                      "Liberado",
+                      "Ambos"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TbsPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pessoa (Ctrl+H)",
+                "ImageIndex": 6
+              },
+              "filhos": [
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 264,
+                    "Top": 3,
+                    "Width": 48,
+                    "Height": 26,
+                    "Caption": "F4",
+                    "ImageIndex": 2,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lblPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 318,
+                    "Top": 3,
+                    "Width": 227,
+                    "Height": 26,
+                    "Caption": "lblPessoa",
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "EdPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 193,
+                    "Top": 3,
+                    "Width": 65,
+                    "Height": 26,
+                    "TabOrder": 0,
+                    "Visible": false,
+                    "OnExit": "EdPessoaExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "cmbTipoPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 3,
+                    "Width": 179,
+                    "Height": 26,
+                    "Style": "csDropDownList",
+                    "TabOrder": 1,
+                    "OnChange": "cmbTipoPessoaChange",
+                    "Items.Strings": [
+                      "Todos"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "BtnLimparFiltros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 920,
+            "Top": 27,
+            "Width": 195,
+            "Height": 25,
+            "Caption": "Limpar Filtros (Ctrl+X)",
+            "TabOrder": 1,
+            "OnClick": "ActLimparFiltrosExecute",
+            "Action": "ActLimparFiltros"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 372,
+        "Top": 152
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActFechar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fechar (Alt+F4)",
+            "ShortCut": 32883
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActLimparFiltros",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Limpar Filtros (Ctrl+X)",
+            "ImageIndex": 3,
+            "ShortCut": 16472,
+            "OnExecute": "ActLimparFiltrosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActLocalizarPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActLocalizarPessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActConsultar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Consultar (F6)",
+            "ImageIndex": 1,
+            "ShortCut": 117,
+            "OnExecute": "ActConsultarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActPeriodo",
+            "ShortCut": 16449,
+            "OnExecute": "ActPeriodoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCracha",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActCracha",
+            "ShortCut": 16450,
+            "OnExecute": "ActCrachaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActColetorFuncao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActColetorFuncao",
+            "ShortCut": 16452,
+            "OnExecute": "ActColetorFuncaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSentido",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActSentido",
+            "ShortCut": 16453,
+            "OnExecute": "ActSentidoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTipoColeta",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActTipoColeta",
+            "ShortCut": 16454,
+            "OnExecute": "ActTipoColetaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActSituacao",
+            "ShortCut": 16455,
+            "OnExecute": "ActSituacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "ActPessoa",
+            "ShortCut": 16456,
+            "OnExecute": "ActPessoaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActContarRegistros",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Contar Registros (F5)",
+            "ImageIndex": 0,
+            "ShortCut": 116,
+            "OnExecute": "ActContarRegistrosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActBuscarFiltros",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "F4",
+            "ShortCut": 115,
+            "OnExecute": "ActBuscarFiltrosExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsMarcacoesOnline",
+      "herdado": false,
+      "propriedades": {
+        "Left": 280,
+        "Top": 152
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsMarcacoesOnlineDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "DataHora",
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsMarcacoesOnlineIDCRACHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Crachá",
+            "FieldName": "IDCRACHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlineFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Função",
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlineIDCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Coletor",
+            "FieldName": "IDCOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlinePESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlineSENTIDO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sentido",
+            "FieldName": "SENTIDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlineTIPOCOLETA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Coleta",
+            "FieldName": "TIPOCOLETA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsMarcacoesOnlineSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsMarcacoesOnlineMSG",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Mensagem",
+            "FieldName": "MSG"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsMarcacoesOnlineNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsMarcacoesOnlineNomeColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomeColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsMarcacoesOnlineTipoPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoPessoa"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DSMarcacoesOnline",
+      "herdado": false,
+      "propriedades": {
+        "Left": 424,
+        "Top": 304
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 460,
+        "Top": 219
+      },
+      "filhos": []
+    }
+  ]
+}

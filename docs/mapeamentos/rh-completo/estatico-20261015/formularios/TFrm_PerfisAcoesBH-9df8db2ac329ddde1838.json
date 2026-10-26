@@ -1,0 +1,458 @@
+{
+  "classe": "TFrm_PerfisAcoesBH",
+  "nome": "Frm_PerfisAcoesBH",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Width": 620,
+    "Height": 206,
+    "TabOrder": 0,
+    "OnEnter": "FrameEnter"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 620,
+        "Height": 206,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "Caption": "Panel1",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 159,
+            "Width": 77,
+            "Height": 13,
+            "Caption": "Banco de Horas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 159,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Modelo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 320,
+            "Top": 159,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Período"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 476,
+            "Top": 159,
+            "Width": 50,
+            "Height": 13,
+            "Caption": "Tolerância"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Grd_BancoHoras",
+          "herdado": false,
+          "propriedades": {
+            "Left": 3,
+            "Top": 2,
+            "Width": 610,
+            "Height": 146,
+            "DataSource": "Dts_PerfisAcoesBH",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DescBancoHoras",
+                "Title.Caption": "Banco de Horas",
+                "Width": 162,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescRelatorio",
+                "Title.Caption": "Relatorio",
+                "Width": 153,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescPeriodo",
+                "Title.Caption": "Periodo",
+                "Width": 167,
+                "Visible": true
+              },
+              {
+                "FieldName": "TOLERANCIA",
+                "Width": 60,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AdicionarBH",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 548,
+            "Top": 174,
+            "Width": 28,
+            "Height": 21,
+            "TabOrder": 6,
+            "OnClick": "Btn_AdicionarBHClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_BancoHoras",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 175,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Modelo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 175,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Periodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 320,
+            "Top": 175,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 3,
+            "Items.Strings": [
+              "Mensal",
+              "Período do Banco de Horas",
+              "Período do Ponto"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_RemoverBH",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 580,
+            "Top": 174,
+            "Width": 28,
+            "Height": 21,
+            "TabOrder": 7,
+            "OnClick": "Btn_RemoverBHClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 612,
+            "Top": 200,
+            "Width": 1,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbedt_Tolerancia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 476,
+            "Top": 174,
+            "Width": 61,
+            "Height": 21,
+            "DataField": "TOLERANCIA",
+            "DataSource": "Dts_PerfisAcoesBH",
+            "MaxLength": 10,
+            "TabOrder": 4,
+            "OnKeyPress": "Dbedt_ToleranciaKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PerfisAcoesBH",
+      "herdado": false,
+      "propriedades": {
+        "Left": 145,
+        "Top": 52
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_PerfisAcoesBH",
+      "herdado": false,
+      "propriedades": {
+        "Left": 76,
+        "Top": 52
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHMODULOACAOPERFIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODULOACAOPERFIL",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHPERFIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERFIL",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHBANCOHORAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Banco de Horas",
+            "FieldName": "BANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Relatório",
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Período",
+            "FieldName": "PERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_PerfisAcoesBHTOLERANCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tolerância",
+            "FieldName": "TOLERANCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHDescRelatorio",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescRelatorio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHDescPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescPeriodo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHDescBancoHoras",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescBancoHoras"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_PerfisAcoesBHGravar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 112,
+        "Top": 50
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarMODULOACAOPERFIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODULOACAOPERFIL",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarPERFIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERFIL",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarBANCOHORAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Banco de Horas",
+            "FieldName": "BANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Relatório",
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Período",
+            "FieldName": "PERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_PerfisAcoesBHGravarTOLERANCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tolerância",
+            "FieldName": "TOLERANCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarDescBancoHoras",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescBancoHoras"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarDescRelatorio",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescRelatorio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PerfisAcoesBHGravarDescPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescPeriodo"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

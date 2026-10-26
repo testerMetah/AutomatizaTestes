@@ -1,0 +1,189 @@
+{
+  "classe": "TFrm_RHPA6540",
+  "nome": "Frm_RHPA6540",
+  "herdado": true,
+  "propriedades": {
+    "Left": 680,
+    "Top": 338,
+    "Caption": "Ocorrências consideradas para Rateio",
+    "ClientHeight": 360,
+    "ClientWidth": 584
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 584,
+        "Height": 300,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Ocorrencias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 576,
+            "Height": 292,
+            "Align": "alClient",
+            "DataSource": "Dts_RHGorjetasOco",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "OCORRENCIA",
+                "Title.Caption": "Código",
+                "Width": 100,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCOCORRENCIA",
+                "Title.Caption": "Descrição",
+                "Width": 220,
+                "Visible": true
+              },
+              {
+                "FieldName": "NUMEROMAXDIAS",
+                "Title.Caption": "Número Máximo de Dias",
+                "Width": 220,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Rodape",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 300,
+        "Width": 584,
+        "Height": 60,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnExit": "Pnl_RodapeExit"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Ocorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 5,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Ocorrência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_OCORRENCIA",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 25,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_NumeroMaximo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 310,
+            "Top": 5,
+            "Width": 174,
+            "Height": 13,
+            "Caption": "Número máximo de dias para gorjeta:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_OcorrenciaResult",
+          "herdado": false,
+          "propriedades": {
+            "Left": 183,
+            "Top": 29,
+            "Width": 165,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NUMEROMAXDIAS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 310,
+            "Top": 25,
+            "Width": 100,
+            "Height": 21,
+            "DataField": "NUMEROMAXDIAS",
+            "DataSource": "Dts_RHGorjetasOco",
+            "MaxLength": 6,
+            "TabOrder": 1,
+            "OnChange": "Dbe_NUMEROMAXDIASChange",
+            "OnExit": "Dbe_NUMEROMAXDIASExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_OCORRENCIA",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 25,
+            "Width": 100,
+            "Height": 21,
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Edt_OCORRENCIAExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 540,
+        "Top": 320
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHGorjetasOco",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 319
+      },
+      "filhos": []
+    }
+  ]
+}

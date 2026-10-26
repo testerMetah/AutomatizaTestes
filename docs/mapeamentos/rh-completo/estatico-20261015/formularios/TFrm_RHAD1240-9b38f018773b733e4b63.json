@@ -1,0 +1,201 @@
+{
+  "classe": "TFrm_RHAD1240",
+  "nome": "Frm_RHAD1240",
+  "herdado": false,
+  "propriedades": {
+    "Left": 213,
+    "Top": 103,
+    "BorderStyle": "bsSingle",
+    "Caption": "Operadores Conectados",
+    "ClientHeight": 307,
+    "ClientWidth": 536,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 536,
+        "Height": 266,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 528,
+            "Height": 258,
+            "Align": "alClient",
+            "DataSource": "Dts_Operadores",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "OPERADOR",
+                "Width": 66,
+                "Visible": true
+              },
+              {
+                "FieldName": "ModuloDesc",
+                "Width": 305,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORA",
+                "Width": 121,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 266,
+        "Width": 536,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Desconectar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 6,
+            "Width": 157,
+            "Height": 25,
+            "Caption": "Desconectar Operador",
+            "Enabled": false,
+            "TabOrder": 0,
+            "OnClick": "Btn_DesconectarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 172,
+            "Top": 6,
+            "Width": 116,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "ModalResult": 1,
+            "TabOrder": 1,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_HistoricoOperadores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 295,
+            "Top": 6,
+            "Width": 230,
+            "Height": 25,
+            "Caption": "Histórico de Operadores Desconectados",
+            "TabOrder": 2,
+            "OnClick": "Btn_HistoricoOperadoresClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_Operadores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 104,
+        "Top": 62
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresMODULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Módulo",
+            "FieldName": "MODULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_OperadoresDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Conexão",
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresModuloDesc",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Módulo",
+            "FieldName": "ModuloDesc"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Operadores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 266,
+        "Top": 64
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_OperadoresDesconectados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 256,
+        "Top": 152
+      },
+      "filhos": []
+    }
+  ]
+}

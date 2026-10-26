@@ -1,0 +1,390 @@
+{
+  "classe": "TFrm_RHAD1710",
+  "nome": "Frm_RHAD1710",
+  "herdado": false,
+  "propriedades": {
+    "Left": 446,
+    "Top": 208,
+    "BorderStyle": "bsSingle",
+    "Caption": "Configurações Azure Active Directory",
+    "ClientHeight": 215,
+    "ClientWidth": 627,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 627,
+        "Height": 38,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 11,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_AzAdLoginCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_AzAdLoginCodigoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AzAdLoginCodigo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 90,
+            "Top": 7,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_AzAdLoginCodigoEnter",
+            "OnExit": "Edt_AzAdLoginCodigoExit",
+            "OnKeyPress": "Edt_AzAdLoginCodigoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 38,
+        "Width": 627,
+        "Height": 177,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 15,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginClientId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 42,
+            "Width": 103,
+            "Height": 13,
+            "Caption": "Application (client) ID:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginTenantId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 68,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Directory (tenant) ID:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginInstance",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 95,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Instance:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AzAdLoginPrompt",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 122,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Prompt:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 590,
+            "Top": 96,
+            "Width": 10,
+            "Height": 10,
+            "MaxLength": 8,
+            "TabOrder": 7,
+            "OnExit": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AzAdLoginDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 11,
+            "Width": 485,
+            "Height": 21,
+            "DataField": "AzAdLoginDescricao",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AzAdLoginClientId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 37,
+            "Width": 485,
+            "Height": 21,
+            "Hint": "Application (client) ID",
+            "DataField": "AzAdLoginClientId",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AzAdLoginTenantId",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 64,
+            "Width": 485,
+            "Height": 21,
+            "Hint": "Directory (tenant) ID",
+            "DataField": "AzAdLoginTenantId",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_AzAdLoginInstance",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 91,
+            "Width": 485,
+            "Height": 21,
+            "Hint": "Instance (endpoint)",
+            "DataField": "AzAdLoginInstance",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_UseWam",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 145,
+            "Width": 150,
+            "Height": 17,
+            "Caption": "Wam",
+            "DataField": "AzAdLoginUseWam",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 5
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_UseBrokerPreview",
+          "herdado": false,
+          "propriedades": {
+            "Left": 357,
+            "Top": 145,
+            "Width": 150,
+            "Height": 17,
+            "Caption": "Broker Preview",
+            "DataField": "AzAdLoginUseBrokerPreview",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dcb_AzAdLoginPrompt",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 118,
+            "Width": 152,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "AzAdLoginPrompt",
+            "DataSource": "Dts_AzAdLoginConfig",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AzAdLoginConfig",
+      "herdado": false,
+      "propriedades": {
+        "Left": 437,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_AzAdLoginConfig",
+      "herdado": false,
+      "propriedades": {
+        "Left": 402,
+        "Top": 5
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "AzAdLoginCodigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "AzAdLoginDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINCLIENTID",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Application (client) ID",
+            "FieldName": "AzAdLoginClientId"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINTENANTID",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Directory (tenant) ID",
+            "FieldName": "AzAdLoginTenantId"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGININSTANCE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Instance",
+            "FieldName": "AzAdLoginInstance"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINPROMPT",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Prompt",
+            "FieldName": "AzAdLoginPrompt"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINUSEWAM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Wam",
+            "FieldName": "AzAdLoginUseWam"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AzAdLoginConfigAZADLOGINUSEBROKERPREVIEW",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Broker Preview",
+            "FieldName": "AzAdLoginUseBrokerPreview"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

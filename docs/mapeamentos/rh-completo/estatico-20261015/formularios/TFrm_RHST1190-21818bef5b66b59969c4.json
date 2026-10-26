@@ -1,0 +1,230 @@
+{
+  "classe": "TFrm_RHST1190",
+  "nome": "Frm_RHST1190",
+  "herdado": true,
+  "propriedades": {
+    "Left": 398,
+    "Top": 256,
+    "Caption": "Textos para a CIPA",
+    "ClientHeight": 455,
+    "ClientWidth": 384
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 384,
+        "Height": 455,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 16,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 44,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 96,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Textos:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 72,
+            "Width": 54,
+            "Height": 13,
+            "Caption": "Texto para:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_texto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 260,
+            "Top": 344,
+            "Width": 9,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Texto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 12,
+            "Width": 50,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_TextoExit",
+            "OnKeyPress": "Edt_TextoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 40,
+            "Width": 250,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_TextosCipa",
+            "MaxLength": 40,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemo",
+          "nome": "Mem_Texto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 112,
+            "Width": 350,
+            "Height": 300,
+            "MaxLength": 8000,
+            "TabOrder": 4,
+            "OnChange": "Mem_TextoChange",
+            "OnExit": "Mem_TextoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Variaveis",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 418,
+            "Width": 145,
+            "Height": 25,
+            "Caption": "&Adicionar Informações",
+            "TabOrder": 6,
+            "OnClick": "Btn_VariaveisClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Cmb_TextoPara",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 68,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOTEXTOCIPA",
+            "DataSource": "Dts_TextosCipa",
+            "Items.Strings": [
+              "CIPA",
+              "Eleições da CIPA"
+            ],
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 282,
+            "Top": 16,
+            "Width": 46,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_TextosCipa",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 344,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_TextosCipa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 72
+      },
+      "filhos": []
+    }
+  ]
+}

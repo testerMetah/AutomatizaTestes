@@ -1,0 +1,846 @@
+{
+  "classe": "TFrm_RHFP5220",
+  "nome": "Frm_RHFP5220",
+  "herdado": false,
+  "propriedades": {
+    "Tag": 1,
+    "Left": 536,
+    "Top": 370,
+    "BorderStyle": "bsSingle",
+    "Caption": "Lançamentos por Contrato",
+    "ClientHeight": 374,
+    "ClientWidth": 646,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 646,
+        "Height": 59,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 16,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "dbb_TipoSalario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 544,
+            "Top": 6,
+            "Width": 74,
+            "Height": 13,
+            "DataField": "TIPOSALARIO",
+            "DataSource": "dts_Contratos",
+            "Items.Strings": [
+              "Mensalista",
+              "Quinzenalista",
+              "Por Semana",
+              "Por Dia",
+              "Por Hora",
+              "Por Tarefa",
+              "Outros"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 17,
+            "Width": 309,
+            "Height": 24,
+            "Caption": "lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 463,
+            "Top": 6,
+            "Width": 74,
+            "Height": 13,
+            "Caption": "Tipo de Salário:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 463,
+            "Top": 23,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Lotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 464,
+            "Top": 38,
+            "Width": 25,
+            "Height": 10,
+            "Hint": "Exibir Lotação do Contrato",
+            "Caption": ":::",
+            "ShowHint": true,
+            "OnClick": "Btn_LotacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBTxtSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 544,
+            "Top": 23,
+            "Width": 84,
+            "Height": 13,
+            "DataField": "DescricaoSituacao",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 53,
+            "Top": 13,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 59,
+        "Width": 646,
+        "Height": 315,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label13",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 265,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Código"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 294,
+            "Top": 265,
+            "Width": 57,
+            "Height": 13,
+            "Caption": "Horas/Valor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 370,
+            "Top": 265,
+            "Width": 21,
+            "Height": 13,
+            "Caption": "Tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 265,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 430,
+            "Top": 265,
+            "Width": 59,
+            "Height": 13,
+            "Caption": "Data Lancto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 498,
+            "Top": 265,
+            "Width": 19,
+            "Height": 13,
+            "Caption": "Fixo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label9",
+          "herdado": false,
+          "propriedades": {
+            "Left": 531,
+            "Top": 265,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Origem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Caixa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 318,
+            "Top": 287,
+            "Width": 16,
+            "Height": 9,
+            "TabOrder": 5,
+            "OnEnter": "Edt_CaixaEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_VDB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 281,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 5,
+            "TabOrder": 1,
+            "OnEnter": "Edt_VDBEnter",
+            "OnExit": "Edt_VDBExit",
+            "OnKeyPress": "Edt_VDBKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_HorasValor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 280,
+            "Top": 281,
+            "Width": 87,
+            "Height": 21,
+            "DataField": "QUANTIDADEVALOR",
+            "DataSource": "dts_Lancamentos",
+            "MaxLength": 12,
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "dbc_TipoInfoLancamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 369,
+            "Top": 281,
+            "Width": 55,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOINFOLANCAMENTO",
+            "DataSource": "dts_Lancamentos",
+            "Items.Strings": [
+              "R$",
+              "Horas",
+              "Dias",
+              "Unid."
+            ],
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "stt_vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 281,
+            "Width": 203,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "stt_VDB",
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "stt_DataLcto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 427,
+            "Top": 281,
+            "Width": 67,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "stt_DataLcto",
+            "TabOrder": 7
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Stt_Fixo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 498,
+            "Top": 281,
+            "Width": 31,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "stt_Fixo",
+            "TabOrder": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Stt_Origem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 532,
+            "Top": 281,
+            "Width": 85,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "stt_Origem",
+            "TabOrder": 9
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "btn_VdB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 50,
+            "Top": 280,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 2,
+            "TabStop": false,
+            "OnClick": "btn_VdBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringGrid",
+          "nome": "Grd_Principal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 3,
+            "Width": 640,
+            "Height": 258,
+            "TabStop": false,
+            "TabOrder": 0,
+            "OnClick": "Grd_PrincipalClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 180,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cargo",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Função",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosDescricaoSituacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoSituacao",
+            "ReadOnly": true,
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 232,
+        "Top": 186
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Lancamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 285,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LancamentosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LancamentosVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosTIPOLANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOLANCAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LancamentosDATAVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LancamentosDATALANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATALANCAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosORIGEMLANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMLANCAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosTIPOINFOLANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Lançamento",
+            "FieldName": "TIPOINFOLANCAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosLANCAMENTOFIXO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LANCAMENTOFIXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LancamentosDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosDescricaoTipo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoTipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_LancamentosQUANTIDADEVALOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Horas/Valor",
+            "DisplayWidth": 12,
+            "FieldName": "QUANTIDADEVALOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosDescricaoFixo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoFixo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosDescricaoOrigem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoOrigem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosDescricaoVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LancamentosSITUACAOLANCAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOLANCAMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 444,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOINFOVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINFOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBAVISAAFASTFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Avisa Afastamento e/ou Férias ",
+            "FieldName": "AVISAAFASTFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Lancamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 338,
+        "Top": 186
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_DescricaoVDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 391,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_DescricaoVDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescricaoVDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

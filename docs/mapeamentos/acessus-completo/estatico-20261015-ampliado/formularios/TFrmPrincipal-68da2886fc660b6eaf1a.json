@@ -1,0 +1,851 @@
+{
+  "classe": "TFrmPrincipal",
+  "nome": "FrmPrincipal",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Módulo de Acesso",
+    "ClientHeight": 440,
+    "ClientWidth": 671,
+    "FormStyle": "fsMDIForm",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TImage",
+      "nome": "imgFundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 25,
+        "Width": 671,
+        "Height": 396,
+        "Align": "alClient"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TStatusBar",
+      "nome": "RodapeStatus",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 421,
+        "Width": 671,
+        "Height": 19
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionMainMenuBar",
+      "nome": "ActionMainMenuBar1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 671,
+        "Height": 25
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTabControl",
+      "nome": "TabControlMDI",
+      "herdado": false,
+      "propriedades": {
+        "Left": 48,
+        "Top": 96,
+        "Width": 17,
+        "Height": 17,
+        "TabOrder": 2,
+        "Visible": false
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionManager",
+      "nome": "actManagerAcessus",
+      "herdado": false,
+      "propriedades": {
+        "ActionBars": [
+          {
+            "Items": [
+              {
+                "Items": [
+                  {
+                    "Action": "acCadEmpresa",
+                    "Caption": "&Empresa..."
+                  },
+                  {
+                    "Caption": "-"
+                  },
+                  {
+                    "Tag": 2,
+                    "Action": "acCadUnidades",
+                    "Caption": "U&nidades..."
+                  },
+                  {
+                    "Tag": 3,
+                    "Action": "acCadSetores",
+                    "Caption": "&Setores..."
+                  },
+                  {
+                    "Tag": 4,
+                    "Action": "acCadPessoas",
+                    "Caption": "Pess&oas..."
+                  },
+                  {
+                    "Items": [
+                      {
+                        "Action": "acCadPrePessoas",
+                        "Caption": "&Pré-Cadastros"
+                      },
+                      {
+                        "Action": "ActEmpresasAcesso",
+                        "Caption": "&Empresas Acesso"
+                      }
+                    ],
+                    "Caption": "&Pré-Cadastros"
+                  },
+                  {
+                    "Tag": 6,
+                    "Action": "acCadFiltro",
+                    "Caption": "&Filtros..."
+                  },
+                  {
+                    "Tag": 7,
+                    "Action": "acCadDigitais",
+                    "Caption": "&Digitais e Faces..."
+                  },
+                  {
+                    "Caption": "-"
+                  },
+                  {
+                    "Items": [
+                      {
+                        "Tag": 8,
+                        "Action": "acCadModeloColetores",
+                        "Caption": "&Modelos de Coletores..."
+                      },
+                      {
+                        "Tag": 9,
+                        "Action": "acCadColetores",
+                        "Caption": "&Cadastro de Coletores..."
+                      },
+                      {
+                        "Action": "acCadMensagemColetores",
+                        "Caption": "M&ensagens dos Coletores..."
+                      }
+                    ],
+                    "Caption": "&Coletores"
+                  }
+                ],
+                "Caption": "&Cadastros"
+              },
+              {
+                "Items": [
+                  {
+                    "Items": [
+                      {
+                        "Action": "acAceRegistroCrachas",
+                        "Caption": "&Registro de Crachás..."
+                      }
+                    ],
+                    "Caption": "Crac&hás"
+                  },
+                  {
+                    "Tag": 2,
+                    "Action": "acAceRegrasAcesso",
+                    "Caption": "&Regras de Acesso..."
+                  },
+                  {
+                    "Caption": "-"
+                  },
+                  {
+                    "Tag": 3,
+                    "Action": "acAceAfastamentosCedidos",
+                    "Caption": "&Afastamentos Cedidos..."
+                  },
+                  {
+                    "Caption": "-"
+                  },
+                  {
+                    "Tag": 4,
+                    "Action": "acAceGerarAcesso",
+                    "Caption": "&Gerar Acesso..."
+                  },
+                  {
+                    "Items": [
+                      {
+                        "Action": "acAceAcessoRapido",
+                        "Caption": "&Gerar Acesso Rápido..."
+                      },
+                      {
+                        "Action": "acAceAcessoRapidoExc",
+                        "Caption": "&Excluir Acesso Rápido..."
+                      }
+                    ],
+                    "Tag": 5,
+                    "Caption": "A&cesso Rápido..."
+                  },
+                  {
+                    "Tag": 6,
+                    "Action": "acAceAcessosAutorizados",
+                    "Caption": "A&utorização de Acessos..."
+                  },
+                  {
+                    "Action": "acAceProgramacaoRegrasAcesso",
+                    "Caption": "&Programação de Regras de Acesso..."
+                  }
+                ],
+                "Caption": "&Acesso"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acConsMarcacoesOnline",
+                    "Caption": "&Marcações Online..."
+                  },
+                  {
+                    "Action": "acConsPorPessoa",
+                    "Caption": "&Acesso por Pessoa..."
+                  }
+                ],
+                "Caption": "C&onsultas"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "AcComandosEquipamentos",
+                    "Caption": "&Comandos com Equipamentos..."
+                  }
+                ],
+                "Caption": "Co&municação"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acFerImportadorMetadados",
+                    "Caption": "&Importador Metadados..."
+                  },
+                  {
+                    "Action": "acFerExportadorMetadados",
+                    "Caption": "&Exportador Metadados..."
+                  },
+                  {
+                    "Action": "acFerLayoutExportacaoMarcacoes",
+                    "Caption": "&Layout Exportação Marcações"
+                  },
+                  {
+                    "Action": "acFerExportacaoMarcacoes",
+                    "Caption": "E&xportação Marcações CSV/TXT"
+                  },
+                  {
+                    "Action": "acFerImportadorCSV",
+                    "Caption": "I&mportardor CSV"
+                  }
+                ],
+                "Caption": "&Ferramentas"
+              },
+              {
+                "Items": [
+                  {
+                    "Items": [
+                      {
+                        "Action": "actRelAcessoDiversosCrachas",
+                        "Caption": "&Crachás..."
+                      },
+                      {
+                        "Tag": 1,
+                        "Action": "actRelAcessoDiversosIncosistencias",
+                        "Caption": "&Presença..."
+                      }
+                    ],
+                    "Caption": "A&cesso Outros"
+                  },
+                  {
+                    "Items": [
+                      {
+                        "Action": "acRelOperacionalPessoas",
+                        "Caption": "&Pessoas..."
+                      },
+                      {
+                        "Action": "acRelOperacionalSetor",
+                        "Caption": "&Setor..."
+                      },
+                      {
+                        "Action": "acRelOperacionalUnidade",
+                        "Caption": "&Unidade..."
+                      },
+                      {
+                        "Action": "acRelOperacionalEmpresa",
+                        "Caption": "&Empresa..."
+                      },
+                      {
+                        "Tag": 6,
+                        "Action": "acRelOperacionalPreCadastro",
+                        "Caption": "P&ré-cadastro..."
+                      },
+                      {
+                        "Action": "acRelOperacionalDigitaisFaces",
+                        "Caption": "&Digitais e Faces..."
+                      }
+                    ],
+                    "Caption": "&Operacional"
+                  },
+                  {
+                    "Action": "acRelReservasConsumos",
+                    "Caption": "&Reservas e Consumos..."
+                  },
+                  {
+                    "Tag": 8,
+                    "Action": "acRelMarcacoesOnline",
+                    "Caption": "&Marcações Online..."
+                  },
+                  {
+                    "Tag": 9,
+                    "Action": "acRelAcessoVisitantesTerceiros",
+                    "Caption": "&Acesso de Visitantes e Terceiros..."
+                  },
+                  {
+                    "Tag": 10,
+                    "Action": "acRelAvaliacaoRefeicoes",
+                    "Caption": "A&valiação de Refeições"
+                  },
+                  {
+                    "Tag": 11,
+                    "Action": "acRelHistoricoAcessoRapido",
+                    "Caption": "&Histórico Acesso Rapido..."
+                  }
+                ],
+                "Caption": "&Relatórios"
+              },
+              {
+                "Items": [
+                  {
+                    "Action": "acAjudaSobre",
+                    "Caption": "&Sobre..."
+                  },
+                  {
+                    "Action": "acAjudaSair",
+                    "Caption": "S&air"
+                  }
+                ],
+                "Caption": "A&juda"
+              }
+            ],
+            "ActionBar": "ActionMainMenuBar1"
+          }
+        ],
+        "Left": 336,
+        "Top": 152
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "acCadEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cadastros",
+            "Caption": "Empresa...",
+            "OnExecute": "acCadEmpresaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadUnidades",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Category": "Cadastros",
+            "Caption": "Unidades...",
+            "OnExecute": "acCadUnidadesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadSetores",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 3,
+            "Category": "Cadastros",
+            "Caption": "Setores...",
+            "OnExecute": "acCadSetoresExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 6,
+            "Category": "Cadastros",
+            "Caption": "Filtros...",
+            "OnExecute": "acCadFiltroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadDigitais",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 7,
+            "Category": "Cadastros",
+            "Caption": "Digitais e Faces...",
+            "OnExecute": "acCadDigitaisExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 4,
+            "Category": "Pessoas",
+            "Caption": "Pessoas...",
+            "OnExecute": "acCadPessoasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadPrePessoas",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 5,
+            "Category": "Pré-Cadastros",
+            "Caption": "Pré-Cadastros",
+            "OnExecute": "acCadPrePessoasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadModeloColetores",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 8,
+            "Category": "Coletores",
+            "Caption": "Modelos de Coletores...",
+            "OnExecute": "acCadModeloColetoresExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadColetores",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 9,
+            "Category": "Coletores",
+            "Caption": "Cadastro de Coletores...",
+            "OnExecute": "acCadColetoresExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acCadMensagemColetores",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Coletores",
+            "Caption": "Mensagens dos Coletores...",
+            "OnExecute": "acCadMensagemColetoresExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceRegrasAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Category": "Acesso",
+            "Caption": "Regras de Acesso...",
+            "OnExecute": "acAceRegrasAcessoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceAfastamentosCedidos",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 3,
+            "Category": "Acesso",
+            "Caption": "Afastamentos Cedidos...",
+            "OnExecute": "acAceAfastamentosCedidosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceGerarAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 4,
+            "Category": "Acesso",
+            "Caption": "Gerar Acesso...",
+            "OnExecute": "acAceGerarAcessoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceAcessoRapido",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 5,
+            "Category": "Acesso Rápido",
+            "Caption": "Gerar Acesso Rápido...",
+            "OnExecute": "acAceAcessoRapidoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceAcessosAutorizados",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 6,
+            "Category": "Acesso",
+            "Caption": "Autorização de Acessos...",
+            "OnExecute": "acAceAcessosAutorizadosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceRegistroCrachas",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Crachás",
+            "Caption": "Registro de Crachás...",
+            "OnExecute": "acAceRegistroCrachasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceFaixaDeCrachas",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Category": "Crachás",
+            "Caption": "Faixa de Crachás...",
+            "OnExecute": "acAceFaixaDeCrachasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConsMarcacoesOnline",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consultas",
+            "Caption": "Marcações Online...",
+            "OnExecute": "acConsMarcacoesOnlineExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acConsPorPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Category": "Consultas",
+            "Caption": "Acesso por Pessoa...",
+            "OnExecute": "acConsPorPessoaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "AcComandosEquipamentos",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Comunicação",
+            "Caption": "Comandos com Equipamentos...",
+            "OnExecute": "AcComandosEquipamentosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acFerImportadorMetadados",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ferramentas",
+            "Caption": "Importador Metadados...",
+            "OnExecute": "acFerImportadorMetadadosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acFerLayoutExportacaoMarcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Category": "Ferramentas",
+            "Caption": "Layout Exportação Marcações",
+            "OnExecute": "acFerLayoutExportacaoMarcacoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acFerExportacaoMarcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Category": "Ferramentas",
+            "Caption": "Exportação Marcações CSV/TXT",
+            "OnExecute": "acFerExportacaoMarcacoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acFerImportadorCSV",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 3,
+            "Category": "Ferramentas",
+            "Caption": "Importardor CSV",
+            "OnExecute": "acFerImportadorCSVExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelReservasConsumos",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 7,
+            "Category": "Relatórios",
+            "Caption": "Reservas e Consumos...",
+            "OnExecute": "acRelReservasConsumosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelMarcacoesOnline",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 8,
+            "Category": "Relatórios",
+            "Caption": "Marcações Online...",
+            "OnExecute": "acRelMarcacoesOnlineExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelAcessoVisitantesTerceiros",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 9,
+            "Category": "Relatórios",
+            "Caption": "Acesso de Visitantes e Terceiros...",
+            "OnExecute": "acRelAcessoVisitantesTerceirosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelAvaliacaoRefeicoes",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 10,
+            "Category": "Relatórios",
+            "Caption": "Avaliação de Refeições",
+            "OnExecute": "acRelAvaliacaoRefeicoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelHistoricoAcessoRapido",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 11,
+            "Category": "Relatórios",
+            "Caption": "Histórico Acesso Rapido...",
+            "OnExecute": "acRelHistoricoAcessoRapidoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Category": "Operacional",
+            "Caption": "Pessoas...",
+            "OnExecute": "acRelOperacionalPessoasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalSetor",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 3,
+            "Category": "Operacional",
+            "Caption": "Setor...",
+            "OnExecute": "acRelOperacionalSetorExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalUnidade",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 4,
+            "Category": "Operacional",
+            "Caption": "Unidade...",
+            "OnExecute": "acRelOperacionalUnidadeExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 5,
+            "Category": "Operacional",
+            "Caption": "Empresa...",
+            "OnExecute": "acRelOperacionalEmpresaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalPreCadastro",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 6,
+            "Category": "Operacional",
+            "Caption": "Pré-cadastro...",
+            "OnExecute": "acRelOperacionalPreCadastroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actRelAcessoDiversosCrachas",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Acesso Outros",
+            "Caption": "Crachás...",
+            "OnExecute": "actRelAcessoDiversosCrachasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actRelAcessoDiversosIncosistencias",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Category": "Acesso Outros",
+            "Caption": "Inconsistências...",
+            "OnExecute": "actRelAcessoDiversosIncosistenciasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAjudaSobre",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ajuda",
+            "Caption": "Sobre...",
+            "OnExecute": "acAjudaSobreExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAjudaSair",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ajuda",
+            "Caption": "Sair",
+            "OnExecute": "acAjudaSairExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEmpresasAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Pré-Cadastros",
+            "Caption": "Empresas Acesso",
+            "OnExecute": "ActEmpresasAcessoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acFerExportadorMetadados",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Ferramentas",
+            "Caption": "Exportador Metadados...",
+            "OnExecute": "acFerExportadorMetadadosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceProgramacaoRegrasAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Acesso",
+            "Caption": "Programação de Regras de Acesso...",
+            "OnExecute": "acAceProgramacaoRegrasAcessoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acAceAcessoRapidoExc",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Acesso Rápido",
+            "Caption": "Excluir Acesso Rápido...",
+            "OnExecute": "acAceAcessoRapidoExcExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acRelOperacionalDigitaisFaces",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Operacional",
+            "Caption": "Digitais e Faces...",
+            "OnExecute": "acRelOperacionalDigitaisFacesExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

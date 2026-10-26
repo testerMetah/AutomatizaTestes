@@ -1,0 +1,657 @@
+{
+  "classe": "TFrmCadPreCadastro",
+  "nome": "FrmCadPreCadastro",
+  "herdado": true,
+  "propriedades": {
+    "Left": 477,
+    "Top": 242,
+    "Caption": "Pré-Cadastros",
+    "ClientHeight": 450,
+    "ClientWidth": 681
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": true,
+      "propriedades": {
+        "Width": 681,
+        "Height": 450,
+        "ActivePage": "Grid"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Width": 673,
+                "Height": 280,
+                "DataSource": "DsPreCadastro",
+                "Columns": [
+                  {
+                    "FieldName": "id",
+                    "Title.Caption": "Id",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Width": 347,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TipoPessoa",
+                    "Title.Caption": "Tipo de Pessoa",
+                    "Width": 121,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Status",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlCimaPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 280,
+                "Width": 673
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": true,
+                  "propriedades": {
+                    "Width": 673
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet2",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": true,
+                          "propriedades": {
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExibirTudo",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 485
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 349,
+                "Width": 673
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnInserir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnAlterar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": true,
+          "propriedades": {
+            "OnShow": "CadastroShow"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lblEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 325,
+                "Top": 104,
+                "Width": 174,
+                "Height": 29,
+                "Caption": "Selecione uma empresa..."
+              },
+              "filhos": [],
+              "ordem_herdada": 0
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "MetaEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 274,
+                "Top": 104,
+                "Width": 44,
+                "Height": 29,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 1
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 40,
+                "Width": 24,
+                "Height": 29
+              },
+              "filhos": [],
+              "ordem_herdada": 2
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 40,
+                "Width": 46,
+                "Height": 29,
+                "Caption": "Nome:"
+              },
+              "filhos": [],
+              "ordem_herdada": 3
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 72,
+                "Width": 35,
+                "Height": 29,
+                "Caption": "CPF:"
+              },
+              "filhos": [],
+              "ordem_herdada": 4
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 72,
+                "Width": 24,
+                "Height": 29
+              },
+              "filhos": [],
+              "ordem_herdada": 5
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image11",
+              "herdado": false,
+              "propriedades": {
+                "Left": 363,
+                "Top": 8,
+                "Width": 24,
+                "Height": 28
+              },
+              "filhos": [],
+              "ordem_herdada": 6
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 393,
+                "Top": 11,
+                "Width": 63,
+                "Height": 19,
+                "Caption": "Situação:"
+              },
+              "filhos": [],
+              "ordem_herdada": 7
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 104,
+                "Width": 74,
+                "Height": 29,
+                "Caption": "Empresa:"
+              },
+              "filhos": [],
+              "ordem_herdada": 8
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 104,
+                "Width": 24,
+                "Height": 29
+              },
+              "filhos": [],
+              "ordem_herdada": 9
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 11,
+                "Width": 35,
+                "Height": 19,
+                "Caption": "Tipo:"
+              },
+              "filhos": [],
+              "ordem_herdada": 10
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 8,
+                "Width": 24,
+                "Height": 28
+              },
+              "filhos": [],
+              "ordem_herdada": 11
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Top": 349,
+                "Width": 673,
+                "TabOrder": 6
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnOk",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCancelar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdNome",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 40,
+                "Width": 528,
+                "Height": 27,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbSituacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 474,
+                "Top": 8,
+                "Width": 186,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 1,
+                "Items.Strings": [
+                  "Ativo",
+                  "Inativo"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdCpf",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 72,
+                "Width": 220,
+                "Height": 27,
+                "MaxLength": 14,
+                "TabOrder": 3,
+                "OnEnter": "EdCpfEnter",
+                "OnExit": "EdCpfExit",
+                "OnKeyPress": "EdCpfKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "GbCrachas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 208,
+                "Width": 660,
+                "Height": 105,
+                "Caption": "Crachás",
+                "TabOrder": 5
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "lblCrachaFixo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 30,
+                    "Width": 180,
+                    "Height": 29,
+                    "Caption": "Cadastrar crachá fixo",
+                    "OnClick": "lblCrachaFixoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lblCrachaProvisorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 63,
+                    "Width": 226,
+                    "Height": 29,
+                    "Caption": "Cadastrar crachá provisório",
+                    "OnClick": "lblCrachaProvisorioClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "Image13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 63,
+                    "Width": 24,
+                    "Height": 29
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "Image14",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 30,
+                    "Width": 24,
+                    "Height": 29
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label17",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 50,
+                    "Top": 30,
+                    "Width": 86,
+                    "Height": 29,
+                    "Caption": "Crachá Fixo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label18",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 50,
+                    "Top": 63,
+                    "Width": 128,
+                    "Height": 29,
+                    "Caption": "Crachá Provisório:"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 104,
+                "Width": 136,
+                "Height": 27,
+                "MaxLength": 5,
+                "TabOrder": 4,
+                "OnExit": "EdEmpresaExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "CmbTipoPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 8,
+                "Width": 222,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "CmbTipoPessoaChange",
+                "Items.Strings": [
+                  "Visitantes",
+                  "Terceiros",
+                  "Pré-Cadastros"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "THoverSpeedButton",
+              "nome": "BtnCadastrarEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 141,
+                "Width": 237,
+                "Height": 30,
+                "Caption": "Cadastrar Empresa (Ctrl+N)",
+                "TabOrder": 7,
+                "OnClick": "ActCadastrarEmpresaExecute",
+                "Action": "ActCadastrarEmpresa"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Campos",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": true,
+              "propriedades": {
+                "Top": 371,
+                "Width": 673
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": true,
+      "propriedades": {
+        "Left": 488,
+        "Top": 304
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActExcluir",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSNome",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Nome (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActTSNomeExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCadastrarEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cadastrar Empresa (Ctrl+N)",
+            "ImageIndex": 4,
+            "ShortCut": 16462,
+            "OnExecute": "ActCadastrarEmpresaExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsPreCadastro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 568,
+        "Top": 332
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsPreCadastro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 548,
+        "Top": 260
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPreCadastroid",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPreCadastroNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPreCadastroTipoPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoPessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPreCadastroStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Status"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

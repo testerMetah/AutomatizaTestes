@@ -1,0 +1,728 @@
+{
+  "classe": "TFrm_RHFP1276",
+  "nome": "Frm_RHFP1276",
+  "herdado": false,
+  "propriedades": {
+    "Left": 45,
+    "Top": 136,
+    "BorderStyle": "bsSingle",
+    "Caption": "Rateio GPS/SEFIP",
+    "ClientHeight": 369,
+    "ClientWidth": 690,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 690,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 12,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Autônomo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 12,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 241,
+            "Top": 13,
+            "Width": 264,
+            "Height": 13,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 63,
+            "Top": 8,
+            "Width": 58,
+            "Height": 21,
+            "Enabled": false,
+            "MaxLength": 8,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 171,
+            "Top": 8,
+            "Width": 62,
+            "Height": 21,
+            "Enabled": false,
+            "MaxLength": 8,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ValidadeRateioGPS",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 185,
+        "Height": 287,
+        "Align": "alLeft",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label91",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 12,
+            "Width": 80,
+            "Height": 13,
+            "Caption": "Validade - Início:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 37,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Término:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 9,
+            "Width": 16,
+            "Height": 21,
+            "TabOrder": 2,
+            "OnEnter": "Edt_Aux3Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_InicioValidadeGPSSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 9,
+            "Width": 49,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnEnter": "Msk_InicioValidadeGPSSefipEnter",
+            "OnExit": "Msk_InicioValidadeGPSSefipExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 59,
+            "Width": 177,
+            "Height": 222,
+            "TabStop": false,
+            "Align": "alBottom",
+            "DataSource": "Dtm_RHFP1279.Dts_Validade",
+            "TabOrder": 3,
+            "Columns": [
+              {
+                "FieldName": "INICIOVALIDADE",
+                "Title.Caption": "Início",
+                "Width": 72,
+                "Visible": true
+              },
+              {
+                "FieldName": "TERMINOVALIDADE",
+                "Title.Caption": "Término",
+                "Width": 72,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_TerminoValidadeGPSSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 34,
+            "Width": 49,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnEnter": "Msk_TerminoValidadeGPSSefipEnter",
+            "OnExit": "Msk_TerminoValidadeGPSSefipExit",
+            "OnKeyPress": "Msk_TerminoValidadeGPSSefipKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TStaticText",
+      "nome": "StaticText1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 186,
+        "Top": 41,
+        "Width": 504,
+        "Height": 17,
+        "Caption": "Rateio das Classificações GPS",
+        "TabOrder": 0
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_RateioGPS",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 58,
+        "Width": 506,
+        "Height": 112,
+        "BorderStyle": "bsSingle",
+        "TabOrder": 4,
+        "OnEnter": "Pnl_RateioGPSEnter",
+        "OnExit": "Pnl_RateioGPSExit"
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bevel16",
+          "herdado": false,
+          "propriedades": {
+            "Left": 127,
+            "Top": 81,
+            "Width": 278,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 84,
+            "Width": 272,
+            "Height": 13,
+            "DataField": "DescricaoGpsSefip",
+            "DataSource": "Dtm_RHFP1279.Dts_RateioGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_LocalizaParametroGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 103,
+            "Top": 81,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "Btn_LocalizaParametroGPSClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 36,
+            "Top": 47,
+            "Width": 16,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnEnter": "Edt_Aux4Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_SalvarRateioGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 48,
+            "Top": 81,
+            "Width": 8,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_SalvarRateioGPSEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "dbg_RateioGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 499,
+            "Height": 76,
+            "DataSource": "Dtm_RHFP1279.Dts_RateioGPS",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "CLASSGPSSEFIP",
+                "Title.Caption": "Classificação p/GPS",
+                "Width": 110,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoGpsSefip",
+                "Title.Caption": "Descrição",
+                "Width": 280,
+                "Visible": true
+              },
+              {
+                "FieldName": "PERCENTUALRATEIO",
+                "Title.Caption": "Percentual",
+                "Width": 71,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AuxClassContabilRateioGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": -50,
+            "Top": 194,
+            "Width": 10,
+            "Height": 21,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxClassContabilRateioGPSEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_PercentualGPS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 407,
+            "Top": 81,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "PERCENTUALRATEIO",
+            "DataSource": "Dtm_RHFP1279.Dts_RateioGPS",
+            "MaxLength": 16,
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ClassGPSRateio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 81,
+            "Width": 88,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 2,
+            "OnEnter": "Edt_ClassGPSRateioEnter",
+            "OnExit": "Edt_ClassGPSRateioExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_RateioSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 216,
+        "Width": 506,
+        "Height": 111,
+        "BorderStyle": "bsSingle",
+        "TabOrder": 7,
+        "OnEnter": "Pnl_RateioSefipEnter",
+        "OnExit": "Pnl_RateioSefipExit"
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bevel17",
+          "herdado": false,
+          "propriedades": {
+            "Left": 127,
+            "Top": 81,
+            "Width": 278,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 84,
+            "Width": 272,
+            "Height": 13,
+            "DataField": "DescricaoGpsSefip",
+            "DataSource": "Dtm_RHFP1279.Dts_RateioSefip"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_LocalizaParametroSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 103,
+            "Top": 81,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "Btn_LocalizaParametroSefipClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "dbg_RateioSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 498,
+            "Height": 76,
+            "Align": "alTop",
+            "DataSource": "Dtm_RHFP1279.Dts_RateioSefip",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "CLASSGPSSEFIP",
+                "Title.Caption": "Classificação p/SEFIP",
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoGpsSefip",
+                "Title.Caption": "Descrição",
+                "Width": 280,
+                "Visible": true
+              },
+              {
+                "FieldName": "PERCENTUALRATEIO",
+                "Title.Caption": "Percentual",
+                "Width": 71,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AuxClassSefipRateio",
+          "herdado": false,
+          "propriedades": {
+            "Left": -50,
+            "Top": 194,
+            "Width": 10,
+            "Height": 21,
+            "TabOrder": 2,
+            "OnEnter": "Edt_AuxClassSefipRateioEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_SalvarRateioSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 55,
+            "Top": 221,
+            "Width": 19,
+            "Height": 14,
+            "TabOrder": 4,
+            "OnEnter": "Edt_SalvarRateioSefipEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_PercentualSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 407,
+            "Top": 81,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "PERCENTUALRATEIO",
+            "DataSource": "Dtm_RHFP1279.Dts_RateioSefip",
+            "MaxLength": 16,
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ClassSefipRateio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 81,
+            "Width": 88,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnEnter": "Edt_ClassSefipRateioEnter",
+            "OnExit": "Edt_ClassSefipRateioExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TStaticText",
+      "nome": "StaticText2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 186,
+        "Top": 199,
+        "Width": 504,
+        "Height": 17,
+        "Caption": "Rateio das Classificações SEFIP",
+        "TabOrder": 1
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TBitBtn",
+      "nome": "Btn_DuplicarRateioGPSParaSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 250,
+        "Top": 172,
+        "Width": 177,
+        "Height": 24,
+        "Caption": "Duplicar Rateio GPS p/SEFIP",
+        "TabOrder": 5,
+        "OnClick": "Btn_DuplicarRateioGPSParaSefipClick"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TBitBtn",
+      "nome": "Btn_DuplicarRateioSefipParaGPS",
+      "herdado": false,
+      "propriedades": {
+        "Left": 451,
+        "Top": 172,
+        "Width": 177,
+        "Height": 24,
+        "Caption": "Duplicar Rateio SEFIP p/GPS",
+        "TabOrder": 6,
+        "OnClick": "Btn_DuplicarRateioSefipParaGPSClick"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 328,
+        "Width": 690,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 8
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Salvar",
+            "OnClick": "btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "OnClick": "btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 180,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Excluir",
+            "OnClick": "btn_ExcluirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_OpcoesExcluirRateioGPSSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 421,
+        "Top": 308
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ExcluirClassGPSSefip",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Excluir Classificação GPS",
+            "OnClick": "Mnm_ExcluirClassGPSSefipClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ExcluirRateioValidaGPSSefip",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "E&xcluir Rateio desta Validade",
+            "OnClick": "Mnm_ExcluirRateioValidaGPSSefipClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 506,
+        "Top": 264
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Salvar",
+            "ShortCut": 16467,
+            "OnExecute": "Act_SalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Excluir",
+            "ShortCut": 16430,
+            "OnExecute": "Act_ExcluirExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

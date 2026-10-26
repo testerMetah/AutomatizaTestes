@@ -1,0 +1,764 @@
+{
+  "classe": "TFrm_RH3520",
+  "nome": "Frm_RH3520",
+  "herdado": false,
+  "propriedades": {
+    "Left": 466,
+    "Top": 317,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cadastro de Avisos do Serviço do eSocial",
+    "ClientHeight": 354,
+    "ClientWidth": 578,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 578,
+        "Height": 39,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 11,
+            "Width": 29,
+            "Height": 13,
+            "Caption": "Aviso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Aviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 101,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_AvisoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aviso",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 47,
+            "Top": 8,
+            "Width": 52,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_AvisoEnter",
+            "OnExit": "Edt_AvisoExit",
+            "OnKeyPress": "Edt_AvisoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 39,
+        "Width": 578,
+        "Height": 315,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Aviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 570,
+            "Height": 307,
+            "ActivePage": "Tbs_Configuracao",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Configuracao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Configuração"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 12,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label14",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 40,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Tipo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 96,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Ativo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 68,
+                    "Width": 46,
+                    "Height": 13,
+                    "Caption": "Provedor:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_Provedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 121,
+                    "Top": 63,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "OnClick": "Btn_ProvedorClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Provedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 149,
+                    "Top": 68,
+                    "Width": 404,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 8,
+                    "Width": 486,
+                    "Height": 21,
+                    "DataField": "DESCRICAO100",
+                    "DataSource": "Ds_Aviso",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_TipoProvedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 36,
+                    "Width": 154,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "TIPOAVISOSERVICO",
+                    "DataSource": "Ds_Aviso",
+                    "Items.Strings": [
+                      "Eventos Rejeitados"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Dbc_Ativo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 93,
+                    "Width": 17,
+                    "Height": 17,
+                    "DataField": "ATIVADESATIVADA",
+                    "DataSource": "Ds_Aviso",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Provedor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 64,
+                    "Width": 53,
+                    "Height": 21,
+                    "DataField": "NROORDEMPR",
+                    "DataSource": "Ds_Aviso",
+                    "TabOrder": 3,
+                    "OnEnter": "Dbe_ProvedorEnter",
+                    "OnExit": "Dbe_ProvedorExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Destinatarios",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Destinatários",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_ProcessosJudiciais",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 1,
+                    "Width": 553,
+                    "Height": 232,
+                    "TabStop": false,
+                    "DataSource": "Ds_AvisoDestEmp",
+                    "ReadOnly": true,
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "NROORDEMDE",
+                        "Width": 70,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESTINATARIONOME",
+                        "Title.Caption": "Nome do Destinatário",
+                        "Width": 192,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "EMPRESADESCRICAO",
+                        "Width": 70,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "EMPRESANOME",
+                        "Title.Caption": "Nome da Empresa",
+                        "Width": 189,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_DestinatarioEmp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 233,
+                    "Width": 551,
+                    "Height": 42,
+                    "TabOrder": 1,
+                    "OnExit": "Pnl_DestinatarioEmpExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label70",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 51,
+                        "Top": 2,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Destinatário"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label71",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 2,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Empresa"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_Empresa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 213,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "Enabled": false,
+                        "ShowHint": true,
+                        "OnClick": "Btn_EmpresaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_NovoDestinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Novo Destinatário",
+                        "ShowHint": true,
+                        "OnClick": "Btn_NovoDestinatarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_ExcluirDestinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 25,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Excluir Destinatário",
+                        "ShowHint": true,
+                        "OnClick": "Btn_ExcluirDestinatarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_CancelaDestinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Cancelar",
+                        "ShowHint": true,
+                        "Visible": false,
+                        "OnClick": "Btn_CancelaDestinatarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_Destinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 114,
+                        "Top": 17,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "Enabled": false,
+                        "ShowHint": true,
+                        "OnClick": "Btn_DestinatarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_FinalizarDestinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 25,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Novo Destinatário",
+                        "ShowHint": true,
+                        "Visible": false,
+                        "OnClick": "Btn_FinalizarDestinatarioClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Destinatario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 51,
+                        "Top": 19,
+                        "Width": 61,
+                        "Height": 21,
+                        "DataField": "NROORDEMDE",
+                        "DataSource": "Ds_AvisoDestEmp",
+                        "Enabled": false,
+                        "TabOrder": 0,
+                        "OnEnter": "Dbe_DestinatarioEnter",
+                        "OnExit": "Dbe_DestinatarioExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Empresa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 150,
+                        "Top": 19,
+                        "Width": 61,
+                        "Height": 21,
+                        "DataField": "EMPRESA",
+                        "DataSource": "Ds_AvisoDestEmp",
+                        "Enabled": false,
+                        "TabOrder": 1,
+                        "OnEnter": "Dbe_EmpresaEnter",
+                        "OnExit": "Dbe_EmpresaExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Cb_TodasEmpresas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 245,
+                        "Top": 20,
+                        "Width": 128,
+                        "Height": 17,
+                        "Caption": "Todas Empresas",
+                        "Enabled": false,
+                        "TabOrder": 2,
+                        "OnClick": "Cb_TodasEmpresasClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_Aviso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Aviso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 332,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AvisoNROORDEMAV",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Aviso",
+            "FieldName": "NROORDEMAV"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoDESCRICAO100",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO100"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoTIPOAVISOSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOAVISOSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AvisoNROORDEMPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEMPR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Provedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 416,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ProvedorNROORDEMPR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Provedor",
+            "FieldName": "NROORDEMPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProvedorDESCRICAO100",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO100"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_AvisoDestEmp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 332,
+        "Top": 44
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AvisoDestEmpNROORDEMDE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Destinatário",
+            "FieldName": "NROORDEMDE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AvisoDestEmpNROORDEMAV",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Aviso",
+            "FieldName": "NROORDEMAV"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AvisoDestEmpNROORDEMDEEMP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEMDEEMP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoDestEmpEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoDestEmpEMPRESADESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESADESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoDestEmpPROVEDORNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESTINATARIONOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AvisoDestEmpEMPRESANOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESANOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_AvisoDestEmp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 44
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Destinatario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 455,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_DestinatarioNROORDEMDE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Destinatário",
+            "FieldName": "NROORDEMDE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DestinatarioDESCRICAO100",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO100"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DestinatarioEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "E-Mail",
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 496,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

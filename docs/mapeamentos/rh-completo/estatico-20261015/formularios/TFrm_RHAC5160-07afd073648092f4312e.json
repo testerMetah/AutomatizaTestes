@@ -1,0 +1,789 @@
+{
+  "classe": "TFrm_RHAC5160",
+  "nome": "Frm_RHAC5160",
+  "herdado": true,
+  "propriedades": {
+    "Left": 232,
+    "Top": 201,
+    "Caption": "Regras de Acesso por Fórmulas",
+    "ClientHeight": 443,
+    "ClientWidth": 772
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 772,
+        "Height": 43,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_RegraAcessoFormulaEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 85,
+            "Height": 13,
+            "Caption": "Regra de Acesso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_RegraAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 142,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "AllowAllUp": true,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_RegraAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 170,
+            "Top": 11,
+            "Width": 250,
+            "Height": 16,
+            "Caption": "Lbl_RegraAcesso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_RegraAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 103,
+            "Top": 9,
+            "Width": 38,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_RegraAcessoExit",
+            "OnKeyPress": "Edt_RegraAcessoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dck_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 650,
+            "Top": 10,
+            "Width": 48,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_RegraAcessoFormula",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 43,
+        "Width": 772,
+        "Height": 400,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_RegraAcessoFormula",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 764,
+            "Height": 92,
+            "Align": "alTop",
+            "TabOrder": 0,
+            "OnEnter": "Pnl_RegraAcessoFormulaEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DescReduzida",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 40,
+                "Width": 79,
+                "Height": 13,
+                "Caption": "Desc. Reduzida:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 15,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_SalvaFormula",
+              "herdado": false,
+              "propriedades": {
+                "Left": 414,
+                "Top": 36,
+                "Width": 20,
+                "Height": 21,
+                "TabOrder": 3,
+                "OnEnter": "Edt_SalvaFormulaEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TFrm_FormaSelecao",
+              "nome": "Frm_FormaSelecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 369,
+                "Top": 6,
+                "Width": 392,
+                "Height": 85,
+                "TabOrder": 2,
+                "ReadOnly": false,
+                "Caption": "Forma de Seleção",
+                "DataSource": "Dts_RegraAcessoFormula"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 102,
+                "Top": 11,
+                "Width": 261,
+                "Height": 21,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_RegraAcessoFormula",
+                "TabOrder": 0,
+                "OnExit": "Dbe_DescricaoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_DescReduzida",
+              "herdado": false,
+              "propriedades": {
+                "Left": 102,
+                "Top": 36,
+                "Width": 137,
+                "Height": 21,
+                "DataField": "DESCRICAO20",
+                "DataSource": "Dts_RegraAcessoFormula",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_RegraAcessoFormLin",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 62,
+            "Width": 764,
+            "Height": 332,
+            "Align": "alBottom",
+            "TabOrder": 1,
+            "OnEnter": "Pnl_RegraAcessoFormLinEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Grp_Formulas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 1,
+                "Width": 748,
+                "Height": 324,
+                "Caption": "Fórmulas",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_SobeEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 721,
+                    "Top": 137,
+                    "Width": 23,
+                    "Height": 20,
+                    "Action": "Act_SobeEvento",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_DesceEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 721,
+                    "Top": 158,
+                    "Width": 23,
+                    "Height": 20,
+                    "Action": "Act_DesceEvento",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfEventoPonto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 27,
+                    "Top": 279,
+                    "Width": 98,
+                    "Height": 13,
+                    "Caption": "Expressão Aritmética"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_NovaFormula",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 295,
+                    "Width": 21,
+                    "Height": 21,
+                    "Action": "Act_NovaFormula",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_EventoPonto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 223,
+                    "Top": 294,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 248,
+                    "Top": 280,
+                    "Width": 28,
+                    "Height": 13,
+                    "Caption": "Cond."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 288,
+                    "Top": 280,
+                    "Width": 43,
+                    "Height": 13,
+                    "Caption": "Nº Horas"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_LiberaAcessoTipoDias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 412,
+                    "Top": 280,
+                    "Width": 78,
+                    "Height": 13,
+                    "Caption": "Lib/Bloq Acesso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MensagemTipoDia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 492,
+                    "Top": 280,
+                    "Width": 52,
+                    "Height": 13,
+                    "Caption": "Mensagem"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MensTiposDias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 534,
+                    "Top": 295,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_MensTiposDias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 559,
+                    "Top": 296,
+                    "Width": 163,
+                    "Height": 21,
+                    "DataField": "DSCMENSAGEM",
+                    "DataSource": "Dts_RegraAcessoFormLin"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_SalvaFormLin",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 528,
+                    "Top": 116,
+                    "Width": 20,
+                    "Height": 21,
+                    "TabOrder": 9,
+                    "OnEnter": "Edt_SalvaFormLinEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_RegraAcessoFormLin",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 18,
+                    "Width": 705,
+                    "Height": 247,
+                    "TabStop": false,
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "EXPRESSAOARITMETICA",
+                        "Title.Caption": "Expressão Aritmética",
+                        "Width": 219,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONDICAO",
+                        "Title.Caption": "Cond.",
+                        "Width": 32,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NROHORASDIA",
+                        "Title.Caption": "Nº Horas",
+                        "Width": 48,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CALCULADIAATUAL",
+                        "Title.Caption": "Atual",
+                        "Width": 35,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CALCULADIAANTERIOR",
+                        "Title.Caption": "Anterior",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCPERMITEACESSO",
+                        "Title.Caption": "Lib/Bloq Acesso",
+                        "Width": 85,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCMENSAGEM",
+                        "Title.Caption": "Mensagem",
+                        "Width": 170,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_ExpressaoAritmetica",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 27,
+                    "Top": 295,
+                    "Width": 195,
+                    "Height": 21,
+                    "DataField": "EXPRESSAOARITMETICA",
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "MaxLength": 100,
+                    "TabOrder": 1,
+                    "OnChange": "Dbe_ExpressaoAritmeticaChange",
+                    "OnKeyPress": "Dbe_ExpressaoAritmeticaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_EventoPontoLink",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 199,
+                    "Top": 295,
+                    "Width": 23,
+                    "Height": 21,
+                    "TabStop": false,
+                    "TabOrder": 2,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_Condicao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 248,
+                    "Top": 296,
+                    "Width": 38,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "CONDICAO",
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "Items.Strings": [
+                      " ",
+                      "<",
+                      "<=",
+                      "=",
+                      ">=",
+                      ">",
+                      "<>"
+                    ],
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_NroHorasDia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 286,
+                    "Top": 296,
+                    "Width": 51,
+                    "Height": 21,
+                    "DataField": "NROHORASDIA",
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_CalcularDia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 339,
+                    "Top": 271,
+                    "Width": 71,
+                    "Height": 48,
+                    "Caption": "Calcula Dia",
+                    "TabOrder": 5,
+                    "TabStop": true,
+                    "OnEnter": "Grb_CalcularDiaEnter"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "Dbe_Atual",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 13,
+                        "Width": 47,
+                        "Height": 17,
+                        "Caption": "Atual",
+                        "DataField": "CALCULADIAATUAL",
+                        "DataSource": "Dts_RegraAcessoFormLin",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "Dbe_Anterior",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 29,
+                        "Width": 57,
+                        "Height": 17,
+                        "Caption": "Anterior",
+                        "DataField": "CALCULADIAANTERIOR",
+                        "DataSource": "Dts_RegraAcessoFormLin",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Cbo_LiberaAcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 412,
+                    "Top": 296,
+                    "Width": 79,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "PERMITEACESSO",
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "TabOrder": 6,
+                    "OnChange": "Cbo_LiberaAcessoChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Mensagem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 492,
+                    "Top": 296,
+                    "Width": 41,
+                    "Height": 21,
+                    "DataField": "MENSAGEM",
+                    "DataSource": "Dts_RegraAcessoFormLin",
+                    "Enabled": false,
+                    "TabOrder": 7
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_Interpretador",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 147,
+                    "Top": 279,
+                    "Width": 78,
+                    "Height": 13,
+                    "TabStop": false,
+                    "Caption": "Interpretada",
+                    "Checked": true,
+                    "TabOrder": 8
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Hint",
+              "herdado": false,
+              "propriedades": {
+                "Left": 31,
+                "Top": 183,
+                "Width": 124,
+                "Height": 91,
+                "TabOrder": 1,
+                "Visible": false
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_HintTitulo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 122,
+                    "Height": 13,
+                    "Align": "alTop",
+                    "Caption": "Condição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Hint",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 14,
+                    "Width": 122,
+                    "Height": 76,
+                    "Align": "alClient",
+                    "Caption": "Lbl_Hint"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 412,
+        "Top": 280
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_RegraAcessoFormLin",
+      "herdado": false,
+      "propriedades": {
+        "Left": 410,
+        "Top": 212
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RegraAcessoFormLin",
+      "herdado": false,
+      "propriedades": {
+        "Left": 86,
+        "Top": 208
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RegraAcessoFormula",
+      "herdado": false,
+      "propriedades": {
+        "Left": 84,
+        "Top": 270
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Acoes",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "Act_AcoesUpdate",
+        "Left": 229,
+        "Top": 256
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_NovaFormula",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovaFormulaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SobeEvento",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Move evento para cima.",
+            "ShortCut": 16422,
+            "OnExecute": "Act_SobeDescFormLinExecute",
+            "OnUpdate": "Act_SobeDesceFormLin"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DesceEvento",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Move evento para baixo.",
+            "ShortCut": 16424,
+            "OnExecute": "Act_SobeDescFormLinExecute",
+            "OnUpdate": "Act_SobeDesceFormLin"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

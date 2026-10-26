@@ -1,0 +1,425 @@
+{
+  "classe": "TFrm_RHPEIMPRIP01",
+  "nome": "Frm_RHPEIMPRIP01",
+  "herdado": false,
+  "propriedades": {
+    "Left": 133,
+    "Top": 113,
+    "BorderStyle": "bsSingle",
+    "Caption": "Importa Avaliações dos Riscos por Posto",
+    "ClientHeight": 443,
+    "ClientWidth": 767,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 43,
+        "Width": 767,
+        "Height": 359,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGauge",
+          "nome": "Gau_Progresso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 331,
+            "Width": 737,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 759,
+            "Height": 272,
+            "Align": "alTop",
+            "DataSource": "DataSource1",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "POSTO",
+                "Title.Caption": "Posto",
+                "Width": 33,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVIDADE",
+                "Title.Caption": "Atividade",
+                "Width": 165,
+                "Visible": true
+              },
+              {
+                "FieldName": "RISCO",
+                "Title.Caption": "Risco",
+                "Width": 33,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATA",
+                "Title.Caption": "Data",
+                "Width": 67,
+                "Visible": true
+              },
+              {
+                "FieldName": "PRESENTE",
+                "Title.Caption": "Presente",
+                "Width": 51,
+                "Visible": true
+              },
+              {
+                "FieldName": "AVALIACAO",
+                "Title.Caption": "Avaliação",
+                "Width": 51,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Title.Caption": "Unidade",
+                "Width": 45,
+                "Visible": true
+              },
+              {
+                "FieldName": "TECNICA",
+                "Title.Caption": "Técnica",
+                "Width": 98,
+                "Visible": true
+              },
+              {
+                "FieldName": "FREQUENCIA",
+                "Title.Caption": "Frequência",
+                "Width": 132,
+                "Visible": true
+              },
+              {
+                "FieldName": "EPCEFICAZ",
+                "Title.Caption": "EPC Eficaz",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "EPIEFICAZ",
+                "Title.Caption": "EPI Eficaz",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "CA",
+                "Width": 289,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_RegistrosExistentes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 278,
+            "Width": 252,
+            "Height": 49,
+            "Caption": "O que fazer com os registros existentes no destino",
+            "Columns": 2,
+            "Items.Strings": [
+              "Ignorar",
+              "Atualizar"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 402,
+        "Width": 767,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Importar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 7,
+            "Width": 124,
+            "Height": 25,
+            "Caption": "&Iniciar Importação",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_ImportarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Visualiza",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 7,
+            "Width": 213,
+            "Height": 25,
+            "Caption": "&Visualizar Ocorrências da Importação",
+            "TabOrder": 1,
+            "OnClick": "btn_VisualizaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 767,
+        "Height": 43,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2,
+        "OnExit": "Pnl_DadosExit"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 13,
+            "Width": 157,
+            "Height": 13,
+            "Caption": "Informe o Arquivo a Importar(.xls):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_LocalBackupOracleRes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 652,
+            "Top": 8,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Local do Arquivo de Backup (Ctrl+L)",
+            "ShowHint": true,
+            "OnClick": "Btn_LocalBackupOracleResClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ArquivoXLS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 174,
+            "Top": 9,
+            "Width": 476,
+            "Height": 21,
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TADODataSet",
+      "nome": "ADODataSet1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 542,
+        "Top": 108
+      },
+      "filhos": [
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1POSTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "ADODataSet1FUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1ATIVIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1RISCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1DATA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1PRESENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PRESENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "ADODataSet1AVALIACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AVALIACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1UNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1TECNICA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TECNICA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1FREQUENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FREQUENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1EPCEFICAZ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EPCEFICAZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1EPIEFICAZ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EPIEFICAZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "ADODataSet1CA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "ADODataSet1F13",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "F13"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DataSource1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 616,
+        "Top": 106
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 590,
+        "Top": 146
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMREnter",
+      "nome": "MREnter1",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": true,
+        "Left": 456,
+        "Top": 146
+      },
+      "filhos": []
+    }
+  ]
+}

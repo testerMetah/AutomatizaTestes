@@ -1,0 +1,185 @@
+{
+  "classe": "TFrm_RHAC8030",
+  "nome": "Frm_RHAC8030",
+  "herdado": true,
+  "propriedades": {
+    "Left": 367,
+    "Top": 250,
+    "Caption": "Consulta Terminais Telemática"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Corpo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 536,
+        "Height": 346,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Terminal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 528,
+            "Height": 297,
+            "Align": "alClient",
+            "DataSource": "Dst_Terminal",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "COLETOR",
+                "Title.Caption": "Coletor",
+                "Width": 404,
+                "Visible": true
+              },
+              {
+                "FieldName": "STATUS",
+                "Width": 90,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Botao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 299,
+            "Width": 528,
+            "Height": 41,
+            "Align": "alBottom",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Fechar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 7,
+                "Width": 75,
+                "Height": 25,
+                "Cancel": true,
+                "Caption": "&Fechar",
+                "ModalResult": 2,
+                "TabOrder": 0,
+                "OnClick": "Btn_FecharClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Atualizar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 92,
+                "Top": 7,
+                "Width": 75,
+                "Height": 25,
+                "Action": "Act_Atualizar",
+                "Caption": "Atualizar",
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dst_Terminal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 156,
+        "Top": 92
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Terminal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 68,
+        "Top": 60
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TerminalCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TerminalStatus",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Status",
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 180
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Atualizar",
+            "ShortCut": 116,
+            "OnExecute": "Act_AtualizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_Close",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 264,
+        "Top": 180
+      },
+      "filhos": []
+    }
+  ]
+}

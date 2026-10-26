@@ -1,0 +1,744 @@
+{
+  "classe": "TFrm_OpcoesMapaProcesso",
+  "nome": "Frm_OpcoesMapaProcesso",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Width": 691,
+    "Height": 270,
+    "TabOrder": 0
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 691,
+        "Height": 270,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_SelecaoPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 140,
+            "Width": 691,
+            "Height": 130,
+            "Align": "alBottom",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TRadioGroup",
+              "nome": "Rdg_SelecaoPessoas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 691,
+                "Height": 130,
+                "Align": "alClient",
+                "Caption": "Quais pessoas podem ser consideradas? ",
+                "Items.Strings": [
+                  "Somente as pessoas vinculadas ao mapa de processos selecionado",
+                  "As pessoas com treinamento nas atividades e não vinculadas ao mapa de processos selecionado",
+                  "Todas as pessoas"
+                ],
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_VersaoCompacta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 691,
+            "Height": 29,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_SelecionarPor",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 8,
+                "Width": 71,
+                "Height": 13,
+                "Caption": "Selecionar por:",
+                "Enabled": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_SelecionarPor",
+              "herdado": false,
+              "propriedades": {
+                "Left": 88,
+                "Top": 5,
+                "Width": 145,
+                "Height": 21,
+                "Enabled": false,
+                "TabOrder": 0,
+                "Items.Strings": [
+                  "Setor/Cargo",
+                  "Setor/Função",
+                  "Setor/Cargo/Função"
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_SelecionarPor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 133,
+            "Height": 140,
+            "Align": "alCustom",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TRadioGroupMeta",
+              "nome": "Rdg_SelecionarPor",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 133,
+                "Height": 140,
+                "Align": "alCustom",
+                "Caption": "Mapa de Processos por ",
+                "Items.Strings": [
+                  "Setor/Cargo",
+                  "Setor/Função",
+                  "Setor/Cargo/Função",
+                  "Setor"
+                ],
+                "TabOrder": 0,
+                "OnClick": "Rdg_SelecionarPorClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Opcoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 0,
+            "Width": 558,
+            "Height": 140,
+            "Align": "alCustom",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Rdg_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 558,
+                "Height": 140,
+                "Align": "alClient",
+                "Caption": "Setor/Cargo ",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 15,
+                    "Width": 548,
+                    "Height": 123,
+                    "ActivePage": "Tbs_Setor",
+                    "Align": "alCustom",
+                    "Style": "tsButtons",
+                    "TabOrder": 0,
+                    "TabStop": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_SetorCargo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tbs_SetorCargo"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_SetorCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 36,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Setor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Cargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 65,
+                            "Width": 31,
+                            "Height": 13,
+                            "Caption": "Cargo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_SetorCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 113,
+                            "Top": 32,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Cargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 113,
+                            "Top": 61,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescSetorCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 141,
+                            "Top": 36,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescSetorCargo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 141,
+                            "Top": 65,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescCargo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SetorCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 47,
+                            "Top": 32,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_SetorCargoExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Cargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 47,
+                            "Top": 61,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 1,
+                            "OnEnter": "Edt_CargoEnter",
+                            "OnExit": "Edt_CargoExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TFrm_RelacaoFunc",
+                          "nome": "Frm_RelacaoFuncCargo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 469,
+                            "Top": 0,
+                            "Width": 80,
+                            "Height": 26,
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_SetorFuncao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tbs_SetorFuncao",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_SetorFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 36,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Setor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Funcao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 64,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Função:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_SetorFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 121,
+                            "Top": 32,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Funcao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 121,
+                            "Top": 61,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescSetorFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 149,
+                            "Top": 36,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescSetorFuncao"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 149,
+                            "Top": 65,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescFuncao"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SetorFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 55,
+                            "Top": 32,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_SetorFuncaoExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Funcao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 55,
+                            "Top": 61,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 1,
+                            "OnEnter": "Edt_FuncaoEnter",
+                            "OnExit": "Edt_FuncaoExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TFrm_RelacaoFunc",
+                          "nome": "Frm_RelacaoFuncFuncao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 469,
+                            "Top": 0,
+                            "Width": 80,
+                            "Height": 26,
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_SetorCargoFuncao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tbs_SetorCargoFuncao",
+                        "ImageIndex": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_SetorCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 15,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Setor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_SetorCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 121,
+                            "Top": 11,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescSetorCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 149,
+                            "Top": 15,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescSetorCarFun"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_CargoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 45,
+                            "Width": 31,
+                            "Height": 13,
+                            "Caption": "Cargo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_CargoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 122,
+                            "Top": 42,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescCargoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 150,
+                            "Top": 46,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescCargoCarFun"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_FuncaoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 76,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Função:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_FuncaoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 122,
+                            "Top": 74,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescFuncaoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 150,
+                            "Top": 78,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescFuncaoCarFun"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SetorCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 55,
+                            "Top": 11,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_SetorCarFunExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_CargoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 56,
+                            "Top": 42,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 1,
+                            "OnEnter": "Edt_CargoCarFunEnter",
+                            "OnExit": "Edt_CargoCarFunExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TFrm_RelacaoFunc",
+                          "nome": "Frm_RelacaoFuncCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 469,
+                            "Top": 0,
+                            "Width": 80,
+                            "Height": 26,
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_FuncaoCarFun",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 56,
+                            "Top": 74,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 3,
+                            "OnEnter": "Edt_FuncaoCarFunEnter",
+                            "OnExit": "Edt_FuncaoCarFunExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Setor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tbs_Setor",
+                        "ImageIndex": 3
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Setor",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 45,
+                            "Width": 28,
+                            "Height": 13,
+                            "Caption": "Setor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Setor",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 113,
+                            "Top": 41,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_DescSetor",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 141,
+                            "Top": 45,
+                            "Width": 250,
+                            "Height": 13,
+                            "Caption": "Lbl_DescSetor"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Setor",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 47,
+                            "Top": 41,
+                            "Width": 65,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_SetorExit",
+                            "OnKeyPress": "Valida"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TFrm_RelacaoFunc",
+                          "nome": "Frm_RelacaoFuncSetor",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 469,
+                            "Top": 0,
+                            "Width": 80,
+                            "Height": 26,
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

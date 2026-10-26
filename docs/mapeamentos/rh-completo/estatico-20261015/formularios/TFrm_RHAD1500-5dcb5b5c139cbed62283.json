@@ -1,0 +1,283 @@
+{
+  "classe": "TFrm_RHAD1500",
+  "nome": "Frm_RHAD1500",
+  "herdado": true,
+  "propriedades": {
+    "Left": 383,
+    "Top": 242,
+    "Caption": "Locais para os Arquivos",
+    "ClientHeight": 412,
+    "ClientWidth": 574
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 574,
+        "Height": 412,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 208,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Local"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 224,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 208,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 429,
+            "Top": 208,
+            "Width": 50,
+            "Height": 13,
+            "Caption": "Tipo Local"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 256,
+            "Width": 95,
+            "Height": 13,
+            "Caption": "Caminho do Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 321,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Observações"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ProcuraDiretorio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 530,
+            "Top": 272,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "Btn_ProcuraDiretorioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 456,
+            "Top": 360,
+            "Width": 13,
+            "Height": 21,
+            "TabOrder": 6,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_LocaisArquivos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 566,
+            "Height": 202,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_LocaisArquivos",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_LocaisArquivosEnter",
+            "Columns": [
+              {
+                "FieldName": "LOCALARQUIVO",
+                "Title.Caption": "Local",
+                "Width": 85,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO60",
+                "Width": 325,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPOLOCALARQUIVO",
+                "Title.Caption": "Tipo Local",
+                "Width": 120,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 224,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_LocalArquivoExit",
+            "OnKeyPress": "Edt_LocalArquivoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 224,
+            "Width": 323,
+            "Height": 21,
+            "DataField": "DESCRICAO60",
+            "DataSource": "Dts_LocaisArquivos",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbcm_TipoLocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 429,
+            "Top": 224,
+            "Width": 124,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOLOCALARQUIVO",
+            "DataSource": "Dts_LocaisArquivos",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_CaminhoArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 273,
+            "Width": 512,
+            "Height": 41,
+            "DataField": "CAMINHOARQUIVO",
+            "DataSource": "Dts_LocaisArquivos",
+            "MaxLength": 250,
+            "TabOrder": 4,
+            "OnExit": "Dbm_CaminhoArquivoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_Observacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 338,
+            "Width": 538,
+            "Height": 61,
+            "DataField": "OBSERVACOES",
+            "DataSource": "Dts_LocaisArquivos",
+            "MaxLength": 800,
+            "TabOrder": 5
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 516,
+        "Top": 64
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LocaisArquivos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 96
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDirBox",
+      "nome": "DirBox",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 128
+      },
+      "filhos": []
+    }
+  ]
+}

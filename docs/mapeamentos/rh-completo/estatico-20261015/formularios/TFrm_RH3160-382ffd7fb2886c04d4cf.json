@@ -1,0 +1,280 @@
+{
+  "classe": "TFrm_RH3160",
+  "nome": "Frm_RH3160",
+  "herdado": true,
+  "propriedades": {
+    "Left": 407,
+    "Top": 309,
+    "Caption": "Motivos de Abertura",
+    "ClientHeight": 423,
+    "ClientWidth": 659
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 659,
+        "Height": 423,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 80,
+            "Top": 368,
+            "Width": 100,
+            "Height": 13,
+            "Caption": "Descrição Detalhada"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 562,
+            "Top": 368,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 438,
+            "Top": 368,
+            "Width": 32,
+            "Height": 13,
+            "Caption": "Motivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 368,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Código"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Motivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 384,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 313,
+            "Top": 368,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Descrição Reduzida"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Auxiliar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 720,
+            "Top": 372,
+            "Width": 41,
+            "Height": 21,
+            "TabOrder": 6,
+            "OnEnter": "Edt_AuxiliarEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "DBMetaGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 651,
+            "Height": 359,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_MotivosVaga",
+            "TabOrder": 0,
+            "OnEnter": "DBMetaGrid1Enter",
+            "Columns": [
+              {
+                "FieldName": "CODMOTIVOVAGA",
+                "Title.Caption": "Código",
+                "Width": 43,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Title.Caption": "Descrição Detalhada",
+                "Width": 247,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Title.Caption": "Descrição Reduzida",
+                "Width": 128,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescMotivo",
+                "Title.Caption": "Motivo",
+                "Width": 127,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVADESATIVADA",
+                "Title.Caption": "Situação",
+                "Width": 62,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Cmb_MotivoVaga",
+          "herdado": false,
+          "propriedades": {
+            "Left": 438,
+            "Top": 384,
+            "Width": 121,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "MOTIVOVAGA",
+            "DataSource": "Dts_MotivosVaga",
+            "TabOrder": 4,
+            "OnEnter": "Cmb_MotivoVagaEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Cmb_AtivoDesativo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 562,
+            "Top": 384,
+            "Width": 81,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_MotivosVaga",
+            "Items.Strings": [
+              "Ativo",
+              "Desativado"
+            ],
+            "TabOrder": 5,
+            "OnEnter": "Cmb_AtivoDesativoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Codigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 384,
+            "Width": 38,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 1,
+            "OnExit": "Edt_CodigoExit",
+            "OnKeyPress": "Edt_CodigoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_DescricaoReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 313,
+            "Top": 384,
+            "Width": 121,
+            "Height": 21,
+            "MaxLength": 20,
+            "TabOrder": 3,
+            "OnEnter": "Edt_DescricaoReduzidaEnter",
+            "OnExit": "Edt_DescricaoReduzidaExit",
+            "OnKeyPress": "Edt_DescricaoReduzidaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_DescricaoDetallhada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 80,
+            "Top": 384,
+            "Width": 229,
+            "Height": 21,
+            "MaxLength": 40,
+            "TabOrder": 2,
+            "OnExit": "Edt_DescricaoDetallhadaExit",
+            "OnKeyPress": "Edt_DescricaoDetallhadaKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 248,
+        "Top": 106
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MotivosVaga",
+      "herdado": false,
+      "propriedades": {
+        "Left": 208,
+        "Top": 104
+      },
+      "filhos": []
+    }
+  ]
+}

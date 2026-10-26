@@ -1,0 +1,287 @@
+{
+  "classe": "TFrm_RHTR1114",
+  "nome": "Frm_RHTR1114",
+  "herdado": false,
+  "propriedades": {
+    "Left": 338,
+    "Top": 175,
+    "BorderStyle": "bsSingle",
+    "Caption": "Copiar Cursos de Outra Empresa",
+    "ClientHeight": 420,
+    "ClientWidth": 780,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnl1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 780,
+        "Height": 379,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "grp1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 758,
+            "Height": 357,
+            "Caption": "Selecione a Empresa de Origem e os Cursos a Copiar: ",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lbl1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 19,
+                "Width": 97,
+                "Height": 13,
+                "Caption": "Empresas de Origem"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 154,
+                "Width": 306,
+                "Height": 13,
+                "Caption": "Cursos (barra de espaço ou duplo clique para marcar/desmarcar)"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Grd_Empresas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 34,
+                "Width": 734,
+                "Height": 80,
+                "DataSource": "Dts_Origens",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "EMPRESA",
+                    "Title.Caption": "Empresa",
+                    "Width": 60,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "PESSOA",
+                    "Title.Caption": "Pessoa",
+                    "Width": 60,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Title.Caption": "Nome",
+                    "Width": 300,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRadioGroup",
+              "nome": "Rg_Modo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 117,
+                "Width": 734,
+                "Height": 35,
+                "Caption": "Modo",
+                "Columns": 2,
+                "Items.Strings": [
+                  "Todos os Cursos",
+                  "Somente Cursos Válidos"
+                ],
+                "TabOrder": 1,
+                "OnClick": "Rg_ModoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Grd_Cursos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 171,
+                "Width": 734,
+                "Height": 176,
+                "DataSource": "Dts_CursosOrigem",
+                "TabOrder": 2,
+                "OnKeyPress": "Grd_CursosKeyPress",
+                "Columns": [
+                  {
+                    "FieldName": "CURSO",
+                    "Title.Caption": "Código",
+                    "Width": 60,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO50",
+                    "Title.Caption": "Curso",
+                    "Width": 250,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "REVISAO",
+                    "Title.Caption": "Revisão",
+                    "Width": 50,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_REVISAO",
+                    "Title.Caption": "Data Revisão",
+                    "Width": 80,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_INICIO",
+                    "Title.Caption": "Data Início",
+                    "Width": 80,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_ENCERRA",
+                    "Title.Caption": "Data Encerramento",
+                    "Width": 115,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "STATUS",
+                    "Title.Caption": "Status",
+                    "Width": 55,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnl2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 379,
+        "Width": 780,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_MarcarTodos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 161,
+            "Top": 6,
+            "Width": 170,
+            "Height": 25,
+            "Caption": "&Marcar/Desmarcar Todos",
+            "TabOrder": 1,
+            "OnClick": "Btn_MarcarTodosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Confirmar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 6,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "&Copiar Selecionados",
+            "TabOrder": 0,
+            "OnClick": "Btn_ConfirmarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 340,
+            "Top": 6,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Origens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 100
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Origens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 140
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CursosOrigem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 460,
+        "Top": 100
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CursosOrigem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 460,
+        "Top": 140
+      },
+      "filhos": []
+    }
+  ]
+}

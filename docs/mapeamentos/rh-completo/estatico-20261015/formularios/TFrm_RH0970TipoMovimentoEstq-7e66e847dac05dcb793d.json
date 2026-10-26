@@ -1,0 +1,234 @@
+{
+  "classe": "TFrm_RH0970TipoMovimentoEstq",
+  "nome": "Frm_RH0970TipoMovimentoEstq",
+  "herdado": true,
+  "propriedades": {
+    "Left": 269,
+    "Top": 569,
+    "Caption": "Movimentos de Estoque",
+    "ClientHeight": 140,
+    "ClientWidth": 418
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 418,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 12,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Movimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_TipoMovimentoEstq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_MovimentoEstq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 82,
+            "Top": 8,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_MovimentoEstqExit",
+            "OnKeyPress": "Edt_MovimentoEstqKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "DBCheckBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 360,
+            "Top": 10,
+            "Width": 47,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_MovimentoEstq",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 418,
+        "Height": 99,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 14,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 38,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Descrição Reduzida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 65,
+            "Width": 94,
+            "Height": 13,
+            "Caption": "Tipo de Movimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AuxEnter",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 64,
+            "Width": 15,
+            "Height": 21,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxEnterEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 10,
+            "Width": 289,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_MovimentoEstq",
+            "MaxLength": 40,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 34,
+            "Width": 152,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_MovimentoEstq",
+            "MaxLength": 20,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "BRG_TipoMovimentoEstq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 56,
+            "Width": 275,
+            "Height": 31,
+            "Columns": 3,
+            "DataField": "TIPOMOVIMENTOESTOQUE",
+            "DataSource": "Dts_MovimentoEstq",
+            "Enabled": false,
+            "Items.Strings": [
+              "Abertura",
+              "Entrada",
+              "Saída"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 380,
+        "Top": 102
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MovimentoEstq",
+      "herdado": false,
+      "propriedades": {
+        "Left": 366,
+        "Top": 50
+      },
+      "filhos": []
+    }
+  ]
+}

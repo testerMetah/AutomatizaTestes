@@ -1,0 +1,364 @@
+{
+  "classe": "TFrm_RHFP1300",
+  "nome": "Frm_RHFP1300",
+  "herdado": false,
+  "propriedades": {
+    "Left": 45,
+    "Top": 119,
+    "BorderStyle": "bsSingle",
+    "Caption": "Histórico das Alterações Cadastrais da Pessoa ",
+    "ClientHeight": 386,
+    "ClientWidth": 700,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 700,
+        "Height": 50,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 14,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 107,
+            "Top": 11,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 132,
+            "Top": 14,
+            "Width": 385,
+            "Height": 17,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 44,
+            "Top": 11,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 550,
+            "Top": 4,
+            "Width": 141,
+            "Height": 35,
+            "Caption": "Ordem",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TRadioButton",
+              "nome": "Rdd_Data",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 15,
+                "Width": 49,
+                "Height": 17,
+                "Caption": "Data",
+                "TabOrder": 0,
+                "OnClick": "Rdd_DataClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRadioButton",
+              "nome": "Rdd_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 60,
+                "Top": 15,
+                "Width": 73,
+                "Height": 17,
+                "Caption": "Descrição",
+                "TabOrder": 1,
+                "OnClick": "Rdd_DescricaoClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Spn_AlteracoesAnteriores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 520,
+            "Top": 9,
+            "Width": 27,
+            "Height": 28,
+            "Hint": "Registrar Alterações Cadastrais Anteriores",
+            "ShowHint": true,
+            "TabOrder": 2,
+            "TabStop": false,
+            "OnClick": "Spn_AlteracoesAnterioresClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 50,
+        "Width": 700,
+        "Height": 336,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TStringGrid",
+          "nome": "grd_AlteracoesPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 692,
+            "Height": 328,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 260,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PessoasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_AlteracoesPessoa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 378,
+        "Top": 7
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_AlteracoesPessoaDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaCODIGOANTERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOANTERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaCODIGOATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaCONTEUDOANTERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTEUDOANTERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaCONTEUDOATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTEUDOATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AlteracoesPessoaDATAHORAGERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAGERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaTIPOCAMPO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCAMPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AlteracoesPessoaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_AlteracoesPessoaPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_Imagens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 466,
+        "Top": 10
+      },
+      "filhos": []
+    }
+  ]
+}

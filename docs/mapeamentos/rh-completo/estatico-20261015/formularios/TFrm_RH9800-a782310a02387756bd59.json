@@ -1,0 +1,847 @@
+{
+  "classe": "TFrm_RH9800",
+  "nome": "Frm_RH9800",
+  "herdado": true,
+  "propriedades": {
+    "Left": 458,
+    "Top": 98,
+    "Width": 838,
+    "Height": 630,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Importador de XML"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ImportacaoXML",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 822,
+        "Height": 546,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ImportacaoXML",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 814,
+            "Height": 538,
+            "ActivePage": "Tbs_Definicao",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_ImportacaoXMLChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Definicao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Definição"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 62,
+                    "Top": 465,
+                    "Width": 262,
+                    "Height": 13,
+                    "Caption": "Informe a pasta contendo os XMLs a serem importados:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LocalizarArquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 763,
+                    "Top": 479,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar arquivo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_LocalizarArquivoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 11,
+                    "Width": 42,
+                    "Height": 13,
+                    "Caption": "Eventos:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "Img_Hint",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 478,
+                    "Width": 16,
+                    "Height": 16,
+                    "Hint": "O sistema sempre tenta importar todos os arquivos existentes na pasta selecionada.\r\nSe você marcou o evento ‘Monitoramento da Saúde do Trabalhador (S-2220)’, deixe na pasta somente arquivos referentes ao S-2220.\r\nCaso a pasta contenha arquivos de outros eventos ou arquivos em formatos diferentes de XML, cada um deles será rejeitado e o sistema exibirá a mensagem:\r\n'O arquivo XML não está na estrutura definida pelo eSocial e não pode ser importado.' |1. Configuração necessária\r\nAtualmente, para utilizar a funcionalidade de Quadro de Lotação Gerencial ou por Unidade e Setor, é necessária a configuração mínima da estrutura, incluindo:\r\n\r\nCargos com Plano, Classe e Faixa;\r\n\r\nMatriz Salarial com Plano, Classe e Faixa;\r\n\r\nClassificação Gerencial.\r\n\r\nÉ possível utilizar apenas uma classe e uma faixa na Matriz Salarial para um cargo.\r\n\r\n2. Diretriz de visualização\r\nNas Diretrizes do Módulo de Gestão de Cargos e Salários, a diretriz “Considerar no Quadro de Lotação” afeta diretamente a visualização dos dados no Quadro de Lotação Gerencial.\r\n\r\nSomente contratos ativos: serão exibidos cargos ativos ou inativos que possuam contratos ativos vinculados.\r\n\r\nContratos ativos e afastados: serão exibidos cargos ativos ou inativos vinculados a contratos ativos ou afastados.\r\n\r\nNesta tela, os cargos inativos são apresentados na cor vermelha. A exibição dos cargos respeita a diretriz configurada no módulo.\r\n\r\n3. Verificação de vínculos\r\nPara verificar os contratos vinculados aos cargos, utilize o relatório Resumo do Funcionário, selecionando o filtro Cargos na aba Seleção.\r\n\r\nEm caso de dúvidas, consulte os manuais do sistema ou entre em contato com o suporte ou consultor responsável.",
+                    "Align": "alCustom",
+                    "ShowHint": true,
+                    "OnClick": "Img_HintClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Diretorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 62,
+                    "Top": 481,
+                    "Width": 699,
+                    "Height": 21,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckListBoxMeta",
+                  "nome": "Cb_Eventos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 62,
+                    "Top": 11,
+                    "Width": 723,
+                    "Height": 446,
+                    "Items.Strings": [
+                      "Monitoramento de Saúde do Trabalhador (S-2220)",
+                      "Condições Ambientais de Trabalho - Agentes Nocivos (S-2240)"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSplitter",
+                  "nome": "Splitter",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 193,
+                    "Width": 806,
+                    "Height": 6,
+                    "Align": "alTop"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Importados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 806,
+                    "Height": 193,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Importados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 2,
+                        "Width": 113,
+                        "Height": 13,
+                        "Caption": "Eventos Importados"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_Importados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 21,
+                        "Width": 806,
+                        "Height": 172,
+                        "Align": "alBottom",
+                        "DataSource": "Ds_Importados",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "EventoESocialDe",
+                            "Title.Caption": "Evento XML",
+                            "Width": 241,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "EventoESocialPara",
+                            "Title.Caption": "Evento Metadados",
+                            "Width": 241,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Empresa",
+                            "Width": 56,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CPF",
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Matricula",
+                            "Title.Caption": "Matrícula eSocial",
+                            "Width": 101,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Arquivo",
+                            "Width": 220,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_NaoImportados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 199,
+                    "Width": 806,
+                    "Height": 311,
+                    "Align": "alClient",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_NaoImportados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 806,
+                        "Height": 13,
+                        "Align": "alTop",
+                        "Caption": "Eventos Não Importados"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_NaoImportados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 13,
+                        "Width": 806,
+                        "Height": 220,
+                        "Align": "alClient",
+                        "DataSource": "Ds_NaoImportados",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "EventoESocial",
+                            "Title.Caption": "Evento",
+                            "Width": 241,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Empresa",
+                            "Width": 65,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CPF",
+                            "Width": 89,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Matricula",
+                            "Title.Caption": "Matrícula",
+                            "Width": 73,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Erro",
+                            "Width": 181,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "Arquivo",
+                            "Width": 204,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_ControleInconsistencias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 233,
+                        "Width": 806,
+                        "Height": 15,
+                        "Align": "alBottom",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Inconsistencias",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 2,
+                            "Width": 124,
+                            "Height": 13,
+                            "Caption": "Detalhamento do Erro"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Btn",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 621,
+                            "Top": 0,
+                            "Width": 185,
+                            "Height": 15,
+                            "Align": "alRight",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_ExibirCima",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 162,
+                                "Top": 0,
+                                "Width": 23,
+                                "Height": 15,
+                                "OnClick": "Btn_ExibirCimaClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_ExibirBaixo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 162,
+                                "Top": 0,
+                                "Width": 23,
+                                "Height": 15,
+                                "OnClick": "Btn_ExibirBaixoClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_Inconsistencias",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 248,
+                        "Width": 806,
+                        "Height": 63,
+                        "Align": "alBottom",
+                        "TabOrder": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_BottonInc",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 806,
+                            "Height": 63,
+                            "Align": "alBottom",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TPanel",
+                              "nome": "Pnl_DescricaoInconsistencia",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 806,
+                                "Height": 57,
+                                "Align": "alClient",
+                                "TabOrder": 0
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TPanel",
+                                  "nome": "Pnl_2",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 0,
+                                    "Width": 10,
+                                    "Height": 57,
+                                    "Align": "alLeft",
+                                    "TabOrder": 0
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBMemo",
+                                  "nome": "DbMem_LOCALIZACAOOCORRENCIALOTE",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 10,
+                                    "Top": 0,
+                                    "Width": 786,
+                                    "Height": 57,
+                                    "Align": "alClient",
+                                    "DataField": "Erro",
+                                    "DataSource": "Ds_NaoImportados",
+                                    "ReadOnly": true,
+                                    "TabOrder": 1
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TPanel",
+                                  "nome": "Pnl_3",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 796,
+                                    "Top": 0,
+                                    "Width": 10,
+                                    "Height": 57,
+                                    "Align": "alRight",
+                                    "TabOrder": 2
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "classe": "TPanel",
+                              "nome": "Pnl_6",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 57,
+                                "Width": 806,
+                                "Height": 6,
+                                "Align": "alBottom",
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 546,
+        "Width": 822,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarImportacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "&Iniciar Importação",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarImportacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Exportar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 154,
+            "Top": 8,
+            "Width": 231,
+            "Height": 25,
+            "Caption": "&Gerar planilha dos eventos não importados",
+            "TabOrder": 1,
+            "OnClick": "Btn_ExportarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_NaoImportados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 696,
+        "Top": 168
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportadosEventoESocial",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportadosEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportadosMatricula",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Matricula"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_NaoImportadosArquivo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 100,
+            "FieldName": "Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_NaoImportadosErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_NaoImportadosCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Importados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 726,
+        "Top": 168
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_ImportadosCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosEventoESocialPara",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocialPara"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocialDe"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Matricula"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField4",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 100,
+            "FieldName": "Arquivo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Eventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 756,
+        "Top": 168
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosEventoESocialPara",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocialPara"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosEventoESocialDe",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocialDe"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosMatricula",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Matricula"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldCds_EventosCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosErro",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 200,
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosArquivo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 100,
+            "FieldName": "Arquivo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_NaoImportados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 692,
+        "Top": 138
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_Importados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 726,
+        "Top": 138
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_EventosNaoImportadosCSV",
+      "herdado": false,
+      "propriedades": {
+        "Left": 787,
+        "Top": 169
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVEventoESocial",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Evento",
+            "DisplayWidth": 50,
+            "FieldName": "EventoESocial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVMatricula",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Matricula"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EventosNaoImportadosCSVArquivo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 100,
+            "FieldName": "Arquivo"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

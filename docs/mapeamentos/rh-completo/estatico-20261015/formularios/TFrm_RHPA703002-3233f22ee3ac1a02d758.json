@@ -1,0 +1,325 @@
+{
+  "classe": "TFrm_RHPA703002",
+  "nome": "Frm_RHPA703002",
+  "herdado": false,
+  "propriedades": {
+    "Left": 530,
+    "Top": 347,
+    "Width": 697,
+    "Height": 220,
+    "Caption": "Frm_RHPA703002",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Itens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 681,
+        "Height": 143,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_MarcacoesOnline",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 673,
+            "Height": 135,
+            "Align": "alClient",
+            "DataSource": "Dts_Consulta",
+            "TabOrder": 0,
+            "OnKeyPress": "Dbg_MarcacoesOnlineKeyPress",
+            "Columns": [
+              {
+                "Title.Caption": "Liberada",
+                "Width": 52,
+                "Visible": true
+              },
+              {
+                "FieldName": "DataMarcacao",
+                "Title.Caption": "Data",
+                "Width": 67,
+                "Visible": true
+              },
+              {
+                "FieldName": "HoraMarcacao",
+                "Title.Caption": "Hora",
+                "Width": 45,
+                "Visible": true
+              },
+              {
+                "FieldName": "NroCracha",
+                "Title.Caption": "Crachá",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "Pis",
+                "Visible": true
+              },
+              {
+                "FieldName": "CPF",
+                "Visible": true
+              },
+              {
+                "FieldName": "LongColetor",
+                "Title.Caption": "Coletor/Função",
+                "Width": 162,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescPermissao",
+                "Title.Caption": "Permissão",
+                "Width": 72,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoMensagem",
+                "Title.Caption": "Mensagem",
+                "Width": 149,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescTipoColeta",
+                "Title.Caption": "Tipo Coleta",
+                "Width": 77,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 143,
+        "Width": 681,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Liberar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 465,
+            "Top": 5,
+            "Width": 105,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Liberar Todas",
+            "TabOrder": 2,
+            "OnClick": "Btn_LiberarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Bloquear",
+          "herdado": false,
+          "propriedades": {
+            "Left": 575,
+            "Top": 5,
+            "Width": 105,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Bloquear Todas",
+            "TabOrder": 3,
+            "OnClick": "Btn_BloquearClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 304,
+        "Top": 98
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Marcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 92
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarcacoesDataHoraMarcacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHoraMarcacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_MarcacoesNroCracha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NroCracha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_MarcacoesNroOrdem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NroOrdem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesHoraMarcacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HoraMarcacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesPis",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pis"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesLongColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LongColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesDescPermissao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "DescPermissao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesDescricaoMensagem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoMensagem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesDescTipoColeta",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 15,
+            "FieldName": "DescTipoColeta"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesMarcLiberada",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MarcLiberada"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarcacoesAlterado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Alterado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarcacoesDataMarcacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataMarcacao"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

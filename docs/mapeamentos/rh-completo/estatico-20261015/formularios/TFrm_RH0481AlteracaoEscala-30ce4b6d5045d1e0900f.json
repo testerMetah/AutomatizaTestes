@@ -1,0 +1,468 @@
+{
+  "classe": "TFrm_RH0481AlteracaoEscala",
+  "nome": "Frm_RH0481AlteracaoEscala",
+  "herdado": true,
+  "propriedades": {
+    "Left": 469,
+    "Top": 282,
+    "Caption": "Inclusão/Alteração de Escala",
+    "ClientHeight": 363,
+    "ClientWidth": 604,
+    "FormStyle": "fsNormal",
+    "Visible": false,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Data",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 604,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 12,
+            "Width": 141,
+            "Height": 13,
+            "Caption": "Data para início da alteração:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfInicioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 426,
+            "Top": 4,
+            "Width": 89,
+            "Height": 13,
+            "Caption": "Início da Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Lbl_InicioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 531,
+            "Top": 4,
+            "Width": 65,
+            "Height": 13,
+            "DataField": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfTerminoValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 426,
+            "Top": 18,
+            "Width": 100,
+            "Height": 13,
+            "Caption": "Término da Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Lbl_TerminoValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 531,
+            "Top": 18,
+            "Width": 65,
+            "Height": 13,
+            "DataField": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DiaSemana",
+          "herdado": false,
+          "propriedades": {
+            "Left": 260,
+            "Top": 12,
+            "Width": 109,
+            "Height": 13,
+            "Caption": "Lbl_DiaSemana"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Btn_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 220,
+            "Top": 7,
+            "Width": 22,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Edt_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 152,
+            "Top": 8,
+            "Width": 67,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Edt_DataExit",
+            "OnKeyPress": "Edt_DataKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpinButton",
+          "nome": "Spb_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 243,
+            "Top": 8,
+            "Width": 15,
+            "Height": 22,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Datas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 604,
+        "Height": 283,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Revezamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 8,
+            "Width": 575,
+            "Height": 262,
+            "TabStop": false,
+            "DataSource": "Dts_EscalaGeral",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATA",
+                "Width": 63,
+                "Visible": true
+              },
+              {
+                "FieldName": "DIASEMANA",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "DSCTIPODIAESCALA",
+                "Width": 120,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORARIO",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "DSCHORARIO",
+                "Width": 162,
+                "Visible": true
+              },
+              {
+                "FieldName": "MINUTOSCOMPENSADOS",
+                "Width": 73,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 323,
+        "Width": 604,
+        "Height": 40,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_EscalaGeral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 134
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EscalaGeralDATA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data",
+            "FieldName": "DATA",
+            "EditMask": "!99/99/9999;1;_"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalaGeralDIASEMANA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dia da Semana",
+            "FieldName": "DIASEMANA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalaGeralTIPODIAESCALA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Dia",
+            "FieldName": "TIPODIAESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalaGeralDSCTIPODIAESCALA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Dia",
+            "DisplayWidth": 23,
+            "FieldName": "DSCTIPODIAESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalaGeralHORARIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Horário",
+            "FieldName": "HORARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EscalaGeralDSCHORARIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DSCHORARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_EscalaGeralMINUTOSCOMPENSADOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Minutos Compensados",
+            "FieldName": "MINUTOSCOMPENSADOS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EscalaGeral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 318,
+        "Top": 134
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Horario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 124,
+        "Top": 212
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HorarioHORARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HorarioDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HorarioDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_TipoDiaEscala",
+      "herdado": false,
+      "propriedades": {
+        "Left": 244,
+        "Top": 212
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TipoDiaEscalaOPCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_TipoDiaEscalaDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 48,
+        "Top": 136
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Up",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Up",
+            "ShortCut": 16422,
+            "OnExecute": "Act_UpExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Down",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Down",
+            "ShortCut": 16424,
+            "OnExecute": "Act_DownExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "classe": "TFrm_RHPA3140",
+  "nome": "Frm_RHPA3140",
+  "herdado": true,
+  "propriedades": {
+    "Left": 365,
+    "Top": 237,
+    "Width": 1075,
+    "Height": 628,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Painel de Controle do Serviço REP"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botton",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 532,
+        "Width": 1059,
+        "Height": 57,
+        "Align": "alBottom",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 256,
+            "Top": 36,
+            "Width": 404,
+            "Height": 13,
+            "Caption": "Em média, a cada 40 segundos o Serviço Rep envia novas inforrmações para o Saas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 27,
+            "Top": 36,
+            "Width": 100,
+            "Height": 13,
+            "Caption": "Última sincronização:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_UltSincronizacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 36,
+            "Width": 124,
+            "Height": 13,
+            "Caption": "Sem informação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "Img_Status",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 35,
+            "Width": 16,
+            "Height": 16
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_QtdeProcessos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 962,
+            "Top": 7,
+            "Width": 92,
+            "Height": 13,
+            "Caption": "Lbl_QtdeProcessos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AtualizarConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 4,
+            "Width": 154,
+            "Height": 25,
+            "Caption": "Atualizar consulta",
+            "ModalResult": 4,
+            "TabOrder": 0,
+            "OnClick": "Btn_AtualizarConsultaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_DetalhesProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 163,
+            "Top": 4,
+            "Width": 154,
+            "Height": 25,
+            "Caption": "Detalhes do processo",
+            "ModalResult": 4,
+            "TabOrder": 1,
+            "OnClick": "Btn_DetalhesProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Agendamentos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 4,
+            "Width": 154,
+            "Height": 25,
+            "Caption": "Agendamentos",
+            "ModalResult": 4,
+            "TabOrder": 2,
+            "OnClick": "Btn_AgendamentosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_ResumoMarcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 481,
+            "Top": 4,
+            "Width": 154,
+            "Height": 25,
+            "Caption": "Resumo das marcações",
+            "ModalResult": 4,
+            "TabOrder": 3,
+            "OnClick": "Btn_ResumoMarcacoesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_AtualizarAutomaticamente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 648,
+            "Top": 9,
+            "Width": 209,
+            "Height": 17,
+            "Caption": "Atualizar consulta automaticamente",
+            "Checked": true,
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 39,
+        "Width": 1059,
+        "Height": 493,
+        "Align": "alClient",
+        "DataSource": "Dts_Processos",
+        "TabOrder": 2,
+        "Columns": [
+          {
+            "FieldName": "PROCESSOREP",
+            "Title.Caption": "Processo",
+            "Width": 56,
+            "Visible": true
+          },
+          {
+            "FieldName": "CALC_TAREFA",
+            "Title.Caption": "Tarefa",
+            "Width": 118,
+            "Visible": true
+          },
+          {
+            "FieldName": "CALC_COLETORES",
+            "Title.Caption": "Coletores",
+            "Width": 125,
+            "Visible": true
+          },
+          {
+            "FieldName": "CALC_STATUS",
+            "Title.Caption": "Status",
+            "Width": 137,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAINICIO",
+            "Title.Caption": "Data/Hora Início",
+            "Width": 111,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAFIM",
+            "Title.Caption": "Data/Hora Fim",
+            "Width": 119,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORREP",
+            "Title.Caption": "Operador",
+            "Width": 114,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAINSERCAO",
+            "Title.Caption": "Data/Hora Solicitação",
+            "Width": 134,
+            "Visible": true
+          },
+          {
+            "FieldName": "CALC_ALERTA",
+            "Title.Caption": "Alerta",
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": [],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Top",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1059,
+        "Height": 39,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 14,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Cliente Serviço REP:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 894,
+            "Top": 14,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "Exibir últimos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_ClientesRep",
+          "herdado": false,
+          "propriedades": {
+            "Left": 117,
+            "Top": 11,
+            "Width": 226,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cmb_ClientesRepChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_MeusProcessos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 370,
+            "Top": 12,
+            "Width": 153,
+            "Height": 17,
+            "Caption": "Somente meus processos",
+            "TabOrder": 1,
+            "OnClick": "Chk_MeusProcessosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ProcessosComAlerta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 538,
+            "Top": 12,
+            "Width": 181,
+            "Height": 17,
+            "Caption": "Somente processos com alerta",
+            "TabOrder": 2,
+            "OnClick": "Chk_ProcessosComAlertaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Exibir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 960,
+            "Top": 11,
+            "Width": 94,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 3,
+            "OnChange": "Cmb_ExibirChange",
+            "Items.Strings": [
+              "3 dias",
+              "7 dias",
+              "15 dias",
+              "30 dias",
+              "60 dias",
+              "90 dias",
+              "120 dias"
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 778,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 688,
+        "Top": 156
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_UltSincronizacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 888,
+        "Top": 336
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 524,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_AvisoSincronizacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 892,
+        "Top": 384
+      },
+      "filhos": []
+    }
+  ]
+}

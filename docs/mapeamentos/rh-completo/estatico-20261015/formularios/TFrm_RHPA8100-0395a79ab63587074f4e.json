@@ -1,0 +1,275 @@
+{
+  "classe": "TFrm_RHPA8100",
+  "nome": "Frm_RHPA8100",
+  "herdado": true,
+  "propriedades": {
+    "Left": 124,
+    "Top": 187,
+    "Caption": "Marcações Desprezadas - Telemática",
+    "ClientHeight": 453,
+    "ClientWidth": 819
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Filtro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 819,
+        "Height": 72,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TFilterDateButton",
+          "nome": "Btn_Periodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 302,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Período de Filtro das Marcações",
+            "AllowAllUp": true,
+            "GroupIndex": 512,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 11,
+            "Width": 39,
+            "Height": 13,
+            "Caption": "Periodo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_DscPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 75,
+            "Top": 7,
+            "Width": 226,
+            "Height": 21,
+            "Caption": "Lbl_DscPeriodo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_EditarRegistro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 640,
+            "Top": 8,
+            "Width": 171,
+            "Height": 25,
+            "Action": "Act_EditarRegistro",
+            "Caption": "Editar Registro",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_EnviarParaMarcOnlines",
+          "herdado": false,
+          "propriedades": {
+            "Left": 640,
+            "Top": 35,
+            "Width": 171,
+            "Height": 25,
+            "Action": "Act_EnviarMarcacao",
+            "Caption": "Enviar para Marcações Online",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Meio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 72,
+        "Width": 819,
+        "Height": 381,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_MarcacoesOnLine",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 9,
+            "Width": 793,
+            "Height": 359,
+            "DataSource": "Dts_DesprezoMarcTele",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAHORAMARCACAO",
+                "Width": 110,
+                "Visible": true
+              },
+              {
+                "FieldName": "ICARD",
+                "Visible": true
+              },
+              {
+                "FieldName": "DIAM",
+                "Title.Caption": "Dia",
+                "Width": 30,
+                "Visible": true
+              },
+              {
+                "FieldName": "MESM",
+                "Title.Caption": "Mês",
+                "Width": 30,
+                "Visible": true
+              },
+              {
+                "FieldName": "ANOM",
+                "Title.Caption": "Ano",
+                "Width": 30,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORAM",
+                "Title.Caption": "Hora",
+                "Width": 40,
+                "Visible": true
+              },
+              {
+                "FieldName": "SEGUNDO",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "CODAC",
+                "Width": 39,
+                "Visible": true
+              },
+              {
+                "FieldName": "POSIC",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "BLUEB",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "CODTT",
+                "Title.Caption": "Codin",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "END_IP",
+                "Width": 67,
+                "Visible": true
+              },
+              {
+                "FieldName": "CODFNC",
+                "Width": 43,
+                "Visible": true
+              },
+              {
+                "FieldName": "ONOFF",
+                "Width": 36,
+                "Visible": true
+              },
+              {
+                "FieldName": "VEICULOT",
+                "Width": 75,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 12,
+        "Top": 32
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DesprezoMarcTele",
+      "herdado": false,
+      "propriedades": {
+        "Left": 480,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 544,
+        "Top": 20
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_EditarRegistro",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_EditarRegistroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_EnviarMarcacao",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_EnviarMarcacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlF",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16454,
+            "OnExecute": "Act_CtrlFExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

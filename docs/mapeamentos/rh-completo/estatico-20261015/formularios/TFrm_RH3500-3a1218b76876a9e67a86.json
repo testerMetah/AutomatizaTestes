@@ -1,0 +1,757 @@
+{
+  "classe": "TFrm_RH3500",
+  "nome": "Frm_RH3500",
+  "herdado": false,
+  "propriedades": {
+    "Left": 396,
+    "Top": 281,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cadastro de Provedores",
+    "ClientHeight": 317,
+    "ClientWidth": 589,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 589,
+        "Height": 39,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 11,
+            "Width": 46,
+            "Height": 13,
+            "Caption": "Provedor:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Provedor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ProvedorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Provedor",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 64,
+            "Top": 8,
+            "Width": 52,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ProvedorEnter",
+            "OnExit": "Edt_ProvedorExit",
+            "OnKeyPress": "Edt_ProvedorKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_InfoEmpresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 39,
+        "Width": 589,
+        "Height": 39,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label14",
+          "herdado": false,
+          "propriedades": {
+            "Left": 383,
+            "Top": 12,
+            "Width": 24,
+            "Height": 13,
+            "Caption": "Tipo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_TipoProvedor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 413,
+            "Top": 8,
+            "Width": 154,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOPROVEDOR",
+            "DataSource": "Ds_Provedor",
+            "Items.Strings": [
+              "E-Mail"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 70,
+            "Top": 8,
+            "Width": 299,
+            "Height": 21,
+            "DataField": "DESCRICAO100",
+            "DataSource": "Ds_Provedor",
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ConfigProvedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 78,
+        "Width": 589,
+        "Height": 239,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_ConfigEmail",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 581,
+            "Height": 231,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 43,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "E-mail:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ModoEnvio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 11,
+                "Width": 75,
+                "Height": 13,
+                "Caption": "Modo de Envio:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ConfigEmailAutenticacaoBasica",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 65,
+                "Width": 573,
+                "Height": 124,
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label15",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 10,
+                    "Width": 42,
+                    "Height": 13,
+                    "Caption": "Servidor:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label16",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 492,
+                    "Top": 10,
+                    "Width": 28,
+                    "Height": 13,
+                    "Caption": "Porta:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label17",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 71,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "Usuário:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Senha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 100,
+                    "Width": 34,
+                    "Height": 13,
+                    "Caption": "Senha:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 309,
+                    "Top": 41,
+                    "Width": 82,
+                    "Height": 13,
+                    "Caption": "Conexão Segura:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Servidor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 6,
+                    "Width": 400,
+                    "Height": 21,
+                    "DataField": "SERVIDOR",
+                    "DataSource": "Ds_ConfigEmail",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Porta",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 525,
+                    "Top": 4,
+                    "Width": 40,
+                    "Height": 21,
+                    "DataField": "PORTASMTP",
+                    "DataSource": "Ds_ConfigEmail",
+                    "MaxLength": 5,
+                    "TabOrder": 1,
+                    "OnKeyPress": "Dbe_PortaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Dbck_RequerAutenticacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 40,
+                    "Width": 133,
+                    "Height": 17,
+                    "Caption": "Requer Autenticação?",
+                    "DataField": "REQUERAUTENTICACAO",
+                    "DataSource": "Ds_ConfigEmail",
+                    "TabOrder": 2,
+                    "OnClick": "Dbck_RequerAutenticacaoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Cbx_ConexaoSegura",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 396,
+                    "Top": 37,
+                    "Width": 169,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "CONEXAOSEGURA",
+                    "DataSource": "Ds_ConfigEmail",
+                    "Items.Strings": [
+                      "Não Possui",
+                      "TLS",
+                      "SSL"
+                    ],
+                    "TabOrder": 3,
+                    "OnChange": "Cbx_ConexaoSeguraChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Usuario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 67,
+                    "Width": 370,
+                    "Height": 21,
+                    "DataField": "USUARIOSMTP",
+                    "DataSource": "Ds_ConfigEmail",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Senha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 96,
+                    "Width": 171,
+                    "Height": 21,
+                    "MaxLength": 60,
+                    "PasswordChar": "*",
+                    "ReadOnly": true,
+                    "TabOrder": 5,
+                    "OnKeyPress": "Edt_SenhaKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ConfigEmailAutenticacaoModernaMicrosoft",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 65,
+                "Width": 573,
+                "Height": 124,
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ClientId",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 6,
+                    "Width": 72,
+                    "Height": 26,
+                    "Caption": "Application (client) ID:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_TenantId",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 42,
+                    "Width": 75,
+                    "Height": 29,
+                    "Caption": "Directory (tenant) ID:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ClientSecret",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 89,
+                    "Width": 63,
+                    "Height": 13,
+                    "Caption": "Client Secret:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AutModMicClientSecret",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 85,
+                    "Width": 480,
+                    "Height": 21,
+                    "MaxLength": 240,
+                    "TabOrder": 2,
+                    "OnChange": "Edt_AutModMicClientSecretChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_AutModMicClientId",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 9,
+                    "Width": 480,
+                    "Height": 21,
+                    "DataField": "AUTMODMICCLIENTID",
+                    "DataSource": "Ds_ConfigEmail",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_AutModMicTenantId",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 46,
+                    "Width": 480,
+                    "Height": 21,
+                    "DataField": "AUTMODMICTENANTID",
+                    "DataSource": "Ds_ConfigEmail",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_TesteEmail",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 201,
+                "Width": 142,
+                "Height": 25,
+                "Caption": "&Testar Envio de Email",
+                "TabOrder": 4,
+                "OnClick": "Btn_TesteEmailClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Email",
+              "herdado": false,
+              "propriedades": {
+                "Left": 89,
+                "Top": 38,
+                "Width": 481,
+                "Height": 21,
+                "DataField": "EMAIL",
+                "DataSource": "Ds_ConfigEmail",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_ModoEnvioEmail",
+              "herdado": false,
+              "propriedades": {
+                "Left": 89,
+                "Top": 7,
+                "Width": 190,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "MODOENVIOEMAIL",
+                "DataSource": "Ds_ConfigEmail",
+                "Items.Strings": [
+                  "Autenticação Básica",
+                  "Autenticação Moderna (Microsoft)"
+                ],
+                "TabOrder": 0,
+                "OnChange": "Dbc_ModoEnvioEmailChange"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Provedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 332,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ProvedorNROORDEMPR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Provedor",
+            "FieldName": "NROORDEMPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProvedorDESCRICAO100",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO100"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProvedorTIPOPROVEDOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOPROVEDOR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_Provedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ConfigEmail",
+      "herdado": false,
+      "propriedades": {
+        "Left": 420,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ConfigEmailNROORDEMPR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEMPR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailSERVIDOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SERVIDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ConfigEmailPORTASMTP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PORTASMTP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailUSUARIOSMTP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USUARIOSMTP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailREQUERAUTENTICACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REQUERAUTENTICACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailCONEXAOSEGURA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONEXAOSEGURA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailSENHASMTP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SENHASMTP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailCHAVESMTP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CHAVESMTP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailMODOENVIOEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODOENVIOEMAIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailAUTMODMICCLIENTID",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Application (client) ID",
+            "FieldName": "AUTMODMICCLIENTID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailAUTMODMICTENANTID",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Directory (tenant) ID",
+            "FieldName": "AUTMODMICTENANTID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigEmailAUTMODMICCLIENTSECRET",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Client Secret",
+            "FieldName": "AUTMODMICCLIENTSECRET"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_ConfigEmail",
+      "herdado": false,
+      "propriedades": {
+        "Left": 452,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Action1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Action1Execute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

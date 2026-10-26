@@ -1,0 +1,374 @@
+{
+  "classe": "TFrm_RHGB2170",
+  "nome": "Frm_RHGB2170",
+  "herdado": true,
+  "propriedades": {
+    "Left": 12,
+    "Top": 132,
+    "Caption": "Sobreposição de Cálculos",
+    "ClientHeight": 421,
+    "ClientWidth": 762
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 85,
+        "Width": 762,
+        "Height": 336,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "THeaderControl",
+          "nome": "HeaderControl1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 754,
+            "Height": 19,
+            "Enabled": false,
+            "Style": "hsFlat"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Calculos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 19,
+            "Width": 295,
+            "Height": 309,
+            "TabStop": false,
+            "DataSource": "Dts_SobreposicaoCalculos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "Data",
+                "Width": 69,
+                "Visible": true
+              },
+              {
+                "FieldName": "Hora",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "INICIOPERTRAB",
+                "Title.Caption": "De",
+                "Width": 69,
+                "Visible": true
+              },
+              {
+                "FieldName": "TERMINOPERTRAB",
+                "Title.Caption": "Até",
+                "Width": 72,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Contratos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 296,
+            "Top": 19,
+            "Width": 459,
+            "Height": 309,
+            "DataSource": "Dts_ContratosCalculo",
+            "TabOrder": 2,
+            "Columns": [
+              {
+                "FieldName": "UNIDADE",
+                "Title.Caption": "Unidade",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Title.Caption": "Contrato",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Title.Caption": "Nome",
+                "Width": 233,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO60",
+                "Title.Caption": "Situação",
+                "Width": 70,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Parametros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 762,
+        "Height": 85,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 22,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Cálculo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_CalculoAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 337,
+            "Top": 15,
+            "Width": 23,
+            "Height": 25,
+            "Action": "Act_CalculoAnterior",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_CalculoPosterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 361,
+            "Top": 15,
+            "Width": 23,
+            "Height": 25,
+            "Action": "Act_CalculoProximo",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_InfoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 409,
+            "Top": 15,
+            "Width": 23,
+            "Height": 25,
+            "Hint": "Informações sobre o cálculo",
+            "ShowHint": true,
+            "OnClick": "Btn_InfoCalculoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFilterDateButton",
+          "nome": "Btn_FiltroCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 385,
+            "Top": 15,
+            "Width": 23,
+            "Height": 25,
+            "Hint": "Período de filtro dos Cálculos",
+            "AllowAllUp": true,
+            "GroupIndex": 2,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 47,
+            "Width": 112,
+            "Height": 13,
+            "Caption": "Dias Trabalhados:    De"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_TrabalhadosDe",
+          "herdado": false,
+          "propriedades": {
+            "Left": 134,
+            "Top": 44,
+            "Width": 77,
+            "Height": 21,
+            "DataField": "INICIOPERTRAB",
+            "DataSource": "Dts_Principal"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 233,
+            "Top": 47,
+            "Width": 16,
+            "Height": 13,
+            "Caption": "Até"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_TrabalhadosAte",
+          "herdado": false,
+          "propriedades": {
+            "Left": 257,
+            "Top": 44,
+            "Width": 77,
+            "Height": 21,
+            "DataField": "TERMINOPERTRAB",
+            "DataSource": "Dts_Principal"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Bvl_Calculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 134,
+            "Top": 17,
+            "Width": 200,
+            "Height": 21,
+            "DataField": "DATAHORA",
+            "DataSource": "Dts_Principal"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 686,
+        "Top": 354
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SobreposicaoCalculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 678,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 704,
+        "Top": 18
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "InfoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Informações do Cálculo",
+            "OnClick": "InfoCalculoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContratosCalculo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 674,
+        "Top": 166
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 682,
+        "Top": 288
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Eventos",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "Act_EventosUpdate",
+        "Left": 586,
+        "Top": 22
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CalculoAnterior",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16423,
+            "OnExecute": "Btn_CalculoAnteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CalculoProximo",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16421,
+            "OnExecute": "Btn_CalculoPosteriorClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "classe": "TFGerarAcesso",
+  "nome": "FGerarAcesso",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Gerar Acesso",
+    "ClientHeight": 282,
+    "ClientWidth": 609,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnlPrincipal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 609,
+        "Height": 218,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "LblNroDiasGerar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 51,
+            "Top": 47,
+            "Width": 153,
+            "Height": 27,
+            "Caption": "Nº de Dias para Gerar:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "LblSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 374,
+            "Top": 47,
+            "Width": 56,
+            "Height": 27,
+            "Caption": "Seleção:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "ImgNroDiasGerar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 47,
+            "Width": 24,
+            "Height": 27
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "ImgSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 341,
+            "Top": 47,
+            "Width": 24,
+            "Height": 27
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "ImgVersao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 21,
+            "Top": 6,
+            "Width": 24,
+            "Height": 27
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lblVersao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 51,
+            "Top": 6,
+            "Width": 206,
+            "Height": 27,
+            "Caption": "Versão do Gerador de Acesso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpinEdit",
+          "nome": "EdNroDiasGerar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 263,
+            "Top": 47,
+            "Width": 46,
+            "Height": 27,
+            "MaxLength": 2,
+            "TabOrder": 0,
+            "OnExit": "EdNroDiasGerarExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "CmbTipoSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 438,
+            "Top": 47,
+            "Width": 154,
+            "Height": 27,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "CmbTipoSelecaoChange",
+            "Items.Strings": [
+              "Geral",
+              "Filtro",
+              "Setores",
+              "Pessoas",
+              "Veículos"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "CmbVersao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 263,
+            "Top": 6,
+            "Width": 46,
+            "Height": 27,
+            "Style": "csDropDownList",
+            "TabOrder": 2,
+            "Items.Strings": [
+              "1.0",
+              "2.0"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCardPanel",
+          "nome": "CpTipoSelecoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 83,
+            "Width": 609,
+            "Height": 135,
+            "Align": "alBottom",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TCard",
+              "nome": "CdFiltros",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 609,
+                "Height": 135,
+                "Caption": "Filtros",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "PnlFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 4,
+                    "Width": 381,
+                    "Height": 37,
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TImage",
+                      "nome": "ImgFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 12,
+                        "Top": 2,
+                        "Width": 24,
+                        "Height": 27
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "MlFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 169,
+                        "Top": 2,
+                        "Width": 48,
+                        "Height": 27,
+                        "Caption": "F4",
+                        "ImageIndex": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "LblFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 43,
+                        "Top": 2,
+                        "Width": 42,
+                        "Height": 27,
+                        "Caption": "Filtro:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblNomeFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 223,
+                        "Top": 2,
+                        "Width": 97,
+                        "Height": 27,
+                        "Caption": "lblNomeFiltro"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 91,
+                        "Top": 2,
+                        "Width": 72,
+                        "Height": 27,
+                        "TabOrder": 0,
+                        "OnExit": "EdFiltroExit",
+                        "OnKeyPress": "EdFiltroKeyPress"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TCard",
+              "nome": "CdPessoas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 609,
+                "Height": 135,
+                "Caption": "Pessoas",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "LblPessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 51,
+                    "Top": 6,
+                    "Width": 118,
+                    "Height": 27,
+                    "Caption": "Lista de Pessoas:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "ImgPessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 6,
+                    "Width": 24,
+                    "Height": 27
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 443,
+                    "Top": 6,
+                    "Width": 48,
+                    "Height": 27,
+                    "Caption": "F4",
+                    "ImageIndex": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "LstPessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 41,
+                    "Width": 572,
+                    "Height": 88,
+                    "Items.Strings": [
+                      ""
+                    ],
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnRemoverPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 497,
+                    "Top": 6,
+                    "Width": 95,
+                    "Height": 27,
+                    "Caption": "Ctrl+Del",
+                    "TabOrder": 1,
+                    "OnClick": "ActApagarExecute",
+                    "Action": "ActApagar"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TCard",
+              "nome": "CdSetores",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 609,
+                "Height": 135,
+                "Caption": "Setores",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlSetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 443,
+                    "Top": 6,
+                    "Width": 48,
+                    "Height": 27,
+                    "Caption": "F4",
+                    "ImageIndex": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "ImgSetores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 6,
+                    "Width": 24,
+                    "Height": 27
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "LblSetores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 52,
+                    "Top": 6,
+                    "Width": 112,
+                    "Height": 27,
+                    "Caption": "Lista de Setores:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "LstSetores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 41,
+                    "Width": 572,
+                    "Height": 88,
+                    "Items.Strings": [
+                      ""
+                    ],
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnExcluirSetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 497,
+                    "Top": 6,
+                    "Width": 95,
+                    "Height": 27,
+                    "Caption": "Ctrl+Del",
+                    "TabOrder": 1,
+                    "OnClick": "ActApagarExecute",
+                    "Action": "ActApagar"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TCard",
+              "nome": "CdVeiculos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 609,
+                "Height": 135,
+                "Caption": "Veiculos",
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TImage",
+                  "nome": "Image8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 6,
+                    "Width": 24,
+                    "Height": 27
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 50,
+                    "Top": 6,
+                    "Width": 131,
+                    "Height": 27,
+                    "Caption": "Lista de Veículos:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlVeiculo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 443,
+                    "Top": 6,
+                    "Width": 48,
+                    "Height": 27,
+                    "Caption": "F4",
+                    "ImageIndex": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "LstVeiculos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 41,
+                    "Width": 572,
+                    "Height": 88,
+                    "Items.Strings": [
+                      ""
+                    ],
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnRemoverVeiculo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 497,
+                    "Top": 6,
+                    "Width": 95,
+                    "Height": 27,
+                    "Caption": "Ctrl+Del",
+                    "TabOrder": 1,
+                    "OnClick": "ActApagarExecute",
+                    "Action": "ActApagar"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TCard",
+              "nome": "CdEscola",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 609,
+                "Height": 135,
+                "Caption": "Escola",
+                "TabOrder": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TImage",
+                  "nome": "imgEscola",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 6,
+                    "Width": 24,
+                    "Height": 27
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lblEscola",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 51,
+                    "Top": 6,
+                    "Width": 118,
+                    "Height": 27,
+                    "Caption": "Lista de Alunos:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaEquipLocalizar",
+                  "nome": "mlEscola",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 443,
+                    "Top": 6,
+                    "Width": 48,
+                    "Height": 27,
+                    "Caption": "F4",
+                    "ImageIndex": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "imgTurnos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 340,
+                    "Top": 5,
+                    "Width": 24,
+                    "Height": 29,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "imgTurmas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 310,
+                    "Top": 5,
+                    "Width": 24,
+                    "Height": 29,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "imgAlunos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 280,
+                    "Top": 5,
+                    "Width": 24,
+                    "Height": 29,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "LstEscola",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 39,
+                    "Width": 572,
+                    "Height": 88,
+                    "Items.Strings": [
+                      ""
+                    ],
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnRemoverEscola",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 497,
+                    "Top": 6,
+                    "Width": 95,
+                    "Height": 27,
+                    "Caption": "Ctrl+Del",
+                    "TabOrder": 1,
+                    "OnClick": "ActApagarExecute",
+                    "Action": "ActApagar"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlFundoPadrao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 218,
+        "Width": 609,
+        "Height": 64,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btngeraracesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 14,
+            "Width": 203,
+            "Height": 38,
+            "Caption": "Gerar Acesso (Ctrl+G)",
+            "TabOrder": 0,
+            "OnClick": "ActGerarExecute",
+            "Action": "ActGerar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 479,
+        "Top": 392
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActGerar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Gerar Acesso (Ctrl+G)",
+            "ImageIndex": 1,
+            "ShortCut": 16455,
+            "OnExecute": "ActGerarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActFechar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "ActFechar",
+            "ShortCut": 32883,
+            "OnExecute": "ActFecharExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActBuscar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "F4",
+            "ShortCut": 115,
+            "OnExecute": "ActBuscarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActApagar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Ctrl+Del",
+            "ImageIndex": 2,
+            "ShortCut": 16430,
+            "OnExecute": "ActApagarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 550,
+        "Top": 392
+      },
+      "filhos": []
+    }
+  ]
+}

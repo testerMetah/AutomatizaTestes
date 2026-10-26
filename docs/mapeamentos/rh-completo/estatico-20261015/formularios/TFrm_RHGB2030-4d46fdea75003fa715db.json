@@ -1,0 +1,227 @@
+{
+  "classe": "TFrm_RHGB2030",
+  "nome": "Frm_RHGB2030",
+  "herdado": true,
+  "propriedades": {
+    "Left": 27,
+    "Top": 111,
+    "Caption": "Relação de Preços",
+    "ClientHeight": 444,
+    "ClientWidth": 771
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 771,
+        "Height": 43,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 13,
+            "Width": 113,
+            "Height": 13,
+            "Caption": "Empresa de Transporte:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 201,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 229,
+            "Top": 13,
+            "Width": 3,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 636,
+            "Top": 13,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 686,
+            "Top": 13,
+            "Width": 68,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 131,
+            "Top": 9,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnExit": "Edt_EmpresaExit",
+            "OnKeyPress": "Edt_EmpresaKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 43,
+        "Width": 771,
+        "Height": 359,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_PrecosLinhasTrans",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 763,
+            "Height": 351,
+            "Align": "alClient",
+            "DataSource": "Dts_PrecosLinhasTrans",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAULTIMOREAJUSTE",
+                "Title.Caption": "Data de Reajuste",
+                "Width": 121,
+                "Visible": true
+              },
+              {
+                "FieldName": "LINHATRANSPORTE12",
+                "Title.Caption": "Linha",
+                "Width": 90,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescLinha",
+                "Title.Caption": "Descrição",
+                "Width": 400,
+                "Visible": true
+              },
+              {
+                "FieldName": "VALOR",
+                "Title.Caption": "Valor",
+                "Width": 75,
+                "Visible": true
+              },
+              {
+                "FieldName": "Situacao",
+                "Title.Caption": "Ativa",
+                "Width": 40,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 402,
+        "Width": 771,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_NovaRelacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 132,
+            "Height": 25,
+            "Caption": "&Incluir/Reajustar",
+            "TabOrder": 0,
+            "OnClick": "Btn_NovaRelacaoClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 571,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PrecosLinhasTrans",
+      "herdado": false,
+      "propriedades": {
+        "Left": 465,
+        "Top": 5
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "classe": "TFrm_RHPA0730",
+  "nome": "Frm_RHPA0730",
+  "herdado": true,
+  "propriedades": {
+    "Left": 268,
+    "Top": 154,
+    "Caption": "Configuração de Comunicação do Serviço REP",
+    "ClientHeight": 527,
+    "ClientWidth": 752
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnlPnl_Conteudo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 752,
+        "Height": 527,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_Cliente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 182,
+            "Width": 731,
+            "Height": 339,
+            "Caption": "Web Service Cliente",
+            "TabOrder": 2,
+            "OnEnter": "Grp_ClienteEnter",
+            "OnExit": "Grp_ClienteExit"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_WSSenha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 250,
+                "Top": 76,
+                "Width": 34,
+                "Height": 13,
+                "Caption": "Senha:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_WSUsuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 76,
+                "Width": 39,
+                "Height": 13,
+                "Caption": "Usuario:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_WSURL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 53,
+                "Width": 25,
+                "Height": 13,
+                "Caption": "URL:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 27,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_InserirCliente",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 105,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Inserir Cliente",
+                "ShowHint": true,
+                "OnClick": "Btn_InserirClienteClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_WSClienteUrl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 48,
+                "Width": 384,
+                "Height": 21,
+                "DataField": "WSCLIENTEURL",
+                "DataSource": "Dts_RHServicoREPCliente",
+                "MaxLength": 500,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_WSClienteUsuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 72,
+                "Width": 150,
+                "Height": 21,
+                "DataField": "WSCLIENTEUSUARIO",
+                "DataSource": "Dts_RHServicoREPCliente",
+                "MaxLength": 500,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "btn_AlterarSenha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 449,
+                "Top": 71,
+                "Width": 52,
+                "Height": 23,
+                "Caption": "Alterar",
+                "TabOrder": 5,
+                "TabStop": false,
+                "OnClick": "btn_AlterarSenhaClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_DescricaoCliente",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 24,
+                "Width": 383,
+                "Height": 21,
+                "DataField": "DESCRICAO60",
+                "DataSource": "Dts_RHServicoREPCliente",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Clientes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 136,
+                "Width": 713,
+                "Height": 193,
+                "DataSource": "Dts_RHServicoREPCliente",
+                "TabOrder": 4,
+                "Columns": [
+                  {
+                    "FieldName": "DESCRICAO60",
+                    "Title.Caption": "Descrição",
+                    "Width": 160,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "WSCLIENTEURL",
+                    "Title.Caption": "URL",
+                    "Width": 380,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "WSCLIENTEUSUARIO",
+                    "Title.Caption": "Usuário",
+                    "Width": 120,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_WSClienteSenha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 296,
+                "Top": 72,
+                "Width": 150,
+                "Height": 21,
+                "Enabled": false,
+                "PasswordChar": "*",
+                "TabOrder": 3,
+                "OnExit": "Edt_WSClienteSenhaExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "Btn_TestarConexao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 598,
+                "Top": 15,
+                "Width": 121,
+                "Height": 25,
+                "Caption": "Testar conexão",
+                "Enabled": false,
+                "TabOrder": 6,
+                "OnClick": "Btn_TestarConexaoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "Btn_TestarAutenticacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 598,
+                "Top": 44,
+                "Width": 121,
+                "Height": 25,
+                "Caption": "Testar autenticação",
+                "TabOrder": 7,
+                "OnClick": "Btn_TestarAutenticacaoClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grp_Meta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 227,
+            "Height": 103,
+            "Caption": "Usuário Metadados",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 51,
+                "Width": 47,
+                "Height": 13,
+                "Caption": "Operador:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Usuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 27,
+                "Width": 39,
+                "Height": 13,
+                "Caption": "Usuario:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Senha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 75,
+                "Width": 34,
+                "Height": 13,
+                "Caption": "Senha:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 48,
+                "Width": 150,
+                "Height": 21,
+                "DataField": "OPERADOR",
+                "DataSource": "Dts_RHServicoREPCFG",
+                "MaxLength": 50,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Usuario",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 24,
+                "Width": 150,
+                "Height": 21,
+                "DataField": "USUARIO",
+                "DataSource": "Dts_RHServicoREPCFG",
+                "MaxLength": 30,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Senha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 72,
+                "Width": 150,
+                "Height": 21,
+                "PasswordChar": "*",
+                "TabOrder": 2,
+                "OnChange": "Edt_SenhaChange"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grp_WSMetadados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 120,
+            "Width": 731,
+            "Height": 57,
+            "Caption": "Web Service Metadados",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_URLMetadados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 28,
+                "Width": 25,
+                "Height": 13,
+                "Caption": "URL:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_WSMetaUrl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 25,
+                "Width": 384,
+                "Height": 21,
+                "DataField": "WSMETAURL",
+                "DataSource": "Dts_RHServicoREPCFG",
+                "MaxLength": 500,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_SincronizarWS",
+          "herdado": false,
+          "propriedades": {
+            "Left": 640,
+            "Top": 15,
+            "Width": 100,
+            "Height": 28,
+            "Caption": " Sincronizar",
+            "TabOrder": 3,
+            "OnClick": "Btn_SincronizarWSClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 260,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHServicoREPCFG",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHServicoREPCliente",
+      "herdado": false,
+      "propriedades": {
+        "Left": 316,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pm_Uteis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 360,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "AbrirarquivoTXT1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Abrir arquivo TXT ...",
+            "OnClick": "AbrirarquivoTXT1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "ExecutarconsultaSQL1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Executar consulta SQL ...",
+            "OnClick": "ExecutarconsultaSQL1Click"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "classe": "TFrm_RHPR202005",
+  "nome": "Frm_RHPR202005",
+  "herdado": true,
+  "propriedades": {
+    "Left": 441,
+    "Top": 279,
+    "Caption": "Configuração do Resumo dos Eventos",
+    "ClientHeight": 367,
+    "ClientWidth": 615,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 615,
+        "Height": 322,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 20,
+            "Width": 62,
+            "Height": 13,
+            "Caption": "Tipo do Item:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Adicionar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 79,
+            "Width": 84,
+            "Height": 26,
+            "Hint": "Adicionar o Evento Selecionado",
+            "Caption": "&Adicionar",
+            "ShowHint": true,
+            "OnClick": "Btn_AdicionarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Remover",
+          "herdado": false,
+          "propriedades": {
+            "Left": 113,
+            "Top": 79,
+            "Width": 84,
+            "Height": 26,
+            "Hint": "Remover o(s) Evento(s) Selecionado(s)",
+            "Caption": "&Remover",
+            "ShowHint": true,
+            "OnClick": "Btn_RemoverClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_RemoverTodos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 208,
+            "Top": 79,
+            "Width": 107,
+            "Height": 26,
+            "Hint": "Remover Todos os Itens",
+            "Caption": "R&emover Todos",
+            "ShowHint": true,
+            "OnClick": "Btn_RemoverTodosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Negrito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 568,
+            "Top": 287,
+            "Width": 23,
+            "Height": 21,
+            "Hint": "Exibir Item em Negrito",
+            "AllowAllUp": true,
+            "GroupIndex": 1,
+            "Caption": "N",
+            "ShowHint": true,
+            "OnClick": "Btn_NegritoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ConfigCima",
+          "herdado": false,
+          "propriedades": {
+            "Left": 568,
+            "Top": 175,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Mover linha para cima.",
+            "ShowHint": true,
+            "OnClick": "Btn_ConfigCimaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ConfigABaixo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 568,
+            "Top": 199,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Mover linha para baixo.",
+            "ShowHint": true,
+            "OnClick": "Btn_ConfigCimaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_TipoItem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 103,
+            "Top": 17,
+            "Width": 114,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cmb_TipoItemChange",
+            "Items.Strings": [
+              "Evento",
+              "Saldo Inicial BH",
+              "Saldo Final BH"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_EventoBH",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 116,
+            "Width": 546,
+            "Height": 192,
+            "DataSource": "Dts_ConfiResEventos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "tipo",
+                "Title.Caption": "Tipo",
+                "Width": 90,
+                "Visible": true
+              },
+              {
+                "FieldName": "CODIGO",
+                "Title.Caption": "Código",
+                "Width": 87,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO",
+                "Title.Caption": "Descrição",
+                "Width": 274,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCNEGRITO",
+                "Title.Caption": "Negrito",
+                "Width": 57,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "PageControlItem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 36,
+            "Width": 537,
+            "Height": 37,
+            "ActivePage": "TabSheet1",
+            "Style": "tsFlatButtons",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "TabSheet1",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Evento"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Evento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 7,
+                    "Width": 37,
+                    "Height": 13,
+                    "Caption": "Evento:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Evento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 3,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 8,
+                    "Width": 80,
+                    "Height": 13,
+                    "Caption": "Desc. do Evento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Evento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 86,
+                    "Top": 4,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_EventoExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TabSheet2",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Sado inicial",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 7,
+                    "Width": 78,
+                    "Height": 13,
+                    "Caption": "Saldo Inicial BH:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_SaldoBHInicial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 3,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescBHInicial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 8,
+                    "Width": 61,
+                    "Height": 13,
+                    "Caption": "Desc. do BH"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_SaldoBHInicial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 86,
+                    "Top": 4,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_SaldoBHInicialExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "TabSheet3",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Saldo final",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 7,
+                    "Width": 73,
+                    "Height": 13,
+                    "Caption": "Saldo Final BH:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_SaldoBHFinal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 3,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescBHFinal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 8,
+                    "Width": 61,
+                    "Height": 13,
+                    "Caption": "Desc. do BH"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_SaldoBHFinal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 86,
+                    "Top": 4,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_SaldoBHFinalExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 322,
+        "Width": 615,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 8,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 8,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 452,
+        "Top": 44
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ConfiResEventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 552,
+        "Top": 141
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Atalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 399,
+        "Top": 165
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_ConfigResEventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 76
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ConfigResEventosNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosTIPOCONFIGITEMRESUMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONFIGITEMRESUMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ConfigResEventosEVENTOPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EVENTOPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosBANCOHORAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BANCOHORAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosNEGRITO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NEGRITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventostipo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "TIPO",
+            "DisplayWidth": 20,
+            "FieldName": "tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ConfigResEventosDESCNEGRITO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCNEGRITO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

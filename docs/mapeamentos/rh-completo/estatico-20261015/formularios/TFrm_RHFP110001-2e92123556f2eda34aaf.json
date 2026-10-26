@@ -1,0 +1,142 @@
+{
+  "classe": "TFrm_RHFP110001",
+  "nome": "Frm_RHFP110001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 335,
+    "Top": 193,
+    "Width": 666,
+    "Height": 398,
+    "Caption": "Log da Blacklist de Recontratação",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_ParametrosGPSSefipLog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 650,
+        "Height": 359,
+        "Align": "alClient",
+        "DataSource": "Dts_PessoasBlacklistLog",
+        "TabOrder": 0,
+        "Columns": [
+          {
+            "FieldName": "DATAHORAALTERACAO",
+            "Width": 144,
+            "Visible": true
+          },
+          {
+            "FieldName": "DescOperacao",
+            "Width": 120,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORCADASTRO",
+            "Width": 170,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORAUTORIZACAO",
+            "Width": 170,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PessoasBlacklistLog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 580,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasBlacklistLogEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasBlacklistLogPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_PessoasBlacklistLogDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Alteração",
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasBlacklistLogOPERADORCADASTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador Cadastro",
+            "FieldName": "OPERADORCADASTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasBlacklistLogOPERADORAUTORIZACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador Autorização",
+            "FieldName": "OPERADORAUTORIZACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasBlacklistLogTIPOOPERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operação",
+            "FieldName": "TIPOOPERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasBlacklistLogDescOperacao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operação",
+            "FieldName": "DescOperacao"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoasBlacklistLog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 612,
+        "Top": 16
+      },
+      "filhos": []
+    }
+  ]
+}

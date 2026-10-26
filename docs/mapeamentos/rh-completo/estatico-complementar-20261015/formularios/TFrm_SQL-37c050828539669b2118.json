@@ -1,0 +1,610 @@
+{
+  "classe": "TFrm_SQL",
+  "nome": "Frm_SQL",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Consulta"
+  },
+  "filhos": [
+    {
+      "classe": "TSplitter",
+      "nome": "Spt_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 370,
+        "Width": 591,
+        "Height": 3,
+        "Align": "alBottom"
+      },
+      "filhos": [],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Fundo",
+      "herdado": true,
+      "propriedades": {
+        "Height": 366
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Principal",
+          "herdado": true,
+          "propriedades": {
+            "Caption": "SQL"
+          },
+          "filhos": [
+            {
+              "classe": "TSplitter",
+              "nome": "Spt_Separador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 261,
+                "Width": 583,
+                "Height": 3,
+                "Align": "alBottom"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_ConsultaPrevia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 264,
+                "Width": 583,
+                "Height": 74,
+                "Align": "alBottom",
+                "DataSource": "Dts_Consulta",
+                "ReadOnly": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_SQL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 261,
+                "Align": "alClient",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TRichEdit",
+                  "nome": "Edt_SQL",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 583,
+                    "Height": 242,
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "OnEnter": "Edt_SQLEnter",
+                    "OnExit": "Edt_SQLExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStatusBar",
+                  "nome": "Stb_SQL",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 242,
+                    "Width": 583,
+                    "Height": 19
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Tabelas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 200,
+                "Top": 114,
+                "Width": 249,
+                "Height": 17,
+                "TabOrder": 0,
+                "Visible": false
+              },
+              "filhos": [
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_Tabelas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -2,
+                    "Top": -2,
+                    "Width": 253,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "TabStop": false,
+                    "OnExit": "Cmb_TabelasExit",
+                    "OnKeyPress": "Cmb_TabelasKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Consulta",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_OpcoesConsulta",
+              "herdado": true,
+              "propriedades": {},
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ArquivoConsulta",
+                  "herdado": true,
+                  "propriedades": {
+                    "Top": 5,
+                    "Width": 544
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_AtualizarArquivoXML",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 552,
+                    "Top": 0,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Recarrega o arquivo XML",
+                    "ShowHint": true,
+                    "OnClick": "Btn_AtualizarArquivoXMLClick"
+                  },
+                  "filhos": [],
+                  "ordem_herdada": 3
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Botoes",
+              "herdado": true,
+              "propriedades": {},
+              "filhos": [
+                {
+                  "classe": "TDBNavigator",
+                  "nome": "Btn_Navegador",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_Consulta",
+              "herdado": true,
+              "propriedades": {
+                "Height": 268
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Historico",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Histórico",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "SpeedButton1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 378,
+                "Top": 273,
+                "Width": 23,
+                "Height": 22
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRichEdit",
+              "nome": "Edt_Historico",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 338,
+                "Align": "alClient",
+                "ReadOnly": true,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Baixo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 370,
+        "Width": 591,
+        "Height": 0,
+        "Align": "alBottom",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGauge",
+          "nome": "Gau_Progressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 534,
+            "Top": 0,
+            "Width": 57,
+            "Height": 0,
+            "Align": "alRight",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRichEdit",
+          "nome": "Edt_Erros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 534,
+            "Height": 0,
+            "Align": "alClient",
+            "ReadOnly": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TMemo",
+      "nome": "Edt_ErroScript",
+      "herdado": false,
+      "propriedades": {
+        "Left": 632,
+        "Top": 312,
+        "Width": 121,
+        "Height": 97,
+        "TabOrder": 5,
+        "Visible": false
+      },
+      "filhos": [],
+      "ordem_herdada": 3
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_OpcoesPrincipal",
+      "herdado": true,
+      "propriedades": {
+        "TabOrder": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_ConsultaXML",
+      "herdado": false,
+      "propriedades": {
+        "Left": 220,
+        "Top": 380
+      },
+      "filhos": [],
+      "ordem_herdada": 7
+    },
+    {
+      "classe": "TExecScript",
+      "nome": "ExecDBXScript",
+      "herdado": false,
+      "propriedades": {
+        "Left": 79,
+        "Top": 292
+      },
+      "filhos": [],
+      "ordem_herdada": 8
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 496,
+        "Top": 292
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Copiar",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_EditCopy"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Recortar",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_EditCut"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Colar",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_EditPaste"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_SelecionarTudo",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_EditSelectAll"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_dezfazer",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_EditUndo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Procurar",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_SearchFind"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ProcurarPrimeiro",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_SearchFindFirst"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ProcurarProximo",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_SearchFindNext"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Alterar",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_SearchFindReplace"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 9
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Consulta",
+      "herdado": true,
+      "propriedades": {
+        "Left": 218
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Consulta",
+      "herdado": true,
+      "propriedades": {
+        "Left": 357
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": true,
+      "propriedades": {
+        "Left": 496,
+        "Top": 380
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_AutoCompletar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_AutoCompletar",
+            "ShortCut": 16416,
+            "OnExecute": "Act_AutoCompletarExecute",
+            "OnUpdate": "Act_AutoCompletarUpdate"
+          },
+          "filhos": [],
+          "ordem_herdada": 0
+        },
+        {
+          "classe": "TEditCut",
+          "nome": "Act_EditCut",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Edit",
+            "Caption": "Recortar",
+            "ImageIndex": 23,
+            "ShortCut": 16472
+          },
+          "filhos": [],
+          "ordem_herdada": 5
+        },
+        {
+          "classe": "TEditCopy",
+          "nome": "Act_EditCopy",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Edit",
+            "Caption": "Copiar",
+            "ImageIndex": 24,
+            "ShortCut": 16451
+          },
+          "filhos": [],
+          "ordem_herdada": 6
+        },
+        {
+          "classe": "TEditPaste",
+          "nome": "Act_EditPaste",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Edit",
+            "Caption": "Colar",
+            "ImageIndex": 25,
+            "ShortCut": 16470
+          },
+          "filhos": [],
+          "ordem_herdada": 7
+        },
+        {
+          "classe": "TEditSelectAll",
+          "nome": "Act_EditSelectAll",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Edit",
+            "Caption": "Selecionar Tudo",
+            "ShortCut": 16449
+          },
+          "filhos": [],
+          "ordem_herdada": 8
+        },
+        {
+          "classe": "TEditUndo",
+          "nome": "Act_EditUndo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Edit",
+            "Caption": "Dezfazer",
+            "ImageIndex": 26,
+            "ShortCut": 16474
+          },
+          "filhos": [],
+          "ordem_herdada": 9
+        },
+        {
+          "classe": "TSearchFind",
+          "nome": "Act_SearchFind",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Search",
+            "Caption": "Procurar...",
+            "ImageIndex": 31,
+            "ShortCut": 16454
+          },
+          "filhos": [],
+          "ordem_herdada": 10
+        },
+        {
+          "classe": "TSearchFindNext",
+          "nome": "Act_SearchFindNext",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Search",
+            "Caption": "Procurar Próximo",
+            "ImageIndex": 32,
+            "ShortCut": 114
+          },
+          "filhos": [],
+          "ordem_herdada": 11
+        },
+        {
+          "classe": "TSearchReplace",
+          "nome": "Act_SearchFindReplace",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Search",
+            "Caption": "Alterar...",
+            "ImageIndex": 33,
+            "ShortCut": 16456
+          },
+          "filhos": [],
+          "ordem_herdada": 12
+        },
+        {
+          "classe": "TSearchFindFirst",
+          "nome": "Act_SearchFindFirst",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Search",
+            "Caption": "Procurar Primeiro"
+          },
+          "filhos": [],
+          "ordem_herdada": 13
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_UpGrid",
+      "herdado": true,
+      "propriedades": {
+        "Left": 360,
+        "Top": 381
+      },
+      "filhos": []
+    }
+  ]
+}

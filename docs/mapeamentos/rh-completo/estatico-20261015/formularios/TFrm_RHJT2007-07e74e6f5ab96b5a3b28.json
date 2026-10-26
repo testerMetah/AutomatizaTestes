@@ -1,0 +1,310 @@
+{
+  "classe": "TFrm_RHJT2007",
+  "nome": "Frm_RHJT2007",
+  "herdado": false,
+  "propriedades": {
+    "Left": 436,
+    "Top": 263,
+    "BorderStyle": "bsSingle",
+    "Caption": "Gerar SEFIP",
+    "ClientHeight": 263,
+    "ClientWidth": 331
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Local",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 331,
+        "Height": 219,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 164,
+            "Width": 82,
+            "Height": 13,
+            "Caption": "Local do arquivo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TipoRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 14,
+            "Width": 107,
+            "Height": 13,
+            "Caption": "Tipo de Recolhimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ModalidadeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 54,
+            "Width": 112,
+            "Height": 13,
+            "Caption": "Modalidade do Arquivo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 180,
+            "Width": 274,
+            "Height": 21,
+            "TabOrder": 3,
+            "OnExit": "Edt_LocalExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TButton",
+          "nome": "Btn_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 290,
+            "Top": 180,
+            "Width": 22,
+            "Height": 21,
+            "Caption": "...",
+            "TabOrder": 4,
+            "OnClick": "Btn_LocalClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Gbx_RecolhimentoAtraso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 95,
+            "Width": 298,
+            "Height": 65,
+            "Caption": "Recolhimento em Atraso",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DataRecolFGTS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 18,
+                "Width": 125,
+                "Height": 13,
+                "Caption": "Data Recolhimento FGTS:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DataRecolINSS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 155,
+                "Top": 18,
+                "Width": 122,
+                "Height": 13,
+                "Caption": "Data Recolhimento INSS:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataRecolFGTS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 117,
+                "Top": 35,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataRecolINSS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 257,
+                "Top": 35,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataRecolFGTS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 35,
+                "Width": 101,
+                "Height": 21,
+                "Enabled": false,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataRecolINSS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 155,
+                "Top": 35,
+                "Width": 101,
+                "Height": 21,
+                "Enabled": false,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cbm_TipoRecolhimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 30,
+            "Width": 298,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cbm_TipoRecolhimentoChange",
+            "Items.Strings": [
+              "FGTS no prazo e INSS no prazo",
+              "FGTS no prazo e INSS em atraso",
+              "FGTS em atraso e INSS no prazo",
+              "FGTS em atraso e INSS em atraso",
+              "FGTS em atraso por Ação Fiscal",
+              "Individualização",
+              "Individualização por Ação Fiscal"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cbm_ModalidadeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 70,
+            "Width": 298,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "Items.Strings": [
+              "' ' - Recolhimento ao FGTS e Declaração à Previdência",
+              "1 - Declaração ao FGTSe à Previdência",
+              "9 - Conf. Inf. Ant. - Rec/Decl ao FGTS e Decl à Prev."
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 219,
+        "Width": 331,
+        "Height": 44,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 84,
+            "Height": 25,
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 114,
+            "Top": 8,
+            "Width": 84,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 296,
+        "Top": 228
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Data",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16452,
+            "OnExecute": "DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,806 @@
+{
+  "classe": "TFrm_RHGB2160",
+  "nome": "Frm_RHGB2160",
+  "herdado": true,
+  "propriedades": {
+    "Left": 462,
+    "Top": 260,
+    "Caption": "Unidades de Entrega",
+    "ClientHeight": 333,
+    "ClientWidth": 727
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ChaveFornecedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 727,
+        "Height": 42,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 12,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Unidade de Entrega:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_UnidadeEntrega",
+          "herdado": false,
+          "propriedades": {
+            "Left": 189,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_UnidadeEntrega",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 9,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_UnidadeEntregaChange",
+            "OnExit": "Edt_UnidadeEntregaExit",
+            "OnKeyPress": "Edt_UnidadeEntregaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_Ativo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 590,
+            "Top": 14,
+            "Width": 48,
+            "Height": 12,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_UnidadeEntrega",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_DadosFornecedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 42,
+        "Width": 727,
+        "Height": 291,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_UnidadesEntrega",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 719,
+            "Height": 283,
+            "ActivePage": "Tbs_PermissoesEstab",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_UnidadesEntregaChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_InfCadastrais",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Informações Cadastrais"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label10",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 444,
+                    "Top": 46,
+                    "Width": 30,
+                    "Height": 13,
+                    "Caption": "CNPJ:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 18,
+                    "Width": 66,
+                    "Height": 13,
+                    "Caption": "Razão Social:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 45,
+                    "Width": 79,
+                    "Height": 13,
+                    "Caption": "Nome Reduzido:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 222,
+                    "Width": 627,
+                    "Height": 26,
+                    "Caption": "Obs.: O responsável pela compra/recebimento dos benefícios da unidade de entrega deve ser informado na tela \"Responsável pela Compra/Recebimento dos Benefícios\"."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CNPJ",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 494,
+                    "Top": 41,
+                    "Width": 127,
+                    "Height": 21,
+                    "DataField": "INSCRICAO",
+                    "DataSource": "Dts_UnidadeEntrega",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Nome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 119,
+                    "Top": 41,
+                    "Width": 163,
+                    "Height": 21,
+                    "DataField": "NOMEREDUZIDO",
+                    "DataSource": "Dts_UnidadeEntrega",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_RazaoSocial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 119,
+                    "Top": 13,
+                    "Width": 301,
+                    "Height": 21,
+                    "DataField": "NOME",
+                    "DataSource": "Dts_UnidadeEntrega",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxUnidadeEntrega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 429,
+                    "Top": 234,
+                    "Width": 15,
+                    "Height": 21,
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_AuxUnidadeEntregaEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 67,
+                    "Width": 685,
+                    "Height": 141,
+                    "Caption": "Endereço ",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 22,
+                        "Width": 23,
+                        "Height": 13,
+                        "Caption": "Rua:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 22,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "Número:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 53,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Bairro:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 53,
+                        "Width": 67,
+                        "Height": 13,
+                        "Caption": "Complemento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 84,
+                        "Width": 36,
+                        "Height": 13,
+                        "Caption": "Cidade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 84,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "CEP:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 565,
+                        "Top": 84,
+                        "Width": 17,
+                        "Height": 13,
+                        "Caption": "UF:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 195,
+                        "Top": 115,
+                        "Width": 45,
+                        "Height": 13,
+                        "Caption": "Telefone:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 433,
+                        "Top": 115,
+                        "Width": 20,
+                        "Height": 13,
+                        "Caption": "Fax:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 115,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "DDD:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Cidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 271,
+                        "Top": 80,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Rua",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 1,
+                        "Left": 107,
+                        "Top": 18,
+                        "Width": 301,
+                        "Height": 21,
+                        "DataField": "RUA",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Num",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 484,
+                        "Top": 18,
+                        "Width": 56,
+                        "Height": 21,
+                        "DataField": "NRORUA",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Bairro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 484,
+                        "Top": 49,
+                        "Width": 167,
+                        "Height": 21,
+                        "DataField": "BAIRRO",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Complemento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 107,
+                        "Top": 49,
+                        "Width": 163,
+                        "Height": 21,
+                        "DataField": "COMPLEMENTO",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Cidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 107,
+                        "Top": 80,
+                        "Width": 163,
+                        "Height": 21,
+                        "DataField": "CIDADE",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 4,
+                        "OnChange": "Dbe_CidadeChange",
+                        "OnExit": "Dbe_CidadeExit",
+                        "OnKeyPress": "Dbe_CidadeKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_CEP",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 484,
+                        "Top": 80,
+                        "Width": 74,
+                        "Height": 21,
+                        "DataField": "CEP",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboBox",
+                      "nome": "Dbc_UF",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 589,
+                        "Top": 80,
+                        "Width": 45,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "UF",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "Items.Strings": [
+                          "AC",
+                          "AL",
+                          "AP",
+                          "AM",
+                          "BA",
+                          "CE",
+                          "DF",
+                          "ES",
+                          "GO",
+                          "MA",
+                          "MT",
+                          "MS",
+                          "MG",
+                          "PA",
+                          "PB",
+                          "PR",
+                          "PE",
+                          "PI",
+                          "RJ",
+                          "RN",
+                          "RS",
+                          "RO",
+                          "RR",
+                          "SC",
+                          "SP",
+                          "SE",
+                          "TO"
+                        ],
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Fone",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 245,
+                        "Top": 112,
+                        "Width": 127,
+                        "Height": 21,
+                        "DataField": "TELEFONE",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 8
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Fax",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 484,
+                        "Top": 112,
+                        "Width": 127,
+                        "Height": 21,
+                        "DataField": "TELEFONEFAX",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 9
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DDD",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 107,
+                        "Top": 112,
+                        "Width": 42,
+                        "Height": 21,
+                        "DataField": "DDD",
+                        "DataSource": "Dts_UnidadeEntrega",
+                        "TabOrder": 7
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_PermissoesEstab",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Permissões por Estabelecimento",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_AddTodos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 343,
+                    "Top": 74,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "Btn_AddTodosClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_AddSelecionado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 343,
+                    "Top": 102,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "Btn_AddSelecionadoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_DelSelecionado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 343,
+                    "Top": 130,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "Btn_DelSelecionadoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_DelTodos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 343,
+                    "Top": 158,
+                    "Width": 23,
+                    "Height": 22,
+                    "OnClick": "Btn_DelTodosClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label11",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 6,
+                    "Width": 165,
+                    "Height": 13,
+                    "Caption": "Estabelecimentos não Autorizados:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label14",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 372,
+                    "Top": 6,
+                    "Width": 144,
+                    "Height": 13,
+                    "Caption": "Estabelecimentos Autorizados:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBoxMeta",
+                  "nome": "Lst_EstabAut",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 372,
+                    "Top": 24,
+                    "Width": 332,
+                    "Height": 226,
+                    "Align": "alCustom",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBoxMeta",
+                  "nome": "Lst_EstabDes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 24,
+                    "Width": 332,
+                    "Height": 226,
+                    "Align": "alCustom",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Contratos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Contratos",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Contratos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 711,
+                    "Height": 255,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Contratos",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "CONTRATO",
+                        "Title.Caption": "Contrato",
+                        "Width": 89,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Title.Caption": "Nome",
+                        "Width": 300,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "SITUACAO",
+                        "Title.Caption": "Situação",
+                        "Width": 86,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADEENTREGA",
+                        "Title.Caption": "V. Transporte",
+                        "Width": 96,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADEENTREGAVA",
+                        "Title.Caption": "V. Alimentação",
+                        "Width": 102,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 595,
+        "Top": 297
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_UnidadeEntrega",
+      "herdado": false,
+      "propriedades": {
+        "Left": 627,
+        "Top": 297
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 659,
+        "Top": 297
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mte_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 691,
+        "Top": 297
+      },
+      "filhos": []
+    }
+  ]
+}

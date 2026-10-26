@@ -1,0 +1,416 @@
+{
+  "classe": "TFrm_RHGB7010",
+  "nome": "Frm_RHGB7010",
+  "herdado": true,
+  "propriedades": {
+    "Left": 8,
+    "Top": 179,
+    "Caption": "Saldo de Créditos do Cartão da Visate",
+    "ClientHeight": 473,
+    "ClientWidth": 787
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ImportacaoSaldo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 787,
+        "Height": 428,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ImportacaoSaldo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 779,
+            "Height": 420,
+            "ActivePage": "Tbs_Resultado",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_ImportacaoSaldoChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Definicao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Definição"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 189,
+                    "Width": 134,
+                    "Height": 13,
+                    "Caption": "Informe o arquivo a importar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LocalizarArquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 604,
+                    "Top": 185,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar arquivo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_LocalizarArquivoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 282,
+                    "Top": 185,
+                    "Width": 320,
+                    "Height": 21,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSplitter",
+                  "nome": "Splitter",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 193,
+                    "Width": 771,
+                    "Height": 6,
+                    "Align": "alTop"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Importados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 771,
+                    "Height": 193,
+                    "Align": "alTop",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Importados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 2,
+                        "Width": 120,
+                        "Height": 13,
+                        "Caption": "Registros Importados"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_Importados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 21,
+                        "Width": 771,
+                        "Height": 172,
+                        "Align": "alBottom",
+                        "DataSource": "Dts_Importados",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "UNIDADE",
+                            "Title.Caption": "Unidade",
+                            "Width": 85,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CONTRATO",
+                            "Title.Caption": "Contrato",
+                            "Width": 90,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NOME",
+                            "Title.Caption": "Nome",
+                            "Width": 250,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "LINHA",
+                            "Title.Caption": "Linha",
+                            "Width": 310,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_NaoImportados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 199,
+                    "Width": 771,
+                    "Height": 193,
+                    "Align": "alClient",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_NaoImportados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 2,
+                        "Width": 147,
+                        "Height": 13,
+                        "Caption": "Registros Não Importados"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "Dbg_NaoImportados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 21,
+                        "Width": 771,
+                        "Height": 172,
+                        "Align": "alBottom",
+                        "DataSource": "Dts_NaoImportados",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "NOME",
+                            "Title.Caption": "Nome",
+                            "Width": 250,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CPF",
+                            "Width": 120,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CARTAO",
+                            "Title.Caption": "Cartão",
+                            "Width": 120,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "MSGERRO",
+                            "Title.Caption": "Erro",
+                            "Width": 350,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 428,
+        "Width": 787,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarImportacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "&Iniciar Importação",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarImportacaoClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 752,
+        "Top": 6
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 753,
+        "Top": 57
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_NaoImportados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 753,
+        "Top": 94
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_NaoImportados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 756,
+        "Top": 187
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Importados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 752,
+        "Top": 141
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ImportadosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosEMPRESATRANSPORTE8",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESATRANSPORTE8"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosLINHATRANSPORTE12",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LINHATRANSPORTE12"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ImportadosLINHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LINHA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Importados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 752,
+        "Top": 232
+      },
+      "filhos": []
+    }
+  ]
+}

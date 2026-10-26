@@ -1,0 +1,1171 @@
+{
+  "classe": "TFrmCadastroPessoas",
+  "nome": "FrmCadastroPessoas",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Cadastro de Pessoas",
+    "ClientHeight": 515,
+    "ClientWidth": 793
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": true,
+      "propriedades": {
+        "Width": 793,
+        "Height": 515,
+        "ActivePage": "Grid"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Width": 785,
+                "Height": 345,
+                "DataSource": "DsPessoas",
+                "Columns": [
+                  {
+                    "FieldName": "Id",
+                    "Title.Caption": "Código",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Situacao",
+                    "Title.Caption": "Situação",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlCimaPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 345,
+                "Width": 785
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": true,
+                  "propriedades": {
+                    "Width": 785
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet2",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": true,
+                          "propriedades": {
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExibirTudo",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 597
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 414,
+                "Width": 785
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnInserir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnAlterar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnImportarPessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 544,
+                    "Top": 14,
+                    "Width": 232,
+                    "Height": 38,
+                    "Caption": "Importar Pessoas (Ctrl + F5)",
+                    "TabOrder": 3,
+                    "OnClick": "ActAtualizaExecute",
+                    "Action": "ActAtualiza"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": true,
+          "propriedades": {
+            "OnShow": "CadastroShow"
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "PgcCadastro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 785,
+                "Height": 414,
+                "ActivePage": "tbsDadosGerais",
+                "Align": "alClient",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "tbsDadosGerais",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Dados Gerais"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 8,
+                        "Width": 46,
+                        "Height": 29,
+                        "Caption": "Nome:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 404,
+                        "Top": 40,
+                        "Width": 75,
+                        "Height": 29,
+                        "Caption": "Situação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 174,
+                        "Width": 46,
+                        "Height": 29,
+                        "Caption": "Email:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 142,
+                        "Width": 46,
+                        "Height": 29,
+                        "Caption": "Fone:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 75,
+                        "Width": 90,
+                        "Height": 29,
+                        "Caption": "Nascimento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 40,
+                        "Width": 77,
+                        "Height": 29,
+                        "Caption": "PIS/CPF:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 206,
+                        "Width": 46,
+                        "Height": 29,
+                        "Caption": "Setor:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 110,
+                        "Width": 61,
+                        "Height": 29,
+                        "Caption": "Gênero:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSetor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 304,
+                        "Top": 206,
+                        "Width": 156,
+                        "Height": 29,
+                        "Caption": "Selecione um setor..."
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 295,
+                        "Width": 3,
+                        "Height": 13
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "LblUnidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 304,
+                        "Top": 238,
+                        "Width": 156,
+                        "Height": 29,
+                        "Caption": "Selecione uma unidade..."
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 238,
+                        "Width": 77,
+                        "Height": 29,
+                        "Caption": "Unidade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 8,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 40,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 75,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 110,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 142,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 174,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 206,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 238,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 368,
+                        "Top": 40,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlUnidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 241,
+                        "Width": 29,
+                        "Height": 26,
+                        "ImageIndex": 10
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlSetor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 260,
+                        "Top": 206,
+                        "Width": 29,
+                        "Height": 29,
+                        "ImageIndex": 10
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "cmbStatus",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 485,
+                        "Top": 40,
+                        "Width": 105,
+                        "Height": 27,
+                        "Style": "csDropDownList",
+                        "TabOrder": 1,
+                        "Items.Strings": [
+                          "Ativo",
+                          "Inativo"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "MskNascimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 75,
+                        "Width": 161,
+                        "Height": 27,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 2,
+                        "OnExit": "MskNascimentoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "CmbGenero",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 110,
+                        "Width": 161,
+                        "Height": 27,
+                        "Style": "csDropDownList",
+                        "TabOrder": 3,
+                        "Items.Strings": [
+                          "Masculino",
+                          "Feminino"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdFone",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 142,
+                        "Width": 161,
+                        "Height": 27,
+                        "MaxLength": 12,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdEmail",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 174,
+                        "Width": 406,
+                        "Height": 27,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdSetor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 206,
+                        "Width": 65,
+                        "Height": 27,
+                        "TabOrder": 6,
+                        "OnExit": "EdSetorExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GbCrachas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 3,
+                        "Top": 273,
+                        "Width": 398,
+                        "Height": 94,
+                        "Caption": "Crachás",
+                        "TabOrder": 8
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label17",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 50,
+                            "Top": 33,
+                            "Width": 89,
+                            "Height": 29,
+                            "Caption": "Crachá Fixo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lblCrachaFixo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 140,
+                            "Top": 35,
+                            "Width": 229,
+                            "Height": 29,
+                            "Caption": "Cadastrar crachá fixo",
+                            "OnClick": "lblCrachaFixoClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label18",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 50,
+                            "Top": 65,
+                            "Width": 128,
+                            "Height": 29,
+                            "Caption": "Crachá Provisório:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lblCrachaProvisorio",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 184,
+                            "Top": 67,
+                            "Width": 186,
+                            "Height": 29,
+                            "Caption": "Cadastrar crachá provisório",
+                            "OnClick": "lblCrachaProvisorioClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TImage",
+                          "nome": "Image13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 65,
+                            "Width": 24,
+                            "Height": 29
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TImage",
+                          "nome": "Image14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 12,
+                            "Top": 33,
+                            "Width": 24,
+                            "Height": 29
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdUnidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 238,
+                        "Width": 65,
+                        "Height": 27,
+                        "TabOrder": 7,
+                        "OnExit": "EdUnidadeExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "EdNome",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 8,
+                        "Width": 583,
+                        "Height": 27,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "MskCpf",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 40,
+                        "Width": 161,
+                        "Height": 27,
+                        "MaxLength": 11,
+                        "TabOrder": 9
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "TbsDadosCadastrais",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Dados Cadastrais",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TImage",
+                      "nome": "Image17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 40,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "Image18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 8,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 40,
+                        "Width": 69,
+                        "Height": 19,
+                        "Caption": "Endereço:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 52,
+                        "Top": 8,
+                        "Width": 34,
+                        "Height": 19,
+                        "Caption": "CEP:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 72,
+                        "Width": 61,
+                        "Height": 19,
+                        "Caption": "Número:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 195,
+                        "Top": 72,
+                        "Width": 47,
+                        "Height": 19,
+                        "Caption": "Bairro:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 11,
+                        "Top": 104,
+                        "Width": 53,
+                        "Height": 19,
+                        "Caption": "Cidade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 374,
+                        "Top": 72,
+                        "Width": 103,
+                        "Height": 19,
+                        "Caption": "Complemento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 454,
+                        "Top": 104,
+                        "Width": 25,
+                        "Height": 19,
+                        "Caption": "UF:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edpri_cep",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 8,
+                        "Width": 106,
+                        "Height": 27,
+                        "MaxLength": 19,
+                        "TabOrder": 0,
+                        "OnExit": "edpri_cepExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edpri_endereco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 136,
+                        "Top": 40,
+                        "Width": 410,
+                        "Height": 27,
+                        "MaxLength": 60,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_NumeroEnder",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 72,
+                        "Width": 83,
+                        "Height": 27,
+                        "MaxLength": 19,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edpri_bairro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 255,
+                        "Top": 72,
+                        "Width": 105,
+                        "Height": 27,
+                        "MaxLength": 60,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edpri_complemento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 490,
+                        "Top": 72,
+                        "Width": 164,
+                        "Height": 27,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edtCidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 104,
+                        "Width": 265,
+                        "Height": 29,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboBox",
+                      "nome": "cmbUfs",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 490,
+                        "Top": 104,
+                        "Width": 164,
+                        "Height": 27,
+                        "Style": "csDropDownList",
+                        "TabOrder": 6,
+                        "Items.Strings": [
+                          "AC",
+                          "AL",
+                          "AP",
+                          "AM",
+                          "BA",
+                          "CE",
+                          "DF",
+                          "ES",
+                          "GO",
+                          "MA",
+                          "MT",
+                          "MS",
+                          "MG",
+                          "PA",
+                          "PB",
+                          "PR",
+                          "PE",
+                          "PI",
+                          "RJ",
+                          "RN",
+                          "RS",
+                          "RO",
+                          "RR",
+                          "SC",
+                          "SP",
+                          "ST",
+                          "TO"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "THoverSpeedButton",
+                      "nome": "BtnLimparEndereco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 439,
+                        "Top": 5,
+                        "Width": 186,
+                        "Height": 34,
+                        "Caption": "Limpar Endereço (F6)",
+                        "TabOrder": 7,
+                        "OnClick": "ActLimparEnderecoExecute",
+                        "Action": "ActLimparEndereco"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "THoverSpeedButton",
+                      "nome": "BtnPesquisarEndereco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 213,
+                        "Top": 5,
+                        "Width": 204,
+                        "Height": 34,
+                        "Caption": "Pesquisar Rua (F5)",
+                        "TabOrder": 8,
+                        "OnClick": "ActPesquisaCepExecute",
+                        "Action": "ActPesquisaCep"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ],
+              "ordem_herdada": 0
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Top": 414,
+                "Width": 785
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnOk",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCancelar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Campos",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": true,
+              "propriedades": {
+                "Top": 436,
+                "Width": 785
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": true,
+      "propriedades": {
+        "Left": 700,
+        "Top": 360
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActAtualiza",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Importar Pessoas (Ctrl + F5)",
+            "ImageIndex": 8,
+            "ShortCut": 16500,
+            "OnExecute": "ActAtualizaExecute"
+          },
+          "filhos": [],
+          "ordem_herdada": 2
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluir",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActPesquisaCep",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Pesquisar Rua (F5)",
+            "ImageIndex": 1,
+            "ShortCut": 116,
+            "OnExecute": "ActPesquisaCepExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActLimparEndereco",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Limpar Endereço (F6)",
+            "ImageIndex": 12,
+            "ShortCut": 117,
+            "OnExecute": "ActLimparEnderecoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSNome",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Nome (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActTSNomeExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": true,
+      "propriedades": {
+        "Left": 700,
+        "Top": 307
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsPessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 700,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsPessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 700,
+        "Top": 252
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPessoasId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPessoasNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPessoasSituacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Situacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPessoasAfastado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Afastamento"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

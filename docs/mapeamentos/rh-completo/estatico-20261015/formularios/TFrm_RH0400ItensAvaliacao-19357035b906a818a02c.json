@@ -1,0 +1,1180 @@
+{
+  "classe": "TFrm_RH0400ItensAvaliacao",
+  "nome": "Frm_RH0400ItensAvaliacao",
+  "herdado": true,
+  "propriedades": {
+    "Left": 191,
+    "Top": 169,
+    "Caption": "Itens de Avaliação",
+    "ClientHeight": 446,
+    "ClientWidth": 710
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 710,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EditItemAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 88,
+            "Height": 13,
+            "Caption": "Item de Avaliação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_ItemAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 173,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "MetaLocalizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbt_ItemAvaliacaoDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 200,
+            "Top": 12,
+            "Width": 138,
+            "Height": 13,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_RHItemAvaliaFator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ItemAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 107,
+            "Top": 8,
+            "Width": 65,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_ItemAvaliacaoChange",
+            "OnExit": "Edt_ItemAvaliacaoExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Campos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 710,
+        "Height": 406,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ItemAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 702,
+            "Height": 398,
+            "ActivePage": "Tbs_RegrasCalculo",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_ItemAvaliacaoChange",
+            "OnEnter": "Pgc_ItemAvaliacaoEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Dados",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Cadastro"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ItemDescricaoDetalhada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 42,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Descrição Detalhada:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ItemDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 15,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_ItemDescricaoDetalhada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 122,
+                    "Top": 38,
+                    "Width": 558,
+                    "Height": 181,
+                    "DataField": "DESCRICAOMEMO",
+                    "DataSource": "Dts_RHItemAvaliaFator",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_ItemAvaliacaoAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 124,
+                    "Top": 11,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_ItemAvaliacaoAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_ItemDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 122,
+                    "Top": 11,
+                    "Width": 261,
+                    "Height": 21,
+                    "DataField": "DESCRICAO40",
+                    "DataSource": "Dts_RHItemAvaliaFator",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Origem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 225,
+                    "Width": 667,
+                    "Height": 134,
+                    "Caption": "Revisões",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 25,
+                        "Width": 172,
+                        "Height": 13,
+                        "Caption": "A partir do Período de Competência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_NovaRevisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 483,
+                        "Top": 22,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Nova Revisão (Ctrl+N)",
+                        "ShowHint": true,
+                        "OnClick": "Btn_NovaRevisaoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 53,
+                        "Width": 140,
+                        "Height": 13,
+                        "Caption": "Origem do Resultado do Item:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bvl_Origem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 218,
+                        "Top": 49,
+                        "Width": 125,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "Lbl_Origem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 53,
+                        "Width": 122,
+                        "Height": 17,
+                        "DataField": "DescOrigem",
+                        "DataSource": "Dts_ItemAvalRevisao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 80,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Desempenho:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bevel1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 218,
+                        "Top": 76,
+                        "Width": 363,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 80,
+                        "Width": 357,
+                        "Height": 17,
+                        "DataField": "DesempenhoCalc",
+                        "DataSource": "Dts_ItemAvalRevisao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 108,
+                        "Width": 198,
+                        "Height": 13,
+                        "Caption": "Nível de Desempenho Mínimo Desejável:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bevel2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 218,
+                        "Top": 104,
+                        "Width": 363,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "DBText2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 108,
+                        "Width": 357,
+                        "Height": 17,
+                        "DataField": "NivelDesempenhoCalc",
+                        "DataSource": "Dts_ItemAvalRevisao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_PeriodoOrigem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 218,
+                        "Top": 22,
+                        "Width": 262,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_PeriodoOrigemChange"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_ItemDesempenho",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Itens de Desempenho",
+                "ImageIndex": 1,
+                "OnEnter": "Tbs_ItemDesempenhoEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 8,
+                    "Width": 172,
+                    "Height": 13,
+                    "Caption": "A partir do Período de Competência:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_DesempenhoAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 169,
+                    "Top": 195,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_DesempenhoAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCtrlGrid",
+                  "nome": "DbCg_ItemDesempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 34,
+                    "Width": 694,
+                    "Height": 336,
+                    "Align": "alBottom",
+                    "DataSource": "Dts_RHItemDesempenho",
+                    "TabOrder": 1,
+                    "OnExit": "DbCg_ItemDesempenhoExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bvl_DesempenhoMemo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 30,
+                        "Width": 329,
+                        "Height": 54
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bvl_DesempenhoDescricao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 77,
+                        "Top": 4,
+                        "Width": 258,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "Dbt_Desempenho",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 80,
+                        "Top": 8,
+                        "Width": 250,
+                        "Height": 13,
+                        "DataField": "DESCRICAO",
+                        "DataSource": "Dts_RHItemDesempenho"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bvl_DesempenhoMinimo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 77,
+                        "Top": 88,
+                        "Width": 65,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBevel",
+                      "nome": "Bvl_DesempenhoMaximo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 269,
+                        "Top": 88,
+                        "Width": 66,
+                        "Height": 22
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "Dbt_DesempenhoMinimo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 79,
+                        "Top": 92,
+                        "Width": 60,
+                        "Height": 15,
+                        "DataField": "VALORMINIMO",
+                        "DataSource": "Dts_RHItemDesempenho"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBText",
+                      "nome": "Dbt_DesempenhoMaximo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 271,
+                        "Top": 92,
+                        "Width": 60,
+                        "Height": 15,
+                        "DataField": "VALORMAXIMO",
+                        "DataSource": "Dts_RHItemDesempenho"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_DesempenhoDescricao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 7,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Desempenho:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_DesempenhoMinimo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 92,
+                        "Width": 65,
+                        "Height": 13,
+                        "Caption": "Valor Mínimo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_DesempenhoMaximo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 198,
+                        "Top": 92,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Valor Máximo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DesempenhoAux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 340,
+                        "Top": 7,
+                        "Width": 10,
+                        "Height": 21,
+                        "DataSource": "Dts_RHItemDesempenho",
+                        "TabOrder": 1,
+                        "OnEnter": "Dbe_DesempenhoAuxEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Dbm_DesempenhoMemo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 339,
+                        "Top": 4,
+                        "Width": 332,
+                        "Height": 106,
+                        "DataField": "DESCRICAOMEMO",
+                        "DataSource": "Dts_RHItemDesempenho",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Dbt_DesempenhoMemo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 31,
+                        "Width": 324,
+                        "Height": 52,
+                        "TabStop": false,
+                        "BorderStyle": "bsNone",
+                        "DataField": "DESEMPENHOMEMO",
+                        "DataSource": "Dts_RHItemDesempenho",
+                        "ReadOnly": true,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_PeriodoItensAvaliacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 192,
+                    "Top": 5,
+                    "Width": 262,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_PeriodoItensAvaliacaoChange"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_RegrasCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Regras de Cálculo",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 9,
+                    "Width": 172,
+                    "Height": 13,
+                    "Caption": "A partir do Período de Competência:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_SobeEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 641,
+                    "Top": 133,
+                    "Width": 23,
+                    "Height": 20,
+                    "Hint": "Move regra para cima (Ctrl+Up)",
+                    "ShowHint": true,
+                    "OnClick": "Btn_SobeEventoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_DesceEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 641,
+                    "Top": 153,
+                    "Width": 23,
+                    "Height": 20,
+                    "Hint": "Move regra para baixo (Ctrl+Down)",
+                    "ShowHint": true,
+                    "OnClick": "Btn_SobeEventoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 40,
+                    "Top": 339,
+                    "Width": 618,
+                    "Height": 28,
+                    "Caption": "Condição \" NA \" : o resultado da expressão aritmética será atribuído diretamente ao item de avaliação no momento do cálculo da avaliação de desempenho."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_NovoEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 51,
+                    "Top": 302,
+                    "Width": 21,
+                    "Height": 21,
+                    "Hint": "Inserir Nova Regra",
+                    "Action": "AtualizaHintCondicoes",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 338,
+                    "Width": 25,
+                    "Height": 13,
+                    "Caption": "Obs.:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_CopiaRegras",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 542,
+                    "Top": 5,
+                    "Width": 21,
+                    "Height": 21,
+                    "Hint": "Copiar Regras de Cálculo (Ctrl+C)",
+                    "ShowHint": true,
+                    "OnClick": "Btn_CopiaRegrasClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_EventosComplemento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 73,
+                    "Top": 288,
+                    "Width": 562,
+                    "Height": 38,
+                    "Align": "alCustom",
+                    "TabOrder": 1,
+                    "OnEnter": "Pnl_EventosComplementoEnter",
+                    "OnExit": "Pnl_EventosComplementoExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Indicadores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 197,
+                        "Top": 14,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfEventoPonto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": -1,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Expressão Aritmética:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfNroHoras",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 334,
+                        "Top": -1,
+                        "Width": 63,
+                        "Height": 13,
+                        "Caption": "Desempenho"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfQuant",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 264,
+                        "Top": -1,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "Valor"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfCondicao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 222,
+                        "Top": -1,
+                        "Width": 28,
+                        "Height": 13,
+                        "Caption": "Cond."
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 405,
+                        "Top": -1,
+                        "Width": 87,
+                        "Height": 13,
+                        "Caption": "Nível Enquadrado"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_EventosComplemento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 17,
+                        "Top": 15,
+                        "Width": 13,
+                        "Height": 21,
+                        "TabOrder": 4,
+                        "OnEnter": "Edt_EventosComplementoEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_ExpressaoAritmetica",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 15,
+                        "Width": 195,
+                        "Height": 21,
+                        "DataField": "EXPRESSAOARITMETICA",
+                        "DataSource": "Dts_RHRegrasCalculoItens",
+                        "TabOrder": 0,
+                        "OnChange": "Dbe_ExpressaoAritmeticaChange",
+                        "OnKeyPress": "Dbe_ExpressaoAritmeticaKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Peso",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 334,
+                        "Top": 15,
+                        "Width": 68,
+                        "Height": 21,
+                        "DataField": "PESO",
+                        "DataSource": "Dts_RHRegrasCalculoItens",
+                        "MaxLength": 7,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Valor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 264,
+                        "Top": 15,
+                        "Width": 68,
+                        "Height": 21,
+                        "DataField": "VALOR",
+                        "DataSource": "Dts_RHRegrasCalculoItens",
+                        "MaxLength": 7,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_Condicao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 222,
+                        "Top": 15,
+                        "Width": 41,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "CONDICAOCALCULOITENS",
+                        "DataSource": "Dts_RHRegrasCalculoItens",
+                        "TabOrder": 1,
+                        "OnChange": "Dbc_CondicaoChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Indicadores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 173,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 21,
+                        "TabStop": false,
+                        "TabOrder": 5,
+                        "Visible": false
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_Interpretador",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 0,
+                        "Width": 78,
+                        "Height": 13,
+                        "Caption": "Interpretada",
+                        "Checked": true,
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Panel1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 405,
+                        "Top": 15,
+                        "Width": 151,
+                        "Height": 20,
+                        "TabOrder": 7
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBText",
+                          "nome": "DBText3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 4,
+                            "Top": 4,
+                            "Width": 141,
+                            "Height": 13,
+                            "DataField": "DesempenhoDesc",
+                            "DataSource": "Dts_RHRegrasCalculoItens"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Eventos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 48,
+                    "Top": 33,
+                    "Width": 591,
+                    "Height": 249,
+                    "TabStop": false,
+                    "DataSource": "Dts_RHRegrasCalculoItens",
+                    "TabOrder": 2,
+                    "Columns": [
+                      {
+                        "FieldName": "EXPRESSAOARITMETICA",
+                        "Width": 243,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONDICAOCALCULOITENS",
+                        "Title.Caption": "Cond.",
+                        "Width": 36,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "VALOR",
+                        "Width": 74,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "PESO",
+                        "Title.Caption": "Desempenho",
+                        "Width": 71,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DesempenhoDesc",
+                        "Title.Caption": "Nível Enquadrado",
+                        "Width": 127,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Hint",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 121,
+                    "Top": 196,
+                    "Width": 124,
+                    "Height": 91,
+                    "TabOrder": 3,
+                    "Visible": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_HintTitulo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 1,
+                        "Width": 122,
+                        "Height": 13,
+                        "Align": "alTop",
+                        "Caption": "Condição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Hint",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 14,
+                        "Width": 122,
+                        "Height": 76,
+                        "Align": "alClient",
+                        "Caption": "Lbl_Hint"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_Periodo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 277,
+                    "Top": 5,
+                    "Width": 262,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_PeriodoChange"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 432,
+        "Top": 134
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHItemAvaliaFator",
+      "herdado": false,
+      "propriedades": {
+        "Left": 449,
+        "Top": 9
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHItemDesempenho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHRegrasCalculoItens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 84
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 612,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "AtualizaHintCondicoes",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16462,
+            "OnExecute": "AtualizaHintCondicoesExecute",
+            "OnUpdate": "AtualizaHintCondicoesUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "HintCopiaRegras",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "HintCopiaRegras",
+            "ShortCut": 16451,
+            "OnExecute": "HintCopiaRegrasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Up",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Up",
+            "ShortCut": 16422,
+            "OnExecute": "Act_UpExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Down",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Down",
+            "ShortCut": 16424,
+            "OnExecute": "Act_DownExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItemAvalRevisao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 232
+      },
+      "filhos": []
+    }
+  ]
+}

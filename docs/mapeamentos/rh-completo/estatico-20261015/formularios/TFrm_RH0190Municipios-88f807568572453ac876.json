@@ -1,0 +1,664 @@
+{
+  "classe": "TFrm_RH0190Municipios",
+  "nome": "Frm_RH0190Municipios",
+  "herdado": true,
+  "propriedades": {
+    "Left": 393,
+    "Top": 228,
+    "Caption": "Municípios",
+    "ClientHeight": 306,
+    "ClientWidth": 693
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Municipios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 693,
+        "Height": 306,
+        "ActivePage": "Tbs_Municipios",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "OnChange": "Pgc_MunicipiosChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Municipios",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Municípios"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 685,
+                "Height": 278,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 37,
+                    "Top": 212,
+                    "Width": 47,
+                    "Height": 13,
+                    "Caption": "Município"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 504,
+                    "Top": 212,
+                    "Width": 14,
+                    "Height": 13,
+                    "Caption": "UF"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 555,
+                    "Top": 212,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Código (Tabela IBGE)"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescricaoOficial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 208,
+                    "Top": 212,
+                    "Width": 80,
+                    "Height": 13,
+                    "Caption": "Descrição Oficial"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Municipios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 228,
+                    "Width": 22,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": 229,
+                    "Width": 10,
+                    "Height": 10,
+                    "TabOrder": 6,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_Municipios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 677,
+                    "Height": 205,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_Municipios",
+                    "TabOrder": 5,
+                    "OnEnter": "Dbg_MunicipiosEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "CIDADE",
+                        "ReadOnly": true,
+                        "Title.Caption": "Município",
+                        "Width": 158,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO80",
+                        "Title.Caption": "Descrição Oficial",
+                        "Width": 310,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UF",
+                        "ReadOnly": true,
+                        "Width": 49,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CODIGOMUNICIPIORAIS",
+                        "ReadOnly": true,
+                        "Title.Caption": "Código (Tabela IBGE)",
+                        "Width": 120,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CodigoRais",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 555,
+                    "Top": 228,
+                    "Width": 118,
+                    "Height": 21,
+                    "DataField": "CODIGOMUNICIPIORAIS",
+                    "DataSource": "Dts_Municipios",
+                    "MaxLength": 8,
+                    "TabOrder": 3,
+                    "OnKeyPress": "Dbe_CodigoRaisKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Municipio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 37,
+                    "Top": 228,
+                    "Width": 165,
+                    "Height": 21,
+                    "MaxLength": 20,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_MunicipioExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Cmb_UF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 504,
+                    "Top": 228,
+                    "Width": 45,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "UF",
+                    "DataSource": "Dts_Municipios",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_DescricaoOficial",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 208,
+                    "Top": 228,
+                    "Width": 291,
+                    "Height": 21,
+                    "DataField": "DESCRICAO80",
+                    "DataSource": "Dts_Municipios",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Dbc_MunicipioForaBrasil",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 38,
+                    "Top": 252,
+                    "Width": 136,
+                    "Height": 16,
+                    "Caption": "Município fora do Brasil",
+                    "DataField": "MUNICIPIOFORABRASIL",
+                    "DataSource": "Dts_Municipios",
+                    "TabOrder": 4,
+                    "OnClick": "Dbc_MunicipioForaBrasilClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Duplicidade",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Elimina Duplicidade",
+            "ImageIndex": 1,
+            "OnEnter": "Tbs_DuplicidadeEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 685,
+                "Height": 237,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 14,
+                    "Top": 13,
+                    "Width": 95,
+                    "Height": 13,
+                    "Caption": "Trocar Município(s):"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 14,
+                    "Top": 193,
+                    "Width": 74,
+                    "Height": 13,
+                    "Caption": "Pelo Município:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MunDestino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 277,
+                    "Top": 189,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MunOrigem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 277,
+                    "Top": 9,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Spee_AdicionaItem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 111,
+                    "Top": 35,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Adicionar Município Escolhido (Ctrl + Down)",
+                    "ShowHint": true,
+                    "OnClick": "Spee_AdicionaItemClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Spee_RemoverMunicipio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 138,
+                    "Top": 35,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Remover Municípios Escolhidos (Ctrl + Up)",
+                    "ShowHint": true,
+                    "OnClick": "Spee_RemoverMunicipioClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Spee_RemoveTodosItems",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 166,
+                    "Top": 35,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Remover Todos os Municípios (Shift + Ctrl + Up)",
+                    "ShowHint": true,
+                    "OnClick": "Spee_RemoveTodosItemsClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_MunOrigem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 111,
+                    "Top": 9,
+                    "Width": 165,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_MunOrigemChange",
+                    "OnExit": "Edt_MunOrigemExit",
+                    "OnKeyPress": "Edt_MunOrigemKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_MunDestino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 111,
+                    "Top": 189,
+                    "Width": 165,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnChange": "Edt_MunDestinoChange",
+                    "OnEnter": "Edt_MunDestinoEnter",
+                    "OnExit": "Edt_MunDestinoExit",
+                    "OnKeyPress": "Edt_MunDestinoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBoxMeta",
+                  "nome": "Lst_ListaParaTrocar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 111,
+                    "Top": 61,
+                    "Width": 188,
+                    "Height": 123,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 237,
+                "Width": 685,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_EliminaDuplicidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 6,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "&Elimina Duplicidade",
+                    "Default": true,
+                    "TabOrder": 0,
+                    "OnClick": "Btn_EliminaDuplicidadeClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_ImportarMunicipios",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Importar Municípios",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 685,
+                "Height": 237,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 14,
+                    "Top": 13,
+                    "Width": 361,
+                    "Height": 13,
+                    "Caption": "Informe o Arquivo (RELATORIO_DTB_BRASIL_MUNICIPIO.csv) a Importar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LocalizarArquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 556,
+                    "Top": 27,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar arquivo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_LocalizarArquivoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Arquivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 14,
+                    "Top": 29,
+                    "Width": 538,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_MunOrigemChange",
+                    "OnExit": "Edt_MunOrigemExit",
+                    "OnKeyPress": "Edt_MunOrigemKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRadioGroup",
+                  "nome": "rgFazerComExistentes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 14,
+                    "Top": 69,
+                    "Width": 229,
+                    "Height": 49,
+                    "Caption": "O que fazer com os registros já existentes?",
+                    "Columns": 2,
+                    "Items.Strings": [
+                      "Ignorar",
+                      "Atualizar"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 237,
+                "Width": 685,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_ImportarMunicipios",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 6,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "&Iniciar Importação",
+                    "Default": true,
+                    "TabOrder": 0,
+                    "OnClick": "Btn_ImportarMunicipiosClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 292,
+        "Top": 108
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Municipios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 96
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 172
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "AddMunicipio",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "AddMunicipio",
+            "ShortCut": 16424,
+            "OnExecute": "AddMunicipioExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "RmMunicipio",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "RmMunicipio",
+            "ShortCut": 16422,
+            "OnExecute": "RmMunicipioExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "RmTodosMunicipios",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "RmTodosMunicipios",
+            "ShortCut": 24614,
+            "OnExecute": "RmTodosMunicipiosExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 413,
+        "Top": 117
+      },
+      "filhos": []
+    }
+  ]
+}

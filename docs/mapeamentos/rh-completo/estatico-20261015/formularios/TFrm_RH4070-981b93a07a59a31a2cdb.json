@@ -1,0 +1,220 @@
+{
+  "classe": "TFrm_RH4070",
+  "nome": "Frm_RH4070",
+  "herdado": true,
+  "propriedades": {
+    "Left": 653,
+    "Top": 376,
+    "Caption": "Classificação do Atestado para Portal",
+    "ClientHeight": 352,
+    "ClientWidth": 562
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 562,
+        "Height": 352,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Grid",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 554,
+            "Height": 292,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "DBG_RHClassificacoesAtestado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 554,
+                "Height": 292,
+                "Align": "alClient",
+                "DataSource": "Dts_RHClassificacoesAtestado",
+                "TabOrder": 0,
+                "OnEnter": "DBG_RHClassificacoesAtestadoEnter",
+                "Columns": [
+                  {
+                    "FieldName": "CLASSIFICACAOATESTADO",
+                    "Title.Caption": "Classificação",
+                    "Width": 81,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO60",
+                    "Title.Caption": "Descrição",
+                    "Width": 374,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATIVADESATIVADA",
+                    "Title.Caption": "Situação",
+                    "Width": 61,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Campos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 294,
+            "Width": 554,
+            "Height": 52,
+            "Align": "alBottom",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 4,
+                "Width": 62,
+                "Height": 13,
+                "Caption": "Classificação"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 107,
+                "Top": 4,
+                "Width": 48,
+                "Height": 13,
+                "Caption": "Descrição"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_ClassificacoesAtestado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 19,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_ClassificacaoAtestado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 19,
+                "Width": 60,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnExit": "Edt_ClassificacaoAtestadoExit",
+                "OnKeyPress": "Edt_ClassificacaoAtestadoKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_DESCRICAO60",
+              "herdado": false,
+              "propriedades": {
+                "Left": 107,
+                "Top": 19,
+                "Width": 385,
+                "Height": 21,
+                "DataField": "DESCRICAO60",
+                "DataSource": "Dts_RHClassificacoesAtestado",
+                "MaxLength": 40,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Ckb_ATIVADESATIVADA",
+              "herdado": false,
+              "propriedades": {
+                "Left": 503,
+                "Top": 20,
+                "Width": 44,
+                "Height": 17,
+                "Caption": "Ativo",
+                "DataField": "ATIVADESATIVADA",
+                "DataSource": "Dts_RHClassificacoesAtestado",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Aux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 429,
+                "Top": 11,
+                "Width": 0,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 3,
+                "OnEnter": "Edt_AuxEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 136,
+        "Top": 116
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHClassificacoesAtestado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 260,
+        "Top": 184
+      },
+      "filhos": []
+    }
+  ]
+}

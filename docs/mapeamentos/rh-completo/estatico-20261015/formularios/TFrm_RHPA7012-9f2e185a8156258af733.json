@@ -1,0 +1,311 @@
+{
+  "classe": "TFrm_RHPA7012",
+  "nome": "Frm_RHPA7012",
+  "herdado": false,
+  "propriedades": {
+    "Left": 22,
+    "Top": 76,
+    "Width": 759,
+    "Height": 450,
+    "Caption": "Histórico dos Arquivos Lidos",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Tag": 1,
+        "Left": 0,
+        "Top": 71,
+        "Width": 751,
+        "Height": 352,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_HistArqImportados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 743,
+            "Height": 344,
+            "Align": "alClient",
+            "DataSource": "Dts_ArqLidos",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "NOMEARQUIVO",
+                "Width": 229,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOMEORIGINAL",
+                "Width": 234,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Visible": true
+              },
+              {
+                "FieldName": "TAMANHOARQUIVO",
+                "Title.Caption": "Tamanho (Bytes)",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORAARQUIVO",
+                "Width": 101,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORALEITURA",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "NROMARCACOESLIDAS",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAINICIO",
+                "Title.Caption": "Início Marcações",
+                "Width": 86,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATATERMINO",
+                "Title.Caption": "Término Marcações",
+                "Width": 98,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Parametros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 751,
+        "Height": 71,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DirArqMarcacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 342,
+            "Top": 18,
+            "Width": 100,
+            "Height": 31,
+            "Caption": "Local dos arquivos gerados pelo coletor:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ModeloColetor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 26,
+            "Width": 100,
+            "Height": 15,
+            "Caption": "Nome do Arquivo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Diretorio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 447,
+            "Top": 23,
+            "Width": 293,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "Cmb_DiretorioChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ProcuraArq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 22,
+            "Width": 225,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnExit": "Edt_ProcuraArqExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 114
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 98,
+        "Top": 116
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 250,
+        "Top": 114
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosNOMEARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome do Arquivo",
+            "FieldName": "NOMEARQUIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosNOMEORIGINAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome Original",
+            "FieldName": "NOMEORIGINAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Coletor",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ArqLidosTAMANHOARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tam. Arquivo",
+            "FieldName": "TAMANHOARQUIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ArqLidosDATAHORAARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Arquivo",
+            "FieldName": "DATAHORAARQUIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ArqLidosDATAHORALEITURA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Leitura",
+            "FieldName": "DATAHORALEITURA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ArqLidosNROMARCACOESLIDAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Marc. Lidas",
+            "FieldName": "NROMARCACOESLIDAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ArqLidosDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dt. Início Cálculo",
+            "FieldName": "DATAINICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ArqLidosDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dt. Término Cálculo",
+            "FieldName": "DATATERMINO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaProvider",
+      "nome": "Dsp_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 174,
+        "Top": 120
+      },
+      "filhos": []
+    }
+  ]
+}

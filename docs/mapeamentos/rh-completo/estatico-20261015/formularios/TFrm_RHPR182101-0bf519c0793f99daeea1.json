@@ -1,0 +1,208 @@
+{
+  "classe": "TFrm_RHPR182101",
+  "nome": "Frm_RHPR182101",
+  "herdado": false,
+  "propriedades": {
+    "Left": 141,
+    "Top": 120,
+    "BorderStyle": "bsSingle",
+    "Caption": "Relação de Cheques Emitidos",
+    "ClientHeight": 113,
+    "ClientWidth": 326,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 76,
+        "Width": 326,
+        "Height": 37,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_IniciarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 4,
+            "Width": 113,
+            "Height": 25,
+            "Caption": "Iniciar Impressão",
+            "TabOrder": 0,
+            "OnClick": "btn_IniciarImpressaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 326,
+        "Height": 76,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 4,
+            "Width": 301,
+            "Height": 60,
+            "Caption": "Imprimir",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 18,
+                "Top": 29,
+                "Width": 57,
+                "Height": 13,
+                "Caption": "Emissão Nº:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_EmissaoDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 135,
+                "Top": 25,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_EmissaoDeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_EmissaoAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 255,
+                "Top": 25,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_EmissaoDeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 163,
+                "Top": 29,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "ao Nº:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TNumericEdit",
+              "nome": "ned_De",
+              "herdado": false,
+              "propriedades": {
+                "Left": 78,
+                "Top": 25,
+                "Width": 56,
+                "Height": 21,
+                "MaxLength": 6,
+                "TabOrder": 0,
+                "OnEnter": "ned_DeEnter",
+                "OnExit": "ned_DeExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TNumericEdit",
+              "nome": "ned_Ate",
+              "herdado": false,
+              "propriedades": {
+                "Left": 198,
+                "Top": 25,
+                "Width": 56,
+                "Height": 21,
+                "MaxLength": 6,
+                "TabOrder": 1,
+                "OnEnter": "ned_AteEnter",
+                "OnExit": "ned_DeExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Localizar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 152,
+        "Top": 70
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_LocalizarNROEMISSAOSEQ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nº da Emissão",
+            "FieldName": "NROEMISSAOSEQ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_LocalizarDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Emissão",
+            "FieldName": "DATAEMISSAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_PrimeiroUltimo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 214,
+        "Top": 44
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "classe": "TFrm_RH0001",
+  "nome": "Frm_RH0001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 792,
+    "Top": 352,
+    "BorderStyle": "bsSingle",
+    "Caption": "Importação PCMSO",
+    "ClientHeight": 554,
+    "ClientWidth": 606,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 513,
+        "Width": 606,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Importa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 126,
+            "Height": 25,
+            "Caption": "&Iniciar Importação",
+            "TabOrder": 0,
+            "OnClick": "btn_ImportaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Visualiza",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 6,
+            "Width": 213,
+            "Height": 25,
+            "Caption": "&Visualizar Ocorrências da Importação",
+            "TabOrder": 1,
+            "OnClick": "btn_VisualizaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 606,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 84,
+            "Height": 13,
+            "Caption": "Selecione o Alias:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Spee_Conectar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 379,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Ativar Conexão (Ctrl + C)",
+            "ShowHint": true,
+            "OnClick": "Spee_ConectarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Conectado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 409,
+            "Top": 12,
+            "Width": 86,
+            "Height": 13,
+            "Caption": "Lbl_Conectado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 244,
+            "Top": 12,
+            "Width": 34,
+            "Height": 13,
+            "Caption": "Senha:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Alias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 8,
+            "Width": 133,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cmb_AliasChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Senha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 280,
+            "Top": 8,
+            "Width": 97,
+            "Height": 21,
+            "PasswordChar": "*",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 606,
+        "Height": 472,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "Caption": "Importação Dados Externos para PCMSO",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 8,
+            "Width": 250,
+            "Height": 13,
+            "Caption": "Diretório do Arquivo de importação (EXPORTA.TXT):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 266,
+            "Top": 26,
+            "Width": 20,
+            "Height": 22,
+            "Hint": "Selecionar Arquivo... (Crtl+ D)",
+            "Caption": "...",
+            "ShowHint": true,
+            "OnClick": "btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 57,
+            "Width": 338,
+            "Height": 16,
+            "Caption": "Assinale as tabelas desejadas para importação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGauge",
+          "nome": "Gau_Progresso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 408,
+            "Width": 583,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 393,
+            "Width": 379,
+            "Height": 13,
+            "Caption": "Preparando Gravação..."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 65,
+            "Top": 429,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Reg. Importados: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Importados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 178,
+            "Top": 429,
+            "Width": 87,
+            "Height": 13,
+            "Caption": "Lbl_Importados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Cancelados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 429,
+            "Width": 91,
+            "Height": 13,
+            "Caption": "Lbl_Cancelados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Geral",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 445,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Lbl_Geral"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 65,
+            "Top": 445,
+            "Width": 108,
+            "Height": 13,
+            "Caption": "Nº de Linhas Lidas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_NumLidos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 178,
+            "Top": 445,
+            "Width": 80,
+            "Height": 13,
+            "Caption": "Lbl_NumLidos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Geral1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 397,
+            "Top": 445,
+            "Width": 103,
+            "Height": 13,
+            "Caption": "Reg. Canc. Geral:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 397,
+            "Top": 429,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Reg. Cancelados:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 396,
+            "Top": 393,
+            "Width": 73,
+            "Height": 13,
+            "Caption": "Tot. Linhas: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Total",
+          "herdado": false,
+          "propriedades": {
+            "Left": 466,
+            "Top": 393,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Lbl_Total"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckListBox",
+          "nome": "Clb_Tabelas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 74,
+            "Width": 339,
+            "Height": 273,
+            "BorderStyle": "bsNone",
+            "Items.Strings": [
+              "Todas",
+              "Audiometro                                          (MOAUDIOM)",
+              "Riscos Grupo                                      (MO7GRRIS)",
+              "Riscos Ambientais                               (MO7CDRIS)",
+              "Exames Médicos                                 (MO7EXAME)",
+              "ProfissionaisSST                                 (MOMEDICO)",
+              "Postos de Trabalho                             (MONIVEL6)",
+              "Riscos por Posto                                 (MO7SETOR)",
+              "Programação Exames por Risco          (MO7EXRIS)",
+              "Programação Exames por Posto          (MO7EXSET)",
+              "Programação Exames por Pessoa       (MO7EXFUN)",
+              "Exames Agendados                             (MO7CONVO)",
+              "Exames Realizados                              (MO7HISTO)",
+              "Audiometrias                                         (MOAUDIO)",
+              "ASO Emitido                                         (MO7ATASO)",
+              "Prontuario Médico                                (MODIAGNO)",
+              "Registros de CATs                               (MO7CAT99)",
+              "Registro de Avaliacoes Ambientais      (PFPACAGE)",
+              "Questionários                                       (MOCADPER)",
+              "Questionários Respondidos                 (MOITERES)"
+            ],
+            "Style": "lbOwnerDrawFixed",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_NomeDiretorio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 26,
+            "Width": 250,
+            "Height": 21,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 351,
+            "Width": 247,
+            "Height": 41,
+            "Caption": "O que Fazer com registros existentes do destino?",
+            "Columns": 2,
+            "Items.Strings": [
+              "Atualizar",
+              "Ignorar"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_UsarPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 272,
+            "Top": 351,
+            "Width": 313,
+            "Height": 41,
+            "Caption": "Importar Registros Usando",
+            "Columns": 2,
+            "Items.Strings": [
+              "Codigo de Pessoa",
+              "Identidades (MOCADPAC)"
+            ],
+            "TabOrder": 3,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_FormatoData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 390,
+            "Top": 30,
+            "Width": 191,
+            "Height": 17,
+            "Caption": "Datas no Formato: DD/MM/YYYY",
+            "Checked": true,
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TSQLConnection",
+      "nome": "SQLConnection",
+      "herdado": false,
+      "propriedades": {
+        "Left": 314,
+        "Top": 56
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "SQLQuery",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 110
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 538,
+        "Top": 176
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 524,
+        "Top": 256
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MoMembro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 472,
+        "Top": 288
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MoMembroCodigo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Codigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MoMembroDescricao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MoNature",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 288
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Codigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MoObjeto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 528,
+        "Top": 288
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Codigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MOMEDICO",
+      "herdado": false,
+      "propriedades": {
+        "Left": 554,
+        "Top": 288
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField5",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Codigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField6",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MoTitTab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 474,
+        "Top": 320
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "StringField7",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Codigo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField8",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao60"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "classe": "TFrm_RH7401EmailRegASO",
+  "nome": "Frm_RH7401EmailRegASO",
+  "herdado": false,
+  "propriedades": {
+    "Left": 216,
+    "Top": 137,
+    "Width": 565,
+    "Height": 309,
+    "Caption": "Endereços para envio do e-mail avisando sobre o ASO",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Destinatarios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 549,
+        "Height": 209,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Destinatarios",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 541,
+            "Height": 201,
+            "TabStop": false,
+            "Align": "alClient",
+            "DataSource": "Dts_ParametrosDiversos",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "CONTEUDOTEXTO",
+                "Width": 514,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 209,
+        "Width": 549,
+        "Height": 61,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NovoDestinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 18,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Novo Destinatário",
+            "ShowHint": true,
+            "OnClick": "Btn_NovoDestinatarioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_CancelaDestinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 18,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Cancelar",
+            "ShowHint": true,
+            "Visible": false,
+            "OnClick": "Btn_CancelaDestinatarioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Destinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 64,
+            "Top": 2,
+            "Width": 56,
+            "Height": 13,
+            "Caption": "Destinatário"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_ExcluirDestinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 34,
+            "Top": 18,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Excluir Destinatário",
+            "ShowHint": true,
+            "OnClick": "Btn_ExcluirDestinatarioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_FinalizarDestinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 34,
+            "Top": 18,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Novo Destinatário",
+            "ShowHint": true,
+            "Visible": false,
+            "OnClick": "Btn_FinalizarDestinatarioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 500,
+            "Top": 19,
+            "Width": 25,
+            "Height": 21,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Destinatario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 64,
+            "Top": 19,
+            "Width": 461,
+            "Height": 21,
+            "DataField": "CONTEUDOTEXTO",
+            "DataSource": "Dts_ParametrosDiversos",
+            "Enabled": false,
+            "MaxLength": 40,
+            "TabOrder": 0,
+            "OnExit": "Dbe_DestinatarioExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ParametrosDiversos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 388,
+        "Top": 28
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ParametrosDiversos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 359,
+        "Top": 30
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ParametrosDiversosCONTEUDOTEXTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "E-mail Destinatário",
+            "FieldName": "CONTEUDOTEXTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ParametrosDiversosPARAMETRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PARAMETRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ParametrosDiversosNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

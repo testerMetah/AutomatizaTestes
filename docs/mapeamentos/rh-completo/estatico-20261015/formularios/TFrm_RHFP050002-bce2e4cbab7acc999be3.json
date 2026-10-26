@@ -1,0 +1,628 @@
+{
+  "classe": "TFrm_RHFP050002",
+  "nome": "Frm_RHFP050002",
+  "herdado": false,
+  "propriedades": {
+    "Left": 346,
+    "Top": 252,
+    "BorderStyle": "bsSingle",
+    "Caption": "Parametrização para Apuração Contábil",
+    "ClientHeight": 368,
+    "ClientWidth": 583,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 583,
+        "Height": 49,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 18,
+            "Width": 90,
+            "Height": 13,
+            "Caption": "Referente ao VDB:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_VDBDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 18,
+            "Width": 346,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Anterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Anterior",
+            "ShowHint": true,
+            "OnClick": "Btn_AnteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 172,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_VdbClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Proximo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Próximo",
+            "ShowHint": true,
+            "OnClick": "Btn_ProximoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_Vdb",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 14,
+            "Width": 44,
+            "Height": 21,
+            "MaxLength": 3,
+            "TabOrder": 0,
+            "OnEnter": "Edt_VdbEnter",
+            "OnExit": "Edt_VdbExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 49,
+        "Width": 583,
+        "Height": 278,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_APartir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 231,
+            "Width": 50,
+            "Height": 13,
+            "Caption": "A partir de"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbm_Grid",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 7,
+            "Width": 567,
+            "Height": 220,
+            "TabStop": false,
+            "DataSource": "Dts_Grid",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "ANOMESBASE",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "INCIDENCIAITEM",
+                "Width": 85,
+                "Visible": true
+              },
+              {
+                "FieldName": "ITEMCONTABIL",
+                "Title.Caption": "Código",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "ITEMCONTABILDESCRICAO",
+                "Title.Caption": "Descrição",
+                "Width": 326,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_AnoMesBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 247,
+            "Width": 55,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnExit": "Msk_AnoMesBaseExit",
+            "OnKeyPress": "Msk_AnoMesBaseKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_CamposEdicao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 82,
+            "Top": 229,
+            "Width": 491,
+            "Height": 42,
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Incidencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 2,
+                "Width": 55,
+                "Height": 13,
+                "Caption": "Incidência"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ItemContabil",
+              "herdado": false,
+              "propriedades": {
+                "Left": 87,
+                "Top": 0,
+                "Width": 402,
+                "Height": 39,
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ItemContabilDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 63,
+                    "Top": 22,
+                    "Width": 330,
+                    "Height": 16,
+                    "Caption": "Lbl_ItemContabilDescricao"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_ItemContabil",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 33,
+                    "Top": 18,
+                    "Width": 23,
+                    "Height": 21,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "OnClick": "Btn_ItemContabilClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ItemContabil",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 2,
+                    "Width": 392,
+                    "Height": 16,
+                    "Caption": "Item Contábil (Regra de Contabilização)"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_ItemContabil",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 18,
+                    "Width": 31,
+                    "Height": 21,
+                    "DataField": "ITEMCONTABIL",
+                    "DataSource": "Dts_Grid",
+                    "MaxLength": 3,
+                    "TabOrder": 0,
+                    "OnEnter": "Dbe_ItemContabilEnter",
+                    "OnKeyPress": "Dbe_ItemContabilKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_IncidenciaItem",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 18,
+                "Width": 80,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "INCIDENCIAITEM",
+                "DataSource": "Dts_Grid",
+                "Items.Strings": [
+                  "Somando",
+                  "Subtraindo",
+                  "Não lança",
+                  "Cancelado"
+                ],
+                "TabOrder": 0,
+                "OnChange": "Dbc_IncidenciaItemChange"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Rodape",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 327,
+        "Width": 583,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Log",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 7,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Log da Parametrização para Apuração Contábil",
+            "Enabled": false,
+            "ShowHint": true,
+            "OnClick": "Btn_LogClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_VisualizarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 7,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Visualizar Impressão",
+            "Enabled": false,
+            "ShowHint": true,
+            "OnClick": "Btn_VisualizarImpressaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 6,
+            "Width": 75,
+            "Height": 26,
+            "Caption": "Salvar",
+            "Enabled": false,
+            "TabOrder": 0,
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 89,
+            "Top": 6,
+            "Width": 75,
+            "Height": 26,
+            "Caption": "Cancelar",
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Vdb",
+      "herdado": false,
+      "propriedades": {
+        "Left": 324,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "VDB",
+            "ReadOnly": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VdbApuraContab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 323,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbApuraContabVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_VdbApuraContabANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "A partir de",
+            "FieldName": "ANOMESBASE",
+            "EditMask": "99/9999;1;"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbApuraContabINCIDENCIAITEM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Incidência",
+            "FieldName": "INCIDENCIAITEM",
+            "OnChange": "Qry_VdbApuraContabINCIDENCIAITEMChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VdbApuraContabITEMCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Item Contábil",
+            "FieldName": "ITEMCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VdbApuraContabITEMCONTABILDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ITEMCONTABILDESCRICAO",
+            "OnChange": "Qry_VdbApuraContabITEMCONTABILDESCRICAOChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ItensContab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ItensContabITEMCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "ITEMCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensContabDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensContabATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Grid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_VisualizarImpressao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 417,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_VisualizarImpressaoParametrizacaoVdbSelecionado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Parametrização do VDB selecionado",
+            "ImageIndex": 0,
+            "OnClick": "Pop_VisualizarImpressaoParametrizacaoTodosVdbsClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_VisualizarImpressaoParametrizacaoTodosVdbs",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Parametrização de todos os VDBs",
+            "ImageIndex": 1,
+            "OnClick": "Pop_VisualizarImpressaoParametrizacaoTodosVdbsClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 416,
+        "Top": 164
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

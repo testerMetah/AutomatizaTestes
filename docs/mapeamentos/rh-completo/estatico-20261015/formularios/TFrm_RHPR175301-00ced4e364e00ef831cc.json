@@ -1,0 +1,584 @@
+{
+  "classe": "TFrm_RHPR175301",
+  "nome": "Frm_RHPR175301",
+  "herdado": false,
+  "propriedades": {
+    "Left": 503,
+    "Top": 273,
+    "BorderStyle": "bsSingle",
+    "Caption": "Retificação dos Eventos de Processos Trabalhistas",
+    "ClientHeight": 151,
+    "ClientWidth": 508,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 508,
+        "Height": 105,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaTitulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 28,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 123,
+            "Top": 25,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EmpresaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 28,
+            "Width": 130,
+            "Height": 13,
+            "Caption": "Lbl_EmpresaDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 60,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Processo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 206,
+            "Top": 55,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ProcessoDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 235,
+            "Top": 60,
+            "Width": 134,
+            "Height": 13,
+            "Caption": "Lbl_ProcessoDescricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 70,
+            "Top": 24,
+            "Width": 52,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_EmpresaEnter",
+            "OnExit": "Edt_EmpresaExit",
+            "OnKeyPress": "Edt_EmpresaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 70,
+            "Top": 56,
+            "Width": 135,
+            "Height": 21,
+            "MaxLength": 20,
+            "TabOrder": 1,
+            "OnEnter": "Edt_ProcessoEnter",
+            "OnExit": "Edt_ProcessoExit",
+            "OnKeyPress": "Edt_ProcessoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 105,
+        "Width": 508,
+        "Height": 46,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Retificar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 9,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "Retificar",
+            "TabOrder": 0,
+            "OnClick": "Btn_RetificarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_FiltroAvancado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 379,
+            "Top": 9,
+            "Width": 117,
+            "Height": 25,
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "Btn_FiltroAvancadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Erros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 9,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Ver Inconsistências",
+            "TabOrder": 2,
+            "Visible": false,
+            "OnClick": "Btn_ErrosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 467,
+        "Top": 17
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresaATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_EmpresaDATAINICIOFASE2ESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOFASE2ESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_EmpresaDATACARGAFASE2ESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATACARGAFASE2ESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_RHeSocialProcTrab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 434,
+        "Top": 55
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHeSocialProcTrabEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHeSocialProcTrabNUMEROPROCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Processo",
+            "FieldName": "NUMEROPROCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHeSocialProcTrabDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHeSocialProcTrabTIPORESPPROCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Responsabilidade",
+            "FieldName": "TIPORESPPROCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RHeSocialProcTrabORIGEMDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "ORIGEMDESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RHeSocialProcTrabNROORDEMPES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Reclamante",
+            "FieldName": "NROORDEMPES"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ProcuraProcesso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 467,
+        "Top": 54
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcessoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcessoNUMEROPROCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Processo",
+            "FieldName": "NUMEROPROCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcessoDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcessoTIPORESPPROCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Responsabilidade",
+            "FieldName": "TIPORESPPROCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcessoORIGEMDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "ORIGEMDESCRICAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_Filtro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_Filtro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 296,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mni_FiltroAvancado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Filtro por Pessoas",
+            "ImageIndex": 0,
+            "OnClick": "Mni_FiltroAvancadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mni_SemFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Sem Filtro",
+            "ImageIndex": 1,
+            "OnClick": "Mni_SemFiltroClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ErrosValidacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoDescricaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoTipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacaoSequencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacaoSequencia"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

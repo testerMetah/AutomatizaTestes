@@ -1,0 +1,860 @@
+{
+  "classe": "TFrm_RHPR000122",
+  "nome": "Frm_RHPR000122",
+  "herdado": false,
+  "propriedades": {
+    "Left": 197,
+    "Top": 170,
+    "BorderStyle": "bsSingle",
+    "Caption": "Copiar Fórmula de outro Relatório / Rotina Especial",
+    "ClientHeight": 163,
+    "ClientWidth": 628,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 628,
+        "Height": 121,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_TipoCopia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 62,
+            "Width": 607,
+            "Height": 44,
+            "Caption": "Copiar a Fórmula:",
+            "Columns": 2,
+            "Items.Strings": [
+              "Após a Fórmula já existente",
+              "Sobrepondo à Fórmula já existente"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 6,
+            "Width": 607,
+            "Height": 49,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TituloRelatorioRotina",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 14,
+                "Width": 101,
+                "Height": 29,
+                "Caption": "Rotina Especial para copiar a Fórmula:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Spe_RelatorioRotina",
+              "herdado": false,
+              "propriedades": {
+                "Left": 157,
+                "Top": 18,
+                "Width": 22,
+                "Height": 22,
+                "Hint": "Localizar",
+                "ShowHint": true,
+                "OnClick": "Spe_RelatorioRotinaClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl_RelatorioRotina",
+              "herdado": false,
+              "propriedades": {
+                "Left": 183,
+                "Top": 23,
+                "Width": 420,
+                "Height": 16,
+                "Caption": "lbl_RelatorioRotina"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_RelatorioRotina",
+              "herdado": false,
+              "propriedades": {
+                "Left": 111,
+                "Top": 19,
+                "Width": 42,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnEnter": "Edt_RelatorioRotinaEnter",
+                "OnExit": "Edt_RelatorioRotinaExit",
+                "OnKeyPress": "Edt_RelatorioRotinaKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 121,
+        "Width": 628,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 22,
+            "Top": 8,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "OK",
+            "TabOrder": 0,
+            "OnClick": "btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 113,
+            "Top": 8,
+            "Width": 75,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "ModalResult": 3,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Relatorios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 231,
+        "Top": 94
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Relatório",
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosPROGRAMA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Programa",
+            "FieldName": "PROGRAMA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosPAPEL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Papel",
+            "FieldName": "PAPEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosORIENTACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Orientação",
+            "FieldName": "ORIENTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosORIGEMVALORES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem dos Valores",
+            "FieldName": "ORIGEMVALORES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosETIQUETA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Etiqueta",
+            "FieldName": "ETIQUETA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURACABECALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURACABECALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURADETALHE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURADETALHE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURATOTAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURATOTAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE5",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE5"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosPERCRATEIOCHEQUE6",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCRATEIOCHEQUE6"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RelatoriosVALORMINIMOCHEQUE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORMINIMOCHEQUE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosFORMAARREDONDAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMAARREDONDAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosFORMULACHEQUEDOC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMULACHEQUEDOC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosARQUIVOEXPORTA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ARQUIVOEXPORTA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosSEPARADORCAMPOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SEPARADORCAMPOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosFORMATOCAMPOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMATOCAMPOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosACENTOSSINAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ACENTOSSINAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosFORMAMINUTOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMAMINUTOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RelatoriosMARGEMSUPERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MARGEMSUPERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RelatoriosMARGEMINFERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MARGEMINFERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RelatoriosMARGEMESQUERDA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MARGEMESQUERDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURALINHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURALINHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosTABELAAUXILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TABELAAUXILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURAQUEBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURAQUEBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RelatoriosALTURATOTALQUEBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALTURATOTALQUEBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosMODULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RelatoriosMARGEMDIREITA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MARGEMDIREITA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosDESCRICAOMEMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOMEMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosFUNCAOPROGRAMA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAOPROGRAMA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO02",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO02"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO03",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO03"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO04",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO04"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO06",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO06"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO07",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO07"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO08",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO08"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO09",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO09"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO10",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO10"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO11",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO11"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO12",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO12"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RelatoriosUSAMODULO19",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO19"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Relatorios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 303,
+        "Top": 95
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FormulasRelatorios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 402,
+        "Top": 96
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FormulasRelatoriosNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosVARIAVELCONDICIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELCONDICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosCONDICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONDICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosARGUMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ARGUMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosCONJUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONJUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosNROMESES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROMESES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosVARIAVELRESULTANTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELRESULTANTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosEXPRESSAOARITMETICA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EXPRESSAOARITMETICA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosVARIAVELAUXILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELAUXILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FormulasRelatoriosDestino",
+      "herdado": false,
+      "propriedades": {
+        "Left": 534,
+        "Top": 96
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoRELATORIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RELATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FormulasRelatoriosDestinoNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoVARIAVELCONDICIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELCONDICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoCONDICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONDICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoARGUMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ARGUMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoCONJUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONJUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoNROMESES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROMESES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoVARIAVELRESULTANTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELRESULTANTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoEXPRESSAOARITMETICA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EXPRESSAOARITMETICA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoVARIAVELAUXILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVELAUXILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulasRelatoriosDestinoATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

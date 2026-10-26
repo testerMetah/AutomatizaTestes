@@ -1,0 +1,230 @@
+{
+  "classe": "TFrm_UniEmp",
+  "nome": "Frm_UniEmp",
+  "herdado": false,
+  "propriedades": {
+    "Left": 239,
+    "Top": 117,
+    "BorderStyle": "bsToolWindow",
+    "Caption": "Troca de Unidade",
+    "ClientHeight": 227,
+    "ClientWidth": 273,
+    "OnCreate": "FormCreate",
+    "OnKeyPress": "FormKeyPress",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 273,
+        "Height": 227,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Panel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 273,
+            "Height": 41,
+            "Align": "alTop",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Codigo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 11,
+                "Width": 43,
+                "Height": 13,
+                "Caption": "Unidade:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_Localizar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 242,
+                "Top": 7,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_LocalizarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "edt_Codigo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 57,
+                "Top": 8,
+                "Width": 184,
+                "Height": 21,
+                "MaxLength": 20,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 41,
+            "Width": 273,
+            "Height": 186,
+            "Align": "alClient",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TListBox",
+              "nome": "lsb_Empresas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 7,
+                "Width": 265,
+                "Height": 87,
+                "TabOrder": 0,
+                "OnClick": "lsb_EmpresasClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TListBox",
+              "nome": "lsb_Unidades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 98,
+                "Top": 104,
+                "Width": 47,
+                "Height": 70,
+                "TabOrder": 1,
+                "OnClick": "lsb_EmpresasClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TTimer",
+      "nome": "tmr_Tempo",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 154,
+        "Top": 147
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Empresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 176
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 140
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Unidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 28,
+        "Top": 176
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

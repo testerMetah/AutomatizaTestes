@@ -1,0 +1,532 @@
+{
+  "classe": "TFrm_RHPA7046",
+  "nome": "Frm_RHPA7046",
+  "herdado": false,
+  "propriedades": {
+    "Left": 440,
+    "Top": 276,
+    "BorderStyle": "bsSingle",
+    "Caption": "Mover Marcações",
+    "ClientHeight": 393,
+    "ClientWidth": 784,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 355,
+        "Width": 784,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 45,
+        "Width": 784,
+        "Height": 310,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_DiaAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 259,
+            "Height": 302,
+            "Align": "alLeft",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfDiaAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 3,
+                "Width": 252,
+                "Height": 13,
+                "Caption": "Dia Anterior - DD/MM"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_DiaAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Tag": -1,
+                "Left": 4,
+                "Top": 18,
+                "Width": 252,
+                "Height": 256,
+                "DataSource": "Dts_DiaAnterior",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DATAMARCACAO",
+                    "Title.Caption": "Data",
+                    "Width": 65,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORAMARCACAO",
+                    "Title.Caption": "Hora",
+                    "Width": 35,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "COLETOR_FUNCAO",
+                    "Title.Caption": "Coletor",
+                    "Width": 45,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DescORIGEMMARCACAO",
+                    "Title.Caption": "Origem",
+                    "Width": 52,
+                    "Visible": true
+                  },
+                  {
+                    "Title.Caption": "Ativo",
+                    "Width": 30,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DiaAnteriorBotoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 275,
+                "Width": 259,
+                "Height": 27,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_AnteriorDireita",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 129,
+                    "Top": 4,
+                    "Width": 50,
+                    "Height": 20,
+                    "Hint": "Mover a Marcação Selecionada para o Dia Corrente.",
+                    "OnClick": "Btn_AnteriorDireitaClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_DiaCorrente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 261,
+            "Top": 2,
+            "Width": 258,
+            "Height": 302,
+            "Align": "alClient",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfDiaCorrente",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 3,
+                "Width": 252,
+                "Height": 13,
+                "Caption": "Dia Corrente - DD/MM"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_DiaCorrente",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 18,
+                "Width": 252,
+                "Height": 256,
+                "DataSource": "Dts_DiaCorrente",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DATAMARCACAO",
+                    "Title.Caption": "Data",
+                    "Width": 65,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORAMARCACAO",
+                    "Title.Caption": "Hora",
+                    "Width": 35,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "COLETOR_FUNCAO",
+                    "Title.Caption": "Coletor",
+                    "Width": 45,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DescORIGEMMARCACAO",
+                    "Title.Caption": "Origem",
+                    "Width": 52,
+                    "Visible": true
+                  },
+                  {
+                    "Title.Caption": "Ativo",
+                    "Width": 30,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DiaCorrenteBotoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 275,
+                "Width": 258,
+                "Height": 27,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_CorrenteEsquerda",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 79,
+                    "Top": 4,
+                    "Width": 50,
+                    "Height": 20,
+                    "Hint": "Mover a Marcação Selecionada para o Dia Anterior.",
+                    "OnClick": "Btn_CorrenteEsquerdaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_CorrenteDireita",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 129,
+                    "Top": 4,
+                    "Width": 50,
+                    "Height": 20,
+                    "Hint": "Mover a Marcação Selecionada para o Dia Seguinte.",
+                    "OnClick": "Btn_CorrenteDireitaClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_DiaSeguinte",
+          "herdado": false,
+          "propriedades": {
+            "Left": 519,
+            "Top": 2,
+            "Width": 259,
+            "Height": 302,
+            "Align": "alRight",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_InfDiaSeguinte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 3,
+                "Width": 252,
+                "Height": 13,
+                "Caption": "Dia Anterior - DD/MM"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_DiaSeguinte",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 1,
+                "Left": 4,
+                "Top": 18,
+                "Width": 252,
+                "Height": 256,
+                "DataSource": "Dts_DiaSeguinte",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "DATAMARCACAO",
+                    "Title.Caption": "Data",
+                    "Width": 65,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORAMARCACAO",
+                    "Title.Caption": "Hora",
+                    "Width": 35,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "COLETOR_FUNCAO",
+                    "Title.Caption": "Coletor",
+                    "Width": 45,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DescORIGEMMARCACAO",
+                    "Title.Caption": "Origem",
+                    "Width": 52,
+                    "Visible": true
+                  },
+                  {
+                    "Title.Caption": "Ativo",
+                    "Width": 30,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DiaSeguinteBotoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 275,
+                "Width": 259,
+                "Height": 27,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_SeguinteEsquerda",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 79,
+                    "Top": 4,
+                    "Width": 50,
+                    "Height": 20,
+                    "Hint": "Mover a Marcação Selecionada para o Dia Corrente.",
+                    "OnClick": "Btn_SeguinteEsquerdaClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 45,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 15,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_CodContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 11,
+            "Width": 65,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 571,
+            "Top": 15,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Data:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 608,
+            "Top": 11,
+            "Width": 71,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DscContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 129,
+            "Top": 13,
+            "Width": 416,
+            "Height": 16,
+            "Caption": "Lbl_DscContrato"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DiaAnterior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 122,
+        "Top": 178
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DiaCorrente",
+      "herdado": false,
+      "propriedades": {
+        "Left": 404,
+        "Top": 176
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DiaSeguinte",
+      "herdado": false,
+      "propriedades": {
+        "Left": 644,
+        "Top": 172
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp_Fixa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 308,
+        "Top": 140
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_MarcaoAlocadaManualmente",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Marcação Alocada Manualmente",
+            "OnClick": "Pop_MarcaoAlocadaManualmenteClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

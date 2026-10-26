@@ -1,0 +1,410 @@
+{
+  "classe": "TFrm_RHTR2010",
+  "nome": "Frm_RHTR2010",
+  "herdado": false,
+  "propriedades": {
+    "Left": 125,
+    "Top": 255,
+    "BorderStyle": "bsSingle",
+    "Caption": "Necessidade de Cursos por Empresa",
+    "ClientHeight": 221,
+    "ClientWidth": 651,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 651,
+        "Height": 221,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 30,
+            "Height": 13,
+            "Caption": "Curso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 13,
+            "Width": 420,
+            "Height": 15,
+            "Caption": "lbl_Curso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 478,
+            "Top": 108,
+            "Width": 111,
+            "Height": 13,
+            "Caption": "Última Revisão Exigida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 167,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Revisoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 520,
+            "Top": 124,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 49,
+            "Top": 9,
+            "Width": 117,
+            "Height": 21,
+            "MaxLength": 15,
+            "TabOrder": 0,
+            "OnChange": "edt_CursoChange",
+            "OnEnter": "edt_CursoEnter",
+            "OnExit": "edt_CursoExit",
+            "OnKeyPress": "edt_CursoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "DBRadioGroup1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 478,
+            "Top": 31,
+            "Width": 129,
+            "Height": 66,
+            "Caption": "Necessidade",
+            "DataField": "NECESSIDADE",
+            "DataSource": "dts_NECTOD",
+            "Items.Strings": [
+              "Obrigatório",
+              "Recomendável"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Revisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 478,
+            "Top": 124,
+            "Width": 41,
+            "Height": 21,
+            "DataField": "REVISAO",
+            "DataSource": "dts_NECTOD",
+            "TabOrder": 2,
+            "OnEnter": "Dbe_RevisaoEnter",
+            "OnExit": "Dbe_RevisaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboBox",
+          "nome": "Dbc_DtRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 543,
+            "Top": 124,
+            "Width": 93,
+            "Height": 21,
+            "DataField": "DT_REVISAO",
+            "DataSource": "dts_NECTOD",
+            "TabOrder": 3,
+            "OnEnter": "Dbc_DtRevisaoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_NecCursos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 37,
+            "Width": 456,
+            "Height": 166,
+            "TabStop": false,
+            "DataSource": "dts_NECTOD",
+            "ReadOnly": true,
+            "TabOrder": 4,
+            "Columns": [
+              {
+                "FieldName": "CURSO",
+                "Width": 108,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescCurso",
+                "Title.Caption": "Descrição",
+                "Width": 315,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 618,
+            "Top": 192,
+            "Width": 25,
+            "Height": 19,
+            "BorderStyle": "bsNone",
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter",
+            "OnExit": "Edt_AuxExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Cursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 68,
+        "Top": 138
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_CursosCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Curso",
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_CursosDESCRICAO50",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO50"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_CursosDATADESATIVACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATADESATIVACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_NECTOD",
+      "herdado": false,
+      "propriedades": {
+        "Left": 170,
+        "Top": 142
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Curso",
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_NECTODREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Revisão",
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_NECTODDT_REVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Revisão",
+            "FieldName": "DT_REVISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODNECESSIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Necessidade",
+            "FieldName": "NECESSIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODNECESSIDADEREQUISITO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Necessidade do Requisito",
+            "FieldName": "NECESSIDADEREQUISITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODCLASSEREQUISITO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classe do Requisito",
+            "FieldName": "CLASSEREQUISITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_NECTODPESO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Peso",
+            "FieldName": "PESO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODdesNec",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Necessidade",
+            "FieldName": "desNec"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_NECTODDescCurso",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescCurso"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_NECTOD",
+      "herdado": false,
+      "propriedades": {
+        "Left": 254,
+        "Top": 144
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Revisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 354,
+        "Top": 146
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RevisoesREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Revisão",
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RevisoesDT_REVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Revisão",
+            "FieldName": "DT_REVISAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

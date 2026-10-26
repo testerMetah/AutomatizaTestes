@@ -1,0 +1,1679 @@
+{
+  "classe": "TFrm_SQLPro",
+  "nome": "Frm_SQLPro",
+  "herdado": false,
+  "propriedades": {
+    "Left": 223,
+    "Top": 239,
+    "Width": 738,
+    "Height": 482,
+    "Caption": "SQLPro",
+    "FormStyle": "fsMDIForm",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Conexoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 26,
+        "Width": 238,
+        "Height": 379,
+        "Align": "alLeft",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTreeView",
+          "nome": "Trv_Conexoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 28,
+            "Width": 228,
+            "Height": 323,
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "OnKeyPress": "Trv_ConexoesKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_ConexoesCima",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 238,
+            "Height": 28,
+            "Align": "alTop",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_AtualizarConexoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Action": "Act_AtualizarConexoes"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_AddUserName",
+              "herdado": false,
+              "propriedades": {
+                "Left": 129,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Action": "Act_AddUserName"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_FecharConexoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 209,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Action": "Act_FecharConexoes"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_MDE",
+              "herdado": false,
+              "propriedades": {
+                "Left": 26,
+                "Top": 2,
+                "Width": 23,
+                "Height": 22,
+                "Action": "Act_MDE",
+                "Caption": " "
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_NovoUserName",
+              "herdado": false,
+              "propriedades": {
+                "Left": 54,
+                "Top": 3,
+                "Width": 75,
+                "Height": 21,
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_ConexoesBaixo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 339,
+            "Width": 238,
+            "Height": 40,
+            "Align": "alBottom",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Conexoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 4,
+                "Width": 88,
+                "Height": 13,
+                "Caption": "Conexão Principal:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ConexaoAberta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 147,
+                "Top": 22,
+                "Width": 84,
+                "Height": 13,
+                "Caption": "Em Transação",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "Cmb_Conexoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 18,
+                "Width": 140,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "Cmb_ConexoesChange",
+                "OnEnter": "Cmb_ConexoesEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TStatusBar",
+      "nome": "StatusBar1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 405,
+        "Width": 722,
+        "Height": 19
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TToolBar",
+      "nome": "ToolBar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 722,
+        "Height": 26,
+        "Caption": "ToolBar",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_LerSQL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Action": "Act_LerSQL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_SalvarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 23,
+            "Top": 0,
+            "Action": "Act_SalvarSQL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_LerConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 46,
+            "Top": 0,
+            "Action": "Act_LerConsulta"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Separador1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 69,
+            "Top": 0,
+            "Width": 8,
+            "Caption": "Btn_Separador1",
+            "ImageIndex": 18,
+            "Style": "tbsSeparator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_NovaConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 0,
+            "Action": "Act_NovaConsulta"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Separador2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 0,
+            "Width": 8,
+            "Caption": "Btn_Separador2",
+            "ImageIndex": 11,
+            "Style": "tbsSeparator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_TelaAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 108,
+            "Top": 0,
+            "Action": "Act_JanelaAnterior"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Act_ProximaTela",
+          "herdado": false,
+          "propriedades": {
+            "Left": 131,
+            "Top": 0,
+            "Action": "Act_ProximaJanela"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Separador4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 154,
+            "Top": 0,
+            "Width": 7,
+            "Caption": "Btn_Separador4",
+            "ImageIndex": 15,
+            "Style": "tbsSeparator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_ExecutarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 161,
+            "Top": 0,
+            "Action": "Act_ExecutarConsulta"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Separador3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 184,
+            "Top": 0,
+            "Width": 8,
+            "Caption": "Btn_Separador3",
+            "ImageIndex": 12,
+            "Style": "tbsSeparator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_ConectarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 192,
+            "Top": 0,
+            "Action": "Act_ConectarAlias"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_DesconectarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 215,
+            "Top": 0,
+            "Action": "Act_DesconectarAlias"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Separador5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 238,
+            "Top": 0,
+            "Width": 8,
+            "Caption": "Btn_Separador5",
+            "ImageIndex": 15,
+            "Style": "tbsSeparator"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_OrganizarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 246,
+            "Top": 0,
+            "Action": "Act_OrganizarSQL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_SQL2Delphi",
+          "herdado": false,
+          "propriedades": {
+            "Left": 269,
+            "Top": 0,
+            "Action": "Act_SQL2Delphi"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TToolButton",
+          "nome": "Btn_Delphi2SQL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 292,
+            "Top": 0,
+            "Action": "Act_Delphi2SQL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMainMenu",
+      "nome": "MainMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 317,
+        "Top": 143
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Arquivo"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ArquivoSair",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_Sair"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_Conexoes",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Conexões"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesExibir",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ExibirConexoes"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesOcultar",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_FecharConexoes",
+                "Caption": "Ocultar"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N1",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesMDE",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_MDE"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesAtualizar",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_AtualizarConexoes",
+                "Caption": "Atualiar"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N4",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexaoConectaraoAlias",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ConectarAlias"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexaoDesconectarAlias",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_DesconectarAlias"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N10",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesTransacao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Transações"
+              },
+              "filhos": [
+                {
+                  "classe": "TMenuItem",
+                  "nome": "AbrirOpen1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Action": "Act_AbrirTransacao"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMenuItem",
+                  "nome": "SalvarConsultaemCSV1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Action": "Act_CommitTransacao"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMenuItem",
+                  "nome": "CancelarRollback1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Action": "Act_RollBackTransacao"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultarTabela",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ConsultarTabela"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_OpcoesDicionrio",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_AbrirOpcoesDicionario"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Menu_CamposTabelas",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_AbrirCampoTabelas"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N13",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesExportaBD",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ExportacaoSQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesImportaXML",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ImportaXML"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_SQL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "SQL"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "NovaConsulta1",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_NovaConsulta"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N8",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLLerSQL",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_LerSQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLSalvarSQL",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_SalvarSQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N5",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLLetrasMaisculas",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_MaximizarSQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLOrganizar",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_OrganizarSQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLSQL2Delphi",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_SQL2Delphi"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLDelphi2SQL",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_Delphi2SQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLConsultarTabelaSelec",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ConsultarTabelaSelec"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLAtalhos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Atalhos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N2",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_SQLConverter",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Converter o SQL para"
+              },
+              "filhos": [
+                {
+                  "classe": "TMenuItem",
+                  "nome": "Mnu_SQLConverter_Oracle",
+                  "herdado": false,
+                  "propriedades": {
+                    "Action": "Act_ConverteOracle"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMenuItem",
+                  "nome": "Mnu_SQLConverter_SQLServer",
+                  "herdado": false,
+                  "propriedades": {
+                    "Action": "Act_ConverteSQLServer"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_Consulta",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Consulta"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConexoesNova",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_NovaConsulta"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N9",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultaExecutar",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ExecutarConsulta",
+                "Caption": "Executar SQL"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N3",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultaLerXML",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_LerConsulta"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultaSalvarXML",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_SalvarConsultaXML"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultaSalvarCSV",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_SalvarConsultaScript"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "N7",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "-"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_ConsultaAlterarDados",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_AlterarDados"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_Janela",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Janela"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_JanelaProxima",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_ProximaJanela"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_JanelaJanelaAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_JanelaAnterior"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Fechar1",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_WindowClose"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_JanelaCascata",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_WindowCascade"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_JanelaHorizontal",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_WindowTileHorizontal"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Mnu_JanelaVertical",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_WindowTileVertical"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "MinimizarTudo1",
+              "herdado": false,
+              "propriedades": {
+                "Action": "Act_WindowMinimizeAll"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 509,
+        "Top": 143
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 413,
+        "Top": 143
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_NovaConsultaSelec",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Nova Consulta",
+            "ImageIndex": 10,
+            "OnExecute": "Act_NovaConsultaSelecExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConsultarTabela",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Tabela",
+            "Caption": "Consultar Tabela",
+            "ImageIndex": 18,
+            "OnExecute": "Act_ConsultarTabelaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DesconectarAliasSelec",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Conectar",
+            "Caption": "Desconectar Alias",
+            "ImageIndex": 8,
+            "OnExecute": "Act_DesconectarAliasSelecExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConectarAliasSelect",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Conectar",
+            "Caption": "Conectar ao Alias",
+            "ImageIndex": 9,
+            "OnExecute": "Act_ConectarAliasSelectExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Sair",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Arquivo",
+            "Caption": "Sair",
+            "ImageIndex": 0,
+            "OnExecute": "Act_SairExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_InicializaConexoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "Caption": "Act_InicializaConexoes",
+            "OnExecute": "Act_InicializaConexoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AtualizarConexoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "ImageIndex": 1,
+            "ShortCut": 116,
+            "OnExecute": "Act_AtualizarConexoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_FecharConexoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "ImageIndex": 2,
+            "ShortCut": 24698,
+            "OnExecute": "Act_FecharConexoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ExibirConexoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "Caption": "Exibir",
+            "ImageIndex": 3,
+            "ShortCut": 16506,
+            "OnExecute": "Act_ExibirConexoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_MDE",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "Caption": "MDE",
+            "ImageIndex": 7,
+            "OnExecute": "Act_MDEExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_NovaConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Nova Consulta",
+            "ImageIndex": 10,
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovaConsultaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ExecutarConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Executar",
+            "ImageIndex": 11,
+            "ShortCut": 120,
+            "OnExecute": "Act_ExecutarConsultaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SalvarConsultaScript",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Salvar Consulta em CSV...",
+            "ImageIndex": 17,
+            "OnExecute": "Act_SalvarConsultaScriptExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_OrganizarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Organizar",
+            "ImageIndex": 12,
+            "ShortCut": 16463,
+            "OnExecute": "Act_OrganizarSQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SQL2Delphi",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Exportar para o Delphi",
+            "ImageIndex": 13,
+            "ShortCut": 24643,
+            "OnExecute": "Act_SQL2DelphiExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Delphi2SQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Importar do Delphi",
+            "ImageIndex": 14,
+            "ShortCut": 24662,
+            "OnExecute": "Act_Delphi2SQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_MaximizarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Letras maiúsculas",
+            "ImageIndex": 15,
+            "OnExecute": "Act_MaximizarSQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SalvarSQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Salvar SQL...",
+            "ImageIndex": 17,
+            "OnExecute": "Act_SalvarSQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_LerSQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Ler SQL...",
+            "ImageIndex": 16,
+            "OnExecute": "Act_LerSQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SalvarConsultaXML",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Salvar Consulta em XML...",
+            "ImageIndex": 17,
+            "OnExecute": "Act_SalvarConsultaXMLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_LerConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Ler Consulta em XML...",
+            "ImageIndex": 35,
+            "OnExecute": "Act_LerConsultaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConverteOracle",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL_Converte",
+            "Caption": "Oracle",
+            "ImageIndex": 5,
+            "OnExecute": "Act_ConverteOracleExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConverteSQLServer",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL_Converte",
+            "Caption": "SQLServer",
+            "ImageIndex": 4,
+            "OnExecute": "Act_ConverteSQLServerExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DesconectarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Conectar",
+            "Caption": "Desconectar do Alias",
+            "ImageIndex": 8,
+            "ShortCut": 122,
+            "OnExecute": "Act_DesconectarAliasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConectarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Conectar",
+            "Caption": "Conectar ao Alias",
+            "ImageIndex": 9,
+            "ShortCut": 121,
+            "OnExecute": "Act_ConectarAliasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AlterarDados",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Permitir Alteração dos Dados",
+            "ImageIndex": 21,
+            "ShortCut": 123,
+            "OnExecute": "Act_AlterarDadosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AbrirTransacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Abrir (&Open)",
+            "ShortCut": 24655,
+            "OnExecute": "Act_AbrirTransacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CommitTransacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Salvar (&Commit)",
+            "ShortCut": 24643,
+            "OnExecute": "Act_CommitTransacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_RollBackTransacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Cancelar (&Rollback)",
+            "ShortCut": 24658,
+            "OnExecute": "Act_RollBackTransacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Atalho",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Select",
+            "OnExecute": "Act_AtalhoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AbrirTransacaoSelec",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Abrir (&Open)",
+            "OnExecute": "Act_AbrirTransacaoSelecExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CommitTransacaoSelec",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Salvar (&Commit)",
+            "OnExecute": "Act_CommitTransacaoSelecExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_RollBackTransacaoSelc",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Transacao",
+            "Caption": "Cancelar (&Rollback)",
+            "OnExecute": "Act_RollBackTransacaoSelcExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWindowClose",
+          "nome": "Act_WindowClose",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Fechar",
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWindowCascade",
+          "nome": "Act_WindowCascade",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Cascata",
+            "Enabled": false,
+            "ImageIndex": 28
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWindowTileHorizontal",
+          "nome": "Act_WindowTileHorizontal",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Título Horzizontal",
+            "Enabled": false,
+            "ImageIndex": 29
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWindowTileVertical",
+          "nome": "Act_WindowTileVertical",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Título Vertical",
+            "Enabled": false,
+            "ImageIndex": 30
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWindowMinimizeAll",
+          "nome": "Act_WindowMinimizeAll",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Minimizar Tudo",
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ProximaJanela",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Próxima Janela",
+            "ImageIndex": 20,
+            "ShortCut": 16501,
+            "OnExecute": "Act_ProximaJanelaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_JanelaAnterior",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Janela",
+            "Caption": "Janela Anterior",
+            "ImageIndex": 19,
+            "ShortCut": 24693,
+            "OnExecute": "Act_JanelaAnteriorExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AddUserName",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "ImageIndex": 34,
+            "ShortCut": 24654,
+            "OnExecute": "Act_AddUserNameExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ExportacaoSQL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "Caption": "Exportar Banco de Dados...",
+            "ShortCut": 16453,
+            "OnExecute": "Act_ExportacaoSQLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ImportaXML",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes",
+            "Caption": "Importa Tabelas em XML...",
+            "OnExecute": "Act_ImportaXMLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConsultarTabelaSelec",
+          "herdado": false,
+          "propriedades": {
+            "Category": "SQL",
+            "Caption": "Consultar Tabela",
+            "ImageIndex": 18,
+            "ShortCut": 16497,
+            "OnExecute": "Act_ConsultarTabelaSelecExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AbrirOpcoesDicionario",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Tabela",
+            "Caption": "Opções do Dicionário",
+            "ImageIndex": 36,
+            "OnExecute": "Act_AbrirOpcoesDicionarioExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SetPadrao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Tabela",
+            "Caption": "Setar Conexão como Principal",
+            "ImageIndex": 37,
+            "OnExecute": "Act_SetPadraoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AbrirCampoTabelas",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Conexoes_Tabela",
+            "Caption": "Campos X Tabelas",
+            "ImageIndex": 39,
+            "OnExecute": "Act_AbrirCampoTabelasExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 461,
+        "Top": 227
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "SaveDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 365,
+        "Top": 227
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 412,
+        "Top": 320
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ConexaoConectarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_ConectarAliasSelect",
+            "Default": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ConexaoDesconectarBase",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_DesconectarAliasSelec"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "SetarConexocomoPrincipal1",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_SetPadrao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N11",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_TransacaoNovaConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_NovaConsultaSelec"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N6",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_TransacaoAbrirOpen",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_AbrirTransacaoSelec"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_TransacaoSalvarCommit",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_CommitTransacaoSelec"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_TransacaoCancelarRollback",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_RollBackTransacaoSelc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N12",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ConsultarTabela",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_ConsultarTabela"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_OpcoesDicionario",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_AbrirOpcoesDicionario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_CamposTabelas",
+          "herdado": false,
+          "propriedades": {
+            "Action": "Act_AbrirCampoTabelas"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "classe": "TFrm_RHTR5000",
+  "nome": "Frm_RHTR5000",
+  "herdado": true,
+  "propriedades": {
+    "Left": 211,
+    "Top": 203,
+    "Caption": "Atividades",
+    "ClientHeight": 350,
+    "ClientWidth": 591
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 591,
+        "Height": 46,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Panel1Enter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 16,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Atividade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalizarAtividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 167,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 16,
+            "Width": 324,
+            "Height": 13,
+            "Caption": "Descrição da Atividade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 68,
+            "Top": 12,
+            "Width": 98,
+            "Height": 21,
+            "MaxLength": 12,
+            "TabOrder": 0,
+            "OnExit": "Edt_AtividadeExit",
+            "OnKeyPress": "Edt_AtividadeKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 529,
+            "Top": 12,
+            "Width": 51,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_RHAtividades",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 591,
+        "Height": 304,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 583,
+            "Height": 296,
+            "ActivePage": "Tbs_Treinamentos",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_AtividadeChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Cadastramento",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Cadastramento"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 19,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 52,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Descrição Detalhada:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Descricao60",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 72,
+                    "Top": 16,
+                    "Width": 389,
+                    "Height": 21,
+                    "DataField": "DESCRICAO60",
+                    "DataSource": "Dts_RHAtividades",
+                    "MaxLength": 60,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Mmo_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 72,
+                    "Width": 540,
+                    "Height": 179,
+                    "DataField": "DESCRICAOMEMO",
+                    "DataSource": "Dts_RHAtividades",
+                    "MaxLength": 8000,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "EdtAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 17,
+                    "Top": 274,
+                    "Width": 33,
+                    "Height": 8,
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 2,
+                    "OnEnter": "EdtAuxEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Treinamentos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Treinamentos",
+                "ImageIndex": 1,
+                "OnEnter": "Tbs_TreinamentosEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TBevel",
+                  "nome": "Bevel5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 240,
+                    "Width": 319,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label19",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 145,
+                    "Top": 224,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbl_Curso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 149,
+                    "Top": 244,
+                    "Width": 313,
+                    "Height": 13,
+                    "Caption": "Descrição do Curso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_LocalizarCurso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 121,
+                    "Top": 240,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 224,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Curso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Necessidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 467,
+                    "Top": 224,
+                    "Width": 62,
+                    "Height": 13,
+                    "Caption": "Necessidade"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_CargoNec",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 575,
+                    "Height": 220,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_RHAtividadesNec",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbg_CargoNecEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "CURSO",
+                        "Title.Caption": "Curso",
+                        "Width": 110,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Descricao",
+                        "Title.Caption": "Descrição",
+                        "Width": 340,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescNecessidade",
+                        "Title.Caption": "Necessidade",
+                        "Width": 90,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_CargoNecAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 569,
+                    "Top": 247,
+                    "Width": 5,
+                    "Height": 19,
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 3,
+                    "OnEnter": "Edt_CargoNecAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_CargoNec_Curso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 240,
+                    "Width": 112,
+                    "Height": 21,
+                    "MaxLength": 15,
+                    "TabOrder": 1,
+                    "OnExit": "Edt_CargoNec_CursoExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_CargoNecNecessidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 467,
+                    "Top": 240,
+                    "Width": 99,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "NECESSIDADE",
+                    "DataSource": "Dts_RHAtividadesNec",
+                    "TabOrder": 2,
+                    "OnEnter": "Dbc_CargoNecNecessidadeEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 402,
+        "Top": 119
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAtividades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 323,
+        "Top": 158
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHAtividadesNec",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_Treinamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 484,
+        "Top": 159
+      },
+      "filhos": []
+    }
+  ]
+}

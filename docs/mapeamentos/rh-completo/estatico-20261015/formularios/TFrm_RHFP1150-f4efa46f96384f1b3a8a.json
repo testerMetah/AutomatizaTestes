@@ -1,0 +1,3684 @@
+{
+  "classe": "TFrm_RHFP1150",
+  "nome": "Frm_RHFP1150",
+  "herdado": false,
+  "propriedades": {
+    "Left": 449,
+    "Top": 196,
+    "BorderStyle": "bsSingle",
+    "Caption": "Familiares",
+    "ClientHeight": 434,
+    "ClientWidth": 658,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 658,
+        "Height": 43,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 11,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 7,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 172,
+            "Top": 10,
+            "Width": 400,
+            "Height": 17,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 80,
+            "Top": 7,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 43,
+        "Width": 658,
+        "Height": 391,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Familiares",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 650,
+            "Height": 383,
+            "ActivePage": "Tbs_DadosFamiliar",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_FamiliaresChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Familiares",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Familiares"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Grid",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 642,
+                    "Height": 355,
+                    "Align": "alClient",
+                    "Caption": "Pnl_Grid",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBGrid",
+                      "nome": "DBGrid1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 642,
+                        "Height": 355,
+                        "Align": "alClient",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "FAMILIAR",
+                            "Width": 43,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NOME",
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DesParentesco",
+                            "Title.Caption": "Parentesco",
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DesDependencia",
+                            "Title.Caption": "Dependência",
+                            "Width": 107,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "SEXO",
+                            "Title.Caption": "Sexo ",
+                            "Width": 34,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NASCIMENTO",
+                            "Title.Caption": "Nascimento",
+                            "Width": 87,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_DadosFamiliar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Dados do Familiar",
+                "ImageIndex": 1,
+                "OnShow": "Tbs_DadosFamiliarShow"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Informacoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 642,
+                    "Height": 355,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 8,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Familiar:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 127,
+                        "Top": 8,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "Nome:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 114,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Parentesco:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 140,
+                        "Width": 67,
+                        "Height": 13,
+                        "Caption": "Dependência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 134,
+                        "Width": 58,
+                        "Height": 13,
+                        "Caption": "Estado Civil:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_EstadoCivil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 168,
+                        "Top": 133,
+                        "Width": 161,
+                        "Height": 14,
+                        "Caption": "Lbl_EstadoCivil"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "btn_FamiliarAnterior",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 75,
+                        "Top": 4,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Familiar Anterior",
+                        "ShowHint": true,
+                        "OnClick": "btn_FamiliarAnteriorClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "btn_FamiliarProximo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 98,
+                        "Top": 4,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Próximo Familiar",
+                        "ShowHint": true,
+                        "OnClick": "btn_FamiliarProximoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 107,
+                        "Width": 71,
+                        "Height": 13,
+                        "Caption": "Nacionalidade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Nacionalidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 168,
+                        "Top": 107,
+                        "Width": 161,
+                        "Height": 13,
+                        "Caption": "Lbl_Nacionalidade"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 160,
+                        "Width": 88,
+                        "Height": 13,
+                        "Caption": "Grau de Instrução:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_GrauInstrucao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 167,
+                        "Top": 160,
+                        "Width": 161,
+                        "Height": 14,
+                        "Caption": "Lbl_GrauInstrucao"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 187,
+                        "Width": 172,
+                        "Height": 13,
+                        "Caption": "Tipo de Dependente para o eSocial:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label25",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 216,
+                        "Width": 193,
+                        "Height": 13,
+                        "Caption": "Dependente em plano privado de saúde:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label27",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 274,
+                        "Top": 216,
+                        "Width": 292,
+                        "Height": 13,
+                        "Caption": "Dependente tem incapacidade física ou mental para trabalho:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label65",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 35,
+                        "Width": 78,
+                        "Height": 13,
+                        "Caption": "Nome Completo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edt_TrocaAba",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 603,
+                        "Top": 251,
+                        "Width": 17,
+                        "Height": 21,
+                        "TabOrder": 19,
+                        "OnEnter": "edt_TrocaAbaEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 310,
+                        "Top": 238,
+                        "Width": 324,
+                        "Height": 111,
+                        "Caption": "Registro de Nascimento",
+                        "TabOrder": 16
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 18,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Cartório:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label12",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 212,
+                            "Top": 18,
+                            "Width": 15,
+                            "Height": 13,
+                            "Caption": "Nº:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 41,
+                            "Width": 26,
+                            "Height": 13,
+                            "Caption": "Livro:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 172,
+                            "Top": 41,
+                            "Width": 36,
+                            "Height": 13,
+                            "Caption": "Página:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label15",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 65,
+                            "Width": 40,
+                            "Height": 13,
+                            "Caption": "Entrega:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label16",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 172,
+                            "Top": 65,
+                            "Width": 29,
+                            "Height": 13,
+                            "Caption": "Baixa:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMetaData",
+                          "nome": "Mtd_Entrega",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 128,
+                            "Top": 61,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar Data(Ctrl + D)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMetaData",
+                          "nome": "Mtd_Baixa",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 292,
+                            "Top": 61,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar Data(Ctrl + D)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_NumeroDeclaracaoNascidoVivo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 82,
+                            "Width": 113,
+                            "Height": 26,
+                            "Caption": "Número da Declaração \r\nde Nascido Vivo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_CartorioRegistro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 53,
+                            "Top": 14,
+                            "Width": 151,
+                            "Height": 21,
+                            "DataField": "CARTORIOREGISTRO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_NroRegistro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 233,
+                            "Top": 14,
+                            "Width": 82,
+                            "Height": 21,
+                            "DataField": "NROREGISTRO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Livro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 53,
+                            "Top": 37,
+                            "Width": 82,
+                            "Height": 21,
+                            "DataField": "LIVROREGISTRO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Pagina",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 217,
+                            "Top": 37,
+                            "Width": 48,
+                            "Height": 21,
+                            "DataField": "PAGINAREGISTRO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_DataEntregaCertidao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 53,
+                            "Top": 61,
+                            "Width": 74,
+                            "Height": 21,
+                            "DataField": "DATAENTREGACERTIDAO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 4,
+                            "OnChange": "Dbe_DataEntregaCertidaoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_DataBaixaCertidao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 217,
+                            "Top": 61,
+                            "Width": 74,
+                            "Height": 21,
+                            "DataField": "DATABAIXACERTIDAO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 5,
+                            "OnChange": "Dbe_DataBaixaCertidaoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_NumeroDeclaracaoNascidoVivo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 127,
+                            "Top": 84,
+                            "Width": 155,
+                            "Height": 21,
+                            "DataField": "NRODECLNASCIDOVIVO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 6
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "Btn_EstadoCivil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 129,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 17,
+                        "TabStop": false,
+                        "OnClick": "Btn_EstadoCivilClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Familiar",
+                      "herdado": false,
+                      "propriedades": {
+                        "Tag": 2,
+                        "Left": 47,
+                        "Top": 4,
+                        "Width": 27,
+                        "Height": 21,
+                        "MaxLength": 2,
+                        "TabOrder": 0,
+                        "OnExit": "Edt_FamiliarExit",
+                        "OnKeyPress": "Edt_FamiliarKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Nome",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 163,
+                        "Top": 4,
+                        "Width": 340,
+                        "Height": 21,
+                        "DataField": "NOME",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_Nascimento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 55,
+                        "Width": 496,
+                        "Height": 43,
+                        "Caption": "Nascimento",
+                        "TabOrder": 3
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 19,
+                            "Width": 26,
+                            "Height": 13,
+                            "Caption": "Data:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 178,
+                            "Top": 19,
+                            "Width": 29,
+                            "Height": 13,
+                            "Caption": "Local:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label8",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 417,
+                            "Top": 19,
+                            "Width": 17,
+                            "Height": 13,
+                            "Caption": "UF:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMetaData",
+                          "nome": "Mtd_Nascimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 15,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar Data(Ctrl + D)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Nascimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 43,
+                            "Top": 15,
+                            "Width": 74,
+                            "Height": 21,
+                            "DataField": "NASCIMENTO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 0,
+                            "OnChange": "Dbe_NascimentoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_LocalNascimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 217,
+                            "Top": 15,
+                            "Width": 152,
+                            "Height": 21,
+                            "DataField": "LOCALNASCIMENTO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 1,
+                            "OnChange": "Dbe_LocalNascimentoChange",
+                            "OnEnter": "Dbe_LocalNascimentoEnter",
+                            "OnExit": "Dbe_LocalNascimentoExit",
+                            "OnKeyPress": "Dbe_LocalNascimentoKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBComboMeta",
+                          "nome": "Dbc_UFNascimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 440,
+                            "Top": 15,
+                            "Width": 45,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "DataField": "UFNASCIMENTO",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLocalizarMeta",
+                          "nome": "Btn_Municipios",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 370,
+                            "Top": 14,
+                            "Width": 23,
+                            "Height": 23,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true,
+                            "TabOrder": 3,
+                            "TabStop": false,
+                            "OnClick": "Btn_MunicipiosClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "DBC_GrauParentesco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 436,
+                        "Top": 110,
+                        "Width": 140,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "GRAUPARENTESCO",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "Filho(a) ou Enteado(a)",
+                          "Neto(a)",
+                          "Bisneto(a)",
+                          "Esposo(a)",
+                          "Pai ou Mãe",
+                          "Avô ou Avó",
+                          "Bisavô ou Bisavó",
+                          "Irmão(ã)",
+                          "Sobrinho(a)",
+                          "Sogro(a)",
+                          "Nora/Genro",
+                          "Outro parentesco",
+                          "Nenhum parentesco "
+                        ],
+                        "TabOrder": 10,
+                        "OnChange": "DBC_GrauParentescoChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "DBC_GrauDependencia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 436,
+                        "Top": 136,
+                        "Width": 179,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "GRAUDEPENDENCIA",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "Menor de 21 anos",
+                          "Menor de 25 anos estudante",
+                          "Inválido",
+                          "Cônjuge sem renda",
+                          "Idoso sem renda",
+                          "Filha Solteira maior de 21 anos",
+                          "Nenhuma dependência "
+                        ],
+                        "TabOrder": 11,
+                        "OnChange": "DBC_GrauDependenciaChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 238,
+                        "Width": 295,
+                        "Height": 111,
+                        "Caption": "Indicadores",
+                        "TabOrder": 15
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbk_DependenteIRF",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 16,
+                            "Top": 86,
+                            "Width": 117,
+                            "Height": 17,
+                            "Caption": "Dependente p/IRF",
+                            "DataField": "DEPENDENTEIRF",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbk_AuxilioCreche",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 146,
+                            "Top": 14,
+                            "Width": 97,
+                            "Height": 17,
+                            "Caption": "Auxílio-creche",
+                            "DataField": "AUXILIOCRECHE",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbk_BenefPrevidencia",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 146,
+                            "Top": 32,
+                            "Width": 135,
+                            "Height": 20,
+                            "Caption": "Beneficiário Previdência",
+                            "DataField": "BENEFPREVIDENCIA",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "GroupBox2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 47,
+                            "Width": 148,
+                            "Height": 56,
+                            "TabOrder": 4
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Label10",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 34,
+                                "Width": 65,
+                                "Height": 13,
+                                "Caption": "Perc. Seguro:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_PercBenefSeguro",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 78,
+                                "Top": 30,
+                                "Width": 55,
+                                "Height": 21,
+                                "DataField": "PERCBENEFSEGURO",
+                                "DataSource": "Dts_Familiares",
+                                "MaxLength": 6,
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBCheckBox",
+                              "nome": "dbk_BenefSeguro",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 8,
+                                "Top": 10,
+                                "Width": 115,
+                                "Height": 17,
+                                "Caption": "Beneficiário Seguro",
+                                "DataField": "BENEFSEGURO",
+                                "DataSource": "Dts_Familiares",
+                                "TabOrder": 0,
+                                "OnClick": "dbk_BenefSeguroExit"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "GroupBox4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 11,
+                            "Width": 122,
+                            "Height": 72,
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TDBCheckBox",
+                              "nome": "dbk_Salfamilia",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 50,
+                                "Width": 94,
+                                "Height": 17,
+                                "Caption": "Salário-família",
+                                "DataField": "SALFAMILIA",
+                                "DataSource": "Dts_Familiares",
+                                "TabOrder": 2
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBCheckBox",
+                              "nome": "Dbk_EmDiaVacinas",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 10,
+                                "Width": 106,
+                                "Height": 17,
+                                "Caption": "Em dia c/vacinas",
+                                "DataField": "EMDIACOMVACINAS",
+                                "DataSource": "Dts_Familiares",
+                                "TabOrder": 0
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBCheckBox",
+                              "nome": "Dbk_FreqEscola",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 30,
+                                "Width": 106,
+                                "Height": 17,
+                                "Caption": "Frequenta Escola",
+                                "DataField": "FREQUENTAESCOLA",
+                                "DataSource": "Dts_Familiares",
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_EstadoCivil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 110,
+                        "Top": 130,
+                        "Width": 28,
+                        "Height": 21,
+                        "DataField": "ESTADOCIVIL",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 7,
+                        "OnEnter": "Dbe_EstadoCivilEnter",
+                        "OnExit": "Dbe_EstadoCivilExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "dbr_Sexo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 518,
+                        "Top": 29,
+                        "Width": 115,
+                        "Height": 69,
+                        "Caption": "Sexo",
+                        "DataField": "SEXO",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "Masculino",
+                          "Feminino"
+                        ],
+                        "TabOrder": 4,
+                        "OnChange": "dbr_SexoChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Nacionalidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 110,
+                        "Top": 103,
+                        "Width": 28,
+                        "Height": 21,
+                        "DataField": "NACIONALIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 5,
+                        "OnEnter": "Dbe_NacionalidadeEnter",
+                        "OnExit": "Dbe_NacionalidadeExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "Btn_Nacionalidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 102,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 6,
+                        "TabStop": false,
+                        "OnClick": "Btn_NacionalidadeClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_GrauInstrucao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 110,
+                        "Top": 156,
+                        "Width": 28,
+                        "Height": 21,
+                        "DataField": "GRAUINSTRUCAO",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 8,
+                        "OnEnter": "Dbe_GrauInstrucaoEnter",
+                        "OnExit": "Dbe_EstadoCivilExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "Btn_GrauInstrucao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 155,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 18,
+                        "TabStop": false,
+                        "OnClick": "Btn_GrauInstrucaoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Cmb_DependenteeSocial",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 205,
+                        "Top": 183,
+                        "Width": 355,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "TIPODEPENDENTEESOCIAL",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 12,
+                        "OnChange": "Cmb_DependenteeSocialChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_DepPlanoPrivado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 205,
+                        "Top": 212,
+                        "Width": 62,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "DEPPLANOPRIVADOSAUDE",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 13
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_DepIncapFisicaMental",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 573,
+                        "Top": 212,
+                        "Width": 62,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "DEPINCAPAZPARATRAB",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 14
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_NomeCompleto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 88,
+                        "Top": 31,
+                        "Width": 415,
+                        "Height": 21,
+                        "DataField": "NOMECOMPLETO",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "Dbc_EnvOutSisTSVInicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 162,
+                        "Width": 201,
+                        "Height": 17,
+                        "Caption": "S-2300 transmitido por outra aplicação",
+                        "DataField": "ENVOUTSISTSVINICIO",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 9
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_DadosAdicionais",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Dados Adicionais",
+                "ImageIndex": 2,
+                "OnEnter": "Tbs_DadosAdicionaisEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label19",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 14,
+                    "Width": 71,
+                    "Height": 13,
+                    "Caption": "Pai do Familiar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label20",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 45,
+                    "Width": 77,
+                    "Height": 13,
+                    "Caption": "Mãe do Familiar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label21",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 77,
+                    "Width": 76,
+                    "Height": 13,
+                    "Caption": "CPF do Familiar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_NumeroCartaoSUS",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 174,
+                    "Top": 69,
+                    "Width": 49,
+                    "Height": 26,
+                    "Caption": "Nº Cartão SUS:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label28",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 104,
+                    "Width": 77,
+                    "Height": 26,
+                    "Caption": "Descrição da Dependência:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 552,
+                    "Top": 266,
+                    "Width": 23,
+                    "Height": 11,
+                    "TabOrder": 7,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBEdit1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 82,
+                    "Top": 10,
+                    "Width": 295,
+                    "Height": 21,
+                    "DataField": "PAIFAMILIAR",
+                    "DataSource": "Dts_Familiares",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBEdit2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 82,
+                    "Top": 41,
+                    "Width": 295,
+                    "Height": 21,
+                    "DataField": "MAEFAMILIAR",
+                    "DataSource": "Dts_Familiares",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CPF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 82,
+                    "Top": 73,
+                    "Width": 89,
+                    "Height": 21,
+                    "DataField": "CPF",
+                    "DataSource": "Dts_Familiares",
+                    "TabOrder": 2,
+                    "OnKeyPress": "Dbe_CPFKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 141,
+                    "Width": 633,
+                    "Height": 201,
+                    "Caption": "Endereço do Familiar",
+                    "TabOrder": 6
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label29",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 26,
+                        "Width": 23,
+                        "Height": 13,
+                        "Caption": "Rua:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label38",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 60,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Bairro:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label39",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 436,
+                        "Top": 26,
+                        "Width": 32,
+                        "Height": 13,
+                        "Caption": "Compl:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label45",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 201,
+                        "Top": 60,
+                        "Width": 36,
+                        "Height": 13,
+                        "Caption": "Cidade:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label37",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 340,
+                        "Top": 26,
+                        "Width": 15,
+                        "Height": 13,
+                        "Caption": "Nº:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label44",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 434,
+                        "Top": 60,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "CEP:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label46",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 557,
+                        "Top": 60,
+                        "Width": 17,
+                        "Height": 13,
+                        "Caption": "UF:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label51",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 171,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "E-mail:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "SpeedButton1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 601,
+                        "Top": 166,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Copiar endereço da Pessoa",
+                        "ShowHint": true,
+                        "OnClick": "SpeedButton1Click"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_TrocaAba2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 599,
+                        "Top": 109,
+                        "Width": 17,
+                        "Height": 21,
+                        "TabOrder": 10,
+                        "OnEnter": "Edt_TrocaAba2Enter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Rua",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 44,
+                        "Top": 22,
+                        "Width": 290,
+                        "Height": 21,
+                        "DataField": "RUA",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Bairro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 44,
+                        "Top": 56,
+                        "Width": 151,
+                        "Height": 21,
+                        "DataField": "BAIRRO",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Complemento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 473,
+                        "Top": 22,
+                        "Width": 151,
+                        "Height": 21,
+                        "DataField": "COMPLEMENTO",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Cidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 243,
+                        "Top": 56,
+                        "Width": 151,
+                        "Height": 21,
+                        "DataField": "CIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 4,
+                        "OnChange": "Dbe_CidadeChange",
+                        "OnEnter": "Dbe_CidadeEnter",
+                        "OnExit": "Dbe_CidadeExit",
+                        "OnKeyPress": "Dbe_CidadeKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLocalizarMeta",
+                      "nome": "Btn_MunicipiosEnder",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 396,
+                        "Top": 55,
+                        "Width": 23,
+                        "Height": 23,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "TabOrder": 11,
+                        "TabStop": false,
+                        "OnClick": "Btn_MunicipiosEnderClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_NroRua",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 360,
+                        "Top": 22,
+                        "Width": 69,
+                        "Height": 21,
+                        "DataField": "NRORUA",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_CEP",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 465,
+                        "Top": 56,
+                        "Width": 82,
+                        "Height": 21,
+                        "DataField": "CEP",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "DBC_UF",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 579,
+                        "Top": 56,
+                        "Width": 45,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "UF",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "AC",
+                          "AL",
+                          "AP",
+                          "AM",
+                          "BA",
+                          "CE",
+                          "DF",
+                          "ES",
+                          "GO",
+                          "MA",
+                          "MT",
+                          "MS",
+                          "MG",
+                          "PA",
+                          "PB",
+                          "PR",
+                          "PE",
+                          "PI",
+                          "RJ",
+                          "RN",
+                          "RS",
+                          "RO",
+                          "RR",
+                          "SC",
+                          "SP",
+                          "SE",
+                          "TO"
+                        ],
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_Telefone",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 87,
+                        "Width": 333,
+                        "Height": 68,
+                        "Caption": "Telefone",
+                        "TabOrder": 7
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label47",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 246,
+                            "Top": 21,
+                            "Width": 33,
+                            "Height": 13,
+                            "Caption": "Ramal:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label48",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 81,
+                            "Top": 21,
+                            "Width": 40,
+                            "Height": 13,
+                            "Caption": "Número:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label49",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 21,
+                            "Width": 27,
+                            "Height": 13,
+                            "Caption": "DDD:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "DBE_Ramal",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 283,
+                            "Top": 19,
+                            "Width": 41,
+                            "Height": 21,
+                            "DataField": "RAMAL",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_DDD",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 36,
+                            "Top": 19,
+                            "Width": 41,
+                            "Height": 21,
+                            "DataField": "DDD",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "DBE_Telefone",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 125,
+                            "Top": 19,
+                            "Width": 117,
+                            "Height": 21,
+                            "DataField": "TELEFONE",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbk_TelefoneRecados",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 36,
+                            "Top": 45,
+                            "Width": 98,
+                            "Height": 17,
+                            "Caption": "É para recados",
+                            "DataField": "TELEFONERECADOS",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "Grb_Celular",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 364,
+                        "Top": 87,
+                        "Width": 260,
+                        "Height": 68,
+                        "Caption": "Celular",
+                        "TabOrder": 8
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label57",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 28,
+                            "Width": 27,
+                            "Height": 13,
+                            "Caption": "DDD:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label58",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 88,
+                            "Top": 28,
+                            "Width": 40,
+                            "Height": 13,
+                            "Caption": "Número:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_DDDCelular",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 41,
+                            "Top": 24,
+                            "Width": 41,
+                            "Height": 21,
+                            "DataField": "DDDCELULAR",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Celular",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 132,
+                            "Top": 24,
+                            "Width": 117,
+                            "Height": 21,
+                            "DataField": "TELEFONECELULAR",
+                            "DataSource": "Dts_Familiares",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Email",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 44,
+                        "Top": 167,
+                        "Width": 508,
+                        "Height": 21,
+                        "DataField": "EMAIL",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 9
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Grb_Identidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 381,
+                    "Top": 4,
+                    "Width": 256,
+                    "Height": 92,
+                    "Caption": "Identidade",
+                    "TabOrder": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label22",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 18,
+                        "Width": 40,
+                        "Height": 13,
+                        "Caption": "Número:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label23",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 42,
+                        "Width": 42,
+                        "Height": 13,
+                        "Caption": "Emissão:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label24",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 67,
+                        "Width": 51,
+                        "Height": 13,
+                        "Caption": "Órg. Emis.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 180,
+                        "Top": 67,
+                        "Width": 17,
+                        "Height": 13,
+                        "Caption": "UF:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 38,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "DBE_NumeroIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 65,
+                        "Top": 14,
+                        "Width": 117,
+                        "Height": 21,
+                        "DataField": "IDENTIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "dbr_TiposIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 187,
+                        "Top": 9,
+                        "Width": 61,
+                        "Height": 51,
+                        "Caption": "Tipo",
+                        "DataField": "TIPOIDENTIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "RG",
+                          "RE"
+                        ],
+                        "ShowHint": false,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DataIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 65,
+                        "Top": 38,
+                        "Width": 74,
+                        "Height": 21,
+                        "DataField": "DATAIDENTIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 2,
+                        "OnChange": "Dbe_DataIdentidadeChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_OrgaoEmissor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 65,
+                        "Top": 63,
+                        "Width": 74,
+                        "Height": 21,
+                        "DataField": "ORGAOEMISSOR",
+                        "DataSource": "Dts_Familiares",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_UFIdentidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 203,
+                        "Top": 63,
+                        "Width": 45,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "UFIDENTIDADE",
+                        "DataSource": "Dts_Familiares",
+                        "Items.Strings": [
+                          "AC",
+                          "AL",
+                          "AP",
+                          "AM",
+                          "BA",
+                          "CE",
+                          "DF",
+                          "ES",
+                          "GO",
+                          "MA",
+                          "MT",
+                          "MS",
+                          "MG",
+                          "PA",
+                          "PB",
+                          "PR",
+                          "PE",
+                          "PI",
+                          "RJ",
+                          "RN",
+                          "RS",
+                          "RO",
+                          "RR",
+                          "SC",
+                          "SP",
+                          "SE",
+                          "TO"
+                        ],
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_NumeroCartaoSUS",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 226,
+                    "Top": 73,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "NROCARTAOSUS",
+                    "DataSource": "Dts_Familiares",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_DescricaoDependencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 82,
+                    "Top": 104,
+                    "Width": 555,
+                    "Height": 33,
+                    "DataField": "DESCRICAODEPENDENCIA",
+                    "DataSource": "Dts_Familiares",
+                    "MaxLength": 100,
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Vacinas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Vacinas",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 11,
+                    "Width": 58,
+                    "Height": 13,
+                    "Caption": "Posição em:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 34,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Familiar:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 477,
+                    "Top": 34,
+                    "Width": 30,
+                    "Height": 13,
+                    "Caption": "Idade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblPosicaoEm",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 11,
+                    "Width": 58,
+                    "Height": 13,
+                    "Caption": "16/03/2010"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblFamiliarNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 34,
+                    "Width": 84,
+                    "Height": 13,
+                    "Caption": "Nome do  Familiar"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblFamiliarIdade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 516,
+                    "Top": 34,
+                    "Width": 95,
+                    "Height": 13,
+                    "Caption": "99 anos e 11 meses"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 62,
+                    "Width": 88,
+                    "Height": 13,
+                    "Caption": "Grupo de Vacinas:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblGrupoVacinaDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 171,
+                    "Top": 62,
+                    "Width": 367,
+                    "Height": 14,
+                    "Caption": "Descrição do grupo"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblVacina",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 312,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Vacina"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblVacinaDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 332,
+                    "Width": 139,
+                    "Height": 13,
+                    "Caption": "Vacinas_LblVacinaDescricao"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblIdadeVacinarDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 385,
+                    "Top": 312,
+                    "Width": 90,
+                    "Height": 13,
+                    "Caption": "Idade para Vacinar"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Vacinas_BtnDataAplicacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 593,
+                    "Top": 327,
+                    "Width": 21,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblDataAplicacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 516,
+                    "Top": 312,
+                    "Width": 88,
+                    "Height": 13,
+                    "Caption": "Data da Aplicação"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Vacinas_LblIdadeVacinarValor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 385,
+                    "Top": 332,
+                    "Width": 95,
+                    "Height": 13,
+                    "Caption": "99 anos e 11 meses"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLocalizarMeta",
+                  "nome": "Vacinas_BtnGrupoVacina",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 57,
+                    "Width": 23,
+                    "Height": 23,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "TabOrder": 1,
+                    "TabStop": false,
+                    "OnClick": "Vacinas_BtnGrupoVacinaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Vacinas_DBGrid",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 82,
+                    "Width": 642,
+                    "Height": 224,
+                    "TabStop": false,
+                    "DataSource": "Dts_VacinasAplicar",
+                    "TabOrder": 2,
+                    "OnEnter": "Vacinas_DBGridEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "VACINA",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO",
+                        "Width": 310,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IDADEVACINAR",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAAPLICACAO",
+                        "Width": 104,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Vacinas_DataAplicacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 516,
+                    "Top": 328,
+                    "Width": 76,
+                    "Height": 21,
+                    "EditMask": "99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 3,
+                    "OnEnter": "Vacinas_DataAplicacaoEnter",
+                    "OnExit": "Vacinas_DataAplicacaoExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Vacinas_EdtGrupoVacina",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 58,
+                    "Width": 42,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnEnter": "Vacinas_EdtGrupoVacinaEnter",
+                    "OnExit": "Vacinas_EdtGrupoVacinaExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Familiares",
+      "herdado": false,
+      "propriedades": {
+        "Left": 307,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FamiliaresPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FamiliaresFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Familiar",
+            "FieldName": "FAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FamiliaresNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Nascimento",
+            "FieldName": "NASCIMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresLOCALNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Local de Nascimento",
+            "FieldName": "LOCALNASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresUFNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "UF de Nascimento",
+            "FieldName": "UFNASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresSEXO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sexo",
+            "FieldName": "SEXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresGRAUPARENTESCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grau de Parentesco",
+            "FieldName": "GRAUPARENTESCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresGRAUDEPENDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grau de Dependência",
+            "FieldName": "GRAUDEPENDENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresSALFAMILIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Salário Família",
+            "FieldName": "SALFAMILIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDEPENDENTEIRF",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dependente p/IRF",
+            "FieldName": "DEPENDENTEIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresAUXILIOCRECHE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Auxílio-creche",
+            "FieldName": "AUXILIOCRECHE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresBENEFPREVIDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Beneficiário Previdência",
+            "FieldName": "BENEFPREVIDENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresBENEFSEGURO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Beneficiário Seguro",
+            "FieldName": "BENEFSEGURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_FamiliaresPERCBENEFSEGURO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Percentual Beneficiário Seguro",
+            "FieldName": "PERCBENEFSEGURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresCARTORIOREGISTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cartório Registro",
+            "FieldName": "CARTORIOREGISTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresLIVROREGISTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Livro Registro",
+            "FieldName": "LIVROREGISTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNROREGISTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro Registro",
+            "FieldName": "NROREGISTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresPAGINAREGISTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Página Registro",
+            "FieldName": "PAGINAREGISTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FamiliaresDATAENTREGACERTIDAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Entrega Certidão",
+            "FieldName": "DATAENTREGACERTIDAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FamiliaresDATABAIXACERTIDAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Baixa Certidão",
+            "FieldName": "DATABAIXACERTIDAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresESTADOCIVIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estado Civil",
+            "FieldName": "ESTADOCIVIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDesParentesco",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Grau Parentesco",
+            "FieldName": "DesParentesco"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDesDependencia",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Grau Dependência",
+            "DisplayWidth": 20,
+            "FieldName": "DesDependencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresEMDIACOMVACINAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Em dia c/Vacinas",
+            "FieldName": "EMDIACOMVACINAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresFREQUENTAESCOLA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Frequenta Escola",
+            "FieldName": "FREQUENTAESCOLA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNACIONALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nacionalidade",
+            "FieldName": "NACIONALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresGRAUINSTRUCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grau de Instrução",
+            "FieldName": "GRAUINSTRUCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresMAEFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MAEFAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresPAIFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PAIFAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresRUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNRORUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRORUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresBAIRRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BAIRRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresCEP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDDD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresTELEFONE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresRAMAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAMAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresTELEFONERECADOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONERECADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDDDCELULAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDDCELULAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresTELEFONECELULAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONECELULAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresTIPOIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOIDENTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDENTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_FamiliaresDATAIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAIDENTIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresORGAOEMISSOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORGAOEMISSOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresUFIDENTIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UFIDENTIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresGRUPOVACINA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOVACINA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNRODECLNASCIDOVIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número da Declaração de Nascido Vivo",
+            "FieldName": "NRODECLNASCIDOVIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNROCARTAOSUS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Cartão do SUS",
+            "FieldName": "NROCARTAOSUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresTIPODEPENDENTEESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPODEPENDENTEESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDEPPLANOPRIVADOSAUDE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEPPLANOPRIVADOSAUDE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDEPINCAPAZPARATRAB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEPINCAPAZPARATRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresNOMECOMPLETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome Completo",
+            "FieldName": "NOMECOMPLETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresDESCRICAODEPENDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAODEPENDENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresENVOUTSISTSVINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENVOUTSISTSVINICIO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Familiares",
+      "herdado": false,
+      "propriedades": {
+        "Left": 341,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_EstadoCivil",
+      "herdado": false,
+      "propriedades": {
+        "Left": 498,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilESTADOCIVIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estado Civil",
+            "FieldName": "ESTADOCIVIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilCLASSEESTADOCIVIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSEESTADOCIVIL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 403,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PessoasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasSEXO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SEXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGraphicField",
+          "nome": "Qry_PessoasFOTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FOTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasFAMILIARESCADASTRADOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAMILIARESCADASTRADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasPAI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PAI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasMAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MAE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 466,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosNROFILHOSCRECHE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROFILHOSCRECHE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosNRODEPIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRODEPIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosNROBENEFSEGURO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROBENEFSEGURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosNROFILHOSSALFAM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROFILHOSSALFAM"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ConsultaFamiliares",
+      "herdado": false,
+      "propriedades": {
+        "Left": 530,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaFamiliaresSALFAMILIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALFAMILIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaFamiliaresDEPENDENTEIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEPENDENTEIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaFamiliaresAUXILIOCRECHE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AUXILIOCRECHE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ConsultaFamiliaresBENEFSEGURO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BENEFSEGURO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ConsultaFamiliaresFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAMILIAR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Nacionalidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 562,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_NacionalidadesNACIONALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nacionalidade",
+            "FieldName": "NACIONALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_NacionalidadesNACIONALIDADERAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nacionalidade Rais",
+            "FieldName": "NACIONALIDADERAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_NacionalidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 624,
+        "Top": 9
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Municipios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 434,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cidade",
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GrauInstrucao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 593,
+        "Top": 7
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GrauInstrucaoGRAUINSTRUCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grau de Instrução",
+            "FieldName": "GRAUINSTRUCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GrauInstrucaoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Cidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 372,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CidadesCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cidade",
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CidadesUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GruposVacinas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 630,
+        "Top": 159
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposVacinasGRUPOVACINA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "GRUPOVACINA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposVacinasDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_VacinasAplicar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 630,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FamiliaresVacinas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 630,
+        "Top": 127
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresVacinasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FamiliaresVacinasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FamiliaresVacinasFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FamiliaresVacinasVACINA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VACINA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_FamiliaresVacinasDATAAPLICACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAAPLICACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Qry_VacinasAplicadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 630,
+        "Top": 191
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VacinasAplicadasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VacinasAplicadasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VacinasAplicadasFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VacinasAplicadasGRUPOVACINA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOVACINA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VacinasAplicadasVACINA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Vacina",
+            "FieldName": "VACINA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VacinasAplicadasDESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VacinasAplicadasIDADEANOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDADEANOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VacinasAplicadasIDADEMESES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDADEMESES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_VacinasAplicadasDATAAPLICACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Aplicação",
+            "FieldName": "DATAAPLICACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Qry_VacinasAplicadasATRASADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATRASADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VacinasAplicadasIDADEVACINAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Idade para Vacinar",
+            "FieldName": "IDADEVACINAR"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

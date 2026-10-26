@@ -1,0 +1,475 @@
+{
+  "classe": "TFrm_RH3220",
+  "nome": "Frm_RH3220",
+  "herdado": true,
+  "propriedades": {
+    "Left": 629,
+    "Top": 393,
+    "ClientWidth": 734
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Selecao",
+      "herdado": true,
+      "propriedades": {
+        "Width": 734
+      },
+      "filhos": [
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Selecao",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Selecao",
+          "herdado": true,
+          "propriedades": {
+            "OnExit": "Edt_SelecaoExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": true,
+      "propriedades": {
+        "Width": 734
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_InicioValidade",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_InicioValidade",
+          "herdado": true,
+          "propriedades": {
+            "OnEnter": "Dbg_InicioValidadeEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IncluirValidade",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false,
+            "OnClick": "Btn_IncluirValidadeClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": true,
+      "propriedades": {
+        "Width": 584
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_29",
+          "herdado": false,
+          "propriedades": {
+            "Left": 176,
+            "Top": 15,
+            "Width": 132,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 44,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 69,
+            "Width": 185,
+            "Height": 13,
+            "Caption": "Código Brasileiro de Ocupações (CBO):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_CBO",
+          "herdado": false,
+          "propriedades": {
+            "Left": 265,
+            "Top": 65,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 19,
+            "Width": 156,
+            "Height": 13,
+            "Caption": "Código do Cargo para o  eSocial:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbl_CodigoESocial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 183,
+            "Top": 19,
+            "Width": 118,
+            "Height": 13,
+            "DataField": "DescCodigoCargoESocial",
+            "DataSource": "Dts_SelecaoESocial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoCargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 72,
+            "Top": 40,
+            "Width": 481,
+            "Height": 21,
+            "DataField": "DESCRICAOCARGO",
+            "DataSource": "Dts_SelecaoESocial",
+            "MaxLength": 100,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_CBOeSocial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 204,
+            "Top": 65,
+            "Width": 60,
+            "Height": 21,
+            "DataField": "CBOESOCIAL",
+            "DataSource": "Dts_SelecaoESocial",
+            "MaxLength": 6,
+            "TabOrder": 1,
+            "OnKeyPress": "Dbe_CBOeSocialKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 90,
+            "Width": 558,
+            "Height": 125,
+            "Caption": "Informações exclusivas para Cargos e Empregos Públicos",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 26,
+                "Width": 190,
+                "Height": 13,
+                "Caption": "Possibilidade de acumulação de cargos:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 51,
+                "Width": 218,
+                "Height": 13,
+                "Caption": "Possibilidade de contagem de tempo especial:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "GroupBox2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 75,
+                "Width": 549,
+                "Height": 45,
+                "Caption": "Lei que criou/extinguiu/reestruturou o Cargo",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 22,
+                    "Width": 43,
+                    "Height": 13,
+                    "Caption": "Nº da lei:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 147,
+                    "Top": 22,
+                    "Width": 54,
+                    "Height": 13,
+                    "Caption": "Data da lei:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 304,
+                    "Top": 22,
+                    "Width": 117,
+                    "Height": 13,
+                    "Caption": "Situação gerada pela lei:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mtd_dataLeiCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 276,
+                    "Top": 18,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_nrleicargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 18,
+                    "Width": 79,
+                    "Height": 21,
+                    "DataField": "NRLEICARGO",
+                    "DataSource": "Dts_SelecaoESocial",
+                    "MaxLength": 12,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_dataLeiCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 207,
+                    "Top": 18,
+                    "Width": 68,
+                    "Height": 21,
+                    "DataField": "DATALEICARGO",
+                    "DataSource": "Dts_SelecaoESocial",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_situacaoLeiCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 424,
+                    "Top": 18,
+                    "Width": 120,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "SITUACAOLEICARGO",
+                    "DataSource": "Dts_SelecaoESocial",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_acumulacaoDeCargos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 229,
+                "Top": 22,
+                "Width": 145,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "ACUMULACAODECARGOS",
+                "DataSource": "Dts_SelecaoESocial",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_contagemTempoEspecial",
+              "herdado": false,
+              "propriedades": {
+                "Left": 229,
+                "Top": 48,
+                "Width": 325,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "CONTAGEMTEMPOESPECIAL",
+                "DataSource": "Dts_SelecaoESocial",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dcb_cargoDedicExclusiva",
+              "herdado": false,
+              "propriedades": {
+                "Left": 386,
+                "Top": 23,
+                "Width": 163,
+                "Height": 17,
+                "Caption": "Cargo de dedicação exclusiva",
+                "DataField": "CARGODEDICEXCLUSIVA",
+                "DataSource": "Dts_SelecaoESocial",
+                "TabOrder": 3
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SelecaoESocial",
+      "herdado": true,
+      "propriedades": {
+        "Left": 645,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Acoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 609,
+        "Top": 9
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 6
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_IncluirValidade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_IncluirValidadeApartirCargo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Com os dados do Cargo",
+            "OnClick": "Pop_IncluirValidadeApartirCargoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_IncluirValidadeApartirOutraValidade",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Com os dados de outra validade do Cargo",
+            "OnClick": "Pop_IncluirValidadeApartirOutraValidadeClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 7
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_1",
+      "herdado": true,
+      "propriedades": {
+        "Left": 576,
+        "Top": 12
+      },
+      "filhos": []
+    }
+  ]
+}

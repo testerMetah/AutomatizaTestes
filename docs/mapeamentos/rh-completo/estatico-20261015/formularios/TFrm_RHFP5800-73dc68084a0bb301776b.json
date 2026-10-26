@@ -1,0 +1,605 @@
+{
+  "classe": "TFrm_RHFP5800",
+  "nome": "Frm_RHFP5800",
+  "herdado": false,
+  "propriedades": {
+    "Left": 154,
+    "Top": 162,
+    "BorderStyle": "bsSingle",
+    "Caption": "DARF's Emitidas",
+    "ClientHeight": 478,
+    "ClientWidth": 787,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 787,
+        "Height": 45,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 14,
+            "Width": 81,
+            "Height": 13,
+            "Caption": "Estabelecimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_DescricaoEstab",
+          "herdado": false,
+          "propriedades": {
+            "Left": 160,
+            "Top": 14,
+            "Width": 91,
+            "Height": 13,
+            "Caption": "lbl_DescricaoEstab"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 134,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_EstabelecimentoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 99,
+            "Top": 10,
+            "Width": 34,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "edt_EstabelecimentoChange",
+            "OnEnter": "edt_EstabelecimentoEnter",
+            "OnExit": "edt_EstabelecimentoExit",
+            "OnKeyPress": "edt_EstabelecimentoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 45,
+        "Width": 787,
+        "Height": 433,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bevel14",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 399,
+            "Width": 66,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 87,
+            "Top": 399,
+            "Width": 80,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "DbTextMeta1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 88,
+            "Top": 402,
+            "Width": 78,
+            "Height": 14,
+            "DataField": "TIPODARF",
+            "DataSource": "Dts_DARF",
+            "Items.Strings": [
+              "Folha",
+              "Autônomos",
+              "PIS"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 399,
+            "Width": 109,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 171,
+            "Top": 402,
+            "Width": 103,
+            "Height": 17,
+            "DataField": "LIQUIDOCOMPETENCIA",
+            "DataSource": "Dts_DARF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 23,
+            "Top": 402,
+            "Width": 60,
+            "Height": 17,
+            "DataField": "DATAEMISSAO",
+            "DataSource": "Dts_DARF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_Recolhimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 437,
+            "Top": 399,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_Vencimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 535,
+            "Top": 399,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_InicioPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 635,
+            "Top": 399,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_TerminoPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 736,
+            "Top": 399,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 278,
+            "Top": 399,
+            "Width": 85,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbe_LiquidoPago",
+          "herdado": false,
+          "propriedades": {
+            "Left": 281,
+            "Top": 402,
+            "Width": 78,
+            "Height": 17,
+            "DataField": "LIQUIDODARFPAGO",
+            "DataSource": "Dts_DARF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 594,
+            "Top": 403,
+            "Width": 19,
+            "Height": 13,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "dbg_DARF",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 11,
+            "Width": 769,
+            "Height": 382,
+            "TabStop": false,
+            "DataSource": "Dts_DARF",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAEMISSAO",
+                "Title.Caption": "Emissão",
+                "Width": 66,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPODARF",
+                "Title.Caption": "Tipo",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "LIQUIDOCOMPETENCIA",
+                "Width": 109,
+                "Visible": true
+              },
+              {
+                "FieldName": "LIQUIDODARFPAGO",
+                "Width": 85,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATARECOLHIMENTO",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAVENCIMENTO",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAINICIO",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATATERMINO",
+                "Width": 97,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Recolhimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 364,
+            "Top": 399,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "DATARECOLHIMENTO",
+            "DataSource": "Dts_DARF",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Vencimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 462,
+            "Top": 399,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "DATAVENCIMENTO",
+            "DataSource": "Dts_DARF",
+            "TabOrder": 2,
+            "OnChange": "Dbe_VencimentoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_InicioPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 562,
+            "Top": 399,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "DATAINICIO",
+            "DataSource": "Dts_DARF",
+            "TabOrder": 3,
+            "OnChange": "Dbe_InicioPeriodoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_TerminoPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 663,
+            "Top": 399,
+            "Width": 72,
+            "Height": 21,
+            "DataField": "DATATERMINO",
+            "DataSource": "Dts_DARF",
+            "TabOrder": 4,
+            "OnChange": "Dbe_TerminoPeriodoChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_DARF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 102,
+        "Top": 129
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DARFESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DARFDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Emissão",
+            "FieldName": "DATAEMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DARFTIPODARF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPODARF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_DARFLIQUIDOCOMPETENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Competência",
+            "FieldName": "LIQUIDOCOMPETENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_DARFLIQUIDODARFPAGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Líquido Pago",
+            "FieldName": "LIQUIDODARFPAGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DARFDATARECOLHIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Recolhimento",
+            "FieldName": "DATARECOLHIMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DARFDATAVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Vencimento",
+            "FieldName": "DATAVENCIMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DARFDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início Período",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DARFDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término Período",
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DARFDescricaoTipo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "DescricaoTipo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DARF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 178,
+        "Top": 123
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Estabelecimento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 292,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_EstabelecimentoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_DARFSParaLimparRecolhimento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 104,
+        "Top": 168
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DARFSParaLimparRecolhimentoEstabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Estabelecimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Cds_DARFSParaLimparRecolhimentoDataEmissao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataEmissao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DARFSParaLimparRecolhimentoTipoDARF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoDARF"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

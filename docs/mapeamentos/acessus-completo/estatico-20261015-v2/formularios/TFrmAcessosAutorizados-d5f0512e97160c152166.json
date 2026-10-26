@@ -1,0 +1,970 @@
+{
+  "classe": "TFrmAcessosAutorizados",
+  "nome": "FrmAcessosAutorizados",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Autorização de Acessos",
+    "ClientHeight": 579,
+    "ClientWidth": 940,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 940,
+        "Height": 579,
+        "ActivePage": "Grid",
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Grid"
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridConsulta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 932,
+                "Height": 429,
+                "Align": "alClient",
+                "DataSource": "dsAcessosAutorizados",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "Pessoa",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DataHoraInicio",
+                    "Title.Caption": "Início",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DataHoraFim",
+                    "Title.Caption": "Término",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Id",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "IdPessoa",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "IdFreq",
+                    "Visible": false
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 494,
+                "Width": 932,
+                "Height": 57,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 9,
+                    "Width": 162,
+                    "Height": 38,
+                    "Caption": "Excluir (Ctrl+Del)",
+                    "TabOrder": 0,
+                    "OnClick": "ActExcluirExecute",
+                    "Action": "ActExcluir"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnConfirmar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 384,
+                    "Top": 6,
+                    "Width": 185,
+                    "Height": 38,
+                    "Caption": "Autorizar (Ctrl+E)",
+                    "Enabled": false,
+                    "TabOrder": 1,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "HoverSpeedButton5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 172,
+                    "Top": 9,
+                    "Width": 165,
+                    "Height": 38,
+                    "Caption": "Atualizar (Ctrl+W)",
+                    "TabOrder": 2,
+                    "OnClick": "ActAtualizarExecute",
+                    "Action": "ActAtualizar"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 429,
+                "Width": 932,
+                "Height": 65,
+                "Align": "alBottom",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 932,
+                    "Height": 65,
+                    "ActivePage": "TbsPeriodo",
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TbsPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Período (Ctrl+A)",
+                        "ImageIndex": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 3,
+                            "Top": 3,
+                            "Width": 20,
+                            "Height": 27,
+                            "Caption": "De"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 172,
+                            "Top": 3,
+                            "Width": 25,
+                            "Height": 27,
+                            "Caption": "Até"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "dtInicio",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 29,
+                            "Top": 3,
+                            "Width": 81,
+                            "Height": 27,
+                            "EditMask": "!99/99/9999;1; ",
+                            "MaxLength": 10,
+                            "TabOrder": 0,
+                            "OnChange": "dtInicioChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "DtTermino",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 203,
+                            "Top": 3,
+                            "Width": 87,
+                            "Height": 27,
+                            "EditMask": "!99/99/9999;1; ",
+                            "MaxLength": 10,
+                            "TabOrder": 2,
+                            "OnChange": "DtTerminoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "tmInicio",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 116,
+                            "Top": 3,
+                            "Width": 50,
+                            "Height": 27,
+                            "EditMask": "!99:99;1; ",
+                            "MaxLength": 5,
+                            "TabOrder": 1,
+                            "OnChange": "tmInicioChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TMaskEdit",
+                          "nome": "TmTermino",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 296,
+                            "Top": 3,
+                            "Width": 50,
+                            "Height": 27,
+                            "EditMask": "!99:99;1; ",
+                            "MaxLength": 5,
+                            "TabOrder": 3,
+                            "OnChange": "TmTerminoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "HoverSpeedButton1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 744,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 37,
+                            "Align": "alRight",
+                            "Caption": "Exibir tudo (Ctrl+T)",
+                            "TabOrder": 4,
+                            "OnClick": "ActExibirTudoExecute",
+                            "Action": "ActExibirTudo"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TbsPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Pessoa (Ctrl+P)",
+                        "ImageIndex": 3
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 7,
+                            "Top": 3,
+                            "Width": 293,
+                            "Height": 29,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 0,
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "HoverSpeedButton4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 744,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 37,
+                            "Align": "alRight",
+                            "Caption": "Exibir tudo (Ctrl+T)",
+                            "TabOrder": 1,
+                            "OnClick": "ActExibirTudoExecute",
+                            "Action": "ActExibirTudo"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TbsCracha",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Crachá (Ctrl+B)"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "HoverSpeedButton2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 744,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 37,
+                            "Align": "alRight",
+                            "Caption": "Exibir tudo (Ctrl+T)",
+                            "TabOrder": 0,
+                            "OnClick": "ActExibirTudoExecute",
+                            "Action": "ActExibirTudo"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "edNroCracha",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 7,
+                            "Top": 3,
+                            "Width": 293,
+                            "Height": 29,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TbsSituacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Situação (Ctrl+G)",
+                        "Enabled": false,
+                        "ImageIndex": 5
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label8",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 8,
+                            "Top": 8,
+                            "Width": 42,
+                            "Height": 13,
+                            "Caption": "Situação"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "CmbSituacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 76,
+                            "Top": 3,
+                            "Width": 165,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0,
+                            "OnChange": "CmbSituacaoChange",
+                            "Items.Strings": [
+                              "Desautorizado",
+                              "Autorizado",
+                              "Todos"
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "HoverSpeedButton3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 744,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 37,
+                            "Align": "alRight",
+                            "Caption": "Exibir tudo (Ctrl+T)",
+                            "TabOrder": 1,
+                            "OnClick": "ActExibirTudoExecute",
+                            "Action": "ActExibirTudo"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "BtnExibirTudo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 957,
+                    "Top": 36,
+                    "Width": 140,
+                    "Height": 23,
+                    "Action": "ActExibirTudo",
+                    "Caption": "Exibir tudo (Ctrl+T)",
+                    "TabOrder": 1,
+                    "TabStop": false
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cadastro",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 24,
+                "Width": 42,
+                "Height": 27,
+                "Caption": "Início:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 54,
+                "Top": 57,
+                "Width": 30,
+                "Height": 27,
+                "Caption": "Fim:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 54,
+                "Top": 90,
+                "Width": 53,
+                "Height": 27,
+                "Caption": "Pessoa:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "mlPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 180,
+                "Top": 90,
+                "Width": 44,
+                "Height": 27,
+                "Caption": "F4",
+                "ImageIndex": 10
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 227,
+                "Top": 94,
+                "Width": 65,
+                "Height": 19,
+                "Caption": "lblPessoa"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 24,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 57,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TImage",
+              "nome": "Image3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 90,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "MskDataIni",
+              "herdado": false,
+              "propriedades": {
+                "Left": 113,
+                "Top": 24,
+                "Width": 86,
+                "Height": 27,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "MskHoraIni",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 24,
+                "Width": 50,
+                "Height": 27,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "MskDataFim",
+              "herdado": false,
+              "propriedades": {
+                "Left": 113,
+                "Top": 57,
+                "Width": 86,
+                "Height": 27,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "MskHoraFim",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 57,
+                "Width": 50,
+                "Height": 27,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 113,
+                "Top": 90,
+                "Width": 65,
+                "Height": 27,
+                "TabOrder": 4
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "PnlFundoCadastro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 494,
+                "Width": 932,
+                "Height": 57,
+                "Align": "alBottom",
+                "TabOrder": 5
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnSalvar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 24,
+                    "Top": 10,
+                    "Width": 142,
+                    "Height": 38,
+                    "Caption": "Salvar (Ctrl + S)",
+                    "TabOrder": 0,
+                    "OnClick": "ActSalvarExecute",
+                    "Action": "ActSalvar"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnCarncelar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 172,
+                    "Top": 10,
+                    "Width": 162,
+                    "Height": 38,
+                    "Caption": "Cancelar (Ctrl+D)",
+                    "TabOrder": 1,
+                    "OnClick": "ActCancelarExecute",
+                    "Action": "ActCancelar"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 456,
+        "Top": 212
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActFechar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Fechar (Alt+F4)",
+            "ShortCut": 32883,
+            "OnExecute": "ActAdicionarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExibirTudo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Exibir tudo (Ctrl+T)",
+            "ShortCut": 16468,
+            "OnExecute": "ActExibirTudoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAutorizar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Autorizar (Ctrl+E)",
+            "Enabled": false,
+            "ShortCut": 16453,
+            "Visible": false,
+            "OnExecute": "ActAutorizarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cadastro",
+            "Caption": "Salvar (Ctrl + S)",
+            "ImageIndex": 4,
+            "ShortCut": 16467,
+            "OnExecute": "ActSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cadastro",
+            "Caption": "Cancelar (Ctrl+D)",
+            "ImageIndex": 3,
+            "ShortCut": 16452,
+            "OnExecute": "ActCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAdicionar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Adicionar",
+            "Enabled": false,
+            "Visible": false,
+            "OnExecute": "ActAdicionarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluir",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Excluir (Ctrl+Del)",
+            "ShortCut": 16430,
+            "OnExecute": "ActExcluirExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActtbsPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Período (Ctrl+A)",
+            "ShortCut": 16449,
+            "OnExecute": "ActtbsPeriodoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActtbsCracha",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Crachá (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActtbsCrachaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActtbsSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Situação (Ctrl+G)",
+            "Enabled": false,
+            "ShortCut": 16455,
+            "Visible": false,
+            "OnExecute": "ActtbsSituacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActtbsPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Pessoa (Ctrl+ P)",
+            "ShortCut": 16464,
+            "OnExecute": "ActtbsPessoaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAtualizar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Consulta",
+            "Caption": "Atualizar (Ctrl+W)",
+            "ShortCut": 16471,
+            "OnExecute": "ActAtualizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dsAcessosAutorizados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 460,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsAcessosAutorizados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 324,
+        "Top": 172
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAcessosAutorizadosId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsAcessosAutorizadosDataHoraInicio",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHoraInicio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsAcessosAutorizadosDataHoraFim",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHoraFim"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAcessosAutorizadosAutorizado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Autorizado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAcessosAutorizadosIdPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdPessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAcessosAutorizadosPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAcessosAutorizadosIdFreq",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdFreq"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAcessosAutorizadosNroCracha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NroCracha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAcessosAutorizadosImportado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Importado"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 284,
+        "Top": 259
+      },
+      "filhos": []
+    }
+  ]
+}

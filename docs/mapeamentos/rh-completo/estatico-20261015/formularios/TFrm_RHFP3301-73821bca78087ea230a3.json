@@ -1,0 +1,527 @@
+{
+  "classe": "TFrm_RHFP3301",
+  "nome": "Frm_RHFP3301",
+  "herdado": false,
+  "propriedades": {
+    "Left": 601,
+    "Top": 281,
+    "BorderStyle": "bsSingle",
+    "Caption": "Log do Saldo de Férias",
+    "ClientHeight": 476,
+    "ClientWidth": 502,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Filtros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 502,
+        "Height": 155,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 9,
+            "Width": 470,
+            "Height": 129,
+            "Caption": "Filtrar por:",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 97,
+                "Width": 47,
+                "Height": 13,
+                "Caption": "Operador:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 67,
+                "Top": 94,
+                "Width": 145,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Localizar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 329,
+                "Top": 26,
+                "Width": 74,
+                "Height": 25,
+                "Caption": "Localizar",
+                "TabOrder": 1,
+                "OnClick": "Btn_LocalizarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Periodo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 20,
+                "Width": 265,
+                "Height": 61,
+                "Caption": "Período:",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mdt_Termino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 221,
+                    "Top": 22,
+                    "Width": 19,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mdt_Inicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 111,
+                    "Top": 22,
+                    "Width": 19,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 136,
+                    "Top": 26,
+                    "Width": 16,
+                    "Height": 13,
+                    "Caption": "Até"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 17,
+                    "Top": 25,
+                    "Width": 14,
+                    "Height": 13,
+                    "Caption": "De"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_Termino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 155,
+                    "Top": 22,
+                    "Width": 65,
+                    "Height": 21,
+                    "EditMask": "99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_Inicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 41,
+                    "Top": 22,
+                    "Width": 69,
+                    "Height": 21,
+                    "EditMask": "99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 201,
+        "Width": 502,
+        "Height": 229,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_LogSaldoFerias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 494,
+            "Height": 221,
+            "TabStop": false,
+            "Align": "alClient",
+            "DataSource": "Dts_LogSaldoFerias",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAHORAALTERACAO",
+                "Width": 131,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPOOPERACAODDESC",
+                "Width": 83,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADORALTERACAO",
+                "Width": 60,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 430,
+        "Width": 502,
+        "Height": 46,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_VisualizarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 95,
+            "Top": 10,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Visualizar Impressão",
+            "ShowHint": true,
+            "OnClick": "Btn_VisualizarImpressaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 9,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 502,
+        "Height": 46,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Cabecalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 14,
+            "Width": 88,
+            "Height": 13,
+            "Caption": "Unidade/Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_UnidadeContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 108,
+            "Top": 14,
+            "Width": 374,
+            "Height": 13,
+            "Caption": "Lbl_UnidadeContrato"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LogSaldoFerias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 440
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_LogSaldoFerias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 440
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_LogSaldoFeriasDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data e Hora do Log",
+            "FieldName": "DATAHORAALTERACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogSaldoFeriasTIPOOPERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOOPERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogSaldoFeriasOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogSaldoFeriasTIPOOPERACAODDESC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo do Log",
+            "FieldName": "TIPOOPERACAODDESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_LogSaldoFeriasUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_LogSaldoFeriasCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_LogSaldoFeriasINICIOPERAQUISITIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOPERAQUISITIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_LogSaldoFeriasTERMINOPERAQUISITIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TERMINOPERAQUISITIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasMEDIAHORASEXTRAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDIAHORASEXTRAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasMEDIAHORASNOTURNAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDIAHORASNOTURNAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Cds_LogSaldoFeriasMEDIAPRECOM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDIAPRECOM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASFALTADOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASFALTADOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASPERDIDOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASPERDIDOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASCEDIDOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASCEDIDOSPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASABONOPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASABONOPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASPENDENTESPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASPENDENTESPERIODO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_LogSaldoFeriasDIASSUSPENSOSPERIODO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASSUSPENSOSPERIODO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 436
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Calendario",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Calendario",
+            "ShortCut": 16452,
+            "OnExecute": "Act_CalendarioExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

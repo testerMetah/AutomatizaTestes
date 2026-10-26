@@ -1,0 +1,529 @@
+{
+  "classe": "TFrm_ImportaXML",
+  "nome": "Frm_ImportaXML",
+  "herdado": false,
+  "propriedades": {
+    "Left": 404,
+    "Top": 133,
+    "Width": 659,
+    "Height": 513,
+    "Caption": "Importa Arquivo XML",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Tabelas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 651,
+        "Height": 57,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TabelaDestino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 31,
+            "Width": 75,
+            "Height": 13,
+            "Caption": "Tabela Destino:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TabelaOrigem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 7,
+            "Width": 72,
+            "Height": 13,
+            "Caption": "Tabela Origem:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_TabelaOrigem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 390,
+            "Top": 2,
+            "Width": 23,
+            "Height": 22,
+            "Action": "Act_TabelaOrigem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_TabelaDestino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 27,
+            "Width": 321,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_LimparTabelaDestino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 452,
+            "Top": 6,
+            "Width": 190,
+            "Height": 17,
+            "Caption": "Limpar Tabela Destino",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_SobreescreverExistentes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 452,
+            "Top": 30,
+            "Width": 190,
+            "Height": 17,
+            "Caption": "Sobreescrever Registros Existentes",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_TabelaOrigem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 3,
+            "Width": 297,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnChange": "Edt_TabelaOrigemChange",
+            "OnEnter": "Edt_TabelaOrigemEnter",
+            "OnExit": "Edt_TabelaOrigemExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "PanelFundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 57,
+        "Width": 651,
+        "Height": 388,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Fundo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 643,
+            "Height": 380,
+            "ActivePage": "Tab_Grid",
+            "Align": "alClient",
+            "Style": "tsButtons",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Grid",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tab_Grid"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_FiltroAtual",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 352,
+                    "Width": 25,
+                    "Height": 13,
+                    "Caption": "Filtro:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_TabelaOrigem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 2,
+                    "Width": 626,
+                    "Height": 316,
+                    "DataSource": "Dts_TabelaOrigem",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_FiltroAtivo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 325,
+                    "Width": 97,
+                    "Height": 17,
+                    "Caption": "Filtro Ativo",
+                    "TabOrder": 1,
+                    "OnClick": "Chk_FiltroAtivoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_LimparFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 529,
+                    "Top": 321,
+                    "Width": 101,
+                    "Height": 25,
+                    "Action": "Act_LimparFiltro",
+                    "Caption": "Limpar Filtro",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Filtro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 36,
+                    "Top": 348,
+                    "Width": 594,
+                    "Height": 21,
+                    "ReadOnly": true,
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Erro",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tab_Erro",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TMemo",
+                  "nome": "Mmo_Erros",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 0,
+                    "Width": 624,
+                    "Height": 369,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 445,
+        "Width": 651,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TGauge",
+          "nome": "Gau_Andamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 560,
+            "Top": 4,
+            "Width": 81,
+            "Height": 29,
+            "BorderStyle": "bsNone",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_OK",
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 6,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Act_CancelExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_TabelaOrigem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 76,
+        "Top": 76
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_TabelaDestino",
+      "herdado": false,
+      "propriedades": {
+        "Left": 176,
+        "Top": 76
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_TabelaOrigem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 148
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 340,
+        "Top": 248
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 464,
+        "Top": 248
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_TabelaOrigem",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_TabelaOrigemExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_OK",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "OK",
+            "OnExecute": "Act_OKExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancel",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancel",
+            "OnExecute": "Act_CancelExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_LimparFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Limpar Filtro",
+            "OnExecute": "Act_LimparFiltroExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 200,
+        "Top": 248
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_AdicionarAoFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Adicionar ao Filtro"
+          },
+          "filhos": [
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddIgual",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "=",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddMenor",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "<",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddMenorIgual",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "<=",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddMaiorIgual",
+              "herdado": false,
+              "propriedades": {
+                "Caption": ">=",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddMaior",
+              "herdado": false,
+              "propriedades": {
+                "Caption": ">",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMenuItem",
+              "nome": "Pop_AddDiferente",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "<>",
+                "OnClick": "Pop_AddIgualClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N2",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_OcultarColuna",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Ocultar Coluna",
+            "OnClick": "Pop_OcultarColunaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ExibirTodosColunas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Exibir Todas as Colunas",
+            "OnClick": "Pop_ExibirTodosColunasClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

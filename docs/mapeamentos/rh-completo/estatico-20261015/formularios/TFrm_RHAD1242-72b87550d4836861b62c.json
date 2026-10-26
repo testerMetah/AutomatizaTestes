@@ -1,0 +1,186 @@
+{
+  "classe": "TFrm_RHAD1242",
+  "nome": "Frm_RHAD1242",
+  "herdado": false,
+  "propriedades": {
+    "Left": 224,
+    "Top": 161,
+    "BorderStyle": "bsSingle",
+    "Caption": "Histórico de Operadores Desconectados",
+    "ClientHeight": 366,
+    "ClientWidth": 635,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_DadosResultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 330,
+        "Width": 635,
+        "Height": 36,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 6,
+            "Width": 97,
+            "Height": 25,
+            "Caption": "OK",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_HistoricoOperadores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 6,
+            "Width": 99,
+            "Height": 25,
+            "Caption": "Imprimir",
+            "TabOrder": 1,
+            "OnClick": "Btn_HistoricoOperadoresClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 635,
+        "Height": 330,
+        "Align": "alClient",
+        "DataSource": "Dts_OperadoresDesconectados",
+        "TabOrder": 1,
+        "Columns": [
+          {
+            "FieldName": "OPERADOR",
+            "Width": 52,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORA",
+            "Width": 116,
+            "Visible": true
+          },
+          {
+            "FieldName": "DescricaoModulo",
+            "Width": 159,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORALTERACAO",
+            "Width": 136,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAALTERACAO",
+            "Width": 134,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_OperadoresDesconectados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 282,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_OperadoresDesconectadosDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora da desconexão",
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresDesconectadosMODULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Módulo",
+            "FieldName": "MODULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresDesconectadosOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_OperadoresDesconectadosDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora da Conexão",
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresDesconectadosOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador que desconectou",
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresDesconectadosDescricaoModulo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Módulo",
+            "FieldName": "DescricaoModulo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_OperadoresDesconectados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 278,
+        "Top": 112
+      },
+      "filhos": []
+    }
+  ]
+}

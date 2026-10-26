@@ -1,0 +1,180 @@
+{
+  "classe": "TFrm_RHPA6001",
+  "nome": "Frm_RHPA6001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 260,
+    "Top": 202,
+    "BorderStyle": "bsSingle",
+    "Caption": "Confirmar",
+    "ClientHeight": 165,
+    "ClientWidth": 320,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pbl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 124,
+        "Width": 320,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Princ",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 320,
+        "Height": 124,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfTodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 74,
+            "Width": 289,
+            "Height": 26,
+            "Caption": "Todo o Banco de Horas irá ser recalculado. Este processo poderá demorar vários minutos."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfConfirme",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 15,
+            "Width": 289,
+            "Height": 18,
+            "Caption": "Confirme a Data de Início do Banco de Horas."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Btn_DataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 160,
+            "Top": 40,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfDataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 44,
+            "Width": 71,
+            "Height": 13,
+            "Caption": "Data de Início:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 40,
+            "Width": 66,
+            "Height": 21,
+            "DataField": "DATAINICIO",
+            "DataSource": "Dts_BancoHoras",
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BancoHoras",
+      "herdado": false,
+      "propriedades": {
+        "Left": 250,
+        "Top": 20
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Actions",
+      "herdado": false,
+      "propriedades": {
+        "Left": 254,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlD",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "Caption": "Act_CtrlD",
+            "ShortCut": 16452,
+            "OnExecute": "Act_CtrlDExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

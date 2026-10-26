@@ -1,0 +1,487 @@
+{
+  "classe": "TFrm_RHPR195001",
+  "nome": "Frm_RHPR195001",
+  "herdado": true,
+  "propriedades": {
+    "Left": 383,
+    "Top": 133,
+    "Caption": "Configuração dos Usuários do Portal RH",
+    "ClientHeight": 404,
+    "ClientWidth": 643,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Geral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 643,
+        "Height": 404,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Geral",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 643,
+            "Height": 318,
+            "ActivePage": "Ts_Selecao",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_GeralChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Opcoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Opções",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 149,
+                    "Top": 86,
+                    "Width": 105,
+                    "Height": 13,
+                    "Caption": "Tipo de Autenticação:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_TipoAutenticacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 261,
+                    "Top": 82,
+                    "Width": 209,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "Enabled": false,
+                    "TabOrder": 0,
+                    "Items.Strings": [
+                      "Aplicação",
+                      "Windows",
+                      "LDAP"
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 149,
+                    "Top": 110,
+                    "Width": 321,
+                    "Height": 89,
+                    "Caption": "Informações do Usuário ",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 28,
+                        "Width": 29,
+                        "Height": 13,
+                        "Caption": "Login:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 60,
+                        "Width": 34,
+                        "Height": 13,
+                        "Caption": "Senha:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Login",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 24,
+                        "Width": 250,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "Items.Strings": [
+                          "CPF da Pessoa"
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Senha",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 56,
+                        "Width": 250,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 1,
+                        "Items.Strings": [
+                          "Número Randomico",
+                          "6 primeiros dígitos do CPF"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_GerarNovaSenha",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 149,
+                    "Top": 204,
+                    "Width": 260,
+                    "Height": 17,
+                    "Caption": "Gerar nova senha para usuários que já existem",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Ts_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Seleção",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "FrmSelecaoLotacao1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 635,
+                    "Height": 290,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Ts_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 2,
+                "OnExit": "Ts_ResultadoExit"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Resultado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 635,
+                    "Height": 290,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Resultado",
+                    "ReadOnly": true,
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "EMPRESA",
+                        "Title.Caption": "Empresa",
+                        "Width": 58,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "PESSOA",
+                        "Title.Caption": "Pessoa",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Title.Caption": "Nome",
+                        "Width": 273,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOMEUSUARIO",
+                        "Title.Caption": "Usuário",
+                        "Width": 109,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "SENHA",
+                        "Title.Caption": "Senha",
+                        "Width": 91,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Resultado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 361,
+            "Width": 643,
+            "Height": 43,
+            "Align": "alBottom",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 1,
+            "TabStop": true
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Imprimir",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 6,
+                "Width": 122,
+                "Height": 28,
+                "Caption": "&Iniciar Impressão",
+                "Default": true,
+                "TabOrder": 0,
+                "OnClick": "Btn_ImprimirClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Email",
+              "herdado": false,
+              "propriedades": {
+                "Left": 145,
+                "Top": 6,
+                "Width": 122,
+                "Height": 28,
+                "Caption": "&Enviar E-mail",
+                "Default": true,
+                "TabOrder": 1,
+                "OnClick": "Btn_EmailClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Executar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 318,
+            "Width": 643,
+            "Height": 43,
+            "Align": "alBottom",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 2,
+            "TabStop": true
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Executar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 6,
+                "Width": 122,
+                "Height": 28,
+                "Caption": "&Executar",
+                "Default": true,
+                "TabOrder": 0,
+                "OnClick": "Btn_IniciarGravacaoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "BitBtn2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 145,
+                "Top": 6,
+                "Width": 122,
+                "Height": 28,
+                "Cancel": true,
+                "Caption": "&Cancelar",
+                "ModalResult": 2,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Avancar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 6,
+                "Width": 122,
+                "Height": 28,
+                "Caption": "&Avançar",
+                "Default": true,
+                "TabOrder": 2,
+                "OnClick": "Btn_AvancarClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 616
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 508,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 544,
+        "Top": 224
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoNOMEUSUARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEUSUARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoSENHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SENHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATACRIACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Criação",
+            "FieldName": "DATACRIACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

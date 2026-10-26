@@ -1,0 +1,798 @@
+{
+  "classe": "TFrm_RHIBRPGBRA01",
+  "nome": "Frm_RHIBRPGBRA01",
+  "herdado": false,
+  "propriedades": {
+    "Left": 650,
+    "Top": 354,
+    "BorderStyle": "bsSingle",
+    "Caption": "Gera Arquivo com Recibo de Pagamento para Bradesco",
+    "ClientHeight": 362,
+    "ClientWidth": 508,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Campos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 508,
+        "Height": 320,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 43,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Arquivo a Gravar:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 447,
+            "Top": 39,
+            "Width": 23,
+            "Height": 21,
+            "Caption": "...",
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TitBcoPagador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 20,
+            "Width": 77,
+            "Height": 13,
+            "Caption": "Banco Pagador:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_BancoPagador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 18,
+            "Width": 108,
+            "Height": 13,
+            "Caption": "Lbl_BancoPagador"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_NroSeq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 68,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Nº Seq. da Remessa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_NroContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 93,
+            "Width": 124,
+            "Height": 39,
+            "Caption": "Número do Contrato (Código da Empresa p/Bradesco:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 234,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Mensagem:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 168,
+            "Width": 99,
+            "Height": 26,
+            "Caption": "Data de Liberação do Comprovante:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 171,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Bancos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 185,
+            "Top": 15,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_BancosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 144,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Data do Movimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataMovimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 140,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 200,
+            "Width": 98,
+            "Height": 26,
+            "Caption": "Data do Crédito em Conta:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 213,
+            "Top": 203,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 286,
+            "Width": 78,
+            "Height": 13,
+            "Caption": "Tipo de Arquivo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 39,
+            "Width": 303,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnChange": "Edt_ArquivoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_BancoPag",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 14,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_BancoPagEnter",
+            "OnExit": "Edt_BancoPagExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_NroSeq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 64,
+            "Width": 50,
+            "Height": 21,
+            "MaxLength": 6,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TUpDown",
+          "nome": "Upd_SeqArq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 193,
+            "Top": 64,
+            "Width": 15,
+            "Height": 21,
+            "Enabled": false,
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_NroContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 100,
+            "Width": 76,
+            "Height": 21,
+            "MaxLength": 9,
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Mensagem1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 230,
+            "Width": 344,
+            "Height": 21,
+            "MaxLength": 40,
+            "TabOrder": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Mensagem2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 253,
+            "Width": 344,
+            "Height": 21,
+            "MaxLength": 40,
+            "TabOrder": 9
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 171,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataMovimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 140,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 5
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 203,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 7
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "cmb_TipoDeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 143,
+            "Top": 282,
+            "Width": 77,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 10,
+            "Items.Strings": [
+              "Produção",
+              "Teste"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Gp_VDB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 244,
+            "Top": 64,
+            "Width": 249,
+            "Height": 155,
+            "Caption": "VDB's para registro de mensagem do layout",
+            "TabOrder": 11
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_VDB1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 48,
+                "Top": 21,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_VDB1Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_VDB2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 48,
+                "Top": 47,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_VDB2Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_VDB3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 48,
+                "Top": 73,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_VDB3Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_VDB4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 48,
+                "Top": 99,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_VDB4Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_VDB5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 48,
+                "Top": 125,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "btn_VDB5Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_VDB1",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 3,
+                "Left": 8,
+                "Top": 22,
+                "Width": 38,
+                "Height": 20,
+                "MaxLength": 5,
+                "TabOrder": 0,
+                "OnEnter": "Edt_VDB1Enter",
+                "OnExit": "Edt_VDB1Exit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "stt_Vdb1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 22,
+                "Width": 167,
+                "Height": 20,
+                "BorderStyle": "sbsSunken",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_VDB2",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 3,
+                "Left": 8,
+                "Top": 48,
+                "Width": 38,
+                "Height": 20,
+                "MaxLength": 5,
+                "TabOrder": 2,
+                "OnEnter": "Edt_VDB2Enter",
+                "OnExit": "Edt_VDB2Exit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "stt_Vdb2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 48,
+                "Width": 167,
+                "Height": 20,
+                "BorderStyle": "sbsSunken",
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_VDB3",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 3,
+                "Left": 8,
+                "Top": 74,
+                "Width": 38,
+                "Height": 20,
+                "MaxLength": 5,
+                "TabOrder": 4,
+                "OnEnter": "Edt_VDB3Enter",
+                "OnExit": "Edt_VDB3Exit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "stt_Vdb3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 74,
+                "Width": 167,
+                "Height": 20,
+                "BorderStyle": "sbsSunken",
+                "TabOrder": 5
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_VDB4",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 3,
+                "Left": 8,
+                "Top": 100,
+                "Width": 38,
+                "Height": 20,
+                "MaxLength": 5,
+                "TabOrder": 6,
+                "OnEnter": "Edt_VDB4Enter",
+                "OnExit": "Edt_VDB4Exit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "stt_Vdb4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 100,
+                "Width": 167,
+                "Height": 20,
+                "BorderStyle": "sbsSunken",
+                "TabOrder": 7
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_VDB5",
+              "herdado": false,
+              "propriedades": {
+                "Tag": 3,
+                "Left": 8,
+                "Top": 126,
+                "Width": 38,
+                "Height": 20,
+                "MaxLength": 5,
+                "TabOrder": 8,
+                "OnEnter": "Edt_VDB5Enter",
+                "OnExit": "Edt_VDB5Exit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TStaticText",
+              "nome": "stt_Vdb5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 126,
+                "Width": 167,
+                "Height": 20,
+                "BorderStyle": "sbsSunken",
+                "TabOrder": 9
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 320,
+        "Width": 508,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Iniciar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Iniciar Gravação",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Visualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 155,
+            "Top": 6,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Visualizar Arquivo",
+            "TabOrder": 1,
+            "OnClick": "Btn_VisualizarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "Svd_Salvar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 470,
+        "Top": 16
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Comandos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 358,
+        "Top": 24
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_BancoPagador",
+      "herdado": false,
+      "propriedades": {
+        "Left": 443,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_BancoPagadorBANCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Banco",
+            "FieldName": "BANCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_BancoPagadorDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_BancoPagadorFORMAPAGTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMAPAGTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_BancoPagadorESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 428,
+        "Top": 100
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

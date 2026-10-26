@@ -1,0 +1,1178 @@
+{
+  "classe": "TFrm_RHCS4603",
+  "nome": "Frm_RHCS4603",
+  "herdado": true,
+  "propriedades": {
+    "Left": 492,
+    "Top": 266,
+    "Caption": "Lançar Redução de Quadro",
+    "ClientHeight": 512,
+    "ClientWidth": 465
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 465,
+        "Height": 471,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ItensDeCusto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 176,
+            "Width": 441,
+            "Height": 223,
+            "ActivePage": "Tbs_CustosReducao",
+            "Align": "alCustom",
+            "Style": "tsFlatButtons",
+            "TabOrder": 1,
+            "TabStop": false
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_CustosReducao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Custos da Redução"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Itens",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 433,
+                    "Height": 148,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ItensDeCusto",
+                    "TabOrder": 1,
+                    "Columns": [
+                      {
+                        "FieldName": "DescItem",
+                        "Title.Caption": "Item",
+                        "Width": 193,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescOrigem",
+                        "Title.Caption": "Origem",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Valor",
+                        "Width": 74,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Itens",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 148,
+                    "Width": 433,
+                    "Height": 44,
+                    "Align": "alBottom",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 3,
+                        "Width": 20,
+                        "Height": 13,
+                        "Caption": "Item"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 207,
+                        "Top": 3,
+                        "Width": 33,
+                        "Height": 13,
+                        "Caption": "Origem"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 338,
+                        "Top": 3,
+                        "Width": 24,
+                        "Height": 13,
+                        "Caption": "Valor"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBeveledLabel",
+                      "nome": "Lbl_DescItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 87,
+                        "Top": 19,
+                        "Width": 115,
+                        "Height": 21
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBBeveledLabel",
+                      "nome": "Dbb_Origem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 207,
+                        "Top": 19,
+                        "Width": 127,
+                        "Height": 21,
+                        "DataField": "DescOrigem",
+                        "DataSource": "Dts_ItensDeCusto"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Item",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 59,
+                        "Top": 19,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Item",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 19,
+                        "Width": 58,
+                        "Height": 21,
+                        "Enabled": false,
+                        "MaxLength": 8,
+                        "TabOrder": 0,
+                        "OnChange": "Edt_ItemChange",
+                        "OnExit": "Edt_ItemExit",
+                        "OnKeyPress": "Edt_ItemKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Valor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 338,
+                        "Top": 19,
+                        "Width": 93,
+                        "Height": 21,
+                        "DataField": "Valor",
+                        "DataSource": "Dts_ItensDeCusto",
+                        "TabOrder": 1,
+                        "OnKeyPress": "Dbe_ValorKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_Aux",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 313,
+                        "Top": -44,
+                        "Width": 121,
+                        "Height": 21,
+                        "TabOrder": 2,
+                        "OnEnter": "Edt_AuxEnter"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_CustosRecisao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Custos da Rescisão",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label15",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 151,
+                    "Width": 20,
+                    "Height": 13,
+                    "Caption": "Item"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label16",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 207,
+                    "Top": 151,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Origem"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label17",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 337,
+                    "Top": 151,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Valor"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_ItemRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 59,
+                    "Top": 167,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Bvl_DescItemRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 87,
+                    "Top": 167,
+                    "Width": 115,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbbvl_OrigemRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 207,
+                    "Top": 167,
+                    "Width": 127,
+                    "Height": 21,
+                    "DataField": "DescOrigem",
+                    "DataSource": "Dts_ItensDeCustoRescisao"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 109,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 3,
+                    "OnEnter": "Edt_AuxRescisaoEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_ItensRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 433,
+                    "Height": 148,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_ItensDeCustoRescisao",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "DescItem",
+                        "Title.Caption": "Item",
+                        "Width": 193,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescOrigem",
+                        "Title.Caption": "Origem",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Valor",
+                        "Width": 74,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_ItemRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 167,
+                    "Width": 58,
+                    "Height": 21,
+                    "Enabled": false,
+                    "MaxLength": 8,
+                    "TabOrder": 1,
+                    "OnChange": "Edt_ItemRescisaoChange",
+                    "OnExit": "Edt_ItemRescisaoExit",
+                    "OnKeyPress": "Edt_ItemKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_ValorRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 338,
+                    "Top": 167,
+                    "Width": 93,
+                    "Height": 21,
+                    "DataField": "Valor",
+                    "DataSource": "Dts_ItensDeCustoRescisao",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 394,
+            "Width": 457,
+            "Height": 71,
+            "Align": "alBottom",
+            "TabOrder": 2,
+            "OnEnter": "Panel1Enter"
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Aumento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 7,
+                "Width": 438,
+                "Height": 56,
+                "Caption": " Total da Redução/Rescisão de Quadro no Mês/Ano ",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 31,
+                    "Top": 26,
+                    "Width": 118,
+                    "Height": 13,
+                    "Caption": "Número de Funcionários:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 232,
+                    "Top": 26,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Valor:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Bvl_Total",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 264,
+                    "Top": 23,
+                    "Width": 143,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpinEdit",
+                  "nome": "Sed_Numero",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 154,
+                    "Top": 23,
+                    "Width": 52,
+                    "Height": 22,
+                    "Enabled": false,
+                    "MaxLength": 3,
+                    "TabOrder": 0,
+                    "OnChange": "Sed_NumeroChange",
+                    "OnExit": "Sed_NumeroExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 457,
+            "Height": 170,
+            "Align": "alTop",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 12,
+                "Width": 159,
+                "Height": 13,
+                "Caption": "Considerar a Redução a partir de:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label12",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 154,
+                "Width": 83,
+                "Height": 13,
+                "Caption": "Itens de Custo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label10",
+              "herdado": false,
+              "propriedades": {
+                "Left": 377,
+                "Top": 41,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "Plano:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBeveledLabel",
+              "nome": "Bvl_Plano",
+              "herdado": false,
+              "propriedades": {
+                "Left": 411,
+                "Top": 38,
+                "Width": 36,
+                "Height": 21
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Cargo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 31,
+                "Width": 377,
+                "Height": 31,
+                "Caption": "Pnl_Cargo",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 9,
+                    "Width": 31,
+                    "Height": 13,
+                    "Caption": "Cargo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Cargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 107,
+                    "Top": 6,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Bvl_DescCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 132,
+                    "Top": 6,
+                    "Width": 240,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 135,
+                    "Top": 10,
+                    "Width": 232,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Cargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 46,
+                    "Top": 6,
+                    "Width": 60,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_CargoChange",
+                    "OnExit": "Edt_CargoExit",
+                    "OnKeyPress": "Edt_CargoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Funcao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 32,
+                "Width": 377,
+                "Height": 31,
+                "Caption": "Pnl_Cargo",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label18",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 9,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "Função:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Funcao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 115,
+                    "Top": 6,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Bvl_Funcao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 140,
+                    "Top": 6,
+                    "Width": 232,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescFuncao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 143,
+                    "Top": 10,
+                    "Width": 224,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Funcao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 54,
+                    "Top": 6,
+                    "Width": 60,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_FuncaoChange",
+                    "OnExit": "Edt_FuncaoExit",
+                    "OnKeyPress": "Edt_FuncaoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TRadioGroup",
+              "nome": "Rdg_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 67,
+                "Width": 98,
+                "Height": 82,
+                "Caption": " Remover ",
+                "Items.Strings": [
+                  "Genérico",
+                  "Contrato"
+                ],
+                "TabOrder": 3,
+                "OnClick": "Rdg_RemoverClick",
+                "OnEnter": "Rdg_RemoverEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Opcoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 111,
+                "Top": 67,
+                "Width": 338,
+                "Height": 82,
+                "TabOrder": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Opcoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 15,
+                    "Width": 334,
+                    "Height": 65,
+                    "ActivePage": "Tab_Contrato",
+                    "Align": "alClient",
+                    "Style": "tsFlatButtons",
+                    "TabOrder": 0,
+                    "TabStop": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_Contrato",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tab_Contrato",
+                        "OnEnter": "Tab_ContratoEnter"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label8",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 4,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "Unidade:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label9",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 31,
+                            "Width": 43,
+                            "Height": 13,
+                            "Caption": "Contrato:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Contrato",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 113,
+                            "Top": 28,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Contrato",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 141,
+                            "Top": 32,
+                            "Width": 174,
+                            "Height": 13
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Bvl_Unidade",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 52,
+                            "Top": 1,
+                            "Width": 267,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Contrato",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 52,
+                            "Top": 28,
+                            "Width": 60,
+                            "Height": 21,
+                            "MaxLength": 8,
+                            "TabOrder": 0,
+                            "OnChange": "Edt_ContratoChange",
+                            "OnExit": "Edt_ContratoExit",
+                            "OnKeyPress": "Edt_ContratoKeyPress"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_Generico",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tab_Generico",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 4,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Classe:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 87,
+                            "Top": 4,
+                            "Width": 65,
+                            "Height": 13,
+                            "Caption": "Faixa Salarial:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 31,
+                            "Width": 35,
+                            "Height": 13,
+                            "Caption": "Salário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Bvl_Salario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 44,
+                            "Top": 28,
+                            "Width": 80,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Bvl_Classe",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 44,
+                            "Top": 1,
+                            "Width": 33,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_Faixa",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 156,
+                            "Top": 1,
+                            "Width": 57,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cmb_MesAno",
+              "herdado": false,
+              "propriedades": {
+                "Left": 175,
+                "Top": 9,
+                "Width": 94,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 471,
+        "Width": 465,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Confirmar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 6,
+            "Width": 89,
+            "Height": 25,
+            "Caption": "Confirmar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_ConfirmarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 6,
+            "Width": 89,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 424,
+        "Top": 165
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ItensDeCusto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 135
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoItem",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 8,
+            "FieldName": "Item"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoOrigemValorOrcamentacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrigemValorOrcamentacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ItensDeCustoValor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Valor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoDescItem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescItem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoDescOrigem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescOrigem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ItensDeCustoValorTotal",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorTotal"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItensDeCusto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 295,
+        "Top": 135
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ItensDeCustoRescisao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 295,
+        "Top": 163
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoRescisaoItem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Item"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoRescisaoOrigemValorOrcamentacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrigemValorOrcamentacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ItensDeCustoRescisaoValor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Valor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoRescisaoDescItem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescItem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ItensDeCustoRescisaoDescOrigem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescOrigem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ItensDeCustoRescisaoValorTotal",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ValorTotal"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItensDeCustoRescisao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 330,
+        "Top": 163
+      },
+      "filhos": []
+    }
+  ]
+}

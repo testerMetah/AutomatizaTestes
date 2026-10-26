@@ -1,0 +1,517 @@
+{
+  "classe": "TFrm_RHPA7037",
+  "nome": "Frm_RHPA7037",
+  "herdado": false,
+  "propriedades": {
+    "Left": 502,
+    "Top": 180,
+    "BorderStyle": "bsSingle",
+    "Caption": "Fixação de Horários Alternativos",
+    "ClientHeight": 391,
+    "ClientWidth": 554,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 353,
+        "Width": 554,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_OK",
+            "Caption": "OK",
+            "Default": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Cancelar",
+            "Caption": "Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 36,
+        "Width": 554,
+        "Height": 317,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DataApuracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 12,
+            "Width": 194,
+            "Height": 13,
+            "Caption": "Datas de Apuracação e suas Marcações"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 221,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Escala:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Lbl_CodEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 236,
+            "Width": 38,
+            "Height": 21,
+            "DataField": "OCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Lbl_DscEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 236,
+            "Width": 175,
+            "Height": 21,
+            "DataField": "DSCOCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfHorario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 312,
+            "Top": 221,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Horário:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Lbl_CodHorario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 312,
+            "Top": 236,
+            "Width": 38,
+            "Height": 21,
+            "DataField": "OCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBBeveledLabel",
+          "nome": "Lbl_DscHorario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 356,
+            "Top": 236,
+            "Width": 175,
+            "Height": 21,
+            "DataField": "DSCOCORRENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Alternativas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 264,
+            "Width": 155,
+            "Height": 13,
+            "Caption": "Selecione a Alternativa desejada"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Selecionar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 523,
+            "Top": 28,
+            "Width": 23,
+            "Height": 22,
+            "Action": "Act_Seleciona",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Deselecionar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 523,
+            "Top": 50,
+            "Width": 23,
+            "Height": 22,
+            "Action": "Act_Deseleciona",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_DataApuracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 28,
+            "Width": 510,
+            "Height": 188,
+            "DataSource": "Dts_DataApuracao",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "SELECIONADO",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAAPURACAO",
+                "Width": 94,
+                "Visible": true
+              },
+              {
+                "FieldName": "ALTERNATIVA",
+                "Width": 55,
+                "Visible": true
+              },
+              {
+                "FieldName": "ALTERNATIVAFIXA",
+                "Visible": true
+              },
+              {
+                "FieldName": "MARCACOES",
+                "Width": 208,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Alternativas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 279,
+            "Width": 305,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "Cmb_AlternativasChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 554,
+        "Height": 36,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 11,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_CodContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 7,
+            "Width": 65,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfData",
+          "herdado": false,
+          "propriedades": {
+            "Left": 336,
+            "Top": 11,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Data:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 366,
+            "Top": 7,
+            "Width": 169,
+            "Height": 21,
+            "Caption": "01/01/2005 - 01/01/2005"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DscContrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 129,
+            "Top": 9,
+            "Width": 198,
+            "Height": 16,
+            "Caption": "Lbl_DscContrato"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_DataApuracao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 280,
+        "Top": 88
+      },
+      "filhos": [
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_DataApuracaoSELECIONADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Selecionado",
+            "FieldName": "SELECIONADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateField",
+          "nome": "Cds_DataApuracaoDATAAPURACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Apuração",
+            "FieldName": "DATAAPURACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DataApuracaoALTERNATIVA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Alternativa",
+            "FieldName": "ALTERNATIVA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_DataApuracaoALTERNATIVAFIXA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Já Fixado",
+            "FieldName": "ALTERNATIVAFIXA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DataApuracaoMARCACOES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Marcações do Dia",
+            "FieldName": "MARCACOES"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DataApuracao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Alternativas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 152
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlternativasALTERNATIVA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Alternativa",
+            "FieldName": "ALTERNATIVA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AlternativasMARCACOES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Marcações da Alternativa",
+            "DisplayWidth": 50,
+            "FieldName": "MARCACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_AlternativasSELECIONADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SELECIONADO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Alternativas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 152
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 160,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Seleciona",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_SelecionaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Deseleciona",
+          "herdado": false,
+          "propriedades": {
+            "OnExecute": "Act_DeselecionaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar",
+            "OnExecute": "Act_CancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_OK",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "OK",
+            "OnExecute": "Act_OKExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

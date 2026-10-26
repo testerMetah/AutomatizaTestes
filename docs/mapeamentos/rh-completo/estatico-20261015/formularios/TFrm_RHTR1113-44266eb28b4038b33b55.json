@@ -1,0 +1,633 @@
+{
+  "classe": "TFrm_RHTR1113",
+  "nome": "Frm_RHTR1113",
+  "herdado": false,
+  "propriedades": {
+    "Left": 423,
+    "Top": 351,
+    "BorderStyle": "bsSingle",
+    "Caption": "Importação de Cursos do Currículo",
+    "ClientHeight": 414,
+    "ClientWidth": 750,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnl1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 750,
+        "Height": 373,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "grp1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 728,
+            "Height": 351,
+            "Caption": "Selecione o Curso que deverá ser Importado do Currículo da Pessoa: ",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_Curso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 109,
+                "Top": 256,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 240,
+                "Width": 27,
+                "Height": 13,
+                "Caption": "Curso"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 133,
+                "Top": 240,
+                "Width": 48,
+                "Height": 13,
+                "Caption": "Descrição"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 280,
+                "Width": 48,
+                "Height": 13,
+                "Caption": "Instituição"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 305,
+                "Top": 280,
+                "Width": 45,
+                "Height": 13,
+                "Caption": "Programa"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBevel",
+              "nome": "Bevel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 132,
+                "Top": 256,
+                "Width": 228,
+                "Height": 21
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Cursos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 133,
+                "Top": 260,
+                "Width": 224,
+                "Height": 13,
+                "Caption": "Lbl_Cursos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 361,
+                "Top": 240,
+                "Width": 39,
+                "Height": 13,
+                "Caption": "Revisão"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_Revisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 389,
+                "Top": 255,
+                "Width": 22,
+                "Height": 22,
+                "Hint": "Localizar",
+                "ShowHint": true,
+                "OnClick": "btn_RevisaoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 644,
+                "Top": 240,
+                "Width": 65,
+                "Height": 13,
+                "Caption": "Carga Horária"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 496,
+                "Top": 240,
+                "Width": 27,
+                "Height": 13,
+                "Caption": "Início"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 570,
+                "Top": 240,
+                "Width": 66,
+                "Height": 13,
+                "Caption": "Encerramento"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbm_CursosRS",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 17,
+                "Width": 708,
+                "Height": 220,
+                "DataSource": "Dts_Cursos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "CURSO",
+                    "Title.Caption": "Curso",
+                    "Width": 90,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DescCurso",
+                    "Title.Caption": "Descrição",
+                    "Width": 245,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "RevisaoDesc",
+                    "Title.Caption": "Revisão",
+                    "Width": 111,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_INICIO",
+                    "Title.Caption": "Início",
+                    "Width": 75,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_ENCERRA",
+                    "Title.Caption": "Encerramento",
+                    "Width": 75,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CAR_HORARIA",
+                    "Title.Caption": "Carga Horária",
+                    "Width": 72,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Dbm_Instituicao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 296,
+                "Width": 282,
+                "Height": 45,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_Cursos",
+                "ReadOnly": true,
+                "TabOrder": 7
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Dbm_Programa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 305,
+                "Top": 296,
+                "Width": 284,
+                "Height": 45,
+                "DataField": "PROGRAMACURSO",
+                "DataSource": "Dts_Cursos",
+                "ReadOnly": true,
+                "TabOrder": 8
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Curso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 256,
+                "Width": 88,
+                "Height": 21,
+                "MaxLength": 15,
+                "TabOrder": 1,
+                "OnExit": "Edt_CursoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "edt_Revisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 361,
+                "Top": 256,
+                "Width": 27,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 2,
+                "OnEnter": "edt_RevisaoEnter",
+                "OnExit": "edt_RevisaoExit",
+                "OnKeyPress": "edt_RevisaoKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "Cmb_DtRevisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 412,
+                "Top": 256,
+                "Width": 83,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 3,
+                "OnEnter": "Cmb_DtRevisaoEnter",
+                "OnExit": "Cmb_DtRevisaoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_CarHoraria",
+              "herdado": false,
+              "propriedades": {
+                "Left": 644,
+                "Top": 256,
+                "Width": 73,
+                "Height": 21,
+                "DataField": "CAR_HORARIA",
+                "DataSource": "Dts_Cursos",
+                "ReadOnly": true,
+                "TabOrder": 6
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Inicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 496,
+                "Top": 256,
+                "Width": 73,
+                "Height": 21,
+                "DataField": "DT_INICIO",
+                "DataSource": "Dts_Cursos",
+                "TabOrder": 4,
+                "OnExit": "Dbe_InicioExit",
+                "OnKeyPress": "Dbe_InicioKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Encerramento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 570,
+                "Top": 256,
+                "Width": 73,
+                "Height": 21,
+                "DataField": "DT_ENCERRA",
+                "DataSource": "Dts_Cursos",
+                "TabOrder": 5,
+                "OnExit": "Dbe_EncerramentoExit",
+                "OnKeyPress": "Dbe_EncerramentoKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnl2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 373,
+        "Width": 750,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Importar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 180,
+            "Height": 25,
+            "Caption": "&Importar o Curso Selecionado",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_ImportarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 202,
+            "Top": 6,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Cursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 344,
+        "Top": 136
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Cursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 156
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CursosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CursosNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosCURSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosDESCRICAO50",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO50"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_CursosCAR_HORARIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAR_HORARIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CursosDT_INICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_INICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CursosDT_ENCERRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_ENCERRA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosPROGRAMACURSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PROGRAMACURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosORIGEMCURRICULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMCURRICULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosCURSOIMPORTADOTD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CURSOIMPORTADOTD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosDescCurso",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescCurso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CursosREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CursosDT_REVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DT_REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CursosRevisaoDesc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RevisaoDesc"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_CursoRevisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 228,
+        "Top": 184
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_CursoRevisoesREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Revisão",
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_CursoRevisoesDT_REVISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Revisão",
+            "FieldName": "DT_REVISAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

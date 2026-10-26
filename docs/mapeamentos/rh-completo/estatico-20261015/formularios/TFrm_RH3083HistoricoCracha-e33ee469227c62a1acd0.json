@@ -1,0 +1,240 @@
+{
+  "classe": "TFrm_RH3083HistoricoCracha",
+  "nome": "Frm_RH3083HistoricoCracha",
+  "herdado": true,
+  "propriedades": {
+    "Left": 288,
+    "Top": 195,
+    "Caption": "Histórico do Crachá",
+    "ClientHeight": 416,
+    "ClientWidth": 778
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 778,
+        "Height": 42,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EditOcorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 12,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Crachá:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 337,
+            "Top": 12,
+            "Width": 22,
+            "Height": 13,
+            "Caption": "Uso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_Uso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 369,
+            "Top": 8,
+            "Width": 191,
+            "Height": 21,
+            "Caption": "Lbl_Uso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_Cracha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 56,
+            "Top": 8,
+            "Width": 89,
+            "Height": 21,
+            "Caption": "Lbl_Cracha"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 42,
+        "Width": 778,
+        "Height": 374,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 331,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Motivo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 448,
+            "Top": 342,
+            "Width": 47,
+            "Height": 21,
+            "TabOrder": 2,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Historico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 770,
+            "Height": 324,
+            "Align": "alTop",
+            "DataSource": "Dts_CrachaHistorico",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_HistoricoEnter",
+            "Columns": [
+              {
+                "FieldName": "Data",
+                "Width": 65,
+                "Visible": true
+              },
+              {
+                "FieldName": "Hora",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "PessoaUsoEspecial",
+                "Title.Caption": "Pessoa",
+                "Width": 185,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Width": 45,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Width": 45,
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOAACESSO",
+                "Title.Caption": "Pré-Cad.",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescTipoCadastro",
+                "Title.Caption": "Tipo Cad.",
+                "Width": 95,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescUsoCracha",
+                "Title.Caption": "Uso",
+                "Width": 80,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescSituacaoCracha",
+                "Title.Caption": "Situação",
+                "Width": 66,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Width": 61,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescTransicao",
+                "Title.Caption": "Transição",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Mem_MotivoNovo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 49,
+            "Top": 332,
+            "Width": 808,
+            "Height": 41,
+            "DataField": "OBSERVACOES",
+            "DataSource": "Dts_CrachaHistorico",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 414,
+        "Top": 98
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CrachaHistorico",
+      "herdado": false,
+      "propriedades": {
+        "Left": 320,
+        "Top": 98
+      },
+      "filhos": []
+    }
+  ]
+}

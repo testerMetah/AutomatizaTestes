@@ -1,0 +1,862 @@
+{
+  "classe": "TFrm_RH9600",
+  "nome": "Frm_RH9600",
+  "herdado": false,
+  "propriedades": {
+    "Left": 443,
+    "Top": 131,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cadastro de Formulário para Entrevista de Desligamento",
+    "ClientHeight": 486,
+    "ClientWidth": 644,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 644,
+        "Height": 486,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Principal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 642,
+            "Height": 484,
+            "ActivePage": "Tbs_Formulario",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_PrincipalChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Formulario",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Formulário"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_FormularioFundo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 634,
+                    "Height": 456,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_Formulario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 634,
+                        "Height": 215,
+                        "Align": "alTop",
+                        "TabOrder": 0,
+                        "OnEnter": "Pnl_FormularioEnter",
+                        "OnExit": "Pnl_FormularioExit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_FormularioTitulo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 241,
+                            "Top": 10,
+                            "Width": 153,
+                            "Height": 13,
+                            "Caption": "Fomulário de Desligamento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_Formulario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 174,
+                            "Width": 48,
+                            "Height": 13,
+                            "Caption": "Formulário"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_DescricaoFormuilario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 66,
+                            "Top": 174,
+                            "Width": 48,
+                            "Height": 13,
+                            "Caption": "Descrição"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "dbg_Formulario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 31,
+                            "Width": 616,
+                            "Height": 131,
+                            "TabStop": false,
+                            "DataSource": "Ds_Formularios",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "FORMULARIO",
+                                "Title.Caption": "Formulário",
+                                "Width": 76,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DESCRICAO250",
+                                "Title.Caption": "Descrição",
+                                "Width": 448,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "ATIVADESATIVADA",
+                                "Title.Caption": "Situação",
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "edt_Formulario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 191,
+                            "Width": 50,
+                            "Height": 21,
+                            "MaxLength": 4,
+                            "TabOrder": 1,
+                            "OnExit": "edt_FormularioExit",
+                            "OnKeyPress": "edt_FormularioKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "dbe_DescricaoFormuilario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 66,
+                            "Top": 191,
+                            "Width": 505,
+                            "Height": 21,
+                            "DataField": "DESCRICAO250",
+                            "DataSource": "Ds_Formularios",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbc_Ativo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 579,
+                            "Top": 191,
+                            "Width": 47,
+                            "Height": 17,
+                            "Caption": "Ativo",
+                            "DataField": "ATIVADESATIVADA",
+                            "DataSource": "Ds_Formularios",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_FormularioItens",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 215,
+                        "Width": 634,
+                        "Height": 241,
+                        "Align": "alClient",
+                        "TabOrder": 1,
+                        "OnEnter": "Pnl_FormularioItensEnter",
+                        "OnExit": "Pnl_FormularioItensExit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_FormularioItens",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 216,
+                            "Top": 10,
+                            "Width": 203,
+                            "Height": 13,
+                            "Caption": "Itens do Fomulário de Desligamento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_ItemFormularioItem",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 169,
+                            "Width": 20,
+                            "Height": 13,
+                            "Caption": "Item"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "lbl_DescricaoItemFormularioItemTitulo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 66,
+                            "Top": 169,
+                            "Width": 48,
+                            "Height": 13,
+                            "Caption": "Descrição"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "dbg_FormularioItens",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 31,
+                            "Width": 616,
+                            "Height": 131,
+                            "TabStop": false,
+                            "DataSource": "Ds_FormulariosItens",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "IDITEM",
+                                "Title.Caption": "Item",
+                                "Width": 76,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescItem",
+                                "Title.Caption": "Descrição",
+                                "Width": 439,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "OBRIGATORIO",
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "edt_ItemFormularioItem",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 10,
+                            "Top": 186,
+                            "Width": 50,
+                            "Height": 21,
+                            "MaxLength": 9,
+                            "TabOrder": 1,
+                            "OnExit": "edt_ItemFormularioItemExit",
+                            "OnKeyPress": "edt_ItemFormularioItemKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBCheckBox",
+                          "nome": "dbc_ItemObrigatorio",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 550,
+                            "Top": 186,
+                            "Width": 76,
+                            "Height": 17,
+                            "Caption": "Obrigatório",
+                            "DataField": "OBRIGATORIO",
+                            "DataSource": "Ds_FormulariosItens",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMemo",
+                          "nome": "Dbe_DescricaoItemFormularioItem",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 66,
+                            "Top": 186,
+                            "Width": 475,
+                            "Height": 48,
+                            "TabStop": false,
+                            "DataField": "DescItem",
+                            "DataSource": "Ds_FormulariosItens",
+                            "MaxLength": 255,
+                            "ReadOnly": true,
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_ItensFormulario",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Itens do Formulário",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_ItensFormulario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 634,
+                    "Height": 456,
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "OnExit": "Pnl_ItensFormularioExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_ItemFormularioTitulo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 211,
+                        "Top": 10,
+                        "Width": 214,
+                        "Height": 13,
+                        "Caption": "Itens para Fomulário de Desligamento"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_Item",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 384,
+                        "Width": 20,
+                        "Height": 13,
+                        "Caption": "Item"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_DescricaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 66,
+                        "Top": 384,
+                        "Width": 48,
+                        "Height": 13,
+                        "Caption": "Descrição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_TipoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 542,
+                        "Top": 384,
+                        "Width": 21,
+                        "Height": 13,
+                        "Caption": "Tipo"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "dbg_ItemFormulario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 31,
+                        "Width": 616,
+                        "Height": 346,
+                        "TabStop": false,
+                        "DataSource": "Ds_ItensFormulario",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "IDITEM",
+                            "Title.Caption": "Formulário",
+                            "Width": 76,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DescItem",
+                            "Width": 430,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DescTipoOpcoes",
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edt_Item",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 401,
+                        "Width": 50,
+                        "Height": 21,
+                        "MaxLength": 9,
+                        "TabOrder": 1,
+                        "OnExit": "edt_ItemExit",
+                        "OnKeyPress": "edt_ItemKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "dbe_DescricaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 66,
+                        "Top": 401,
+                        "Width": 470,
+                        "Height": 48,
+                        "DataField": "DESCRICAO400",
+                        "DataSource": "Ds_ItensFormulario",
+                        "MaxLength": 400,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "dbc_TipoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 542,
+                        "Top": 401,
+                        "Width": 84,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "TIPOOPCAO",
+                        "DataSource": "Ds_ItensFormulario",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_OpcoesItensFormulario",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Opções",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_ItensDoFormulario",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 634,
+                    "Height": 456,
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "OnExit": "Pnl_ItensDoFormularioExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_OpcaoItemTitulo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 273,
+                        "Top": 10,
+                        "Width": 90,
+                        "Height": 13,
+                        "Caption": "Opções do Item"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_OpcaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 174,
+                        "Width": 32,
+                        "Height": 13,
+                        "Caption": "Opção"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 66,
+                        "Top": 174,
+                        "Width": 48,
+                        "Height": 13,
+                        "Caption": "Descrição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMetaGrid",
+                      "nome": "dbg_OpcaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 31,
+                        "Width": 616,
+                        "Height": 131,
+                        "TabStop": false,
+                        "DataSource": "Ds_OpcoesItensFormulario",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "NROORDEM",
+                            "Title.Caption": "Opção",
+                            "Width": 76,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DESCRICAO60",
+                            "Title.Caption": "Descrição",
+                            "Width": 495,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edt_OpcaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 191,
+                        "Width": 50,
+                        "Height": 21,
+                        "MaxLength": 2,
+                        "TabOrder": 1,
+                        "OnExit": "edt_OpcaoItemExit",
+                        "OnKeyPress": "edt_OpcaoItemKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "dbe_DescricaoOpcaoItem",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 66,
+                        "Top": 191,
+                        "Width": 560,
+                        "Height": 21,
+                        "DataField": "DESCRICAO60",
+                        "DataSource": "Ds_OpcoesItensFormulario",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ItensFormulario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 162
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ItensFormularioIDITEM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Item",
+            "FieldName": "IDITEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensFormularioTIPOOPCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOOPCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensFormularioDescTipoOpcoes",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "DescTipoOpcoes"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensFormularioDESCRICAO400",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO400"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ItensFormularioDescItem",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DescItem"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_ItensFormulario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 597,
+        "Top": 162
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Formularios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 101
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosFORMULARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMULARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosDESCRICAO250",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO250"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FormulariosItens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 132
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosItensFORMULARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMULARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_FormulariosItensIDITEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDITEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosItensOBRIGATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Obrigatório",
+            "FieldName": "OBRIGATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FormulariosItensDescItem",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 255,
+            "FieldName": "DescItem"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_Formularios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 597,
+        "Top": 101
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_FormulariosItens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 597,
+        "Top": 132
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_OpcoesItensFormulario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 192
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_OpcoesItensFormularioIDITEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDITEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_OpcoesItensFormularioNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OpcoesItensFormularioDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_OpcoesItensFormulario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 597,
+        "Top": 192
+      },
+      "filhos": []
+    }
+  ]
+}

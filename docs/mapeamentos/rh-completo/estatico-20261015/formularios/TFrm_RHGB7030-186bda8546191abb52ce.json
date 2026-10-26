@@ -1,0 +1,1596 @@
+{
+  "classe": "TFrm_RHGB7030",
+  "nome": "Frm_RHGB7030",
+  "herdado": true,
+  "propriedades": {
+    "Left": 467,
+    "Top": 271,
+    "Width": 800,
+    "Height": 600,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Consulta de Serviços"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Superior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 518,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ConsultaServ",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 776,
+            "Height": 510,
+            "ActivePage": "Tbs_Resultado",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_ConsultaServChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Opcoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Opções"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Convenio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 11,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Convênio:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaLocalizar",
+                  "nome": "Btn_Convenio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 123,
+                    "Top": 7,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescConvenio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 151,
+                    "Top": 11,
+                    "Width": 111,
+                    "Height": 13,
+                    "Caption": "Descrição do Convênio"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Convenio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 72,
+                    "Top": 7,
+                    "Width": 50,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_ConvenioChange",
+                    "OnExit": "Edt_ConvenioExit",
+                    "OnKeyPress": "Edt_ConvenioKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRadioGroup",
+                  "nome": "Rdg_Periodo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 40,
+                    "Width": 185,
+                    "Height": 80,
+                    "Caption": "Período Por:",
+                    "Items.Strings": [
+                      "Data de Lançamento",
+                      "Data de Pagamento",
+                      "Data de Desconto"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Gbx_Periodo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 204,
+                    "Top": 40,
+                    "Width": 549,
+                    "Height": 80,
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InicioPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 37,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Início:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TerminoPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 157,
+                        "Top": 37,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Término:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_InicioPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 125,
+                        "Top": 33,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_TerminoPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 278,
+                        "Top": 33,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_InicioPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 54,
+                        "Top": 33,
+                        "Width": 70,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnExit": "Msk_InicioPeriodoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Msk_TerminoPeriodo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 207,
+                        "Top": 33,
+                        "Width": 70,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 1,
+                        "OnExit": "Msk_TerminoPeriodoExit"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Gbx_Prestadores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 124,
+                    "Width": 738,
+                    "Height": 351,
+                    "Caption": "Prestadores:",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_Botoes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 358,
+                        "Top": 15,
+                        "Width": 22,
+                        "Height": 334,
+                        "Align": "alClient",
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_CentralizaBotoes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 93,
+                            "Width": 22,
+                            "Height": 120,
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_RemoverTodos",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 85,
+                                "Width": 22,
+                                "Height": 22,
+                                "OnClick": "Btn_RemoverTodosClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_RemoverSelecionado",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 61,
+                                "Width": 22,
+                                "Height": 22,
+                                "OnClick": "Btn_RemoverSelecionadoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_AdicionarSelecionado",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 37,
+                                "Width": 22,
+                                "Height": 22,
+                                "OnClick": "Btn_AdicionarSelecionadoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_AdicionarTodos",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 13,
+                                "Width": 22,
+                                "Height": 22,
+                                "OnClick": "Btn_AdicionarTodosClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_NaoSelecionados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 2,
+                        "Top": 15,
+                        "Width": 356,
+                        "Height": 334,
+                        "Align": "alLeft",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_NaoSelecionados",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 5,
+                            "Width": 96,
+                            "Height": 13,
+                            "Caption": "Não Selecionado(s):"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_NaoSelecionados",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 20,
+                            "Width": 346,
+                            "Height": 309,
+                            "Align": "alCustom",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_Selecionados",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 380,
+                        "Top": 15,
+                        "Width": 356,
+                        "Height": 334,
+                        "Align": "alRight",
+                        "TabOrder": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 5,
+                            "Width": 73,
+                            "Height": 13,
+                            "Caption": "Selecionado(s):"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Selecionados",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 5,
+                            "Top": 20,
+                            "Width": 346,
+                            "Height": 309,
+                            "Align": "alCustom",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_SelecaoContratos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Seleção de Contratos",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "frmsl_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 768,
+                    "Height": 482,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Resultado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 768,
+                    "Height": 351,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Resultado",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "CODDESCPRESTADOR",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CODDESCSERVICO",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "UNIDADE",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOMETITULAR",
+                        "Width": 140,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATASERVICO",
+                        "Width": 63,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCTIPOBENEFICIARIO",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOMEFAMILIAR",
+                        "Width": 140,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATADESCONTO",
+                        "Width": 71,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAPAGAMENTO",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CUSTOEMPRESA",
+                        "Width": 85,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CUSTOFUNCIONARIO",
+                        "Width": 85,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CUSTOTOTAL",
+                        "Width": 75,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCTIPOLANCSERVICO",
+                        "Width": 120,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCORIGEMSERVICO",
+                        "Width": 60,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "OPERADORALTERACAO",
+                        "Width": 90,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAHORAALTERACAO",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAULTIMPORTACAO",
+                        "Width": 140,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Resumo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 373,
+                    "Width": 768,
+                    "Height": 109,
+                    "Align": "alBottom",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_ResumoServico",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 248,
+                        "Top": 4,
+                        "Width": 271,
+                        "Height": 95,
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_16",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 1,
+                            "Width": 50,
+                            "Height": 13,
+                            "Caption": "Serviços"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_17",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 92,
+                            "Top": 1,
+                            "Width": 66,
+                            "Height": 13,
+                            "Caption": "Quantidade"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "shp11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 16,
+                            "Width": 271,
+                            "Height": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "shp12",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 57,
+                            "Width": 271,
+                            "Height": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "shp13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 37,
+                            "Width": 271,
+                            "Height": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_18",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 20,
+                            "Width": 50,
+                            "Height": 13,
+                            "Caption": "Titulares"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_19",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 41,
+                            "Width": 76,
+                            "Height": 13,
+                            "Caption": "Dependentes"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_20",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 62,
+                            "Width": 38,
+                            "Height": 13,
+                            "Caption": "Outros"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "shp14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 86,
+                            "Top": 1,
+                            "Width": 1,
+                            "Height": 95
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_TotalTitular",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 170,
+                            "Top": 20,
+                            "Width": 101,
+                            "Height": 13,
+                            "DataField": "TotalTitulares",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "Shape1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 78,
+                            "Width": 271,
+                            "Height": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 83,
+                            "Width": 30,
+                            "Height": 13,
+                            "Caption": "Total"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_TotalDep",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 169,
+                            "Top": 40,
+                            "Width": 102,
+                            "Height": 13,
+                            "DataField": "TotalDeps",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_TotalOutro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 169,
+                            "Top": 62,
+                            "Width": 102,
+                            "Height": 13,
+                            "DataField": "TotalOutros",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_Total",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 169,
+                            "Top": 83,
+                            "Width": 102,
+                            "Height": 13,
+                            "DataField": "Total",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 170,
+                            "Top": 1,
+                            "Width": 30,
+                            "Height": 13,
+                            "Caption": "Total"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TShape",
+                          "nome": "Shape2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 164,
+                            "Top": 0,
+                            "Width": 1,
+                            "Height": 95
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_QuantTit",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 94,
+                            "Top": 20,
+                            "Width": 64,
+                            "Height": 13,
+                            "DataField": "QuantTitular",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_QuantDep",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 93,
+                            "Top": 40,
+                            "Width": 65,
+                            "Height": 13,
+                            "DataField": "QuantDep",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_QuantOut",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 93,
+                            "Top": 62,
+                            "Width": 65,
+                            "Height": 13,
+                            "DataField": "QuantOutro",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBText",
+                          "nome": "Dbt_QuantTotal",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 93,
+                            "Top": 83,
+                            "Width": 65,
+                            "Height": 13,
+                            "DataField": "QuantTotal",
+                            "DataSource": "Dts_Resultado"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_BotoesResumo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 351,
+                    "Width": 768,
+                    "Height": 22,
+                    "Align": "alBottom",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TituloResumo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 768,
+                        "Height": 22,
+                        "Align": "alClient",
+                        "Caption": "Resumo da Consulta"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_ExibeTotal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 749,
+                        "Top": 3,
+                        "Width": 19,
+                        "Height": 18,
+                        "Hint": "Exibir Resumo da Consulta",
+                        "ShowHint": true,
+                        "Visible": false,
+                        "OnClick": "Btn_ExibeTotalClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_OcultaTotal",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 749,
+                        "Top": 3,
+                        "Width": 19,
+                        "Height": 18,
+                        "Hint": "Ocultar Resumo da Consulta",
+                        "ShowHint": true,
+                        "OnClick": "Btn_OcultaTotalClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Inferior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 518,
+        "Width": 784,
+        "Height": 44,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Botoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 776,
+            "Height": 36,
+            "ActivePage": "Tbs_BotoesOpcoes",
+            "Align": "alClient",
+            "Style": "tsFlatButtons",
+            "TabOrder": 0,
+            "TabStop": false
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_BotoesOpcoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tbs_BotoesOpcoes"
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_OpcoesAvancar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 0,
+                    "Width": 86,
+                    "Height": 25,
+                    "Caption": "Avançar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_OpcoesAvancarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_OpcoesVoltar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 0,
+                    "Width": 86,
+                    "Height": 25,
+                    "Caption": "Voltar",
+                    "Enabled": false,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_ResultadoVoltarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_BotoesSelecao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tbs_BotoesSelecao",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_SelecaoVoltar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 0,
+                    "Width": 86,
+                    "Height": 25,
+                    "Caption": "Voltar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_SelecaoVoltarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_SelecaoAvancar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 0,
+                    "Width": 86,
+                    "Height": 25,
+                    "Caption": "Avançar",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_SelecaoAvancarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_BotoesResultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tbs_BotoesResultado",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 224,
+                    "Top": 0,
+                    "Width": 418,
+                    "Height": 26,
+                    "Caption": "Lembrete: Para que um campo não seja exibido no arquivo csv, é só incluir na sua tag o número 989.",
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_ResultadoVoltar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 0,
+                    "Width": 86,
+                    "Height": 25,
+                    "Caption": "Voltar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_ResultadoVoltarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_ResultadoExportar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 0,
+                    "Width": 117,
+                    "Height": 25,
+                    "Caption": "Exportar p/ CSV",
+                    "ShowHint": false,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_ResultadoExportarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 684,
+        "Top": 526
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 716,
+        "Top": 526
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 748,
+        "Top": 528
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoCODDESCPRESTADOR",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Prestador",
+            "DisplayWidth": 60,
+            "FieldName": "CODDESCPRESTADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoCODDESCSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Serviço",
+            "DisplayWidth": 60,
+            "FieldName": "CODDESCSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Unidade",
+            "DisplayWidth": 4,
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Contrato",
+            "DisplayWidth": 10,
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoNOMETITULAR",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Nome",
+            "DisplayWidth": 40,
+            "FieldName": "NOMETITULAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATASERVICO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Data",
+            "DisplayWidth": 34,
+            "FieldName": "DATASERVICO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCTIPOBENEFICIARIO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Tipo",
+            "DisplayWidth": 60,
+            "FieldName": "DESCTIPOBENEFICIARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoNOMEFAMILIAR",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Dependente",
+            "DisplayWidth": 40,
+            "FieldName": "NOMEFAMILIAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATADESCONTO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Desconto",
+            "DisplayWidth": 34,
+            "FieldName": "DATADESCONTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATAPAGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Pagamento",
+            "DisplayWidth": 34,
+            "FieldName": "DATAPAGAMENTO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ResultadoCUSTOEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Parte da Empresa",
+            "DisplayWidth": 10,
+            "FieldName": "CUSTOEMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ResultadoCUSTOFUNCIONARIO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Parte do Funcionário",
+            "DisplayWidth": 10,
+            "FieldName": "CUSTOFUNCIONARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ResultadoCUSTOTOTAL",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Total",
+            "DisplayWidth": 10,
+            "FieldName": "CUSTOTOTAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCTIPOLANCSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Tipo de Lançamento",
+            "DisplayWidth": 60,
+            "FieldName": "DESCTIPOLANCSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCORIGEMSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Origem",
+            "DisplayWidth": 60,
+            "FieldName": "DESCORIGEMSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Operador",
+            "DisplayWidth": 6,
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Data/Hora",
+            "DisplayWidth": 34,
+            "FieldName": "DATAHORAALTERACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ResultadoDATAULTIMPORTACAO",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 989,
+            "DisplayLabel": "Data/Hora Importação",
+            "DisplayWidth": 34,
+            "FieldName": "DATAULTIMPORTACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoCONVENIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 4,
+            "FieldName": "CONVENIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoPRESTADORSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Prestador",
+            "FieldName": "PRESTADORSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Serviço",
+            "DisplayWidth": 10,
+            "FieldName": "SERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCCONVENIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 40,
+            "FieldName": "DESCCONVENIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCPRESTADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 40,
+            "FieldName": "DESCPRESTADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 40,
+            "FieldName": "DESCSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoTIPOBENEFICIARIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 1,
+            "FieldName": "TIPOBENEFICIARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoTIPOLANCSERVICO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 1,
+            "FieldName": "TIPOLANCSERVICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoDESCGRAUPARENTESCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 60,
+            "FieldName": "DESCGRAUPARENTESCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ResultadoNOMERESPONSAVEL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 40,
+            "FieldName": "NOMERESPONSAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ResultadoCUSTOTITULAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "CUSTOTITULAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ResultadoCUSTODEP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "CUSTODEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ResultadoCUSTOOUTRO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "CUSTOOUTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoTITULAR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TITULAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoDEPENDENTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEPENDENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoOUTRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OUTRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ResultadoORDENABENEF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORDENABENEF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoTotalTitulares",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "TotalTitulares",
+            "Visible": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoTotalDeps",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "TotalDeps",
+            "Visible": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoTotalOutros",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "TotalOutros",
+            "Visible": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoTotal",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 10,
+            "FieldName": "Total",
+            "Visible": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoQuantTitular",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "QuantTitular"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoQuantDep",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "QuantDep"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoQuantOutro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "QuantOutro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_ResultadoQuantTotal",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "QuantTotal"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

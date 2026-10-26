@@ -1,0 +1,221 @@
+{
+  "classe": "TFrm_RHRS0255",
+  "nome": "Frm_RHRS0255",
+  "herdado": true,
+  "propriedades": {
+    "Left": 75,
+    "Top": 149,
+    "Caption": "Palavras-chave",
+    "ClientHeight": 182,
+    "ClientWidth": 487
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 487,
+        "Height": 182,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 137,
+            "Width": 69,
+            "Height": 13,
+            "Caption": "Palavra-chave"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 95,
+            "Top": 137,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NovaPalavra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 152,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Nova Palavra-chave (Ctrl+N)",
+            "ShowHint": true,
+            "OnClick": "Btn_NovaPalavraClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 383,
+            "Top": 136,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Palavras",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 483,
+            "Height": 131,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_PalavrasChaves",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_PalavrasEnter",
+            "Columns": [
+              {
+                "FieldName": "PALAVRACHAVE",
+                "Title.Caption": "Palavra-chave",
+                "Width": 77,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Title.Caption": "Descrição",
+                "Width": 287,
+                "Visible": true
+              },
+              {
+                "Title.Caption": "Situação",
+                "Width": 83,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 391,
+            "Top": 153,
+            "Width": 0,
+            "Height": 21,
+            "TabOrder": 4,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Palavra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 152,
+            "Width": 41,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnExit": "Edt_PalavraExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 94,
+            "Top": 152,
+            "Width": 286,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_PalavrasChaves",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 383,
+            "Top": 152,
+            "Width": 89,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_PalavrasChaves",
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 170,
+        "Top": 14
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PalavrasChaves",
+      "herdado": false,
+      "propriedades": {
+        "Left": 204,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 254,
+        "Top": 7
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Novo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Novo",
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovoExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+{
+  "classe": "TFrm_RHPR180501",
+  "nome": "Frm_RHPR180501",
+  "herdado": false,
+  "propriedades": {
+    "Left": 604,
+    "Top": 325,
+    "BorderStyle": "bsSingle",
+    "Caption": "Folha de Pagamento por Classificação Contábil/Projeto",
+    "ClientHeight": 465,
+    "ClientWidth": 626,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 626,
+        "Height": 424,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_Relatorios",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 20,
+            "Width": 180,
+            "Height": 45,
+            "Caption": "Relatórios",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TCheckBox",
+              "nome": "chk_analitico",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 20,
+                "Width": 69,
+                "Height": 17,
+                "Caption": "Analítico",
+                "Checked": true,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "chk_sintetico",
+              "herdado": false,
+              "propriedades": {
+                "Left": 100,
+                "Top": 20,
+                "Width": 73,
+                "Height": 17,
+                "Caption": "Sintético",
+                "Checked": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_Considerar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 345,
+            "Top": 20,
+            "Width": 265,
+            "Height": 45,
+            "Caption": "Considerar",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TCheckBox",
+              "nome": "chk_classificacoesContabeis",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 20,
+                "Width": 149,
+                "Height": 17,
+                "Caption": "Classificações Contábeis",
+                "Checked": true,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "chk_projetos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 189,
+                "Top": 20,
+                "Width": 65,
+                "Height": 17,
+                "Caption": "Projetos",
+                "Checked": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 75,
+            "Width": 597,
+            "Height": 253,
+            "Caption": "Seleção (caso não seja realizada nenhuma seleção, todas as Classificações Contábeis e Projetos serão considerados)",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "pgc_selecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 20,
+                "Width": 567,
+                "Height": 218,
+                "ActivePage": "tbs_projeto",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "tbs_calssificacaoContabil",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Classificação Contábil"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_classificacaoContabil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 19,
+                        "Width": 106,
+                        "Height": 13,
+                        "Caption": "Classificação Contábil:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_ClassificacaoContabil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 190,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "OnClick": "Btn_ClassificacaoContabilClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_descClassificacaoContabil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 20,
+                        "Width": 309,
+                        "Height": 13,
+                        "Caption": "Lbl_descClassificacaoContabil"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edt_classificacaoContabil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 125,
+                        "Top": 15,
+                        "Width": 64,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 0,
+                        "OnEnter": "edt_classificacaoContabilEnter",
+                        "OnExit": "edt_classificacaoContabilExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "Lst_ClassificacaoContabil",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 73,
+                        "Width": 542,
+                        "Height": 110,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_ExcluiTodasClassificacoesContabeis",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 220,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Excluir todos os Itens",
+                        "ShowHint": true,
+                        "TabOrder": 4,
+                        "TabStop": false,
+                        "OnClick": "Btn_ExcluiTodasClassificacoesContabeisClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_ExcluiClassificacaoContabilSelecionada",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 188,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Excluir Item selecionado",
+                        "ShowHint": true,
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "Btn_ExcluiClassificacaoContabilSelecionadaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AdicionaClassificacaoContabilSelecionada",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 156,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Selecionar Item escolhido",
+                        "ShowHint": true,
+                        "TabOrder": 2,
+                        "TabStop": false,
+                        "OnClick": "Btn_AdicionaClassificacaoContabilSelecionadaClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AdicionaTodasClassificacoesContabeis",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 125,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Selecionar todos",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "Btn_AdicionaTodasClassificacoesContabeisClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "tbs_projeto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Projetos",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_projetos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 19,
+                        "Width": 36,
+                        "Height": 13,
+                        "Caption": "Projeto:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "btn_projetos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true,
+                        "OnClick": "btn_projetosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_descProjeto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 156,
+                        "Top": 20,
+                        "Width": 309,
+                        "Height": 13,
+                        "Caption": "lbl_descProjeto"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "edt_projeto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 61,
+                        "Top": 15,
+                        "Width": 64,
+                        "Height": 21,
+                        "MaxLength": 8,
+                        "TabOrder": 0,
+                        "OnEnter": "edt_projetoEnter",
+                        "OnExit": "edt_projetoExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btn_excluiTodosProjetos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 156,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Excluir todos os Itens",
+                        "ShowHint": true,
+                        "TabOrder": 4,
+                        "TabStop": false,
+                        "OnClick": "btn_excluiTodosProjetosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btn_excluiProjetoSelecionado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 124,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Excluir Item selecionado",
+                        "ShowHint": true,
+                        "TabOrder": 3,
+                        "TabStop": false,
+                        "OnClick": "btn_excluiProjetoSelecionadoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btn_adicionaProjetoSelecionado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 92,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Selecionar Item escolhido",
+                        "ShowHint": true,
+                        "TabOrder": 2,
+                        "TabStop": false,
+                        "OnClick": "btn_adicionaProjetoSelecionadoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btn_AdicionaTodosProjetos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 61,
+                        "Top": 44,
+                        "Width": 25,
+                        "Height": 25,
+                        "Hint": "Selecionar todos",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "TabStop": false,
+                        "OnClick": "btn_AdicionaTodosProjetosClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBoxMeta",
+                      "nome": "lst_projeto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 73,
+                        "Width": 542,
+                        "Height": 110,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TRadioGroupMeta",
+          "nome": "rdg_classificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 338,
+            "Width": 597,
+            "Height": 45,
+            "Caption": "Classificação",
+            "Columns": 3,
+            "Items.Strings": [
+              "Empresa/Estabelecimento",
+              "Empresa/Unidade",
+              "Empresa"
+            ],
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "chk_PularPaginaQuebra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 22,
+            "Top": 393,
+            "Width": 376,
+            "Height": 17,
+            "Caption": "Pular de página na quebra de Classificação Contábil e/ou Projeto",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnl_botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 424,
+        "Width": 626,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_IniciarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 122,
+            "Height": 25,
+            "Caption": "Iniciar Impressão",
+            "TabOrder": 0,
+            "OnClick": "btn_IniciarImpressaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_classificacaoContabilSelecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 156
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_classificacaoContabilSelecaoCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação Contábil",
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_classificacaoContabilSelecaoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_classificacaoContabilSelecaoATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_projetoSelecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 420,
+        "Top": 156
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_projetoSelecaoPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto",
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_projetoSelecaoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

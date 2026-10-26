@@ -81,7 +81,8 @@ class Gateway:
         tela_before = {"titulo": self.window.window_text(), "classe": self.window.class_name(), "menu": self.menu_path}
         start = time.perf_counter()
         try:
-            if action == "clique": control.click_input()
+            if action == "clique":
+                control.click_input(coords=tuple(value)) if isinstance(value, (list, tuple)) else control.click_input()
             elif action == "duplo_clique": control.double_click_input()
             elif action == "digitar": control.set_edit_text(str(value))
             elif action == "selecionar": control.select(value)
@@ -109,7 +110,13 @@ class Gateway:
 
     def inventory(self):
         if self.window is None: self.connect()
-        items = [self._meta(control) for control in self.window.descendants()]
+        items = []
+        for control in self.window.descendants():
+            try:
+                items.append(self._meta(control))
+            except (OSError, RuntimeError):
+                # Controles MDI podem desaparecer enquanto a arvore e percorrida.
+                continue
         self.report.emit("MAPA_TELA", tela={"titulo": self.window.window_text(), "classe": self.window.class_name(), "menu": self.menu_path},
                          controles=items, resultado="PASSOU")
         return items

@@ -1,0 +1,203 @@
+{
+  "classe": "TFrm_RHRS4030",
+  "nome": "Frm_RHRS4030",
+  "herdado": true,
+  "propriedades": {
+    "Left": 533,
+    "Top": 260,
+    "Caption": "Candidatos Selecionados",
+    "ClientWidth": 631
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": true,
+      "propriedades": {
+        "Width": 631
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_SituacaoCandidato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 162,
+            "Top": 8,
+            "Width": 140,
+            "Height": 25,
+            "Hint": "Alterar a situação do candidato na seleção",
+            "Caption": "&Situação do Candidato",
+            "ShowHint": true,
+            "TabOrder": 1,
+            "OnClick": "Btn_SituacaoCandidatoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_Candidatos",
+      "herdado": true,
+      "propriedades": {
+        "Top": 67,
+        "Width": 631,
+        "Height": 238,
+        "Columns": [
+          {
+            "FieldName": "EMPRESA",
+            "Title.Caption": "Empresa",
+            "Width": 49,
+            "Visible": true
+          },
+          {
+            "FieldName": "PESSOA",
+            "Title.Caption": "Pessoa",
+            "Width": 53,
+            "Visible": true
+          },
+          {
+            "FieldName": "NOME",
+            "Title.Caption": "Nome",
+            "Width": 210,
+            "Visible": true
+          },
+          {
+            "FieldName": "REQUISICAO",
+            "Title.Caption": "Requisição",
+            "Width": 58,
+            "Visible": true
+          },
+          {
+            "FieldName": "REALIZOUASO",
+            "Title.Caption": "Realizou ASO",
+            "Width": 134,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAEMISSAO",
+            "Title.Caption": "Data de Emissão",
+            "Width": 88,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": true,
+      "propriedades": {
+        "Width": 631,
+        "Height": 67
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": true,
+          "propriedades": {
+            "Top": 37
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 97,
+            "Height": 13,
+            "Caption": "Exibir os candidatos:"
+          },
+          "filhos": [],
+          "ordem_herdada": 1
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "cbm_VinculoEmpregaticio",
+          "herdado": true,
+          "propriedades": {
+            "Top": 33
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_ExibirCandidatos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 8,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "Cmb_ExibirCandidatosChange",
+            "Items.Strings": [
+              "< Todos >",
+              "Não Contratados",
+              "Contratados"
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Candidatos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 473,
+        "Top": 118
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Candidatos",
+      "herdado": true,
+      "propriedades": {
+        "Top": 70
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CandidatosSITUACAOSELECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOSELECAO"
+          },
+          "filhos": [],
+          "ordem_herdada": 6
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_CandidatosDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": [],
+          "ordem_herdada": 7
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ASO",
+      "herdado": true,
+      "propriedades": {
+        "Left": 476,
+        "Top": 172
+      },
+      "filhos": []
+    }
+  ]
+}

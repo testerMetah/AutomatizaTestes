@@ -1,0 +1,370 @@
+{
+  "classe": "TFrm_RHTR6650",
+  "nome": "Frm_RHTR6650",
+  "herdado": true,
+  "propriedades": {
+    "Left": 443,
+    "Top": 265,
+    "Caption": "Cursos com Validade",
+    "ClientHeight": 473,
+    "ClientWidth": 784
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 57,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 19,
+            "Width": 172,
+            "Height": 13,
+            "Caption": "Cursos com Validade no período de:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Periodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 191,
+            "Top": 3,
+            "Width": 226,
+            "Height": 47,
+            "TabOrder": 0,
+            "OnExit": "Pnl_PeriodoExit"
+          },
+          "filhos": [
+            {
+              "classe": "TMetaData",
+              "nome": "MetaData2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 195,
+                "Top": 15,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "MetaData1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 71,
+                "Top": 14,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 101,
+                "Top": 19,
+                "Width": 15,
+                "Height": 13,
+                "Caption": "até"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_Inicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 14,
+                "Width": 69,
+                "Height": 21,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0,
+                "OnChange": "Msk_InicioChange",
+                "OnExit": "Msk_InicioExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_Termino",
+              "herdado": false,
+              "propriedades": {
+                "Left": 125,
+                "Top": 15,
+                "Width": 69,
+                "Height": 21,
+                "EditMask": "!99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnChange": "Msk_TerminoChange",
+                "OnExit": "Msk_TerminoExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 57,
+        "Width": 784,
+        "Height": 416,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TSplitter",
+          "nome": "Splitter1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 214,
+            "Width": 776,
+            "Height": 3,
+            "Align": "alBottom"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 210,
+            "Width": 776,
+            "Height": 4,
+            "Align": "alBottom",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 217,
+            "Width": 776,
+            "Height": 193,
+            "Align": "alBottom",
+            "Caption": "Cursos em Atraso",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "DBMetaGrid2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 15,
+                "Width": 772,
+                "Height": 176,
+                "Align": "alClient",
+                "DataSource": "Dts_EmAtraso",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "BASETREINAMENTO",
+                    "Title.Caption": "Base",
+                    "Width": 57,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "EVENTO",
+                    "Title.Caption": "Evento",
+                    "Width": 68,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CURSO",
+                    "Title.Caption": "Curso",
+                    "Width": 72,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO50",
+                    "Title.Caption": "Descrição",
+                    "Width": 227,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "PESSOA",
+                    "Title.Caption": "Pessoa",
+                    "Width": 72,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Title.Caption": "Nome",
+                    "Width": 200,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_ENCERRA",
+                    "Title.Caption": "Término",
+                    "Width": 79,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_VALIDADE",
+                    "Title.Caption": "Válido Até",
+                    "Width": 85,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 776,
+            "Height": 208,
+            "Align": "alClient",
+            "Caption": "Cursos a Vencer no Período",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "DBMetaGrid1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 15,
+                "Width": 772,
+                "Height": 191,
+                "Align": "alClient",
+                "DataSource": "Dts_AVencer",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "BASETREINAMENTO",
+                    "Title.Caption": "Base",
+                    "Width": 57,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "EVENTO",
+                    "Title.Caption": "Evento",
+                    "Width": 69,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CURSO",
+                    "Title.Caption": "Curso",
+                    "Width": 72,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO50",
+                    "Title.Caption": "Descrição",
+                    "Width": 227,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "PESSOA",
+                    "Title.Caption": "Pessoa",
+                    "Width": 72,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Title.Caption": "Nome",
+                    "Width": 200,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_ENCERRA",
+                    "Title.Caption": "Término",
+                    "Width": 79,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DT_VALIDADE",
+                    "Title.Caption": "Válido Até",
+                    "Width": 85,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 648,
+        "Top": 96
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AVencer",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 136
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EmAtraso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 360
+      },
+      "filhos": []
+    }
+  ]
+}

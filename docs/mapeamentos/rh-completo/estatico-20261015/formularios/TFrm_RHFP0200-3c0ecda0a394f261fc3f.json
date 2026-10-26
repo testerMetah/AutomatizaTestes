@@ -1,0 +1,199 @@
+{
+  "classe": "TFrm_RHFP0200",
+  "nome": "Frm_RHFP0200",
+  "herdado": false,
+  "propriedades": {
+    "Left": 601,
+    "Top": 333,
+    "BorderStyle": "bsSingle",
+    "Caption": "Estado Civil",
+    "ClientHeight": 145,
+    "ClientWidth": 417,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 417,
+        "Height": 145,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 38,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 90,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_EstadoCivil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 109,
+            "Top": 34,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EstadoCivilClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 38,
+            "Width": 23,
+            "Height": 17,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_EstadoCivil",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 80,
+            "Top": 34,
+            "Width": 28,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 0,
+            "OnEnter": "Edt_EstadoCivilEnter",
+            "OnExit": "Edt_EstadoCivilExit",
+            "OnKeyPress": "Edt_EstadoCivilKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 80,
+            "Top": 86,
+            "Width": 152,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_EstadoCivil",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "DBR_EstadoCivil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 256,
+            "Top": 9,
+            "Width": 137,
+            "Height": 123,
+            "Caption": "Classificação Oficial",
+            "DataField": "CLASSEESTADOCIVIL",
+            "DataSource": "Dts_EstadoCivil",
+            "Items.Strings": [
+              "Solteiro",
+              "Casado",
+              "Viúvo",
+              "Separado",
+              "Divorciado",
+              "União Estável",
+              "Outro"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_EstadoCivil",
+      "herdado": false,
+      "propriedades": {
+        "Left": 207,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilESTADOCIVIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estado Civil",
+            "FieldName": "ESTADOCIVIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstadoCivilCLASSEESTADOCIVIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classe de Estado Civil",
+            "FieldName": "CLASSEESTADOCIVIL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_EstadoCivil",
+      "herdado": false,
+      "propriedades": {
+        "Left": 171,
+        "Top": 10
+      },
+      "filhos": []
+    }
+  ]
+}

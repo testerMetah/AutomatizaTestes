@@ -1,0 +1,798 @@
+{
+  "classe": "TFrm_RHPR605001",
+  "nome": "Frm_RHPR605001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 259,
+    "Top": 188,
+    "BorderStyle": "bsSingle",
+    "Caption": "Importação do Histórico de Riscos por Contrato",
+    "ClientHeight": 322,
+    "ClientWidth": 431,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 281,
+        "Width": 431,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_CancelarImportacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 126,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar Importação",
+            "TabOrder": 2,
+            "TabStop": false,
+            "OnClick": "Btn_CancelarImportacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Importa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 126,
+            "Height": 25,
+            "Caption": "&Iniciar Importação",
+            "TabOrder": 0,
+            "OnClick": "btn_ImportaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Visualiza",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 6,
+            "Width": 213,
+            "Height": 25,
+            "Caption": "&Visualizar Ocorrências da Importação",
+            "TabOrder": 1,
+            "OnClick": "btn_VisualizaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Opcoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 431,
+        "Height": 281,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 5,
+            "Width": 136,
+            "Height": 13,
+            "Caption": "Informe o Arquivo a Importar:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 392,
+            "Top": 18,
+            "Width": 22,
+            "Height": 22,
+            "Hint": "Selecionar Arquivo de Importação... (Crtl+ A)",
+            "ShowHint": true,
+            "OnClick": "btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGauge",
+          "nome": "Gau_Progresso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 212,
+            "Width": 408,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 197,
+            "Width": 379,
+            "Height": 13,
+            "Caption": "Preparando Gravação..."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 251,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Reg. Importados: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Importados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 111,
+            "Top": 251,
+            "Width": 87,
+            "Height": 13,
+            "Caption": "Lbl_Importados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Geral",
+          "herdado": false,
+          "propriedades": {
+            "Left": 310,
+            "Top": 234,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Lbl_Geral"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 205,
+            "Top": 234,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Reg. Cancelados:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 47,
+            "Width": 340,
+            "Height": 16,
+            "Caption": "Assinale as Opções desejadas para importação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 234,
+            "Width": 66,
+            "Height": 13,
+            "Caption": "Reg. Lidos:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Lidos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 111,
+            "Top": 234,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Lbl_Lidos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "MetaLocalizar1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 368,
+            "Top": 80,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_",
+          "herdado": false,
+          "propriedades": {
+            "Left": 304,
+            "Top": 80,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_NomeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 19,
+            "Width": 381,
+            "Height": 21,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 68,
+            "Width": 408,
+            "Height": 37,
+            "Caption": "O que Fazer com registros existentes do destino?",
+            "Columns": 2,
+            "Items.Strings": [
+              "Atualizar",
+              "Ignorar"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_ChaveEstrangeira",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 109,
+            "Width": 408,
+            "Height": 37,
+            "Caption": "Para \"Chaves Estrangeiras\" não encotradas no destino:",
+            "Columns": 2,
+            "Items.Strings": [
+              "Gerar Erro",
+              "Gravar em Branco"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_UtilizaCpf",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 155,
+            "Width": 408,
+            "Height": 37,
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_ExibeSelContratosPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 13,
+                "Width": 260,
+                "Height": 17,
+                "Caption": "Exibe janela para seleção de Contratos da Pessoa",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_UtilizaCPF",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 148,
+            "Width": 241,
+            "Height": 17,
+            "Caption": "Utiliza o CPF para localizar a Unidade/Contrato",
+            "TabOrder": 4,
+            "OnClick": "Chk_UtilizaCPFClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "SQLQuery",
+      "herdado": false,
+      "propriedades": {
+        "Left": 370,
+        "Top": 170
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 392,
+        "Top": 114
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 359,
+        "Top": 122
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_RiscosContrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 242,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RiscosContratoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoRISCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Risco",
+            "FieldName": "RISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_RiscosContratoDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Início",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoPRESENTEAUSENTE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Presente / Ausente",
+            "FieldName": "PRESENTEAUSENTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoTIPOAVALIACAOSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Avaliação",
+            "FieldName": "TIPOAVALIACAOSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoAVALIACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Avaliação",
+            "FieldName": "AVALIACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoAVALIACAOATRIBUIDA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Avaliação Atribuida",
+            "FieldName": "AVALIACAOATRIBUIDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Cds_RiscosContratoMEDICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Medição",
+            "FieldName": "MEDICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoUNIDADEMEDIDA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade de Medida",
+            "FieldName": "UNIDADEMEDIDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoTECNICAUTILIZADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tecnica Utilizada",
+            "FieldName": "TECNICAUTILIZADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoFREQUENCIARISCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Frequência Risco",
+            "FieldName": "FREQUENCIARISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoTEMPROTECAOEFICAZ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tem Proteção Eficaz",
+            "FieldName": "TEMPROTECAOEFICAZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoNIVELEXPOSICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nível Exposição",
+            "FieldName": "NIVELEXPOSICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoCONSTARPPP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Constar PPP",
+            "FieldName": "CONSTARPPP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoSTATUSRISCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Status Risco",
+            "FieldName": "STATUSRISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoOBSERVACOES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Observações",
+            "FieldName": "OBSERVACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RiscosContratoNRODECIMAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número de Decimais",
+            "FieldName": "NRODECIMAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoEPIEFICAZ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "EPI Eficaz",
+            "FieldName": "EPIEFICAZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoEPCEFICAZ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "EPC Eficaz",
+            "FieldName": "EPCEFICAZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoCERTIFICADOAPROVEST",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "EPIs Necessários (número C.A.)",
+            "FieldName": "CERTIFICADOAPROVEST",
+            "EditMask": "99999;99999;99999;99999;99999;99999;99999;99999;99999;99999;;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_RiscosContratoLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Linha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_RiscosContratoErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_RiscosContratoDescErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescErro"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Auxiliar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 308,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_UnidadesContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_UnidadesContratosEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_UnidadesContratosPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_UnidadesContratosUnidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_UnidadesContratosContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ErrosImportacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 286,
+        "Top": 88
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosImportacaoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosImportacaoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosImportacaoRISCO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Risco",
+            "FieldName": "RISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ErrosImportacaoDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Início",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosImportacaoCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosImportacaoLinha",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Linha"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosImportacaoDescErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescErro"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1380 @@
+{
+  "classe": "TFrm_RHPR190101",
+  "nome": "Frm_RHPR190101",
+  "herdado": false,
+  "propriedades": {
+    "Left": 659,
+    "Top": 210,
+    "BorderStyle": "bsSingle",
+    "Caption": "Grava Arquivos da Folha para o INSS",
+    "ClientHeight": 379,
+    "ClientWidth": 480,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 480,
+        "Height": 337,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 308,
+            "Top": 235,
+            "Width": 18,
+            "Height": 13,
+            "Caption": "até:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 235,
+            "Width": 112,
+            "Height": 13,
+            "Caption": "Folhas c/Data-base de:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 308,
+            "Width": 86,
+            "Height": 13,
+            "Caption": "Arquivo a Gravar :"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 445,
+            "Top": 305,
+            "Width": 23,
+            "Height": 21,
+            "Caption": "...",
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataIni",
+          "herdado": false,
+          "propriedades": {
+            "Left": 257,
+            "Top": 232,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataFim",
+          "herdado": false,
+          "propriedades": {
+            "Left": 441,
+            "Top": 233,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EstabCAGED",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 202,
+            "Width": 146,
+            "Height": 13,
+            "Caption": "Estabelecimento Responsável:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 244,
+            "Top": 202,
+            "Width": 98,
+            "Height": 13,
+            "Caption": "Lbl_Estabelecimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataIni",
+          "herdado": false,
+          "propriedades": {
+            "Left": 171,
+            "Top": 232,
+            "Width": 85,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 3,
+            "OnExit": "Msk_DataIniExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataFim",
+          "herdado": false,
+          "propriedades": {
+            "Left": 355,
+            "Top": 233,
+            "Width": 85,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 4,
+            "OnExit": "Msk_DataIniExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Relatorios",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 258,
+            "Width": 450,
+            "Height": 38,
+            "Caption": "Etiquetas",
+            "Columns": 2,
+            "Items.Strings": [
+              "Imprimir",
+              "Visualizar Impressão"
+            ],
+            "TabOrder": 5
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 109,
+            "Top": 305,
+            "Width": 333,
+            "Height": 21,
+            "TabOrder": 6,
+            "OnChange": "edt_ArquivoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 171,
+            "Top": 199,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 2,
+            "OnEnter": "Edt_EstabelecimentoEnter",
+            "OnExit": "Edt_EstabelecimentoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "btn_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 214,
+            "Top": 198,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 7,
+            "TabStop": false,
+            "OnClick": "btn_EstabelecimentoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 9,
+            "Width": 159,
+            "Height": 182,
+            "Caption": "Seleção",
+            "Items.Strings": [
+              "Empresa",
+              "Lista de Empresas",
+              "Grupo de Empresas",
+              "Geral"
+            ],
+            "TabOrder": 0,
+            "OnClick": "Rdg_SelecaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_SelecionarEmpresaGrupo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 192,
+            "Top": 9,
+            "Width": 274,
+            "Height": 182,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_UniEmp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 9,
+                "Width": 173,
+                "Height": 13,
+                "Caption": "Empresas:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TextoEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 15,
+                "Width": 44,
+                "Height": 13,
+                "Caption": "Empresa:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DescUniEmp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 133,
+                "Top": 16,
+                "Width": 120,
+                "Height": 13,
+                "Caption": "Lbl_DescUniEmp"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_Empresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 105,
+                "Top": 10,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "Visible": false,
+                "OnClick": "btn_EmpresaClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 38,
+                "Width": 77,
+                "Height": 25,
+                "Caption": "&Adicionar",
+                "TabOrder": 1,
+                "OnClick": "Btn_AdicionarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 92,
+                "Top": 38,
+                "Width": 77,
+                "Height": 25,
+                "Caption": "&Remover",
+                "TabOrder": 2,
+                "TabStop": false,
+                "OnClick": "Btn_RemoverClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TListBoxMeta",
+              "nome": "Lst_Empresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 66,
+                "Width": 200,
+                "Height": 109,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Empresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 62,
+                "Top": 12,
+                "Width": 41,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnEnter": "Edt_EmpresaEnter",
+                "OnExit": "Edt_EmpresaExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 337,
+        "Width": 480,
+        "Height": 42,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Iniciar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Iniciar Gravação",
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_VisualizarArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 159,
+            "Top": 7,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Visualizar Arquivo",
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "Btn_VisualizarArquivoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 412,
+        "Top": 339
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PessoasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasPIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasMATRICULAINSS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MATRICULAINSS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "SaveDialog1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 440,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_RegrasContab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 384,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ItensContab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_LanctosContab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 300,
+        "Top": 255
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 244,
+        "Top": 339
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_RateioGPSSefip",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_LocalizarEstab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 325,
+        "Top": 342
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTIPOESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNATUREZAJURIDICA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NATUREZAJURIDICA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCODIGOCATEGORIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOCATEGORIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMATRICULAINSS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MATRICULAINSS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTIPOINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNOMERESPONSAVELCNPJ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMERESPONSAVELCNPJ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCPFRESPONSAVELCNPJ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPFRESPONSAVELCNPJ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTIPOINSCRICAOANTERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINSCRICAOANTERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabINSCRICAOANTERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INSCRICAOANTERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMOTIVOALTERAINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVOALTERAINSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCNAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CNAE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCNAEANTERIOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CNAEANTERIOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCODIGOSAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOSAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LocalizarEstabNRODIRETORES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRODIRETORES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LocalizarEstabULTREGISTROUSADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTREGISTROUSADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabULTALTRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTALTRAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabULTALTINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTALTINSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabULTALTCNAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTALTCNAE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabULTALTENDERECO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTALTENDERECO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNRORUA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRORUA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCOMPLEMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMPLEMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabBAIRRO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "BAIRRO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCEP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CEP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabUF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCODIGOMUNICIPIORAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOMUNICIPIORAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNOMERESPONSAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMERESPONSAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabDDD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTELEFONE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRAMAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAMAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabDDDFAX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DDDFAX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTELEFONEFAX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TELEFONEFAX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRAMALFAX",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAMALFAX"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabEMAIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMAIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabINICIOATIVIDADES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOATIVIDADES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabENCERRAMENTOATIVIDADES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENCERRAMENTOATIVIDADES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_LocalizarEstabCAPITALSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAPITALSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabOPTANTEPELOSIMPLES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPTANTEPELOSIMPLES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabPARTICIPAPAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PARTICIPAPAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMESDISSIDIORAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MESDISSIDIORAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabENTREGARAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENTREGARAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabENTREGADIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENTREGADIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabENTREGACAGED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ENTREGACAGED"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRECOLHEIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECOLHEIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRECOLHECONTSINDEMP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECOLHECONTSINDEMP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRECOLHECONTSINDPATR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECOLHECONTSINDPATR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabRECOLHEPISFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RECOLHEPISFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_LocalizarEstabPERCPISFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCPISFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabESTABELECIMENTOIRF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTOIRF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabESTABELECIMENTORAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTORAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabESTABELECIMENTOCAGED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTOCAGED"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNROCONVENIOCAGED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROCONVENIOCAGED"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabPRIMEIRAREMESSACAGED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PRIMEIRAREMESSACAGED"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_LocalizarEstabULTREMESSACAGED",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTREMESSACAGED"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCALENDARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CALENDARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabDESCRICAOATIVIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOATIVIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabGRAURISCO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRAURISCO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMEDICOPCMSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDICOPCMSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMEDICOAUDIOMETRIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDICOAUDIOMETRIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMEDICOPPRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDICOPPRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabMEDICOLTCAT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MEDICOLTCAT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabPIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabDESCRICAOCNAE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAOCNAE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNATUREZADECLARANTE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NATUREZADECLARANTE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabNOMERESPONSAVELPPP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMERESPONSAVELPPP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabCPFRESPONSAVELPPP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPFRESPONSAVELPPP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabPISRESPONSAVELPPP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PISRESPONSAVELPPP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarEstabTEXTOPPP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TEXTOPPP"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "MetaClient1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 160,
+        "Top": 340
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_TemFolha13Salario",
+      "herdado": false,
+      "propriedades": {
+        "Left": 188,
+        "Top": 339
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GruposEmpresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 132,
+        "Top": 342
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposEmpresasGRUPOEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOEMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposEmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Empresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 97,
+        "Top": 340
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_EmpresasGrupo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 153,
+        "Top": 249
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ContasContabDePara",
+      "herdado": false,
+      "propriedades": {
+        "Left": 392,
+        "Top": 255
+      },
+      "filhos": []
+    }
+  ]
+}

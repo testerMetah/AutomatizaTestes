@@ -1,0 +1,1812 @@
+{
+  "classe": "TFrm_RHST6600",
+  "nome": "Frm_RHST6600",
+  "herdado": true,
+  "propriedades": {
+    "Left": 471,
+    "Top": 219,
+    "Caption": "Registro da Brigada de Incêndio",
+    "ClientHeight": 534,
+    "ClientWidth": 760
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 760,
+        "Height": 75,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_CabecalhoEnter",
+        "OnExit": "Pnl_CabecalhoExit"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Brigada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 15,
+            "Width": 39,
+            "Height": 13,
+            "Caption": "Brigada:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 43,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 365,
+            "Top": 15,
+            "Width": 81,
+            "Height": 13,
+            "Caption": "Estabelecimento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescEstabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 537,
+            "Top": 16,
+            "Width": 123,
+            "Height": 13,
+            "Caption": "Lbl_DescEstabelecimento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Brigada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 129,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 509,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_CopiarBrigadaIncendio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 156,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Copiar Brigada de Incêndio",
+            "ShowHint": true,
+            "OnClick": "Btn_CopiarBrigadaIncendioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Brigada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 71,
+            "Top": 12,
+            "Width": 57,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "Edt_BrigadaChange",
+            "OnExit": "Edt_BrigadaExit",
+            "OnKeyPress": "Edt_BrigadaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dcb_BrigSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 451,
+            "Top": 42,
+            "Width": 56,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_Brigada",
+            "TabOrder": 3,
+            "OnEnter": "Dcb_BrigSituacaoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 71,
+            "Top": 40,
+            "Width": 274,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_Brigada",
+            "TabOrder": 2,
+            "OnEnter": "Dbe_DescricaoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Estabelecimento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 451,
+            "Top": 12,
+            "Width": 57,
+            "Height": 21,
+            "DataField": "ESTABELECIMENTO",
+            "DataSource": "Dts_Brigada",
+            "TabOrder": 1,
+            "OnEnter": "Dbe_EstabelecimentoEnter",
+            "OnExit": "Dbe_EstabelecimentoExit",
+            "OnKeyPress": "Dbe_EstabelecimentoKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Abas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 75,
+        "Width": 760,
+        "Height": 459,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Abas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 752,
+            "Height": 451,
+            "ActivePage": "Tbs_Plantas",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_AbasChange",
+            "OnEnter": "Pgc_AbasEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Cadastro",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Cadastramento"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Turno",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 383,
+                    "Width": 28,
+                    "Height": 13,
+                    "Caption": "Turno"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Turno",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 400,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Inicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 414,
+                    "Top": 383,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Início"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Termino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 515,
+                    "Top": 383,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Término"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Vagas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 616,
+                    "Top": 383,
+                    "Width": 89,
+                    "Height": 13,
+                    "Caption": "Vagas Disponíveis"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Blbl_TurnoDesc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 400,
+                    "Width": 325,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbb_Inicio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 414,
+                    "Top": 400,
+                    "Width": 97,
+                    "Height": 21,
+                    "DataField": "HORAINICIO",
+                    "DataSource": "Dts_BrigadaTurnos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbb_Termino",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 515,
+                    "Top": 400,
+                    "Width": 97,
+                    "Height": 21,
+                    "DataField": "HORAFIM",
+                    "DataSource": "Dts_BrigadaTurnos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbb_Vagas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 616,
+                    "Top": 400,
+                    "Width": 128,
+                    "Height": 21,
+                    "DataField": "VAGASDISPONIVEIS",
+                    "DataSource": "Dts_BrigadaTurnos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 304,
+                    "Top": 96,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_Aux4Enter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbm_Cadastramento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 744,
+                    "Height": 378,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_BrigadaTurnos",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbm_CadastramentoEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "TURNOBRIG",
+                        "Title.Caption": "Turno",
+                        "Width": 400,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORAINICIO",
+                        "Title.Caption": "Início",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "HORAFIM",
+                        "Title.Caption": "Término",
+                        "Width": 100,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "VAGASDISPONIVEIS",
+                        "Title.Caption": "Vagas Disponíveis",
+                        "Width": 107,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Turno",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 400,
+                    "Width": 57,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_TurnoEnter",
+                    "OnExit": "Edt_TurnoExit",
+                    "OnKeyPress": "Edt_TurnoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Plantas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Plantas",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Plantas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 744,
+                    "Height": 423,
+                    "ActivePage": "Tbs_Pavimentos",
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "TabStop": false,
+                    "OnChange": "Pgc_PlantasChange",
+                    "OnEnter": "Pgc_PlantasEnter"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Edificacoes",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Edificações"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Riscos",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 233,
+                            "Width": 96,
+                            "Height": 13,
+                            "Caption": "Riscos em Potencial"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Situacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 587,
+                            "Top": 190,
+                            "Width": 42,
+                            "Height": 13,
+                            "Caption": "Situação"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Edificacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 190,
+                            "Width": 50,
+                            "Height": 13,
+                            "Caption": "Edificação"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_MeiosEscape",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 315,
+                            "Width": 82,
+                            "Height": 13,
+                            "Caption": "Meios de Escape"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_EdifDesc",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 89,
+                            "Top": 190,
+                            "Width": 48,
+                            "Height": 13,
+                            "Caption": "Descrição"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Edificacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 62,
+                            "Top": 207,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Blbl_EdificacaoDesc",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 89,
+                            "Top": 207,
+                            "Width": 494,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Aux2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 172,
+                            "Top": 88,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 5,
+                            "OnEnter": "Edt_Aux2Enter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "Dbm_Edificacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 736,
+                            "Height": 186,
+                            "TabStop": false,
+                            "Align": "alTop",
+                            "DataSource": "Dts_BrigadaEdificacoes",
+                            "TabOrder": 0,
+                            "OnEnter": "Dbm_EdificacaoEnter",
+                            "Columns": [
+                              {
+                                "FieldName": "EDIFBRIG",
+                                "Title.Caption": "Edificação",
+                                "Width": 75,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DESCRICAO40",
+                                "Title.Caption": "Descrição",
+                                "Width": 497,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "ATIVADESATIVADA",
+                                "Title.Caption": "Situação",
+                                "Width": 128,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Edificacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 207,
+                            "Width": 61,
+                            "Height": 21,
+                            "MaxLength": 4,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_EdificacaoChange",
+                            "OnEnter": "Edt_EdificacaoEnter",
+                            "OnExit": "Edt_EdificacaoExit",
+                            "OnKeyPress": "Edt_EdificacaoKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMemo",
+                          "nome": "Dbm_Riscos",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 250,
+                            "Width": 736,
+                            "Height": 61,
+                            "DataField": "MEIOSESCAPE",
+                            "DataSource": "Dts_BrigadaEdificacoes",
+                            "MaxLength": 800,
+                            "TabOrder": 3,
+                            "OnEnter": "Dbc_SituacaoEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBMemo",
+                          "nome": "Dbm_Meios",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 332,
+                            "Width": 736,
+                            "Height": 61,
+                            "DataField": "RISCOSPOTENCIAL",
+                            "DataSource": "Dts_BrigadaEdificacoes",
+                            "MaxLength": 800,
+                            "TabOrder": 4,
+                            "OnEnter": "Dbc_SituacaoEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBComboMeta",
+                          "nome": "Dbc_Situacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 587,
+                            "Top": 207,
+                            "Width": 149,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "DataField": "ATIVADESATIVADA",
+                            "DataSource": "Dts_BrigadaEdificacoes",
+                            "TabOrder": 2,
+                            "OnEnter": "Dbc_SituacaoEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Pavimentos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Pavimentos",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Pavimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 4,
+                            "Top": 3,
+                            "Width": 50,
+                            "Height": 13,
+                            "Caption": "Pavimento"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_PavSubclasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 381,
+                            "Top": 45,
+                            "Width": 49,
+                            "Height": 13,
+                            "Caption": "Subclasse"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_PavSubclasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 445,
+                            "Top": 62,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_TotalVagas",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 568,
+                            "Top": 23,
+                            "Width": 57,
+                            "Height": 13,
+                            "Caption": "Total Vagas"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Blbl_PavSubclasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 472,
+                            "Top": 62,
+                            "Width": 249,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBBeveledLabel",
+                          "nome": "Dblbl_TotalVagasPav",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 629,
+                            "Top": 20,
+                            "Width": 92,
+                            "Height": 20,
+                            "DataField": "TOTALVAGAS",
+                            "DataSource": "Dts_BrigadaPavimentos"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_PavClasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 4,
+                            "Top": 45,
+                            "Width": 31,
+                            "Height": 13,
+                            "Caption": "Classe"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Blbl_PavClasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 89,
+                            "Top": 62,
+                            "Width": 255,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_PavClasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 62,
+                            "Top": 62,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBeveledLabel",
+                          "nome": "Blbl_PavDesc",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 181,
+                            "Top": 20,
+                            "Width": 257,
+                            "Height": 21
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_Primeiro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 62,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Primeiro",
+                            "ShowHint": true,
+                            "OnClick": "btn_EPCPrimClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_Anterior",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 85,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Anterior",
+                            "ShowHint": true,
+                            "OnClick": "Btn_AnteriorClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_Pavimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 108,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_Proximo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 131,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Próximo",
+                            "ShowHint": true,
+                            "OnClick": "Btn_ProximoClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_Ultimo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 154,
+                            "Top": 20,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Último",
+                            "ShowHint": true,
+                            "OnClick": "Btn_UltimoClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Aux6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 104,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnEnter": "Edt_Aux6Enter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPageControl",
+                          "nome": "Pgc_Pavimentos",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 89,
+                            "Width": 736,
+                            "Height": 306,
+                            "ActivePage": "Tbs_PostosTrabalhos",
+                            "Align": "alBottom",
+                            "TabOrder": 0,
+                            "TabStop": false,
+                            "OnChange": "Pgc_PavimentosChange",
+                            "OnEnter": "Pgc_PavimentosEnter",
+                            "OnExit": "Pgc_PavimentosExit"
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TTabSheet",
+                              "nome": "Tbs_PostosTrabalhos",
+                              "herdado": false,
+                              "propriedades": {
+                                "Caption": "Postos de Trabalho"
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PostoTrabalho",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 239,
+                                    "Width": 87,
+                                    "Height": 13,
+                                    "Caption": "Posto de Trabalho"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PostoTrabalhoDesc",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 120,
+                                    "Top": 239,
+                                    "Width": 48,
+                                    "Height": 13,
+                                    "Caption": "Descrição"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_NumeroFuncionarios",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 583,
+                                    "Top": 239,
+                                    "Width": 115,
+                                    "Height": 13,
+                                    "Caption": "Número de Funcionários"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TRHMetalocalizar",
+                                  "nome": "Btn_PostoTrabalho",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 93,
+                                    "Top": 256,
+                                    "Width": 23,
+                                    "Height": 22,
+                                    "Hint": "Localizar (Ctrl + L)",
+                                    "ShowHint": true
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TBeveledLabel",
+                                  "nome": "Blbl_PostoDesc",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 120,
+                                    "Top": 256,
+                                    "Width": 459,
+                                    "Height": 21
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_NumFunc",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 583,
+                                    "Top": 256,
+                                    "Width": 144,
+                                    "Height": 21,
+                                    "DataField": "NUMFUNC",
+                                    "DataSource": "Dts_PavimentosPostos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TEdit",
+                                  "nome": "Edt_Aux5",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 304,
+                                    "Top": 96,
+                                    "Width": 121,
+                                    "Height": 21,
+                                    "TabOrder": 2,
+                                    "OnEnter": "Edt_Aux5Enter"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBMetaGrid",
+                                  "nome": "Dbm_PostoTrabalho",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 0,
+                                    "Width": 728,
+                                    "Height": 235,
+                                    "TabStop": false,
+                                    "Align": "alTop",
+                                    "DataSource": "Dts_PavimentosPostos",
+                                    "TabOrder": 0,
+                                    "OnEnter": "Dbm_PostoTrabalhoEnter",
+                                    "Columns": [
+                                      {
+                                        "FieldName": "POSTOTRABALHO",
+                                        "Title.Caption": "Posto de Trabalho",
+                                        "Width": 110,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "DESCRICAO40",
+                                        "Title.Caption": "Descrição",
+                                        "Width": 462,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "NUMFUNC",
+                                        "Title.Caption": "Número de Funcionários",
+                                        "Width": 120,
+                                        "Visible": true
+                                      }
+                                    ]
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TEdit",
+                                  "nome": "Edt_PostoTrabalho",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 257,
+                                    "Width": 92,
+                                    "Height": 21,
+                                    "MaxLength": 8,
+                                    "TabOrder": 1,
+                                    "OnEnter": "Edt_PostoTrabalhoEnter",
+                                    "OnExit": "Edt_PostoTrabalhoExit",
+                                    "OnKeyPress": "Edt_PostoTrabalhoKeyPress"
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "classe": "TTabSheet",
+                              "nome": "Tbs_Turnos",
+                              "herdado": false,
+                              "propriedades": {
+                                "Caption": "Turnos",
+                                "ImageIndex": 1
+                              },
+                              "filhos": [
+                                {
+                                  "classe": "TRHMetalocalizar",
+                                  "nome": "Btn_PavTurnos",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 63,
+                                    "Top": 211,
+                                    "Width": 23,
+                                    "Height": 22,
+                                    "Hint": "Localizar (Ctrl + L)",
+                                    "ShowHint": true
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PavTurno",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 194,
+                                    "Width": 33,
+                                    "Height": 13,
+                                    "Caption": "Turnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PavTurnoDesc",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 90,
+                                    "Top": 194,
+                                    "Width": 48,
+                                    "Height": 13,
+                                    "Caption": "Descrição"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_HoraInicio",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 392,
+                                    "Top": 194,
+                                    "Width": 53,
+                                    "Height": 13,
+                                    "Caption": "Hora Início"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_HoraFim",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 473,
+                                    "Top": 194,
+                                    "Width": 42,
+                                    "Height": 13,
+                                    "Caption": "Hora Fim"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PopulacaoFixa",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 553,
+                                    "Top": 194,
+                                    "Width": 44,
+                                    "Height": 13,
+                                    "Caption": "Pop. Fixa"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_UsarPosto",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 614,
+                                    "Top": 194,
+                                    "Width": 77,
+                                    "Height": 13,
+                                    "Caption": "Usar Pop. Posto"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PavVagasDisponiveis",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 95,
+                                    "Top": 236,
+                                    "Width": 89,
+                                    "Height": 13,
+                                    "Caption": "Vagas Disponíveis"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PavVagasPreenchidas",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 190,
+                                    "Top": 236,
+                                    "Width": 92,
+                                    "Height": 13,
+                                    "Caption": "Vagas Preenchidas"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TLabel",
+                                  "nome": "Lbl_PavTotalVagas",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 236,
+                                    "Width": 57,
+                                    "Height": 13,
+                                    "Caption": "Total Vagas"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TBeveledLabel",
+                                  "nome": "Blbl_TurnosDesc",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 90,
+                                    "Top": 211,
+                                    "Width": 298,
+                                    "Height": 21
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_HoraIni",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 392,
+                                    "Top": 211,
+                                    "Width": 77,
+                                    "Height": 21,
+                                    "DataField": "HORAINICIO",
+                                    "DataSource": "Dts_PavimentosTurnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_HoraFim",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 473,
+                                    "Top": 211,
+                                    "Width": 76,
+                                    "Height": 21,
+                                    "DataField": "HORAFIM",
+                                    "DataSource": "Dts_PavimentosTurnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_TotalVagas",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 254,
+                                    "Width": 91,
+                                    "Height": 21,
+                                    "DataField": "TOTALVAGAS",
+                                    "DataSource": "Dts_PavimentosTurnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_VasgasDisponiveis",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 95,
+                                    "Top": 254,
+                                    "Width": 91,
+                                    "Height": 21,
+                                    "DataField": "VAGASDISPONIVEIS",
+                                    "DataSource": "Dts_PavimentosTurnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBBeveledLabel",
+                                  "nome": "Dblbl_VagasPreenchidas",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 190,
+                                    "Top": 254,
+                                    "Width": 94,
+                                    "Height": 20,
+                                    "DataField": "VAGASPREENCHIDAS",
+                                    "DataSource": "Dts_PavimentosTurnos"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TEdit",
+                                  "nome": "Edt_Aux3",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 304,
+                                    "Top": 96,
+                                    "Width": 121,
+                                    "Height": 21,
+                                    "TabOrder": 4,
+                                    "OnEnter": "Edt_Aux3Enter"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBMetaGrid",
+                                  "nome": "Dbm_Turnos",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 0,
+                                    "Width": 728,
+                                    "Height": 190,
+                                    "TabStop": false,
+                                    "Align": "alTop",
+                                    "DataSource": "Dts_PavimentosTurnos",
+                                    "TabOrder": 0,
+                                    "OnEnter": "Dbm_TurnosEnter",
+                                    "Columns": [
+                                      {
+                                        "FieldName": "TURNOBRIG",
+                                        "Title.Caption": "Turno",
+                                        "Width": 80,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "DESCRICAO40",
+                                        "Title.Caption": "Descrição",
+                                        "Width": 301,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "HORAINICIO",
+                                        "Title.Caption": "Hora Ini.",
+                                        "Width": 80,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "HORAFIM",
+                                        "Title.Caption": "Hora Fim",
+                                        "Width": 80,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "POPULACAOFIXA",
+                                        "Title.Caption": "Pop. Fixa",
+                                        "Width": 60,
+                                        "Visible": true
+                                      },
+                                      {
+                                        "FieldName": "USATOTALPOSTOTRABALHO",
+                                        "Title.Caption": "Usar Pop. Posto",
+                                        "Width": 88,
+                                        "Visible": true
+                                      }
+                                    ]
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TEdit",
+                                  "nome": "Edt_PavTurnos",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 0,
+                                    "Top": 211,
+                                    "Width": 62,
+                                    "Height": 21,
+                                    "MaxLength": 4,
+                                    "TabOrder": 1,
+                                    "OnEnter": "Edt_PavTurnosEnter",
+                                    "OnExit": "Edt_PavTurnosExit",
+                                    "OnKeyPress": "Edt_PavTurnosKeyPress"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBEdit",
+                                  "nome": "Dbe_PopulacaoFixa",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 553,
+                                    "Top": 211,
+                                    "Width": 57,
+                                    "Height": 21,
+                                    "DataField": "POPULACAOFIXA",
+                                    "DataSource": "Dts_PavimentosTurnos",
+                                    "TabOrder": 2,
+                                    "OnEnter": "Dbe_PopulacaoFixaEnter"
+                                  },
+                                  "filhos": []
+                                },
+                                {
+                                  "classe": "TDBComboMeta",
+                                  "nome": "Dbc_UsarPosto",
+                                  "herdado": false,
+                                  "propriedades": {
+                                    "Left": 614,
+                                    "Top": 211,
+                                    "Width": 114,
+                                    "Height": 21,
+                                    "Style": "csDropDownList",
+                                    "DataField": "USATOTALPOSTOTRABALHO",
+                                    "DataSource": "Dts_PavimentosTurnos",
+                                    "TabOrder": 3,
+                                    "OnChange": "Dbc_UsarPostoChange",
+                                    "OnEnter": "Dbc_UsarPostoEnter"
+                                  },
+                                  "filhos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Pavimento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 4,
+                            "Top": 20,
+                            "Width": 57,
+                            "Height": 21,
+                            "MaxLength": 4,
+                            "TabOrder": 1,
+                            "OnEnter": "Edt_PavimentoEnter",
+                            "OnExit": "Edt_PavimentoExit",
+                            "OnKeyPress": "Edt_PavimentoKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_PavClasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 4,
+                            "Top": 62,
+                            "Width": 57,
+                            "Height": 21,
+                            "DataField": "CLASSOCUP",
+                            "DataSource": "Dts_BrigadaPavimentos",
+                            "TabOrder": 2,
+                            "OnEnter": "Dbe_PavClasseEnter",
+                            "OnExit": "Dbe_PavClasseExit",
+                            "OnKeyPress": "Dbe_PavClasseKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_PavSubclasse",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 381,
+                            "Top": 62,
+                            "Width": 63,
+                            "Height": 21,
+                            "DataField": "SUBCLASSOCUP",
+                            "DataSource": "Dts_BrigadaPavimentos",
+                            "MaxLength": 8,
+                            "TabOrder": 3,
+                            "OnEnter": "Dbe_PavSubclasseEnter",
+                            "OnExit": "Dbe_PavSubclasseExit",
+                            "OnKeyPress": "Dbe_PavSubclasseKeyPress"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_DimensBrig",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Dimensionamento da Brigada",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Classe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 383,
+                    "Width": 31,
+                    "Height": 13,
+                    "Caption": "Classe"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Subclasse",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 243,
+                    "Top": 383,
+                    "Width": 49,
+                    "Height": 13,
+                    "Caption": "Subclasse"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_AteDez",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 562,
+                    "Top": 383,
+                    "Width": 31,
+                    "Height": 13,
+                    "Caption": "Até 10"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_AcimaDez",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 655,
+                    "Top": 383,
+                    "Width": 59,
+                    "Height": 13,
+                    "Caption": "Acima de 10"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Classe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 400,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Subclasse",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 304,
+                    "Top": 400,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Blbl_Classe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 400,
+                    "Width": 154,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBeveledLabel",
+                  "nome": "Blbl_SubclasseDesc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 331,
+                    "Top": 400,
+                    "Width": 227,
+                    "Height": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 312,
+                    "Top": 204,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Classe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 400,
+                    "Width": 57,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_ClasseExit",
+                    "OnKeyPress": "Edt_ClasseKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_SubclasseOcup",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 243,
+                    "Top": 400,
+                    "Width": 58,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_SubclasseOcupEnter",
+                    "OnExit": "Edt_SubclasseOcupExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_AteDez",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 562,
+                    "Top": 400,
+                    "Width": 89,
+                    "Height": 21,
+                    "DataField": "ATEDEZFUNC",
+                    "DataSource": "Dts_DimensBrigada",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_AcimaDez",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 655,
+                    "Top": 400,
+                    "Width": 89,
+                    "Height": 21,
+                    "DataField": "ACIMADEZFUNC",
+                    "DataSource": "Dts_DimensBrigada",
+                    "TabOrder": 3,
+                    "OnEnter": "Dbe_AcimaDezEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbm_DimensBrigada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 744,
+                    "Height": 375,
+                    "TabStop": false,
+                    "Align": "alTop",
+                    "DataSource": "Dts_DimensBrigada",
+                    "TabOrder": 5,
+                    "OnEnter": "Dbm_DimensBrigadaEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "CLASSOCUP",
+                        "Title.Caption": "Classe",
+                        "Width": 230,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "SUBCLASSOCUP",
+                        "Title.Caption": "Subclasse",
+                        "Width": 85,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO100",
+                        "Title.Caption": "Descrição",
+                        "Width": 232,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ATEDEZFUNC",
+                        "Title.Caption": "Até 10 (%)",
+                        "Width": 79,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "ACIMADEZFUNC",
+                        "Title.Caption": "Acima de 10 (%)",
+                        "Width": 79,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 720,
+        "Top": 6
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Brigada",
+      "herdado": false,
+      "propriedades": {
+        "Left": 720,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BrigadaTurnos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 688,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BrigadaEdificacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 656,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BrigadaPavimentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 624,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PavimentosTurnos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 592,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PavimentosPostos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 560,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DimensBrigada",
+      "herdado": false,
+      "propriedades": {
+        "Left": 688,
+        "Top": 6
+      },
+      "filhos": []
+    }
+  ]
+}

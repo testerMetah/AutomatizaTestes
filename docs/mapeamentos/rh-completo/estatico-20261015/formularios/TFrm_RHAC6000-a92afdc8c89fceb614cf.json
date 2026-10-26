@@ -1,0 +1,2208 @@
+{
+  "classe": "TFrm_RHAC6000",
+  "nome": "Frm_RHAC6000",
+  "herdado": true,
+  "propriedades": {
+    "Left": 397,
+    "Top": 235,
+    "Action": "Act_Padrao",
+    "Caption": "Configurações de Terminais CM3",
+    "ClientHeight": 462,
+    "ClientWidth": 776,
+    "OnClick": "Act_PadraoExecute"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 776,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 12,
+            "Width": 66,
+            "Height": 13,
+            "Caption": "Configuração:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Configuracao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 142,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ConfigTerminalCM3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 83,
+            "Top": 8,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "Edt_ConfigTerminalCM3Change",
+            "OnEnter": "Edt_ConfigTerminalCM3Enter",
+            "OnExit": "Edt_ConfigTerminalCM3Exit",
+            "OnKeyPress": "Edt_ConfigTerminalCM3KeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 776,
+        "Height": 422,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 768,
+            "Height": 28,
+            "Align": "alTop",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 7,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 66,
+                "Top": 4,
+                "Width": 296,
+                "Height": 21,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_ConfigTerminalCM3",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_DetalhesConfig",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 30,
+            "Width": 768,
+            "Height": 386,
+            "ActivePage": "Tab_TiposLeituras",
+            "Align": "alClient",
+            "TabOrder": 1,
+            "OnEnter": "Pgc_DetalhesConfigEnter",
+            "OnExit": "Pgc_DetalhesConfigExit"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Geral",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Geral"
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Gbx_Biometria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 32,
+                    "Width": 220,
+                    "Height": 72,
+                    "Caption": "Biometria ",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 19,
+                        "Width": 94,
+                        "Height": 13,
+                        "Caption": "Nível de segurança"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 25,
+                        "Top": 48,
+                        "Width": 76,
+                        "Height": 13,
+                        "Caption": "Nº de tentativas"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "ComboBox2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 110,
+                        "Top": 16,
+                        "Width": 50,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "NIVEL_SEGURANCA_BIO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "01",
+                          "02",
+                          "03",
+                          "04",
+                          "05",
+                          "06",
+                          "07",
+                          "08",
+                          "09"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "ComboBox3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 110,
+                        "Top": 44,
+                        "Width": 50,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "NRO_TENTATIVAS_BIO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "01",
+                          "02",
+                          "03",
+                          "04",
+                          "05",
+                          "06",
+                          "07",
+                          "08",
+                          "09"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox11",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 499,
+                    "Top": 8,
+                    "Width": 248,
+                    "Height": 87,
+                    "Caption": "Horário de verão",
+                    "TabOrder": 8
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 21,
+                        "Width": 22,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label44",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 131,
+                        "Top": 25,
+                        "Width": 6,
+                        "Height": 13,
+                        "Caption": "à"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label45",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 25,
+                        "Width": 14,
+                        "Height": 13,
+                        "Caption": "De"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mdt_Fim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 217,
+                        "Top": 21,
+                        "Width": 21,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 31,
+                        "Top": 21,
+                        "Width": 70,
+                        "Height": 21,
+                        "DataField": "HORARIO_VERAO_INICIO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnExit": "Msk_InicioExit",
+                        "OnKeyPress": "Msk_InicioKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Msk_Fim",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 147,
+                        "Top": 21,
+                        "Width": 70,
+                        "Height": 21,
+                        "DataField": "HORARIO_VERAO_FIM",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 10,
+                        "TabOrder": 1,
+                        "OnExit": "Msk_InicioExit",
+                        "OnKeyPress": "Msk_InicioKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "btnSegerirHorarioVerao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 73,
+                        "Top": 50,
+                        "Width": 105,
+                        "Height": 25,
+                        "Caption": "Sugerir o próximo",
+                        "TabOrder": 2,
+                        "OnClick": "btnSegerirHorarioVeraoClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 244,
+                    "Top": 8,
+                    "Width": 241,
+                    "Height": 169,
+                    "Caption": "Lista ",
+                    "TabOrder": 6
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TGroupBox",
+                      "nome": "GroupBox9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 17,
+                        "Width": 208,
+                        "Height": 117,
+                        "Caption": "Está na Lista",
+                        "TabOrder": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBRadioGroup",
+                          "nome": "DBRadioGroup3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 16,
+                            "Top": 19,
+                            "Width": 176,
+                            "Height": 84,
+                            "Caption": "Consulta Digital ",
+                            "DataField": "LISTA_ESTA_NA_LISTA_CONSULT_DIG",
+                            "DataSource": "Dts_RHConfigTerminCM3Par",
+                            "Items.Strings": [
+                              "Não",
+                              "Sempre",
+                              "Se houver",
+                              "Se houver, senão senha"
+                            ],
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DBCheckBox4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 24,
+                        "Top": 15,
+                        "Width": 183,
+                        "Height": 17,
+                        "Caption": "Bloquear os que estiverem na lista",
+                        "DataField": "LISTA_ESTA_NA_LISTA_BLOQUEIO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DBCheckBox5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 143,
+                        "Width": 208,
+                        "Height": 17,
+                        "Caption": "Bloquear os que não estiverem na lista",
+                        "DataField": "LISTA_NAO_ESTA_NA_LISTA_BLOQUEI",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Gbx_TipoPersonalizacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 244,
+                    "Top": 186,
+                    "Width": 241,
+                    "Height": 160,
+                    "TabOrder": 7
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_NroDigitos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 81,
+                        "Top": 109,
+                        "Width": 62,
+                        "Height": 13,
+                        "Caption": "Nº de dígitos"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_CodPersonalizacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 21,
+                        "Top": 135,
+                        "Width": 122,
+                        "Height": 13,
+                        "Caption": "Código de personalização"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "Rgb_TipoPersonalizacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 16,
+                        "Width": 208,
+                        "Height": 81,
+                        "Caption": "Tipo de personalização ",
+                        "DataField": "TIPO_PERSONALIZACAO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Não tem personalização",
+                          "Personalização 1",
+                          "Personalização 2"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_NroDigitos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 152,
+                        "Top": 104,
+                        "Width": 26,
+                        "Height": 21,
+                        "DataField": "NRO_DIGITOS",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 2,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_CodPersonalizacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 152,
+                        "Top": 130,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "COD_PERSONALIZACAO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 4,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "DBRadioGroup1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 186,
+                    "Width": 220,
+                    "Height": 160,
+                    "Caption": "Sentido do Sensor ",
+                    "DataField": "SENTIDO_DO_SENSOR",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Sensor à Esquerda",
+                      "Sensor à Direita",
+                      "Independente",
+                      "Sensor para Baixo",
+                      "Sensor para Cima"
+                    ],
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "DBRadioGroup2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 113,
+                    "Width": 220,
+                    "Height": 45,
+                    "Caption": "Sentido do Acesso do Terminal ",
+                    "Columns": 2,
+                    "DataField": "SENTIDO_DO_ACESSO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Entrada",
+                      "Saída"
+                    ],
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 165,
+                    "Width": 195,
+                    "Height": 17,
+                    "Caption": "Habilita leitura com porta aberta",
+                    "DataField": "HABILITA_LEITURA_PORTA_ABERTA",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 8,
+                    "Width": 195,
+                    "Height": 17,
+                    "Caption": "Acesso via teclado",
+                    "DataField": "UTILIZA_TECLADO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_Biometria",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 16,
+                    "Top": 30,
+                    "Width": 104,
+                    "Height": 17,
+                    "Caption": "Acesso via digital",
+                    "DataField": "UTILIZA_UM_PARA_N",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxGeral",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 580,
+                    "Top": -200,
+                    "Width": 37,
+                    "Height": 21,
+                    "TabOrder": 9,
+                    "OnEnter": "Edt_AuxGeralEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Entrada",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Entrada",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 0,
+                    "Width": 360,
+                    "Height": 200,
+                    "Caption": "Sensor de Acesso ",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 155,
+                        "Width": 38,
+                        "Height": 13,
+                        "Caption": "Timeout"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 156,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Debounce"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label21",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 242,
+                        "Top": 159,
+                        "Width": 13,
+                        "Height": 13,
+                        "Caption": "ms"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edit1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 61,
+                        "Top": 153,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "ENTRADA_SENSOR_ACESSO_TIMEOUT",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 3,
+                        "OnKeyPress": "Edit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edit5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 197,
+                        "Top": 153,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "ENTRADA_SENSOR_ACESSO_DEBOUCE",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 4,
+                        "OnKeyPress": "Edit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 109,
+                        "Width": 338,
+                        "Height": 40,
+                        "Caption": "Nível do sinal em repouso ",
+                        "Columns": 2,
+                        "DataField": "ENTRADA_SENSOR_ACESSO_S_REPOUSO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Aberto",
+                          "Curto"
+                        ],
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBCheckBox",
+                      "nome": "DBCheckBox8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 178,
+                        "Width": 195,
+                        "Height": 17,
+                        "Caption": "Sinal de Intrusão",
+                        "DataField": "ENTRADA_SENSOR_ACESSO_S_INTRUSA",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 20,
+                        "Width": 338,
+                        "Height": 41,
+                        "Caption": "Nº da Entrada ",
+                        "Columns": 3,
+                        "DataField": "ENTRADA_SENSOR_ACESSO_NRO_ENTR",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Desativado",
+                          "Entrada 1",
+                          "Entrada 2"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 64,
+                        "Width": 338,
+                        "Height": 41,
+                        "Caption": "Tipo de sensor ",
+                        "Columns": 2,
+                        "DataField": "ENTRADA_SENSOR_ACESSO_TIPO_SENS",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Sensor de porta",
+                          "Retorno de acesso concluído"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 200,
+                    "Width": 360,
+                    "Height": 155,
+                    "Caption": "Acesso não concluído ",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label28",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 123,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Debounce"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label29",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 109,
+                        "Top": 123,
+                        "Width": 13,
+                        "Height": 13,
+                        "Caption": "ms"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edit3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 65,
+                        "Top": 119,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "ENTRADA_ACESSO_NAO_DEBOUCE",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 2,
+                        "OnKeyPress": "Edit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 72,
+                        "Width": 338,
+                        "Height": 39,
+                        "Caption": "Nível do sinal em repouso ",
+                        "Columns": 2,
+                        "DataField": "ENTRADA_ACESSO_NAO_SINA_REPOUSO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Aberto",
+                          "Curto"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 20,
+                        "Width": 338,
+                        "Height": 41,
+                        "Caption": "Nº da Entrada ",
+                        "Columns": 3,
+                        "DataField": "ENTRADA_ACESSO_NAO_NRO_ENTRADA",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Desativado",
+                          "Entrada 1",
+                          "Entrada 2"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 380,
+                    "Top": 0,
+                    "Width": 360,
+                    "Height": 200,
+                    "Caption": "Solicitação de acionamento ",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label33",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 179,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Debounce"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label34",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 112,
+                        "Top": 179,
+                        "Width": 13,
+                        "Height": 13,
+                        "Caption": "ms"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edit4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 66,
+                        "Top": 175,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "ENTRADA_SOLIC_ACIONAMENTO_DEBOU",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 3,
+                        "OnKeyPress": "Edit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 135,
+                        "Width": 338,
+                        "Height": 36,
+                        "Caption": "Nível do sinal em repouso ",
+                        "Columns": 2,
+                        "DataField": "ENTRADA_SOLIC_ACIONAMENTO_REPOU",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Aberto",
+                          "Curto"
+                        ],
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 18,
+                        "Width": 338,
+                        "Height": 41,
+                        "Caption": "Nº da Entrada ",
+                        "Columns": 3,
+                        "DataField": "ENTRADA_SOLIC_ACIONAMENTO_N_ENT",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Desativado",
+                          "Entrada 1",
+                          "Entrada 2"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 60,
+                        "Width": 338,
+                        "Height": 72,
+                        "Caption": "Tipo da entrada",
+                        "DataField": "ENTRADA_SOLIC_ACIONAMENTO_TIPO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Botoeira",
+                          "Outro sinal com acionamento",
+                          "Outro terminal"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 380,
+                    "Top": 202,
+                    "Width": 360,
+                    "Height": 155,
+                    "Caption": "Burla ",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label26",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 123,
+                        "Width": 50,
+                        "Height": 13,
+                        "Caption": "Debounce"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label27",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 108,
+                        "Top": 123,
+                        "Width": 13,
+                        "Height": 13,
+                        "Caption": "ms"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edit2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 65,
+                        "Top": 119,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "ENTRADA_BURLA_DEBOUCE",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "TabOrder": 2,
+                        "OnKeyPress": "Edit1KeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 72,
+                        "Width": 338,
+                        "Height": 39,
+                        "Caption": "Nível do sinal em repouso ",
+                        "Columns": 2,
+                        "DataField": "ENTRADA_BURLA_REPOUSO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Aberto",
+                          "Curto"
+                        ],
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "DBRadioGroup11",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 9,
+                        "Top": 20,
+                        "Width": 338,
+                        "Height": 41,
+                        "Caption": "Nº da Entrada ",
+                        "Columns": 3,
+                        "DataField": "ENTRADA_BURLA_NRO_ENTRADA",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Desativado",
+                          "Entrada 1",
+                          "Entrada 2"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxEntrada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 724,
+                    "Top": -200,
+                    "Width": 37,
+                    "Height": 21,
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_AuxEntradaEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Saida",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Saída",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label39",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 117,
+                    "Width": 77,
+                    "Height": 13,
+                    "Caption": "Tempo do Pulso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label40",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 140,
+                    "Top": 117,
+                    "Width": 11,
+                    "Height": 13,
+                    "Caption": "ds"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edit6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 94,
+                    "Top": 113,
+                    "Width": 41,
+                    "Height": 21,
+                    "DataField": "SAIDA_ACIONA_PULSO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 2,
+                    "OnKeyPress": "Edit1KeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 167,
+                    "Width": 195,
+                    "Height": 17,
+                    "Caption": "Bloqueio em caso de revista",
+                    "DataField": "SAIDA_ACIONA_REVISTA",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 143,
+                    "Width": 195,
+                    "Height": 17,
+                    "Caption": "Permite acionamento contínuo",
+                    "DataField": "SAIDA_ACIONA_CONTINUO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "DBRadioGroup4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 63,
+                    "Width": 338,
+                    "Height": 40,
+                    "Caption": "Nível do sinal em repouso ",
+                    "Columns": 2,
+                    "DataField": "SAIDA_ACIONA_REPOUSO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Aberto",
+                      "Curto"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "DBRadioGroup5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 8,
+                    "Width": 338,
+                    "Height": 44,
+                    "Caption": "Nº de saída ",
+                    "Columns": 3,
+                    "DataField": "SAIDA_ACIONA_NRO_SAIDA",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Desativado",
+                      "Saída 1",
+                      "Saída 2"
+                    ],
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 192,
+                    "Width": 195,
+                    "Height": 17,
+                    "Caption": "Aciona cofre",
+                    "DataField": "UTILIZA_COFRE",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxSaida",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 580,
+                    "Top": -200,
+                    "Width": 37,
+                    "Height": 21,
+                    "TabOrder": 6,
+                    "OnEnter": "Edt_AuxSaidaEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_TiposLeituras",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tipos de Leitura",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Vetor1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 28,
+                    "Width": 34,
+                    "Height": 13,
+                    "Caption": "Vetor 1"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Verificador1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 284,
+                    "Top": 28,
+                    "Width": 59,
+                    "Height": 13,
+                    "Caption": "Verificador 1"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Vetor2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 68,
+                    "Width": 34,
+                    "Height": 13,
+                    "Caption": "Vetor 2"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Verificador2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 284,
+                    "Top": 68,
+                    "Width": 59,
+                    "Height": 13,
+                    "Caption": "Verificador 2"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_2de5Intercalado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 3,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "2 de 5 intercalado",
+                    "DataField": "2_DE_5_INTERCALADO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Vetor1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 44,
+                    "Width": 145,
+                    "Height": 21,
+                    "DataField": "VETOR1",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 10,
+                    "TabOrder": 3,
+                    "OnKeyPress": "Edt_Vetor1KeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_2de5Intercalado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 3,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_2_DE_5_INTERCALADO",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Verificador1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 284,
+                    "Top": 44,
+                    "Width": 33,
+                    "Height": 21,
+                    "DataField": "VERIFICADOR1",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 2,
+                    "TabOrder": 4,
+                    "OnKeyPress": "Edt_Vetor1KeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Vetor2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 84,
+                    "Width": 145,
+                    "Height": 21,
+                    "DataField": "VETOR2",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 14,
+                    "TabOrder": 5,
+                    "OnKeyPress": "Edt_Vetor1KeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Verificador2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 284,
+                    "Top": 84,
+                    "Width": 33,
+                    "Height": 21,
+                    "DataField": "VERIFICADOR2",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 2,
+                    "TabOrder": 6,
+                    "OnKeyPress": "Edt_Vetor1KeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_2de5Dimep",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 106,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "2 de 5 Especial",
+                    "DataField": "2_DE_5_DIMEP",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 7
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_2de5Dimep",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 106,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_2_DE_5_DIMEP",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 8,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_3de9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 128,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "3 de 9",
+                    "DataField": "3_DE_9",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 9
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_3de9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 128,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_3_DE_9",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 10,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_MagneticoDimep",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 150,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "Magnético",
+                    "DataField": "MAGNETICO_DIMEP",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 11
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_MagneticoDimep",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 150,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_MAGNETICO_DIMEP",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 12,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_Aba",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 172,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "ABA",
+                    "DataField": "ABA",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Aba",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 172,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_ABA",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 14,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_Wiegand34Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 216,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "Wiegand 34 bits",
+                    "DataField": "WIEGAND_34_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 17
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Wiegand34Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 216,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_WIEGAND_34_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 18,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_Wiegand35Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 238,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "Wiegand 35 bits",
+                    "DataField": "WIEGAND_35_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 19
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Wiegand35Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 238,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_WIEGAND_35_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 20,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Rgb_CriptografiaDigitos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 25,
+                    "Width": 112,
+                    "Height": 80,
+                    "Caption": "Criptografia",
+                    "DataField": "CRIPTOGRAFIA_DIGITOS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Não tem",
+                      "8 dígitos",
+                      "10 dígitos",
+                      "12 dígitos"
+                    ],
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Cbx_Wiegand26Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 194,
+                    "Width": 113,
+                    "Height": 17,
+                    "Caption": "Wiegand 26 bits",
+                    "DataField": "WIEGAND_26_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 15
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Wiegand26Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 128,
+                    "Top": 194,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_WIEGAND_26_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 16,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Wiegand37Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 283,
+                    "Top": 272,
+                    "Width": 185,
+                    "Height": 21,
+                    "DataField": "FORMATO_WIEGAND_37_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "MaxLength": 20,
+                    "TabOrder": 22,
+                    "OnEnter": "Edt_2de5IntercaladoEnter",
+                    "OnExit": "Edt_2de5IntercaladoExit",
+                    "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Rgx_Wiegand37Bits",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 262,
+                    "Width": 272,
+                    "Height": 36,
+                    "Caption": "Wiegand 37 bits ",
+                    "Columns": 3,
+                    "DataField": "WIEGAND_37_BITS",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "Items.Strings": [
+                      "Desabilitado",
+                      "H10302",
+                      "H10304"
+                    ],
+                    "TabOrder": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DBCheckBox9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 300,
+                    "Width": 193,
+                    "Height": 17,
+                    "Caption": "Wiegand Paridade",
+                    "DataField": "WIEGAND_PARIDADE",
+                    "DataSource": "Dts_RHConfigTerminCM3Par",
+                    "TabOrder": 23
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "Gbx_SmartCard",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 399,
+                    "Top": 4,
+                    "Width": 322,
+                    "Height": 221,
+                    "Caption": "SmartCard ",
+                    "TabOrder": 24
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_SmartCardSetor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 62,
+                        "Top": 93,
+                        "Width": 25,
+                        "Height": 13,
+                        "Caption": "Setor"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_SmartCardBloco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 60,
+                        "Top": 116,
+                        "Width": 27,
+                        "Height": 13,
+                        "Caption": "Bloco"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_SmartCardOffSet",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 54,
+                        "Top": 139,
+                        "Width": 33,
+                        "Height": 13,
+                        "Caption": "Off Set"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_SmartCardChave",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 56,
+                        "Top": 162,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "Chave"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_SmartCardQdtDigitos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 32,
+                        "Top": 185,
+                        "Width": 55,
+                        "Height": 13,
+                        "Caption": "Qdt. Digitos"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBRadioGroup",
+                      "nome": "Rgx_SmartCardTipo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 14,
+                        "Width": 117,
+                        "Height": 72,
+                        "Caption": "Tipo ",
+                        "DataField": "SMART_CARD",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "Items.Strings": [
+                          "Desabilitado",
+                          "Lê ID",
+                          "Lê Matrícula",
+                          "Lê Hexadecimal"
+                        ],
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardSetor",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 91,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "SMART_CARD_SETOR",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 2,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardBloco",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 114,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "SMART_CARD_BLOCO",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 1,
+                        "TabOrder": 3,
+                        "OnExit": "Edt_SmartCardBlocoExit",
+                        "OnKeyPress": "Edt_SmartCardBlocoKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardOffSet",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 137,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "SMART_CARD_OFFSET",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 2,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardChave",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 160,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "SMART_CARD_CHAVE",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 12,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardQdtDigitos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 95,
+                        "Top": 183,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "SMART_CARD_QTDDIGITOS",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 2,
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Edt_SmartCardFormato",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 128,
+                        "Top": 19,
+                        "Width": 185,
+                        "Height": 21,
+                        "DataField": "FORMATO_SMART_CARD",
+                        "DataSource": "Dts_RHConfigTerminCM3Par",
+                        "MaxLength": 20,
+                        "TabOrder": 1,
+                        "OnEnter": "Edt_2de5IntercaladoEnter",
+                        "OnExit": "Edt_2de5IntercaladoExit",
+                        "OnKeyPress": "Edt_2de5IntercaladoKeyPress"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Hint",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 329,
+                    "Top": 113,
+                    "Width": 83,
+                    "Height": 78,
+                    "TabOrder": 25,
+                    "Visible": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": -1,
+                        "Width": 65,
+                        "Height": 13,
+                        "Caption": "I - Informação"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 12,
+                        "Width": 59,
+                        "Height": 13,
+                        "Caption": "O - Opcional"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 25,
+                        "Width": 79,
+                        "Height": 13,
+                        "Caption": "X - Ignorar dígito"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label8",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 39,
+                        "Width": 67,
+                        "Height": 13,
+                        "Caption": "C - Checagem"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label9",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 52,
+                        "Width": 60,
+                        "Height": 13,
+                        "Caption": "V - Nº da via"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label10",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 64,
+                        "Width": 52,
+                        "Height": 13,
+                        "Caption": "0 a 9 - Fixo"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxTipoLeitora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 580,
+                    "Top": -200,
+                    "Width": 37,
+                    "Height": 21,
+                    "TabOrder": 26,
+                    "OnEnter": "Edt_AuxTipoLeitoraEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 228,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ConfigTerminalCM3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 260,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHConfigTerminCM3Par",
+      "herdado": false,
+      "propriedades": {
+        "Left": 296,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionList1Update",
+        "Left": 392,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Padrao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Configurações REP DIMEP",
+            "OnExecute": "Act_PadraoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Ctrl_L",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Ctrl_L",
+            "ShortCut": 16460,
+            "OnExecute": "Act_Ctrl_LExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Ctrl_D",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Ctrl_D",
+            "ShortCut": 16452,
+            "OnExecute": "Act_Ctrl_DExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

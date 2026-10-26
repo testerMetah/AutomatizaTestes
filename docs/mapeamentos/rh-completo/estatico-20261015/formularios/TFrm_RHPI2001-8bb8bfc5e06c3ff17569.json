@@ -1,0 +1,250 @@
+{
+  "classe": "TFrm_RHPI2001",
+  "nome": "Frm_RHPI2001",
+  "herdado": false,
+  "propriedades": {
+    "Left": 192,
+    "Top": 116,
+    "BorderStyle": "bsSingle",
+    "Caption": "Impressão de Etiquetas",
+    "ClientHeight": 258,
+    "ClientWidth": 457,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 457,
+        "Height": 258,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 172,
+            "Width": 137,
+            "Height": 77,
+            "Caption": "Posicionar Impressão",
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 24,
+                "Width": 29,
+                "Height": 13,
+                "Caption": "Linha:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 13,
+                "Top": 52,
+                "Width": 36,
+                "Height": 13,
+                "Caption": "Coluna:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Linha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 20,
+                "Width": 25,
+                "Height": 21,
+                "BorderStyle": "bsNone",
+                "TabOrder": 0,
+                "OnExit": "Edt_LinhaExit",
+                "OnKeyPress": "Edt_LinhaKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Coluna",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 48,
+                "Width": 25,
+                "Height": 21,
+                "BorderStyle": "bsNone",
+                "TabOrder": 1,
+                "OnExit": "Edt_ColunaExit",
+                "OnKeyPress": "Edt_ColunaKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TFrm_BotaoColor",
+          "nome": "Frm_Visualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 218,
+            "Width": 89,
+            "Height": 28,
+            "TabOrder": 1,
+            "OnClick": "Frm_VisualizarClick",
+            "Caption": "&Visualizar",
+            "AllowAllUp": false,
+            "GroupIndex": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrm_BotaoColor",
+          "nome": "Frm_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 356,
+            "Top": 218,
+            "Width": 89,
+            "Height": 28,
+            "TabOrder": 3,
+            "OnClick": "Btn_CancelarClick",
+            "Caption": "&Cancelar",
+            "AllowAllUp": false,
+            "GroupIndex": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Visitas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 4,
+            "Width": 449,
+            "Height": 161,
+            "Align": "alCustom",
+            "DataSource": "Dts_Visitas",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "MARCAR",
+                "Width": 20,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORAENTRADA",
+                "Title.Caption": "Entrada",
+                "Width": 130,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Title.Caption": "Visitante",
+                "Width": 264,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrm_BotaoColor",
+          "nome": "Frm_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 260,
+            "Top": 218,
+            "Width": 89,
+            "Height": 28,
+            "TabOrder": 2,
+            "OnClick": "Frm_ImprimirClick",
+            "Caption": "&Imprimir",
+            "AllowAllUp": false,
+            "GroupIndex": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Visitas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 252,
+        "Top": 104
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VisitasMARCAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "#252",
+            "FieldName": "MARCAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_VisitasDATAHORAENTRADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORAENTRADA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_VisitasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_VisitasPESSOAACESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOAACESSO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Visitas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 104
+      },
+      "filhos": []
+    }
+  ]
+}

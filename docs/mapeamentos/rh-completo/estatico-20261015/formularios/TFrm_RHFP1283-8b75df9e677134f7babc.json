@@ -1,0 +1,780 @@
+{
+  "classe": "TFrm_RHFP1283",
+  "nome": "Frm_RHFP1283",
+  "herdado": false,
+  "propriedades": {
+    "Left": 903,
+    "Top": 298,
+    "BorderStyle": "bsSingle",
+    "Caption": "Rateio de Projetos",
+    "ClientHeight": 359,
+    "ClientWidth": 690,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 690,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Autonomo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 12,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Autônomo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 12,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Nome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 241,
+            "Top": 13,
+            "Width": 428,
+            "Height": 13,
+            "Caption": "Lbl_Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 63,
+            "Top": 8,
+            "Width": 58,
+            "Height": 21,
+            "Enabled": false,
+            "MaxLength": 8,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 171,
+            "Top": 8,
+            "Width": 62,
+            "Height": 21,
+            "Enabled": false,
+            "MaxLength": 8,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Validade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 185,
+        "Height": 277,
+        "Align": "alLeft",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ValidadeInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 12,
+            "Width": 80,
+            "Height": 13,
+            "Caption": "Validade - Início:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ValidadeTermino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 37,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Término:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_TerminoValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 34,
+            "Width": 49,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnEnter": "Msk_TerminoValidadeEnter",
+            "OnExit": "Msk_TerminoValidadeExit",
+            "OnKeyPress": "Msk_TerminoValidadeKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Validade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 61,
+            "Width": 177,
+            "Height": 210,
+            "TabStop": false,
+            "Align": "alBottom",
+            "DataSource": "Dts_Validade",
+            "TabOrder": 3,
+            "Columns": [
+              {
+                "FieldName": "INICIOVALIDADE",
+                "Title.Caption": "Início",
+                "Width": 72,
+                "Visible": true
+              },
+              {
+                "FieldName": "TERMINOVALIDADE",
+                "Title.Caption": "Término",
+                "Width": 72,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ValidadeAux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 14,
+            "Width": 10,
+            "Height": 11,
+            "TabOrder": 2,
+            "OnEnter": "Edt_ValidadeAuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_InicioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 9,
+            "Width": 49,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnEnter": "Msk_InicioValidadeEnter",
+            "OnExit": "Msk_InicioValidadeExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_RateioProjetos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 185,
+        "Top": 41,
+        "Width": 505,
+        "Height": 277,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2,
+        "OnEnter": "Pnl_RateioProjetosEnter",
+        "OnExit": "Pnl_RateioProjetosExit"
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Rateio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 220,
+            "Width": 492,
+            "Height": 48
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 241,
+            "Width": 303,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbt_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 109,
+            "Top": 245,
+            "Width": 285,
+            "Height": 13,
+            "DataField": "DESCRICAOPROJETO",
+            "DataSource": "Dts_RateioProjetos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Projeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 79,
+            "Top": 241,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "Btn_ProjetoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Projeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 225,
+            "Width": 33,
+            "Height": 13,
+            "Caption": "Projeto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 225,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Percentual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 411,
+            "Top": 225,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Percentual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_SalvarRateio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 56,
+            "Top": 245,
+            "Width": 17,
+            "Height": 12,
+            "TabOrder": 5,
+            "OnEnter": "Edt_SalvarRateioEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Projeto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 241,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 2,
+            "OnEnter": "Edt_ProjetoEnter",
+            "OnExit": "Edt_ProjetoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ProjetoAux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 122,
+            "Width": 20,
+            "Height": 21,
+            "TabOrder": 3,
+            "OnEnter": "Edt_ProjetoAuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_RateioAux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 36,
+            "Top": 19,
+            "Width": 16,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnEnter": "Edt_RateioAuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_RateioProjetos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 497,
+            "Height": 214,
+            "Align": "alTop",
+            "DataSource": "Dts_RateioProjetos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "PROJETO",
+                "Width": 84,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAOPROJETO",
+                "Title.Caption": "Descrição",
+                "Width": 304,
+                "Visible": true
+              },
+              {
+                "FieldName": "PERCENTUALRATEIO",
+                "Title.Caption": "Percentual",
+                "Width": 71,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Percentual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 411,
+            "Top": 241,
+            "Width": 71,
+            "Height": 21,
+            "DataField": "PERCENTUALRATEIO",
+            "DataSource": "Dts_RateioProjetos",
+            "MaxLength": 16,
+            "TabOrder": 4,
+            "OnEnter": "Dbe_PercentualEnter"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 318,
+        "Width": 690,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Salvar",
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 180,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Excluir",
+            "OnClick": "Btn_ExcluirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_OpcoesExcluir",
+      "herdado": false,
+      "propriedades": {
+        "Left": 205,
+        "Top": 192
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ExcluirProjeto",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Excluir Projeto",
+            "OnClick": "Mnm_ExcluirProjetoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ExcluirRateioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "E&xcluir Rateio desta Validade",
+            "OnClick": "Mnm_ExcluirRateioValidadeClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 238,
+        "Top": 192
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Salvar",
+            "ShortCut": 16467,
+            "OnExecute": "Act_SalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Excluir",
+            "ShortCut": 16430,
+            "OnExecute": "Act_ExcluirExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Validade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 18,
+        "Top": 274
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ValidadeUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ValidadeCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ValidadeINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início de Validade",
+            "FieldName": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ValidadeTERMINOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término de Validade",
+            "FieldName": "TERMINOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Validade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 50,
+        "Top": 275
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_RateioProjetos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 238,
+        "Top": 223
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RateioProjetosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RateioProjetosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RateioProjetosINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início de Validade",
+            "FieldName": "INICIOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RateioProjetosTERMINOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término de Validade",
+            "FieldName": "TERMINOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RateioProjetosPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto",
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_RateioProjetosPERCENTUALRATEIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Percentual de Rateio",
+            "FieldName": "PERCENTUALRATEIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RateioProjetosDESCRICAOPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição do Projeto",
+            "FieldName": "DESCRICAOPROJETO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RateioProjetos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 222
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Projetos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 205,
+        "Top": 223
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProjetosPROJETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto",
+            "FieldName": "PROJETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProjetosPROJETOESTRUTURADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Projeto Estruturado",
+            "FieldName": "PROJETOESTRUTURADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProjetosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProjetosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "classe": "TFrm_RH0403RHItemAvalRevisao",
+  "nome": "Frm_RH0403RHItemAvalRevisao",
+  "herdado": false,
+  "propriedades": {
+    "Left": 257,
+    "Top": 181,
+    "Width": 453,
+    "Height": 249,
+    "Caption": "Revisão do Resultado do Item de Avaliação",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 445,
+        "Height": 181,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label13",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 19,
+            "Width": 172,
+            "Height": 13,
+            "Caption": "A partir do Período de Competência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 270,
+            "Top": 19,
+            "Width": 160,
+            "Height": 13,
+            "Caption": "Lbl_Periodo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 242,
+            "Top": 15,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ItemDesempenhoNivel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 140,
+            "Width": 104,
+            "Height": 26,
+            "Caption": "Desempenho Mínimo Desejável:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EditItemDesempenho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 120,
+            "Width": 66,
+            "Height": 13,
+            "Caption": "Desempenho:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_ItemDesempenho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 167,
+            "Top": 116,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ItemDesempenho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 195,
+            "Top": 120,
+            "Width": 240,
+            "Height": 13,
+            "Caption": "Lbl_ItemDesempenho"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 190,
+            "Top": 15,
+            "Width": 51,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_PeriodoRevisaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "Rdo_Origem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 50,
+            "Width": 410,
+            "Height": 58,
+            "Caption": "Origem do Resultado do Item de Avaliação ",
+            "Columns": 2,
+            "DataField": "ORIGEMRESULTITENS",
+            "DataSource": "Dts_ItemAvalRevisao",
+            "Items.Strings": [
+              "Digitado",
+              "Gerado pelo Sistema"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "DbCb_ItemDesempenhoNivel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 144,
+            "Width": 212,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "NIVELDESEMPENHO",
+            "DataSource": "Dts_ItemAvalRevisao",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_ItemDesempenho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 116,
+            "Width": 38,
+            "Height": 21,
+            "DataField": "DESEMPENHO",
+            "DataSource": "Dts_ItemAvalRevisao",
+            "TabOrder": 2,
+            "OnExit": "Dbe_ItemDesempenhoExit",
+            "OnKeyPress": "Dbe_ItemDesempenhoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chaves",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 181,
+        "Width": 445,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Incluir Revisão",
+            "Default": true,
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 6,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ItemAvalRevisao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 329,
+        "Top": 74
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 268,
+        "Top": 64
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

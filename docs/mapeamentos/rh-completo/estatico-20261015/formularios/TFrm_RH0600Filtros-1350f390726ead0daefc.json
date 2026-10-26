@@ -1,0 +1,185 @@
+{
+  "classe": "TFrm_RH0600Filtros",
+  "nome": "Frm_RH0600Filtros",
+  "herdado": true,
+  "propriedades": {
+    "Left": 185,
+    "Top": 78,
+    "Caption": "Filtros de Pessoas e Contratos",
+    "ClientHeight": 325,
+    "ClientWidth": 374
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 374,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 12,
+            "Width": 25,
+            "Height": 13,
+            "Caption": "Filtro:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 50,
+            "Top": 8,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_FiltroExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dck_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 312,
+            "Top": 10,
+            "Width": 44,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_RHFiltrosContratos",
+            "TabOrder": 1,
+            "OnEnter": "Pnl_DadosEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_FiltroModelo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 120,
+            "Top": 8,
+            "Width": 11,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 2,
+            "Visible": false,
+            "OnExit": "Edt_FiltroModeloExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 374,
+        "Height": 285,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Pnl_DadosEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 14,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 67,
+            "Top": 10,
+            "Width": 289,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_RHFiltrosContratos",
+            "TabOrder": 0,
+            "OnExit": "Dbe_Descricao40Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrm_SelecaoContrato",
+          "nome": "Frm_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 40,
+            "Top": 37,
+            "Width": 289,
+            "Height": 233,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 154,
+        "Top": 2
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHFiltrosContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 248
+      },
+      "filhos": []
+    }
+  ]
+}

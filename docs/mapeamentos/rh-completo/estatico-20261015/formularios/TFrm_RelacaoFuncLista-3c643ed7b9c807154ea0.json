@@ -1,0 +1,512 @@
+{
+  "classe": "TFrm_RelacaoFuncLista",
+  "nome": "Frm_RelacaoFuncLista",
+  "herdado": false,
+  "propriedades": {
+    "Left": 5,
+    "Top": 245,
+    "BorderStyle": "bsSingle",
+    "Caption": "Relação de Funcionários",
+    "ClientHeight": 364,
+    "ClientWidth": 789,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 298,
+        "Width": 789,
+        "Height": 66,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Fechar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 19,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Fechar",
+            "TabOrder": 0,
+            "OnClick": "Btn_FecharClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Resumo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 562,
+            "Top": 4,
+            "Width": 200,
+            "Height": 52,
+            "Caption": "Resumo",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 16,
+                "Width": 32,
+                "Height": 13,
+                "Caption": "Ativos:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 32,
+                "Width": 50,
+                "Height": 13,
+                "Caption": "Afastados:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 101,
+                "Top": 32,
+                "Width": 61,
+                "Height": 13,
+                "Caption": "Rescindidos:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 101,
+                "Top": 16,
+                "Width": 57,
+                "Height": 13,
+                "Caption": "Resc.+Mês:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Ativos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 61,
+                "Top": 16,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "99999"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Afastados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 61,
+                "Top": 32,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "99999"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_RescindidoMes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 164,
+                "Top": 16,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "99999"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Rescindidos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 164,
+                "Top": 32,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "99999"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_VisualizarRelatorio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 91,
+            "Top": 19,
+            "Width": 142,
+            "Height": 25,
+            "Caption": "&Visualizar Relatório",
+            "TabOrder": 2,
+            "OnClick": "Btn_VisualizarRelatorioClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Grid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 789,
+        "Height": 298,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Funcionarios",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 781,
+            "Height": 290,
+            "Align": "alClient",
+            "DataSource": "DataSource1",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "UNIDADE",
+                "Width": 74,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Width": 74,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSITUACAO",
+                "Width": 180,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAADMISSAO",
+                "Title.Caption": "Admissão",
+                "Width": 96,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATARESCISAO",
+                "Title.Caption": "Rescisão",
+                "Width": 92,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCESTABELECIMENTO",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSETOR",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCPOSTOTRABALHO",
+                "Title.Caption": "Posto de Trabalho",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCCARGO",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCFUNCAO",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DataSource1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 309
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Func",
+      "herdado": false,
+      "propriedades": {
+        "Left": 333,
+        "Top": 309
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Func",
+      "herdado": false,
+      "propriedades": {
+        "ReadOnly": true,
+        "Left": 452,
+        "Top": 309
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_FuncCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "DESCSITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_FuncDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Admissão",
+            "FieldName": "DATAADMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_FuncDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Rescisão",
+            "FieldName": "DATARESCISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "DESCUNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "DESCESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCSETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Setor",
+            "FieldName": "DESCSETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Posto Trabalho",
+            "FieldName": "DESCPOSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCCARGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cargo",
+            "FieldName": "DESCCARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncDESCFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Função",
+            "FieldName": "DESCFUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FuncSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_FunccalcAtivos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "calcAtivos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_FunccalcAfastados",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "calcAfastados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_FunccalcRescindidos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "calcRescindidos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_FunccalcRescindidosMes",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "calcRescindidosMes"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_FuncAgAtivos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AgAtivos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_FuncAgAfastados",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AgAfastados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_FuncAgRescindidos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AgRescindidos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAggregateField",
+          "nome": "Cds_FuncAgRescindidosMes",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AgRescindidosMes"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSetProvider",
+      "nome": "Dsp_Func",
+      "herdado": false,
+      "propriedades": {
+        "Left": 389,
+        "Top": 309
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,1086 @@
+{
+  "classe": "TFrm_RHPA0130",
+  "nome": "Frm_RHPA0130",
+  "herdado": true,
+  "propriedades": {
+    "Left": 399,
+    "Top": 200,
+    "Caption": "Diretrizes para Cálculo do D.S.R./Feriado",
+    "ClientHeight": 461,
+    "ClientWidth": 646
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 646,
+        "Height": 43,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_ChaveEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 79,
+            "Height": 13,
+            "Caption": "Cálculo do DSR:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_CalculoDSR",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "AllowAllUp": true,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_InfCalculoDSR",
+          "herdado": false,
+          "propriedades": {
+            "Left": 166,
+            "Top": 11,
+            "Width": 336,
+            "Height": 16,
+            "Caption": "Lbl_CalculoDSR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CalculoDSR",
+          "herdado": false,
+          "propriedades": {
+            "Left": 99,
+            "Top": 9,
+            "Width": 38,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_CalculoDSRExit",
+            "OnKeyPress": "Edt_CalculoDSRKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 43,
+        "Width": 646,
+        "Height": 418,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Abas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 638,
+            "Height": 410,
+            "ActivePage": "Tbs_Cadastro",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_AbasChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Cadastro",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Cadastro"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 9,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Descrição:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfCalcularRepousoFeriado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 266,
+                    "Top": 9,
+                    "Width": 51,
+                    "Height": 13,
+                    "Caption": "Utilizar em:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Complemento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 279,
+                    "Top": 335,
+                    "Width": 31,
+                    "Height": 21,
+                    "ReadOnly": true,
+                    "TabOrder": 13,
+                    "OnEnter": "Edt_ComplementoEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Dck_AtivaDesativada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 529,
+                    "Top": 7,
+                    "Width": 48,
+                    "Height": 17,
+                    "Caption": "Ativo",
+                    "DataField": "ATIVADESATIVADA",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Descricao20",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 69,
+                    "Top": 5,
+                    "Width": 151,
+                    "Height": 21,
+                    "DataField": "DESCRICAO20",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 311,
+                    "Width": 565,
+                    "Height": 70,
+                    "Caption": "Seleção",
+                    "DataField": "FORMASELECAO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Por Filtro",
+                      "Por Lista",
+                      "Geral"
+                    ],
+                    "TabOrder": 11,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 100,
+                    "Top": 320,
+                    "Width": 469,
+                    "Height": 55,
+                    "TabOrder": 12
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_EditFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 10,
+                        "Width": 25,
+                        "Height": 13,
+                        "Caption": "Filtro:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_EditLista",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 34,
+                        "Width": 25,
+                        "Height": 13,
+                        "Caption": "Lista:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBBeveledLabel",
+                      "nome": "Lbl_Filtro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 115,
+                        "Top": 6,
+                        "Width": 346,
+                        "Height": 21,
+                        "DataField": "DscFILTRO",
+                        "DataSource": "Dts_RHCalculoDSR"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBBeveledLabel",
+                      "nome": "Lbl_Lista",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 115,
+                        "Top": 30,
+                        "Width": 346,
+                        "Height": 21,
+                        "DataField": "DscLISTA",
+                        "DataSource": "Dts_RHCalculoDSR"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Filtro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 87,
+                        "Top": 5,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Lista",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 87,
+                        "Top": 29,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Filtro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 45,
+                        "Top": 6,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "FILTRO",
+                        "DataSource": "Dts_RHCalculoDSR",
+                        "TabOrder": 0,
+                        "OnKeyPress": "Edt_CalculoDSRKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Lista",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 45,
+                        "Top": 30,
+                        "Width": 41,
+                        "Height": 21,
+                        "DataField": "LISTA",
+                        "DataSource": "Dts_RHCalculoDSR",
+                        "TabOrder": 1,
+                        "OnKeyPress": "Edt_CalculoDSRKeyPress"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_CalcularRepousoFeriado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 321,
+                    "Top": 5,
+                    "Width": 137,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "CALCULARREPOUSOFERIADO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "TabOrder": 1,
+                    "OnChange": "DBComboMetaChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_FaltasFeriado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 302,
+                    "Top": 30,
+                    "Width": 275,
+                    "Height": 66,
+                    "Caption": "Ao calcular feriados utilizar eventos de:",
+                    "DataField": "FALTASFERIADO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Antes e Depois",
+                      "Antes",
+                      "Depois"
+                    ],
+                    "TabOrder": 4,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_PeriodoCalculoDSR",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 30,
+                    "Width": 275,
+                    "Height": 66,
+                    "Caption": "Ao calcular última semana lançar no:",
+                    "DataField": "PERIODOCALCULODSR",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Próximo Período",
+                      "Periodo Atual"
+                    ],
+                    "TabOrder": 3,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_CalcularDSRRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 97,
+                    "Width": 275,
+                    "Height": 67,
+                    "Caption": "Na semana de rescisão do contrato:",
+                    "DataField": "CALCULARDSRRESCISAO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Calcular",
+                      "Não calcular",
+                      "Calcular se último dia trabalhado na semana"
+                    ],
+                    "TabOrder": 5,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_LancarDSRRescisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 302,
+                    "Top": 97,
+                    "Width": 275,
+                    "Height": 67,
+                    "Caption": "Repousos a calcular na semana de rescisão:",
+                    "Columns": 2,
+                    "DataField": "LANCARDSRRESCISAO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Pago e Perdido",
+                      "Pago",
+                      "Pago Integral",
+                      "Perdido"
+                    ],
+                    "TabOrder": 6,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_CalcFeriadoCompens",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 166,
+                    "Width": 275,
+                    "Height": 62,
+                    "Caption": "Calcular Feriado em dia Compensado:",
+                    "DataField": "CALCFERIADOCOMPENS",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Sim",
+                      "Não"
+                    ],
+                    "TabOrder": 7,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_CalcFeriadoDispensa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 302,
+                    "Top": 166,
+                    "Width": 275,
+                    "Height": 62,
+                    "Caption": "Calcular Feriado em dia Dispensado:",
+                    "DataField": "CALCFERIADODISPENSA",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Sim",
+                      "Não"
+                    ],
+                    "TabOrder": 8,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Chk_ConsiderarTerminoPeriodo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 295,
+                    "Width": 448,
+                    "Height": 17,
+                    "Caption": "Considerar somente até o término do período do ponto para perda de feriado",
+                    "DataField": "CONSIDERPERIODOPONTO",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "TabOrder": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBRadioGroup",
+                  "nome": "Dbr_PerdeFeriadoEmOcorrencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 230,
+                    "Width": 275,
+                    "Height": 62,
+                    "Caption": "Perde feriado quando em ocorrência:",
+                    "DataField": "PERDEFERIADOOCORRENCIA",
+                    "DataSource": "Dts_RHCalculoDSR",
+                    "Items.Strings": [
+                      "Sim",
+                      "Não"
+                    ],
+                    "TabOrder": 9,
+                    "OnChange": "DbRadioGroupChange"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Eventos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Fórmulas para perda",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_SobeEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 607,
+                    "Top": 159,
+                    "Width": 23,
+                    "Height": 20,
+                    "Action": "Act_SobeEvento",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_DesceEvento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 607,
+                    "Top": 183,
+                    "Width": 23,
+                    "Height": 20,
+                    "Action": "Act_DesceEvento",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_EventosComplemento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 344,
+                    "Width": 630,
+                    "Height": 38,
+                    "Align": "alBottom",
+                    "TabOrder": 1,
+                    "OnEnter": "Pnl_EventosComplementoEnter",
+                    "OnExit": "Pnl_EventosComplementoExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TSpeedButton",
+                      "nome": "Btn_NovoEvento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 15,
+                        "Width": 21,
+                        "Height": 21,
+                        "Action": "Act_NovoEvento",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_EventoPonto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 218,
+                        "Top": 14,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar (Ctrl + L)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfEventoPonto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 22,
+                        "Top": -1,
+                        "Width": 101,
+                        "Height": 13,
+                        "Caption": "Expressão Aritmética:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfNroHoras",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 475,
+                        "Top": -1,
+                        "Width": 46,
+                        "Height": 13,
+                        "Caption": "Nº Horas:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfQuant",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 422,
+                        "Top": -1,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Quant.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfPercentual",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 528,
+                        "Top": -1,
+                        "Width": 57,
+                        "Height": 13,
+                        "Caption": "Perda DSR:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfPerc",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 575,
+                        "Top": 19,
+                        "Width": 8,
+                        "Height": 13,
+                        "Caption": "%"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfFrequencia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 243,
+                        "Top": -1,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Frequência:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_InfCondicao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": -1,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "Cond.:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_EventosComplemento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 38,
+                        "Top": 15,
+                        "Width": 13,
+                        "Height": 21,
+                        "TabOrder": 6,
+                        "OnEnter": "Edt_EventosComplementoEnter"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_Frequencia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 243,
+                        "Top": 15,
+                        "Width": 137,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "FREQUENCIADSR",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "TabOrder": 1,
+                        "OnChange": "DBComboMetaChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_ExpressaoAritmetica",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 22,
+                        "Top": 15,
+                        "Width": 195,
+                        "Height": 21,
+                        "DataField": "EXPRESSAOARITMETICA",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "MaxLength": 100,
+                        "TabOrder": 0,
+                        "OnChange": "Dbe_ExpressaoAritmeticaChange",
+                        "OnKeyPress": "Dbe_ExpressaoAritmeticaKeyPress"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_NroHorasDia",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 475,
+                        "Top": 15,
+                        "Width": 51,
+                        "Height": 21,
+                        "DataField": "NROHORASDIA",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "MaxLength": 5,
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Quantidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 422,
+                        "Top": 15,
+                        "Width": 51,
+                        "Height": 21,
+                        "DataField": "QUANTIDADEAUTORIZADA",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "MaxLength": 3,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_Percentual",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 528,
+                        "Top": 15,
+                        "Width": 46,
+                        "Height": 21,
+                        "DataField": "PERCPERDADSR",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "MaxLength": 3,
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBComboMeta",
+                      "nome": "Dbc_Condicao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 382,
+                        "Top": 15,
+                        "Width": 38,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "DataField": "CONDICAO",
+                        "DataSource": "Dts_RHCalculoDSREventos",
+                        "TabOrder": 2,
+                        "OnChange": "DBComboMetaChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TEdit",
+                      "nome": "Edt_EventoPontoLink",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 194,
+                        "Top": 15,
+                        "Width": 23,
+                        "Height": 21,
+                        "TabStop": false,
+                        "TabOrder": 7,
+                        "Visible": false
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_Interpretador",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 139,
+                        "Top": 0,
+                        "Width": 78,
+                        "Height": 13,
+                        "Caption": "Interpretada",
+                        "Checked": true,
+                        "TabOrder": 8
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Eventos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 6,
+                    "Width": 593,
+                    "Height": 335,
+                    "TabStop": false,
+                    "DataSource": "Dts_RHCalculoDSREventos",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "EXPRESSAOARITMETICA",
+                        "Title.Caption": "Expressão Aritmética",
+                        "Width": 219,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DscFREQUENCIADSR",
+                        "Title.Caption": "Frequência",
+                        "Width": 138,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONDICAO",
+                        "Title.Caption": "Cond.",
+                        "Width": 36,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "QUANTIDADEAUTORIZADA",
+                        "Title.Caption": "Quant.",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NROHORASDIA",
+                        "Title.Caption": "Nº Horas",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DscPERCPERDADSR",
+                        "Title.Caption": "Perda",
+                        "Width": 63,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Hint",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 31,
+                    "Top": 183,
+                    "Width": 124,
+                    "Height": 91,
+                    "TabOrder": 2,
+                    "Visible": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_HintTitulo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 1,
+                        "Width": 54,
+                        "Height": 13,
+                        "Align": "alTop",
+                        "Caption": "Condição"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Hint",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 1,
+                        "Top": 14,
+                        "Width": 39,
+                        "Height": 13,
+                        "Align": "alClient",
+                        "Caption": "Lbl_Hint"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 245,
+        "Top": 85
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHCalculoDSR",
+      "herdado": false,
+      "propriedades": {
+        "Left": 224,
+        "Top": 233
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHCalculoDSREventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 539,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_Eventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 530,
+        "Top": 149
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Acoes",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "Act_AcoesUpdate",
+        "Left": 233,
+        "Top": 157
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_NovoEvento",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Novo evento a diretriz.",
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovoEventoExecute",
+            "OnUpdate": "Act_NovoEventoUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SobeEvento",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Move evento para cima.",
+            "ShortCut": 16422,
+            "OnExecute": "Act_SobeDesceEventoExecute",
+            "OnUpdate": "Act_SobeDesceEventoUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DesceEvento",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Move evento para baixo.",
+            "ShortCut": 16424,
+            "OnExecute": "Act_SobeDesceEventoExecute",
+            "OnUpdate": "Act_SobeDesceEventoUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp_Inserir",
+      "herdado": false,
+      "propriedades": {
+        "Left": 362,
+        "Top": 197
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Percentual",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Percentual",
+            "Default": true,
+            "OnClick": "Pop_PercentualClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Proporcional",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Proporcional",
+            "OnClick": "Pop_ProporcionalClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

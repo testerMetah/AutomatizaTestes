@@ -1,0 +1,653 @@
+{
+  "classe": "TFrm_RHPA7080",
+  "nome": "Frm_RHPA7080",
+  "herdado": true,
+  "propriedades": {
+    "Left": 252,
+    "Top": 299,
+    "Hint": "Excluindo as Marcações e Recalculando",
+    "Caption": "Exclusão de Marcações com Recálculo",
+    "ClientWidth": 764
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": true,
+      "propriedades": {
+        "Width": 764
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarProcesso",
+          "herdado": true,
+          "propriedades": {
+            "Caption": "Excluir/Recalcular"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": true,
+      "propriedades": {
+        "Width": 764
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_OpcoesPrincipal",
+          "herdado": true,
+          "propriedades": {
+            "Width": 756,
+            "Height": 359,
+            "Align": "alClient"
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Selecao",
+              "herdado": true,
+              "propriedades": {
+                "Left": 149,
+                "Top": 56,
+                "Visible": false
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Pnl_Contrato",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": [
+                    {
+                      "classe": "TRHMetalocalizar",
+                      "nome": "Btn_Contrato",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaLocalizar",
+                      "nome": "Btn_Unidade",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Gbx_OpcoesCalculo",
+              "herdado": true,
+              "propriedades": {
+                "Width": 400,
+                "Height": 187
+              },
+              "filhos": [
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mda_PeriodoDe",
+                  "herdado": true,
+                  "propriedades": {
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mda_PeriodoAte",
+                  "herdado": true,
+                  "propriedades": {
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Selecao",
+                  "herdado": true,
+                  "propriedades": {
+                    "Top": 187,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TFilterDateButton",
+                  "nome": "Btn_PeriodoProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 260,
+                    "Top": 127,
+                    "Width": 22,
+                    "Height": 22,
+                    "AllowAllUp": true,
+                    "GroupIndex": 2,
+                    "ShowHint": true
+                  },
+                  "filhos": [],
+                  "ordem_herdada": 6
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_ProcessoImportacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 132,
+                    "Width": 245,
+                    "Height": 13,
+                    "Caption": "Processo de Importação ou Geração de Marcações"
+                  },
+                  "filhos": [],
+                  "ordem_herdada": 7
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_PeriodoDe",
+                  "herdado": true,
+                  "propriedades": {
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_PeriodoAte",
+                  "herdado": true,
+                  "propriedades": {
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cbo_Selecao",
+                  "herdado": true,
+                  "propriedades": {
+                    "Top": 188,
+                    "TabOrder": 5,
+                    "Visible": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSQLComboBox",
+                  "nome": "Lst_Processo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 150,
+                    "Width": 383,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "MaxLength": 8,
+                    "TabOrder": 6,
+                    "OnChange": "Lst_ProcessoChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_CalcularPonto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 68,
+                    "Width": 211,
+                    "Height": 17,
+                    "Caption": "Calcular Ponto",
+                    "Enabled": false,
+                    "Checked": true,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_CalcularRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 88,
+                    "Width": 211,
+                    "Height": 17,
+                    "Caption": "Calcular Refeitório",
+                    "Enabled": false,
+                    "Checked": true,
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_CalcularDiversos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 108,
+                    "Width": 211,
+                    "Height": 17,
+                    "Caption": "Calcular Eventos Diversos",
+                    "Enabled": false,
+                    "Checked": true,
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_ListaProcesso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 188,
+                "Width": 742,
+                "Height": 166,
+                "Caption": "Arquivos da Importação",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 15,
+                    "Width": 738,
+                    "Height": 149,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBGrid",
+                      "nome": "Dbg_MarcArqLidos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 6,
+                        "Top": 4,
+                        "Width": 727,
+                        "Height": 142,
+                        "TabStop": false,
+                        "DataSource": "Dts_MarcArqLidos",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "NOMEORIGINAL",
+                            "Width": 290,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "FULLMODELOCOLETOR",
+                            "Width": 179,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DATAHORAARQUIVO",
+                            "Title.Caption": "Data/Hora Arquivo",
+                            "Width": 110,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DATAHORALEITURA",
+                            "Title.Caption": "Data/Hora Últ. Leitura",
+                            "Width": 110,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "NROMARCACOESLIDAS",
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DATAINICIO",
+                            "Width": 100,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DATATERMINO",
+                            "Width": 100,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_ContratosSelecionados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 410,
+                "Top": 0,
+                "Width": 340,
+                "Height": 187,
+                "Caption": "Contratos Selecionados",
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_ContratosSelecionados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 7,
+                    "Top": 13,
+                    "Width": 326,
+                    "Height": 167,
+                    "TabStop": false,
+                    "DataSource": "Dts_ContratosSelecionados",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "UNIDADE",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Width": 182,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_OpcoesSecundario",
+          "herdado": true,
+          "propriedades": {
+            "Top": 361,
+            "Width": 756,
+            "Height": 0,
+            "Align": "alBottom"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Selecao",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_AdicionarCracha",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cracha",
+            "Caption": "Adicionar",
+            "ShortCut": 16424
+          },
+          "filhos": [],
+          "ordem_herdada": 0
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AdicionarTodos",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Adicionar",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Remover",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_RemoverTodos",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_AddContrato",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_DelContrato",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_RemoverCracha",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cracha",
+            "Caption": "Remover",
+            "ShortCut": 16422
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_RemoverTodosCracha",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Cracha",
+            "Caption": "Remover Todos",
+            "ShortCut": 24614
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContratosSelecionados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 560,
+        "Top": 178
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_ContratosSelecionados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 656,
+        "Top": 212
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosSelecionadosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosSelecionadosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosSelecionadosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MarcArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 248
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MarqArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 152,
+        "Top": 284
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarqArqLidosNOMEORIGINAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome do Arquivo",
+            "FieldName": "NOMEORIGINAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarqArqLidosMODELOCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Modelo do Coletor",
+            "FieldName": "MODELOCOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarqArqLidosDSCMODELOCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Modelo do Coletor",
+            "FieldName": "DSCMODELOCOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_MarqArqLidosFULLMODELOCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Modelo do Coletor",
+            "FieldName": "FULLMODELOCOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarqArqLidosDATAHORAARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Arquivo",
+            "FieldName": "DATAHORAARQUIVO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarqArqLidosDATAHORALEITURA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Leitura",
+            "FieldName": "DATAHORALEITURA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_MarqArqLidosNROMARCACOESLIDAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nº de Marcações",
+            "FieldName": "NROMARCACOESLIDAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarqArqLidosDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Menor Marcação",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_MarqArqLidosDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Maior Marcação",
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "classe": "TFrm_RHST1720",
+  "nome": "Frm_RHST1720",
+  "herdado": true,
+  "propriedades": {
+    "Left": 634,
+    "Top": 319,
+    "Caption": "Matriz de Classificação de Severidade do Risco",
+    "ClientHeight": 442,
+    "ClientWidth": 516
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Top",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 516,
+        "Height": 442,
+        "ActivePage": "Tbs_Cadastramento",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "TabStop": false,
+        "OnChange": "Pgc_TopChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Cadastramento",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cadastramento"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_CadastroAvaliacaoOpcoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 44,
+                "Width": 508,
+                "Height": 370,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Principal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 500,
+                    "Height": 362,
+                    "ActivePage": "Tbs_Matriz",
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "TabStop": false,
+                    "OnChange": "Pgc_PrincipalChange"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Cadastro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Cadastro"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Desc_Descricao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 16,
+                            "Width": 51,
+                            "Height": 13,
+                            "Caption": "Descrição:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_Desc_DescReduzida",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 42,
+                            "Width": 99,
+                            "Height": 13,
+                            "Caption": "Descrição Reduzida:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_DescricaoReduzida",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 112,
+                            "Top": 38,
+                            "Width": 185,
+                            "Height": 21,
+                            "DataField": "DESCRICAO20",
+                            "DataSource": "Dts_MatrizSeveridade",
+                            "MaxLength": 20,
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBEdit",
+                          "nome": "Dbe_Descricao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 112,
+                            "Top": 12,
+                            "Width": 369,
+                            "Height": 21,
+                            "DataField": "DESCRICAO40",
+                            "DataSource": "Dts_MatrizSeveridade",
+                            "MaxLength": 40,
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AuxCadastramento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 448,
+                            "Top": 172,
+                            "Width": 53,
+                            "Height": 21,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 2,
+                            "OnEnter": "Edt_AuxCadastramentoEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_ProbGrav",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Probabilidades e Severidades",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "DBG_MatrizItens",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 7,
+                            "Top": 7,
+                            "Width": 478,
+                            "Height": 283,
+                            "Align": "alClient",
+                            "DataSource": "Dts_MatrizItens",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "DescTIPOITEMMATRIZ",
+                                "Title.Caption": "Tipo",
+                                "Width": 111,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DESCRICAO60",
+                                "Title.Caption": "Descrição",
+                                "Width": 273,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "LEGENDA",
+                                "Title.Caption": "Legenda",
+                                "Width": 48,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 492,
+                            "Height": 7,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 7,
+                            "Width": 7,
+                            "Height": 283,
+                            "Align": "alLeft",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 290,
+                            "Width": 492,
+                            "Height": 44,
+                            "Align": "alBottom",
+                            "TabOrder": 3
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_NovoItemMatriz",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 1,
+                                "Left": 7,
+                                "Top": 17,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Novo Item da Matriz",
+                                "ShowHint": true,
+                                "OnClick": "Btn_NovoItemMatrizClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Label31",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 38,
+                                "Top": 3,
+                                "Width": 21,
+                                "Height": 13,
+                                "Caption": "Tipo"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_1",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 174,
+                                "Top": 3,
+                                "Width": 48,
+                                "Height": 13,
+                                "Caption": "Descrição"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_2",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 433,
+                                "Top": 3,
+                                "Width": 42,
+                                "Height": 13,
+                                "Caption": "Legenda"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBComboMeta",
+                              "nome": "Dbc_TIPOITEMMATRIZ",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 1,
+                                "Left": 38,
+                                "Top": 19,
+                                "Width": 129,
+                                "Height": 21,
+                                "Style": "csDropDownList",
+                                "DataField": "TIPOITEMMATRIZ",
+                                "DataSource": "Dts_MatrizItens",
+                                "TabOrder": 0
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_DESCRICAO40",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 174,
+                                "Top": 19,
+                                "Width": 252,
+                                "Height": 21,
+                                "DataField": "DESCRICAO60",
+                                "DataSource": "Dts_MatrizItens",
+                                "MaxLength": 40,
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_LEGENDA",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 433,
+                                "Top": 19,
+                                "Width": 49,
+                                "Height": 21,
+                                "DataField": "LEGENDA",
+                                "DataSource": "Dts_MatrizItens",
+                                "MaxLength": 40,
+                                "TabOrder": 2
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_AuxProbGrav",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 364,
+                                "Top": 23,
+                                "Width": 0,
+                                "Height": 0,
+                                "BorderStyle": "bsNone",
+                                "TabOrder": 3,
+                                "OnEnter": "Edt_AuxProbGravEnter"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 485,
+                            "Top": 7,
+                            "Width": 7,
+                            "Height": 283,
+                            "Align": "alRight",
+                            "TabOrder": 4
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Matriz",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Matriz",
+                        "ImageIndex": 3
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "DBG_Matriz",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 7,
+                            "Top": 7,
+                            "Width": 478,
+                            "Height": 185,
+                            "Align": "alClient",
+                            "DataSource": "Dts_MatrizProbGrav",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "DescProbabilidade",
+                                "Title.Caption": "Probabilidade",
+                                "Width": 144,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescGravidade",
+                                "Title.Caption": "Severidade",
+                                "Width": 151,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DescClassificacao",
+                                "Title.Caption": "Classificação",
+                                "Width": 140,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_AuxMatriz",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 393,
+                            "Top": 120,
+                            "Width": 0,
+                            "Height": 21,
+                            "TabOrder": 1,
+                            "OnEnter": "Edt_AuxMatrizEnter"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_9",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 492,
+                            "Height": 7,
+                            "Align": "alTop",
+                            "TabOrder": 2
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_10",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 7,
+                            "Width": 7,
+                            "Height": 185,
+                            "Align": "alLeft",
+                            "TabOrder": 3
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 485,
+                            "Top": 7,
+                            "Width": 7,
+                            "Height": 185,
+                            "Align": "alRight",
+                            "TabOrder": 4
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_12",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 192,
+                            "Width": 492,
+                            "Height": 142,
+                            "Align": "alBottom",
+                            "TabOrder": 5
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "Btn_NovaLinhaMatriz",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 1,
+                                "Left": 7,
+                                "Top": 3,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Nova Linha Matriz",
+                                "ShowHint": true,
+                                "OnClick": "Btn_NovaLinhaMatrizClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_4",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 31,
+                                "Width": 64,
+                                "Height": 13,
+                                "Caption": "Probabilidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Probabilidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 80,
+                                "Top": 45,
+                                "Width": 24,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBeveledLabel",
+                              "nome": "Lbl_Probabilidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 106,
+                                "Top": 45,
+                                "Width": 376,
+                                "Height": 21,
+                                "Caption": "Lbl_Probabilidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_11",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 68,
+                                "Width": 54,
+                                "Height": 13,
+                                "Caption": "Severidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Gravidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 80,
+                                "Top": 82,
+                                "Width": 24,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBeveledLabel",
+                              "nome": "Lbl_Gravidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 106,
+                                "Top": 82,
+                                "Width": 376,
+                                "Height": 21,
+                                "Caption": "Lbl_Gravidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_13",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 104,
+                                "Width": 62,
+                                "Height": 13,
+                                "Caption": "Classificação"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_ClassificacaoMatriz",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 80,
+                                "Top": 118,
+                                "Width": 24,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBeveledLabel",
+                              "nome": "Lbl_Classificacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 106,
+                                "Top": 118,
+                                "Width": 376,
+                                "Height": 21,
+                                "Caption": "Lbl_Classificacao"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_PROBABILIDADE",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 45,
+                                "Width": 72,
+                                "Height": 21,
+                                "DataField": "PROBABILIDADE",
+                                "DataSource": "Dts_MatrizProbGrav",
+                                "MaxLength": 20,
+                                "TabOrder": 0,
+                                "OnExit": "Dbe_PROBABILIDADEExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_GRAVIDADE",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 82,
+                                "Width": 72,
+                                "Height": 21,
+                                "DataField": "GRAVIDADE",
+                                "DataSource": "Dts_MatrizProbGrav",
+                                "MaxLength": 20,
+                                "TabOrder": 1,
+                                "OnExit": "Dbe_GRAVIDADEExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Dbe_CLASSIFICACAO",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 118,
+                                "Width": 72,
+                                "Height": 21,
+                                "DataField": "CLASSIFICACAOMATRIZ",
+                                "DataSource": "Dts_MatrizProbGrav",
+                                "MaxLength": 20,
+                                "TabOrder": 2,
+                                "OnExit": "Dbe_CLASSIFICACAOExit"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_AuxMatrizProbGrav",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 397,
+                                "Top": 121,
+                                "Width": 0,
+                                "Height": 21,
+                                "TabOrder": 3,
+                                "OnEnter": "Edt_AuxMatrizProbGravEnter"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Matriz",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 508,
+                "Height": 44,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Matriz",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 14,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Código:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Matriz",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 112,
+                    "Top": 10,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Matriz",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 54,
+                    "Top": 10,
+                    "Width": 57,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_MatrizExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Ckb_ATIVADESATIVADA",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 452,
+                    "Top": 15,
+                    "Width": 45,
+                    "Height": 17,
+                    "TabStop": false,
+                    "Caption": "Ativa",
+                    "DataField": "ATIVADESATIVADA",
+                    "DataSource": "Dts_MatrizSeveridade",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Classificacoes",
+          "herdado": false,
+          "propriedades": {
+            "Caption": " Classificações da Severidade do Risco",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 508,
+                "Height": 7,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 7,
+                "Width": 7,
+                "Height": 363,
+                "Align": "alLeft",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 501,
+                "Top": 7,
+                "Width": 7,
+                "Height": 363,
+                "Align": "alRight",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "DBG_Classificacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 7,
+                "Width": 494,
+                "Height": 363,
+                "Align": "alClient",
+                "DataSource": "Dts_MatrizClassificacao",
+                "TabOrder": 3,
+                "Columns": [
+                  {
+                    "FieldName": "CLASSIFICACAOMATRIZ",
+                    "Title.Caption": "Classificação",
+                    "Width": 73,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCRICAO60",
+                    "Title.Caption": "Descrição",
+                    "Width": 270,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NROORDEM",
+                    "Title.Caption": "Ordem",
+                    "Width": 54,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ATIVADESATIVADA",
+                    "Title.Caption": "Situação",
+                    "Width": 50,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_8",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 370,
+                "Width": 508,
+                "Height": 44,
+                "Align": "alBottom",
+                "TabOrder": 4
+              },
+              "filhos": [
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Classificacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 78,
+                    "Top": 19,
+                    "Width": 24,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 7,
+                    "Top": 3,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Código"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 110,
+                    "Top": 3,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 402,
+                    "Top": 3,
+                    "Width": 31,
+                    "Height": 13,
+                    "Caption": "Ordem"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Classificacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 1,
+                    "Left": 7,
+                    "Top": 19,
+                    "Width": 70,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_ClassificaaoExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_DESCRICAO60",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 110,
+                    "Top": 19,
+                    "Width": 286,
+                    "Height": 21,
+                    "DataField": "DESCRICAO60",
+                    "DataSource": "Dts_MatrizClassificacao",
+                    "MaxLength": 40,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Ckb_ATIVADESATIVADA1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 456,
+                    "Top": 21,
+                    "Width": 45,
+                    "Height": 17,
+                    "Caption": "Ativa",
+                    "DataField": "ATIVADESATIVADA",
+                    "DataSource": "Dts_MatrizClassificacao",
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_AuxClassificacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 393,
+                    "Top": 23,
+                    "Width": 0,
+                    "Height": 21,
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_AuxClassificacaoEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "DBEdt_LEGENDA",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 402,
+                    "Top": 19,
+                    "Width": 49,
+                    "Height": 21,
+                    "DataField": "NROORDEM",
+                    "DataSource": "Dts_MatrizClassificacao",
+                    "MaxLength": 40,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 408,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MatrizSeveridade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 196,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MatrizItens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 224,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MatrizClassificacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 248,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MatrizProbGrav",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 12
+      },
+      "filhos": []
+    }
+  ]
+}

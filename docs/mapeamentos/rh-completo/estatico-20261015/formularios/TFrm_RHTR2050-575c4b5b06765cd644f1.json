@@ -1,0 +1,454 @@
+{
+  "classe": "TFrm_RHTR2050",
+  "nome": "Frm_RHTR2050",
+  "herdado": false,
+  "propriedades": {
+    "Tag": 1,
+    "Left": 406,
+    "Top": 140,
+    "BorderStyle": "bsSingle",
+    "Caption": "Dispensa de Cursos por Pessoa",
+    "ClientHeight": 330,
+    "ClientWidth": 488,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 488,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 146,
+            "Top": 12,
+            "Width": 263,
+            "Height": 13,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 122,
+            "Top": 8,
+            "Width": 21,
+            "Height": 21,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoasClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 8,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 12,
+            "TabOrder": 0,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 488,
+        "Height": 289,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 138,
+            "Width": 27,
+            "Height": 13,
+            "Caption": "Curso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Cursos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 134,
+            "Top": 155,
+            "Width": 21,
+            "Height": 21,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_CursosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "Lbl_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 156,
+            "Top": 155,
+            "Width": 313,
+            "Height": 21,
+            "Caption": "Lbl_Curso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 156,
+            "Top": 138,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 184,
+            "Width": 32,
+            "Height": 13,
+            "Caption": "Motivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 455,
+            "Height": 120,
+            "TabStop": false,
+            "DataSource": "Dts_PessoaDisp",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "CURSO",
+                "Width": 117,
+                "Visible": true
+              },
+              {
+                "FieldName": "Descricao50",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Curso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 155,
+            "Width": 117,
+            "Height": 21,
+            "MaxLength": 15,
+            "TabOrder": 1,
+            "OnEnter": "Edt_CursoEnter",
+            "OnExit": "Edt_CursoExit",
+            "OnKeyPress": "Edt_CursoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_Motivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 201,
+            "Width": 455,
+            "Height": 73,
+            "DataField": "MOTIVODISPENSA",
+            "DataSource": "Dts_PessoaDisp",
+            "MaxLength": 800,
+            "TabOrder": 2,
+            "OnExit": "Dbm_MotivoExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 362,
+        "Top": 116
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Cursos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 280,
+        "Top": 115
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CursosCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Curso",
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CursosDESCRICAO50",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO50"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_CursosDATADESATIVACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATADESATIVACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PessoaDisp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 280,
+        "Top": 67
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaDispEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoaDispPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaDispCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Curso",
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaDispDescricao50",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "Descricao50"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaDispMOTIVODISPENSA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVODISPENSA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoaDisp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 192,
+        "Top": 67
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PessoaNec",
+      "herdado": false,
+      "propriedades": {
+        "Left": 194,
+        "Top": 113
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaNecEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoaNecPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaNecCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Curso",
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaNecNECESSIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Necessidade",
+            "FieldName": "NECESSIDADE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CursoDescricao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 380,
+        "Top": 67
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CursoDescricaoCURSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CursoDescricaoDESCRICAO50",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO50"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

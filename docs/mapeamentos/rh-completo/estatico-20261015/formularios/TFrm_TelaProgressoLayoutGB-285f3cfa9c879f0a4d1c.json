@@ -1,0 +1,450 @@
+{
+  "classe": "TFrm_TelaProgressoLayoutGB",
+  "nome": "Frm_TelaProgressoLayoutGB",
+  "herdado": false,
+  "propriedades": {
+    "Left": 557,
+    "Top": 219,
+    "BorderStyle": "bsSingle",
+    "Caption": "Geração de Arquivo",
+    "ClientHeight": 278,
+    "ClientWidth": 519,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 237,
+        "Width": 519,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 6,
+            "Width": 77,
+            "Height": 25,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_ImprimirErros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 6,
+            "Width": 73,
+            "Height": 25,
+            "Caption": "Imprimir",
+            "TabOrder": 1,
+            "Visible": false,
+            "OnClick": "Btn_ImprimirErrosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Matricula",
+          "herdado": false,
+          "propriedades": {
+            "Left": 169,
+            "Top": 6,
+            "Width": 104,
+            "Height": 25,
+            "Caption": "Inserir Matrícula",
+            "TabOrder": 2,
+            "OnClick": "Btn_MatriculaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 519,
+        "Height": 237,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TShape",
+          "nome": "Shp_Etapa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 11,
+            "Width": 495,
+            "Height": 26
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 22,
+            "Top": 18,
+            "Width": 472,
+            "Height": 13,
+            "Caption": "Preparando Exportação..."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Erros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 46,
+            "Width": 497,
+            "Height": 177,
+            "Align": "alCustom",
+            "DataSource": "Dts_Erros",
+            "TabOrder": 3,
+            "Columns": [
+              {
+                "FieldName": "Erro",
+                "Width": 89,
+                "Visible": true
+              },
+              {
+                "FieldName": "Descricao",
+                "Title.Caption": "Descrição",
+                "Width": 373,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Title.Caption": "Unidade",
+                "Width": 78,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Title.Caption": "Contrato",
+                "Width": 105,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "pTotal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 46,
+            "Width": 495,
+            "Height": 119,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 80,
+                "Width": 141,
+                "Height": 13,
+                "Caption": "Estabelecimentos de Entrega:",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Valores",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 53,
+                "Width": 129,
+                "Height": 13,
+                "Caption": "Total do Valor dos Bilhetes:",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TotalEstabEntrega",
+              "herdado": false,
+              "propriedades": {
+                "Left": 163,
+                "Top": 80,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "0",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TotalValBenef",
+              "herdado": false,
+              "propriedades": {
+                "Left": 163,
+                "Top": 53,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "0",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 27,
+                "Width": 105,
+                "Height": 13,
+                "Caption": "Total de Funcionários:",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TotalFunc",
+              "herdado": false,
+              "propriedades": {
+                "Left": 163,
+                "Top": 27,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "0",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 264,
+                "Top": 80,
+                "Width": 109,
+                "Height": 13,
+                "Caption": "Valor Total de Entrega:",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ValEntrega",
+              "herdado": false,
+              "propriedades": {
+                "Left": 386,
+                "Top": 80,
+                "Width": 21,
+                "Height": 13,
+                "Caption": "0,00",
+                "Visible": false
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TAnimate",
+          "nome": "Animate1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 47,
+            "Width": 493,
+            "Height": 117
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Progresso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 164,
+            "Width": 495,
+            "Height": 60,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 8,
+                "Width": 50,
+                "Height": 13,
+                "Caption": "Progresso:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGauge",
+              "nome": "Gau_Progresso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 28,
+                "Width": 483,
+                "Height": 21
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Progresso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 63,
+                "Top": 8,
+                "Width": 23,
+                "Height": 13,
+                "Caption": "0 / 0"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Erros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 363,
+        "Top": 30
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosDescricao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosEMPRESAVT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESAVT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosLINHAVT",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LINHAVT"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosVALEVA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALEVA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ErrosDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Erros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 276,
+        "Top": 30
+      },
+      "filhos": []
+    }
+  ]
+}

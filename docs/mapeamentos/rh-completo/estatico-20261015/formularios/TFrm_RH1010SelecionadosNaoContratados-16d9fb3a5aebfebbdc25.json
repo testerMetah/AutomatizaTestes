@@ -1,0 +1,214 @@
+{
+  "classe": "TFrm_RH1010SelecionadosNaoContratados",
+  "nome": "Frm_RH1010SelecionadosNaoContratados",
+  "herdado": false,
+  "propriedades": {
+    "Left": 193,
+    "Top": 192,
+    "BorderStyle": "bsSingle",
+    "Caption": "Candidatos Selecionados não Contratados",
+    "ClientHeight": 348,
+    "ClientWidth": 535,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 305,
+        "Width": 535,
+        "Height": 43,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_DadosRequisicao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 143,
+            "Height": 25,
+            "Caption": "&Dados da Requisição",
+            "TabOrder": 0,
+            "OnClick": "Btn_DadosRequisicaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_Candidatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 535,
+        "Height": 264,
+        "Align": "alClient",
+        "DataSource": "Dts_Candidatos",
+        "TabOrder": 1,
+        "Columns": [
+          {
+            "FieldName": "EMPRESA",
+            "Title.Caption": "Empresa",
+            "Width": 49,
+            "Visible": true
+          },
+          {
+            "FieldName": "PESSOA",
+            "Title.Caption": "Pessoa",
+            "Width": 43,
+            "Visible": true
+          },
+          {
+            "FieldName": "NOME",
+            "Title.Caption": "Nome",
+            "Width": 346,
+            "Visible": true
+          },
+          {
+            "FieldName": "REQUISICAO",
+            "Title.Caption": "Requisição",
+            "Width": 62,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 535,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 105,
+            "Height": 13,
+            "Caption": "Vínculo empregatício:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "cbm_VinculoEmpregaticio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 8,
+            "Width": 366,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "cbm_VinculoEmpregaticioChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Candidatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 471,
+        "Top": 96
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Candidatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 390,
+        "Top": 110
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CandidatosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_CandidatosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CandidatosREQUISICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Requisição",
+            "FieldName": "REQUISICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CandidatosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_CandidatosDATAREQUISICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAREQUISICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "strngfldQry_CandidatosTIPODERECRUTAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPODERECRUTAMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

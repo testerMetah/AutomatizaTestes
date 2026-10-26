@@ -1,0 +1,602 @@
+{
+  "classe": "TFrm_RHPA8140",
+  "nome": "Frm_RHPA8140",
+  "herdado": true,
+  "propriedades": {
+    "Left": 673,
+    "Top": 283,
+    "Width": 988,
+    "Height": 492,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Integração CodinREP - Consulta da Geração"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Corpo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 972,
+        "Height": 405,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ListaTelematica",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 964,
+            "Height": 397,
+            "ActivePage": "Tab_Comparativo",
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Pessoas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pessoas"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Pessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 956,
+                    "Height": 369,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Pessoas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "IMP_CPF",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_PIS",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_EMPR_ID",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_NOME",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_ICARD",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_GRUPO",
+                        "Width": 64,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_CrachaProv",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Crachás Provisórios"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_CrachasProv",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 956,
+                    "Height": 369,
+                    "Align": "alClient",
+                    "DataSource": "Dts_CrachasProv",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "IMP_CPF",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_PIS",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_ICARD",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_INICIO",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_FIM",
+                        "Width": 64,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Demitidos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Demitidos"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Demitidos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 956,
+                    "Height": 369,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Demitidos",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "IMP_CPF",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_PIS",
+                        "Width": 64,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "IMP_EMPR_ID",
+                        "Width": 64,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Comparativo",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Admitidos/Desligados que não estão no GerRep",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_SelecaoConsulta",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 956,
+                    "Height": 369,
+                    "ActivePage": "Tab_Selecao",
+                    "Align": "alClient",
+                    "TabOrder": 0,
+                    "OnChange": "Pgc_SelecaoConsultaChange"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_Selecao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Seleção"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_PeriodoComparativo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 288,
+                            "Width": 948,
+                            "Height": 53,
+                            "Align": "alBottom",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Periodo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 5,
+                                "Top": 11,
+                                "Width": 123,
+                                "Height": 13,
+                                "Caption": "Período a ser comparado:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMetaData",
+                              "nome": "MetaData3",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 201,
+                                "Top": 7,
+                                "Width": 21,
+                                "Height": 22,
+                                "Hint": "Localizar Data(Ctrl + D)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_PeriodoAte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 229,
+                                "Top": 11,
+                                "Width": 19,
+                                "Height": 13,
+                                "Caption": "Até:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMetaData",
+                              "nome": "MetaData4",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 321,
+                                "Top": 7,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar Data(Ctrl + D)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Msk_DataInicioComparativo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 1,
+                                "Left": 133,
+                                "Top": 7,
+                                "Width": 67,
+                                "Height": 21,
+                                "EditMask": "99/99/9999;1; ",
+                                "MaxLength": 10,
+                                "TabOrder": 0
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMaskEdit",
+                              "nome": "Msk_DataFimComparativo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Tag": 2,
+                                "Left": 251,
+                                "Top": 7,
+                                "Width": 69,
+                                "Height": 21,
+                                "EditMask": "99/99/9999;1; ",
+                                "MaxLength": 10,
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_Executar",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 358,
+                                "Top": 6,
+                                "Width": 129,
+                                "Height": 25,
+                                "Caption": "Executar",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_ExecutarClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TFrmSelecaoLotacao",
+                          "nome": "Fsl_SelecaoContrato",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 948,
+                            "Height": 288,
+                            "Align": "alClient",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_Consulta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Consulta",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBMetaGrid",
+                          "nome": "DBComparativo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 948,
+                            "Height": 341,
+                            "Align": "alClient",
+                            "DataSource": "Dts_Comparativo",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "UNIDADE",
+                                "Title.Caption": "Unidade",
+                                "Width": 50,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CONTRATO",
+                                "Title.Caption": "Contrato",
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "NOME",
+                                "Title.Caption": "Nome",
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DATAADMISSAO",
+                                "Title.Caption": "Admissão",
+                                "Width": 63,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "DATARESCISAO",
+                                "Title.Caption": "Desligamento",
+                                "Width": 80,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "CPF",
+                                "Width": 100,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "SITUACAO_FUNCIONARIO",
+                                "Title.Caption": "Situação",
+                                "Width": 100,
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "SITUACAO_GERREP",
+                                "Title.Caption": "GerRep",
+                                "Width": 210,
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 405,
+        "Width": 972,
+        "Height": 48,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Fechar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 8,
+            "Width": 95,
+            "Height": 30,
+            "Caption": "Fechar",
+            "TabOrder": 0,
+            "OnClick": "Btn_FecharClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 380,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CrachasProv",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Demitidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 180,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 84,
+        "Top": 92
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Comparativo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 260,
+        "Top": 216
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Comparativo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 228,
+        "Top": 216
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ComparativoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_ComparativoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ComparativoNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ComparativoCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ComparativoSITUACAO_FUNCIONARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO_FUNCIONARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ComparativoSITUACAO_GERREP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO_GERREP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ComparativoDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ComparativoDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

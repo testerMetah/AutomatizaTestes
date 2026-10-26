@@ -1,0 +1,228 @@
+{
+  "classe": "TFrm_RHAV3030",
+  "nome": "Frm_RHAV3030",
+  "herdado": true,
+  "propriedades": {
+    "Left": 352,
+    "Top": 212,
+    "Caption": "Contratos sem cadastro de Avaliações no Período",
+    "ClientHeight": 466,
+    "ClientWidth": 728
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 421,
+        "Width": 728,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Executar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 107,
+            "Height": 25,
+            "Caption": "&Iniciar Consulta",
+            "TabOrder": 0,
+            "OnClick": "Btn_ExecutarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 728,
+        "Height": 421,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Principal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 720,
+            "Height": 413,
+            "ActivePage": "Tbs_Definicao",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_PrincipalChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Definicao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Definição"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_PeriodoCompetencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 20,
+                    "Width": 121,
+                    "Height": 13,
+                    "Caption": "Período de Competência:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_PeriodoCompetencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 171,
+                    "Top": 16,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescPeriodoCompetencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 199,
+                    "Top": 20,
+                    "Width": 202,
+                    "Height": 13,
+                    "Caption": "Lbl_DescPeriodoCompetencia"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_PeriodoCompetencia",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 140,
+                    "Top": 16,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_PeriodoCompetenciaExit",
+                    "OnKeyPress": "Edt_PeriodoCompetenciaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TFrmSelecaoLotacao",
+                  "nome": "FrmSelecaoLotacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 48,
+                    "Width": 712,
+                    "Height": 337,
+                    "Align": "alBottom",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Resultado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 712,
+                    "Height": 385,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ContratosSemAvaliacao",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "CONTRATO",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Width": 335,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAADMISSAO",
+                        "Width": 130,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO60",
+                        "Width": 130,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 251,
+        "Top": 201
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContratosSemAvaliacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 252,
+        "Top": 156
+      },
+      "filhos": []
+    }
+  ]
+}

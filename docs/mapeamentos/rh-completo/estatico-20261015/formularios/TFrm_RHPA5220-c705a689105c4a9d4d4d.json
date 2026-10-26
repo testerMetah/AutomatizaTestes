@@ -1,0 +1,912 @@
+{
+  "classe": "TFrm_RHPA5220",
+  "nome": "Frm_RHPA5220",
+  "herdado": true,
+  "propriedades": {
+    "Left": 11,
+    "Top": 79,
+    "Caption": "Lay-Out de Listas de Acesso",
+    "ClientHeight": 440,
+    "ClientWidth": 773
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 773,
+        "Height": 42,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ListaAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 131,
+            "Height": 13,
+            "Caption": "Lay-out de Lista de Acesso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_ListaAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 189,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ListaAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 147,
+            "Top": 9,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "Edt_ListaAcessoChange",
+            "OnExit": "Edt_ListaAcessoExit",
+            "OnKeyPress": "Edt_ListaAcessoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dcb_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 668,
+            "Top": 12,
+            "Width": 61,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_ListasAcesso",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 42,
+        "Width": 773,
+        "Height": 398,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_EstruturaArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 85,
+            "Width": 748,
+            "Height": 303,
+            "Caption": "Estrutura do Arquivo",
+            "TabOrder": 1,
+            "OnEnter": "Grb_EstruturaArquivoEnter",
+            "OnExit": "Grb_EstruturaArquivoExit"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Grid",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 15,
+                "Width": 744,
+                "Height": 210,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LayoutCima",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 718,
+                    "Top": 83,
+                    "Width": 23,
+                    "Height": 22,
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "OnClick": "Btn_LayoutCimaBaixoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_LayoutBaixo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 718,
+                    "Top": 107,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Mover linha para baixo. (Ctrl+Baixo)",
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "OnClick": "Btn_LayoutCimaBaixoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TTabControl",
+                  "nome": "Tbc_LayoutLista",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 16,
+                    "Top": 4,
+                    "Width": 695,
+                    "Height": 203,
+                    "TabOrder": 0,
+                    "Tabs.Strings": [
+                      "Abertura (Header)",
+                      "Detalhe",
+                      "Fechamento (Trailer)"
+                    ],
+                    "TabStop": false,
+                    "OnChange": "Tbc_LayoutListaChange"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TDBGrid",
+                      "nome": "Dbg_Layout",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 4,
+                        "Top": 24,
+                        "Width": 687,
+                        "Height": 175,
+                        "TabStop": false,
+                        "Align": "alClient",
+                        "DataSource": "Dts_LayoutListasAcesso",
+                        "TabOrder": 0,
+                        "Columns": [
+                          {
+                            "FieldName": "NROORDEM",
+                            "Title.Caption": "Nº",
+                            "Width": 32,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "CAMPOREGISTRO",
+                            "Title.Caption": "Campo",
+                            "Width": 42,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DSCCAMPOREGISTRO",
+                            "Title.Caption": "Descrição do Campo",
+                            "Width": 147,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "TEXTOFIXO",
+                            "Title.Caption": "Texto",
+                            "Width": 173,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DSCTIPOCAMPO",
+                            "Title.Caption": "Tipo",
+                            "Width": 81,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "TAMANHOCAMPO",
+                            "Title.Caption": "Tamanho",
+                            "Width": 52,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DSCASPAS",
+                            "Title.Caption": "Aspas",
+                            "Width": 51,
+                            "Visible": true
+                          },
+                          {
+                            "FieldName": "DSCPREENCHIMENTO",
+                            "Title.Caption": "Preechimento",
+                            "Width": 78,
+                            "Visible": true
+                          }
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Layout",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 225,
+                "Width": 744,
+                "Height": 76,
+                "Align": "alBottom",
+                "TabOrder": 1,
+                "OnExit": "Pnl_LayoutExit"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_LayoutCampo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 51,
+                    "Top": 0,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Campo"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfLayoutNroOrdem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 0,
+                    "Width": 12,
+                    "Height": 13,
+                    "Caption": "Nº"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_Variavel",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 114,
+                    "Top": 14,
+                    "Width": 23,
+                    "Height": 21,
+                    "Enabled": false,
+                    "ShowHint": true,
+                    "OnClick": "Btn_VariavelClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_Inserir",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 5,
+                    "Top": 13,
+                    "Width": 23,
+                    "Height": 22,
+                    "Action": "Act_CtrlN",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfLayoutDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 139,
+                    "Top": 0,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_LayoutTipo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 29,
+                    "Top": 38,
+                    "Width": 21,
+                    "Height": 13,
+                    "Caption": "Tipo"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_LayoutTamanho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 127,
+                    "Top": 38,
+                    "Width": 45,
+                    "Height": 13,
+                    "Caption": "Tamanho"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_LayoutAspas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 185,
+                    "Top": 38,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Aspas"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbe_LayoutNroOrdem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 14,
+                    "Width": 18,
+                    "Height": 21,
+                    "DataField": "NROORDEM",
+                    "DataSource": "Dts_LayoutListasAcesso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbe_CampoDescricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 139,
+                    "Top": 14,
+                    "Width": 225,
+                    "Height": 21,
+                    "DataField": "DSCCAMPOREGISTRO",
+                    "DataSource": "Dts_LayoutListasAcesso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Dbe_LayoutTipo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 52,
+                    "Width": 93,
+                    "Height": 21,
+                    "DataField": "DSCTIPOCAMPO",
+                    "DataSource": "Dts_LayoutListasAcesso"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Preenchimento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 314,
+                    "Top": 38,
+                    "Width": 71,
+                    "Height": 13,
+                    "Caption": "Preenchimento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Texto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 367,
+                    "Top": 0,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Texto"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_CampoRegistoAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 434,
+                    "Top": -30,
+                    "Width": 22,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnEnter": "Edt_CampoRegistoAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Tamanho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 127,
+                    "Top": 52,
+                    "Width": 53,
+                    "Height": 21,
+                    "DataField": "TAMANHOCAMPO",
+                    "DataSource": "Dts_LayoutListasAcesso",
+                    "MaxLength": 4,
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_LayoutAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 606,
+                    "Top": -28,
+                    "Width": 25,
+                    "Height": 17,
+                    "TabOrder": 6,
+                    "OnEnter": "Edt_LayoutAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_Aspas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 184,
+                    "Top": 52,
+                    "Width": 126,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "ASPAS",
+                    "DataSource": "Dts_LayoutListasAcesso",
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_Preenchimento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 314,
+                    "Top": 52,
+                    "Width": 169,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "PREENCHIMENTO",
+                    "DataSource": "Dts_LayoutListasAcesso",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Texto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 368,
+                    "Top": 14,
+                    "Width": 342,
+                    "Height": 21,
+                    "DataField": "TEXTOFIXO",
+                    "DataSource": "Dts_LayoutListasAcesso",
+                    "TabOrder": 2,
+                    "OnKeyPress": "Dbe_TextoKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_CampoRegistro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 51,
+                    "Top": 14,
+                    "Width": 62,
+                    "Height": 21,
+                    "DataField": "CAMPOREGISTRO",
+                    "DataSource": "Dts_LayoutListasAcesso",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbe_CampoRegistroEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_ListaAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 765,
+            "Height": 80,
+            "Align": "alTop",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_IndModeloDescricaoReduzida",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 40,
+                "Width": 99,
+                "Height": 13,
+                "Caption": "Descrição Reduzida:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_IndModeloDescricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 13,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_ListaAcessoAux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 506,
+                "Top": 20,
+                "Width": 25,
+                "Height": 17,
+                "TabOrder": 4,
+                "OnEnter": "Edt_ListaAcessoAuxEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 131,
+                "Top": 9,
+                "Width": 258,
+                "Height": 21,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_ListasAcesso",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_DescReduzida",
+              "herdado": false,
+              "propriedades": {
+                "Left": 131,
+                "Top": 36,
+                "Width": 151,
+                "Height": 21,
+                "DataField": "DESCRICAO20",
+                "DataSource": "Dts_ListasAcesso",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBRadioGroup",
+              "nome": "Rdg_ModeloFormato",
+              "herdado": false,
+              "propriedades": {
+                "Left": 408,
+                "Top": 2,
+                "Width": 352,
+                "Height": 76,
+                "Caption": "Formato de Gravação dos Campos",
+                "DataField": "FORMATOCAMPOS",
+                "DataSource": "Dts_ListasAcesso",
+                "Items.Strings": [
+                  "Fixo (define o tamanho)",
+                  "Variável (o que ocupa)"
+                ],
+                "TabOrder": 2,
+                "OnChange": "Rdg_ModeloFormatoChange"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Separador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 545,
+                "Top": 44,
+                "Width": 200,
+                "Height": 28,
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Separador",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 8,
+                    "Width": 156,
+                    "Height": 13,
+                    "Caption": "Caracter Separador dos Campos:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Separador",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 169,
+                    "Top": 4,
+                    "Width": 19,
+                    "Height": 21,
+                    "DataField": "SEPARADORCAMPOS",
+                    "DataSource": "Dts_ListasAcesso",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 198,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ListasAcesso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 388,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_LayoutListasAcesso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 516,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDirBox",
+      "nome": "DirBox",
+      "herdado": false,
+      "propriedades": {
+        "Left": 610,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 476,
+        "Top": 126
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlN",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16462,
+            "OnExecute": "Act_CtrlNExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlBaixo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "ShortCut": 16424,
+            "OnExecute": "Act_CtrlBaixoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlCima",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "ShortCut": 16422,
+            "OnExecute": "Act_CtrlCimaExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_LayoutListas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_Layout",
+      "herdado": false,
+      "propriedades": {
+        "Left": 572,
+        "Top": 126
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_InserirLinha",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Inserir Linha",
+            "ImageIndex": 0,
+            "ShortCut": 8237,
+            "OnClick": "Pop_InserirLinhaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_ExcluirLinha",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Excluir Linha",
+            "ImageIndex": 1,
+            "ShortCut": 8238,
+            "OnClick": "Pop_ExcluirLinhaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_LimparTudo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Limpar &Tudo",
+            "ImageIndex": 2,
+            "OnClick": "Pop_LimparTudoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Linha",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Copiar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Co&piar",
+            "ImageIndex": 3,
+            "ShortCut": 16451,
+            "OnClick": "Pop_CopiarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Recortar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Recortar",
+            "ImageIndex": 4,
+            "ShortCut": 16472,
+            "OnClick": "Pop_RecortarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Colar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Col&ar",
+            "Enabled": false,
+            "ImageIndex": 5,
+            "ShortCut": 16470,
+            "OnClick": "Pop_ColarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 560,
+        "Top": 314
+      },
+      "filhos": []
+    }
+  ]
+}

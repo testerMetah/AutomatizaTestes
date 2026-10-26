@@ -1,0 +1,755 @@
+{
+  "classe": "TFrm_RHFP4500",
+  "nome": "Frm_RHFP4500",
+  "herdado": false,
+  "propriedades": {
+    "Left": 468,
+    "Top": 284,
+    "BorderStyle": "bsSingle",
+    "Caption": "Gravar arquivo XML para o Sistema Homolognet",
+    "ClientHeight": 463,
+    "ClientWidth": 663,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 663,
+        "Height": 59,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 20,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 17,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 23,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Admissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 7,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Admissão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "Dbt_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 556,
+            "Top": 23,
+            "Width": 90,
+            "Height": 13,
+            "DataField": "SITUACAO",
+            "DataSource": "Dts_Contrato",
+            "Items.Strings": [
+              "Ativo",
+              "Afastado",
+              "Rescindido",
+              "Resc.+ Mês"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbt_Admissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 556,
+            "Top": 7,
+            "Width": 90,
+            "Height": 14,
+            "DataField": "DATAADMISSAO",
+            "DataSource": "Dts_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Lotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 39,
+            "Width": 25,
+            "Height": 10,
+            "Hint": "Exibir Lotação do Contrato",
+            "Caption": ":::",
+            "ShowHint": true,
+            "OnClick": "Btn_LotacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbt_Nome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 146,
+            "Top": 19,
+            "Width": 347,
+            "Height": 17,
+            "DataField": "NOME",
+            "DataSource": "Dts_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 59,
+            "Top": 17,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 59,
+        "Width": 663,
+        "Height": 363,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_JornadaTrabalhoSemanaAfastamentoCumpridaIntegralmente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 35,
+            "Top": 20,
+            "Width": 364,
+            "Height": 13,
+            "Caption": "A jornada de trabalho da semana do afastamento foi cumprida integralmente?"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_JornadaTrabalhoSabadoCompensadaSemanaAfastamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 35,
+            "Top": 49,
+            "Width": 369,
+            "Height": 13,
+            "Caption": "A jornada de trabalho do sábado foi compensada na semana do afastamento?"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DuracaoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 35,
+            "Top": 74,
+            "Width": 514,
+            "Height": 13,
+            "Caption": "Duração do Aviso Prévio estabelecida no instrumento coletivo de trabalho da categoria profissional (em dias):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpregadorComprovouNovoEmpregoDurantePeriodoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 39,
+            "Top": 267,
+            "Width": 367,
+            "Height": 13,
+            "Caption": "Empregado comprovou ter novo emprego durante o período do Aviso Prévio?"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpregadorDispensouEmpregadoAvisoPrevo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 39,
+            "Top": 296,
+            "Width": 247,
+            "Height": 13,
+            "Caption": "Empregador dispensou empregado do Aviso Prévio?"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 39,
+            "Top": 325,
+            "Width": 135,
+            "Height": 13,
+            "Caption": "Arquivo XML p/Homolognet:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 605,
+            "Top": 321,
+            "Width": 23,
+            "Height": 21,
+            "Caption": "...",
+            "OnClick": "Btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_JornadaTrabalhoSemanaAfastamentoCumpridaIntegralmente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 409,
+            "Top": 16,
+            "Width": 50,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "Items.Strings": [
+              "Sim",
+              "Não"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_JornadaTrabalhoSabadoCompensadaSemanaAfastamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 409,
+            "Top": 45,
+            "Width": 50,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "Items.Strings": [
+              "Sim",
+              "Não"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_DuracaoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 557,
+            "Top": 70,
+            "Width": 30,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_FormaCalculoMedias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 35,
+            "Top": 99,
+            "Width": 593,
+            "Height": 156,
+            "Caption": "Forma de Cálculo das Médias",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_DecimoTerceiro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 205,
+                "Top": 18,
+                "Width": 183,
+                "Height": 127,
+                "Caption": "13º Salário",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_QtdMesesBaseCalc13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 74,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Qtde.:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MaioresMesesBaseCalc13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 99,
+                    "Width": 40,
+                    "Height": 13,
+                    "Caption": "Maiores:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_FormaCalcMedias13Sal",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 18,
+                    "Width": 155,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_FormaCalcMedias13SalChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_FormaApuraBaseCalc13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 43,
+                    "Width": 155,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 1,
+                    "OnChange": "Cmb_FormaApuraBaseCalc13Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_QtdMesesBaseCalc13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 70,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_MaioresMesesBaseCalc13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 95,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_Ferias",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 18,
+                "Width": 182,
+                "Height": 127,
+                "Caption": "Férias",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_QtdMesesBaseCalcFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 74,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Qtde.:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MaioresMesesBaseCalcFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 99,
+                    "Width": 40,
+                    "Height": 13,
+                    "Caption": "Maiores:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_FormaCalcMediasFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 18,
+                    "Width": 155,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_FormaCalcMediasFeriasChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_FormaApuraBaseCalcFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 43,
+                    "Width": 155,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 1,
+                    "OnChange": "Cmb_FormaApuraBaseCalcFeriasChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_QtdMesesBaseCalcFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 70,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_MaioresMesesBaseCalcFerias",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 95,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 3
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "Grb_AvisoPreviso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 396,
+                "Top": 18,
+                "Width": 183,
+                "Height": 127,
+                "Caption": "Aviso Prévio",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_QtdMesesBaseCalcAviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 74,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Qtde.:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MaioresMesesBaseCalcAviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 99,
+                    "Width": 40,
+                    "Height": 13,
+                    "Caption": "Maiores:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_FormaCalcMediasAviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 13,
+                    "Top": 18,
+                    "Width": 155,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0,
+                    "OnChange": "Cmb_FormaCalcMediasAvisoChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_QtdMesesBaseCalcAviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 70,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_MaioresMesesBaseCalcAviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 58,
+                    "Top": 95,
+                    "Width": 30,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_EmpregadoComprovouNovoEmpregoDurantePeriodoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 414,
+            "Top": 263,
+            "Width": 50,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 4,
+            "Items.Strings": [
+              "Sim",
+              "Não"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_EmpregadorDispensouEmpregadoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 414,
+            "Top": 292,
+            "Width": 50,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 5,
+            "Items.Strings": [
+              "Sim",
+              "Não"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 178,
+            "Top": 321,
+            "Width": 427,
+            "Height": 21,
+            "TabOrder": 6,
+            "OnChange": "Edt_ArquivoChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Rodape",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 422,
+        "Width": 663,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarGravacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 6,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Iniciar Gravação",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarGravacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_VisualizarXML",
+          "herdado": false,
+          "propriedades": {
+            "Left": 158,
+            "Top": 6,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Visualizar XML",
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "Btn_VisualizarXMLClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "ReadOnly": true,
+        "Left": 496,
+        "Top": 72
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 528,
+        "Top": 72
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "Svd_Arquivo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 560,
+        "Top": 73
+      },
+      "filhos": []
+    }
+  ]
+}

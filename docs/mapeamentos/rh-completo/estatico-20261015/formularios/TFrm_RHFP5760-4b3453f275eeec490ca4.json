@@ -1,0 +1,535 @@
+{
+  "classe": "TFrm_RHFP5760",
+  "nome": "Frm_RHFP5760",
+  "herdado": false,
+  "propriedades": {
+    "Left": 253,
+    "Top": 168,
+    "BorderStyle": "bsSingle",
+    "Caption": "Atualizar Números de Cheques/DOCs",
+    "ClientHeight": 274,
+    "ClientWidth": 296,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 233,
+        "Width": 296,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 7,
+            "Width": 126,
+            "Height": 25,
+            "Caption": "Iniciar Atualização",
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 296,
+        "Height": 233,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_DescPrimeiro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 172,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Nº do 1º Cheque:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 195,
+            "Width": 168,
+            "Height": 26,
+            "Caption": "(Os seguintes serão incrementados de 1)"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "rdg_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 8,
+            "Width": 87,
+            "Height": 80,
+            "Caption": "Atualizar",
+            "Items.Strings": [
+              "Cheques",
+              "DOCs"
+            ],
+            "TabOrder": 0,
+            "OnClick": "rdg_TipoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 97,
+            "Width": 274,
+            "Height": 58,
+            "Caption": "Intervalo a ser alterado (nº sequencial)",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 22,
+                "Top": 28,
+                "Width": 30,
+                "Height": 13,
+                "Caption": "Do nº:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 151,
+                "Top": 28,
+                "Width": 29,
+                "Height": 13,
+                "Caption": "Ao nº:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_SeqDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 102,
+                "Top": 24,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_SeqDeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_SeqAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 229,
+                "Top": 24,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_SeqAteClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TNumericEdit",
+              "nome": "Ned_De",
+              "herdado": false,
+              "propriedades": {
+                "Left": 56,
+                "Top": 24,
+                "Width": 45,
+                "Height": 21,
+                "MaxLength": 6,
+                "TabOrder": 0,
+                "OnEnter": "Ned_DeEnter",
+                "OnExit": "Ned_DeExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TNumericEdit",
+              "nome": "Ned_Ate",
+              "herdado": false,
+              "propriedades": {
+                "Left": 183,
+                "Top": 24,
+                "Width": 45,
+                "Height": 21,
+                "MaxLength": 6,
+                "TabOrder": 1,
+                "OnEnter": "Ned_AteEnter",
+                "OnExit": "Ned_AteExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Ned_NroCheque",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 168,
+            "Width": 68,
+            "Height": 21,
+            "MaxLength": 9,
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Emissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 8,
+            "Width": 160,
+            "Height": 80,
+            "Caption": "Emissão",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 24,
+                "Width": 40,
+                "Height": 13,
+                "Caption": "Número:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 52,
+                "Width": 26,
+                "Height": 13,
+                "Caption": "Data:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl_DataEmissao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 57,
+                "Top": 52,
+                "Width": 69,
+                "Height": 13,
+                "Caption": "Data:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_EmissaoCheque",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 20,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_EmissaoChequeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_EmissaoDoc",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 20,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "SpeedButton2Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TNumericEdit",
+              "nome": "Ned_NroEmissao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 57,
+                "Top": 20,
+                "Width": 68,
+                "Height": 21,
+                "MaxLength": 8,
+                "TabOrder": 0,
+                "OnEnter": "Ned_NroEmissaoEnter",
+                "OnExit": "Ned_NroEmissaoExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 194,
+            "Top": 160,
+            "Width": 93,
+            "Height": 65,
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TCheckBox",
+              "nome": "cbAltSerie",
+              "herdado": false,
+              "propriedades": {
+                "Left": 6,
+                "Top": 11,
+                "Width": 80,
+                "Height": 17,
+                "Caption": "Alterar Série",
+                "TabOrder": 0,
+                "OnClick": "cbAltSerieClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "eSerie",
+              "herdado": false,
+              "propriedades": {
+                "Left": 26,
+                "Top": 36,
+                "Width": 55,
+                "Height": 21,
+                "Enabled": false,
+                "MaxLength": 6,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Emissao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 140,
+        "Top": 163
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Tempo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 238,
+        "Top": 230
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_LocalizarEmissaoCheques",
+      "herdado": false,
+      "propriedades": {
+        "Left": 108,
+        "Top": 200
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_LocalizarEmissaoChequesNROEMISSAOSEQ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número da Emissão",
+            "FieldName": "NROEMISSAOSEQ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_LocalizarEmissaoChequesDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Emissão",
+            "FieldName": "DATAEMISSAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_LocalizarEmissaoDOCs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 188,
+        "Top": 192
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_LocalizarEmissaoDOCsNROEMISSAOSEQ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número da Emissão",
+            "FieldName": "NROEMISSAOSEQ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_LocalizarEmissaoDOCsDATAEMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data da Emissão",
+            "FieldName": "DATAEMISSAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_LocalizarSeqDocs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 192,
+        "Top": 64
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LocalizarSeqDocsNRODOCSEQ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nº Sequencial do DOC",
+            "FieldName": "NRODOCSEQ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarSeqDocsUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_LocalizarSeqDocsCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_LocalizarSeqCheques",
+      "herdado": false,
+      "propriedades": {
+        "Left": 104,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "IntegerField1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nº Sequencial do Cheque",
+            "FieldName": "NROCHEQUESEQ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "IntegerField2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

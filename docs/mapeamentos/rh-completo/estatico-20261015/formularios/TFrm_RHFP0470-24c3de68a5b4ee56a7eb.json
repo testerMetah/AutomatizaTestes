@@ -1,0 +1,261 @@
+{
+  "classe": "TFrm_RHFP0470",
+  "nome": "Frm_RHFP0470",
+  "herdado": false,
+  "propriedades": {
+    "Left": 181,
+    "Top": 138,
+    "BorderStyle": "bsSingle",
+    "Caption": "Motivos de Rescisão Parcial",
+    "ClientHeight": 176,
+    "ClientWidth": 474,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 474,
+        "Height": 136,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 22,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 95,
+            "Width": 130,
+            "Height": 13,
+            "Caption": "Causa da Rescisão Parcial:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 56,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Descrição Reduzida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 208,
+            "Top": 96,
+            "Width": 31,
+            "Height": 11,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 155,
+            "Top": 19,
+            "Width": 260,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_MotivosRescParciais",
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "dbx_Rais",
+          "herdado": false,
+          "propriedades": {
+            "Left": 155,
+            "Top": 91,
+            "Width": 169,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "CAUSARESCPARCIAL",
+            "DataSource": "Dts_MotivosRescParciais",
+            "Items.Strings": [
+              "Solicitada pelo Empregador",
+              "Solicitada pelo Empregado"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 155,
+            "Top": 53,
+            "Width": 170,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_MotivosRescParciais",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 474,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 12,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_MotivoRescParcial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 193,
+            "Top": 5,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_MotivoRescParcialClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_MotivoRescParcial",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 155,
+            "Top": 6,
+            "Width": 38,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_MotivoRescParcialEnter",
+            "OnExit": "Edt_MotivoRescParcialExit",
+            "OnKeyPress": "Edt_MotivoRescParcialKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_MotivosRescParciais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 428,
+        "Top": 58
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescParciaisMOTIVORESCPARCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Motivo Rescisão Parcial",
+            "FieldName": "MOTIVORESCPARCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescParciaisDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescParciaisDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescParciaisCAUSARESCPARCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Causa da Rescisão Parcial",
+            "FieldName": "CAUSARESCPARCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MotivosRescParciais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 425,
+        "Top": 106
+      },
+      "filhos": []
+    }
+  ]
+}

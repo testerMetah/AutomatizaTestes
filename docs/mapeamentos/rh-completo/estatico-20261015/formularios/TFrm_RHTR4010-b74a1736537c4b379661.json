@@ -1,0 +1,598 @@
+{
+  "classe": "TFrm_RHTR4010",
+  "nome": "Frm_RHTR4010",
+  "herdado": false,
+  "propriedades": {
+    "Left": 244,
+    "Top": 157,
+    "BorderStyle": "bsSingle",
+    "Caption": "Metas/Verbas",
+    "ClientHeight": 401,
+    "ClientWidth": 461,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 461,
+        "Height": 48,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 10,
+            "Width": 80,
+            "Height": 26,
+            "Caption": "Classificação do Planejamento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Classificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 163,
+            "Top": 18,
+            "Width": 255,
+            "Height": 13,
+            "Caption": "lbl_Classificacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Classificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 14,
+            "Width": 21,
+            "Height": 21,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ClassificacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "SpeedButton1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 424,
+            "Top": 14,
+            "Width": 25,
+            "Height": 21,
+            "Hint": "Selecionar Base de Treinamento",
+            "ShowHint": true,
+            "OnClick": "SpeedButton1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Classificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 14,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "edt_ClassificacaoEnter",
+            "OnExit": "edt_ClassificacaoExit",
+            "OnKeyPress": "edt_ClassificacaoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 48,
+        "Width": 461,
+        "Height": 307,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bevel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 226,
+            "Top": 273,
+            "Width": 71,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 119,
+            "Top": 273,
+            "Width": 103,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label10",
+          "herdado": false,
+          "propriedades": {
+            "Left": 75,
+            "Top": 278,
+            "Width": 27,
+            "Height": 13,
+            "Caption": "Total:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Verba",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 277,
+            "Width": 92,
+            "Height": 13,
+            "Caption": "Lbl_Verba"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Horas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 230,
+            "Top": 277,
+            "Width": 62,
+            "Height": 13,
+            "Caption": "Lbl_Horas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 47,
+            "Top": 14,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Período:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 14,
+            "Width": 6,
+            "Height": 13,
+            "Caption": "a"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Metas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 47,
+            "Top": 37,
+            "Width": 363,
+            "Height": 186,
+            "TabStop": false,
+            "DataSource": "Dts_TreinamentoPlan",
+            "ReadOnly": true,
+            "TabOrder": 2,
+            "Columns": [
+              {
+                "FieldName": "MESANO",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "VERBAPLAN",
+                "Width": 100,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORASPLAN",
+                "Width": 73,
+                "Visible": true
+              },
+              {
+                "FieldName": "MEDIAHSPLAN",
+                "Width": 93,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_MesAnoIni",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 9,
+            "Width": 48,
+            "Height": 21,
+            "EditMask": "!99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnExit": "Msk_MesAnoFinExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_MesAnoFin",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 9,
+            "Width": 49,
+            "Height": 21,
+            "EditMask": "!99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnExit": "Msk_MesAnoFinExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Alterar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 47,
+            "Top": 226,
+            "Width": 363,
+            "Height": 44,
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 71,
+                "Top": 4,
+                "Width": 28,
+                "Height": 13,
+                "Caption": "Verba"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 178,
+                "Top": 4,
+                "Width": 63,
+                "Height": 13,
+                "Caption": "Horas X Part."
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 254,
+                "Top": 4,
+                "Width": 85,
+                "Height": 13,
+                "Caption": "Média Hs/Pessoa"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 4,
+                "Width": 44,
+                "Height": 13,
+                "Caption": "Mês/Ano"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Dbe_MesAno",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 20,
+                "Width": 57,
+                "Height": 21,
+                "DataField": "MESANO",
+                "DataSource": "Dts_TreinamentoPlan"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Verba",
+              "herdado": false,
+              "propriedades": {
+                "Left": 71,
+                "Top": 20,
+                "Width": 103,
+                "Height": 21,
+                "DataField": "VERBAPLAN",
+                "DataSource": "Dts_TreinamentoPlan",
+                "MaxLength": 11,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_HorasPart",
+              "herdado": false,
+              "propriedades": {
+                "Left": 178,
+                "Top": 20,
+                "Width": 71,
+                "Height": 21,
+                "DataField": "HORASPLAN",
+                "DataSource": "Dts_TreinamentoPlan",
+                "MaxLength": 9,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_MediaHsPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 254,
+                "Top": 20,
+                "Width": 60,
+                "Height": 21,
+                "DataField": "MEDIAHSPLAN",
+                "DataSource": "Dts_TreinamentoPlan",
+                "MaxLength": 9,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Aux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 308,
+                "Top": 22,
+                "Width": 0,
+                "Height": 18,
+                "BorderStyle": "bsNone",
+                "TabOrder": 3,
+                "OnEnter": "Edt_AuxEnter"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 355,
+        "Width": 461,
+        "Height": 46,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Incluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 130,
+            "Height": 28,
+            "Caption": "&Incluir Metas/Verbas",
+            "TabOrder": 0,
+            "OnClick": "Btn_IncluirClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 7,
+            "Width": 130,
+            "Height": 28,
+            "Caption": "&Excluir Período",
+            "TabOrder": 1,
+            "OnClick": "BitBtn1Click"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Classificacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 215,
+        "Top": 132
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassificacaoCLASSIFICACAOCURSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação",
+            "FieldName": "CLASSIFICACAOCURSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassificacaoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_TreinamentoPlan",
+      "herdado": false,
+      "propriedades": {
+        "Left": 103,
+        "Top": 134
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TreinamentoPlanCLASSIFICACAOCURSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCURSO",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_TreinamentoPlanMESANO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Mês/Ano",
+            "DisplayWidth": 15,
+            "FieldName": "MESANO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_TreinamentoPlanVERBAPLAN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Verba",
+            "DisplayWidth": 15,
+            "FieldName": "VERBAPLAN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_TreinamentoPlanHORASPLAN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Horas X Part.",
+            "DisplayWidth": 15,
+            "FieldName": "HORASPLAN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_TreinamentoPlanMEDIAHSPLAN",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Média Hs/Pessoa",
+            "DisplayWidth": 15,
+            "FieldName": "MEDIAHSPLAN"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TreinamentoPlanBASETREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Base de Capacitação",
+            "FieldName": "BASETREINAMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_TreinamentoPlan",
+      "herdado": false,
+      "propriedades": {
+        "Left": 104,
+        "Top": 183
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Total",
+      "herdado": false,
+      "propriedades": {
+        "Left": 215,
+        "Top": 185
+      },
+      "filhos": []
+    }
+  ]
+}

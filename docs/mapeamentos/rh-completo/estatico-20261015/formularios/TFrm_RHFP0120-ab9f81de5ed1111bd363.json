@@ -1,0 +1,335 @@
+{
+  "classe": "TFrm_RHFP0120",
+  "nome": "Frm_RHFP0120",
+  "herdado": false,
+  "propriedades": {
+    "Left": 411,
+    "Top": 292,
+    "BorderStyle": "bsSingle",
+    "Caption": "Códigos Fixos da Folha ",
+    "ClientHeight": 365,
+    "ClientWidth": 630,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 315,
+        "Width": 630,
+        "Height": 50,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_VDB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 315,
+            "Top": 20,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_VDBClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_VDB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 345,
+            "Top": 23,
+            "Width": 272,
+            "Height": 13,
+            "Caption": "lbl_VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 3,
+            "Width": 62,
+            "Height": 13,
+            "Caption": "Cálculo do(a)"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 274,
+            "Top": 3,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Gera VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 341,
+            "Top": 3,
+            "Width": 126,
+            "Height": 13,
+            "Caption": "Descrição do VDB Gerado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 547,
+            "Top": 3,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Obrigatório"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "dbb_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 23,
+            "Width": 252,
+            "Height": 17,
+            "DataField": "DESCRICAO40",
+            "DataSource": "dts_CodigosFixos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "dbb_Obrigatorio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 564,
+            "Top": 23,
+            "Width": 26,
+            "Height": 17,
+            "DataField": "OBRIGATORIO",
+            "DataSource": "dts_CodigosFixos",
+            "Items.Strings": [
+              "Sim",
+              "Não"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 21,
+            "Width": 263,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 342,
+            "Top": 21,
+            "Width": 199,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 561,
+            "Top": 21,
+            "Width": 32,
+            "Height": 19
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_VDB",
+          "herdado": false,
+          "propriedades": {
+            "Left": 275,
+            "Top": 20,
+            "Width": 40,
+            "Height": 21,
+            "DataField": "VDB",
+            "DataSource": "dts_CodigosFixos",
+            "MaxLength": 5,
+            "TabOrder": 0,
+            "OnEnter": "dbe_VDBEnter",
+            "OnExit": "dbe_VDBExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TStringGrid",
+      "nome": "stg_CodigosFixos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 630,
+        "Height": 315,
+        "Align": "alClient",
+        "TabOrder": 1,
+        "OnClick": "stg_CodigosFixosClick"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 168,
+        "Top": 150
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_VDBTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_VDBATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_CodigosFixos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 192,
+        "Top": 82
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_CodigosFixos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 160,
+        "Top": 81
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_CodigosFixosCODIGOFIXO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código Fixo",
+            "FieldName": "CODIGOFIXO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_CodigosFixosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_CodigosFixosOBRIGATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Obrigatório",
+            "FieldName": "OBRIGATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_CodigosFixosVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_VDBAuxiliar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 256,
+        "Top": 140
+      },
+      "filhos": []
+    }
+  ]
+}

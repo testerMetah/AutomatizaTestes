@@ -1,0 +1,217 @@
+{
+  "classe": "TFrmSelecaoColetores",
+  "nome": "FrmSelecaoColetores",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Seleção de Coletores",
+    "ClientHeight": 384,
+    "ClientWidth": 412,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "PnlBottom",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 320,
+        "Width": 412,
+        "Height": 64,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 19,
+            "Width": 163,
+            "Height": 29,
+            "Caption": "Cancelar (Ctrl+D)",
+            "TabOrder": 0,
+            "OnClick": "ActCancelarExecute",
+            "Action": "ActCancelar"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnConfirmar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 228,
+            "Top": 19,
+            "Width": 169,
+            "Height": 29,
+            "Caption": "Confirmar (Ctrl+C)",
+            "TabOrder": 1,
+            "OnClick": "ActConfirmarExecute",
+            "Action": "ActConfirmar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "pgPrincipal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 412,
+        "Height": 320,
+        "ActivePage": "tbGrid",
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "tbGrid",
+          "herdado": false,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridItens",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 404,
+                "Height": 286,
+                "Align": "alClient",
+                "BorderStyle": "bsNone",
+                "DataSource": "dsConsulta",
+                "ReadOnly": true,
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "SELECIONADO",
+                    "Title.Caption": "Selecionar",
+                    "Width": 78,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ID",
+                    "Title.Caption": "Id",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Title.Caption": "Nome",
+                    "Width": 190,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 64
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar (Ctrl+D)",
+            "ImageIndex": 0,
+            "ShortCut": 16452,
+            "OnExecute": "ActCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActConfirmar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Confirmar (Ctrl+C)",
+            "ImageIndex": 1,
+            "ShortCut": 16451,
+            "OnExecute": "ActConfirmarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 336,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dsConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 336,
+        "Top": 120
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsConsultaSELECIONADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SELECIONADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsConsultaID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsConsultaNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

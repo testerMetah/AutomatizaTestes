@@ -1,0 +1,499 @@
+{
+  "classe": "TFrm_RHFP8000",
+  "nome": "Frm_RHFP8000",
+  "herdado": false,
+  "propriedades": {
+    "Left": 244,
+    "Top": 113,
+    "BorderStyle": "bsSingle",
+    "Caption": "Gerenciador de solicitações de desligamento",
+    "ClientHeight": 450,
+    "ClientWidth": 1036,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 405,
+        "Width": 1036,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 311,
+            "Top": 8,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 2,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "Criar Aviso Prévio",
+            "TabOrder": 0,
+            "OnClick": "Btn_AvisoPrevioClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 460,
+            "Top": 8,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "TabOrder": 3,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_DetalharSolicitacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 163,
+            "Top": 8,
+            "Width": 137,
+            "Height": 25,
+            "Caption": "Detalhar Solicitação",
+            "TabOrder": 1,
+            "OnClick": "Btn_DetalharSolicitacaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1036,
+        "Height": 405,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_SolicitacoesDesligamento",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 73,
+            "Width": 1028,
+            "Height": 326,
+            "Align": "alClient",
+            "DataSource": "Dts_SolicitacoesDesligamento",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Visible": true
+              },
+              {
+                "FieldName": "RAZAOSOCIAL",
+                "Width": 134,
+                "Visible": true
+              },
+              {
+                "FieldName": "ESTABELECIMENTO",
+                "Width": 36,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Width": 122,
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOA",
+                "Width": 39,
+                "Visible": true
+              },
+              {
+                "FieldName": "UnidadeContrato",
+                "Width": 90,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 141,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATARESCISAO",
+                "Width": 148,
+                "Visible": true
+              },
+              {
+                "FieldName": "NUMEROSOLICITACAO",
+                "Width": 57,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSITUACAODESLIGAMENTO",
+                "Width": 59,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescMotivoCancelamento",
+                "Width": 124,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Consultar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 1028,
+            "Height": 71,
+            "Align": "alTop",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TGroupBox",
+              "nome": "Gb_Consultar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 2,
+                "Width": 1020,
+                "Height": 63,
+                "Align": "alClient",
+                "Caption": " Consultar por ",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Situacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 12,
+                    "Top": 28,
+                    "Width": 45,
+                    "Height": 13,
+                    "Caption": "Situação:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Localizar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 887,
+                    "Top": 22,
+                    "Width": 86,
+                    "Height": 27,
+                    "Caption": "Localizar",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_LocalizarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_Situacao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 61,
+                    "Top": 24,
+                    "Width": 336,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "Items.Strings": [
+                      "Todos",
+                      "Pendente",
+                      "Cancelado",
+                      "Concluído"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_SolicitacoesDesligamento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 520,
+        "Top": 180
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoDescMotivoCancelamento",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Motivo Cancelamento",
+            "FieldName": "DescMotivoCancelamento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoUnidadeContrato",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade/Contrato",
+            "FieldName": "UnidadeContrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_SolicitacoesDesligamentoNUMEROSOLICITACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Solicitação",
+            "FieldName": "NUMEROSOLICITACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estab.",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome Reduzido",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_SolicitacoesDesligamentoPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_SolicitacoesDesligamentoCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_SolicitacoesDesligamentoDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Desligamento/ Ped. Demissão",
+            "FieldName": "DATARESCISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoSITUACAODESLIGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAODESLIGAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoDESCSITUACAODESLIGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "DESCSITUACAODESLIGAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoMOTIVOCANCELAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Motivo Cancelamento",
+            "FieldName": "MOTIVOCANCELAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoMOTIVORESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVORESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoTIPOAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_SolicitacoesDesligamentoULTDIATRABALHADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTDIATRABALHADO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoOBSERVACOES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSERVACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_SolicitacoesDesligamentoSOLICITACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 38,
+            "FieldName": "SOLICITACAO",
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SolicitacoesDesligamento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 488,
+        "Top": 180
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSQLConnection",
+      "nome": "SQLConnection1",
+      "herdado": false,
+      "propriedades": {
+        "Tag": 99,
+        "Left": 344,
+        "Top": 244
+      },
+      "filhos": []
+    }
+  ]
+}

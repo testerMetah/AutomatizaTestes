@@ -1,0 +1,182 @@
+{
+  "classe": "TFrm_RHAD1062",
+  "nome": "Frm_RHAD1062",
+  "herdado": false,
+  "propriedades": {
+    "Left": 330,
+    "Top": 219,
+    "Width": 775,
+    "Height": 331,
+    "Caption": "Nome do Documento"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Assinaturas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 759,
+        "Height": 292,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "PnlBotoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 235,
+            "Width": 757,
+            "Height": 56,
+            "Align": "alBottom",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Retornar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 13,
+                "Width": 143,
+                "Height": 32,
+                "Caption": "Retornar",
+                "ModalResult": 1,
+                "TabOrder": 0,
+                "OnClick": "Btn_RetornarClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Assinaturas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 757,
+            "Height": 234,
+            "Align": "alClient",
+            "DataSource": "Dts_Assinaturas",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "PrincipalSignatario",
+                "Title.Caption": "Principal Signatário",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 234,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAASSINATURA",
+                "Width": 118,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPOASSINATURA",
+                "Width": 126,
+                "Visible": true
+              },
+              {
+                "FieldName": "ULTIMAVISUALIZACAODOC",
+                "Title.Caption": "Visualizado documento em",
+                "Width": 135,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Assinaturas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 244,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Assinaturas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 204,
+        "Top": 92
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AssinaturasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AssinaturasDATAASSINATURA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Assinado",
+            "FieldName": "DATAASSINATURA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AssinaturasTIPOASSINATURA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOASSINATURA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AssinaturasPrincipalSignatario",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PrincipalSignatario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_AssinaturasNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_AssinaturasULTIMAVISUALIZACAODOC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTIMAVISUALIZACAODOC"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

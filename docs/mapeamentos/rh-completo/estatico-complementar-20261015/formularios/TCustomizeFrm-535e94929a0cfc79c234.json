@@ -1,0 +1,643 @@
+{
+  "classe": "TCustomizeFrm",
+  "nome": "CustomizeFrm",
+  "herdado": false,
+  "propriedades": {
+    "Left": 1001,
+    "Top": 156,
+    "Caption": "Customize",
+    "ClientHeight": 334,
+    "ClientWidth": 371,
+    "FormStyle": "fsStayOnTop",
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TButton",
+      "nome": "CloseBtn",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 304,
+        "Width": 75,
+        "Height": 25,
+        "Caption": "Close",
+        "Default": true,
+        "ModalResult": 1,
+        "TabOrder": 0,
+        "OnClick": "CloseBtnClick"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "Tabs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 6,
+        "Top": 7,
+        "Width": 358,
+        "Height": 291,
+        "ActivePage": "ToolbarsTab",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "ToolbarsTab",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Toolbars"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "ToolbarsLbl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 1,
+                "Width": 45,
+                "Height": 13,
+                "Caption": "Toolb&ars:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 76,
+                "Top": 1,
+                "Width": 136,
+                "Height": 13,
+                "Caption": "(Checkmark toggles visibility)"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckListBox",
+              "nome": "ActionBarList",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 19,
+                "Width": 237,
+                "Height": 150,
+                "TabOrder": 0,
+                "OnClick": "ActionBarListClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "ResetBtn",
+              "herdado": false,
+              "propriedades": {
+                "Left": 249,
+                "Top": 19,
+                "Width": 97,
+                "Height": 21,
+                "Action": "ResetActn",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "CaptionOptionsGrp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 174,
+                "Width": 239,
+                "Height": 82,
+                "Caption": "&Toolbar Options",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 17,
+                    "Width": 77,
+                    "Height": 13,
+                    "Caption": "&Caption Options"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "ApplyToAllChk",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 60,
+                    "Width": 213,
+                    "Height": 16,
+                    "Action": "ApplyToAllActn",
+                    "Caption": "Apply caption options &to all toolbars",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "CaptionOptionsCombo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 34,
+                    "Width": 145,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 1,
+                    "OnChange": "CaptionOptionsComboChange",
+                    "Items.Strings": [
+                      "None",
+                      "Selective",
+                      "All"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "ActionsTab",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Actions",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "InfoLbl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 226,
+                "Width": 339,
+                "Height": 38,
+                "Caption": "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "ListPanel",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 32,
+                "Width": 350,
+                "Height": 135,
+                "Align": "alTop",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "ActionsCatLbl",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 1,
+                    "Width": 56,
+                    "Height": 13,
+                    "Caption": "Cate&gories:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "ActionsActionsLbl",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 131,
+                    "Top": 1,
+                    "Width": 39,
+                    "Height": 13,
+                    "Caption": "A&ctions:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "CatList",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 18,
+                    "Width": 119,
+                    "Height": 117,
+                    "TabOrder": 0,
+                    "OnClick": "CatListClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TListBox",
+                  "nome": "ActionsList",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 130,
+                    "Top": 18,
+                    "Width": 215,
+                    "Height": 117,
+                    "Style": "lbOwnerDrawVariable",
+                    "TabOrder": 1,
+                    "OnClick": "ActionsListClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "DescGroupBox",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 171,
+                "Width": 343,
+                "Height": 48,
+                "Caption": "Description",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "HintLbl",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 9,
+                    "Top": 14,
+                    "Width": 327,
+                    "Height": 29,
+                    "Caption": "HintLbl"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "ComboPanel",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 350,
+                "Height": 32,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TComboBox",
+                  "nome": "ListCombo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 4,
+                    "Width": 170,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "OptionsTab",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Options",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "PersonalizeLbl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 5,
+                "Top": 4,
+                "Width": 159,
+                "Height": 13,
+                "Caption": "Personalized Menus and Toolbars"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBevel",
+              "nome": "OptionsBevel2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 171,
+                "Top": 10,
+                "Width": 158,
+                "Height": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBevel",
+              "nome": "OptionsBevel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 44,
+                "Top": 117,
+                "Width": 285,
+                "Height": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "OtherLbl",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 111,
+                "Width": 28,
+                "Height": 13,
+                "Caption": "Other"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 21,
+                "Top": 196,
+                "Width": 84,
+                "Height": 13,
+                "Caption": "&Menu animations:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "RecentlyUsedChk",
+              "herdado": false,
+              "propriedades": {
+                "Left": 21,
+                "Top": 33,
+                "Width": 242,
+                "Height": 17,
+                "Action": "RecentlyUsedActn",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "ResetUsageBtn",
+              "herdado": false,
+              "propriedades": {
+                "Left": 24,
+                "Top": 67,
+                "Width": 122,
+                "Height": 21,
+                "Action": "ResetUsageDataActn",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "LargeIconsChk",
+              "herdado": false,
+              "propriedades": {
+                "Left": 21,
+                "Top": 131,
+                "Width": 97,
+                "Height": 17,
+                "Action": "LargeIconsActn",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "ShowTipsChk",
+              "herdado": false,
+              "propriedades": {
+                "Left": 21,
+                "Top": 150,
+                "Width": 138,
+                "Height": 17,
+                "Action": "ShowHintsActn",
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "ShortCutTipsChk",
+              "herdado": false,
+              "propriedades": {
+                "Left": 45,
+                "Top": 169,
+                "Width": 164,
+                "Height": 17,
+                "Action": "ShowShortCutsInTipsActn",
+                "TabOrder": 4
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "MenuAnimationStyles",
+              "herdado": false,
+              "propriedades": {
+                "Left": 114,
+                "Top": 192,
+                "Width": 112,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 5,
+                "OnChange": "MenuAnimationStylesChange",
+                "Items.Strings": [
+                  "(None)",
+                  "Default",
+                  "UnFold",
+                  "Slide",
+                  "Fade"
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "CloseMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 286,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "CloseItem",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Close",
+            "ShortCut": 27,
+            "Visible": false,
+            "OnClick": "CloseBtnClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ActionImages",
+      "herdado": false,
+      "propriedades": {
+        "Left": 314,
+        "Top": 4
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 258,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ResetActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Toolbars",
+            "Caption": "&Reset...",
+            "OnExecute": "ResetActnExecute",
+            "OnUpdate": "ResetActnUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "CloseActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Dialog",
+            "Caption": "Close"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ResetUsageDataActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "Caption": "Reset Usage Data",
+            "OnExecute": "ResetUsageDataActnExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "RecentlyUsedActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "Caption": "Me&nu show recently used items first",
+            "OnExecute": "RecentlyUsedActnExecute",
+            "OnUpdate": "RecentlyUsedActnUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "FullMenusActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "AutoCheck": true,
+            "Caption": "Show f&ull menus after a short delay",
+            "Enabled": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ShowHintsActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "AutoCheck": true,
+            "Caption": "Show &tips on toolbars",
+            "OnExecute": "ShowHintsActnExecute",
+            "OnUpdate": "ShowHintsActnUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ShowShortCutsInTipsActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "AutoCheck": true,
+            "Caption": "Show shortcut keys in tips",
+            "OnExecute": "ShowShortCutsInTipsActnExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ApplyToAllActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Toolbars",
+            "AutoCheck": true,
+            "Caption": "Apply &to all toolbars",
+            "OnUpdate": "ResetActnUpdate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "LargeIconsActn",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Options",
+            "AutoCheck": true,
+            "Caption": "&Large icons",
+            "OnExecute": "LargeIconsActnExecute",
+            "OnUpdate": "LargeIconsActnUpdate"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

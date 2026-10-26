@@ -1,0 +1,2396 @@
+{
+  "classe": "TFrm_RHFP4000",
+  "nome": "Frm_RHFP4000",
+  "herdado": false,
+  "propriedades": {
+    "Left": 432,
+    "Top": 139,
+    "BorderStyle": "bsSingle",
+    "Caption": "Avisos Prévios",
+    "ClientHeight": 478,
+    "ClientWidth": 659,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 659,
+        "Height": 59,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 17,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 144,
+            "Top": 18,
+            "Width": 341,
+            "Height": 22,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label18",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 23,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label15",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 7,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Admissão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "dbb_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 556,
+            "Top": 23,
+            "Width": 64,
+            "Height": 13,
+            "DataField": "SITUACAO",
+            "DataSource": "Dts_Contratos",
+            "Items.Strings": [
+              "Ativo",
+              "Afastado",
+              "Rescindido",
+              "Resc.+ Mês"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 556,
+            "Top": 7,
+            "Width": 66,
+            "Height": 14,
+            "DataField": "DATAADMISSAO",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Lotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 502,
+            "Top": 38,
+            "Width": 25,
+            "Height": 10,
+            "Hint": "Exibir Lotação do Contrato",
+            "Caption": ":::",
+            "ShowHint": true,
+            "OnClick": "Btn_LotacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 57,
+            "Top": 14,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 59,
+        "Width": 659,
+        "Height": 419,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 34,
+            "Width": 68,
+            "Height": 13,
+            "Caption": "Tipo do Aviso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 312,
+            "Width": 101,
+            "Height": 30,
+            "Caption": "Descrição do Motivo de Rescisão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_TextoDataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 74,
+            "Width": 117,
+            "Height": 13,
+            "Caption": "Data do Aviso:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 99,
+            "Width": 111,
+            "Height": 13,
+            "Caption": "Último Dia Trabalhado: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 124,
+            "Width": 107,
+            "Height": 13,
+            "Caption": "Opção do Empregado:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label7",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 200,
+            "Width": 75,
+            "Height": 13,
+            "Caption": "Data do Acerto:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label8",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 226,
+            "Width": 78,
+            "Height": 13,
+            "Caption": "Local do Acerto:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label9",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 150,
+            "Width": 76,
+            "Height": 13,
+            "Caption": "Data do Exame:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label10",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 175,
+            "Width": 79,
+            "Height": 13,
+            "Caption": "Local do Exame:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ServicoMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 207,
+            "Top": 175,
+            "Width": 288,
+            "Height": 13,
+            "Caption": "Lbl_ServicoMedico"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DiasAviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 407,
+            "Top": 74,
+            "Width": 106,
+            "Height": 13,
+            "Caption": "Dias aviso indenizado:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label12",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 200,
+            "Width": 78,
+            "Height": 13,
+            "Caption": "Hora do Acerto: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label13",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 150,
+            "Width": 79,
+            "Height": 13,
+            "Caption": "Hora do Exame: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label14",
+          "herdado": false,
+          "propriedades": {
+            "Left": 563,
+            "Top": 70,
+            "Width": 9,
+            "Height": 20,
+            "Caption": "+"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label70",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 8,
+            "Width": 97,
+            "Height": 13,
+            "Caption": "Motivo de Rescisão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_MotivoRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 205,
+            "Top": 9,
+            "Width": 289,
+            "Height": 13,
+            "Caption": "lbl_MotivoRescisao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 203,
+            "Top": 70,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_UltDiaTrabalhado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 203,
+            "Top": 95,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 480,
+            "Top": 95,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataExameMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 203,
+            "Top": 146,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 203,
+            "Top": 196,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 99,
+            "Width": 108,
+            "Height": 13,
+            "Caption": "Data do Desligamento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Parametros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 627,
+            "Top": 374,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Títulos dos Avisos Prévios",
+            "ShowHint": true,
+            "OnClick": "Btn_ParametrosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Codigo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 225,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_LocalAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 409,
+            "Top": 227,
+            "Width": 77,
+            "Height": 13,
+            "Caption": "Lbl_LocalAcerto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label16",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 247,
+            "Width": 66,
+            "Height": 13,
+            "Caption": "Observações:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_EnderecoEnvioEmail",
+          "herdado": false,
+          "propriedades": {
+            "Left": 602,
+            "Top": 374,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Endereço para envio do email avisando sobre a Rescisão",
+            "ShowHint": true,
+            "OnClick": "Btn_EnderecoEnvioEmailClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label28",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 355,
+            "Width": 118,
+            "Height": 26,
+            "Caption": "Nº de Atestado de Óbito (p/ Recisão por Morte):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label29",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 386,
+            "Width": 118,
+            "Height": 26,
+            "Caption": "Nº do Processo Trab. (quando for o caso):"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NroProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 265,
+            "Top": 389,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_NroProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescrProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 293,
+            "Top": 393,
+            "Width": 305,
+            "Height": 13,
+            "Caption": "Lbl_DescrProcesso"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_CalculaDiasDeAviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 619,
+            "Top": 68,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Recalcular os Dias de Aviso Prévio",
+            "ShowHint": true,
+            "OnClick": "btn_CalculaDiasDeAvisoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DiasAvisoTrab",
+          "herdado": false,
+          "propriedades": {
+            "Left": 240,
+            "Top": 74,
+            "Width": 105,
+            "Height": 13,
+            "Caption": "Dias aviso trabalhado:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_OutroLocalAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 298,
+            "Top": 222,
+            "Width": 186,
+            "Height": 21,
+            "DataField": "OUTROLOCALACERTO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 22
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 224,
+            "Width": 22,
+            "Height": 13,
+            "TabOrder": 31,
+            "OnEnter": "Edt_Aux3Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "btn_ServicoMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 176,
+            "Top": 171,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 17,
+            "TabStop": false,
+            "OnClick": "btn_ServicoMedicoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 144,
+            "Top": 176,
+            "Width": 22,
+            "Height": 13,
+            "TabOrder": 19,
+            "OnEnter": "Edt_Aux2Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 155,
+            "Top": 146,
+            "Width": 22,
+            "Height": 13,
+            "TabOrder": 14,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_TipoAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 30,
+            "Width": 273,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOAVISOPREVIOAP",
+            "DataSource": "Dts_Contratos",
+            "Items.Strings": [
+              "Aviso Prévio Trabalhado",
+              "Aviso Prévio Indenizado",
+              "Aviso Prévio do Empregado",
+              "Pedido de Demissão c/dispensa do Aviso",
+              "Pedido de Demissão c/indenização do Aviso",
+              "Comunicado de Rescisão por Justa Causa",
+              "Aviso de Rescisão por Término de Contrato"
+            ],
+            "TabOrder": 2,
+            "OnEnter": "Dbc_TipoAvisoPrevioEnter",
+            "OnExit": "Dbc_TipoAvisoPrevioExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_DescMotivoRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 313,
+            "Width": 464,
+            "Height": 41,
+            "DataField": "DESCRICAORESCISAO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 27
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DataAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 70,
+            "Width": 69,
+            "Height": 21,
+            "DataField": "DATAAVISOPREVIOAP",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 6,
+            "OnChange": "Dbe_DataAvisoPrevioChange",
+            "OnExit": "Dbe_DataAvisoPrevioExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_UltDiaTrabalhado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 95,
+            "Width": 69,
+            "Height": 21,
+            "DataField": "ULTDIATRABALHADO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 10,
+            "OnChange": "Dbe_UltDiaTrabalhadoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DataRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 410,
+            "Top": 95,
+            "Width": 69,
+            "Height": 21,
+            "DataField": "DATARESCISAOAP",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 11,
+            "OnChange": "Dbe_DataRescisaoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "dbc_LocalAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 222,
+            "Width": 150,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "LOCALACERTO",
+            "DataSource": "Dts_Contratos",
+            "Items.Strings": [
+              "Empresa",
+              "Sindicato",
+              "Ministério do Trabalho"
+            ],
+            "TabOrder": 21,
+            "OnChange": "dbc_LocalAcertoChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_ServicoMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 171,
+            "Width": 42,
+            "Height": 21,
+            "DataField": "SERVICOMEDICO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 16,
+            "OnEnter": "Dbe_ServicoMedicoEnter",
+            "OnExit": "Dbe_ServicoMedicoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_DiasAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 518,
+            "Top": 70,
+            "Width": 40,
+            "Height": 21,
+            "DataField": "DIASAVISOPREVIOAP",
+            "DataSource": "Dts_Contratos",
+            "MaxLength": 5,
+            "TabOrder": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_HoraAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 410,
+            "Top": 196,
+            "Width": 38,
+            "Height": 21,
+            "EditMask": "99:99;1; ",
+            "MaxLength": 5,
+            "TabOrder": 20,
+            "OnChange": "Msk_DataExameMedicoChange",
+            "OnExit": "Msk_HoraAcertoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_HoraExameMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 410,
+            "Top": 146,
+            "Width": 38,
+            "Height": 21,
+            "EditMask": "99:99;1; ",
+            "MaxLength": 5,
+            "TabOrder": 15,
+            "OnChange": "Msk_DataExameMedicoChange",
+            "OnExit": "Msk_HoraAcertoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 196,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 18,
+            "OnChange": "Msk_DataExameMedicoChange",
+            "OnEnter": "Msk_DataAcertoEnter",
+            "OnExit": "Msk_DataAcertoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataExameMedico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 146,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 13,
+            "OnChange": "Msk_DataExameMedicoChange",
+            "OnEnter": "Msk_DataExameMedicoEnter",
+            "OnExit": "Msk_DataExameMedicoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_DiasAvisoPrevioAdic",
+          "herdado": false,
+          "propriedades": {
+            "Left": 578,
+            "Top": 70,
+            "Width": 40,
+            "Height": 21,
+            "DataField": "DIASAVISOPREVIOADICAP",
+            "DataSource": "Dts_Contratos",
+            "MaxLength": 5,
+            "TabOrder": 9
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "btn_MotivoRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 176,
+            "Top": 4,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "btn_MotivoRescisaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_MotivoRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 5,
+            "Width": 42,
+            "Height": 21,
+            "DataField": "MOTIVORESCISAO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 0,
+            "OnChange": "Dbe_MotivoRescisaoChange",
+            "OnEnter": "Dbe_MotivoRescisaoEnter",
+            "OnExit": "Dbe_MotivoRescisaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_OpcaoAvisoTrabalhado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 120,
+            "Width": 273,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "OPCAOAVISOTRABALHADO",
+            "DataSource": "Dts_Contratos",
+            "Items.Strings": [
+              "Aviso Prévio Trabalhado",
+              "Aviso Prévio Indenizado",
+              "Aviso Prévio do Empregado",
+              "Pedido de Demissão c/dispensa do Aviso",
+              "Pedido de Demissão c/indenização do Aviso",
+              "Comunicado de Rescisão por Justa Causa",
+              "Aviso de Rescisão por Término de Contrato"
+            ],
+            "TabOrder": 12
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_CodigoLocalAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 339,
+            "Top": 222,
+            "Width": 42,
+            "Height": 21,
+            "DataField": "CODIGOLOCALACERTO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 23,
+            "OnEnter": "Dbe_CodigoLocalAcertoEnter",
+            "OnExit": "Dbe_CodigoLocalAcertoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_LocaisAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 381,
+            "Top": 221,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 24,
+            "TabStop": false,
+            "OnClick": "Btn_LocaisAcertoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "Dbm_ObsAvisoPrevio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 248,
+            "Width": 464,
+            "Height": 41,
+            "DataField": "OBSAVISOPREVIO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 25,
+            "OnChange": "Dbm_ObsAvisoPrevioChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ImprimirObsAviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 293,
+            "Width": 193,
+            "Height": 17,
+            "Caption": "Imprimir as Observações no Aviso",
+            "TabOrder": 26,
+            "OnClick": "Chk_ImprimirObsAvisoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "lbl_AvisoProgEspecial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 410,
+            "Top": 118,
+            "Width": 239,
+            "Height": 28,
+            "BorderStyle": "sbsSunken",
+            "Caption": "lbl_AvisoProgEspecial",
+            "TabOrder": 28
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_OpcaoIndenizacaoExp",
+          "herdado": false,
+          "propriedades": {
+            "Left": 410,
+            "Top": 32,
+            "Width": 221,
+            "Height": 17,
+            "Caption": "Indenizar 50% do restante do Determinado",
+            "DataField": "OPCAOINDENIZACAOEXP",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NumeroAtestadoObito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 359,
+            "Width": 264,
+            "Height": 21,
+            "DataField": "NUMEROATESTADOOBITO",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 29
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NroProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 389,
+            "Width": 130,
+            "Height": 21,
+            "DataField": "NRPROCESSOTRABALHISTA",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 30,
+            "OnEnter": "Dbe_NroProcessoEnter",
+            "OnExit": "Dbe_NroProcessoExit",
+            "OnKeyPress": "Dbe_NroProcessoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_AvisoPrevioMistoParcial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 133,
+            "Top": 52,
+            "Width": 147,
+            "Height": 17,
+            "Caption": "Aviso prévio misto/parcial",
+            "DataField": "AVISOPREVIOMISTOPARCIAL",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 4,
+            "OnClick": "Chk_AvisoPrevioMistoParcialClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DiasAvisoTrab",
+          "herdado": false,
+          "propriedades": {
+            "Left": 348,
+            "Top": 70,
+            "Width": 40,
+            "Height": 21,
+            "DataField": "DIASAVISOPREVIOMISTOPARCTRAB",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 7
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_AdesaoProgramaDemissaoVoluntaria",
+          "herdado": false,
+          "propriedades": {
+            "Left": 319,
+            "Top": 52,
+            "Width": 264,
+            "Height": 17,
+            "Caption": "Adesão a Programa de Demissão Voluntária (PDV)",
+            "TabOrder": 5,
+            "OnClick": "Chk_AdesaoProgramaDemissaoVoluntariaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 300,
+        "Top": 18
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo do Aviso Prévio",
+            "FieldName": "TIPOAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosDESCRICAORESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAORESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosULTDIATRABALHADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Último dia trabalhado",
+            "FieldName": "ULTDIATRABALHADO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Desligamento",
+            "FieldName": "DATARESCISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAACERTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Aviso Prévio",
+            "FieldName": "DATAAVISOPREVIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAEXAMEMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAEXAMEMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSERVICOMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SERVICOMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Admissão",
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosDIASAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dias de Aviso Prévio Mínimo",
+            "FieldName": "DIASAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosDIASAVISOPREVIOADIC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dias de Aviso Prévio Adicional",
+            "FieldName": "DIASAVISOPREVIOADIC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosMOTIVORESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Motivo de Rescisão",
+            "FieldName": "MOTIVORESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosTERMINOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TERMINOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosTERMINOPRORROGACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TERMINOPRORROGACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCAUSARESCISAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAUSARESCISAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCODIGOSAQUEFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOSAQUEFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOUTROLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Local do Acerto",
+            "FieldName": "OUTROLOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOPCAOAVISOTRABALHADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Opção de redução da jornada do Empregado",
+            "FieldName": "OPCAOAVISOTRABALHADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCODIGOLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código do Local de Acerto",
+            "FieldName": "CODIGOLOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOBSAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosIMPRIMEOBSAVISO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IMPRIMEOBSAVISO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOPCAOINDENIZACAOEXP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPCAOINDENIZACAOEXP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosINICIOPRORROGACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOPRORROGACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosINICIOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INICIOCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATOPRINCIPAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATOPRINCIPAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosVINCULOEMPREGATICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VINCULOEMPREGATICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNUMEROATESTADOOBITO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 32,
+            "FieldName": "NUMEROATESTADOOBITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNRPROCESSOTRABALHISTA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRPROCESSOTRABALHISTA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCATEGORIATRABALHADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CATEGORIATRABALHADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATARESCISAOTRANSFERENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAOTRANSFERENCIA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosAVISOPREVIOMISTOPARCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Aviso Prévio Misto/Parcial",
+            "FieldName": "AVISOPREVIOMISTOPARCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOAVISOPREVIOAP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo do Aviso Prévio AP",
+            "FieldName": "TIPOAVISOPREVIOAP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosDIASAVISOPREVIOMISTOPARCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dias do Aviso Trabalhado",
+            "FieldName": "DIASAVISOPREVIOMISTOPARCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATAAVISOPREVIOAP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data do Aviso Prévio AP",
+            "FieldName": "DATAAVISOPREVIOAP",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATARESCISAOAP",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Rescisão AP",
+            "FieldName": "DATARESCISAOAP",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosDIASAVISOPREVIOAP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASAVISOPREVIOAP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosDIASAVISOPREVIOADICAP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASAVISOPREVIOADICAP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATARETORNOREINTEGRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARETORNOREINTEGRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosINDICATIVOPDV",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICATIVOPDV"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 293,
+        "Top": 65
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 371,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PessoasNASCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NASCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFICIENTEFISICO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFICIENTEFISICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFMOTORAESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFMOTORAESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFVISUALESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFVISUALESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFAUDITIVAESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFAUDITIVAESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFMENTALESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFMENTALESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasDEFINTELECTUALESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DEFINTELECTUALESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOMECOMPLETO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMECOMPLETO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ServicosMedicos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 418,
+        "Top": 65533
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ServicosMedicosSERVICOMEDICO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Serviço Médico",
+            "FieldName": "SERVICOMEDICO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ServicosMedicosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ServicosMedicosATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Sindicatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 191,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosMESDISSIDIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MESDISSIDIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_SindicatosDIASAVISOPREVIOMINIMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASAVISOPREVIOMINIMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_SindicatosDIASAVISOPREVIOMAXIMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIASAVISOPREVIOMAXIMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosFORMACALCAVISOADIC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMACALCAVISOADIC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_SindicatosFORMULA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FORMULA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_SindicatosLIMITEACERTOEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIMITEACERTOEMPRESA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_MotivosRescisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 506,
+        "Top": 76
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesMOTIVORESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Motivo Rescisão",
+            "FieldName": "MOTIVORESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesCAUSARESCISAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAUSARESCISAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesAVISOPREVIOEMPREGADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AVISOPREVIOEMPREGADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesCODIGOSAQUEFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOSAQUEFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesCAUSARESCISAOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAUSARESCISAOESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Estabelecimentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 386,
+        "Top": 70
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EstabelecimentosCALENDARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CALENDARIO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_LocaisAcerto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 553,
+        "Top": 248
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DatasetCODIGOLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Local de Acerto",
+            "FieldName": "CODIGOLOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_DatasetDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocaisAcertoATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Ativo",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_RHProgEspeciaisPA",
+      "herdado": false,
+      "propriedades": {
+        "Left": 462,
+        "Top": 345
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RHProgEspeciaisPACONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RHProgEspeciaisPANROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_RHProgEspeciaisPADATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_RHProgEspeciaisPADATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATATERMINO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPATIPOINTERVALO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINTERVALO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPANROHORASDIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROHORASDIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAHORADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAHORAATE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORAATE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_RHProgEspeciaisPAEVENTOPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EVENTOPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPATIPODEDUCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPODEDUCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAORIGEMPROGRAMACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMPROGRAMACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAAUTORIZACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AUTORIZACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "qry_RHProgEspeciaisPADATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_RHProgEspeciaisPAEXCECOESDEDUCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EXCECOESDEDUCAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Anotacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 60,
+        "Top": 339
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesMODULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesORIGEMANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ORIGEMANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AnotacoesDATACADASTRAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATACADASTRAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_AnotacoesNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesTEXTOPADRAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TEXTOPADRAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AnotacoesDATAVENCIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAVENCIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesUNIDADEANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADEANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_AnotacoesCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesSITUACAOANOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOANOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AnotacoesOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AnotacoesDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AnotacoesDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATATERMINO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaSQLQuery",
+      "nome": "Qry_Subcontratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 568,
+        "Top": 176
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Timer1",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 440,
+        "Top": 56
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ProcuraProcTrab",
+      "herdado": false,
+      "propriedades": {
+        "Left": 474,
+        "Top": 416
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcTrabNUMEROPROCTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Processo",
+            "FieldName": "NUMEROPROCTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcTrabDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraProcTrabDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

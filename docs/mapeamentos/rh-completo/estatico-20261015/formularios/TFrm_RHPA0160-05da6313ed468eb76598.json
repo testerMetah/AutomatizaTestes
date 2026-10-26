@@ -1,0 +1,215 @@
+{
+  "classe": "TFrm_RHPA0160",
+  "nome": "Frm_RHPA0160",
+  "herdado": true,
+  "propriedades": {
+    "Left": 364,
+    "Top": 175,
+    "Caption": "Configurar Bloqueio de Acertos",
+    "ClientHeight": 429,
+    "ClientWidth": 521
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 521,
+        "Height": 429,
+        "ActivePage": "Tab_Alteracoes",
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Consulta",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Consulta",
+            "OnShow": "Tab_ConsultaShow"
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_BloqAcertosPonto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 9,
+                "Width": 488,
+                "Height": 383,
+                "DataSource": "Dts_BloqAcertosPonto",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "CONTRATO",
+                    "Width": 61,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Width": 300,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATAAPURACAO",
+                    "Width": 91,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Alteracoes",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Alterações",
+            "ImageIndex": 1,
+            "OnShow": "Tab_AlteracoesShow"
+          },
+          "filhos": [
+            {
+              "classe": "TFrmSelecaoLotacao",
+              "nome": "Pnl_Contratos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 513,
+                "Height": 366,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Alteracoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 366,
+                "Width": 513,
+                "Height": 35,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TMetaData",
+                  "nome": "Btn_DataLimite",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 135,
+                    "Top": 7,
+                    "Width": 21,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DataLimite",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 11,
+                    "Width": 56,
+                    "Height": 13,
+                    "Caption": "Data Limite:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Edt_DataLimite",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 67,
+                    "Top": 7,
+                    "Width": 67,
+                    "Height": 21,
+                    "EditMask": "99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_DataLimiteExit",
+                    "OnKeyPress": "Edt_DataLimiteKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Atualizar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 424,
+                    "Top": 5,
+                    "Width": 85,
+                    "Height": 25,
+                    "Action": "Act_Atualizar",
+                    "Caption": "Atualizar",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 349,
+        "Top": 161
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_BloqAcertosPonto",
+      "herdado": false,
+      "propriedades": {
+        "Left": 225,
+        "Top": 161
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 287,
+        "Top": 233
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Atualizar",
+            "OnExecute": "Act_AtualizarExecute",
+            "OnUpdate": "Act_AtualizarUpdate"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

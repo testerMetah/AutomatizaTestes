@@ -1,0 +1,815 @@
+{
+  "classe": "TFPrincipal",
+  "nome": "FPrincipal",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Gerador de Licenças",
+    "ClientHeight": 523,
+    "ClientWidth": 991,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 471,
+        "Width": 991,
+        "Height": 52,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "btnok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 694,
+            "Top": 5,
+            "Width": 145,
+            "Height": 38,
+            "Caption": "Gerar Licensas",
+            "OnClick": "btnokClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btnFechar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 839,
+            "Top": 5,
+            "Width": 146,
+            "Height": 39,
+            "Caption": "Fechar",
+            "OnClick": "btnFecharClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btnimprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 574,
+            "Top": 5,
+            "Width": 120,
+            "Height": 38,
+            "Caption": "Relatório",
+            "TabOrder": 0,
+            "OnClick": "btnimprimirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 991,
+        "Height": 471,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 230,
+            "Top": 436,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "% de Ajuste"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 612,
+            "Top": 436,
+            "Width": 40,
+            "Height": 13,
+            "Caption": "Validade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DbgLicensas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 1,
+            "Top": 1,
+            "Width": 989,
+            "Height": 368,
+            "Align": "alTop",
+            "DataSource": "DsLicensas",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "selecionado",
+                "Title.Caption": "X",
+                "Visible": true
+              },
+              {
+                "FieldName": "id",
+                "ReadOnly": true,
+                "Width": 48,
+                "Visible": true
+              },
+              {
+                "FieldName": "cpf_cnpj",
+                "Width": 110,
+                "Visible": true
+              },
+              {
+                "FieldName": "nome",
+                "Width": 232,
+                "Visible": true
+              },
+              {
+                "FieldName": "Validade",
+                "Width": 88,
+                "Visible": true
+              },
+              {
+                "FieldName": "quantidade",
+                "Title.Caption": "Qtde. de Pontos",
+                "Width": 92,
+                "Visible": true
+              },
+              {
+                "FieldName": "valor",
+                "Width": 85,
+                "Visible": true
+              },
+              {
+                "FieldName": "total",
+                "ReadOnly": true,
+                "Width": 86,
+                "Visible": true
+              },
+              {
+                "FieldName": "Inadimplente",
+                "Width": 76,
+                "Visible": true
+              },
+              {
+                "FieldName": "Ativo",
+                "Width": 46,
+                "Visible": true
+              },
+              {
+                "FieldName": "buttonmodulo",
+                "Title.Caption": "Modulo",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "EdValorLicensa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 296,
+            "Top": 432,
+            "Width": 121,
+            "Height": 21,
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "MskValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 656,
+            "Top": 432,
+            "Width": 87,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 5
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 420,
+            "Top": 428,
+            "Width": 120,
+            "Height": 28,
+            "Caption": "Confirma",
+            "TabOrder": 4,
+            "OnClick": "BitBtn1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBNavigator",
+          "nome": "dbNavegador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 375,
+            "Width": 424,
+            "Height": 42,
+            "DataSource": "DsLicensas",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 749,
+            "Top": 428,
+            "Width": 120,
+            "Height": 28,
+            "Caption": "Renovar Licensa",
+            "TabOrder": 6,
+            "OnClick": "BitBtn2Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btnmarcar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 424,
+            "Width": 149,
+            "Height": 37,
+            "Caption": "Desmarcar Todos",
+            "TabOrder": 2,
+            "OnClick": "btnmarcarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsLicensas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 432,
+        "Top": 288
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsLicensas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 312,
+        "Top": 216
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasselecionado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "selecionado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsLicensasid",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Id",
+            "FieldName": "id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensascpf_cnpj",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "CPF / CNPJ",
+            "FieldName": "cpf_cnpj"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasnome",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome / Razão Social",
+            "FieldName": "nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasInadimplente",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 3,
+            "FieldName": "Inadimplente"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsLicensasquantidade",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Qtde. Licensas",
+            "FieldName": "quantidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasAtivo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Ativo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "CdsLicensasvalor",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Valor",
+            "FieldName": "valor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "CdsLicensastotal",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Total",
+            "FieldName": "total"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsLicensasValidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Validade",
+            "EditMask": "!99/99/9999;1;_"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasbuttonmodulo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "buttonmodulo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsLicensasmodulo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "modulo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TfrxReport",
+      "nome": "frxRelLicensas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 440,
+        "Top": 184,
+        "Style": []
+      },
+      "filhos": [
+        {
+          "classe": "TfrxDataPage",
+          "nome": "Data",
+          "herdado": false,
+          "propriedades": {
+            "Height": {
+              "extended80": "00000000000000fa0840"
+            },
+            "Width": {
+              "extended80": "00000000000000fa0840"
+            }
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TfrxReportPage",
+          "nome": "Page1",
+          "herdado": false,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TfrxReportTitle",
+              "nome": "ReportTitle1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "2e1c08c9022610880440"
+                },
+                "Top": {
+                  "extended80": "de02098a1f632e970340"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Align": "baCenter",
+                    "Left": {
+                      "extended80": "a5f78daf3db354ea0640"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10140"
+                    },
+                    "Width": {
+                      "extended80": "55de8e705af072f90640"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TfrxMasterData",
+              "nome": "MasterData1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "3ed00a0c59dd6ab50340"
+                },
+                "Top": {
+                  "extended80": "8ee9094b3ca04ca60640"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "frxDBInfoScriptsID",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "fb610e10ccd1e3d10140"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000800040"
+                    },
+                    "Width": {
+                      "extended80": "3ed00a0c59dd6ab50440"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    },
+                    "DataField": "ID"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "frxDBInfoScriptsDATAHORA",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "d6a88768740781820540"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000800040"
+                    },
+                    "Width": {
+                      "extended80": "f5108dee207636db0540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    },
+                    "DataField": "cpf_cnpj"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "frxDBInfoScriptsVERSAO",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "a14acd1e6805feca0640"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000800040"
+                    },
+                    "Width": {
+                      "extended80": "452a8c2d043918cc0640"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    },
+                    "DataField": "nome"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "frxDBInfoScriptsSTATUS",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "4d840d4faf94c5e20740"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000800040"
+                    },
+                    "Width": {
+                      "extended80": "2e1c08c9022610880740"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    },
+                    "DataField": "total"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "frxDBLicensasInadimplente",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "73f4f8bd4d7f3c960840"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Width": {
+                      "extended80": "3ed00a0c59dd6ab50440"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    },
+                    "DataField": "Inadimplente"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TfrxPageHeader",
+              "nome": "PageHeader1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "fd6a0e10ccd1e3f10340"
+                },
+                "Top": {
+                  "extended80": "de02098a1f632e970540"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "79971518b2bad5ea0140"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3b10040"
+                    },
+                    "Width": {
+                      "extended80": "fd6a0e10ccd1e3f10340"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "f163cc5d4bc8dfcc0640"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Width": {
+                      "extended80": "2e1c08c9022610880640"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "4d840d4faf94c5e20740"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Width": {
+                      "extended80": "8ee9094b3ca04ca60540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "d6a88768740781840540"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000800040"
+                    },
+                    "Width": {
+                      "extended80": "8ee9094b3ca04ca60540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "9dd7d825aab798950840"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Width": {
+                      "extended80": "3ed00a0c59dd6ab50540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TfrxFooter",
+              "nome": "Footer1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "fd6a0e10ccd1e3f10340"
+                },
+                "Top": {
+                  "extended80": "9d9d0c8e9257a7d30640"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "a14acd1e6805fede0740"
+                    },
+                    "Top": {
+                      "extended80": "0395f1ef332e1c8e0040"
+                    },
+                    "Width": {
+                      "extended80": "8ee9094b3ca04ca60540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "2e1c08c9022610880840"
+                    },
+                    "Top": {
+                      "extended80": "f6402b306475ab950040"
+                    },
+                    "Width": {
+                      "extended80": "367689eaad81bd9e0640"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TfrxDBDataset",
+      "nome": "frxDBLicensas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 376,
+        "Top": 128
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "SaveDialog1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 232,
+        "Top": 152
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 489,
+        "Top": 132
+      },
+      "filhos": []
+    }
+  ]
+}

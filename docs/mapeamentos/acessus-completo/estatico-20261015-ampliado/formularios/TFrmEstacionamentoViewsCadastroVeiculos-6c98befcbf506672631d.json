@@ -1,0 +1,1517 @@
+{
+  "classe": "TFrmEstacionamentoViewsCadastroVeiculos",
+  "nome": "FrmEstacionamentoViewsCadastroVeiculos",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Cadastro de Veículos",
+    "ClientHeight": 509,
+    "ClientWidth": 843
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": true,
+      "propriedades": {
+        "Width": 843,
+        "Height": 509,
+        "ActivePage": "Grid"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Width": 835,
+                "Height": 339,
+                "DataSource": "DsVeiculos",
+                "Columns": [
+                  {
+                    "FieldName": "Placa",
+                    "Width": 73,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NomePessoa",
+                    "Title.Caption": "Motorista",
+                    "Width": 204,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Title.Caption": "Veículo",
+                    "Width": 154,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TipoVeiculoNome",
+                    "Title.Caption": "Tipo Veículo",
+                    "Width": 138,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NomeEstacionamento",
+                    "Title.Caption": "Estacionamento",
+                    "Width": 146,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Status",
+                    "Width": 80,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlCimaPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 339,
+                "Width": 835
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": true,
+                  "propriedades": {
+                    "Width": 835
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet2",
+                      "herdado": true,
+                      "propriedades": {
+                        "Caption": "Motorista (Ctrl+B)"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Height": 38,
+                            "Align": "alLeft",
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExibirTudo",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 647
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "tbsVeiculos",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Veículo (Ctrl+D)",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "edVeiculo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 293,
+                            "Height": 38,
+                            "Align": "alLeft",
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 0,
+                            "OnChange": "edVeiculoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape1",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton1",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Placa (Ctrl+F)",
+                        "ImageIndex": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "edtPlaca",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 293,
+                            "Height": 38,
+                            "Align": "alLeft",
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 0,
+                            "OnChange": "edtPlacaChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape3",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton2",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tipo Veículo (Ctrl+G)",
+                        "ImageIndex": 3,
+                        "OnExit": "TabSheet4Exit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape4",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton3",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "cmbTipoVei",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 6,
+                            "Width": 197,
+                            "Height": 27,
+                            "Style": "csDropDownList",
+                            "TabOrder": 1,
+                            "OnChange": "cmbTipoVeiChange",
+                            "Items.Strings": [
+                              "Automóvel",
+                              "Moto",
+                              "Triciclo",
+                              "Quadriciclo",
+                              "Caminhonete",
+                              "Van / Furgão",
+                              "SUV ",
+                              "Micro-ônibus",
+                              "Ônibus",
+                              "Caminhão Leve",
+                              "Caminhão Pesado",
+                              "Carreta / Bitrem",
+                              "Veículo Oficial",
+                              "Veículo de Serviço",
+                              "Veículo de Obra",
+                              "Bicicleta",
+                              "Outro"
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet5",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Estacionamento (Ctrl+F)",
+                        "ImageIndex": 4
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "edtEstacionamento",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 293,
+                            "Height": 38,
+                            "Align": "alLeft",
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 0,
+                            "OnChange": "edtEstacionamentoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel5",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape5",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton4",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Status (Ctrl+H)",
+                        "ImageIndex": 5,
+                        "OnExit": "TabSheet6Exit"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape6",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton5",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "cmbStatus",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 3,
+                            "Top": 6,
+                            "Width": 84,
+                            "Height": 27,
+                            "Style": "csDropDownList",
+                            "TabOrder": 1,
+                            "OnChange": "cmbStatusChange",
+                            "Items.Strings": [
+                              "Ativo",
+                              "Inativo"
+                            ]
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tag (Ctrl+W)",
+                        "ImageIndex": 6
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "edtTag",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 293,
+                            "Height": 38,
+                            "Align": "alLeft",
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 0,
+                            "OnChange": "edtTagChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 647,
+                            "Top": 0,
+                            "Width": 180,
+                            "Height": 38,
+                            "Align": "alRight",
+                            "Caption": "Acesso",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape7",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TSpeedButton",
+                              "nome": "SpeedButton6",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 180,
+                                "Height": 38,
+                                "Action": "ActExibirTudo",
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 408,
+                "Width": 835
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnInserir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnAlterar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": true,
+          "propriedades": {
+            "OnShow": "CadastroShow"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "LblObservacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 255,
+                "Width": 94,
+                "Height": 27,
+                "Caption": "Observações:"
+              },
+              "filhos": [],
+              "ordem_herdada": 0
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblCadTag",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 150,
+                "Width": 27,
+                "Height": 27,
+                "Caption": "Tag:"
+              },
+              "filhos": [],
+              "ordem_herdada": 1
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "MetaEquipLocalizar1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 267,
+                "Top": 150,
+                "Width": 27,
+                "Height": 27,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 2
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblTag",
+              "herdado": false,
+              "propriedades": {
+                "Left": 300,
+                "Top": 150,
+                "Width": 125,
+                "Height": 27,
+                "Caption": "lblTag"
+              },
+              "filhos": [],
+              "ordem_herdada": 3
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblEstacionamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 300,
+                "Top": 115,
+                "Width": 135,
+                "Height": 27,
+                "Caption": "lblEstacionamento"
+              },
+              "filhos": [],
+              "ordem_herdada": 4
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "MetaEquipLocalizar2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 267,
+                "Top": 115,
+                "Width": 27,
+                "Height": 27,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 5
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblCadEstacionamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 115,
+                "Width": 116,
+                "Height": 27,
+                "Caption": "Estacionamento:"
+              },
+              "filhos": [],
+              "ordem_herdada": 6
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblTipoVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 80,
+                "Width": 109,
+                "Height": 27,
+                "Caption": "Tipo de Veículo:"
+              },
+              "filhos": [],
+              "ordem_herdada": 7
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblPlaca",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 45,
+                "Width": 41,
+                "Height": 27,
+                "Caption": "Placa:"
+              },
+              "filhos": [],
+              "ordem_herdada": 8
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblNomeVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 10,
+                "Width": 121,
+                "Height": 27,
+                "Caption": "Nome do Veículo:"
+              },
+              "filhos": [],
+              "ordem_herdada": 9
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblSituacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 497,
+                "Top": 10,
+                "Width": 63,
+                "Height": 27,
+                "Caption": "Situação:"
+              },
+              "filhos": [],
+              "ordem_herdada": 10
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblUsoVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 497,
+                "Top": 80,
+                "Width": 112,
+                "Height": 27,
+                "Caption": "Uso do Veículo:"
+              },
+              "filhos": [],
+              "ordem_herdada": 11
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblTipoVaga",
+              "herdado": false,
+              "propriedades": {
+                "Left": 497,
+                "Top": 45,
+                "Width": 97,
+                "Height": 27,
+                "Caption": "Tipo de Vaga:"
+              },
+              "filhos": [],
+              "ordem_herdada": 12
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblPessoaPreCad",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 220,
+                "Width": 74,
+                "Height": 27,
+                "Caption": "Motorista:"
+              },
+              "filhos": [],
+              "ordem_herdada": 13
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "MetaEquipLocalizar3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 267,
+                "Top": 220,
+                "Width": 27,
+                "Height": 27,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 14
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 300,
+                "Top": 220,
+                "Width": 397,
+                "Height": 27,
+                "Caption": "lblPessoa"
+              },
+              "filhos": [],
+              "ordem_herdada": 15
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblTipoMotorista",
+              "herdado": false,
+              "propriedades": {
+                "Left": 38,
+                "Top": 185,
+                "Width": 128,
+                "Height": 27,
+                "Caption": "Tipo de Motorista:"
+              },
+              "filhos": [],
+              "ordem_herdada": 16
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgNomeVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 10,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 17
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgPlaca",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 45,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 18
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgTipoVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 80,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 19
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgEstacionamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 115,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 20
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgTag",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 150,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 21
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgMotorista",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 220,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 22
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgTipoMotorista",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 187,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 23
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgObservacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 255,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 24
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgSituacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 467,
+                "Top": 10,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 25
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgTipoVaga",
+              "herdado": false,
+              "propriedades": {
+                "Left": 467,
+                "Top": 45,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 26
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgUsoVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 467,
+                "Top": 80,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 27
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Top": 408,
+                "Width": 835
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnOk",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCancelar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TMemo",
+              "nome": "EdObservacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 255,
+                "Width": 581,
+                "Height": 137,
+                "TabStop": false,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "edTag",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 150,
+                "Width": 89,
+                "Height": 27,
+                "TabOrder": 2,
+                "OnExit": "edTagExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdEstacionamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 115,
+                "Width": 89,
+                "Height": 27,
+                "TabOrder": 3,
+                "OnExit": "EdEstacionamentoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbTipoVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 80,
+                "Width": 122,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 4,
+                "Items.Strings": [
+                  "Automóvel",
+                  "Moto",
+                  "Triciclo",
+                  "Quadriciclo",
+                  "Caminhonete",
+                  "Van / Furgão",
+                  "SUV ",
+                  "Micro-ônibus",
+                  "Ônibus",
+                  "Caminhão Leve",
+                  "Caminhão Pesado",
+                  "Carreta / Bitrem",
+                  "Veículo Oficial",
+                  "Veículo de Serviço",
+                  "Veículo de Obra",
+                  "Bicicleta",
+                  "Outro"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdNomeVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 10,
+                "Width": 263,
+                "Height": 27,
+                "MaxLength": 200,
+                "TabOrder": 5
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "CmbStatusVeiculos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 669,
+                "Top": 10,
+                "Width": 84,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 6,
+                "Items.Strings": [
+                  "Ativo",
+                  "Inativo"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbVeiculoUso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 615,
+                "Top": 80,
+                "Width": 138,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 7,
+                "Items.Strings": [
+                  "Próprio",
+                  "Compartilhado"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbBoxReserva",
+              "herdado": false,
+              "propriedades": {
+                "Left": 615,
+                "Top": 45,
+                "Width": 138,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 8,
+                "Items.Strings": [
+                  "Não Preferencial      ",
+                  "Cadeirante",
+                  "Deficiente",
+                  "Preferencial"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdPessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 220,
+                "Width": 89,
+                "Height": 27,
+                "TabOrder": 9,
+                "OnExit": "EdPessoaExit",
+                "OnKeyPress": "EdPessoaKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdPlaca",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 45,
+                "Width": 89,
+                "Height": 27,
+                "TabOrder": 10,
+                "OnChange": "EdPlacaChange",
+                "OnExit": "EdPlacaExit",
+                "OnKeyPress": "EdPlacaKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbPessoaPreCad",
+              "herdado": false,
+              "propriedades": {
+                "Left": 172,
+                "Top": 185,
+                "Width": 122,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 11,
+                "OnChange": "cmbPessoaPreCadChange",
+                "Items.Strings": [
+                  "Pessoa",
+                  "Pré-Cadastro"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "THoverSpeedButton",
+              "nome": "btnCadTags",
+              "herdado": false,
+              "propriedades": {
+                "Left": 467,
+                "Top": 145,
+                "Width": 206,
+                "Height": 38,
+                "Caption": "Cadastrar Tags (Ctrl+N)",
+                "TabOrder": 12,
+                "OnClick": "ActCadastrarTagsExecute",
+                "Action": "ActCadastrarTags"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Campos",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": true,
+              "propriedades": {
+                "Top": 430,
+                "Width": 835
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActExcluir",
+          "herdado": true,
+          "propriedades": {
+            "Enabled": false,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSMotorista",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Motorista (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActTSMotoristaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Veículo (Ctrl+D)",
+            "ShortCut": 16452,
+            "OnExecute": "ActTSVeiculoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSPlaca",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Placa (Ctrl+F)",
+            "ShortCut": 16454,
+            "OnExecute": "ActTSPlacaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSTipoVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Tipo Veículo (Ctrl+G)",
+            "ShortCut": 16455,
+            "OnExecute": "ActTSTipoVeiculoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSEstacionamento",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Estacionamento (Ctrl+F)",
+            "ShortCut": 16454,
+            "OnExecute": "ActTSEstacionamentoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSStatus",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Status (Ctrl+H)",
+            "ShortCut": 16456,
+            "OnExecute": "ActTSStatusExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSTag",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Tag (Ctrl+W)",
+            "ShortCut": 16471,
+            "OnExecute": "ActTSTagExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCadastrarTags",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Buttons",
+            "Caption": "Cadastrar Tags (Ctrl+N)",
+            "ImageIndex": 4,
+            "ShortCut": 16462,
+            "OnExecute": "ActCadastrarTagsExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsVeiculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 472,
+        "Top": 136
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsVeiculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 488,
+        "Top": 224
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosPlaca",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Placa",
+            "EditMask": "AAA\\-AAAA;0;_"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosIdPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdPessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosIdTipoVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdTipoVeiculo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosIdEstacionamento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdEstacionamento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemoField",
+          "nome": "CdsVeiculosObservacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Observacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosTipoBoxReserva",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoBoxReserva"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosNomePessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomePessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosTipoVeiculoNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoVeiculoNome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosNomeEstacionamento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomeEstacionamento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosNome",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 200,
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Status"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosIdPreCadastro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdPreCadastro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosTag",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 15,
+            "FieldName": "Tag"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

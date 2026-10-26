@@ -1,0 +1,556 @@
+{
+  "classe": "TFrmEstacionamentoViewsMonitoramentoVeiculosOcorrencias",
+  "nome": "FrmEstacionamentoViewsMonitoramentoVeiculosOcorrencias",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Monitoramento | Veículos Ocorrências",
+    "ClientHeight": 399
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": true,
+      "propriedades": {
+        "Height": 399
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Height": 229,
+                "DataSource": "DsVeiculosOcorrencias",
+                "Columns": [
+                  {
+                    "FieldName": "Id",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "PlacaVeiculo",
+                    "Title.Caption": "Placa Veículo",
+                    "Width": 95,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NomeVeiculo",
+                    "Title.Caption": "Veículo",
+                    "Width": 185,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NomeOcorrencia",
+                    "Title.Caption": "Ocorrência",
+                    "Width": 198,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Data",
+                    "Width": 90,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Hora",
+                    "Width": 79,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlCimaPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 229
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet2",
+                      "herdado": true,
+                      "propriedades": {
+                        "Caption": "Nome Veículo (Ctrl+B)"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": true,
+                          "propriedades": {
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExibirTudo",
+                          "herdado": true,
+                          "propriedades": {},
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 298
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnInserir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnAlterar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "LblCadVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 13,
+                "Width": 55,
+                "Height": 27,
+                "Caption": "Veículo:"
+              },
+              "filhos": [],
+              "ordem_herdada": 0
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "mlVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 230,
+                "Top": 13,
+                "Width": 27,
+                "Height": 27,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 1
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 263,
+                "Top": 13,
+                "Width": 68,
+                "Height": 27,
+                "Caption": "lblVeiculo"
+              },
+              "filhos": [],
+              "ordem_herdada": 2
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblObservacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 128,
+                "Width": 87,
+                "Height": 27,
+                "Caption": "Observação:"
+              },
+              "filhos": [],
+              "ordem_herdada": 3
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblCadOcorrencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 46,
+                "Width": 81,
+                "Height": 27,
+                "Caption": "Ocorrência:"
+              },
+              "filhos": [],
+              "ordem_herdada": 4
+            },
+            {
+              "classe": "TMetaEquipLocalizar",
+              "nome": "mlOcorrencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 230,
+                "Top": 46,
+                "Width": 27,
+                "Height": 27,
+                "ImageIndex": 10
+              },
+              "filhos": [],
+              "ordem_herdada": 5
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lblOcorrencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 263,
+                "Top": 46,
+                "Width": 94,
+                "Height": 27,
+                "Caption": "lblOcorrencia"
+              },
+              "filhos": [],
+              "ordem_herdada": 6
+            },
+            {
+              "classe": "TLabel",
+              "nome": "LblDataHora",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 79,
+                "Width": 84,
+                "Height": 27,
+                "Caption": "Data e hora:"
+              },
+              "filhos": [],
+              "ordem_herdada": 7
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgObservacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 128,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 8
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgDataHora",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 79,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 9
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgOcorrencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 46,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 10
+            },
+            {
+              "classe": "TImage",
+              "nome": "ImgVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 13,
+                "Width": 24,
+                "Height": 27
+              },
+              "filhos": [],
+              "ordem_herdada": 11
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Top": 298,
+                "TabOrder": 5
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnOk",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCancelar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TMemo",
+              "nome": "EdObservacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 161,
+                "Width": 500,
+                "Height": 81,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdOcorrencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 140,
+                "Top": 46,
+                "Width": 84,
+                "Height": 27,
+                "TabOrder": 1,
+                "OnExit": "EdOcorrenciaExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "EdVeiculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 140,
+                "Top": 13,
+                "Width": 84,
+                "Height": 27,
+                "TabOrder": 0,
+                "OnExit": "EdVeiculoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "EdData",
+              "herdado": false,
+              "propriedades": {
+                "Left": 140,
+                "Top": 79,
+                "Width": 84,
+                "Height": 27,
+                "EditMask": "!99/99/0000;1;_",
+                "MaxLength": 10,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "EdHora",
+              "herdado": false,
+              "propriedades": {
+                "Left": 230,
+                "Top": 79,
+                "Width": 62,
+                "Height": 27,
+                "EditMask": "!90:00;1;_",
+                "MaxLength": 5,
+                "TabOrder": 4
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Campos",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": true,
+              "propriedades": {
+                "Top": 320
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActTSNomeVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Nome Veículo (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActTSNomeVeiculoExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsVeiculosOcorrencias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 192
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosOcorrenciasId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosOcorrenciasIdVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdVeiculo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsVeiculosOcorrenciasIdOcorrencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdOcorrencia"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosOcorrenciasObservacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Observacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateField",
+          "nome": "CdsVeiculosOcorrenciasData",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Data"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TTimeField",
+          "nome": "CdsVeiculosOcorrenciasHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Hora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosOcorrenciasPlacaVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PlacaVeiculo",
+            "EditMask": "AAA\\-AAAA;0;_"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosOcorrenciasNomeVeiculo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomeVeiculo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsVeiculosOcorrenciasNomeOcorrencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomeOcorrencia"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsVeiculosOcorrencias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 292,
+        "Top": 120
+      },
+      "filhos": []
+    }
+  ]
+}

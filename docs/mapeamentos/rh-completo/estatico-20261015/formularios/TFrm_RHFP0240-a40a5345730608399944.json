@@ -1,0 +1,197 @@
+{
+  "classe": "TFrm_RHFP0240",
+  "nome": "Frm_RHFP0240",
+  "herdado": false,
+  "propriedades": {
+    "Left": 220,
+    "Top": 170,
+    "BorderStyle": "bsSingle",
+    "Caption": "Tipos de Residência",
+    "ClientHeight": 142,
+    "ClientWidth": 406,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 406,
+        "Height": 142,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 20,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 82,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_TipoResidencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 16,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_TipoResidenciaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 81,
+            "Width": 16,
+            "Height": 10,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_TipoResidencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 71,
+            "Top": 16,
+            "Width": 28,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 0,
+            "OnEnter": "Edt_TipoResidenciaEnter",
+            "OnExit": "Edt_TipoResidenciaExit",
+            "OnKeyPress": "Edt_TipoResidenciaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 71,
+            "Top": 77,
+            "Width": 152,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_TiposResidencia",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "dbr_ClasseResidencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 232,
+            "Top": 2,
+            "Width": 155,
+            "Height": 130,
+            "Caption": "Classe de Residência",
+            "DataField": "CLASSERESIDENCIA",
+            "DataSource": "Dts_TiposResidencia",
+            "Items.Strings": [
+              "Imóvel Próprio",
+              "Imóvel Alugado",
+              "Mora com parentes",
+              "República/Pensão",
+              "Hotel ",
+              "Outros"
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_TiposResidencia",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 91
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TiposResidenciaTIPORESIDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Residência",
+            "FieldName": "TIPORESIDENCIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TiposResidenciaDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TiposResidenciaCLASSERESIDENCIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classe de Residência",
+            "FieldName": "CLASSERESIDENCIA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_TiposResidencia",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 92
+      },
+      "filhos": []
+    }
+  ]
+}

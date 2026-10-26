@@ -1,0 +1,466 @@
+{
+  "classe": "TFrm_RHAD1021",
+  "nome": "Frm_RHAD1021",
+  "herdado": false,
+  "propriedades": {
+    "Left": 702,
+    "Top": 376,
+    "BorderStyle": "bsSingle",
+    "Caption": "Log do Cadastro de Operadores",
+    "ClientHeight": 389,
+    "ClientWidth": 496,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 496,
+        "Height": 348,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 122,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "Tipo do Log:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 18,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Operador:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 151,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Logs:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_TipoLog",
+          "herdado": false,
+          "propriedades": {
+            "Left": 83,
+            "Top": 118,
+            "Width": 86,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 2,
+            "Items.Strings": [
+              "Todos",
+              "Inclusão",
+              "Alteração",
+              "Exclusão"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Operador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 70,
+            "Top": 14,
+            "Width": 54,
+            "Height": 21,
+            "MaxLength": 6,
+            "TabOrder": 0,
+            "OnEnter": "Edt_OperadorEnter",
+            "OnExit": "Edt_OperadorExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Operador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 125,
+            "Top": 12,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 4,
+            "TabStop": false,
+            "OnClick": "Btn_OperadorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Gb_Periodos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 48,
+            "Width": 460,
+            "Height": 57,
+            "Caption": " Data de Alteração ",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_PeriodoDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 109,
+                "Top": 22,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 150,
+                "Top": 25,
+                "Width": 18,
+                "Height": 13,
+                "Caption": "até:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_PeriodoAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 250,
+                "Top": 22,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 25,
+                "Width": 17,
+                "Height": 13,
+                "Caption": "De:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_PeriodoDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 34,
+                "Top": 22,
+                "Width": 74,
+                "Height": 21,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_PeriodoAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 176,
+                "Top": 22,
+                "Width": 73,
+                "Height": 21,
+                "EditMask": "!99/99/0000;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Logs",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 168,
+            "Width": 465,
+            "Height": 169,
+            "TabStop": false,
+            "DataSource": "Ds_Logs",
+            "ReadOnly": true,
+            "TabOrder": 3,
+            "Columns": [
+              {
+                "FieldName": "DATAHORAALTERACAO",
+                "Width": 115,
+                "Visible": true
+              },
+              {
+                "FieldName": "TIPOLOGDESC",
+                "Width": 79,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Width": 87,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADORALTERACAO",
+                "Width": 143,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 348,
+        "Width": 496,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 201,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "Imprimir",
+            "Default": true,
+            "Enabled": false,
+            "TabOrder": 2,
+            "OnClick": "Btn_ImprimirClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Exportar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 297,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "Exportar",
+            "Default": true,
+            "Enabled": false,
+            "TabOrder": 3,
+            "OnClick": "Btn_ExportarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Pesquisar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "Pesquisar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_PesquisarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Alteracoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "Alterações",
+            "Default": true,
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "Btn_AlteracoesClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Operadores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 216,
+        "Top": 20
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_OperadoresOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Logs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 124
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LogsOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador do Log",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LogsUSUARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USUARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_LogsDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data e Hora do Log",
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LogsOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Responsável pela Alteração",
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LogsTIPOLOG",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOLOG"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LogsTIPOLOGDESC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo do Log",
+            "FieldName": "TIPOLOGDESC"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Ds_Logs",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 318,
+        "Top": 66
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

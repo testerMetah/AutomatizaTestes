@@ -1,0 +1,838 @@
+{
+  "classe": "TFrmMetahConnectAgendamentos",
+  "nome": "FrmMetahConnectAgendamentos",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "AcessusSync | Gerenciador de Tarefas",
+    "ClientHeight": 534,
+    "ClientWidth": 704,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TCardPanel",
+      "nome": "CardPanel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 60,
+        "Width": 704,
+        "Height": 474,
+        "Align": "alBottom",
+        "Caption": "CardPanel",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TCard",
+          "nome": "CardTarefas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 704,
+            "Height": 474,
+            "Caption": "CardTarefas",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "dbgTarefas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 52,
+                "Width": 674,
+                "Height": 348,
+                "Align": "alClient",
+                "DataSource": "DsTarefas",
+                "ReadOnly": true,
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "Id",
+                    "Title.Caption": "#",
+                    "Width": 32,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Descricao",
+                    "Title.Caption": "Descrição da Tarefa",
+                    "Width": 151,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TipoNome",
+                    "Title.Caption": "Tipo Tarefa",
+                    "Width": 219,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "StatusNome",
+                    "Title.Caption": "Situação",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "PnlBottomTarefas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 420,
+                "Width": 704,
+                "Height": 54,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnIncluirTarefa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 7,
+                    "Width": 145,
+                    "Height": 38,
+                    "Caption": "Incluir (Ctrl+I)",
+                    "TabOrder": 0,
+                    "OnClick": "ActIncluirTarefaExecute",
+                    "Action": "ActIncluirTarefa"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnAlterarTarefa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 171,
+                    "Top": 7,
+                    "Width": 158,
+                    "Height": 38,
+                    "Caption": "Alterar (Ctrl+E)",
+                    "TabOrder": 1,
+                    "OnClick": "ActAlterarTarefaExecute",
+                    "Action": "ActAlterarTarefa"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnStatusTarefa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 335,
+                    "Top": 7,
+                    "Width": 186,
+                    "Height": 38,
+                    "Caption": "Habilitar (Ctrl+H)",
+                    "TabOrder": 2,
+                    "OnClick": "ActStatusTarefaExecute",
+                    "Action": "ActStatusTarefa"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 527,
+                    "Top": 7,
+                    "Width": 162,
+                    "Height": 38,
+                    "Caption": "Excluir (Ctrl+Del)",
+                    "TabOrder": 3,
+                    "OnClick": "actExcluirExecute",
+                    "Action": "actExcluir"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "PnlTituloTarefas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 704,
+                "Height": 49,
+                "Align": "alTop",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label26",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 16,
+                    "Width": 53,
+                    "Height": 19,
+                    "Caption": "Tarefas"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TCard",
+          "nome": "CardLogs",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 704,
+            "Height": 474,
+            "Caption": "CardLogs",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TMemo",
+              "nome": "menLogs",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 52,
+                "Width": 664,
+                "Height": 409,
+                "ReadOnly": true,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 704,
+                "Height": 41,
+                "Align": "alTop",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 20,
+                    "Top": 16,
+                    "Width": 32,
+                    "Height": 19,
+                    "Caption": "Logs"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlSuperior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 704,
+        "Height": 60,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnTarefas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 11,
+            "Width": 155,
+            "Height": 38,
+            "Caption": "Tarefas (Ctrl+T)",
+            "TabOrder": 0,
+            "OnClick": "ActTarefasExecute",
+            "Action": "ActTarefas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnMensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 705,
+            "Top": 11,
+            "Width": 133,
+            "Height": 38,
+            "Caption": "Logs (Ctrl+L)",
+            "TabOrder": 1,
+            "Visible": false,
+            "OnClick": "ActLogsExecute",
+            "Action": "ActLogs"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 808,
+        "Top": 479
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTrayIcon",
+      "nome": "TrayIcon1",
+      "herdado": false,
+      "propriedades": {
+        "Hint": "AcessusSync",
+        "Left": 700,
+        "Top": 479
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Timer1",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": false,
+        "Left": 752,
+        "Top": 479
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 636,
+        "Top": 479
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActTarefas",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgMenu",
+            "Caption": "Tarefas (Ctrl+T)",
+            "ImageIndex": 0,
+            "ShortCut": 16468,
+            "OnExecute": "ActTarefasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAgendamentos",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgMenu",
+            "Caption": "Agendamentos (Ctrl+A)",
+            "ImageIndex": 1,
+            "ShortCut": 16449,
+            "OnExecute": "ActAgendamentosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActImportacoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgMenu",
+            "Caption": "Importações (Ctrl+J)",
+            "ImageIndex": 2,
+            "ShortCut": 16458,
+            "OnExecute": "ActImportacoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActLogs",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgMenu",
+            "Caption": "Logs (Ctrl+L)",
+            "ImageIndex": 3,
+            "OnExecute": "ActLogsExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActConfirmar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "Caption": "Confirmar (Ctrl+S)",
+            "ImageIndex": 4,
+            "ShortCut": 16467
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActOlhoAutoAce",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "Enabled": false,
+            "ImageIndex": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSwitchAutoAce",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "ImageIndex": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActSwitchResRef",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "ImageIndex": 8
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActOlhoResRef",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "Enabled": false,
+            "ImageIndex": 6,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActRemoveColAutoAce",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "ImageIndex": 10
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActIncluirTarefa",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgTarefas",
+            "Caption": "Incluir (Ctrl+I)",
+            "ImageIndex": 11,
+            "OnExecute": "ActIncluirTarefaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAlterarTarefa",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgTarefas",
+            "Caption": "Alterar (Ctrl+E)",
+            "ImageIndex": 12,
+            "OnExecute": "ActAlterarTarefaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActIncluirAgendamento",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgAgendamentos",
+            "Caption": "Incluir (Ctrl+I)",
+            "ImageIndex": 11,
+            "OnExecute": "ActIncluirAgendamentoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAlterarAgendamento",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgAgendamentos",
+            "Caption": "Alterar (Ctrl+E)",
+            "ImageIndex": 12,
+            "OnExecute": "ActAlterarAgendamentoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExecutarTarefas",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgTarefas",
+            "Caption": "Executar Tarefas (Ctrl+R)",
+            "ImageIndex": 14,
+            "ShortCut": 16466,
+            "OnExecute": "ActExecutarTarefasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActIncluir",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgGeral",
+            "Caption": "Ctrl+I",
+            "ShortCut": 16457,
+            "OnExecute": "ActIncluirExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAlterar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgGeral",
+            "Caption": "Ctrl+E",
+            "ShortCut": 16453,
+            "OnExecute": "ActAlterarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActRemoveColResRef",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgImportacoes",
+            "ImageIndex": 10
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActStatusTarefa",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgTarefas",
+            "Caption": "Habilitar (Ctrl+H)",
+            "ImageIndex": 16,
+            "OnExecute": "ActStatusTarefaExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActStatusAgendamento",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgAgendamentos",
+            "Caption": "Habilitar (Ctrl+H)",
+            "ImageIndex": 16,
+            "OnExecute": "ActStatusAgendamentoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActStatus",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgGeral",
+            "Caption": "Ctrl+H",
+            "ShortCut": 16456,
+            "OnExecute": "ActStatusExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "actExcluir",
+          "herdado": false,
+          "propriedades": {
+            "Category": "CtgGeral",
+            "Caption": "Excluir (Ctrl+Del)",
+            "ShortCut": 16430,
+            "OnExecute": "actExcluirExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 564,
+        "Top": 479
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsTarefas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 790,
+        "Top": 5
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsTarefasId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsTarefasIdUsuario",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdUsuario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsTarefasIdEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdEmpresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsTarefasDescricao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsTarefasTipo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideMemoField",
+          "nome": "CdsTarefasOpcoes",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Opcoes"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "CdsTarefasStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Status"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsTarefasTipoNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoNome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsTarefasStatusNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "StatusNome"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsTarefas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 683,
+        "Top": 5
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsAgendamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 790,
+        "Top": 61
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAgendamentosId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAgendamentosIdTarefa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdTarefa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAgendamentosIdUsuario",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdUsuario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAgendamentosIdEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdEmpresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAgendamentosDescricao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Descricao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAgendamentosHorarios",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Horarios"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAgendamentosDiasSemana",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DiasSemana"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsAgendamentosPeriodicamente",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Periodicamente"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "CdsAgendamentosStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Status"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAgendamentosPeriodicamenteNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PeriodicamenteNome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsAgendamentosStatusNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "StatusNome"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsAgendamentos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 683,
+        "Top": 61
+      },
+      "filhos": []
+    }
+  ]
+}

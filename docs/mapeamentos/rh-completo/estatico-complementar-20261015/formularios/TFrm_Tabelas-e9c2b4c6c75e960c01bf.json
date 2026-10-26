@@ -1,0 +1,694 @@
+{
+  "classe": "TFrm_Tabelas",
+  "nome": "Frm_Tabelas",
+  "herdado": true,
+  "propriedades": {
+    "Left": 449,
+    "Top": 196,
+    "Caption": "Tabela"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Fundo",
+      "herdado": true,
+      "propriedades": {
+        "ActivePage": "Tab_ChavesEstrangeiras",
+        "OnChange": "Pgc_FundoChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Principal",
+          "herdado": true,
+          "propriedades": {
+            "Caption": "Campos"
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_Campos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 312,
+                "Align": "alClient",
+                "DataSource": "Dts_Campos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "ID",
+                    "Width": 31,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CHAVEPRIMARIA",
+                    "Width": 19,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CAMPO",
+                    "Width": 176,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TIPO",
+                    "Width": 83,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TAMANHO",
+                    "Width": 70,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DECIMAIS",
+                    "Width": 70,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "STATUS",
+                    "Width": 107,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_LocateCampo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 312,
+                "Width": 583,
+                "Height": 29,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_CampoIrPara",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 8,
+                    "Width": 34,
+                    "Height": 13,
+                    "Caption": "Ir Para:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "Cmb_CampoIrPara",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 39,
+                    "Top": 4,
+                    "Width": 176,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnExit": "Cmb_CampoIrParaExit",
+                    "OnKeyPress": "Cmb_IrParaKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_ChavesEstrangeiras",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Restrições",
+            "ImageIndex": 3
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_Restricoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 341,
+                "Align": "alClient",
+                "DataSource": "Dts_Resticoes",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "TABELADESTINO",
+                    "Title.Caption": "Tabela Destino",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CHAVEORIGEM",
+                    "Title.Caption": "Restrição",
+                    "Width": 100,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CAMPOORIGEM",
+                    "Title.Caption": "Campos Origem",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CAMPODESTINO",
+                    "Title.Caption": "Campos Destino",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CHAVEDESTINO",
+                    "Title.Caption": "Chave Destino",
+                    "Width": 100,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ],
+          "ordem_herdada": 1
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Dependencias",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Dependências",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Grd_Dependencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 341,
+                "Align": "alClient",
+                "DataSource": "Dts_Dependencias",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "TABELAORIGEM",
+                    "Title.Caption": "Tabela Destino",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CHAVEDESTINO",
+                    "Title.Caption": "Chave Origem",
+                    "Width": 100,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CHAVEORIGEM",
+                    "Title.Caption": "Chave Destino",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "CAMPODESTINO",
+                    "Title.Caption": "Campo Origem",
+                    "Width": 150,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "CAMPOORIGEM",
+                    "Title.Caption": "Campo Destino",
+                    "Width": 150,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ],
+          "ordem_herdada": 2
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_SQL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Listagens",
+            "ImageIndex": 4
+          },
+          "filhos": [
+            {
+              "classe": "TSplitter",
+              "nome": "Spt_SQL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 112,
+                "Width": 583,
+                "Height": 3,
+                "Align": "alTop"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRichEdit",
+              "nome": "Edt_SQL",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 115,
+                "Width": 583,
+                "Height": 226,
+                "Align": "alClient",
+                "ReadOnly": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ComandosCima",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 112,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TCheckListBox",
+                  "nome": "Lst_CamposSelecionados",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 28,
+                    "Width": 583,
+                    "Height": 84,
+                    "Align": "alBottom",
+                    "Columns": 3,
+                    "Items.Strings": [
+                      "Item 1",
+                      "Item 2",
+                      "Item 3",
+                      "Item 4",
+                      "Item 5",
+                      "Item 6",
+                      "Item 7"
+                    ],
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_MarcaTodos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 558,
+                    "Top": 30,
+                    "Width": 16,
+                    "Height": 17,
+                    "Caption": "Chk_MarcaTodos",
+                    "Checked": true,
+                    "TabOrder": 3,
+                    "OnClick": "Chk_MarcaTodosClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_DescamarcaTodos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 558,
+                    "Top": 45,
+                    "Width": 16,
+                    "Height": 17,
+                    "Caption": "Chk_MarcaTodos",
+                    "TabOrder": 4,
+                    "OnClick": "Chk_DescamarcaTodosClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_ComandosComTabela",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 3,
+                    "Width": 157,
+                    "Height": 17,
+                    "Caption": "Concatenar nome da Tabela",
+                    "Checked": true,
+                    "TabOrder": 0,
+                    "OnClick": "Chk_ComandosComTabelaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabeledEdit",
+                  "nome": "Edt_SeparadorCampos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 224,
+                    "Top": 1,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnChange": "Edt_SeparadorCamposChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabeledEdit",
+                  "nome": "Edt_Mascara",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 408,
+                    "Top": 1,
+                    "Width": 159,
+                    "Height": 21,
+                    "TabOrder": 5,
+                    "OnChange": "Edt_SeparadorCamposChange"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ],
+          "ordem_herdada": 3
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Delphi",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Delphi",
+            "ImageIndex": 5
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DelphiTopo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 583,
+                "Height": 32,
+                "Align": "alTop",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DelphiIrPara",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 247,
+                    "Top": 8,
+                    "Width": 34,
+                    "Height": 13,
+                    "Caption": "Ir Para:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabeledEdit",
+                  "nome": "Edt_DataSetDelphi",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 96,
+                    "Top": 5,
+                    "Width": 121,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_DataSetDelphiChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "Cmb_DelphiIrPara",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 283,
+                    "Top": 4,
+                    "Width": 176,
+                    "Height": 21,
+                    "TabOrder": 1,
+                    "OnExit": "Cmb_DelphiIrParaExit",
+                    "OnKeyPress": "Cmb_IrParaKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TRichEdit",
+              "nome": "Edt_Delphi",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 32,
+                "Width": 583,
+                "Height": 309,
+                "Align": "alClient",
+                "ReadOnly": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            }
+          ],
+          "ordem_herdada": 4
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Consulta",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Botoes",
+              "herdado": true,
+              "propriedades": {},
+              "filhos": [
+                {
+                  "classe": "TDBNavigator",
+                  "nome": "Btn_Navegador",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_OpcoesPrincipal",
+      "herdado": true,
+      "propriedades": {
+        "Left": 362,
+        "Visible": false
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Conexao",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Conexoes",
+          "herdado": true,
+          "propriedades": {
+            "OnChange": null,
+            "OnEnter": null
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Consulta",
+      "herdado": true,
+      "propriedades": {
+        "Left": 92,
+        "Top": 268
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Consulta",
+      "herdado": true,
+      "propriedades": {
+        "Left": 184,
+        "Top": 268
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": true,
+      "propriedades": {
+        "Left": 284,
+        "Top": 160
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Campos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 92,
+        "Top": 52
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CamposID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CamposCHAVEPRIMARIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "ChavePrimaria",
+            "FieldName": "CHAVEPRIMARIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CamposCAMPO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Campo",
+            "FieldName": "CAMPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CamposTIPO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CamposTamanho",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tamanho",
+            "FieldName": "TAMANHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CamposDECIMAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Decimais",
+            "FieldName": "DECIMAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CamposSTATUS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Status",
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Campos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 52
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Restricoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 92,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Resticoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Dependencias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 92,
+        "Top": 196
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Dependencias",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 196
+      },
+      "filhos": []
+    }
+  ]
+}

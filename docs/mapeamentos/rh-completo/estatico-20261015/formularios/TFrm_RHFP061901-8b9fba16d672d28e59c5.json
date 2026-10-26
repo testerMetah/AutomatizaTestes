@@ -1,0 +1,637 @@
+{
+  "classe": "TFrm_RHFP061901",
+  "nome": "Frm_RHFP061901",
+  "herdado": false,
+  "propriedades": {
+    "Left": 424,
+    "Top": 151,
+    "BorderStyle": "bsSingle",
+    "Caption": "Parametrização para  o eSocial",
+    "ClientHeight": 425,
+    "ClientWidth": 744,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 744,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 12,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Fornecedor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 101,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_FornecedorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Fornecedor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 12,
+            "Width": 333,
+            "Height": 17,
+            "Caption": "Lbl_Fornecedor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Fornecedor",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 58,
+            "Top": 8,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_FornecedorEnter",
+            "OnExit": "Edt_FornecedorExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 744,
+        "Height": 343,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 34,
+            "Top": 8,
+            "Width": 655,
+            "Height": 26,
+            "Caption": "Empresas com Processo Judicial com a decisão/sentença determinando a não retenção das contribuições incidentes sobre a aquisição de produção rural (para sugestão no cadastramento de Notas Fiscais Recebidas referentes a Produtos Rurais de Pessoa Física)"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 78,
+            "Top": 307,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EmpresaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 35,
+            "Top": 287,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 311,
+            "Width": 61,
+            "Height": 13,
+            "Caption": "Lbl_Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 448,
+            "Top": 307,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 317,
+            "Top": 287,
+            "Width": 140,
+            "Height": 13,
+            "Caption": "Número do Processo Judicial "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 476,
+            "Top": 311,
+            "Width": 64,
+            "Height": 13,
+            "Caption": "Lbl_Processo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_ProcFornecedores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 48,
+            "Width": 693,
+            "Height": 225,
+            "DataSource": "Dts_ProcFornecedor",
+            "TabOrder": 2,
+            "Columns": [
+              {
+                "FieldName": "CodDescEmpresa",
+                "Title.Caption": "Empresa",
+                "Width": 271,
+                "Visible": true
+              },
+              {
+                "FieldName": "CodDescProcesso",
+                "Title.Caption": "Processo Judicial",
+                "Width": 387,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 35,
+            "Top": 307,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_EmpresaEnter",
+            "OnExit": "Edt_EmpresaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Processo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 317,
+            "Top": 307,
+            "Width": 130,
+            "Height": 21,
+            "MaxLength": 21,
+            "TabOrder": 1,
+            "OnEnter": "Edt_ProcessoEnter",
+            "OnExit": "Edt_ProcessoExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 384,
+        "Width": 744,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ProcFornecedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 590,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Fornecedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 524,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FornecedorFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fornecedor",
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FornecedorNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FornecedorNOMEREDUZIDO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "NOMEREDUZIDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FornecedorTIPOINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Inscrição",
+            "FieldName": "TIPOINSCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_FornecedorINSCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Inscrição",
+            "FieldName": "INSCRICAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 633,
+        "Top": 9
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 696,
+        "Top": 104
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Razão Social",
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 696,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessosNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Processo",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProcessosINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início da Validade",
+            "FieldName": "INICIOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessosINDICMATERIAPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Matéria do Processo",
+            "FieldName": "INDICMATERIAPROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProcessosTERMINOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término da Validade",
+            "FieldName": "TERMINOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessosTIPOPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOPROCESSOESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ProcFornecedorGrid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 100
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fornecedor",
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição da Empresa",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Processo Judicial",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição do Processo Judicial",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridCodDescEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código e Descrição da Empresa",
+            "FieldName": "CodDescEmpresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorGridCodDescProcesso",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número e Descrição do Processo Judicial",
+            "FieldName": "CodDescProcesso"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_ProcFornecedor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 700,
+        "Top": 140
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorFORNECEDOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fornecedor",
+            "FieldName": "FORNECEDOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcFornecedorNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Processo Judicial",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Atalhos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 705,
+        "Top": 6
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

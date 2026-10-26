@@ -1,0 +1,586 @@
+{
+  "classe": "TFrm_RH0320Fatores",
+  "nome": "Frm_RH0320Fatores",
+  "herdado": true,
+  "propriedades": {
+    "Left": 460,
+    "Top": 201,
+    "Caption": "Fatores",
+    "ClientHeight": 371,
+    "ClientWidth": 703
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Fatores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 703,
+        "Height": 371,
+        "ActivePage": "Tbs_Fatores",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "TabStop": false,
+        "OnChange": "Pgc_FatoresChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Fatores",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fatores"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Campos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 695,
+                "Height": 343,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Fator",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 99,
+                    "Top": 285,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Fator"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 143,
+                    "Top": 285,
+                    "Width": 48,
+                    "Height": 13,
+                    "Caption": "Descrição"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Tipo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 435,
+                    "Top": 285,
+                    "Width": 21,
+                    "Height": 13,
+                    "Caption": "Tipo"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Aviso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 108,
+                    "Top": 13,
+                    "Width": 478,
+                    "Height": 26,
+                    "Caption": "Atenção, depois de salvar o cadastro de um novo fator não será mais possível alterar o seu tipo.\r\nVocê pode alterar a descrição. Caso você tenha criado um fator com o tipo errado crie um novo fator."
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_FatorAux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 213,
+                    "Width": 10,
+                    "Height": 21,
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 4,
+                    "OnEnter": "Edt_FatorAuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "Dbg_Fatores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 99,
+                    "Top": 52,
+                    "Width": 491,
+                    "Height": 222,
+                    "TabStop": false,
+                    "DataSource": "Dts_Fatores",
+                    "TabOrder": 0,
+                    "OnEnter": "Dbg_FatoresEnter",
+                    "Columns": [
+                      {
+                        "FieldName": "FATOR",
+                        "Title.Caption": "Fator",
+                        "Width": 46,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO40",
+                        "Title.Caption": "Descrição",
+                        "Width": 267,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TIPOFATOR",
+                        "Title.Caption": "Tipo",
+                        "Width": 142,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_Descricao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 143,
+                    "Top": 301,
+                    "Width": 289,
+                    "Height": 21,
+                    "DataField": "DESCRICAO40",
+                    "DataSource": "Dts_Fatores",
+                    "TabOrder": 2,
+                    "OnEnter": "Dbe_DescricaoEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "DbCb_Tipo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 435,
+                    "Top": 301,
+                    "Width": 157,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "TIPOFATOR",
+                    "DataSource": "Dts_Fatores",
+                    "TabOrder": 3,
+                    "OnEnter": "DbCb_TipoEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Fator",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 99,
+                    "Top": 301,
+                    "Width": 41,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 1,
+                    "OnExit": "Edt_FatorExit",
+                    "OnKeyPress": "Edt_FatorKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Descrição Detalhada",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 695,
+                "Height": 343,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "Caption": "Panel1",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 21,
+                    "Top": 17,
+                    "Width": 103,
+                    "Height": 13,
+                    "Caption": "Descrição Detalhada:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Dbm_DescricaoDetalhada",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 21,
+                    "Top": 41,
+                    "Width": 648,
+                    "Height": 192,
+                    "DataField": "DESCRICAODETALHADA",
+                    "DataSource": "Dts_Fatores",
+                    "MaxLength": 800,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_ItensDesempenho",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Itens de Desempenho",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Chave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 695,
+                "Height": 73,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_FatorItem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 12,
+                    "Width": 27,
+                    "Height": 13,
+                    "Caption": "Fator:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaLocalizar",
+                  "nome": "Btn_Desempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 127,
+                    "Top": 34,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescDesempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 155,
+                    "Top": 38,
+                    "Width": 348,
+                    "Height": 13,
+                    "Caption": "Descrição do Nível de Desempenho"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Desempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 38,
+                    "Width": 66,
+                    "Height": 13,
+                    "Caption": "Desempenho:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_DescFator",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 12,
+                    "Width": 368,
+                    "Height": 13,
+                    "Caption": "0000 - Descrição do Fator"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Desempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 85,
+                    "Top": 34,
+                    "Width": 41,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_DesempenhoExit",
+                    "OnKeyPress": "Edt_DesempenhoKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ItensDesempenho",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 73,
+                "Width": 695,
+                "Height": 270,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBCtrlGrid",
+                  "nome": "DbCg_ItensDesempenho",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 687,
+                    "Height": 262,
+                    "Align": "alClient",
+                    "DataSource": "Dts_FatorDesempenho",
+                    "TabOrder": 0,
+                    "OnExit": "DbCg_ItensDesempenhoExit"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_ItemDesemp",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 12,
+                        "Width": 29,
+                        "Height": 13,
+                        "Caption": "Nível:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_DesempenhoMinimo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 64,
+                        "Width": 65,
+                        "Height": 13,
+                        "Caption": "Valor Mínimo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_DesempenhoMaximo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 201,
+                        "Top": 64,
+                        "Width": 66,
+                        "Height": 13,
+                        "Caption": "Valor Máximo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Desc",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 15,
+                        "Top": 38,
+                        "Width": 51,
+                        "Height": 13,
+                        "Caption": "Descrição:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_NIVELDESEMPENHO",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 88,
+                        "Top": 8,
+                        "Width": 27,
+                        "Height": 21,
+                        "TabStop": false,
+                        "DataField": "NIVELDESEMPENHO",
+                        "DataSource": "Dts_FatorDesempenho",
+                        "Enabled": false,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_VALORMINIMO",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 88,
+                        "Top": 60,
+                        "Width": 59,
+                        "Height": 21,
+                        "TabStop": false,
+                        "DataField": "VALORMINIMO",
+                        "DataSource": "Dts_FatorDesempenho",
+                        "Enabled": false,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_VALORMAXIMO",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 274,
+                        "Top": 60,
+                        "Width": 60,
+                        "Height": 21,
+                        "TabStop": false,
+                        "DataField": "VALORMAXIMO",
+                        "DataSource": "Dts_FatorDesempenho",
+                        "Enabled": false,
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBEdit",
+                      "nome": "Dbe_DESCRICAOREDUZIDA",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 88,
+                        "Top": 34,
+                        "Width": 246,
+                        "Height": 21,
+                        "TabStop": false,
+                        "DataField": "DESCRICAO20",
+                        "DataSource": "Dts_FatorDesempenho",
+                        "Enabled": false,
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TDBMemo",
+                      "nome": "Dbm_DESCRICAOMEMO",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 343,
+                        "Top": 6,
+                        "Width": 323,
+                        "Height": 75,
+                        "DataField": "DESCRICAOMEMO",
+                        "DataSource": "Dts_FatorDesempenho",
+                        "TabOrder": 4,
+                        "OnExit": "Dbm_DESCRICAOMEMOExit"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 571,
+        "Top": 32
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Fatores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 604,
+        "Top": 33
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_FatorDesempenho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 542,
+        "Top": 24
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DesempenhoNiveis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 637,
+        "Top": 35
+      },
+      "filhos": []
+    }
+  ]
+}

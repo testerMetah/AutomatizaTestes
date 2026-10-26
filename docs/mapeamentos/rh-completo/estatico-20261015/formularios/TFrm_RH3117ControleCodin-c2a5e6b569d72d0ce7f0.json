@@ -1,0 +1,430 @@
+{
+  "classe": "TFrm_RH3117ControleCodin",
+  "nome": "Frm_RH3117ControleCodin",
+  "herdado": false,
+  "propriedades": {
+    "Left": 286,
+    "Top": 303,
+    "BorderStyle": "bsDialog",
+    "Caption": "Painel de Controle Codin",
+    "ClientHeight": 233,
+    "ClientWidth": 452,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 452,
+        "Height": 233,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ComandosStatus",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 444,
+            "Height": 225,
+            "ActivePage": "Tbs_StatusRetorno",
+            "Align": "alClient",
+            "Style": "tsFlatButtons",
+            "TabOrder": 0,
+            "OnChange": "Pgc_ComandosStatusChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Comandos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Comandos"
+              },
+              "filhos": [
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_DelecaoAplicativo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 165,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "Deleção de Aplicativo",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_DelecaoAplicativoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_AtualizarDataHora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 136,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "Atualizar Data/Hora",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_AtualizarDataHoraClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_CargaAplicativo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 136,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "Carga do Aplicativo",
+                    "TabOrder": 2,
+                    "OnClick": "Btn_CargaAplicativoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_DesbloqueioLeitora",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 165,
+                    "Width": 125,
+                    "Height": 25,
+                    "Caption": "Desbloqueio da Leitora",
+                    "TabOrder": 3,
+                    "OnClick": "Btn_DesbloqueioLeitoraClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckListBox",
+                  "nome": "Lst_ColetoresCodin",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 19,
+                    "Width": 435,
+                    "Height": 108,
+                    "Columns": 2,
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "HeaderControl1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 436,
+                    "Height": 17,
+                    "Style": "hsFlat"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_EnvioTemplates",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 275,
+                    "Top": 136,
+                    "Width": 145,
+                    "Height": 25,
+                    "Caption": "Envio de Templates",
+                    "TabOrder": 6,
+                    "OnClick": "Btn_EnvioTemplatesClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TButton",
+                  "nome": "Btn_DelecaoTemplates",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 275,
+                    "Top": 165,
+                    "Width": 145,
+                    "Height": 25,
+                    "Caption": "Deleção Geral de Templates",
+                    "TabOrder": 7,
+                    "OnClick": "Btn_DelecaoTemplatesClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_StatusEnvio",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Status de Envio",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_StatusEnvio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 436,
+                    "Height": 194,
+                    "Align": "alClient",
+                    "DataSource": "Dts_StatusEnvio",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "COLETOR",
+                        "Title.Caption": "Coletor",
+                        "Width": 98,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescStatus",
+                        "Title.Caption": "Status",
+                        "Width": 90,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescComando",
+                        "Title.Caption": "Comando",
+                        "Width": 94,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "INFADICIONAL",
+                        "Title.Caption": "Inf. Adicional",
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_StatusRetorno",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Status de Retorno",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_StatusRetorno",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 436,
+                    "Height": 194,
+                    "Align": "alClient",
+                    "DataSource": "Dts_StatusRetorno",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "COLETOR",
+                        "Title.Caption": "Coletor",
+                        "Width": 98,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescStatus",
+                        "Title.Caption": "Status",
+                        "Width": 90,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescComando",
+                        "Title.Caption": "Aviso",
+                        "Width": 94,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "INFADICIONAL",
+                        "Title.Caption": "Inf. Adicional",
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_StatusEnvio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 308,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_StatusEnvio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 276,
+        "Top": 4
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioSTATUS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioCOMANDO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMANDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioINFADICIONAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INFADICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioDescStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescStatus"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusEnvioDescComando",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescComando"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_StatusRetorno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 276,
+        "Top": 32
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "STATUS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoComsndo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "COMANDO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoInfAdicional",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INFADICIONAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoDescStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescStatus"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_StatusRetornoDescComandos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescComando"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_StatusRetorno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 308,
+        "Top": 36
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "classe": "TFrm_RHAD1250",
+  "nome": "Frm_RHAD1250",
+  "herdado": false,
+  "propriedades": {
+    "Left": 594,
+    "Top": 223,
+    "BorderStyle": "bsSingle",
+    "Caption": "Eliminar Duplicidade de Pessoas",
+    "ClientHeight": 273,
+    "ClientWidth": 508,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TDBGrid",
+      "nome": "DBGrid1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 86,
+        "Width": 508,
+        "Height": 146,
+        "Align": "alClient",
+        "DataSource": "Dts_Pessoas",
+        "TabOrder": 0,
+        "Columns": [
+          {
+            "FieldName": "PESSOA",
+            "Visible": true
+          },
+          {
+            "FieldName": "NOME",
+            "Width": 230,
+            "Visible": true
+          },
+          {
+            "FieldName": "SITUACAO",
+            "Width": 177,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 508,
+        "Height": 86,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 9,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 58,
+            "Top": 9,
+            "Width": 29,
+            "Height": 13,
+            "DataField": "EMPRESA",
+            "DataSource": "Dts_CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 94,
+            "Top": 9,
+            "Width": 403,
+            "Height": 13,
+            "DataField": "RAZAOSOCIAL",
+            "DataSource": "Dts_CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 30,
+            "Width": 501,
+            "Height": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 88,
+            "Top": 9,
+            "Width": 3,
+            "Height": 13,
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 36,
+            "Width": 489,
+            "Height": 39,
+            "Caption": "Critério que determina a duplicidade",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 57,
+                "Top": 17,
+                "Width": 23,
+                "Height": 13,
+                "Caption": "CPF:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBText",
+              "nome": "DBText3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 84,
+                "Top": 17,
+                "Width": 108,
+                "Height": 17,
+                "DataField": "CPF",
+                "DataSource": "Dts_CPF"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 232,
+        "Width": 508,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 6,
+            "Width": 165,
+            "Height": 25,
+            "Caption": "Manter Pessoa Selecionada",
+            "TabOrder": 0,
+            "OnClick": "btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_PassarProxima",
+          "herdado": false,
+          "propriedades": {
+            "Left": 188,
+            "Top": 6,
+            "Width": 121,
+            "Height": 25,
+            "Caption": "Passar p/ Próxima",
+            "TabOrder": 1,
+            "OnClick": "Btn_PassarProximaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 319,
+            "Top": 6,
+            "Width": 174,
+            "Height": 25,
+            "Caption": "Cancelar o Resto do Processo",
+            "TabOrder": 2,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 67,
+        "Top": 138
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CPF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 294,
+        "Top": 120
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 360,
+        "Top": 120
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Cpf",
+      "herdado": false,
+      "propriedades": {
+        "Left": 262,
+        "Top": 176
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CpfCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CpfEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CpfRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 327,
+        "Top": 173
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasCODIGOSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOSITUACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 407,
+        "Top": 173
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Auxiliar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 151,
+        "Top": 138
+      },
+      "filhos": []
+    }
+  ]
+}

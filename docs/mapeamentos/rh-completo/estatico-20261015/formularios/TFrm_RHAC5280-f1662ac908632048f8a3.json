@@ -1,0 +1,465 @@
+{
+  "classe": "TFrm_RHAC5280",
+  "nome": "Frm_RHAC5280",
+  "herdado": true,
+  "propriedades": {
+    "Left": 401,
+    "Top": 256,
+    "Caption": "Grupo de Créditos",
+    "ClientHeight": 323,
+    "ClientWidth": 559
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_CamposChave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 559,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "Pnl_CamposChaveEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_GrupoCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Grupo de Crédito:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_GrupoCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 146,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_GrupoCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 103,
+            "Top": 8,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 5,
+            "TabOrder": 0,
+            "OnExit": "Edt_GrupoCreditoExit",
+            "OnKeyPress": "Edt_GrupoCreditoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 503,
+            "Top": 10,
+            "Width": 47,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_GruposCreditos",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TButton",
+          "nome": "Btn_Padrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 0,
+            "Height": 0,
+            "Action": "Act_Padrao",
+            "TabOrder": 2,
+            "TabStop": false
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_CamposOutros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 559,
+        "Height": 282,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_CreditosGruposCF",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 30,
+            "Width": 551,
+            "Height": 246,
+            "Align": "alClient",
+            "TabOrder": 1,
+            "OnEnter": "Pnl_CreditosGruposCFEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_RHCreditosGruposCFMeio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 551,
+                "Height": 186,
+                "Align": "alClient",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Grd_RHCreditosGruposCF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 6,
+                    "Width": 536,
+                    "Height": 172,
+                    "TabStop": false,
+                    "DataSource": "Dts_GruposCreditosCF",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "COLETOR",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCCOLETOR",
+                        "Width": 200,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "FUNCAOCOLETOR",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DSCFUNCAOCOLETOR",
+                        "Width": 200,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_RHCreditosGruposCFBaixo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 186,
+                "Width": 551,
+                "Height": 60,
+                "Align": "alBottom",
+                "TabOrder": 1,
+                "OnExit": "Pnl_RHCreditosGruposCFBaixoExit"
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_RHCreditosGruposCF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 4,
+                    "Width": 23,
+                    "Height": 22,
+                    "Action": "Act_CreditosGruposCF",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 9,
+                    "Width": 33,
+                    "Height": 13,
+                    "Caption": "Coletor"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Coletor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 125,
+                    "Top": 4,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_DscColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 151,
+                    "Top": 5,
+                    "Width": 188,
+                    "Height": 21,
+                    "DataField": "DSCCOLETOR",
+                    "DataSource": "Dts_GruposCreditosCF"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_InfFuncaoColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 30,
+                    "Top": 36,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Função"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_FuncaoColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 125,
+                    "Top": 31,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBBeveledLabel",
+                  "nome": "Lbl_FuncaoColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 151,
+                    "Top": 32,
+                    "Width": 188,
+                    "Height": 21,
+                    "DataField": "DSCFUNCAOCOLETOR",
+                    "DataSource": "Dts_GruposCreditosCF"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_Coletor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 78,
+                    "Top": 5,
+                    "Width": 46,
+                    "Height": 21,
+                    "DataField": "COLETOR",
+                    "DataSource": "Dts_GruposCreditosCF",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Edt_FuncaoColetor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 78,
+                    "Top": 32,
+                    "Width": 46,
+                    "Height": 21,
+                    "DataField": "FUNCAOCOLETOR",
+                    "DataSource": "Dts_GruposCreditosCF",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_ColetoresFuncoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": -10,
+                    "Top": -10,
+                    "Width": 10,
+                    "Height": 21,
+                    "TabOrder": 2,
+                    "OnEnter": "Edt_ColetoresFuncoesEnter"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_CreditosGrupos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 551,
+            "Height": 28,
+            "Align": "alTop",
+            "TabOrder": 0,
+            "OnEnter": "Pnl_CreditosGruposEnter",
+            "OnExit": "Pnl_CreditosGruposExit"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DataInicio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 10,
+                "Width": 51,
+                "Height": 13,
+                "Caption": "Descrição:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Edt_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 75,
+                "Top": 6,
+                "Width": 328,
+                "Height": 21,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_GruposCreditos",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 98,
+        "Top": 198
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_GruposCreditos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 98,
+        "Top": 125
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 312,
+        "Top": 14
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Padrao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Padrao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CreditosGruposCF",
+          "herdado": false,
+          "propriedades": {
+            "Hint": "Inserir Coletor",
+            "ShortCut": 16462,
+            "OnExecute": "Act_CreditosGruposCFExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_GruposCreditosCF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 273,
+        "Top": 125
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "Mtv_CreditosGruposCF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 273,
+        "Top": 198
+      },
+      "filhos": []
+    }
+  ]
+}

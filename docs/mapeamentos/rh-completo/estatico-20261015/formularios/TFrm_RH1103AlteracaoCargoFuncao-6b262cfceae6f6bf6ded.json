@@ -1,0 +1,690 @@
+{
+  "classe": "TFrm_RH1103AlteracaoCargoFuncao",
+  "nome": "Frm_RH1103AlteracaoCargoFuncao",
+  "herdado": false,
+  "propriedades": {
+    "Left": 482,
+    "Top": 214,
+    "BorderStyle": "bsSingle",
+    "Caption": "Alteração de Cargo/Função",
+    "ClientHeight": 319,
+    "ClientWidth": 690,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 54,
+        "Width": 690,
+        "Height": 225,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloPeriodo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 682,
+            "Height": 17,
+            "Align": "alTop",
+            "Caption": "    As seguintes alterações de cargo/função foram encontradas no período de #Data1 até #Data2."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_PeriodoAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 128,
+            "Width": 682,
+            "Height": 17,
+            "Align": "alTop",
+            "Caption": "   Avaliação referente ao período: de #Data3 até #Data4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_ContratosLotacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 19,
+            "Width": 682,
+            "Height": 109,
+            "Align": "alTop",
+            "DataSource": "Dts_ContratosLotacao",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATALOTACAO",
+                "Title.Caption": "Data",
+                "Width": 98,
+                "Visible": true
+              },
+              {
+                "FieldName": "FUNCAO",
+                "Title.Caption": "Função",
+                "Width": 76,
+                "Visible": true
+              },
+              {
+                "FieldName": "FUNCAODESC",
+                "Title.Caption": "Descrição",
+                "Visible": true
+              },
+              {
+                "FieldName": "CARGO",
+                "Title.Caption": "Cargo",
+                "Width": 68,
+                "Visible": true
+              },
+              {
+                "FieldName": "CARGODESC",
+                "Title.Caption": "Descrição",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_ConsiderarQualCargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 145,
+            "Width": 173,
+            "Height": 74,
+            "Align": "alLeft",
+            "Caption": "Qual cargo/função considerar? ",
+            "Items.Strings": [
+              "Lotação Atual",
+              "Lotação Anterior"
+            ],
+            "TabOrder": 1,
+            "OnClick": "Rdg_ConsiderarQualCargoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "GroupBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 175,
+            "Top": 145,
+            "Width": 509,
+            "Height": 74,
+            "Align": "alClient",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 22,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Cargo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 43,
+                "Width": 39,
+                "Height": 13,
+                "Caption": "Função:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_CargoAtualizacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 50,
+                "Top": 22,
+                "Width": 103,
+                "Height": 13,
+                "Caption": "Lbl_CargoAtualizacao"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_FuncaoAtualizacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 59,
+                "Top": 43,
+                "Width": 111,
+                "Height": 13,
+                "Caption": "Lbl_FuncaoAtualizacao"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 279,
+        "Width": 690,
+        "Height": 40,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 6,
+            "Width": 89,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Cadastrar &Avaliação",
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 690,
+        "Height": 54,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 9,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "Nome:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ContratoAvaliacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 8,
+            "Width": 123,
+            "Height": 16,
+            "Caption": "2 - Dinah da Silva"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 29,
+            "Width": 58,
+            "Height": 13,
+            "Caption": "Cargo Atual:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 348,
+            "Top": 29,
+            "Width": 69,
+            "Height": 13,
+            "Caption": "Função Atual: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_CargoAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 29,
+            "Width": 72,
+            "Height": 13,
+            "Caption": "Lbl_CargoAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FuncaoAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 416,
+            "Top": 29,
+            "Width": 80,
+            "Height": 13,
+            "Caption": "Lbl_FuncaoAtual"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ContratosLotacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 555,
+        "Top": 78
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosLotacaoDATALOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATALOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoCARGODESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGODESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoFUNCAODESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAODESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosLotacaoFUNCAOREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAOREVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosLotacaoFUNCAODATA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAODATA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosLotacaoCARGOREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGOREVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosLotacaoCARGODATA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGODATA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosLotacaoPLANOCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PLANOCARGO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContratosLotacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 195,
+        "Top": 105
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 474,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosCARGODESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGODESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosFUNCAODESC",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAODESC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosFUNCAOREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAOREVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosFUNCAODATA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAODATA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosCARGOREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGOREVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ContratosCARGODATA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGODATA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosPLANOCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PLANOCARGO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 252,
+        "Top": 6
+      },
+      "filhos": []
+    }
+  ]
+}

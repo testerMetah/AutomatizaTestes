@@ -1,0 +1,848 @@
+{
+  "classe": "TFrm_RHFP5100",
+  "nome": "Frm_RHFP5100",
+  "herdado": false,
+  "propriedades": {
+    "Left": 403,
+    "Top": 198,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cadastrar Folhas",
+    "ClientHeight": 359,
+    "ClientWidth": 688,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Folhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 688,
+        "Height": 359,
+        "Align": "alClient",
+        "TabOrder": 0,
+        "Visible": false
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 688,
+        "Height": 359,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "Caption": "Pnl_Dados",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TRadioGroup",
+          "nome": "rdg_Operacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 12,
+            "Width": 98,
+            "Height": 93,
+            "Caption": "Tipo",
+            "Items.Strings": [
+              "Nova Folha",
+              "Folha Antiga"
+            ],
+            "TabOrder": 0,
+            "OnClick": "rdg_OperacaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Selecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 112,
+            "Width": 171,
+            "Height": 193,
+            "Caption": "Opções de Seleção",
+            "Items.Strings": [
+              "Por Unidade",
+              "Por Lista de Unidades",
+              "Por Grupo de Unidades",
+              "Por Empresa",
+              "Por Lista de Empresas",
+              "Por Grupo de Empresas",
+              "Geral"
+            ],
+            "TabOrder": 4,
+            "OnClick": "Rdg_SelecaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 311,
+            "Width": 170,
+            "Height": 26,
+            "Caption": "Iniciar Cadastramento",
+            "TabOrder": 6,
+            "OnClick": "btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_PeriodoFolha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 421,
+            "Top": 12,
+            "Width": 254,
+            "Height": 45,
+            "Caption": "Período para Apuração da Folha",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_FolhaDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 21,
+                "Width": 17,
+                "Height": 13,
+                "Caption": "De:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_FolhaAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 129,
+                "Top": 21,
+                "Width": 19,
+                "Height": 13,
+                "Caption": "Até:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_InicioFolha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 100,
+                "Top": 17,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_FimFolha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 223,
+                "Top": 17,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataInicioFolha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 31,
+                "Top": 17,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0,
+                "OnExit": "Msk_PagtoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataFimFolha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 154,
+                "Top": 17,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "Msk_PagtoExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 190,
+            "Top": 112,
+            "Width": 485,
+            "Height": 227,
+            "Caption": "Grb_lista",
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_EmpresaUnidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 113,
+                "Top": 14,
+                "Width": 43,
+                "Height": 13,
+                "Caption": "Unidade:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DescUniEmp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 231,
+                "Top": 14,
+                "Width": 82,
+                "Height": 13,
+                "Caption": "Lbl_DescUniEmp"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Unidades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 203,
+                "Top": 10,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_UnidadeClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Empresas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 203,
+                "Top": 10,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_EmpresasClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TListBox",
+              "nome": "Lst_Unidades",
+              "herdado": false,
+              "propriedades": {
+                "Left": 111,
+                "Top": 67,
+                "Width": 262,
+                "Height": 147,
+                "TabStop": false,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_UnidadeEmpresa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 160,
+                "Top": 10,
+                "Width": 41,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnEnter": "Edt_UnidadeEmpresaEnter",
+                "OnExit": "Edt_UnidadeEmpresaExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 114,
+                "Top": 36,
+                "Width": 77,
+                "Height": 25,
+                "Caption": "&Adicionar",
+                "TabOrder": 1,
+                "OnClick": "Btn_AdicionarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 193,
+                "Top": 36,
+                "Width": 77,
+                "Height": 25,
+                "Caption": "&Remover",
+                "TabOrder": 2,
+                "TabStop": false,
+                "OnClick": "Btn_RemoverClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_TipoFolha",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 12,
+            "Width": 305,
+            "Height": 93,
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TelaOpcoes1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 26,
+                "Width": 29,
+                "Height": 13,
+                "Caption": "Folha:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TelaOpcoes2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 58,
+                "Width": 52,
+                "Height": 13,
+                "Caption": "Data-base:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DataPagto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 167,
+                "Top": 58,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Pagto:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_DataBase",
+              "herdado": false,
+              "propriedades": {
+                "Left": 138,
+                "Top": 54,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_Pagto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 273,
+                "Top": 54,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataBase",
+              "herdado": false,
+              "propriedades": {
+                "Left": 69,
+                "Top": 54,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "Msk_DataBaseExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cmb_CodigoFolha",
+              "herdado": false,
+              "propriedades": {
+                "Left": 69,
+                "Top": 22,
+                "Width": 203,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "Cmb_CodigoFolhaChange"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_Pagto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 54,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 2,
+                "OnExit": "Msk_PagtoExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "grb_PeriodoPonto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 421,
+            "Top": 60,
+            "Width": 254,
+            "Height": 45,
+            "Caption": "Período para Apuração do Ponto",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_PontoDe",
+              "herdado": false,
+              "propriedades": {
+                "Left": 9,
+                "Top": 21,
+                "Width": 17,
+                "Height": 13,
+                "Caption": "De:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_PontoAte",
+              "herdado": false,
+              "propriedades": {
+                "Left": 129,
+                "Top": 21,
+                "Width": 19,
+                "Height": 13,
+                "Caption": "Até:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_InicioPonto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 100,
+                "Top": 17,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMetaData",
+              "nome": "Mtd_FimPonto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 223,
+                "Top": 19,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar Data(Ctrl + D)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataInicioPonto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 31,
+                "Top": 17,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 0,
+                "OnExit": "Msk_PagtoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataFimPonto",
+              "herdado": false,
+              "propriedades": {
+                "Left": 154,
+                "Top": 19,
+                "Width": 68,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "Msk_PagtoExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_GruposUnidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 236
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposUnidadesGRUPOUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOUNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposUnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FolhasCadastradas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 410,
+        "Top": 250
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasCODIGOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasSITUACAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAINICIOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAFIMFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAFIMFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAPAGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasCONTROLECALCULO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTROLECALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasCONTROLECONSOLIDACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTROLECONSOLIDACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATABASEFERIAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATABASEFERIAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAINICIOPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAFIMPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAFIMPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasLIBERADAPARAPORTAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LIBERADAPARAPORTAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FolhasCadastradasPONTOCONCLUIDOPORTAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PONTOCONCLUIDOPORTAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_FolhasCadastradas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 512,
+        "Top": 266
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_GruposEmpresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 180
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_GruposEmpresasGRUPOEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "GRUPOEMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_GruposEmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ConsultaFolhas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 172
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Unidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 554,
+        "Top": 133
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Empresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 626,
+        "Top": 133
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EmpresasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

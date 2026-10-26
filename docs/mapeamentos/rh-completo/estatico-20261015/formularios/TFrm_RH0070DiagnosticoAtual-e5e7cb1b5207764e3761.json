@@ -1,0 +1,340 @@
+{
+  "classe": "TFrm_RH0070DiagnosticoAtual",
+  "nome": "Frm_RH0070DiagnosticoAtual",
+  "herdado": true,
+  "propriedades": {
+    "Left": 314,
+    "Top": 207,
+    "Caption": "Diagnóstico Atual",
+    "ClientHeight": 476,
+    "ClientWidth": 748
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Diagnostico",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 748,
+        "Height": 476,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 373,
+            "Width": 56,
+            "Height": 13,
+            "Caption": "Diagnóstico"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 79,
+            "Top": 373,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Descrição do Usuário"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 413,
+            "Width": 18,
+            "Height": 13,
+            "Caption": "CID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 413,
+            "Width": 66,
+            "Height": 13,
+            "Caption": "Classe Exame"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_Diagnosticos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 57,
+            "Top": 389,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_CID",
+          "herdado": false,
+          "propriedades": {
+            "Left": 82,
+            "Top": 429,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Diagnostico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 740,
+            "Height": 363,
+            "Align": "alTop",
+            "DataSource": "Dts_Diagnosticos",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_DiagnosticoEnter",
+            "Columns": [
+              {
+                "FieldName": "DIAGNOSTICO",
+                "Title.Caption": "Diagnóstico",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO110",
+                "Title.Caption": "Descrição do Usuário",
+                "Width": 363,
+                "Visible": true
+              },
+              {
+                "FieldName": "CID",
+                "Width": 82,
+                "Visible": true
+              },
+              {
+                "FieldName": "CLASSEEXAME",
+                "Title.Caption": "Classe Exame",
+                "Width": 90,
+                "Visible": true
+              },
+              {
+                "Title.Caption": "Resultado Exame",
+                "Width": 89,
+                "Visible": true
+              },
+              {
+                "Title.Caption": "Gera Afast.",
+                "Width": 59,
+                "Visible": true
+              },
+              {
+                "Title.Caption": "Gera CAT",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAOOFICIAL",
+                "Title.Caption": "Descrição Oficial",
+                "Width": 289,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_DIAGNOSTICO",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 389,
+            "Width": 47,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_DIAGNOSTICOExit",
+            "OnKeyPress": "Edt_DIAGNOSTICOKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_CID",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 429,
+            "Width": 71,
+            "Height": 21,
+            "DataField": "CID",
+            "DataSource": "Dts_Diagnosticos",
+            "MaxLength": 10,
+            "TabOrder": 3,
+            "OnExit": "Dbe_CIDExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_CLASSEEXAME",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 429,
+            "Width": 88,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "CLASSEEXAME",
+            "DataSource": "Dts_Diagnosticos",
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Gbx_Sugestao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 196,
+            "Top": 413,
+            "Width": 417,
+            "Height": 51,
+            "Caption": "Para Sugestão ",
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Aux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 55,
+                "Top": 23,
+                "Width": 10,
+                "Height": 21,
+                "TabOrder": 3,
+                "OnEnter": "Edt_AuxEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBRadioGroup",
+              "nome": "Dbr_RESULTADOEXAME",
+              "herdado": false,
+              "propriedades": {
+                "Left": 14,
+                "Top": 14,
+                "Width": 199,
+                "Height": 30,
+                "Caption": "Resultado Exame",
+                "Columns": 2,
+                "DataField": "RESULTADOEXAME",
+                "DataSource": "Dts_Diagnosticos",
+                "Items.Strings": [
+                  "Normal",
+                  "Alterado"
+                ],
+                "TabOrder": 0,
+                "OnChange": "Dbr_RESULTADOEXAMEChange"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbc_GERAAFASTAMENTO",
+              "herdado": false,
+              "propriedades": {
+                "Left": 217,
+                "Top": 22,
+                "Width": 115,
+                "Height": 17,
+                "Caption": "Gera Afastamento",
+                "DataField": "GERAAFASTAMENTO",
+                "DataSource": "Dts_Diagnosticos",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dbc_GERACAT",
+              "herdado": false,
+              "propriedades": {
+                "Left": 335,
+                "Top": 22,
+                "Width": 78,
+                "Height": 17,
+                "Caption": "Gera CAT",
+                "DataField": "GERACAT",
+                "DataSource": "Dts_Diagnosticos",
+                "TabOrder": 2
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DESCRICAO110",
+          "herdado": false,
+          "propriedades": {
+            "Left": 79,
+            "Top": 389,
+            "Width": 650,
+            "Height": 21,
+            "DataField": "DESCRICAO110",
+            "DataSource": "Dts_Diagnosticos",
+            "MaxLength": 110,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 114,
+        "Top": 58
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Diagnosticos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 78,
+        "Top": 58
+      },
+      "filhos": []
+    }
+  ]
+}

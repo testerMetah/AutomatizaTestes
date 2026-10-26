@@ -1,0 +1,410 @@
+{
+  "classe": "TFrm_RH0030CatProtocolos",
+  "nome": "Frm_RH0030CatProtocolos",
+  "herdado": true,
+  "propriedades": {
+    "Left": 338,
+    "Top": 139,
+    "Caption": "Histórico das CATs Emitidas",
+    "ClientHeight": 476,
+    "ClientWidth": 787
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 787,
+        "Height": 48,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 14,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 193,
+            "Top": 14,
+            "Width": 323,
+            "Height": 16,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHLocalizarPessoa",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFilterDateButton",
+          "nome": "Btn_Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Left": 163,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "AllowAllUp": true,
+            "GroupIndex": 2,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFiltroPessoa",
+          "nome": "FiltroPessoa1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 117,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "FiltroPessoa1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "Img_Hint",
+          "herdado": false,
+          "propriedades": {
+            "Left": 509,
+            "Top": 14,
+            "Width": 16,
+            "Height": 16,
+            "Hint": "Quando uma CAT (evento S-2210) possui retificações, a coluna \"Recibo do eSocial\" exibirá sempre o número do recibo mais recente e válido da CAT.\r\nOu seja, será apresentado o recibo da última retificação realizada, caso exista.|1. Configuração necessária\r\nAtualmente, para utilizar a funcionalidade de Quadro de Lotação Gerencial ou por Unidade e Setor, é necessária a configuração mínima da estrutura, incluindo:\r\n\r\nCargos com Plano, Classe e Faixa;\r\n\r\nMatriz Salarial com Plano, Classe e Faixa;\r\n\r\nClassificação Gerencial.\r\n\r\nÉ possível utilizar apenas uma classe e uma faixa na Matriz Salarial para um cargo.\r\n\r\n2. Diretriz de visualização\r\nNas Diretrizes do Módulo de Gestão de Cargos e Salários, a diretriz “Considerar no Quadro de Lotação” afeta diretamente a visualização dos dados no Quadro de Lotação Gerencial.\r\n\r\nSomente contratos ativos: serão exibidos cargos ativos ou inativos que possuam contratos ativos vinculados.\r\n\r\nContratos ativos e afastados: serão exibidos cargos ativos ou inativos vinculados a contratos ativos ou afastados.\r\n\r\nNesta tela, os cargos inativos são apresentados na cor vermelha. A exibição dos cargos respeita a diretriz configurada no módulo.\r\n\r\n3. Verificação de vínculos\r\nPara verificar os contratos vinculados aos cargos, utilize o relatório Resumo do Funcionário, selecionando o filtro Cargos na aba Seleção.\r\n\r\nEm caso de dúvidas, consulte os manuais do sistema ou entre em contato com o suporte ou consultor responsável.",
+            "Align": "alCustom",
+            "ShowHint": true,
+            "OnClick": "Img_HintClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 10,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_PessoaChange",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrmTrocaContrato",
+          "nome": "FrmTrocaContrato1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 533,
+            "Top": 4,
+            "Width": 245,
+            "Height": 37,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 48,
+        "Width": 787,
+        "Height": 428,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TMetaData",
+          "nome": "MetaData1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 353,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 336,
+            "Width": 23,
+            "Height": 13,
+            "Caption": "Data"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 101,
+            "Top": 336,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 561,
+            "Top": 336,
+            "Width": 78,
+            "Height": 13,
+            "Caption": "Nº. do Protocolo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 381,
+            "Width": 87,
+            "Height": 13,
+            "Caption": "Recibo do eSocial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 540,
+            "Top": 156,
+            "Width": 26,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Historicos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 779,
+            "Height": 330,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_HistoricosCat",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_HistoricosEnter",
+            "Columns": [
+              {
+                "FieldName": "DATAHORA",
+                "Title.Caption": "Data",
+                "Width": 79,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Title.Caption": "Descrição",
+                "Width": 306,
+                "Visible": true
+              },
+              {
+                "FieldName": "NROPROTOCOLO",
+                "Title.Caption": "Nº. do Protocolo",
+                "Width": 151,
+                "Visible": true
+              },
+              {
+                "FieldName": "NRRECIBOESOCIAL",
+                "Title.Caption": "Recibo do eSocial",
+                "Width": 167,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONSTARPPP",
+                "Title.Caption": "Constar PPP",
+                "Width": 66,
+                "Visible": true
+              },
+              {
+                "FieldName": "STATUSCAT",
+                "Title.Caption": "Status",
+                "Width": 61,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Invisivel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 349,
+            "Width": 677,
+            "Height": 30,
+            "TabOrder": 2,
+            "OnEnter": "Pnl_InvisivelEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Protocolo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 461,
+                "Top": 4,
+                "Width": 209,
+                "Height": 21,
+                "DataField": "NROPROTOCOLO",
+                "DataSource": "Dts_HistoricosCat",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Descricao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 4,
+                "Width": 452,
+                "Height": 21,
+                "DataField": "DESCRICAO40",
+                "DataSource": "Dts_HistoricosCat",
+                "TabOrder": 0
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 353,
+            "Width": 66,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 1,
+            "OnExit": "Msk_DataExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NRRECIBOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 396,
+            "Width": 544,
+            "Height": 21,
+            "DataField": "NRRECIBOESOCIAL",
+            "DataSource": "Dts_HistoricosCat",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_ConstarPPP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 561,
+            "Top": 398,
+            "Width": 81,
+            "Height": 17,
+            "Caption": "Constar PPP",
+            "DataField": "CONSTARPPP",
+            "DataSource": "Dts_HistoricosCat",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 142,
+        "Top": 110
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_HistoricosCat",
+      "herdado": false,
+      "propriedades": {
+        "Left": 242,
+        "Top": 110
+      },
+      "filhos": []
+    }
+  ]
+}

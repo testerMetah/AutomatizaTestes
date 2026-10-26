@@ -1,0 +1,1304 @@
+{
+  "classe": "TFrmComunicacaoEquipamentos",
+  "nome": "FrmComunicacaoEquipamentos",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "BorderStyle": "bsSingle",
+    "Caption": "Comunicação com Equipamentos",
+    "ClientHeight": 539,
+    "ClientWidth": 1058,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "PgComandos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 369,
+        "Top": 0,
+        "Width": 689,
+        "Height": 539,
+        "ActivePage": "TabEnviarInfo",
+        "Align": "alClient",
+        "Style": "tsFlatButtons",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "TabFilaComandos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fila de Comandos",
+            "OnShow": "TabFilaComandosShow"
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "dbgFilaComandos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 681,
+                "Height": 435,
+                "Align": "alClient",
+                "BorderStyle": "bsNone",
+                "DataSource": "DsFilaComandos",
+                "ReadOnly": true,
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "Ordem",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "Comando",
+                    "Width": 101,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Tipo",
+                    "Width": 40,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "IdFiltro",
+                    "Title.Caption": "Filtro",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Pessoas",
+                    "Width": 151,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "ColetorNome",
+                    "Title.Caption": "Coletor",
+                    "Width": 205,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DataHora",
+                    "Title.Caption": "Data/Hora",
+                    "Width": 153,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Panel11",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 435,
+                "Width": 681,
+                "Height": 64,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnNovoComando",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 14,
+                    "Width": 214,
+                    "Height": 38,
+                    "Caption": "Novo Comando (Ctrl+N)",
+                    "TabOrder": 0,
+                    "OnClick": "ActNovoComandoExecute",
+                    "Action": "ActNovoComando"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnAtualizarFilaComandos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 231,
+                    "Top": 14,
+                    "Width": 136,
+                    "Height": 38,
+                    "Caption": "Atualizar (F5)",
+                    "TabOrder": 1,
+                    "OnClick": "AtcAtualizarFilaComandosExecute",
+                    "Action": "AtcAtualizarFilaComandos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnExcluirListaComandos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 373,
+                    "Top": 14,
+                    "Width": 193,
+                    "Height": 38,
+                    "Caption": "Excluir Item (Ctrl+Del)",
+                    "TabOrder": 2,
+                    "OnClick": "AtcExcluirListaComandosExecute",
+                    "Action": "AtcExcluirListaComandos"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "TabEnviarInfo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Enviar Informações",
+            "ImageIndex": 10
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel12",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 435,
+                "Width": 681,
+                "Height": 64,
+                "Align": "alBottom",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnEnviarSelecionado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 14,
+                    "Width": 142,
+                    "Height": 38,
+                    "Caption": "Enviar (Ctrl+S)",
+                    "TabOrder": 0,
+                    "OnClick": "ActEnviarSelecionadoExecute",
+                    "Action": "ActEnviarSelecionado"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnVoltar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 159,
+                    "Top": 14,
+                    "Width": 148,
+                    "Height": 38,
+                    "Caption": "Voltar (Ctrl+D)",
+                    "TabOrder": 1,
+                    "OnClick": "ActCancelarExecute",
+                    "Action": "ActCancelar"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TRadioGroup",
+              "nome": "rdgEnviar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 41,
+                "Width": 193,
+                "Height": 394,
+                "Align": "alLeft",
+                "Caption": "Adicionar à fila:",
+                "Items.Strings": [
+                  "Data/Hora",
+                  "Configurações",
+                  "Enviar Digitais",
+                  "Coletar Digitais",
+                  "Excluir Digitais",
+                  "Enviar Faces",
+                  "Coletar Faces",
+                  "Excluir Faces",
+                  "Enviar Usuários",
+                  "Excluir Usuários",
+                  "Limpeza Total"
+                ],
+                "TabOrder": 1,
+                "OnClick": "rdgEnviarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlSelecaoColetor",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 681,
+                "Height": 41,
+                "Align": "alTop",
+                "Caption": "Selecione um coletor...",
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TGroupBox",
+              "nome": "GroupBox1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 193,
+                "Top": 41,
+                "Width": 488,
+                "Height": 394,
+                "Align": "alClient",
+                "Caption": "Filtrar",
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PgFiltrar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 151,
+                    "Width": 486,
+                    "Height": 242,
+                    "ActivePage": "TabPessoa",
+                    "Align": "alBottom",
+                    "Style": "tsButtons",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabFiltro",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "TabFiltro"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TDBGrid",
+                          "nome": "dbgPessoasFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 25,
+                            "Width": 478,
+                            "Height": 181,
+                            "Align": "alClient",
+                            "DataSource": "dsPessoasFiltro",
+                            "TabOrder": 0,
+                            "Columns": [
+                              {
+                                "FieldName": "id",
+                                "Title.Caption": "Id",
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "nome",
+                                "Title.Caption": "Nome",
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "ColetorNome",
+                                "Title.Caption": "Coletor",
+                                "Visible": true
+                              },
+                              {
+                                "FieldName": "FiltroNome",
+                                "Title.Caption": "Filtro",
+                                "Visible": true
+                              }
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "pnFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 478,
+                            "Height": 25,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabPessoa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "TabPessoa",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TImage",
+                          "nome": "Image1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 16,
+                            "Width": 24,
+                            "Height": 24
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 50,
+                            "Top": 16,
+                            "Width": 57,
+                            "Height": 21,
+                            "Caption": "Pessoa:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel1",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 113,
+                            "Top": 12,
+                            "Width": 64,
+                            "Height": 29,
+                            "Caption": "Acesso",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TShape",
+                              "nome": "Shape3",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 64,
+                                "Height": 29,
+                                "Align": "alClient"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TMetaEquipLocalizar",
+                              "nome": "MlPessoas",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 0,
+                                "Width": 64,
+                                "Height": 29,
+                                "Align": "alClient",
+                                "Caption": "F4",
+                                "ImageIndex": 8,
+                                "OnClick": "MlPessoasClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TListBox",
+                          "nome": "lbPessoas",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 16,
+                            "Top": 55,
+                            "Width": 446,
+                            "Height": 140,
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExcluiFiltro",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 356,
+                            "Top": 12,
+                            "Width": 106,
+                            "Height": 28,
+                            "Caption": "Shift+Del",
+                            "TabOrder": 2,
+                            "OnClick": "ActRemoverPessoasExecute",
+                            "Action": "ActRemoverPessoas"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "cbTipoFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 10,
+                    "Top": 36,
+                    "Width": 199,
+                    "Height": 26,
+                    "Style": "csDropDownList",
+                    "TabOrder": 1,
+                    "OnChange": "cbTipoFiltroChange",
+                    "OnClick": "cbTipoFiltroClick",
+                    "Items.Strings": [
+                      "Geral",
+                      "Utilizar filtro do coletor",
+                      "Selecionar pessoa",
+                      "Pré Cadastros"
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlLeft",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 369,
+        "Height": 539,
+        "Align": "alLeft",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "dbgColetores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 6,
+            "Width": 357,
+            "Height": 533,
+            "Align": "alClient",
+            "BorderStyle": "bsNone",
+            "DataSource": "DsColetoresStatusConexao",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "Status",
+                "Width": 35,
+                "Visible": true
+              },
+              {
+                "FieldName": "IdColetor",
+                "Title.Caption": "Id",
+                "Width": 25,
+                "Visible": true
+              },
+              {
+                "FieldName": "IP",
+                "Title.Caption": "IP do Coletor",
+                "Width": 118,
+                "Visible": true
+              },
+              {
+                "FieldName": "Nome",
+                "Title.Caption": "Nome do Coletor",
+                "Width": 111,
+                "Visible": true
+              },
+              {
+                "FieldName": "Selecao",
+                "Width": 45,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 164,
+        "Top": 104
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarDataHora",
+          "herdado": false,
+          "propriedades": {
+            "Category": "DataHora",
+            "Caption": "Enviar",
+            "OnExecute": "ActEnviarDataHoraExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "AtcAtualizarFilaComandos",
+          "herdado": false,
+          "propriedades": {
+            "Category": "FilaComandos",
+            "Caption": "Atualizar (F5)",
+            "ImageIndex": 5,
+            "ShortCut": 116,
+            "OnExecute": "AtcAtualizarFilaComandosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActFechar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fechar (Alt+F4)",
+            "OnExecute": "ActFecharExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarConfig",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Config",
+            "Caption": "Enviar",
+            "OnExecute": "ActEnviarConfigExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarDigitais",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Digitais",
+            "Caption": "Enviar",
+            "OnExecute": "ActEnviarDigitaisExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluirDigitais",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Digitais",
+            "Caption": "Excluir",
+            "OnExecute": "ActExcluirDigitaisExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActStatusColetor",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Status",
+            "Caption": "Solicitar Status"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActStatusComunicacao",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Status",
+            "Caption": "Solicitar",
+            "OnExecute": "ActStatusComunicacaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActColetarDigitais",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Digitais",
+            "Caption": "Coletar",
+            "OnExecute": "ActColetarDigitaisExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "AtcExcluirListaComandos",
+          "herdado": false,
+          "propriedades": {
+            "Category": "FilaComandos",
+            "Caption": "Excluir Item (Ctrl+Del)",
+            "ImageIndex": 6,
+            "ShortCut": 16430,
+            "OnExecute": "AtcExcluirListaComandosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarFaces",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Faces",
+            "Caption": "Enviar",
+            "OnExecute": "ActEnviarFacesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluirFaces",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Faces",
+            "Caption": "Excluir",
+            "OnExecute": "ActExcluirFacesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActColetarFaces",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Faces",
+            "Caption": "Coletar",
+            "OnExecute": "ActColetarFacesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarSelecionado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Enviar (Ctrl+S)",
+            "ImageIndex": 4,
+            "ShortCut": 16467,
+            "OnExecute": "ActEnviarSelecionadoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActNovoComando",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Novo Comando (Ctrl+N)",
+            "ImageIndex": 7,
+            "ShortCut": 16462,
+            "OnExecute": "ActNovoComandoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Voltar (Ctrl+D)",
+            "ImageIndex": 3,
+            "ShortCut": 16452,
+            "OnExecute": "ActCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActEnviarUsuarios",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Usuários",
+            "Caption": "ActEnviarUsuarios",
+            "OnExecute": "ActEnviarUsuariosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluirUsuarios",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Usuários",
+            "Caption": "ActExcluirUsuarios",
+            "OnExecute": "ActExcluirUsuariosExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActBuscarPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "F4",
+            "ImageIndex": 8,
+            "ShortCut": 115,
+            "OnExecute": "ActBuscarPessoasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActRemoverPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Shift+Del",
+            "ImageIndex": 6,
+            "ShortCut": 8238,
+            "OnExecute": "ActRemoverPessoasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActLimpezaTotal",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Limpeza Total",
+            "Caption": "ActLimpezaTotal",
+            "OnExecute": "ActLimpezaTotalExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsFilaComandos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 300,
+        "Top": 256
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsFilaComandos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 300,
+        "Top": 144
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosid",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsFilaComandosDataHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosIdColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosComando",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Comando"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosOrdem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Ordem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosPrioridade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Prioridade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFilaComandosNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFilaComandosColetorNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ColetorNome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosTipo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFilaComandosIdFiltro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdFiltro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TWideStringField",
+          "nome": "CdsFilaComandosPessoas",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoas"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsStatusColetor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 304,
+        "Top": 88
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsStatusColetorDataHora",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHora"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Coletor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorNomeColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NomeColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorTipoColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNrTerminal",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NrTerminal"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorQuantidade_Registros",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Quantidade_Registros"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorTamanho_Buffer_Registros",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tamanho_Buffer_Registros"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorQuantidade_Cartoes_Lista",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Quantidade_Cartoes_Lista"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorTamanho_Lista_Cartoes",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tamanho_Lista_Cartoes"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorQuantidade_Digitos",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Quantidade_Digitos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "CdsStatusColetorDataHoraColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DataHoraColetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNumero_Tipo_Acionamento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Numero_Tipo_Acionamento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorTipo_Acionamento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tipo_Acionamento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNumero_Checagem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Numero_Checagem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorChecagem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Checagem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNumero_Sentido_Giro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Numero_Sentido_Giro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorSentido_Giro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Sentido_Giro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNumero_Ativacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Numero_Ativacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorAtivacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Ativacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsStatusColetorNumero_Acesso_Controlado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Numero_Acesso_Controlado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorAcesso_Controlado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Acesso_Controlado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsStatusColetorVersao_Firmware",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Versao_Firmware"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsStatusColetor",
+      "herdado": false,
+      "propriedades": {
+        "Left": 300,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Timer1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 40,
+        "Top": 300
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList1",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 48,
+        "Top": 368
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsColetoresStatusConexao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 231,
+        "Top": 396
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "CdsColetoresStatusConexaoStatus",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Status"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsColetoresStatusConexaoIdColetor",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IdColetor",
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsColetoresStatusConexaoNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsColetoresStatusConexaoIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "CdsColetoresStatusConexaoSelecao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Selecao"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsColetoresStatusConexao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 231,
+        "Top": 340
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dsPessoasFiltro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 901,
+        "Top": 39
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "cdsPessoasFiltro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 989,
+        "Top": 39
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "cdsPessoasFiltroid",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cdsPessoasFiltronome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cdsPessoasFiltroColetorNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ColetorNome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cdsPessoasFiltroFiltroNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FiltroNome"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

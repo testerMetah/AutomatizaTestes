@@ -1,0 +1,1085 @@
+{
+  "classe": "TFrm_RHST4700",
+  "nome": "Frm_RHST4700",
+  "herdado": true,
+  "propriedades": {
+    "Left": 504,
+    "Top": 247,
+    "Caption": "Registro de Entrega de EPIs para Pré-Contrato",
+    "ClientHeight": 473,
+    "ClientWidth": 786
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 786,
+        "Height": 473,
+        "ActivePage": "Tbs_PorPessoa",
+        "Align": "alClient",
+        "TabOrder": 0,
+        "TabStop": false,
+        "OnChange": "Pgc_PrincipalChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_PorPessoa",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Por Pessoa"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ChavePessoa",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 778,
+                "Height": 43,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 13,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Pessoa:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_Pessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 141,
+                    "Top": 10,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Pessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 169,
+                    "Top": 14,
+                    "Width": 260,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Pessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 60,
+                    "Top": 10,
+                    "Width": 80,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_PessoaChange",
+                    "OnExit": "Edt_PessoaExit",
+                    "OnKeyPress": "Edt_PessoaKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_EPIs",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 43,
+                "Width": 778,
+                "Height": 361,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_PessoaEPIs",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 770,
+                    "Height": 353,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_PorPessoas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Epi",
+                        "Width": 84,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DesEpiRed",
+                        "Width": 153,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescModeloTamanho",
+                        "Title.Caption": "Modelo/Tamanho",
+                        "Width": 110,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DataEntregaStr",
+                        "Title.Caption": "Entrega",
+                        "Width": 62,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NroCertAprov",
+                        "Width": 66,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Estoque",
+                        "Width": 63,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CodigoEstoque",
+                        "Title.Caption": "Cód. Estoque",
+                        "Width": 82,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Lote",
+                        "Width": 76,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "OrigemProg",
+                        "Title.Caption": "Programação",
+                        "Visible": false
+                      },
+                      {
+                        "FieldName": "Quantidade",
+                        "Title.Caption": "Qtd.",
+                        "Width": 61,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "MotivoDesc",
+                        "Title.Caption": "Motivo da Entrega",
+                        "Width": 226,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Complemento",
+                        "Width": 399,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_Botoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 404,
+                "Width": 778,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Incluir",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 6,
+                    "Width": 80,
+                    "Height": 25,
+                    "Caption": "&Entrega",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_IncluirClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Alterar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 110,
+                    "Top": 6,
+                    "Width": 80,
+                    "Height": 25,
+                    "Caption": "&Alteração",
+                    "TabOrder": 1,
+                    "OnClick": "Btn_AlterarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_PorEPI",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Por EPI",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_ChaveEPI",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 778,
+                "Height": 84,
+                "Align": "alTop",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_RotuloEPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 36,
+                    "Width": 20,
+                    "Height": 13,
+                    "Caption": "EPI:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_EPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 170,
+                    "Top": 32,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_EPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 198,
+                    "Top": 36,
+                    "Width": 167,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_Forma_Pesquisa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 147,
+                    "Top": 32,
+                    "Width": 23,
+                    "Height": 22,
+                    "ShowHint": true,
+                    "OnClick": "Btn_Forma_PesquisaClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_EPI",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 45,
+                    "Top": 32,
+                    "Width": 101,
+                    "Height": 21,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_EPIChange",
+                    "OnExit": "Edt_EPIExit",
+                    "OnKeyPress": "Edt_EPIKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_ModelosTamanhos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 373,
+                    "Top": 2,
+                    "Width": 399,
+                    "Height": 76,
+                    "TabStop": false,
+                    "Align": "alRight",
+                    "DataSource": "Dts_Modelos",
+                    "TabOrder": 1,
+                    "Columns": [
+                      {
+                        "FieldName": "DESCMODELO",
+                        "Title.Caption": "Modelo/Tamanho",
+                        "Width": 107,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NROCERTAPROV",
+                        "Width": 87,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CODIGOESTOQUE",
+                        "Title.Caption": "Cod. Estoque",
+                        "Width": 93,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO40",
+                        "Title.Caption": "EPI",
+                        "Width": 76,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_EPIPessoas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 84,
+                "Width": 778,
+                "Height": 320,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 1,
+                "OnEnter": "Pnl_EPIPessoasEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 15,
+                    "Width": 38,
+                    "Height": 13,
+                    "Caption": "Pessoa:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_EPIPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 130,
+                    "Top": 11,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_EPIPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 158,
+                    "Top": 15,
+                    "Width": 215,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 237,
+                    "Width": 81,
+                    "Height": 13,
+                    "Caption": "Data da Entrega:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "MetaData",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 181,
+                    "Top": 234,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 219,
+                    "Top": 237,
+                    "Width": 58,
+                    "Height": 13,
+                    "Caption": "Quantidade:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 263,
+                    "Width": 90,
+                    "Height": 13,
+                    "Caption": "Motivo de Entrega:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TRHMetalocalizar",
+                  "nome": "Btn_MotivoEntrega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 142,
+                    "Top": 260,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 289,
+                    "Width": 67,
+                    "Height": 13,
+                    "Caption": "Complemento:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_MotivoEntrega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 170,
+                    "Top": 264,
+                    "Width": 262,
+                    "Height": 13
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Lote",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 394,
+                    "Top": 237,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Lote:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_QtdEstoque",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 443,
+                    "Top": 263,
+                    "Width": 65,
+                    "Height": 13,
+                    "Caption": "Qtd. Estoque:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_Quantidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 511,
+                    "Top": 263,
+                    "Width": 45,
+                    "Height": 13,
+                    "Caption": "0"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboMeta",
+                  "nome": "Cmb_Lote",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 423,
+                    "Top": 235,
+                    "Width": 133,
+                    "Height": 21,
+                    "TabOrder": 7,
+                    "OnKeyPress": "Cmb_LoteKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Lote",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 423,
+                    "Top": 235,
+                    "Width": 133,
+                    "Height": 21,
+                    "Enabled": false,
+                    "TabOrder": 8,
+                    "OnChange": "Edt_LoteChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_EPIPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 60,
+                    "Top": 11,
+                    "Width": 69,
+                    "Height": 21,
+                    "MaxLength": 8,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_EPIPessoaExit",
+                    "OnKeyPress": "Edt_PessoaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_CachePessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 67,
+                    "Width": 541,
+                    "Height": 162,
+                    "TabStop": false,
+                    "DataSource": "Dts_CachePessoas",
+                    "TabOrder": 4,
+                    "Columns": [
+                      {
+                        "FieldName": "PESSOA",
+                        "Title.Caption": "Pessoa",
+                        "Width": 86,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Title.Caption": "Nome",
+                        "Width": 421,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Msk_DataEntrega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 112,
+                    "Top": 234,
+                    "Width": 68,
+                    "Height": 21,
+                    "EditMask": "99/99/9999;1; ",
+                    "MaxLength": 10,
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Quantidade",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 283,
+                    "Top": 234,
+                    "Width": 98,
+                    "Height": 21,
+                    "MaxLength": 7,
+                    "TabOrder": 6,
+                    "OnKeyPress": "Edt_PessoaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_MotivoEntrega",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 112,
+                    "Top": 260,
+                    "Width": 29,
+                    "Height": 21,
+                    "MaxLength": 2,
+                    "TabOrder": 9,
+                    "OnExit": "Edt_MotivoEntregaExit",
+                    "OnKeyPress": "Edt_MotivoEntregaKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Complemento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 112,
+                    "Top": 286,
+                    "Width": 444,
+                    "Height": 21,
+                    "MaxLength": 100,
+                    "TabOrder": 10
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Adicionar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 39,
+                    "Width": 75,
+                    "Height": 25,
+                    "Hint": "Adicionar Item Escolhido (Ctrl + Down)",
+                    "Caption": "&Adicionar",
+                    "Default": true,
+                    "ShowHint": true,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_AdicionarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Remover",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 95,
+                    "Top": 39,
+                    "Width": 75,
+                    "Height": 25,
+                    "Hint": "Remover Item(s) Escolhidos(s) (Ctrl + Up)",
+                    "Caption": "&Remover",
+                    "ShowHint": true,
+                    "TabOrder": 2,
+                    "OnClick": "Btn_RemoverClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_RemoverTodos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 175,
+                    "Top": 39,
+                    "Width": 113,
+                    "Height": 25,
+                    "Hint": "Remover Todos Items (Shift + Ctrl + Up)",
+                    "Caption": "Remover &Todos",
+                    "ShowHint": true,
+                    "TabOrder": 3,
+                    "OnClick": "Btn_RemoverTodosClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_EntregaEPIPessoas",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 404,
+                "Width": 778,
+                "Height": 41,
+                "Align": "alBottom",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Entregar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 6,
+                    "Width": 75,
+                    "Height": 25,
+                    "Caption": "&Entregar",
+                    "TabOrder": 0,
+                    "OnClick": "Btn_EntregarClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBitBtn",
+                  "nome": "Btn_Cancelar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 105,
+                    "Top": 6,
+                    "Width": 71,
+                    "Height": 25,
+                    "Caption": "&Cancelar",
+                    "Enabled": false,
+                    "TabOrder": 1,
+                    "OnClick": "Btn_CancelarClick"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 580,
+        "Top": 152
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PorPessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 580,
+        "Top": 184
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CachePessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 580,
+        "Top": 216
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_CachePessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 548,
+        "Top": 216
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_CachePessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CachePessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_Forma_Pesquisa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 548,
+        "Top": 248
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_Epis",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Epis...",
+            "ImageIndex": 0,
+            "OnClick": "Mnm_EpisClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_ModelosTamanhos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Modelos Tamanhos...",
+            "ImageIndex": 1,
+            "OnClick": "Mnm_ModelosTamanhosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_Certificado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "&Certificado Aprovação...",
+            "ImageIndex": 2,
+            "OnClick": "Mnm_CertificadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_CodigoEstoque",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Código E&stoque...",
+            "ImageIndex": 3,
+            "OnClick": "Mnm_CodigoEstoqueClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_Forma_Pesquisa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 580,
+        "Top": 248
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Modelos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 548,
+        "Top": 118
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosEPI",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EPI"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosMODELOTAMANHO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Modelo",
+            "FieldName": "MODELOTAMANHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosNROCERTAPROV",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "CA",
+            "FieldName": "NROCERTAPROV"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosCODIGOESTOQUE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cod.Estoque",
+            "FieldName": "CODIGOESTOQUE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosDESCMODELO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCMODELO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ModelosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Modelos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 580,
+        "Top": 118
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 548,
+        "Top": 280
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "F2",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "F2",
+            "ShortCut": 113,
+            "OnExecute": "F2Execute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Remover",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Remover",
+            "ShortCut": 16422,
+            "OnExecute": "RemoverExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Adicionar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Adicionar",
+            "ShortCut": 16424,
+            "OnExecute": "AdicionarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "RemoverTodos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "RemoverTodos",
+            "ShortCut": 24614,
+            "OnExecute": "RemoverTodosExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

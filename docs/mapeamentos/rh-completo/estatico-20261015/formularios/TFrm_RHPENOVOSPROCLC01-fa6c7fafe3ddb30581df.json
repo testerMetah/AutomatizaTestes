@@ -1,0 +1,1216 @@
+{
+  "classe": "TFrm_RHPENOVOSPROCLC01",
+  "nome": "Frm_RHPENOVOSPROCLC01",
+  "herdado": true,
+  "propriedades": {
+    "Left": 654,
+    "Top": 300,
+    "Caption": "Novos Processos no Período",
+    "ClientHeight": 374,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 536,
+        "Height": 331,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Principal",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 528,
+            "Height": 323,
+            "ActivePage": "Tbs_Opcoes",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_PrincipalChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Opcoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Opções"
+              },
+              "filhos": [
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 12,
+                    "Width": 501,
+                    "Height": 77,
+                    "Caption": " Período de Visualização ",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 35,
+                        "Width": 30,
+                        "Height": 13,
+                        "Caption": "Início:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_Termino",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 184,
+                        "Top": 35,
+                        "Width": 41,
+                        "Height": 13,
+                        "Caption": "Término:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 32,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Btn_Termino",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 306,
+                        "Top": 32,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Edt_Inicio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 48,
+                        "Top": 32,
+                        "Width": 77,
+                        "Height": 21,
+                        "EditMask": "!99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "Edt_Termino",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 228,
+                        "Top": 32,
+                        "Width": 77,
+                        "Height": 21,
+                        "EditMask": "!99/9999;1; ",
+                        "MaxLength": 7,
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TRadioGroup",
+                  "nome": "rg_Status",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 96,
+                    "Width": 501,
+                    "Height": 113,
+                    "Caption": " Status ",
+                    "Items.Strings": [
+                      "Somente Processos em Andamento",
+                      "Somente Processos Concluídos",
+                      "Todos os Processos"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Selecao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Seleção (Processos)",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Selecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 520,
+                    "Height": 295,
+                    "ActivePage": "Tbs_Parte",
+                    "Align": "alClient",
+                    "Style": "tsButtons",
+                    "TabOrder": 0,
+                    "TabStop": false
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Empresa",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Empresa",
+                        "ImageIndex": 9
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Empresa",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Empresa",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_EmpresaTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 8,
+                                "Width": 44,
+                                "Height": 13,
+                                "Caption": "Empresa:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Empresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 5,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Empresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 136,
+                                "Top": 9,
+                                "Width": 428,
+                                "Height": 13,
+                                "Caption": "Empresa"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosEmpresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosEmpresaClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarEmpresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarEmpresaClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverEmpresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverEmpresaClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosEmpresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosEmpresaClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_Empresa",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 46,
+                                "Top": 5,
+                                "Width": 61,
+                                "Height": 21,
+                                "MaxLength": 4,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Unidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Unidade",
+                        "ImageIndex": 2
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Unidade",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Unidade",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_UnidadeTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 8,
+                                "Width": 43,
+                                "Height": 13,
+                                "Caption": "Unidade:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Unidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 137,
+                                "Top": 9,
+                                "Width": 428,
+                                "Height": 13,
+                                "Caption": "Unidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Unidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 109,
+                                "Top": 5,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_Unidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 47,
+                                "Top": 5,
+                                "Width": 61,
+                                "Height": 21,
+                                "MaxLength": 4,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_TipoUnidade",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Tipo de Unidade",
+                        "ImageIndex": 7
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_TipoUnidade",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_TipoUnidade",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_TipoUnidadeTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 8,
+                                "Width": 82,
+                                "Height": 13,
+                                "Caption": "Tipo de Unidade:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_TipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 185,
+                                "Top": 4,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_TipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 213,
+                                "Top": 8,
+                                "Width": 428,
+                                "Height": 13,
+                                "Caption": "Tipo de Unidade"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosTipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosTipoUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarTipoUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverTipoUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosTipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosTipoUnidadeClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_TipoUnidade",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 84,
+                                "Top": 4,
+                                "Width": 100,
+                                "Height": 21,
+                                "MaxLength": 40,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Reivindicacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Reivindicação",
+                        "ImageIndex": 1
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Reivindicacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Reivindicacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ReivindicacaoTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 8,
+                                "Width": 71,
+                                "Height": 13,
+                                "Caption": "Reivindicação:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Reivindicacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 130,
+                                "Top": 5,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Label26",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 158,
+                                "Top": 9,
+                                "Width": 451,
+                                "Height": 13,
+                                "Caption": "Reivindicação"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosReivindicacoes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosReivindicacoesClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarReivindicacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarReivindicacaoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverReivindicacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverReivindicacaoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosReivindicacoes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosReivindicacoesClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_Reivindicacao",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 73,
+                                "Top": 5,
+                                "Width": 56,
+                                "Height": 21,
+                                "MaxLength": 4,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Parte",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Parte",
+                        "ImageIndex": 6
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Parte",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Parte",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ParteTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 7,
+                                "Width": 28,
+                                "Height": 13,
+                                "Caption": "Parte:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Parte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 332,
+                                "Top": 4,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosParte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosParteClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarParte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarParteClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverParte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverParteClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosParte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosParteClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_Parte",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 30,
+                                "Top": 4,
+                                "Width": 301,
+                                "Height": 21,
+                                "MaxLength": 250,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tbs_Processo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Processo"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TListBoxMeta",
+                          "nome": "Lst_Processo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 63,
+                            "Width": 512,
+                            "Height": 201,
+                            "Align": "alClient",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Pnl_Processo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 0,
+                            "Top": 0,
+                            "Width": 512,
+                            "Height": 63,
+                            "Align": "alTop",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_Processo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 305,
+                                "Top": 9,
+                                "Width": 272,
+                                "Height": 13,
+                                "Caption": "Processo"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_Processo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 277,
+                                "Top": 5,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ProcessoTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 135,
+                                "Top": 8,
+                                "Width": 47,
+                                "Height": 13,
+                                "Caption": "Processo:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TRHMetalocalizar",
+                              "nome": "Btn_UnidadeProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 101,
+                                "Top": 5,
+                                "Width": 23,
+                                "Height": 22,
+                                "Hint": "Localizar (Ctrl + L)",
+                                "ShowHint": true
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_UnidadeProcessoTit",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 8,
+                                "Width": 43,
+                                "Height": 13,
+                                "Caption": "Unidade:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarTodosProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 0,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar Todos",
+                                "TabOrder": 0,
+                                "OnClick": "Btn_AdicionarTodosProcessoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_AdicionarProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 108,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Adicionar",
+                                "TabOrder": 1,
+                                "OnClick": "Btn_AdicionarProcessoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 216,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover",
+                                "TabOrder": 2,
+                                "OnClick": "Btn_RemoverProcessoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TBitBtn",
+                              "nome": "Btn_RemoverTodosProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 324,
+                                "Top": 33,
+                                "Width": 102,
+                                "Height": 25,
+                                "Caption": "Remover Todos",
+                                "TabOrder": 3,
+                                "OnClick": "Btn_RemoverTodosProcessoClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_Processo",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 187,
+                                "Top": 5,
+                                "Width": 89,
+                                "Height": 21,
+                                "MaxLength": 8,
+                                "TabOrder": 4
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TEdit",
+                              "nome": "Edt_UnidadeProcesso",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 46,
+                                "Top": 5,
+                                "Width": 54,
+                                "Height": 21,
+                                "MaxLength": 4,
+                                "TabOrder": 5
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 331,
+        "Width": 536,
+        "Height": 43,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Avancar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 140,
+            "Top": 6,
+            "Width": 122,
+            "Height": 28,
+            "Caption": "Avançar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_AvancarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Voltar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 6,
+            "Width": 122,
+            "Height": 28,
+            "Cancel": true,
+            "Caption": "Voltar",
+            "TabOrder": 1,
+            "OnClick": "Btn_VoltarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 275,
+        "Top": 281
+      },
+      "filhos": []
+    }
+  ]
+}

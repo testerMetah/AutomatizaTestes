@@ -1,0 +1,201 @@
+{
+  "classe": "TFrm_RH9120",
+  "nome": "Frm_RH9120",
+  "herdado": true,
+  "propriedades": {
+    "Left": 336,
+    "Top": 175,
+    "Caption": "Consulta Pessoas",
+    "ClientHeight": 471,
+    "ClientWidth": 787
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_DadosConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 787,
+        "Height": 45,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ConsultaPor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 13,
+            "Width": 65,
+            "Height": 13,
+            "Caption": "Consultar por:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 610,
+            "Top": 8,
+            "Width": 75,
+            "Height": 24,
+            "Hint": "Localizar (Alt + L)",
+            "Caption": "&Localizar",
+            "ShowHint": true,
+            "TabOrder": 2,
+            "OnClick": "Btn_LocalizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_CosultaPor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 84,
+            "Top": 10,
+            "Width": 135,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cmb_CosultaPorChange",
+            "Items.Strings": [
+              "Nome",
+              "CPF",
+              "Identidade"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ConsultaPor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 226,
+            "Top": 10,
+            "Width": 382,
+            "Height": 21,
+            "MaxLength": 60,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Resultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 45,
+        "Width": 787,
+        "Height": 426,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_ConsultaPessoas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 779,
+            "Height": 418,
+            "Align": "alClient",
+            "DataSource": "Dts_ConsultaPessoas",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOA",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 200,
+                "Visible": true
+              },
+              {
+                "FieldName": "CPF",
+                "Width": 40,
+                "Visible": true
+              },
+              {
+                "FieldName": "IDENTIDADE",
+                "Width": 40,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Width": 61,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Width": 61,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAADMISSAO",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "DescSituacao",
+                "Title.Caption": "Situação",
+                "Width": 69,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATARESCISAO",
+                "Width": 70,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 496,
+        "Top": 156
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ConsultaPessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 384,
+        "Top": 156
+      },
+      "filhos": []
+    }
+  ]
+}

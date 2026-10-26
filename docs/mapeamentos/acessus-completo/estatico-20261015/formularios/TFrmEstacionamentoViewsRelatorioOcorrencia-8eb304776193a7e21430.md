@@ -1,0 +1,147 @@
+# TFrmEstacionamentoViewsRelatorioOcorrencia
+
+Mapa estático, sem validação em execução.
+
+| Caminho Delphi | Classe | Legenda | Campo | Ação/evento |
+|---|---|---|---|---|
+| /FrmEstacionamentoViewsRelatorioOcorrencia | TFrmEstacionamentoViewsRelatorioOcorrencia | Relatório de Ocorrências de Veículos |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio | TPageControl |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1 | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao | TPageControl |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Filtros | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Filtros/PnGrupoAcesso | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Setor | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Setor/PnSetor | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Pessoa | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Pessoa/PnPessoa | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Geral | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/PgSelecao/Geral/lblTodosGeral | TLabel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/Panel2 | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/Panel1/Panel2/SBGrids | TSearchBox |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/lbOrdenar | TLabel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/lbOrdem | TLabel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/cmbOrdenar | TComboBox |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/pnlOrdenacao/cmbOrdem | TComboBox |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GroupBox1 | TGroupBox |            Ocorrência |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GroupBox1/LblOcorrencia | TLabel | LblOcorrencia |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GroupBox1/BtnIrOcorrencia | TMetaEquipLocalizar |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GroupBox1/Image2 | TImage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GroupBox1/EdOcorrencia | TEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbCardapio | TGroupBox |            Veículo |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbCardapio/LblVeiculo | TLabel | LblVeiculo |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbCardapio/BtnIrVeiculo | TMetaEquipLocalizar |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbCardapio/Image1 | TImage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbCardapio/EdVeiculo | TEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo | TGroupBox |            Período |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/lblAte | TLabel | Até |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/Image12 | TImage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdDataInicio | TMaskEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdDataFim | TMaskEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdHoraFim | TMaskEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/TabDefiniÃ§Ãµes/GbPeriodo/MEdHoraInicio | TMaskEdit |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/Selecao | TTabSheet |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PgRelatorio/Selecao/Label1 | TLabel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PnBotao | TPanel |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/PnBotao/BtnImpressao | THoverSpeedButton |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxPDFExport1 | TfrxPDFExport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/ActionList1 | TActionList |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelUnidade | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelUnidade/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelUnidade/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelUnidade/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelUnidade/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPessoas | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPessoas/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPessoas/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPessoas/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPessoas/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMarcacoesOnline | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMarcacoesOnline/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMarcacoesOnline/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMarcacoesOnline/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMarcacoesOnline/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAcessoVisitantesTerceiros | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAcessoVisitantesTerceiros/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAcessoVisitantesTerceiros/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAvaliacaoRefeicao | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAvaliacaoRefeicao/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAvaliacaoRefeicao/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAvaliacaoRefeicao/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelAvaliacaoRefeicao/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCracha | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCracha/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCracha/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCracha/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCracha/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCreditos | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCreditos/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCreditos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCreditos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelCreditos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelEmpresas | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelEmpresas/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelEmpresas/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelEmpresas/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelEmpresas/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelHistoricoAcessoRapido | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelHistoricoAcessoRapido/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelHistoricoAcessoRapido/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelHistoricoAcessoRapido/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelHistoricoAcessoRapido/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPresenca | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPresenca/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPresenca/Page1/Cabecalho | TfrxHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPresenca/Page1/Cabecalho/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPresenca/Page1/Cabecalho/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPreCadastro | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPreCadastro/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPreCadastro/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPreCadastro/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelPreCadastro/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1/GroupHeader1 | TfrxGroupHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelRefeicoesTotal/Page1/GroupHeader1/fxRelatorioSelecao | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelResCon | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelResCon/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelResCon/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelResCon/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelResCon/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelReservasRefeicoes/Page1/GroupHeader1 | TfrxGroupHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelSetor | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelSetor/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelSetor/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelSetor/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelSetor/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMonitoramentoColaboradorVinculadoEstacionamento | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelMonitoramentoColaboradorVinculadoEstacionamento/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelOcorrenciasVeiculos | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelOcorrenciasVeiculos/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelOcorrenciasVeiculos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelOcorrenciasVeiculos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelOcorrenciasVeiculos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVeiculosAcessos | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVeiculosAcessos/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVeiculosAcessos/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVeiculosAcessos/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVeiculosAcessos/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVisitantesTerceiros | TfrxReport |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVisitantesTerceiros/Page1 | TfrxReportPage |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVisitantesTerceiros/Page1/PageHeader1 | TfrxPageHeader |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVisitantesTerceiros/Page1/PageHeader1/Memo5 | TfrxMemoView |  |  |  |
+| /FrmEstacionamentoViewsRelatorioOcorrencia/frxRelVisitantesTerceiros/Page1/PageHeader1/Memo12 | TfrxMemoView |  |  |  |

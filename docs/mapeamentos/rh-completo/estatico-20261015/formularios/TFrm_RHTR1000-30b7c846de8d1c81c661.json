@@ -1,0 +1,192 @@
+{
+  "classe": "TFrm_RHTR1000",
+  "nome": "Frm_RHTR1000",
+  "herdado": true,
+  "propriedades": {
+    "Left": 335,
+    "Top": 199,
+    "Caption": "Tipos de Curso",
+    "ClientHeight": 278,
+    "ClientWidth": 494
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 494,
+        "Height": 278,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 46,
+            "Top": 243,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 70,
+            "Top": 226,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 226,
+            "Width": 21,
+            "Height": 13,
+            "Caption": "Tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_TiposCurso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 486,
+            "Height": 220,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_RHTiposCurso",
+            "TabOrder": 0,
+            "OnEnter": "Dbg_TiposCursoEnter",
+            "Columns": [
+              {
+                "FieldName": "TIPOCURSO",
+                "Title.Caption": "Tipo",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Title.Caption": "Descrição",
+                "Width": 305,
+                "Visible": true
+              },
+              {
+                "FieldName": "UTILIZACHECKLIST",
+                "Title.Caption": "Checklist",
+                "Width": 83,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 70,
+            "Top": 243,
+            "Width": 305,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_RHTiposCurso",
+            "MaxLength": 40,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 243,
+            "Width": 30,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 1,
+            "OnExit": "Edt_TipoExit",
+            "OnKeyPress": "Edt_TipoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 378,
+            "Top": 243,
+            "Width": 10,
+            "Height": 21,
+            "BorderStyle": "bsNone",
+            "TabOrder": 4,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dbc_UtilizaCheck",
+          "herdado": false,
+          "propriedades": {
+            "Left": 384,
+            "Top": 245,
+            "Width": 97,
+            "Height": 17,
+            "TabStop": false,
+            "Caption": "Utiliza Checklist",
+            "DataField": "UTILIZACHECKLIST",
+            "DataSource": "Dts_RHTiposCurso",
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 288,
+        "Top": 88
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHTiposCurso",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 88
+      },
+      "filhos": []
+    }
+  ]
+}

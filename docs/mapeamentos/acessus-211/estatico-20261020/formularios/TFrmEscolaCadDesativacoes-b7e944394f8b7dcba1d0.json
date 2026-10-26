@@ -1,0 +1,423 @@
+{
+  "classe": "TFrmEscolaCadDesativacoes",
+  "nome": "FrmEscolaCadDesativacoes",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Caption": "Desativações | Ativações",
+    "ClientHeight": 491,
+    "ClientWidth": 584,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TImage",
+      "nome": "ImgBotao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 192,
+        "Width": 105,
+        "Height": 105
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 38,
+        "Width": 584,
+        "Height": 453,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "PnGrupoAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 64,
+            "Width": 584,
+            "Height": 325,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TSpeedButton",
+              "nome": "AdicionaFiltro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 277,
+                "Top": 109,
+                "Width": 29,
+                "Height": 29,
+                "Hint": "Inativar Registro Atual",
+                "ImageIndex": 0,
+                "ShowHint": true,
+                "OnClick": "AdicionaFiltroClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "RemoveFiltro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 277,
+                "Top": 139,
+                "Width": 29,
+                "Height": 29,
+                "Hint": "Ativar Registro Selecionado",
+                "ImageIndex": 1,
+                "ShowHint": true,
+                "OnClick": "RemoveFiltroClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 3,
+                "Width": 33,
+                "Height": 15,
+                "Caption": "Ativos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 304,
+                "Top": 3,
+                "Width": 41,
+                "Height": 15,
+                "Caption": "Inativos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "GridItens",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 20,
+                "Width": 260,
+                "Height": 285,
+                "Align": "alLeft",
+                "DataSource": "DsConsulta",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "ID",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "GridItens2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 304,
+                "Top": 20,
+                "Width": 260,
+                "Height": 285,
+                "Align": "alRight",
+                "DataSource": "DsConsulta2",
+                "TabOrder": 1,
+                "Columns": [
+                  {
+                    "FieldName": "ID",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "pnlFundoTopPadrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 584,
+            "Height": 64,
+            "Align": "alTop",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TEdit",
+              "nome": "edBusca",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 20,
+                "Width": 260,
+                "Height": 24,
+                "Align": "alLeft",
+                "BorderStyle": "bsNone",
+                "TabOrder": 0,
+                "TextHint": "Buscar...",
+                "OnChange": "edBuscaChange"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "edBusca2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 304,
+                "Top": 20,
+                "Width": 260,
+                "Height": 24,
+                "Align": "alRight",
+                "BorderStyle": "bsNone",
+                "TabOrder": 1,
+                "TextHint": "Buscar...",
+                "OnChange": "edBusca2Change"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "pnlFundoBotPadrao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 389,
+            "Width": 584,
+            "Height": 64,
+            "Align": "alBottom",
+            "TabOrder": 2
+          },
+          "filhos": [
+            {
+              "classe": "THoverSpeedButton",
+              "nome": "BtnFechar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 20,
+                "Top": 10,
+                "Width": 159,
+                "Height": 44,
+                "Caption": "Fechar (Ctrl+F4)",
+                "TabOrder": 0,
+                "Action": "ActFechar"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 584,
+        "Height": 38,
+        "Align": "alTop",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TComboBox",
+          "nome": "cmbSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 9,
+            "Width": 152,
+            "Height": 29,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "cmbSelecaoChange",
+            "Items.Strings": [
+              "Alunos",
+              "Responsáveis",
+              "Funcionários"
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 24,
+        "Top": 256
+      },
+      "filhos": [
+        {
+          "classe": "TBooleanField",
+          "nome": "CdsConsultaSELECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SELECAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsConsultaID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsConsultaNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsConsulta2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 96,
+        "Top": 264
+      },
+      "filhos": [
+        {
+          "classe": "TBooleanField",
+          "nome": "CdsConsulta2SELECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SELECAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsConsulta2ID",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ID"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsConsulta2NOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "GridIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 13,
+        "Top": 120
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsConsulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 160,
+        "Top": 354
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsConsulta2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 298
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 176,
+        "Top": 223
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 52,
+        "Top": 336
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActFechar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Fechar (Ctrl+F4)",
+            "ShortCut": 16499,
+            "OnExecute": "ActFecharExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

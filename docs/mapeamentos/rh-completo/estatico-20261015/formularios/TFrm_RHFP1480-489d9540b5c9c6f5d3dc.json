@@ -1,0 +1,2266 @@
+{
+  "classe": "TFrm_RHFP1480",
+  "nome": "Frm_RHFP1480",
+  "herdado": false,
+  "propriedades": {
+    "Tag": 1,
+    "Left": 438,
+    "Top": 218,
+    "BorderStyle": "bsSingle",
+    "Caption": "Troca Individual de Lotação",
+    "ClientHeight": 429,
+    "ClientWidth": 685,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 685,
+        "Height": 40,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 12,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 121,
+            "Top": 9,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 149,
+            "Top": 11,
+            "Width": 349,
+            "Height": 17,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 504,
+            "Top": 19,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Admissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 504,
+            "Top": 4,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Admissão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_Admissao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 555,
+            "Top": 4,
+            "Width": 100,
+            "Height": 13,
+            "DataField": "DATAADMISSAO",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBTxtSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 555,
+            "Top": 19,
+            "Width": 100,
+            "Height": 13,
+            "DataField": "DescricaoSituacao",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 62,
+            "Top": 9,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 388,
+        "Width": 685,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Transferencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 8,
+            "Width": 139,
+            "Height": 23,
+            "Caption": "&Iniciar Transferência",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_TransferenciaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 685,
+        "Height": 348,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Cargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 51,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Funcao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 79,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 314,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 26,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_ClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 289,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 263,
+            "Width": 43,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_CentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 237,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_CentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 211,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_CentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 185,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 159,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bvl_Setor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 131,
+            "Width": 71,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_Setor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 134,
+            "Width": 68,
+            "Height": 14,
+            "DataField": "SETOR",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo1CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 162,
+            "Width": 87,
+            "Height": 13,
+            "Caption": "Centros de Custo -"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 156,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo2CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 162,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Nível 1:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo1CentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 188,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Nível 2:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo1CentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 214,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Nível 3:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo1CentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 106,
+            "Top": 240,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Nível 4:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 182,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 208,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 234,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 317,
+            "Width": 106,
+            "Height": 13,
+            "Caption": "Classificação Contábil:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 292,
+            "Width": 116,
+            "Height": 13,
+            "Caption": "Classificação Gerencial: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 311,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoClassificacaoContabil"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 286,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoClassificacaoGerencial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 162,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CENTROCUSTO1",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto1Atual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 156,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto1Atual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_CentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 188,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CENTROCUSTO2",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto2Atual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 182,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto2Atual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_CentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 214,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CENTROCUSTO3",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto3Atual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 208,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto3Atual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_CentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 240,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CENTROCUSTO4",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCentroCusto4Atual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 234,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCentroCusto4Atual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 317,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CLASSIFICACAOCONTABIL",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoClassificacaoContabilAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 311,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoClassificacaoContabilAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_ClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 292,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CLASSIFICACAOGERENCIAL",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoClassificacaoGerencialAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 286,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoClassificacaoGerencialAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloSetor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 134,
+            "Width": 28,
+            "Height": 13,
+            "Caption": "Setor:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoSetorAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 128,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoSetorAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoSetor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 128,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoSetor"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 266,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "ESCALA",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 266,
+            "Width": 92,
+            "Height": 13,
+            "Caption": "Escala de Horários:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoEscala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 460,
+            "Top": 260,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoEscala"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoEscalaAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 260,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoEscalaAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloPostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 29,
+            "Width": 93,
+            "Height": 13,
+            "Caption": "Posto de Trabalho: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoPostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 23,
+            "Width": 177,
+            "Height": 28,
+            "Caption": "Lbl_DescricaoPostoTrabalho"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 29,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "POSTOTRABALHO",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoPostoTrabalhoAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 23,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoPostoTrabalhoAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_Cargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 54,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "CARGO",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "Dbb_Funcao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 82,
+            "Width": 68,
+            "Height": 17,
+            "DataField": "FUNCAO",
+            "DataSource": "Dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloCargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 54,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "Cargo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 487,
+            "Top": 48,
+            "Width": 175,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCargo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoFuncao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 512,
+            "Top": 76,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoFuncao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_TituloFuncao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 82,
+            "Width": 39,
+            "Height": 13,
+            "Caption": "Função:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoCargoAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 48,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoCargoAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DescricaoFuncaoAtual",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 76,
+            "Width": 155,
+            "Height": 27,
+            "Caption": "Lbl_DescricaoFuncaoAtual"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_FuncaoOpcoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 460,
+            "Top": 78,
+            "Width": 23,
+            "Height": 23,
+            "ShowHint": true,
+            "OnClick": "Btn_FuncaoOpcoesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AlterarPara",
+          "herdado": false,
+          "propriedades": {
+            "Left": 390,
+            "Top": 4,
+            "Width": 54,
+            "Height": 13,
+            "Caption": "Alterar para"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DadosAtuais",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 4,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Dados Atuais"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel29",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 105,
+            "Width": 70,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "dbb_MaodeObra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 151,
+            "Top": 107,
+            "Width": 65,
+            "Height": 16,
+            "DataField": "MAODEOBRA",
+            "DataSource": "Dts_Contratos",
+            "Items.Strings": [
+              "Direta",
+              "Indireta",
+              "Auxiliar"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 109,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Mão de obra:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Cargo",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 390,
+            "Top": 51,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 2,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_CargoEnter",
+            "OnExit": "Edt_CargoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 158,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 10,
+            "TabStop": false,
+            "OnClick": "Btn_CentroCusto1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_CentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 184,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 12,
+            "TabStop": false,
+            "OnClick": "Btn_CentroCusto2Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_CentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 210,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 14,
+            "TabStop": false,
+            "OnClick": "Btn_CentroCusto3Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_CentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 236,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 16,
+            "TabStop": false,
+            "OnClick": "Btn_CentroCusto4Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 313,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 22,
+            "TabStop": false,
+            "OnClick": "Btn_ClassificacaoContabilClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_ClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 288,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 20,
+            "TabStop": false,
+            "OnClick": "Btn_ClassificacaoGerencialClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Setor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 130,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 8,
+            "TabStop": false,
+            "OnClick": "Btn_SetorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CentroCusto1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 159,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 9,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_CentroCusto1Enter",
+            "OnExit": "Edt_CentroCusto1Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CentroCusto2",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 185,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 11,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_CentroCusto2Enter",
+            "OnExit": "Edt_CentroCusto2Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CentroCusto3",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 211,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 13,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_CentroCusto3Enter",
+            "OnExit": "Edt_CentroCusto3Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CentroCusto4",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 237,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 15,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_CentroCusto4Enter",
+            "OnExit": "Edt_CentroCusto4Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ClassificacaoContabil",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 314,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 21,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_ClassificacaoContabilEnter",
+            "OnExit": "Edt_ClassificacaoContabilExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_ClassificacaoGerencial",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 289,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 19,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_ClassificacaoGerencialEnter",
+            "OnExit": "Edt_ClassificacaoGerencialExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Setor",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 131,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 7,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_SetorEnter",
+            "OnExit": "Edt_SetorExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Left": 433,
+            "Top": 262,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 18,
+            "TabStop": false,
+            "OnClick": "Btn_EscalaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Escala",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 263,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 17,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_EscalaEnter",
+            "OnExit": "Edt_EscalaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 461,
+            "Top": 25,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "Btn_PostoTrabalhoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 391,
+            "Top": 26,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_PostoTrabalhoEnter",
+            "OnExit": "Edt_PostoTrabalhoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Cargo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 460,
+            "Top": 50,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 3,
+            "TabStop": false,
+            "OnClick": "Btn_CargoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLocalizarMeta",
+          "nome": "Btn_Funcao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 485,
+            "Top": 78,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "TabOrder": 6,
+            "TabStop": false,
+            "OnClick": "Btn_FuncaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Funcao",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 390,
+            "Top": 79,
+            "Width": 69,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 4,
+            "OnChange": "Edt_CargoChange",
+            "OnEnter": "Edt_FuncaoEnter",
+            "OnExit": "Edt_FuncaoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_MaodeObra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 390,
+            "Top": 105,
+            "Width": 69,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 5,
+            "OnChange": "Edt_CargoChange",
+            "Items.Strings": [
+              "Direta",
+              "Indireta",
+              "Auxiliar"
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ContratosOrigem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 639,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosOrigemCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemESCALA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemSETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosOrigemPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosOrigemDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosOrigemDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCLASSIFICACAOGPS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOGPS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemCLASSIFICACAOSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemMAODEOBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MAODEOBRA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOrigemDescricaoSituacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoSituacao",
+            "ReadOnly": true,
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CentrosCusto1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 255,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentroCusto1CENTROCUSTO1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Centro de Custo 1",
+            "FieldName": "CENTROCUSTO1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentroCusto1DESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentroCusto1ATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentroCusto1DESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Setores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 225,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SetoresSETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Setor",
+            "FieldName": "SETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SetoresDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SetoresDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SetoresATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CentrosCusto3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 314,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto3CENTROCUSTO3",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Centro de Custo 3",
+            "FieldName": "CENTROCUSTO3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto3DESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto3ATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto3DESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CentrosCusto4",
+      "herdado": false,
+      "propriedades": {
+        "Left": 343,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto4CENTROCUSTO4",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Centro de Custo 4",
+            "FieldName": "CENTROCUSTO4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto4DESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida ",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto4ATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto4DESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ClassContabeis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 461,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassContabeisCLASSIFICACAOCONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação Contábil",
+            "FieldName": "CLASSIFICACAOCONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassContabeisDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassContabeisATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassContabeisDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ClassGerenciais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 402,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassGerenciaisCLASSIFICACAOGERENCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Classificação Gerencial",
+            "FieldName": "CLASSIFICACAOGERENCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassGerenciaisDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassGerenciaisATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ClassGerenciaisDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PostosTrabalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 431,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PostosTrabalhoPOSTOTRABALHO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Posto Trabalho",
+            "FieldName": "POSTOTRABALHO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PostosTrabalhoDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PostosTrabalhoATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PostosTrabalhoDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Escalas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 372,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EscalasESCALA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Escala",
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EscalasDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_EscalasATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Cargos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 167,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CargosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cargo",
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CargosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CargosDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CargosATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CargosMAODEOBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MAODEOBRA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Funcoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 196,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FuncoesFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Função",
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FuncoesDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FuncoesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FuncoesATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FuncoesMAODEOBRA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MAODEOBRA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CentrosCusto2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto2CENTROCUSTO2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Centro de Custo 2",
+            "FieldName": "CENTROCUSTO2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto2DESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto2ATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CentrosCusto2DESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 606,
+        "Top": 394
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_FuncaoOpcoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 573,
+        "Top": 394
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_TodasFuncoes",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Todas as Funções",
+            "ImageIndex": 0,
+            "OnClick": "Mnm_TodasFuncoesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnm_FuncoesCargo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Funções do Cargo",
+            "ImageIndex": 1,
+            "OnClick": "Mnm_FuncoesCargoClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

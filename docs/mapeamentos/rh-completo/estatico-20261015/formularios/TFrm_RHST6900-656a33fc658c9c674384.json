@@ -1,0 +1,237 @@
+{
+  "classe": "TFrm_RHST6900",
+  "nome": "Frm_RHST6900",
+  "herdado": true,
+  "propriedades": {
+    "Left": 651,
+    "Top": 384,
+    "Caption": "Locais para a Brigada de Incêndio",
+    "ClientHeight": 366,
+    "ClientWidth": 562
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 562,
+        "Height": 366,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 316,
+            "Width": 26,
+            "Height": 13,
+            "Caption": "Local"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 316,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 304,
+            "Top": 316,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Descrição Reduzida"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 444,
+            "Top": 316,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 67,
+            "Top": 334,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 208,
+            "Top": 136,
+            "Width": 121,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbm_LocalGrid",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 554,
+            "Height": 310,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "DTS_LocaisBrigada",
+            "TabOrder": 0,
+            "OnEnter": "Dbm_LocalGridEnter",
+            "Columns": [
+              {
+                "FieldName": "LOCALBRIGADA",
+                "Title.Caption": "Local",
+                "Width": 75,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Title.Caption": "Descrição",
+                "Width": 212,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Title.Caption": "Descrição Reduzida",
+                "Width": 137,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVADESATIVADA",
+                "Title.Caption": "Situação",
+                "Width": 94,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Local",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 334,
+            "Width": 51,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnEnter": "Edt_LocalEnter",
+            "OnExit": "Edt_LocalExit",
+            "OnKeyPress": "Edt_LocalKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 334,
+            "Width": 208,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "DTS_LocaisBrigada",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 304,
+            "Top": 334,
+            "Width": 133,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "DTS_LocaisBrigada",
+            "TabOrder": 3,
+            "OnEnter": "Dbe_Descricao20Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 444,
+            "Top": 334,
+            "Width": 100,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "DTS_LocaisBrigada",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 256,
+        "Top": 160
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DTS_LocaisBrigada",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 160
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,1611 @@
+{
+  "classe": "TFrm_RHFP0560",
+  "nome": "Frm_RHFP0560",
+  "herdado": false,
+  "propriedades": {
+    "Left": 519,
+    "Top": 202,
+    "BorderStyle": "bsSingle",
+    "Caption": "Tabela para Cálculo do IRRF",
+    "ClientHeight": 447,
+    "ClientWidth": 529,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 529,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 12,
+            "Width": 73,
+            "Height": 13,
+            "Caption": "Mês/Ano-base:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "msk_MesAnoBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 8,
+            "Width": 52,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnExit": "msk_MesAnoBaseExit",
+            "OnKeyPress": "msk_MesAnoBaseKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TUpDown",
+          "nome": "ups_Troca",
+          "herdado": false,
+          "propriedades": {
+            "Left": 144,
+            "Top": 6,
+            "Width": 16,
+            "Height": 24,
+            "TabOrder": 1,
+            "OnClick": "ups_TrocaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "DBGrid1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 91,
+        "Height": 406,
+        "TabStop": false,
+        "Align": "alLeft",
+        "DataSource": "dts_AnoMesBase",
+        "TabOrder": 1,
+        "Columns": [
+          {
+            "FieldName": "ANOMESBASE",
+            "Width": 57,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_TabIRRF",
+      "herdado": false,
+      "propriedades": {
+        "Left": 91,
+        "Top": 41,
+        "Width": 438,
+        "Height": 406,
+        "ActivePage": "Tab_FolhaFerias13",
+        "Align": "alClient",
+        "TabOrder": 2,
+        "OnChange": "Pgc_TabIRRFChange"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_FolhaFerias13",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Sobre Folha/Férias/13º Salário"
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DadosFolhaFer13",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 430,
+                "Height": 378,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 257,
+                    "Top": 28,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Isento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 371,
+                    "Top": 28,
+                    "Width": 3,
+                    "Height": 13,
+                    "Caption": "-"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBevel",
+                  "nome": "Bevel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 193,
+                    "Width": 430,
+                    "Height": 9
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label11",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 205,
+                    "Width": 127,
+                    "Height": 13,
+                    "Caption": "Dedução por Dependente:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 254,
+                    "Width": 201,
+                    "Height": 13,
+                    "Caption": "Valor Mínimo a Recolher por Pessoa/Mês:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 228,
+                    "Width": 245,
+                    "Height": 13,
+                    "Caption": "Parc. Isenta Prov. Aposent. (p/maiores de 65 anos):"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 278,
+                    "Width": 216,
+                    "Height": 13,
+                    "Caption": "Percentual Tributável sobre Fretes de Cargas:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 302,
+                    "Width": 240,
+                    "Height": 13,
+                    "Caption": "Percentual Tributável sobre Fretes de Passageiros:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 326,
+                    "Width": 310,
+                    "Height": 13,
+                    "Caption": "Percentual Tributável sobre rendimentos p/ residentes no exterior:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label10",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 15,
+                    "Top": 350,
+                    "Width": 133,
+                    "Height": 13,
+                    "Caption": "Valor Dedução Simplificado:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "HeaderControl1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 422,
+                    "Height": 17,
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 8,
+                    "Top": 28,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "0,01",
+                    "TabOrder": 22
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 2,
+                    "Left": 8,
+                    "Top": 55,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 23
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 3,
+                    "Left": 8,
+                    "Top": 83,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 24
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 4,
+                    "Left": 8,
+                    "Top": 111,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 25
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 5,
+                    "Left": 8,
+                    "Top": 139,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 26
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_De6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 6,
+                    "Left": 8,
+                    "Top": 167,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 27
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 1,
+                    "Left": 139,
+                    "Top": 28,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 0,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate1Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 2,
+                    "Left": 139,
+                    "Top": 55,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 1,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate2Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 3,
+                    "Left": 139,
+                    "Top": 83,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 4,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate3Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 4,
+                    "Left": 139,
+                    "Top": 111,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 7,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate4Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 5,
+                    "Left": 139,
+                    "Top": 139,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 10,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate5Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Ate6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 6,
+                    "Left": 139,
+                    "Top": 167,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 13,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_Ate6Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Percentual2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 2,
+                    "Left": 256,
+                    "Top": 55,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 2,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Percentual3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 3,
+                    "Left": 256,
+                    "Top": 83,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 5,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Percentual4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 4,
+                    "Left": 256,
+                    "Top": 111,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 8,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Percentual5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 5,
+                    "Left": 256,
+                    "Top": 139,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 11,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Percentual6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 6,
+                    "Left": 256,
+                    "Top": 167,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 14,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Deducao2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 2,
+                    "Left": 330,
+                    "Top": 55,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 3,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Deducao3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 3,
+                    "Left": 330,
+                    "Top": 83,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 6,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Deducao4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 4,
+                    "Left": 330,
+                    "Top": 111,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 9,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Deducao5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 5,
+                    "Left": 330,
+                    "Top": 139,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 12,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Deducao6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 6,
+                    "Left": 330,
+                    "Top": 167,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 15,
+                    "OnChange": "edt_Ate2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_DeducaoPorDependente",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 201,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 16,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_ValorMinimoRecolher",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 250,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 18,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edn_ParcelaIsentaProvAposent",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 225,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 17,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edn_PercentualIRPP",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 298,
+                    "Width": 86,
+                    "Height": 21,
+                    "MaxLength": 5,
+                    "TabOrder": 20,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 367,
+                    "Top": 277,
+                    "Width": 18,
+                    "Height": 12,
+                    "TabOrder": 29,
+                    "OnEnter": "Edt_AuxEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edn_PercentualIRPF",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 274,
+                    "Width": 86,
+                    "Height": 21,
+                    "MaxLength": 5,
+                    "TabOrder": 19,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edn_PercentualIRRE",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 322,
+                    "Width": 86,
+                    "Height": 21,
+                    "MaxLength": 5,
+                    "TabOrder": 21,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edn_ValorDeducaoSimplificado",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 330,
+                    "Top": 346,
+                    "Width": 86,
+                    "Height": 21,
+                    "MaxLength": 5,
+                    "TabOrder": 30,
+                    "OnChange": "edt_Ate2Change",
+                    "OnExit": "edt_DeducaoPorDependenteExit"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_LucrosDistribuidos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Sobre Lucros Distribuídos",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DadosLucDist",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 430,
+                "Height": 378,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 257,
+                    "Top": 28,
+                    "Width": 29,
+                    "Height": 13,
+                    "Caption": "Isento"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 371,
+                    "Top": 28,
+                    "Width": 3,
+                    "Height": 13,
+                    "Caption": "-"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TBevel",
+                  "nome": "Bevel2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 193,
+                    "Width": 430,
+                    "Height": 9
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edit_Aux2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 364,
+                    "Top": 170,
+                    "Width": 18,
+                    "Height": 12,
+                    "TabOrder": 23,
+                    "OnEnter": "Edit_Aux2Enter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "HeaderControl2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 422,
+                    "Height": 17,
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 7,
+                    "Left": 8,
+                    "Top": 28,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "0,01",
+                    "TabOrder": 16
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 8,
+                    "Top": 55,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 17
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 9,
+                    "Left": 8,
+                    "Top": 83,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 18
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 10,
+                    "Left": 8,
+                    "Top": 111,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 19
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 11,
+                    "Left": 8,
+                    "Top": 139,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 20
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_LucDistDe6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 12,
+                    "Left": 8,
+                    "Top": 167,
+                    "Width": 106,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 21
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 7,
+                    "Left": 139,
+                    "Top": 28,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte1Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 139,
+                    "Top": 55,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 1,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte2Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 9,
+                    "Left": 139,
+                    "Top": 83,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 4,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte3Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 10,
+                    "Left": 139,
+                    "Top": 111,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 7,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte4Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 11,
+                    "Left": 139,
+                    "Top": 139,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 10,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte5Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistAte6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 12,
+                    "Left": 139,
+                    "Top": 167,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 13,
+                    "OnChange": "Edt_LucDistAte2Change",
+                    "OnExit": "Edt_LucDistAte6Exit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistPercentual2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 256,
+                    "Top": 55,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 2,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistPercentual3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 9,
+                    "Left": 256,
+                    "Top": 83,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 5,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistPercentual4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 10,
+                    "Left": 256,
+                    "Top": 111,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 8,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistPercentual5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 11,
+                    "Left": 256,
+                    "Top": 139,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 11,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistPercentual6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 12,
+                    "Left": 256,
+                    "Top": 167,
+                    "Width": 37,
+                    "Height": 21,
+                    "MaxLength": 4,
+                    "TabOrder": 14,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistDeducao2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 330,
+                    "Top": 55,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 3,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistDeducao3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 9,
+                    "Left": 330,
+                    "Top": 83,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 6,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistDeducao4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 10,
+                    "Left": 330,
+                    "Top": 111,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 9,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistDeducao5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 11,
+                    "Left": 330,
+                    "Top": 139,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 12,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_LucDistDeducao6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 12,
+                    "Left": 330,
+                    "Top": 167,
+                    "Width": 85,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 15,
+                    "OnChange": "Edt_LucDistAte2Change"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tab_Reducao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Redução Lei 15.270",
+            "ImageIndex": 2
+          },
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_DadosReducao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 430,
+                "Height": 378,
+                "Align": "alClient",
+                "BorderStyle": "bsSingle",
+                "TabOrder": 0
+              },
+              "filhos": [
+                {
+                  "classe": "TBevel",
+                  "nome": "Bvl_Reducao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 97,
+                    "Width": 430,
+                    "Height": 9
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Aux3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 356,
+                    "Top": 62,
+                    "Width": 18,
+                    "Height": 12,
+                    "TabOrder": 6,
+                    "OnEnter": "Edit_Aux2Enter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THeaderControl",
+                  "nome": "Hdc_Reducao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 2,
+                    "Width": 422,
+                    "Height": 17,
+                    "Enabled": false
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_RedIsentoDe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 7,
+                    "Left": 8,
+                    "Top": 28,
+                    "Width": 90,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "0,01",
+                    "TabOrder": 7
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "Lbl_RedParcialDe",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 8,
+                    "Top": 55,
+                    "Width": 90,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "TabOrder": 8
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_RedIsentoAte",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 7,
+                    "Left": 107,
+                    "Top": 28,
+                    "Width": 90,
+                    "Height": 21,
+                    "MaxLength": 13,
+                    "TabOrder": 0,
+                    "OnChange": "Edt_RedIsentoAteChange",
+                    "OnExit": "Edt_RedIsentoAteExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_RedParcialAte",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 107,
+                    "Top": 55,
+                    "Width": 90,
+                    "Height": 21,
+                    "MaxLength": 13,
+                    "TabOrder": 3,
+                    "OnChange": "Edt_RedIsentoAteChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_RedParcialDeducao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 8,
+                    "Left": 213,
+                    "Top": 55,
+                    "Width": 90,
+                    "Height": 21,
+                    "MaxLength": 13,
+                    "TabOrder": 4,
+                    "OnChange": "Edt_RedIsentoAteChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "Edt_RedIsentoDeducao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Tag": 12,
+                    "Left": 213,
+                    "Top": 28,
+                    "Width": 90,
+                    "Height": 21,
+                    "MaxLength": 13,
+                    "TabOrder": 1,
+                    "OnChange": "Edt_RedIsentoAteChange"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Edt_RedIsentoCoeficiente",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 320,
+                    "Top": 28,
+                    "Width": 93,
+                    "Height": 21,
+                    "EditMask": "!0,999999;0; ",
+                    "MaxLength": 8,
+                    "TabOrder": 2,
+                    "OnChange": "Edt_RedIsentoAteChange",
+                    "OnKeyPress": "Edt_RedIsentoCoeficienteKeyPress"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMaskEdit",
+                  "nome": "Edt_RedParcialCoeficiente",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 320,
+                    "Top": 56,
+                    "Width": 93,
+                    "Height": 21,
+                    "EditMask": "!0,999999;0; ",
+                    "MaxLength": 8,
+                    "TabOrder": 5,
+                    "OnChange": "Edt_RedIsentoAteChange",
+                    "OnKeyPress": "Edt_RedIsentoCoeficienteKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_ValoresAvulsos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 159
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_ValoresAvulsosVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ValoresAvulsosANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_ValoresAvulsosVALORAVULSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORAVULSO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_ValoresAvulsos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 196
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_AnoMesBase",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_AnoMesBaseANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Mês/Ano",
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_AnoMesBase",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 121
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_AnteriorPosterior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 201,
+        "Top": 7
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_AnteriorPosteriorANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Gravacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 309
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Variaveis",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 347
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_AtuMesesPosteriores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 271
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ValoresAvulsosLucDist",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 234
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ValoresAvulsosLucDistVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ValoresAvulsosLucDistANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFMTBCDField",
+          "nome": "Qry_ValoresAvulsosLucDistVALORAVULSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORAVULSO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ValoresAvulsosReducao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 26,
+        "Top": 382
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ValoresAvulsosReducaoVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ValoresAvulsosReducaoANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_ValoresAvulsosReducaoVALORAVULSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VALORAVULSO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

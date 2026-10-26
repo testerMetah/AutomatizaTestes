@@ -1,0 +1,270 @@
+{
+  "classe": "TFrm_RHFP0611",
+  "nome": "Frm_RHFP0611",
+  "herdado": false,
+  "propriedades": {
+    "Left": 176,
+    "Top": 108,
+    "Width": 412,
+    "Height": 300,
+    "Caption": "FAP - Fator Acidentário de Prevenção",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 404,
+        "Height": 191,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 221,
+            "Top": 62,
+            "Width": 89,
+            "Height": 13,
+            "Caption": "Início de Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 221,
+            "Top": 97,
+            "Width": 81,
+            "Height": 13,
+            "Caption": "Alíquota do FAP:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "dbg_MesesAnos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 190,
+            "Height": 165,
+            "TabStop": false,
+            "DataSource": "Dts_FAP",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "ANOMESBASE",
+                "Title.Caption": "Início de Validade",
+                "Width": 92,
+                "Visible": true
+              },
+              {
+                "FieldName": "ALIQUOTAFAP",
+                "Title.Caption": "FAP",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_InicioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 59,
+            "Width": 52,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnExit": "Msk_InicioValidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TNumericEdit",
+          "nome": "Ned_AliquotaFAP",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 94,
+            "Width": 50,
+            "Height": 21,
+            "MaxLength": 6,
+            "TabOrder": 2,
+            "OnKeyPress": "Ned_AliquotaFAPKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 404,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 12,
+            "Width": 126,
+            "Height": 13,
+            "Caption": "Parâmetro da GPS/SEFIP:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_ParametroGpsSefip",
+          "herdado": false,
+          "propriedades": {
+            "Left": 146,
+            "Top": 12,
+            "Width": 246,
+            "Height": 13,
+            "Caption": "Lbl_ParametroGpsSefip"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 232,
+        "Width": 404,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Salvar",
+            "TabOrder": 0,
+            "OnClick": "Btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 180,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "Excluir",
+            "TabOrder": 2,
+            "OnClick": "Btn_ExcluirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_FAP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 22
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FAP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 264,
+        "Top": 18
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_FAPCLASSGPSSEFIP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSGPSSEFIP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_FAPANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_FAPALIQUOTAFAP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ALIQUOTAFAP"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

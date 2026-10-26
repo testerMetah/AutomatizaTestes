@@ -1,0 +1,1632 @@
+{
+  "classe": "TFrm_RH2150",
+  "nome": "Frm_RH2150",
+  "herdado": true,
+  "propriedades": {
+    "Left": 253,
+    "Top": 124,
+    "Width": 917,
+    "Height": 509,
+    "BorderStyle": "bsSizeable",
+    "Caption": "Consulta de Histórico de Cálculo"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Consulta",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 37,
+        "Width": 901,
+        "Height": 433,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_HistoricoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 9,
+            "Width": 482,
+            "Height": 309,
+            "DataSource": "Dts_HistoricoCalculo",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "IMPORTACAOEXCLUIDA",
+                "Visible": false
+              },
+              {
+                "FieldName": "NROPROCESSO",
+                "Title.Caption": "Cálculo",
+                "Width": 46,
+                "Visible": true
+              },
+              {
+                "FieldName": "PERIODOCALCULADO",
+                "Width": 130,
+                "Visible": true
+              },
+              {
+                "FieldName": "DIASCALCULADOS",
+                "Visible": false
+              },
+              {
+                "FieldName": "CALCULAPONTO",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "CALCULAREFEITORIO",
+                "Width": 50,
+                "Visible": true
+              },
+              {
+                "FieldName": "CALCULADIVERSOS",
+                "Title.Caption": "Diversos",
+                "Width": 63,
+                "Visible": true
+              },
+              {
+                "FieldName": "PERIODODOCALCULO",
+                "Title.Caption": "Executado em",
+                "Visible": false
+              },
+              {
+                "FieldName": "DURACAO",
+                "Visible": false
+              },
+              {
+                "FieldName": "DSCSTATUSCALCULO",
+                "Visible": false
+              },
+              {
+                "FieldName": "ERROCALCULO",
+                "Visible": false
+              },
+              {
+                "FieldName": "DSCTIPOCALCULO",
+                "Visible": false
+              },
+              {
+                "FieldName": "CONTRATOSCALCULADOS",
+                "Visible": false
+              },
+              {
+                "FieldName": "VELOCIDADE",
+                "Visible": false
+              },
+              {
+                "FieldName": "DSCOPCOESRECALCULO",
+                "Visible": false
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Width": 50,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 137,
+            "Top": 403,
+            "Width": 127,
+            "Height": 25,
+            "Caption": "Visualizar Arquivo",
+            "Enabled": false,
+            "TabOrder": 3,
+            "OnClick": "Btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Log",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 403,
+            "Width": 127,
+            "Height": 25,
+            "Caption": "Visualizar Log",
+            "Enabled": false,
+            "TabOrder": 2,
+            "OnClick": "Btn_LogClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_ArqLidos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 7,
+            "Top": 328,
+            "Width": 885,
+            "Height": 75,
+            "DataSource": "Dts_ArqLidos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "NOMEORIGINAL",
+                "Title.Caption": "Nome do Arquivo",
+                "Width": 377,
+                "Visible": true
+              },
+              {
+                "FieldName": "MODELOCOLETOR",
+                "Title.Caption": "Coletor",
+                "Visible": true
+              },
+              {
+                "FieldName": "TAMANHOARQUIVO",
+                "Title.Caption": "Tamanho (Bytes)",
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORALEITURA",
+                "Title.Caption": "Data/Hora Leitura",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "NROMARCACOESLIDAS",
+                "Title.Caption": "Nro Linhas",
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Title.Caption": "Operador",
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Informacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 494,
+            "Top": 4,
+            "Width": 398,
+            "Height": 313,
+            "Caption": "Informações",
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_StatusCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 101,
+                "Width": 98,
+                "Height": 13,
+                "Caption": "Situação do Cálculo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ErroCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 142,
+                "Width": 80,
+                "Height": 13,
+                "Caption": "Erros do Cálculo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TipoCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 182,
+                "Width": 77,
+                "Height": 13,
+                "Caption": "Tipo de Cálculo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ContratosCalculados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 209,
+                "Width": 103,
+                "Height": 13,
+                "Caption": "Contratos Calculados:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 289,
+                "Width": 47,
+                "Height": 13,
+                "Caption": "Operador:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_StatusCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 97,
+                "Width": 200,
+                "Height": 22,
+                "DataField": "DSCSTATUSCALCULO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_TipoCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 178,
+                "Width": 250,
+                "Height": 22,
+                "DataField": "DSCTIPOCALCULO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_ContratosCalculados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 205,
+                "Width": 77,
+                "Height": 22,
+                "DataField": "CONTRATOSCALCULADOS",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_Operador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 285,
+                "Width": 82,
+                "Height": 21,
+                "DataField": "OPERADOR",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_OpcoesRecalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 251,
+                "Width": 93,
+                "Height": 13,
+                "Caption": "Opções do Cálculo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_PeriodoCalculado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 50,
+                "Width": 91,
+                "Height": 13,
+                "Caption": "Período Calculado:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_InicioCalculado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 46,
+                "Width": 95,
+                "Height": 22,
+                "DataField": "DATAINICIO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ACalculado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 222,
+                "Top": 50,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "à"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_TerminoCalculado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 231,
+                "Top": 46,
+                "Width": 95,
+                "Height": 22,
+                "DataField": "DATATERMINO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_OpcaoCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 77,
+                "Width": 92,
+                "Height": 13,
+                "Caption": "Destino do Cálculo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBevel",
+              "nome": "Bvl_ErroCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 123,
+                "Width": 250,
+                "Height": 51
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_DiasCalculados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 334,
+                "Top": 46,
+                "Width": 57,
+                "Height": 22,
+                "DataField": "DIASCALCULADOS",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DiasCalculados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 326,
+                "Top": 51,
+                "Width": 6,
+                "Height": 13,
+                "Caption": "="
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Velocidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 236,
+                "Top": 209,
+                "Width": 56,
+                "Height": 13,
+                "Caption": "Velocidade:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_Velocidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 294,
+                "Top": 205,
+                "Width": 82,
+                "Height": 22,
+                "DataField": "VELOCIDADE",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBevel",
+              "nome": "Bevel1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 231,
+                "Width": 250,
+                "Height": 51
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_PeriodoCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 23,
+                "Width": 85,
+                "Height": 13,
+                "Caption": "Executado em:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_InicioCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 19,
+                "Width": 95,
+                "Height": 22,
+                "DataField": "INICIOCALCULO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ACalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 222,
+                "Top": 23,
+                "Width": 8,
+                "Height": 13,
+                "Caption": "à"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_TerminoCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 231,
+                "Top": 19,
+                "Width": 95,
+                "Height": 22,
+                "DataField": "TERMINOCALCULO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DiasCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 326,
+                "Top": 24,
+                "Width": 8,
+                "Height": 13,
+                "Caption": "="
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBBeveledLabel",
+              "nome": "Edt_DiasCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 334,
+                "Top": 19,
+                "Width": 57,
+                "Height": 22,
+                "DataField": "DURACAO",
+                "DataSource": "Dts_HistoricoCalculo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Edt_OpcoesRecalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 128,
+                "Top": 234,
+                "Width": 245,
+                "Height": 46,
+                "BorderStyle": "bsNone",
+                "DataField": "DSCOPCOESRECALCULO",
+                "DataSource": "Dts_HistoricoCalculo",
+                "ReadOnly": true,
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Edt_ErroCalculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 128,
+                "Top": 125,
+                "Width": 245,
+                "Height": 46,
+                "TabStop": false,
+                "BorderStyle": "bsNone",
+                "DataField": "ERROCALCULO",
+                "DataSource": "Dts_HistoricoCalculo",
+                "ReadOnly": true,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_FundoCheck1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 126,
+                "Top": 75,
+                "Width": 265,
+                "Height": 17,
+                "Enabled": false,
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Chk_CalculaPonto",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": -1,
+                    "Width": 51,
+                    "Height": 18,
+                    "TabStop": false,
+                    "Caption": "Ponto",
+                    "DataField": "CALCULAPONTO",
+                    "DataSource": "Dts_HistoricoCalculo",
+                    "ReadOnly": true,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Chk_CalculaRefeitorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 66,
+                    "Top": -1,
+                    "Width": 67,
+                    "Height": 18,
+                    "TabStop": false,
+                    "Caption": "Refeitório",
+                    "DataField": "CALCULAREFEITORIO",
+                    "DataSource": "Dts_HistoricoCalculo",
+                    "ReadOnly": true,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Chk_CalculaDiversos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 146,
+                    "Top": -1,
+                    "Width": 105,
+                    "Height": 18,
+                    "TabStop": false,
+                    "Caption": "Eventos Diversos",
+                    "DataField": "CALCULADIVERSOS",
+                    "DataSource": "Dts_HistoricoCalculo",
+                    "ReadOnly": true,
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_FundoCheck2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 272,
+                "Top": -1,
+                "Width": 109,
+                "Height": 17,
+                "Enabled": false,
+                "TabOrder": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "Chk_ImportacaoExcluida",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 109,
+                    "Height": 17,
+                    "TabStop": false,
+                    "Caption": "Processo Excluído",
+                    "DataField": "IMPORTACAOEXCLUIDA",
+                    "DataSource": "Dts_HistoricoCalculo",
+                    "ReadOnly": true,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_LogErrosAvancado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 249,
+                "Top": 283,
+                "Width": 126,
+                "Height": 27,
+                "Caption": "Enviar Log de Erros",
+                "TabOrder": 4,
+                "OnClick": "Btn_LogErrosAvancadoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_LogSelecionado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 206,
+                "Top": 206,
+                "Width": 23,
+                "Height": 22,
+                "TabOrder": 5,
+                "OnClick": "Btn_LogClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AtualizarGrid",
+          "herdado": false,
+          "propriedades": {
+            "Left": 763,
+            "Top": 404,
+            "Width": 127,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "TabOrder": 5,
+            "OnClick": "Btn_AtualizarGridClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 901,
+        "Height": 37,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FiltroPeriodoCalculado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 9,
+            "Width": 91,
+            "Height": 13,
+            "Caption": "Período Calculado:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFilterDateButton",
+          "nome": "Btn_PeriodoCalculado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 4,
+            "Width": 23,
+            "Height": 22,
+            "AllowAllUp": true,
+            "GroupIndex": 2,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FiltroPeriodoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 186,
+            "Top": 9,
+            "Width": 71,
+            "Height": 13,
+            "Caption": "Executado em:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFilterDateButton",
+          "nome": "Btn_PeriodoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 264,
+            "Top": 4,
+            "Width": 23,
+            "Height": 22,
+            "AllowAllUp": true,
+            "GroupIndex": 3,
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FiltroTipoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 472,
+            "Top": 9,
+            "Width": 24,
+            "Height": 13,
+            "Caption": "Tipo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FiltroSituacaoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 290,
+            "Top": 9,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_FiltroOperador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 774,
+            "Top": 9,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Operador:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Destino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 121,
+            "Top": 9,
+            "Width": 39,
+            "Height": 13,
+            "Caption": "Destino:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Destino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 161,
+            "Top": 4,
+            "Width": 23,
+            "Height": 22,
+            "OnClick": "Btn_DestinoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_TipoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 498,
+            "Top": 5,
+            "Width": 271,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_SituacaoCalculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 338,
+            "Top": 7,
+            "Width": 132,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Operador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 822,
+            "Top": 5,
+            "Width": 68,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 2,
+            "OnChange": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 368,
+        "Top": 219
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_HistoricoCalculo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 54,
+        "Top": 162
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_HistoricoCalculo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 163,
+        "Top": 162
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_HistoricoCalculoNROPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nro do Processo",
+            "FieldName": "NROPROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoCALCULAPONTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Ponto",
+            "FieldName": "CALCULAPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoCALCULAREFEITORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Refeitório",
+            "FieldName": "CALCULAREFEITORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoCALCULADIVERSOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Eventos Diversos",
+            "FieldName": "CALCULADIVERSOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_HistoricoCalculoDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início do Período",
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_HistoricoCalculoDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término do Período",
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoPERIODOCALCULADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Período Calculado",
+            "FieldName": "PERIODOCALCULADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Cds_HistoricoCalculoDIASCALCULADOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Dias Calculados",
+            "FieldName": "DIASCALCULADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_HistoricoCalculoINICIOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início do Cálculo",
+            "FieldName": "INICIOCALCULO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_HistoricoCalculoTERMINOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término do Cálculo",
+            "FieldName": "TERMINOCALCULO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoPERIODODOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Período do Cálculo",
+            "DisplayWidth": 100,
+            "FieldName": "PERIODODOCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Cds_HistoricoCalculoDURACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Duração",
+            "FieldName": "DURACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoSTATUSCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação do Cálculo",
+            "FieldName": "STATUSCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoDSCSTATUSCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação do Cálculo",
+            "FieldName": "DSCSTATUSCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoERROCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Erros do Cálculo",
+            "FieldName": "ERROCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoTIPOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Cálculo",
+            "FieldName": "TIPOCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoDSCTIPOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Cálculo",
+            "FieldName": "DSCTIPOCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_HistoricoCalculoCONTRATOSCALCULADOS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contratos Calculados",
+            "FieldName": "CONTRATOSCALCULADOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoIMPORTACAOEXCLUIDA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Excluída?",
+            "FieldName": "IMPORTACAOEXCLUIDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoDSCIMPORTACAOEXCLUIDA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Excluída?",
+            "FieldName": "DSCIMPORTACAOEXCLUIDA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoOPCOESRECALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Opções do Recálculo",
+            "FieldName": "OPCOESRECALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoDSCOPCOESRECALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Opções do Recálculo",
+            "FieldName": "DSCOPCOESRECALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFloatField",
+          "nome": "Cds_HistoricoCalculoVELOCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Velocidade",
+            "FieldName": "VELOCIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HistoricoCalculoERROCALCULOAVANCADO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Mensagem de Erro Avançado",
+            "FieldName": "ERROCALCULOAVANCADO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 163,
+        "Top": 276
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosNOMEARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMEARQUIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosNOMEORIGINAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "NOMERIGINAL",
+            "FieldName": "NOMEORIGINAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosMODELOCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MODELOCOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ArqLidosTAMANHOARQUIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TAMANHOARQUIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ArqLidosDATAHORALEITURA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORALEITURA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ArqLidosNROMARCACOESLIDAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROMARCACOESLIDAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ArqLidosOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ArqLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 54,
+        "Top": 276
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopupMenu",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 162
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Excluida1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 55,
+            "AutoCheck": true,
+            "Caption": "Processo Excluído",
+            "Hint": "IMPORTACAOEXCLUIDA",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "NrodoProcesso1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 46,
+            "AutoCheck": true,
+            "Caption": "Número do Processo",
+            "Hint": "NROPROCESSO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "PerodoCalculado1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 135,
+            "AutoCheck": true,
+            "Caption": "Período Calculado",
+            "Hint": "PERIODOCALCULADO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "DiasCalculado1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 80,
+            "AutoCheck": true,
+            "Caption": "Dias Calculados",
+            "Hint": "DIASCALCULADOS",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "PontoCalculado1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 50,
+            "AutoCheck": true,
+            "Caption": "Ponto Calculado",
+            "Hint": "CALCULAPONTO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "RefeitrioCalculado1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 50,
+            "AutoCheck": true,
+            "Caption": "Refeitório Calculado",
+            "Hint": "CALCULAREFEITORIO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "EventosDiversosCalculado1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 50,
+            "AutoCheck": true,
+            "Caption": "Eventos Diversos Calculado",
+            "Hint": "CALCULADIVERSOS",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "PerododoCalculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 180,
+            "AutoCheck": true,
+            "Caption": "Executado em",
+            "Hint": "PERIODODOCALCULO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "DuracaoCalculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 50,
+            "AutoCheck": true,
+            "Caption": "Duração do Cálculo",
+            "Hint": "DURACAO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "SituaodoClculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 150,
+            "AutoCheck": true,
+            "Caption": "Situação do Cálculo",
+            "Hint": "DSCSTATUSCALCULO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "ErrosdoClculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 200,
+            "AutoCheck": true,
+            "Caption": "Erros do Cálculo",
+            "Hint": "ERROCALCULO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "ipodeClculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 200,
+            "AutoCheck": true,
+            "Caption": "Tipo de Cálculo",
+            "Hint": "DSCTIPOCALCULO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "ContratosCalculados1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 105,
+            "AutoCheck": true,
+            "Caption": "Contratos Calculados",
+            "Hint": "CONTRATOSCALCULADOS",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Velocidade1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 70,
+            "AutoCheck": true,
+            "Caption": "Velocidade",
+            "Hint": "VELOCIDADE",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "OpesdoClculo1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 200,
+            "AutoCheck": true,
+            "Caption": "Opções do Cálculo",
+            "Hint": "DSCOPCOESRECALCULO",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Operador1",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 50,
+            "AutoCheck": true,
+            "Caption": "Operador",
+            "Hint": "OPERADOR",
+            "OnClick": "Operador1Click"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_Destino",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 276
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoPonto",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Com Cálculo de &Ponto",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoNaoPonto",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Sem Cálculo de P&onto",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoRefeitorio",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Com Cálculo de &Refeitório",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoNaoRefeitorio",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Sem Cálculo de R&efeitório",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N2",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoDiversos",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Com Cálculo de &Diversos",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_DestinoNaoDiversos",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Sem Cálculo de D&iversos",
+            "Checked": true,
+            "OnClick": "Btn_PeriodoCalculadoChangeDate"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

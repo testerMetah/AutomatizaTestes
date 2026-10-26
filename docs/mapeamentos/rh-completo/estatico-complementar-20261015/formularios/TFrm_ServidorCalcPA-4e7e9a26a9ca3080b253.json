@@ -1,0 +1,197 @@
+{
+  "classe": "TFrm_ServidorCalcPA",
+  "nome": "Frm_ServidorCalcPA",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Servidor de Cálculo"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Items",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Log",
+              "herdado": true,
+              "propriedades": {},
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Log",
+                  "herdado": true,
+                  "propriedades": {
+                    "Height": 147,
+                    "Columns": [
+                      {
+                        "FieldName": "DATAHORAINICIO",
+                        "Title.Caption": "Início",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAHORATERMINO",
+                        "Title.Caption": "Término",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DURACAO",
+                        "Title.Caption": "Duração",
+                        "Width": 50,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "USUARIO",
+                        "Title.Caption": "Usuário",
+                        "Width": 42,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "OPERADOR",
+                        "Title.Caption": "Operador",
+                        "Width": 52,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "OPERACAO",
+                        "Title.Caption": "Origem",
+                        "Width": 120,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "STATUS",
+                        "Title.Caption": "Situação",
+                        "Width": 70,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBMemo",
+                  "nome": "Edt_Mensagem",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 152,
+                    "Width": 564,
+                    "Height": 49,
+                    "DataField": "MENSAGEM",
+                    "DataSource": "Dts_Log",
+                    "ReadOnly": true,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Configuracoes",
+              "herdado": true,
+              "propriedades": {},
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Opcoes",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_OpcoesGeral",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": [
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grp_ConfigMetados",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 173,
+                            "Width": 193
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grb_Conexoes",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 173,
+                            "Top": 102,
+                            "Height": 67
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ConfigMaxConexoes",
+                              "herdado": true,
+                              "propriedades": {
+                                "Top": 45
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ConfigPortaServico",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 7,
+                                "Top": 19,
+                                "Width": 82,
+                                "Height": 13,
+                                "Caption": "Porta do Serviço:"
+                              },
+                              "filhos": [],
+                              "ordem_herdada": 1
+                            },
+                            {
+                              "classe": "TDBSpinEdit",
+                              "nome": "Edt_ConfigMaxConexoes",
+                              "herdado": true,
+                              "propriedades": {
+                                "Top": 40,
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Edt_ConfigPortaServico",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 119,
+                                "Top": 15,
+                                "Width": 54,
+                                "Height": 21,
+                                "DataField": "PORTASERVICO",
+                                "DataSource": "Dts_Configuracoes",
+                                "TabOrder": 0
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

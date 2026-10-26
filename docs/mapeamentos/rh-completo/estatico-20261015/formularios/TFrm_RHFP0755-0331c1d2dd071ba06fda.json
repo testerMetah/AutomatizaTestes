@@ -1,0 +1,83 @@
+{
+  "classe": "TFrm_RHFP0755",
+  "nome": "Frm_RHFP0755",
+  "herdado": false,
+  "propriedades": {
+    "Left": 262,
+    "Top": 190,
+    "BorderStyle": "bsSingle",
+    "Caption": "Contas \"De\" - \"Para\" para o MANAD",
+    "ClientHeight": 328,
+    "ClientWidth": 528,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TDBGrid",
+      "nome": "Dbg_ContasContabDePara",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 528,
+        "Height": 328,
+        "Align": "alClient",
+        "DataSource": "Dts_ContasContabDePara",
+        "TabOrder": 0,
+        "Columns": [
+          {
+            "FieldName": "CONTACONTABIL",
+            "ReadOnly": true,
+            "Visible": true
+          },
+          {
+            "FieldName": "CONTACONTABILPARA",
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContasContabDePara",
+      "herdado": false,
+      "propriedades": {
+        "Left": 152,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ContasContabDePara",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContasContabDeParaCONTACONTABIL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Conta \"De\"",
+            "FieldName": "CONTACONTABIL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContasContabDeParaCONTACONTABILPARA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Conta \"Para\"",
+            "FieldName": "CONTACONTABILPARA"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

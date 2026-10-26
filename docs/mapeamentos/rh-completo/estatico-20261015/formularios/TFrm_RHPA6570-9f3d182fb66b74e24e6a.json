@@ -1,0 +1,250 @@
+{
+  "classe": "TFrm_RHPA6570",
+  "nome": "Frm_RHPA6570",
+  "herdado": true,
+  "propriedades": {
+    "Left": 530,
+    "Top": 344,
+    "Caption": "Eventos considerados para Rateio",
+    "ClientHeight": 360,
+    "ClientWidth": 584
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 584,
+        "Height": 300,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Eventos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 576,
+            "Height": 292,
+            "Align": "alClient",
+            "DataSource": "Dts_RHGorjetasEventos",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EVENTOPONTO",
+                "Title.Caption": "Código",
+                "Width": 137,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCEVENTOPONTO",
+                "Title.Caption": "Descrição",
+                "Width": 300,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCTIPOEVENTOGORJETA",
+                "Title.Caption": "Tipo",
+                "Width": 73,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Rodape",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 300,
+        "Width": 584,
+        "Height": 60,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Eventos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Evento:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Eventos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 25,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 8,
+            "Width": 24,
+            "Height": 13,
+            "Caption": "Tipo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EventosResult",
+          "herdado": false,
+          "propriedades": {
+            "Left": 187,
+            "Top": 29,
+            "Width": 178,
+            "Height": 13,
+            "Caption": "Lbl_EventosResult"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Eventos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 25,
+            "Width": 100,
+            "Height": 21,
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnChange": "Edt_EventosChange",
+            "OnExit": "Edt_EventosExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Cmb_Tipo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 322,
+            "Top": 25,
+            "Width": 114,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "Items.Strings": [
+              "Rateio",
+              "Faltas"
+            ],
+            "TabOrder": 1,
+            "OnChange": "Cmb_TipoChange",
+            "OnExit": "Cmb_TipoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_DiasRetroativos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 436,
+            "Top": 2,
+            "Width": 142,
+            "Height": 52,
+            "Align": "alRight",
+            "TabOrder": 2,
+            "Visible": false
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DiasRetroativos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 5,
+                "Width": 130,
+                "Height": 13,
+                "Caption": "Dias retroativos para perda:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBSpinEdit",
+              "nome": "Spn_DiasRetroativos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 22,
+                "Width": 56,
+                "Height": 22,
+                "MaxLength": 1,
+                "TabOrder": 0
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TButton",
+              "nome": "Btn_Excecoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 66,
+                "Top": 21,
+                "Width": 75,
+                "Height": 25,
+                "Caption": "Exceções",
+                "TabOrder": 1,
+                "OnClick": "Btn_ExcecoesClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 544,
+        "Top": 252
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RHGorjetasEventos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 504,
+        "Top": 251
+      },
+      "filhos": []
+    }
+  ]
+}

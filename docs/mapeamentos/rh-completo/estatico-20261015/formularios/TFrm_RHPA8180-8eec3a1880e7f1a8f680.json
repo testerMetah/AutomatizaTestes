@@ -1,0 +1,378 @@
+{
+  "classe": "TFrm_RHPA8180",
+  "nome": "Frm_RHPA8180",
+  "herdado": true,
+  "propriedades": {
+    "Left": 192,
+    "Width": 979,
+    "Height": 499,
+    "BorderStyle": "bsSizeable",
+    "Caption": "AFD Importados"
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pgc_AFD",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 963,
+        "Height": 460,
+        "ActivePage": "Tbs_AFDLidos",
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_AFDLidos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "AFD Lidos"
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_AFDLidos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 955,
+                "Height": 432,
+                "Align": "alClient",
+                "DataSource": "Dts_AFDLidos",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "NROPROCESSO",
+                    "Title.Caption": "Nº Processo/Coletor",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "COLETOR",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATAINICIO",
+                    "Width": 74,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATATERMINO",
+                    "Width": 87,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATAHORAGERACAO",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "AFD",
+                    "Visible": false
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Tbs_Marcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Marcações",
+            "ImageIndex": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 32,
+                "Width": 47,
+                "Height": 13,
+                "Caption": "Coletores:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 8,
+                "Width": 102,
+                "Height": 13,
+                "Caption": "Numero do Processo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NumeroProcesso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 108,
+                "Top": 8,
+                "Width": 249,
+                "Height": 13
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_Marcacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 56,
+                "Width": 955,
+                "Height": 376,
+                "Align": "alBottom",
+                "DataSource": "Dts_Marcacoes",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "NSR",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NOME",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATAHORAMARCACAO",
+                    "Width": 125,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "PIS",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "NROPROCESSO",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "AFD",
+                    "Visible": false
+                  },
+                  {
+                    "FieldName": "CPF",
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cmb_Coletores",
+              "herdado": false,
+              "propriedades": {
+                "Left": 56,
+                "Top": 29,
+                "Width": 269,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 1,
+                "OnChange": "Cmb_ColetoresChange"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 336
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_AFDLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 148,
+        "Top": 76
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_AFDLidos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 184,
+        "Top": 76
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_AFDLidosNROPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nº Processo",
+            "FieldName": "NROPROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_AFDLidosCOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Coletor",
+            "FieldName": "COLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AFDLidosDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Inicio",
+            "DisplayWidth": 11,
+            "FieldName": "DATAINICIO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AFDLidosDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Termino",
+            "DisplayWidth": 11,
+            "FieldName": "DATATERMINO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_AFDLidosDATAHORAGERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Geração",
+            "DisplayWidth": 20,
+            "FieldName": "DATAHORAGERACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_AFDLidosAFD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AFD"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Marcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 228,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_Marcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 272,
+        "Top": 124
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_MarcacoesNSR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NSR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MarcacoesNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_MarcacoesDATAHORAMARCACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora Marcação",
+            "DisplayWidth": 20,
+            "FieldName": "DATAHORAMARCACAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MarcacoesPIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_MarcacoesNROPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROPROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_MarcacoesAFD",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AFD"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MarcacoesCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

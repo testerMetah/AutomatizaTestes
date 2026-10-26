@@ -1,0 +1,710 @@
+{
+  "classe": "TFrm_RHPA5116",
+  "nome": "Frm_RHPA5116",
+  "herdado": false,
+  "propriedades": {
+    "Left": 694,
+    "Top": 347,
+    "BorderStyle": "bsDialog",
+    "Caption": "Tipos de Hora Extra",
+    "ClientHeight": 332,
+    "ClientWidth": 367,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Selecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 367,
+        "Height": 292,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 237,
+            "Width": 324,
+            "Height": 39,
+            "Caption": "Obs.: Quando for informado '00:00' na coluna 'Qtde Horas' o cálculo ira usar a quantidade total de horas extras, do tipo selecionado, para trocar para compensado."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_HoraExtra",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 9,
+            "Width": 345,
+            "Height": 221,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 210,
+                "Top": 10,
+                "Width": 28,
+                "Height": 26,
+                "Caption": "Qtde Horas"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 265,
+                "Top": 10,
+                "Width": 50,
+                "Height": 13,
+                "Caption": "Tolerância"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 254,
+                "Top": 23,
+                "Width": 28,
+                "Height": 13,
+                "Caption": "Faltas"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 297,
+                "Top": 23,
+                "Width": 29,
+                "Height": 13,
+                "Caption": "Extras"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Lanche",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 40,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras sobre Lanche",
+                "Checked": true,
+                "TabOrder": 0,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Descanso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 62,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras sobre Descanso",
+                "Checked": true,
+                "TabOrder": 4,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Refeicao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 84,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras sobre Refeição",
+                "Checked": true,
+                "TabOrder": 8,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_AntesJornada",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 106,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras antes da Jornada",
+                "Checked": true,
+                "TabOrder": 12,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_DepoisJornada",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 128,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras depois da Jornada",
+                "Checked": true,
+                "TabOrder": 16,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Repouso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 150,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras em Dia de Repouso",
+                "Checked": true,
+                "TabOrder": 20,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Feriado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 172,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras em Feriado",
+                "Checked": true,
+                "TabOrder": 24,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_Compensado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 194,
+                "Width": 190,
+                "Height": 17,
+                "Caption": "Horas Extras em Dia Compensado",
+                "Checked": true,
+                "TabOrder": 28,
+                "OnClick": "ClickChk"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasCompensado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 192,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 29,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasFeriado",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 170,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 25,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasRepouso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 148,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 21,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasDepoisJornada",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 126,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 17,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasAntesJornada",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 104,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 13,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasRefeicao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 82,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 9,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasDescanso",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 60,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 5,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_HorasLanche",
+              "herdado": false,
+              "propriedades": {
+                "Left": 204,
+                "Top": 38,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 1,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaLancheFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 38,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 2,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaDescansoFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 60,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 6,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaRefeicaoFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 82,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 10,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaAntesJornadaFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 104,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 14,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaDepoisJornadaFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 126,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 18,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaRepousoFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 148,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 22,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaFeriadoFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 170,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 26,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaCompensadoFalta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 248,
+                "Top": 192,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 30,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaLancheExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 38,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 3,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaDescansoExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 60,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 7,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaRefeicaoExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 82,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 11,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaDepoisJornadaExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 126,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 19,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaAntesJornadaExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 104,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 15,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaRepousoExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 148,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 23,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaFeriadoExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 170,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 27,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_ToleranciaCompensadoExtra",
+              "herdado": false,
+              "propriedades": {
+                "Left": 292,
+                "Top": 192,
+                "Width": 39,
+                "Height": 21,
+                "EditMask": "!99:99;1; ",
+                "MaxLength": 5,
+                "TabOrder": 31,
+                "OnExit": "ExitHorasTolerancia",
+                "OnKeyPress": "KeyPressHorasTolerancia"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 292,
+        "Width": 367,
+        "Height": 40,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Fechar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&Sair",
+            "Default": true,
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

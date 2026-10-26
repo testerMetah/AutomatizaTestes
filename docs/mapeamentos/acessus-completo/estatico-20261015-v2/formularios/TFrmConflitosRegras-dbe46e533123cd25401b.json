@@ -1,0 +1,727 @@
+{
+  "classe": "TFrmConflitosRegras",
+  "nome": "FrmConflitosRegras",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "BorderStyle": "bsNone",
+    "Caption": "Conflitos de Regras de Acesso",
+    "ClientHeight": 539,
+    "ClientWidth": 816,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnlTopo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 816,
+        "Height": 70,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TImage",
+          "nome": "imgAviso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 15,
+            "Width": 40,
+            "Height": 40
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lblTitulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 70,
+            "Top": 22,
+            "Width": 420,
+            "Height": 23,
+            "Caption": "Foram encontrados conflitos nas regras de acesso"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlMensagem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 70,
+        "Width": 816,
+        "Height": 60,
+        "Align": "alTop",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lblMensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 10,
+            "Width": 760,
+            "Height": 40,
+            "Caption": "Foram encontrados conflitos com os itens selecionados..."
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TListView",
+      "nome": "lvConflitos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 130,
+        "Width": 816,
+        "Height": 345,
+        "Align": "alClient",
+        "Columns": [],
+        "ReadOnly": true,
+        "TabOrder": 2
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "pnlBotoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 475,
+        "Width": 816,
+        "Height": 64,
+        "Align": "alBottom",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnOk",
+          "herdado": false,
+          "propriedades": {
+            "Left": 696,
+            "Top": 13,
+            "Width": 77,
+            "Height": 38,
+            "Caption": "Ok",
+            "TabOrder": 0,
+            "OnClick": "btnOkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "btnResolverConflito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 392,
+            "Top": 13,
+            "Width": 178,
+            "Height": 38,
+            "Caption": "Resolver Conflito",
+            "Enabled": false,
+            "TabOrder": 1,
+            "OnClick": "btnResolverConflitoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "THoverSpeedButton",
+          "nome": "BtnImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 576,
+            "Top": 13,
+            "Width": 114,
+            "Height": 38,
+            "Caption": "Relatório",
+            "TabOrder": 2,
+            "OnClick": "BtnImpressaoClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": false,
+      "propriedades": {
+        "Height": 24,
+        "Width": 24,
+        "Left": 746,
+        "Top": 11
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TfrxDBDataset",
+      "nome": "fxRel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 111,
+        "Top": 488
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TfrxReport",
+      "nome": "frxRel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 74,
+        "Top": 488,
+        "Style": []
+      },
+      "filhos": [
+        {
+          "classe": "TfrxDataPage",
+          "nome": "Data",
+          "herdado": false,
+          "propriedades": {
+            "Height": {
+              "extended80": "00000000000000fa0840"
+            },
+            "Width": {
+              "extended80": "00000000000000fa0840"
+            }
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TfrxReportPage",
+          "nome": "Page1",
+          "herdado": false,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TfrxMasterData",
+              "nome": "MasterData1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "3ed00a0c59dd6ab50340"
+                },
+                "Top": {
+                  "extended80": "a5f78daf3db354ea0640"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxShapeView",
+                  "nome": "Shape4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Width": {
+                      "extended80": "68b3ea73b51587b30840"
+                    },
+                    "Height": {
+                      "extended80": "3ed00a0c59dd6ab50340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Height": {
+                      "extended80": "2f24d4ca8cd06ab50340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "68b3ea73b51587b30840"
+                    },
+                    "Height": {
+                      "extended80": "2f24d4ca8cd06ab50340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "fxRelatorioEmpresa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "da9ff62190c7e3f10040"
+                    },
+                    "Top": {
+                      "extended80": "fad51c2098a3c7e3ff3f"
+                    },
+                    "Width": {
+                      "extended80": "9296cadb114ea3b10740"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "af168944229148b40740"
+                    },
+                    "Height": {
+                      "extended80": "3ed00a0c59dd6ab50340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "fxRelatorioNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "7ce4835cb1582cb60740"
+                    },
+                    "Top": {
+                      "extended80": "fad51c2098a3c7e3ff3f"
+                    },
+                    "Width": {
+                      "extended80": "bc79aa436e86bfaf0740"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TfrxPageHeader",
+              "nome": "PageHeader1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "96438b6ce7fbf99b0640"
+                },
+                "Top": {
+                  "extended80": "de02098a1f632e970340"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxShapeView",
+                  "nome": "Shape1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Top": {
+                      "extended80": "218af29a9120d0960340"
+                    },
+                    "Width": {
+                      "extended80": "68b3ea73b51587b30840"
+                    },
+                    "Height": {
+                      "extended80": "367689eaad81bd9e0540"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxShapeView",
+                  "nome": "Shape3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Top": {
+                      "extended80": "4d840d4faf94c5c60540"
+                    },
+                    "Width": {
+                      "extended80": "68b3ea73b51587b30840"
+                    },
+                    "Height": {
+                      "extended80": "fd6a0e10ccd1e3f10340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "MemoEmpresa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "f9bd4d7ff6238de60640"
+                    },
+                    "Top": {
+                      "extended80": "00000000000000b80340"
+                    },
+                    "Width": {
+                      "extended80": "999eb0c403ca64930840"
+                    },
+                    "Height": {
+                      "extended80": "e8233a15ba5c2e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "0fb4024356b75a9b0540"
+                    },
+                    "Top": {
+                      "extended80": "ff21fdf675e09cd1fb3f"
+                    },
+                    "Width": {
+                      "extended80": "a032fe7dc685c3870540"
+                    },
+                    "Height": {
+                      "extended80": "00000000000000880340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo6",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "5b5f24b4e55c8a860140"
+                    },
+                    "Top": {
+                      "extended80": "ff21fdf675e09cd1fb3f"
+                    },
+                    "Width": {
+                      "extended80": "845338e57e4522910540"
+                    },
+                    "Height": {
+                      "extended80": "1cbd0181402010880340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "MemoNomeRelatorio",
+                  "herdado": false,
+                  "propriedades": {
+                    "Top": {
+                      "extended80": "6f8104c58f3197d10540"
+                    },
+                    "Width": {
+                      "extended80": "ce88d2dee00b85b30840"
+                    },
+                    "Height": {
+                      "extended80": "00000000000000880340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "5caca8c1340c038b0840"
+                    },
+                    "Width": {
+                      "extended80": "e83e6b44511c8fc70440"
+                    },
+                    "Height": {
+                      "extended80": "00000000000000800340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "27c286a757ca62940640"
+                    },
+                    "Width": {
+                      "extended80": "7b884677103b9bc00640"
+                    },
+                    "Height": {
+                      "extended80": "00000000000000880340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo12",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "49111956f146a0970840"
+                    },
+                    "Width": {
+                      "extended80": "9b61bc4980582ad50540"
+                    },
+                    "Height": {
+                      "extended80": "00000000000000800340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxPictureView",
+                  "nome": "Picture1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Top": {
+                      "extended80": "bc0512143fc65cae0340"
+                    },
+                    "Width": {
+                      "extended80": "a5f78daf3db354ea0540"
+                    },
+                    "Height": {
+                      "extended80": "868f882991449f8f0540"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "da9ff62190c7e3f10040"
+                    },
+                    "Top": {
+                      "extended80": "cf4e0647c9abd3860640"
+                    },
+                    "Width": {
+                      "extended80": "3a234a7b832f14aa0640"
+                    },
+                    "Height": {
+                      "extended80": "fd6a0e10ccd1e3f10240"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line11",
+                  "herdado": false,
+                  "propriedades": {
+                    "Top": {
+                      "extended80": "ea094b3ca06c329b0640"
+                    },
+                    "Width": {
+                      "extended80": "68b3ea73b51587b30840"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line14",
+                  "herdado": false,
+                  "propriedades": {
+                    "Top": {
+                      "extended80": "e2afc91af51085810640"
+                    },
+                    "Height": {
+                      "extended80": "8ff1d54cc64aa7d30340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line15",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "68b3ea73b51587b30840"
+                    },
+                    "Top": {
+                      "extended80": "e2afc91af51085810640"
+                    },
+                    "Height": {
+                      "extended80": "8ff1d54cc64aa7d30340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo21",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "55de8e705af072f90540"
+                    },
+                    "Top": {
+                      "extended80": "3ed00a0c59dd6ab50340"
+                    },
+                    "Width": {
+                      "extended80": "452a8c2d043918cc0540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxLineView",
+                  "nome": "Line5",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "2a6f47382d7839b40740"
+                    },
+                    "Top": {
+                      "extended80": "82e2c798bb9648810640"
+                    },
+                    "Height": {
+                      "extended80": "9d9d0c8e9257a7d30340"
+                    }
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo7",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "3a234a7b832f14b60740"
+                    },
+                    "Top": {
+                      "extended80": "2e1c08c9022610870640"
+                    },
+                    "Width": {
+                      "extended80": "96438b6ce7fbf9bc0540"
+                    },
+                    "Height": {
+                      "extended80": "fd6a0e10ccd1e3f10240"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TfrxPageFooter",
+              "nome": "PageFooter1",
+              "herdado": false,
+              "propriedades": {
+                "Height": {
+                  "extended80": "3ed00a0c59dd6ab50340"
+                },
+                "Top": {
+                  "extended80": "367689eaad81bd9e0740"
+                },
+                "Width": {
+                  "extended80": "68b3ea73b51587b30840"
+                }
+              },
+              "filhos": [
+                {
+                  "classe": "TfrxMemoView",
+                  "nome": "Memo13",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Top": {
+                      "extended80": "fd6a0e10ccd1e3f10040"
+                    },
+                    "Width": {
+                      "extended80": "e65c8aabcabedbad0540"
+                    },
+                    "Height": {
+                      "extended80": "de02098a1f632e970340"
+                    }
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsRel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 32,
+        "Top": 488
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "CdsRelregra",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "regra"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsRelnome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "nome"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TfrxPDFExport",
+      "nome": "frxPDFExport",
+      "herdado": false,
+      "propriedades": {
+        "Left": 168,
+        "Top": 488
+      },
+      "filhos": []
+    }
+  ]
+}

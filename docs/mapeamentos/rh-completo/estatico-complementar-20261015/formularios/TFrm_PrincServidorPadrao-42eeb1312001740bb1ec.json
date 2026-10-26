@@ -1,0 +1,562 @@
+{
+  "classe": "TFrm_PrincServidorPadrao",
+  "nome": "Frm_PrincServidorPadrao",
+  "herdado": false,
+  "propriedades": {
+    "Left": 405,
+    "Top": 291,
+    "BorderStyle": "bsSingle",
+    "ClientHeight": 309,
+    "ClientWidth": 582,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 69,
+        "Width": 582,
+        "Height": 240,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Items",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 574,
+            "Height": 232,
+            "ActivePage": "Tbs_Configuracoes",
+            "Align": "alClient",
+            "Style": "tsButtons",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Log",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tbs_Log",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Log",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 564,
+                    "Height": 200,
+                    "DataSource": "Dts_Log",
+                    "ReadOnly": true,
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "DATAHORAINICIO",
+                        "Title.Caption": "Início",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DATAHORATERMINO",
+                        "Title.Caption": "Término",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DURACAO",
+                        "Title.Caption": "Duração",
+                        "Width": 50,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Configuracoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tbs_Configuracoes"
+              },
+              "filhos": [
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_ConfigSalvar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 178,
+                    "Width": 100,
+                    "Height": 22,
+                    "Action": "Act_ConfigSalvar"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_ConfigCancelar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 104,
+                    "Top": 178,
+                    "Width": 100,
+                    "Height": 22,
+                    "Action": "Act_ConfigCancelar"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_Configuracoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 362,
+                    "Top": 300,
+                    "Width": 23,
+                    "Height": 21,
+                    "BorderStyle": "bsNone",
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPageControl",
+                  "nome": "Pgc_Opcoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 6,
+                    "Top": 2,
+                    "Width": 547,
+                    "Height": 172,
+                    "ActivePage": "Tab_OpcoesGeral",
+                    "Style": "tsButtons",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "Tab_OpcoesGeral",
+                      "herdado": false,
+                      "propriedades": {
+                        "Caption": "Geral"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grp_ConfigMetados",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 8,
+                            "Top": -2,
+                            "Width": 161,
+                            "Height": 99,
+                            "Caption": "Usuário Metadados",
+                            "TabOrder": 0
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_InfConfigMetaUsuario",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 6,
+                                "Top": 18,
+                                "Width": 39,
+                                "Height": 13,
+                                "Caption": "Usuário:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_InfConfigMetaOperador",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 6,
+                                "Top": 43,
+                                "Width": 47,
+                                "Height": 13,
+                                "Caption": "Operador:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_InfConfigMetaSenha",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 6,
+                                "Top": 68,
+                                "Width": 34,
+                                "Height": 13,
+                                "Caption": "Senha:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Edt_ConfigMetaUsuario",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 57,
+                                "Top": 14,
+                                "Width": 90,
+                                "Height": 21,
+                                "DataField": "METAUSUARIO",
+                                "DataSource": "Dts_Configuracoes",
+                                "TabOrder": 0,
+                                "OnKeyPress": "Edt_ConfigMetaUsuarioKeyPress"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Edt_ConfigOperador",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 57,
+                                "Top": 39,
+                                "Width": 90,
+                                "Height": 21,
+                                "DataField": "METAOPERADOR",
+                                "DataSource": "Dts_Configuracoes",
+                                "TabOrder": 1
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBEdit",
+                              "nome": "Edt_ConfigMetaSenha",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 57,
+                                "Top": 64,
+                                "Width": 90,
+                                "Height": 21,
+                                "DataField": "METASENHA",
+                                "DataSource": "Dts_Configuracoes",
+                                "PasswordChar": "*",
+                                "TabOrder": 2
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grb_Conexoes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 176,
+                            "Top": 2,
+                            "Width": 193,
+                            "Height": 47,
+                            "Caption": "Conexões",
+                            "TabOrder": 1
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TLabel",
+                              "nome": "Lbl_ConfigMaxConexoes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 9,
+                                "Top": 23,
+                                "Width": 104,
+                                "Height": 13,
+                                "Caption": "Máximo de Conexões:"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TDBSpinEdit",
+                              "nome": "Edt_ConfigMaxConexoes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 119,
+                                "Top": 18,
+                                "Width": 54,
+                                "Height": 22,
+                                "MaxLength": 4,
+                                "TabOrder": 0,
+                                "DataField": "MAXIMOCONEXOESBANCO",
+                                "DataSource": "Dts_Configuracoes"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_TabOpcoesGeral",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": -10,
+                            "Top": -10,
+                            "Width": 10,
+                            "Height": 10,
+                            "BorderStyle": "bsNone",
+                            "TabOrder": 2,
+                            "OnEnter": "Edt_TabOpcoesGeralEnter"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 582,
+        "Height": 69,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Log",
+          "herdado": false,
+          "propriedades": {
+            "Left": 33,
+            "Top": 10,
+            "Width": 100,
+            "Height": 45,
+            "Action": "Act_Log",
+            "AllowAllUp": true,
+            "GroupIndex": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Configuracoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 444,
+            "Top": 10,
+            "Width": 100,
+            "Height": 45,
+            "Action": "Act_Configuracoes",
+            "AllowAllUp": true,
+            "GroupIndex": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NaFrente",
+          "herdado": false,
+          "propriedades": {
+            "Left": 550,
+            "Top": 4,
+            "Width": 23,
+            "Height": 22,
+            "AllowAllUp": true,
+            "GroupIndex": 36541,
+            "OnClick": "Btn_NaFrenteClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TImage",
+          "nome": "Img_Log",
+          "herdado": false,
+          "propriedades": {
+            "Left": 558,
+            "Top": 45,
+            "Width": 16,
+            "Height": 16,
+            "Hint": "Gerando Log",
+            "ShowHint": true
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Configuracoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 212,
+        "Top": 123
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 212,
+        "Top": 22
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Log",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Menus",
+            "Caption": "Log",
+            "GroupIndex": 3,
+            "ImageIndex": 0,
+            "OnExecute": "Act_LogExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Configuracoes",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Menus",
+            "Caption": "Configurações",
+            "GroupIndex": 3,
+            "ImageIndex": 2,
+            "OnExecute": "Act_ConfiguracoesExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConfigSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configuracoes",
+            "Caption": "Salvar",
+            "ImageIndex": 6,
+            "ShortCut": 16467,
+            "OnExecute": "Act_ConfigSalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ConfigCancelar",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Configuracoes",
+            "Caption": "Cancelar",
+            "ImageIndex": 7,
+            "OnExecute": "Act_ConfigCancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlF5",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlF5",
+            "ShortCut": 16500,
+            "OnExecute": "Act_CtrlF5Execute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 353,
+        "Top": 22
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Log",
+      "herdado": false,
+      "propriedades": {
+        "Left": 353,
+        "Top": 123
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TTimer",
+      "nome": "Tmr_Limpa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 212,
+        "Top": 224
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "PopUp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 353,
+        "Top": 224
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mnu_SalvarLog",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Salvar Log...",
+            "OnClick": "Mnu_SalvarLogClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TApplicationEvents",
+      "nome": "ApplicationEvents",
+      "herdado": false,
+      "propriedades": {
+        "Left": 495,
+        "Top": 129
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMREnter",
+      "nome": "MREnter",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": true,
+        "Left": 495,
+        "Top": 224
+      },
+      "filhos": []
+    }
+  ]
+}

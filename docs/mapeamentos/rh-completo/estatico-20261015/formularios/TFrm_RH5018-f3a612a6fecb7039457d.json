@@ -1,0 +1,233 @@
+{
+  "classe": "TFrm_RH5018",
+  "nome": "Frm_RH5018",
+  "herdado": false,
+  "propriedades": {
+    "Left": 335,
+    "Top": 282,
+    "BorderStyle": "bsSingle",
+    "Caption": "Filtro de Reclamantes",
+    "ClientHeight": 238,
+    "ClientWidth": 465,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 465,
+        "Height": 238,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "Caption": "Panel1",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Filtrar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 202,
+            "Width": 111,
+            "Height": 25,
+            "Caption": "Filtrar",
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "Btn_FiltrarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 8,
+            "Width": 451,
+            "Height": 191,
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Reclamante",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 15,
+                "Width": 60,
+                "Height": 13,
+                "Caption": "Reclamante:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Reclamante",
+              "herdado": false,
+              "propriedades": {
+                "Left": 133,
+                "Top": 9,
+                "Width": 24,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "OnClick": "Btn_ReclamanteClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_ReclamanteNome",
+              "herdado": false,
+              "propriedades": {
+                "Left": 160,
+                "Top": 11,
+                "Width": 284,
+                "Height": 19,
+                "Caption": "Lbl_ReclamanteNome"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TListBox",
+              "nome": "Lsb_Reclamantes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 66,
+                "Width": 437,
+                "Height": 119,
+                "TabStop": false,
+                "Columns": 2,
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Reclamante",
+              "herdado": false,
+              "propriedades": {
+                "Left": 74,
+                "Top": 10,
+                "Width": 58,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 0,
+                "OnEnter": "Edt_ReclamanteEnter",
+                "OnExit": "Edt_ReclamanteExit",
+                "OnKeyPress": "Edt_ReclamanteKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Adicionar",
+              "herdado": false,
+              "propriedades": {
+                "Left": 7,
+                "Top": 38,
+                "Width": 75,
+                "Height": 25,
+                "Caption": "&Adicionar",
+                "TabOrder": 1,
+                "OnClick": "Btn_AdicionarClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_Remover",
+              "herdado": false,
+              "propriedades": {
+                "Left": 92,
+                "Top": 38,
+                "Width": 77,
+                "Height": 25,
+                "Caption": "&Remover",
+                "TabOrder": 2,
+                "TabStop": false,
+                "OnClick": "Btn_RemoverClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 384,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ProcuraReclamante",
+      "herdado": false,
+      "propriedades": {
+        "Left": 416,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ProcuraReclamanteNROORDEMPES",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Reclamante",
+            "DisplayWidth": 70,
+            "FieldName": "NROORDEMPES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraReclamanteNOMECOMPLETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "DisplayWidth": 70,
+            "FieldName": "NOMECOMPLETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcuraReclamanteCPF",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 11,
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

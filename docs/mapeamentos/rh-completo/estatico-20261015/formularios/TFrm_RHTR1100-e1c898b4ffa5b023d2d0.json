@@ -1,0 +1,409 @@
+{
+  "classe": "TFrm_RHTR1100",
+  "nome": "Frm_RHTR1100",
+  "herdado": true,
+  "propriedades": {
+    "Left": 919,
+    "Top": 430,
+    "Caption": "Atualizar Horas de Atividades",
+    "ClientHeight": 372,
+    "ClientWidth": 381
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Selecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 381,
+        "Height": 327,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Entre",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 41,
+            "Width": 6,
+            "Height": 13,
+            "Caption": "à"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EdtAtividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 32,
+            "Top": 93,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Atividade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 170,
+            "Top": 93,
+            "Width": 190,
+            "Height": 13,
+            "Caption": "Lbl_Atividade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 144,
+            "Top": 89,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "MetaLocalizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "Rdb_Data",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 17,
+            "Width": 190,
+            "Height": 17,
+            "Caption": "Atualizar todas as Atividades entre:",
+            "Checked": true,
+            "TabOrder": 0,
+            "TabStop": true,
+            "OnClick": "RadioOnClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioButton",
+          "nome": "Rdb_Atividades",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 69,
+            "Width": 185,
+            "Height": 17,
+            "Caption": "Atualizar Atividades Selecionadas:",
+            "TabOrder": 1,
+            "TabStop": true,
+            "OnClick": "RadioOnClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 32,
+            "Top": 37,
+            "Width": 71,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataFinal",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 122,
+            "Top": 37,
+            "Width": 71,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 3,
+            "OnExit": "Msk_DataFinalExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TListBox",
+          "nome": "Lst_Atividades",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 10,
+            "Top": 145,
+            "Width": 354,
+            "Height": 165,
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Atividade",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 83,
+            "Top": 89,
+            "Width": 60,
+            "Height": 21,
+            "MaxLength": 7,
+            "TabOrder": 5,
+            "OnExit": "Edt_AtividadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Remover",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 94,
+            "Top": 117,
+            "Width": 73,
+            "Height": 25,
+            "Caption": "&Remover",
+            "TabOrder": 6,
+            "OnClick": "Btn_RemoverClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Adicionar",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 14,
+            "Top": 117,
+            "Width": 73,
+            "Height": 25,
+            "Caption": "&Adicionar",
+            "TabOrder": 7,
+            "OnClick": "Btn_AdicionarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Atualizar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 327,
+        "Width": 381,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 8,
+            "Width": 111,
+            "Height": 26,
+            "Caption": "A&tualizar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_FiltroAvancado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 255,
+            "Top": 9,
+            "Width": 117,
+            "Height": 25,
+            "TabOrder": 1,
+            "TabStop": false,
+            "OnClick": "Btn_FiltroAvancadoClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 343,
+        "Top": 14
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_PessoasAtividades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 279,
+        "Top": 14
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PessoasAtividadesEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_PessoasAtividadesPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PessoasAtividadesPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_PessoasAtividadesREVISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "REVISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_PessoasAtividadesDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_PessoasAtividadesATIVIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_PessoasAtividadesNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Cds_PessoasAtividadesCAR_HORARIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Carga Horária",
+            "FieldName": "CAR_HORARIA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessoasAtividades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 215,
+        "Top": 14
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "img_Filtro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 247,
+        "Top": 14
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "pmFiltro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 311,
+        "Top": 14
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Mni_FiltroAvancado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Filtro por Pessoas",
+            "ImageIndex": 0,
+            "OnClick": "Mni_FiltroAvancadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Mni_SemFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Sem Filtro",
+            "ImageIndex": 1,
+            "OnClick": "Mni_SemFiltroClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

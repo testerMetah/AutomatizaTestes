@@ -1,0 +1,1504 @@
+{
+  "classe": "TFrm_RHFP4200",
+  "nome": "Frm_RHFP4200",
+  "herdado": false,
+  "propriedades": {
+    "Left": 429,
+    "Top": 251,
+    "BorderStyle": "bsSingle",
+    "Caption": "Cálculo Individual da Rescisão Complementar",
+    "ClientHeight": 342,
+    "ClientWidth": 633,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 633,
+        "Height": 41,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 13,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 139,
+            "Top": 8,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 10,
+            "Width": 254,
+            "Height": 17,
+            "Caption": "lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 500,
+            "Top": 4,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Admissão:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBText1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 550,
+            "Top": 4,
+            "Width": 66,
+            "Height": 14,
+            "DataField": "DATAADMISSAO",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "DbTextMeta1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 550,
+            "Top": 20,
+            "Width": 62,
+            "Height": 14,
+            "DataField": "SITUACAO",
+            "DataSource": "dts_Contratos",
+            "Items.Strings": [
+              "Ativo",
+              "Afastado",
+              "Rescindido",
+              "Resc. + mês"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label11",
+          "herdado": false,
+          "propriedades": {
+            "Left": 500,
+            "Top": 20,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 8,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "edt_ContratoEnter",
+            "OnExit": "edt_ContratoExit",
+            "OnKeyPress": "edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 41,
+        "Width": 633,
+        "Height": 301,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Complementar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 625,
+            "Height": 293,
+            "ActivePage": "Tbs_Complementar",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "TabStop": false,
+            "OnChange": "Pgc_ComplementarChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Complementar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Datas/Salários",
+                "OnEnter": "Tbs_ComplementarEnter"
+              },
+              "filhos": [
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 219,
+                    "Width": 243,
+                    "Height": 41,
+                    "BorderStyle": "bsSingle",
+                    "TabOrder": 4
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_Calculo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 16,
+                        "Top": 6,
+                        "Width": 116,
+                        "Height": 25,
+                        "Caption": "Iniciar Cálculo",
+                        "TabOrder": 0,
+                        "OnClick": "Btn_CalculoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TCheckBox",
+                      "nome": "Chk_Anima",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 165,
+                        "Top": 11,
+                        "Width": 70,
+                        "Height": 17,
+                        "TabStop": false,
+                        "Caption": "A&nimação",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 5,
+                    "Width": 241,
+                    "Height": 98,
+                    "Caption": " Rescisão Complementar (atual) ",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Lbl_TxtSalario",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 189,
+                        "Top": 72,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "p/Mês"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label3",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 72,
+                        "Width": 79,
+                        "Height": 13,
+                        "Caption": "Salário Corrigido:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label18",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 22,
+                        "Width": 52,
+                        "Height": 13,
+                        "Caption": "Data-base:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label19",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 47,
+                        "Width": 83,
+                        "Height": 13,
+                        "Caption": "Data Pagamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataBase",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 165,
+                        "Top": 18,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaData",
+                      "nome": "Mtd_DataPagamento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 165,
+                        "Top": 43,
+                        "Width": 23,
+                        "Height": 22,
+                        "Hint": "Localizar Data(Ctrl + D)",
+                        "ShowHint": true
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TNumericEdit",
+                      "nome": "Edt_SalarioContratual",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 96,
+                        "Top": 68,
+                        "Width": 91,
+                        "Height": 21,
+                        "MaxLength": 11,
+                        "TabOrder": 2,
+                        "OnExit": "Edt_SalarioContratualExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "msk_DataBase",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 96,
+                        "Top": 18,
+                        "Width": 68,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 0,
+                        "OnExit": "msk_DataBaseExit"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMaskEdit",
+                      "nome": "msk_DataPagamento",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 96,
+                        "Top": 43,
+                        "Width": 68,
+                        "Height": 21,
+                        "EditMask": "!99/99/9999;1; ",
+                        "MaxLength": 10,
+                        "TabOrder": 1,
+                        "OnExit": "msk_DataPagamentoExit"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 247,
+                    "Top": 5,
+                    "Width": 366,
+                    "Height": 256,
+                    "Caption": " Rescisão Normal ",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 233,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Salário:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label6",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 111,
+                        "Width": 93,
+                        "Height": 13,
+                        "Caption": "Data Desligamento:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label17",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 142,
+                        "Width": 108,
+                        "Height": 13,
+                        "Caption": "Último Dia Trabalhado:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label4",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 20,
+                        "Width": 97,
+                        "Height": 13,
+                        "Caption": "Motivo da Rescisão:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label7",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 50,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Tipo do Aviso:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label12",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 81,
+                        "Width": 70,
+                        "Height": 13,
+                        "Caption": "Data do Aviso:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label13",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 195,
+                        "Top": 81,
+                        "Width": 68,
+                        "Height": 13,
+                        "Caption": "Dias de Aviso:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label14",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 172,
+                        "Width": 52,
+                        "Height": 13,
+                        "Caption": "Data-base:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label15",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 8,
+                        "Top": 203,
+                        "Width": 80,
+                        "Height": 13,
+                        "Caption": "Data Pagamento"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label16",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 307,
+                        "Top": 81,
+                        "Width": 6,
+                        "Height": 13,
+                        "Caption": "+"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lbl_TxtSalRescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 202,
+                        "Top": 232,
+                        "Width": 31,
+                        "Height": 13,
+                        "Caption": "p/Mês"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DescricaoMotivo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 16,
+                        "Width": 240,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DescricaoMotivo",
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DataAvisoPrevio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 77,
+                        "Width": 69,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DataAvisoPrevio",
+                        "TabOrder": 1
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DiasAvisoPrevio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 265,
+                        "Top": 77,
+                        "Width": 38,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DiasAvisoPrevio",
+                        "TabOrder": 2
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DiasAvisoPrevioAdic",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 320,
+                        "Top": 77,
+                        "Width": 38,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DiasAvisoPrevio",
+                        "TabOrder": 3
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DataRescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 107,
+                        "Width": 69,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DataRescisao",
+                        "TabOrder": 4
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_UltDiaTrabalhado",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 138,
+                        "Width": 69,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_UltDiaTrabalhado",
+                        "TabOrder": 5
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DataBaseRescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 168,
+                        "Width": 69,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DataBaseRescisao",
+                        "TabOrder": 6
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_DataPagamentoRescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 199,
+                        "Width": 69,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_DataPagamento",
+                        "TabOrder": 7
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TStaticText",
+                      "nome": "stt_SalarioRescisao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 229,
+                        "Width": 80,
+                        "Height": 21,
+                        "BorderStyle": "sbsSunken",
+                        "Caption": "stt_SalarioRescisao",
+                        "TabOrder": 8
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_TipoAvisoPrevio",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 118,
+                        "Top": 46,
+                        "Width": 240,
+                        "Height": 21,
+                        "Enabled": false,
+                        "TabOrder": 9,
+                        "Items.Strings": [
+                          "Aviso Prévio Trabalhado",
+                          "Aviso Prévio Indenizado",
+                          "Aviso Prévio do Empregado",
+                          "Pedido de Demissão c/dispensa do Aviso",
+                          "Pedido de Demissão c/indenização do Aviso",
+                          "Comunicado de Rescisão por Justa Causa",
+                          "Aviso de Rescisão p/Término de Contrato",
+                          "Resc. Antecipada do Contrato de Experiência"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TGroupBox",
+                  "nome": "GroupBox3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 172,
+                    "Width": 241,
+                    "Height": 42,
+                    "Caption": " FGTS ",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label20",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 10,
+                        "Top": 18,
+                        "Width": 81,
+                        "Height": 13,
+                        "Caption": "Multa Rescisória:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label21",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 134,
+                        "Top": 18,
+                        "Width": 8,
+                        "Height": 13,
+                        "Caption": "%"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TNumericEdit",
+                      "nome": "edt_PercMulta",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 101,
+                        "Top": 14,
+                        "Width": 26,
+                        "Height": 21,
+                        "MaxLength": 2,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TRadioGroupMeta",
+                  "nome": "Rdg_TipoRescisaoCompl",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 2,
+                    "Top": 104,
+                    "Width": 241,
+                    "Height": 67,
+                    "Caption": "Tipo de Rescisão Complementar",
+                    "Columns": 2,
+                    "Items.Strings": [
+                      "Dissídio",
+                      "Normal",
+                      "Letra F"
+                    ],
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Lancamentos",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Lançamentos",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label8",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 7,
+                    "Top": 181,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Código:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "btn_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 46,
+                    "Top": 196,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Localizar (Ctrl + L)",
+                    "ShowHint": true,
+                    "OnClick": "btn_VdBClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label9",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 275,
+                    "Top": 180,
+                    "Width": 60,
+                    "Height": 13,
+                    "Caption": "Horas/Valor:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label10",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 372,
+                    "Top": 180,
+                    "Width": 24,
+                    "Height": 13,
+                    "Caption": "Tipo:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "edt_Invisivel",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 534,
+                    "Top": 195,
+                    "Width": 71,
+                    "Height": 21,
+                    "TabOrder": 3,
+                    "OnEnter": "edt_InvisivelEnter"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TComboBox",
+                  "nome": "cmb_TipoInfoLancamento",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 354,
+                    "Top": 195,
+                    "Width": 70,
+                    "Height": 21,
+                    "Style": "csOwnerDrawFixed",
+                    "TabOrder": 2,
+                    "Items.Strings": [
+                      "R$",
+                      "Horas",
+                      "Dias",
+                      "Tarefas"
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDrawGrid",
+                  "nome": "Stg_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 0,
+                    "Width": 611,
+                    "Height": 175,
+                    "TabStop": false,
+                    "TabOrder": 4
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_Valor",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 257,
+                    "Top": 195,
+                    "Width": 95,
+                    "Height": 21,
+                    "MaxLength": 11,
+                    "TabOrder": 1
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TNumericEdit",
+                  "nome": "edt_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 7,
+                    "Top": 195,
+                    "Width": 40,
+                    "Height": 21,
+                    "MaxLength": 3,
+                    "TabOrder": 0,
+                    "OnEnter": "Edt_VDBEnter",
+                    "OnExit": "Edt_VDBExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_VDB",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 72,
+                    "Top": 195,
+                    "Width": 182,
+                    "Height": 21,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_VDB",
+                    "TabOrder": 5
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 224,
+                    "Width": 617,
+                    "Height": 41,
+                    "Align": "alBottom",
+                    "BorderStyle": "bsSingle",
+                    "TabOrder": 6
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_VoltarLancto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 7,
+                        "Top": 6,
+                        "Width": 75,
+                        "Height": 25,
+                        "Hint": "Voltar para a rescisão, as alterações feitas nos lançamentos serão perdidas.",
+                        "Caption": "&Voltar",
+                        "ShowHint": true,
+                        "TabOrder": 0,
+                        "TabStop": false,
+                        "OnClick": "Btn_VoltarLanctoClick"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TBitBtn",
+                      "nome": "Btn_AvancarLancto",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 92,
+                        "Top": 6,
+                        "Width": 75,
+                        "Height": 25,
+                        "Hint": "Realiza os cálculos finais da rescisão.",
+                        "Caption": "&Avançar",
+                        "ShowHint": true,
+                        "TabOrder": 1,
+                        "OnClick": "Btn_AvancarLanctoClick"
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Resultado",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Resultado",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Label39",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 253,
+                    "Top": 234,
+                    "Width": 88,
+                    "Height": 13,
+                    "Caption": "Total Vencimentos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbl_TotalVencimentos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 256,
+                    "Top": 249,
+                    "Width": 85,
+                    "Height": 13,
+                    "Caption": "lbl_TotalVencimentos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "lbl_TotalDescontos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 378,
+                    "Top": 249,
+                    "Width": 73,
+                    "Height": 13,
+                    "Caption": "lbl_TotalDescontos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label40",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 373,
+                    "Top": 234,
+                    "Width": 78,
+                    "Height": 13,
+                    "Caption": "Total Descontos"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label41",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 555,
+                    "Top": 234,
+                    "Width": 36,
+                    "Height": 13,
+                    "Caption": "Líquido"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "btn_VisualizarResultadoCalculo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 239,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Visualizar a impressão do Resultado do Cálculo",
+                    "ShowHint": true,
+                    "OnClick": "btn_VisualizarResultadoCalculoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStringGrid",
+                  "nome": "Stg_ValoresCalc",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 3,
+                    "Top": 2,
+                    "Width": 610,
+                    "Height": 230,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TCheckBox",
+                  "nome": "Chk_Bases",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 40,
+                    "Top": 242,
+                    "Width": 111,
+                    "Height": 17,
+                    "Caption": "Visualizar as Bases",
+                    "TabOrder": 1,
+                    "OnClick": "Chk_BasesClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TStaticText",
+                  "nome": "lbl_Liquido",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 493,
+                    "Top": 247,
+                    "Width": 101,
+                    "Height": 17,
+                    "BorderStyle": "sbsSunken",
+                    "Caption": "lbl_Liquido",
+                    "TabOrder": 2
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 456,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATOPRINCIPAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato Principal",
+            "FieldName": "CONTRATOPRINCIPAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_ContratosSALARIOCONTRATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIOCONTRATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosULTDIATRABALHADO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ULTDIATRABALHADO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosMOTIVORESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MOTIVORESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAACERTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Estabelecimento",
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosFUNCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FUNCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATARESCISAOTRANSFERENCIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAOTRANSFERENCIA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATATERMINOQUARENTENA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Término da Quarentena",
+            "FieldName": "DATATERMINOQUARENTENA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosCATEGORIATRABALHADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CATEGORIATRABALHADOR"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 498,
+        "Top": 26
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_VDB",
+      "herdado": false,
+      "propriedades": {
+        "Left": 385,
+        "Top": 17
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VDBVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "VDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBDESCRICAO30",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO30"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOINFOVDB",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOINFOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBTIPOVDB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo",
+            "FieldName": "TIPOVDB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBCLASSIFICACAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSIFICACAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_VDBPERCVALORHORA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PERCVALORHORA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VDBATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_MotivosRescisoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 329,
+        "Top": 14
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesCAUSARESCISAOFGTS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAUSARESCISAOFGTS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesMULTAFGTS20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MULTAFGTS20"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MotivosRescisoesMULTAFGTS40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "MULTAFGTS40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_ContratosFolha",
+      "herdado": false,
+      "propriedades": {
+        "Left": 542,
+        "Top": 235
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "pop_CancelarResultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 565,
+        "Top": 186
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "mpo_AlterarLcto",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Alterar Lançamentos",
+            "OnClick": "Mnm_AlterarLcto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mpo_AbandonarCalc",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Abandonar Cálculo",
+            "OnClick": "Mnm_AbandonarCalc"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

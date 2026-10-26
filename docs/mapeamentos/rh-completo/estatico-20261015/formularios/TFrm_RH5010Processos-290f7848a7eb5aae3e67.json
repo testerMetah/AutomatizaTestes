@@ -1,0 +1,1303 @@
+{
+  "classe": "TFrm_RH5010Processos",
+  "nome": "Frm_RH5010Processos",
+  "herdado": false,
+  "propriedades": {
+    "Left": 563,
+    "Top": 273,
+    "BorderStyle": "bsSingle",
+    "Caption": "Processos",
+    "ClientHeight": 478,
+    "ClientWidth": 772,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Unidade",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 772,
+        "Height": 46,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 17,
+            "Width": 102,
+            "Height": 13,
+            "Caption": "Número do Processo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_NroProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 251,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_NroProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 341,
+            "Top": 17,
+            "Width": 71,
+            "Height": 13,
+            "Caption": "Tipo Processo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 225,
+            "Top": 17,
+            "Width": 16,
+            "Height": 13,
+            "TabOrder": 2,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_NroProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 115,
+            "Top": 13,
+            "Width": 135,
+            "Height": 21,
+            "MaxLength": 21,
+            "TabOrder": 0,
+            "OnEnter": "Edt_NroProcessoEnter",
+            "OnExit": "Edt_NroProcessoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_TipoProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 415,
+            "Top": 13,
+            "Width": 330,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPOPROCESSOESOCIAL",
+            "DataSource": "Dts_Processos",
+            "TabOrder": 1,
+            "OnChange": "Dbc_TipoProcessoChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 772,
+        "Height": 432,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 19,
+            "Width": 113,
+            "Height": 13,
+            "Caption": "Descrição do Processo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 57,
+            "Width": 78,
+            "Height": 13,
+            "Caption": "Fim da Validade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 90,
+            "Width": 115,
+            "Height": 26,
+            "Caption": "Matéria do Processo ou Alvará Judicial:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 440,
+            "Top": 57,
+            "Width": 79,
+            "Height": 13,
+            "Caption": "Autoria da Ação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_AuxSalvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 584,
+            "Top": 19,
+            "Width": 14,
+            "Height": 13,
+            "TabOrder": 6,
+            "OnEnter": "Edt_AuxSalvarEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescrProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 307,
+            "Top": 15,
+            "Width": 301,
+            "Height": 21,
+            "DataField": "Descricao40",
+            "DataSource": "Dts_Processos",
+            "TabOrder": 0,
+            "OnEnter": "Dbe_DescrProcessoEnter",
+            "OnExit": "Dbe_DescrProcessoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_TerminoValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 307,
+            "Top": 53,
+            "Width": 55,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 1,
+            "OnChange": "Msk_TerminoValidadeChange",
+            "OnExit": "Msk_TerminoValidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_MateriaProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 307,
+            "Top": 92,
+            "Width": 362,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "INDICMATERIAPROCESSO",
+            "DataSource": "Dts_Processos",
+            "TabOrder": 3,
+            "OnChange": "Dbc_MateriaProcessoChange",
+            "OnEnter": "Dbc_MateriaProcessoEnter",
+            "OnExit": "Msk_TerminoValidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_IncioValidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 149,
+            "Height": 220,
+            "Align": "alCustom",
+            "TabOrder": 7
+          },
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_InicioValidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 1,
+                "Width": 145,
+                "Height": 178,
+                "TabStop": false,
+                "DataSource": "Dts_Processos",
+                "TabOrder": 0,
+                "OnExit": "Msk_TerminoValidadeExit",
+                "Columns": [
+                  {
+                    "FieldName": "INICIOVALIDADE",
+                    "Width": 111,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_IncluirValidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 28,
+                "Top": 186,
+                "Width": 93,
+                "Height": 25,
+                "Caption": "Incluir Validade",
+                "TabOrder": 1,
+                "OnClick": "Btn_IncluirValidadeClick",
+                "OnExit": "Msk_TerminoValidadeExit"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_InformacoesComplementares",
+          "herdado": false,
+          "propriedades": {
+            "Left": 167,
+            "Top": 131,
+            "Width": 597,
+            "Height": 92,
+            "Caption": "Informações Complementares do Processo Judicial",
+            "TabOrder": 4
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 28,
+                "Width": 50,
+                "Height": 13,
+                "Caption": "Município:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 369,
+                "Top": 19,
+                "Width": 132,
+                "Height": 26,
+                "Caption": "Código do Município (conforme Tabela do IBGE):"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_7",
+              "herdado": false,
+              "propriedades": {
+                "Left": 11,
+                "Top": 64,
+                "Width": 113,
+                "Height": 13,
+                "Caption": "UF da Seção Judiciária:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_8",
+              "herdado": false,
+              "propriedades": {
+                "Left": 369,
+                "Top": 63,
+                "Width": 155,
+                "Height": 13,
+                "Caption": "Código de Identificação da Vara:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_Municipios",
+              "herdado": false,
+              "propriedades": {
+                "Left": 128,
+                "Top": 24,
+                "Width": 152,
+                "Height": 21,
+                "DataField": "CIDADE",
+                "DataSource": "Dts_Processos",
+                "TabOrder": 0,
+                "OnChange": "Dbe_MunicipiosChange",
+                "OnEnter": "Dbe_MunicipiosEnter",
+                "OnExit": "Dbe_MunicipiosExit",
+                "OnKeyPress": "Dbe_MunicipiosKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLocalizarMeta",
+              "nome": "Btn_Municipios",
+              "herdado": false,
+              "propriedades": {
+                "Left": 279,
+                "Top": 22,
+                "Width": 23,
+                "Height": 23,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true,
+                "TabOrder": 1,
+                "TabStop": false,
+                "OnClick": "Btn_MunicipiosClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_CodMunicipio",
+              "herdado": false,
+              "propriedades": {
+                "Left": 528,
+                "Top": 24,
+                "Width": 50,
+                "Height": 21,
+                "DataField": "CODIGOMUNICIPIOIBGE",
+                "DataSource": "Dts_Processos",
+                "MaxLength": 7,
+                "TabOrder": 2,
+                "OnExit": "Msk_TerminoValidadeExit",
+                "OnKeyPress": "Dbe_CodMunicipioKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_UFSecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 128,
+                "Top": 60,
+                "Width": 45,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "UFVARA",
+                "DataSource": "Dts_Processos",
+                "Items.Strings": [
+                  "AC",
+                  "AL",
+                  "AP",
+                  "AM",
+                  "BA",
+                  "CE",
+                  "DF",
+                  "ES",
+                  "GO",
+                  "MA",
+                  "MT",
+                  "MS",
+                  "MG",
+                  "PA",
+                  "PB",
+                  "PR",
+                  "PE",
+                  "PI",
+                  "RJ",
+                  "RN",
+                  "RS",
+                  "RO",
+                  "RR",
+                  "SC",
+                  "SP",
+                  "SE",
+                  "TO"
+                ],
+                "TabOrder": 3,
+                "OnExit": "Msk_TerminoValidadeExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dbe_CodigoVara",
+              "herdado": false,
+              "propriedades": {
+                "Left": 528,
+                "Top": 60,
+                "Width": 36,
+                "Height": 21,
+                "DataField": "IDENTIFICACAOVARA",
+                "DataSource": "Dts_Processos",
+                "TabOrder": 4,
+                "OnExit": "Msk_TerminoValidadeExit",
+                "OnKeyPress": "Dbe_CodigoVaraKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_InformacaoSuspensao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 228,
+            "Width": 759,
+            "Height": 190,
+            "Caption": "Informações de suspensão de exigibilidade de Tributos em virtude de Processo Administrativo ou Judicial",
+            "TabOrder": 5
+          },
+          "filhos": [
+            {
+              "classe": "TDBMetaGrid",
+              "nome": "Dbg_ProcessoSusp",
+              "herdado": false,
+              "propriedades": {
+                "Left": 52,
+                "Top": 22,
+                "Width": 691,
+                "Height": 113,
+                "TabStop": false,
+                "DataSource": "Dts_ProcessosSusp",
+                "TabOrder": 0,
+                "Columns": [
+                  {
+                    "FieldName": "CODIGOINDICSUSPPROC",
+                    "Title.Caption": "Código",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "InicativoDesc",
+                    "Title.Caption": "Indicativo de suspensão de exigibilidade",
+                    "Width": 370,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DATADECISAO",
+                    "Title.Caption": "Data da decisão",
+                    "Width": 96,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DepositoDesce",
+                    "Title.Caption": "Indic. de Depósito",
+                    "Width": 97,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "Pnl_SuspExigibilidade",
+              "herdado": false,
+              "propriedades": {
+                "Left": 1,
+                "Top": 133,
+                "Width": 755,
+                "Height": 54,
+                "TabOrder": 1,
+                "OnExit": "Pnl_SuspExigibilidadeExit"
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "Lbl_4",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 526,
+                    "Top": 13,
+                    "Width": 78,
+                    "Height": 13,
+                    "Caption": "Data da decisão"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TMetaData",
+                  "nome": "Mtd_DataDecisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 601,
+                    "Top": 29,
+                    "Width": 21,
+                    "Height": 22,
+                    "Hint": "Localizar Data(Ctrl + D)",
+                    "ShowHint": true
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 48,
+                    "Top": 13,
+                    "Width": 100,
+                    "Height": 13,
+                    "Caption": "Código"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label2",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 13,
+                    "Width": 190,
+                    "Height": 13,
+                    "Caption": "Indicativo de suspensão de exigibilidade"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TLabel",
+                  "nome": "Label3",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 628,
+                    "Top": 2,
+                    "Width": 111,
+                    "Height": 26,
+                    "Caption": "Indicativo de Depósito do Montante Integral"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_NovoProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 28,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Novo Processo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_NovoProcessoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_ExcluirProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 29,
+                    "Top": 28,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Excluir Processo",
+                    "ShowHint": true,
+                    "OnClick": "Btn_ExcluirProcessoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TSpeedButton",
+                  "nome": "Btn_CancelaProcesso",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 29,
+                    "Top": 28,
+                    "Width": 23,
+                    "Height": 22,
+                    "Hint": "Cancelar",
+                    "ShowHint": true,
+                    "Visible": false,
+                    "OnClick": "Btn_CancelaProcessoClick"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBEdit",
+                  "nome": "Dbe_DataDecisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 526,
+                    "Top": 29,
+                    "Width": 74,
+                    "Height": 21,
+                    "DataField": "DATADECISAO",
+                    "DataSource": "Dts_ProcessosSusp",
+                    "TabOrder": 2,
+                    "OnExit": "Msk_TerminoValidadeExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBCheckBox",
+                  "nome": "DbChk_IndicativoDeposito",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 672,
+                    "Top": 33,
+                    "Width": 15,
+                    "Height": 17,
+                    "DataField": "INDICATIVODEPOSITO",
+                    "DataSource": "Dts_ProcessosSusp",
+                    "TabOrder": 3,
+                    "OnExit": "Msk_TerminoValidadeExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBComboMeta",
+                  "nome": "Dbc_IndicDecisao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 156,
+                    "Top": 29,
+                    "Width": 362,
+                    "Height": 21,
+                    "Style": "csDropDownList",
+                    "DataField": "INDICATIVODECISAO",
+                    "DataSource": "Dts_ProcessosSusp",
+                    "TabOrder": 1,
+                    "OnExit": "Msk_TerminoValidadeExit"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "Edt_CodigoSusp",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 52,
+                    "Top": 29,
+                    "Width": 95,
+                    "Height": 21,
+                    "Enabled": false,
+                    "MaxLength": 14,
+                    "TabOrder": 0,
+                    "OnExit": "Edt_CodigoSuspExit",
+                    "OnKeyPress": "Edt_CodigoSuspKeyPress"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_AutoriaAcao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 524,
+            "Top": 53,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "INDICATIVOAUTORIA",
+            "DataSource": "Dts_Processos",
+            "Items.Strings": [
+              ""
+            ],
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 13,
+        "Top": 140
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 13,
+        "Top": 105
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ProcessosINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início da Validade",
+            "FieldName": "INICIOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Processo",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ProcessosTERMINOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fim da Validade",
+            "FieldName": "TERMINOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosTIPOPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Processo",
+            "FieldName": "TIPOPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ProcessosCODIGOMUNICIPIOIBGE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código do Município (conforme Tabela do IBGE)",
+            "FieldName": "CODIGOMUNICIPIOIBGE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição do Processo",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosIDENTIFICACAOVARA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código de Identificação da Vara",
+            "DisplayWidth": 4,
+            "FieldName": "IDENTIFICACAOVARA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosUFVARA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "UF da Seção Judiciária",
+            "FieldName": "UFVARA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosINDICMATERIAPROCESSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "INDICMATERIAPROCESSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosINDICATIVOAUTORIA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Autoria da Ação Judicial",
+            "FieldName": "INDICATIVOAUTORIA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Municipios",
+      "herdado": false,
+      "propriedades": {
+        "Left": 53,
+        "Top": 142
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosCIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cidade",
+            "DisplayWidth": 20,
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosUF",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 2,
+            "FieldName": "UF"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_MunicipiosCODIGOMUNICIPIORAIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código do Munícipio",
+            "DisplayWidth": 8,
+            "FieldName": "CODIGOMUNICIPIORAIS"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "Act_Processos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 101,
+        "Top": 109
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlD",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlD",
+            "ShortCut": 16452,
+            "OnExecute": "Act_CtrlDExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_ProcessosProcura",
+      "herdado": false,
+      "propriedades": {
+        "Left": 53,
+        "Top": 107
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número do Processo",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "sqltmstmpfld1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início da Validade",
+            "FieldName": "INICIOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "sqltmstmpfld2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Fim da Validade",
+            "FieldName": "TERMINOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura3",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição do Processo",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura4",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Processo",
+            "FieldName": "TIPOPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura7",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "intgrfld1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código do Município (conforme Tabela do IBGE)",
+            "FieldName": "CODIGOMUNICIPIOIBGE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura8",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "UF da Seção Judiciária",
+            "FieldName": "UFVARA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura9",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código de Identificação da Vara",
+            "FieldName": "IDENTIFICACAOVARA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ProcessosProcura10",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Autoria da Ação Judicial",
+            "FieldName": "INDICATIVOAUTORIA"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_eSocialProcSusp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 300
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_eSocialProcSuspEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_eSocialProcSuspNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Processo",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_eSocialProcSuspINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início de Validade",
+            "FieldName": "INICIOVALIDADE",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_eSocialProcSuspCODIGOINDICSUSPPROC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código de suspensão de exigibilidade",
+            "FieldName": "CODIGOINDICSUSPPROC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_eSocialProcSuspINDICATIVODECISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de suspensão de exibilidade",
+            "FieldName": "INDICATIVODECISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_eSocialProcSuspDATADECISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de decisão",
+            "FieldName": "DATADECISAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_eSocialProcSuspINDICATIVODEPOSITO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de Depósito do Montante Integral",
+            "FieldName": "INDICATIVODEPOSITO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ProcessosSusp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 396
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ProcessoSusp",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 348
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspNRPROCESSOESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Processo",
+            "FieldName": "NRPROCESSOESOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProcessoSuspINICIOVALIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início de Validade",
+            "FieldName": "INICIOVALIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspCODIGOINDICSUSPPROC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código de suspensão de exigibilidade",
+            "FieldName": "CODIGOINDICSUSPPROC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspINDICATIVODECISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de suspensão de exibilidade",
+            "FieldName": "INDICATIVODECISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_ProcessoSuspDATADECISAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de decisão",
+            "FieldName": "DATADECISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspINDICATIVODEPOSITO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Indicativo de Depósito do Montante Integral",
+            "FieldName": "INDICATIVODEPOSITO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspInicativoDesc",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "InicativoDesc"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ProcessoSuspDepositoDesce",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DepositoDesce"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Cds_ProcessoSuspCodNumericoIncSusp",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CodNumericoIncSusp"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

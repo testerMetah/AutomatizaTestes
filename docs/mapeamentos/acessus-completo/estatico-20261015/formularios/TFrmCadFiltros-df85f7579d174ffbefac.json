@@ -1,0 +1,1183 @@
+{
+  "classe": "TFrmCadFiltros",
+  "nome": "FrmCadFiltros",
+  "herdado": true,
+  "propriedades": {
+    "Caption": "Filtros",
+    "ClientHeight": 488,
+    "ClientWidth": 682
+  },
+  "filhos": [
+    {
+      "classe": "TPageControl",
+      "nome": "Pagina",
+      "herdado": true,
+      "propriedades": {
+        "Width": 682,
+        "Height": 488,
+        "ActivePage": "Grid"
+      },
+      "filhos": [
+        {
+          "classe": "TTabSheet",
+          "nome": "Grid",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TDBGrid",
+              "nome": "GridCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Width": 674,
+                "Height": 318,
+                "DataSource": "DsFiltros",
+                "Columns": [
+                  {
+                    "FieldName": "Id",
+                    "Title.Caption": "Código",
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "Nome",
+                    "Width": 572,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlCimaPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 318,
+                "Width": 674
+              },
+              "filhos": [
+                {
+                  "classe": "TPageControl",
+                  "nome": "PaginaLoc",
+                  "herdado": true,
+                  "propriedades": {
+                    "Width": 674
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TTabSheet",
+                      "nome": "TabSheet2",
+                      "herdado": true,
+                      "propriedades": {},
+                      "filhos": [
+                        {
+                          "classe": "TEdit",
+                          "nome": "ednomeloc",
+                          "herdado": true,
+                          "propriedades": {
+                            "OnChange": "ednomelocChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "THoverSpeedButton",
+                          "nome": "btnExibirTudo",
+                          "herdado": true,
+                          "propriedades": {
+                            "Left": 486
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoPadrao",
+              "herdado": true,
+              "propriedades": {
+                "Top": 387,
+                "Width": 674
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnexcluir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnInserir",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnAlterar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Cadastro",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoCadastro",
+              "herdado": true,
+              "propriedades": {
+                "Top": 387,
+                "Width": 674
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnOk",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCancelar",
+                  "herdado": true,
+                  "propriedades": {},
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TPanel",
+              "nome": "PnlCampos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 0,
+                "Width": 674,
+                "Height": 387,
+                "Align": "alClient",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TLabel",
+                  "nome": "lblNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 48,
+                    "Top": 24,
+                    "Width": 46,
+                    "Height": 19,
+                    "Caption": "Nome:"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TImage",
+                  "nome": "imgNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 21,
+                    "Width": 24,
+                    "Height": 29
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TEdit",
+                  "nome": "EdNome",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 112,
+                    "Top": 24,
+                    "Width": 552,
+                    "Height": 27,
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TDBGrid",
+                  "nome": "dbgSelecao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 114,
+                    "Width": 302,
+                    "Height": 249,
+                    "BorderStyle": "bsNone",
+                    "DataSource": "dsGridFiltro",
+                    "TabOrder": 1,
+                    "Columns": [
+                      {
+                        "FieldName": "TipoFiltro",
+                        "Title.Caption": "Tipo",
+                        "Width": 118,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Quantidade",
+                        "Width": 148,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnEditaFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 324,
+                    "Top": 118,
+                    "Width": 177,
+                    "Height": 38,
+                    "Caption": "Editar (Ctrl+Alt+E)",
+                    "TabOrder": 2,
+                    "OnClick": "ActAlterarTipoFiltroExecute",
+                    "Action": "ActAlterarTipoFiltro"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnExcluiFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 324,
+                    "Top": 166,
+                    "Width": 177,
+                    "Height": 38,
+                    "Caption": "Excluir (Shift+Del)",
+                    "TabOrder": 3,
+                    "OnClick": "ActExcluirTipoFiltroExecute",
+                    "Action": "ActExcluirTipoFiltro"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "BtnAdicionar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 11,
+                    "Top": 70,
+                    "Width": 177,
+                    "Height": 38,
+                    "Caption": "Adicionar (Ctrl+N)",
+                    "TabOrder": 4,
+                    "OnClick": "ActAdicionarExecute",
+                    "Action": "ActAdicionar"
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Campos",
+          "herdado": true,
+          "propriedades": {},
+          "filhos": [
+            {
+              "classe": "TPanel",
+              "nome": "Panel4",
+              "herdado": true,
+              "propriedades": {
+                "Top": 409,
+                "Width": 674
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TTabSheet",
+          "nome": "Filtro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Filtro",
+            "ImageIndex": 3
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "lblTipo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 56,
+                "Top": 32,
+                "Width": 35,
+                "Height": 19,
+                "Caption": "Tipo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TImage",
+              "nome": "imgTipo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 19,
+                "Top": 29,
+                "Width": 24,
+                "Height": 29
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "cmbFiltro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 103,
+                "Top": 29,
+                "Width": 145,
+                "Height": 27,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "cmbFiltroChange",
+                "Items.Strings": [
+                  "Pessoas",
+                  "Setores",
+                  "Pre-Cadastros",
+                  "Unidades"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TPanel",
+              "nome": "pnlFundoFiltro",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 387,
+                "Width": 674,
+                "Height": 64,
+                "Align": "alBottom",
+                "TabOrder": 1
+              },
+              "filhos": [
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnConfirmar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 4,
+                    "Top": 14,
+                    "Width": 201,
+                    "Height": 38,
+                    "Caption": "Confirmar (Ctrl+Alt+S)",
+                    "TabOrder": 0,
+                    "OnClick": "ActConfirmarFiltroExecute",
+                    "Action": "ActConfirmarFiltro"
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "THoverSpeedButton",
+                  "nome": "btnCalcelaFiltro",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 211,
+                    "Top": 14,
+                    "Width": 202,
+                    "Height": 38,
+                    "Caption": "Cancelar (Ctrl+Alt+D)",
+                    "TabOrder": 1,
+                    "OnClick": "ActCancelarFiltroExecute",
+                    "Action": "ActCancelarFiltro"
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TCardPanel",
+              "nome": "cdSelecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 0,
+                "Top": 74,
+                "Width": 674,
+                "Height": 313,
+                "Align": "alBottom",
+                "TabOrder": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TCard",
+                  "nome": "CardPessoa",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 672,
+                    "Height": 311,
+                    "Caption": "Pessoas",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlPessoas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 127,
+                        "Top": 19,
+                        "Width": 30,
+                        "Height": 29,
+                        "ImageIndex": 11
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblPessoas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 19,
+                        "Width": 60,
+                        "Height": 29,
+                        "Caption": "Pessoas:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "imgPessoas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 19,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBox",
+                      "nome": "lbPessoas",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 56,
+                        "Width": 631,
+                        "Height": 193,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TCard",
+                  "nome": "CardSetores",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 672,
+                    "Height": 311,
+                    "Caption": "Setores",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblSetores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 19,
+                        "Width": 56,
+                        "Height": 29,
+                        "Caption": "Setores:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlSetores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 126,
+                        "Top": 19,
+                        "Width": 34,
+                        "Height": 29,
+                        "ImageIndex": 11
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "imgSetores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 19,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBox",
+                      "nome": "lbSetores",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 56,
+                        "Width": 631,
+                        "Height": 193,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TCard",
+                  "nome": "CardPreCadastros",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 672,
+                    "Height": 311,
+                    "Caption": "Pré-Cadastros",
+                    "TabOrder": 2
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblPreCadastros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 19,
+                        "Width": 105,
+                        "Height": 29,
+                        "Caption": "Pré-Cadastros:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlPreCadastros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 167,
+                        "Top": 19,
+                        "Width": 30,
+                        "Height": 29,
+                        "ImageIndex": 11
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "imgPreCadastros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 19,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBox",
+                      "nome": "lbPreCadastros",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 56,
+                        "Width": 631,
+                        "Height": 193,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "classe": "TCard",
+                  "nome": "CardUnidades",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 1,
+                    "Top": 1,
+                    "Width": 672,
+                    "Height": 311,
+                    "Caption": "Unidades",
+                    "TabOrder": 3
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TMetaEquipLocalizar",
+                      "nome": "mlUnidades",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 140,
+                        "Top": 19,
+                        "Width": 30,
+                        "Height": 29,
+                        "ImageIndex": 11
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "lblUnidades",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 55,
+                        "Top": 19,
+                        "Width": 68,
+                        "Height": 29,
+                        "Caption": "Unidades:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TImage",
+                      "nome": "imgUnidades",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 19,
+                        "Width": 24,
+                        "Height": 29
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TListBox",
+                      "nome": "lbUnidades",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 18,
+                        "Top": 56,
+                        "Width": 622,
+                        "Height": 193,
+                        "TabOrder": 0
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "THoverSpeedButton",
+              "nome": "BtnExcluirSelecao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 528,
+                "Top": 87,
+                "Width": 113,
+                "Height": 38,
+                "Caption": "(Alt+Del)",
+                "TabOrder": 3,
+                "OnClick": "ActExcluirSelecaoExecute",
+                "Action": "ActExcluirSelecao"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": true,
+      "propriedades": {
+        "Left": 636,
+        "Top": 8
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "ActCancelar",
+          "herdado": true,
+          "propriedades": {
+            "ImageIndex": 17
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActTSNome",
+          "herdado": false,
+          "propriedades": {
+            "Category": "TabSheet",
+            "Caption": "Nome (Ctrl+B)",
+            "ShortCut": 16450,
+            "OnExecute": "ActTSNomeExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAdicionar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Adicionar (Ctrl+N)",
+            "ImageIndex": 4,
+            "ShortCut": 16462,
+            "OnExecute": "ActAdicionarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActAlterarTipoFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Editar (Ctrl+Alt+E)",
+            "ImageIndex": 5,
+            "ShortCut": 49221,
+            "OnExecute": "ActAlterarTipoFiltroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluirTipoFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Excluir (Shift+Del)",
+            "ImageIndex": 6,
+            "ShortCut": 8238,
+            "OnExecute": "ActExcluirTipoFiltroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActExcluirSelecao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "(Alt+Del)",
+            "ImageIndex": 16,
+            "ShortCut": 32814,
+            "OnExecute": "ActExcluirSelecaoExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActConfirmarFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Confirmar (Ctrl+Alt+S)",
+            "ImageIndex": 15,
+            "ShortCut": 49235,
+            "OnExecute": "ActConfirmarFiltroExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "ActCancelarFiltro",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar (Ctrl+Alt+D)",
+            "ImageIndex": 17,
+            "ShortCut": 49220,
+            "OnExecute": "ActCancelarFiltroExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TImageList",
+      "nome": "DefaultIcons",
+      "herdado": true,
+      "propriedades": {
+        "Left": 556,
+        "Top": 155
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsSetoresNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 172,
+        "Top": 240
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DSSetoresSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 172,
+        "Top": 288
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsSetoresNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsSetoresNSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsSetoresNSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsSetoresSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 80,
+        "Top": 288
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsSetoresSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsSetoresSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsFiltros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 8
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsFiltros",
+      "herdado": false,
+      "propriedades": {
+        "Left": 536
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsFiltrosId",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Id"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFiltrosNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFiltrosPessoas",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoas"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFiltrosSetores",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Setores"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFiltrosPreCadastros",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PreCadastros"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsFiltrosUnidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Unidade"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsPessoasNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 616,
+        "Top": 120
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPessoasNSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPessoasNSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsPessoasSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 616,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsPessoasSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsPessoasSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DSPessoasSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 564,
+        "Top": 336
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DSPessoasNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 620,
+        "Top": 288
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsColetoresSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 184
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsColetoresSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsColetoresSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "CdsColetoresNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 240
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "CdsColetoresNSelCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "CdsColetoresNSelNOME",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsColetoresSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 184
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "DsColetoresNSel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 240
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "cdsGridFiltro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 536,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "cdsGridFiltroTipo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Tipo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cdsGridFiltroTipoFiltro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoFiltro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cdsGridFiltroQuantidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Quantidade"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dsGridFiltro",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 80
+      },
+      "filhos": []
+    }
+  ]
+}

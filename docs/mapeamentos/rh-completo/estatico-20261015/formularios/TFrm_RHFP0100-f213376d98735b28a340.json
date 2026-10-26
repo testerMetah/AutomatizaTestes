@@ -1,0 +1,836 @@
+{
+  "classe": "TFrm_RHFP0100",
+  "nome": "Frm_RHFP0100",
+  "herdado": false,
+  "propriedades": {
+    "Left": 280,
+    "Top": 199,
+    "BorderStyle": "bsSingle",
+    "Caption": "Diretrizes da Folha",
+    "ClientHeight": 349,
+    "ClientWidth": 573,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 573,
+        "Height": 308,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "lbl_TipoDiretriz",
+          "herdado": false,
+          "propriedades": {
+            "Left": 6,
+            "Top": 173,
+            "Width": 73,
+            "Height": 13,
+            "Caption": "Lbl_TipoDiretriz"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "dbm_Resposta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 192,
+            "Width": 561,
+            "Height": 108,
+            "DataSource": "dts_Diretrizes",
+            "TabOrder": 1,
+            "OnEnter": "dbm_RespostaEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBLookupComboBox",
+          "nome": "dbl_Resposta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 192,
+            "Width": 276,
+            "Height": 21,
+            "DataSource": "dts_Diretrizes",
+            "TabOrder": 4,
+            "OnEnter": "dbl_RespostaEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "dbe_Resposta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 192,
+            "Width": 121,
+            "Height": 21,
+            "DataSource": "dts_Diretrizes",
+            "TabOrder": 2,
+            "OnChange": "dbe_RespostaChange",
+            "OnEnter": "dbe_RespostaEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TTreeView",
+          "nome": "trv_Diretrizes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 5,
+            "Width": 562,
+            "Height": 164,
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "OnChange": "trv_DiretrizesChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "dbcm_TipoDiretriz",
+          "herdado": false,
+          "propriedades": {
+            "Left": 18,
+            "Top": 25,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "TIPODIRETRIZ",
+            "DataSource": "dts_Diretrizes",
+            "Items.Strings": [
+              "Opção",
+              "Número",
+              "Código",
+              "Data",
+              "Hora",
+              "Valor",
+              "Texto",
+              "MEMO",
+              "Tabela"
+            ],
+            "TabOrder": 3,
+            "Visible": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_LimparTabela",
+          "herdado": false,
+          "propriedades": {
+            "Left": 284,
+            "Top": 192,
+            "Width": 81,
+            "Height": 21,
+            "Hint": "Limpar",
+            "Caption": "&Limpar",
+            "ShowHint": true,
+            "TabOrder": 5,
+            "OnClick": "btn_LimparTabelaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 308,
+        "Width": 573,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 353,
+            "Top": 12,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Pesquisa p/texto:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Configurar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 264,
+            "Top": 6,
+            "Width": 80,
+            "Height": 25,
+            "Caption": "Configurar",
+            "TabOrder": 5,
+            "Visible": false,
+            "OnClick": "Btn_ConfigurarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Salvar",
+            "TabOrder": 0,
+            "OnClick": "btn_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 180,
+            "Top": 6,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "Imprimir",
+            "TabOrder": 2,
+            "OnClick": "btn_ImprimirClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Excecoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 264,
+            "Top": 6,
+            "Width": 80,
+            "Height": 25,
+            "Caption": "Exceções",
+            "TabOrder": 3,
+            "OnClick": "Btn_ExcecoesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_PesquisaTexto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 440,
+            "Top": 8,
+            "Width": 121,
+            "Height": 21,
+            "MaxLength": 80,
+            "TabOrder": 4,
+            "OnChange": "edt_PesquisaTextoChange"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Diretrizes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 127,
+        "Top": 40
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesDIRETRIZ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Diretriz",
+            "FieldName": "DIRETRIZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesDESCRICAO80",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO80"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesTIPODIRETRIZ",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Diretriz",
+            "FieldName": "TIPODIRETRIZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesOBRIGATORIO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Obrigatório",
+            "FieldName": "OBRIGATORIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesTABELAORIGEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TABELAORIGEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCAMPOCHAVE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAMPOCHAVE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCAMPODESCRICAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAMPODESCRICAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_DiretrizesTAMANHOCAMPO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TAMANHOCAMPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_DiretrizesNRODECIMAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRODECIMAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_DiretrizesLIMITEMINIMO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Limite Mínimo",
+            "FieldName": "LIMITEMINIMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_DiretrizesLIMITEMAXIMO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Limite Máximo",
+            "FieldName": "LIMITEMAXIMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_DiretrizesCONTEUDOOPCAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Opção",
+            "FieldName": "CONTEUDOOPCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_DiretrizesCONTEUDONUMERO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Número",
+            "FieldName": "CONTEUDONUMERO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCONTEUDOCODIGO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código",
+            "FieldName": "CONTEUDOCODIGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_DiretrizesCONTEUDODATA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data",
+            "FieldName": "CONTEUDODATA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCONTEUDOHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Hora",
+            "FieldName": "CONTEUDOHORA",
+            "EditMask": "99:99;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_DiretrizesCONTEUDOVALOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Valor",
+            "FieldName": "CONTEUDOVALOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCONTEUDOTEXTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Texto",
+            "FieldName": "CONTEUDOTEXTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesCONTEUDOMEMO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTEUDOMEMO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesACEITAEXCECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ACEITAEXCECAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesEXISTEEXCECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EXISTEEXCECAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSARECRUTAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USARECRUTAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSATREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USATREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSACARGOSSALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USACARGOSSALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSASEGURANCA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USASEGURANCA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAPCMSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAPCMSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAVALETRANSP",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAVALETRANSP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAGESTAOSALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAGESTAOSALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO01",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO01"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO02",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO02"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO03",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO03"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO04",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO04"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO05",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO05"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO06",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO06"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO07",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO07"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO08",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO08"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO09",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO09"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO10",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO10"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO11",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO11"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO12",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO12"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO13",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO13"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO14",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO14"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO15",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO15"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO16",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO16"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO17",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO17"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO18",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO18"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO19",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO19"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DiretrizesUSAMODULO20",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAMODULO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Diretrizes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 157,
+        "Top": 40
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_OpcoesDiretrizes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 78,
+        "Top": 88
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_OpcoesDiretrizesDIRETRIZ",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DIRETRIZ"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_OpcoesDiretrizesNROORDEM",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NROORDEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_OpcoesDiretrizesDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_OpcoesDiretrizes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 157,
+        "Top": 71
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Tabela",
+      "herdado": false,
+      "propriedades": {
+        "Left": 71,
+        "Top": 33
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Tabela",
+      "herdado": false,
+      "propriedades": {
+        "Left": 38,
+        "Top": 39
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "Img_Diretriz",
+      "herdado": false,
+      "propriedades": {
+        "Left": 230,
+        "Top": 41
+      },
+      "filhos": []
+    }
+  ]
+}

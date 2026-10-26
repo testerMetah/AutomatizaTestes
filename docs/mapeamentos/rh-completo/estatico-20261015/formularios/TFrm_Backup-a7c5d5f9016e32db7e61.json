@@ -1,0 +1,1938 @@
+{
+  "classe": "TFrm_Backup",
+  "nome": "Frm_Backup",
+  "herdado": false,
+  "propriedades": {
+    "Left": 162,
+    "Top": 179,
+    "BorderStyle": "bsSingle",
+    "Caption": "RHBackup",
+    "ClientHeight": 327,
+    "ClientWidth": 503,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 503,
+        "Height": 61,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 34,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Banco de Dados:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 10,
+            "Width": 64,
+            "Height": 13,
+            "Caption": "Identificação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Sppe_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 271,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Exclui Identificação Selecionada (Ctrl + E)",
+            "ShowHint": true,
+            "OnClick": "Sppe_ExcluirClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Sppe_Novo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 248,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Adiciona Nova Identificação (Ctrl + N)",
+            "ShowHint": true,
+            "OnClick": "Sppe_NovoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Sppe_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 294,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Salva as Configurações da Identificação Selecionada (Ctrl + S)",
+            "Enabled": false,
+            "ShowHint": true,
+            "OnClick": "Sppe_SalvarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Sppe_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 317,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Cancela as Configurações não Salvas",
+            "Enabled": false,
+            "ShowHint": true,
+            "OnClick": "Sppe_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Spe_ImportaBDE",
+          "herdado": false,
+          "propriedades": {
+            "Left": 374,
+            "Top": 29,
+            "Width": 120,
+            "Height": 22,
+            "Hint": "Importa Dados do BDE (Ctrl+I)",
+            "Caption": "Importa Dados BDE",
+            "ShowHint": true,
+            "OnClick": "Spe_ImportaBDEClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "SpeedButton1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 340,
+            "Top": 6,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Help (F1)",
+            "ShowHint": true,
+            "OnClick": "SpeedButton1Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Banco",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 30,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnEnter": "Cmb_BancoEnter",
+            "Items.Strings": [
+              "Interbase",
+              "Oracle",
+              "Sql Server"
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboBox",
+          "nome": "Cmb_Identificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 6,
+            "Width": 145,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnEnter": "Cmb_IdentificacaoEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "CheckBox1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 374,
+            "Top": 9,
+            "Width": 118,
+            "Height": 17,
+            "Caption": "Opções Avançadas",
+            "TabOrder": 2,
+            "OnClick": "CheckBox1Click"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 61,
+        "Width": 503,
+        "Height": 266,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Tbs_Backup",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 495,
+            "Height": 258,
+            "ActivePage": "Tbs_Restaurar",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Tbs_BackupChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Copiar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Copiar"
+              },
+              "filhos": [
+                {
+                  "classe": "TNotebook",
+                  "nome": "Notebook",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 487,
+                    "Height": 229,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "InterbaseCopia"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label5",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 15,
+                            "Width": 84,
+                            "Height": 13,
+                            "Caption": "Tipo de Conexão:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 274,
+                            "Top": 15,
+                            "Width": 70,
+                            "Height": 13,
+                            "Caption": "IP do Servidor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label4",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 39,
+                            "Width": 324,
+                            "Height": 13,
+                            "Caption": "Local do Banco de Dados: (Informe como se estivesse no Servidor). "
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalBanco",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 450,
+                            "Top": 54,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Local do Banco de Dados (Ctrl + L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalBancoClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalDestino",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 451,
+                            "Top": 93,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Arquivo de Destino (Ctrl +L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalDestinoClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 80,
+                            "Width": 93,
+                            "Height": 13,
+                            "Caption": "Arquivo de Destino:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label2",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 127,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Usuário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 155,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_TipoConexao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 11,
+                            "Width": 146,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0,
+                            "OnChange": "Cmb_TipoConexaoChange",
+                            "Items.Strings": [
+                              "Servidor",
+                              "Cliente"
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_IP",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 351,
+                            "Top": 11,
+                            "Width": 121,
+                            "Height": 21,
+                            "Enabled": false,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_IPChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalBanco",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 53,
+                            "Width": 435,
+                            "Height": 21,
+                            "TabOrder": 2,
+                            "OnChange": "Edt_LocalBancoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalDestino",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 94,
+                            "Width": 436,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_LocalDestinoChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Usuario",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 123,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_UsuarioChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Senha",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 151,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 5,
+                            "OnChange": "Edt_SenhaChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TCheckBox",
+                          "nome": "Chk_CompactInterbase",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 317,
+                            "Top": 128,
+                            "Width": 171,
+                            "Height": 17,
+                            "Caption": "Usar compactação de Dados",
+                            "TabOrder": 6,
+                            "Visible": false,
+                            "OnClick": "Chk_CompactInterbaseClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_CopiarInterbase",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 382,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Copiar",
+                            "Default": true,
+                            "TabOrder": 7,
+                            "Visible": false,
+                            "OnClick": "Btn_CopiarInterbaseClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "SqlServerCopia"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label14",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 20,
+                            "Width": 72,
+                            "Height": 13,
+                            "Caption": "Tipo Conexão: "
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label15",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 287,
+                            "Top": 20,
+                            "Width": 42,
+                            "Height": 13,
+                            "Caption": "Servidor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label16",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 48,
+                            "Width": 80,
+                            "Height": 13,
+                            "Caption": "Nome do Banco:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label17",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 75,
+                            "Width": 110,
+                            "Height": 13,
+                            "Caption": "Nome de Identificação:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label18",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 99,
+                            "Width": 284,
+                            "Height": 13,
+                            "Caption": "Arquivo de Destino: (Informe como se estivesse no Servidor)"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalDestinoSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 450,
+                            "Top": 114,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Arquivo de Destino (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalDestinoSQLClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label19",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 146,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Usuário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label20",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 174,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_TipoConexaoSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 16,
+                            "Width": 145,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0,
+                            "OnChange": "Cmb_TipoConexaoSQLChange",
+                            "Items.Strings": [
+                              "Servidor",
+                              "Cliente"
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_ServidorSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 334,
+                            "Top": 16,
+                            "Width": 139,
+                            "Height": 21,
+                            "Enabled": false,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_ServidorSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_NomeBancoSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 44,
+                            "Width": 219,
+                            "Height": 21,
+                            "TabOrder": 2,
+                            "OnChange": "Edt_NomeBancoSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_IdentificaBackupSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 71,
+                            "Width": 289,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_IdentificaBackupSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalDestinoSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 115,
+                            "Width": 425,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_LocalDestinoSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 142,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 5,
+                            "OnChange": "Edt_UsuarioSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SenhaSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 138,
+                            "Top": 170,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 6,
+                            "OnChange": "Edt_SenhaSQLChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_CopiarSQL",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 380,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Copiar",
+                            "Default": true,
+                            "ModalResult": 1,
+                            "TabOrder": 7,
+                            "Visible": false,
+                            "OnClick": "Btn_CopiarSQLClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "OracleCopia"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label24",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 15,
+                            "Width": 93,
+                            "Height": 13,
+                            "Caption": "Arquivo de Destino:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalBancoOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 452,
+                            "Top": 32,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Arquivo de Destino (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalBancoOracleClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label28",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 120,
+                            "Width": 91,
+                            "Height": 13,
+                            "Caption": "Nome da Conexão:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label29",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 146,
+                            "Width": 144,
+                            "Height": 13,
+                            "Caption": "Usuário Proprietário do Banco:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label30",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 67,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Usuário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label31",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 94,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label38",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 171,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Buffer: "
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalBancoOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 32,
+                            "Width": 436,
+                            "Height": 21,
+                            "TabOrder": 0,
+                            "OnChange": "Edt_LocalBancoOracleChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_NomeConexaoOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 116,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_NomeConexaoOracleChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_ProprietarioBancoOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 142,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_ProprietarioBancoOracleChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 63,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_UsuarioOracleChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SenhaOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 90,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 2,
+                            "OnChange": "Edt_SenhaOracleChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grb_Opcoes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 298,
+                            "Top": 60,
+                            "Width": 177,
+                            "Height": 47,
+                            "Caption": "Opções de Exportação",
+                            "TabOrder": 6,
+                            "Visible": false
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_Permissoes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 14,
+                                "Top": 20,
+                                "Width": 97,
+                                "Height": 17,
+                                "Caption": "Permissões",
+                                "TabOrder": 0,
+                                "OnClick": "Chk_PermissoesClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_CopiarOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 380,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Copiar",
+                            "TabOrder": 7,
+                            "Visible": false,
+                            "OnClick": "Btn_CopiarOracleClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_Buffer",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 168,
+                            "Top": 167,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 5,
+                            "OnChange": "Edt_BufferChange"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Restaurar",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Restaurar",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TNotebook",
+                  "nome": "NotebookRestaurar",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 487,
+                    "Height": 229,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "InterbaseRestaura"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label8",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 15,
+                            "Width": 84,
+                            "Height": 13,
+                            "Caption": "Tipo de Conexão:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label9",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 274,
+                            "Top": 15,
+                            "Width": 70,
+                            "Height": 13,
+                            "Caption": "IP do Servidor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalBackup",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 451,
+                            "Top": 54,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Local do Arquivo de Backup (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalBackupClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label10",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 40,
+                            "Width": 138,
+                            "Height": 13,
+                            "Caption": "Local do Arquivo de Backup:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label11",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 81,
+                            "Width": 277,
+                            "Height": 13,
+                            "Caption": "Local de Destino: (Informe como se estivesse no Servidor)."
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalDestinoRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 452,
+                            "Top": 95,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Local de Destino (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalDestinoRestaurarClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label12",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 128,
+                            "Width": 36,
+                            "Height": 13,
+                            "Caption": "Usuário"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label13",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 156,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_TipoConexaoRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 11,
+                            "Width": 146,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0,
+                            "OnChange": "Cmb_TipoConexaoRestaurarChange",
+                            "Items.Strings": [
+                              "Servidor",
+                              "Cliente"
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_IPRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 353,
+                            "Top": 11,
+                            "Width": 121,
+                            "Height": 21,
+                            "Enabled": false,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_IPRestaurarChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalBackup",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 55,
+                            "Width": 435,
+                            "Height": 21,
+                            "TabOrder": 2,
+                            "OnChange": "Edt_LocalBackupChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalDestinoRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 96,
+                            "Width": 436,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_LocalDestinoRestaurarChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRadioGroup",
+                          "nome": "Rdg_Opcoes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 301,
+                            "Top": 119,
+                            "Width": 174,
+                            "Height": 56,
+                            "Caption": "Opções",
+                            "Items.Strings": [
+                              "Criar novo Banco",
+                              "Restaurar Banco"
+                            ],
+                            "TabOrder": 6,
+                            "OnClick": "Rdg_OpcoesClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 124,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_UsuarioRestaurarChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SenhaRestaurar",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 115,
+                            "Top": 152,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 5,
+                            "OnChange": "Edt_SenhaRestaurarChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_RestaurarInterbase",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 380,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Restaurar",
+                            "Default": true,
+                            "ModalResult": 1,
+                            "TabOrder": 7,
+                            "Visible": false,
+                            "OnClick": "Btn_RestaurarInterbaseClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "SqlServerRestaura"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label21",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 22,
+                            "Width": 69,
+                            "Height": 13,
+                            "Caption": "Tipo Conexão:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label22",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 284,
+                            "Top": 22,
+                            "Width": 42,
+                            "Height": 13,
+                            "Caption": "Servidor:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label23",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 52,
+                            "Width": 80,
+                            "Height": 13,
+                            "Caption": "Nome do Banco:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label25",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 80,
+                            "Width": 331,
+                            "Height": 13,
+                            "Caption": "Local do Arquivo de  backup: (Informe como se estivesse no Servidor)"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label26",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 126,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Usuário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label27",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 154,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalBackupSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 450,
+                            "Top": 94,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Local do Arquivo de Backup (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalBackupSQLResClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboBox",
+                          "nome": "Cmb_TipoConexaoSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 110,
+                            "Top": 18,
+                            "Width": 145,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0,
+                            "OnChange": "Cmb_TipoConexaoSQLResChange",
+                            "Items.Strings": [
+                              "Servidor",
+                              "Cliente"
+                            ]
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_ServidorSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 334,
+                            "Top": 18,
+                            "Width": 139,
+                            "Height": 21,
+                            "Enabled": false,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_ServidorSQLResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_NomeBancoSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 110,
+                            "Top": 48,
+                            "Width": 219,
+                            "Height": 21,
+                            "TabOrder": 2,
+                            "OnChange": "Edt_NomeBancoSQLResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalBackupSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 24,
+                            "Top": 95,
+                            "Width": 427,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_LocalBackupSQLResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 110,
+                            "Top": 122,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_UsuarioSQLResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SenhaSQLRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 110,
+                            "Top": 150,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 5,
+                            "OnChange": "Edt_SenhaSQLResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_RestaurarSqlServer",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 380,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Restaurar",
+                            "Default": true,
+                            "ModalResult": 1,
+                            "TabOrder": 6,
+                            "Visible": false,
+                            "OnClick": "Btn_RestaurarSqlServerClick"
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "classe": "TPage",
+                      "nome": "",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Caption": "OracleRestaura"
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label32",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 15,
+                            "Width": 138,
+                            "Height": 13,
+                            "Caption": "Local do Arquivo de Backup:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label33",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 117,
+                            "Width": 91,
+                            "Height": 13,
+                            "Caption": "Nome da Conexão:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label34",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 144,
+                            "Width": 75,
+                            "Height": 13,
+                            "Caption": "Usuário Origem:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TSpeedButton",
+                          "nome": "Btn_LocalBackupOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 451,
+                            "Top": 31,
+                            "Width": 23,
+                            "Height": 23,
+                            "Hint": "Local do Arquivo de Backup (Ctrl+L)",
+                            "ShowHint": true,
+                            "OnClick": "Btn_LocalBackupOracleResClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label35",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 171,
+                            "Width": 78,
+                            "Height": 13,
+                            "Caption": "Usuário Destino:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label36",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 65,
+                            "Width": 39,
+                            "Height": 13,
+                            "Caption": "Usuário:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label37",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 92,
+                            "Width": 34,
+                            "Height": 13,
+                            "Caption": "Senha:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label39",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 196,
+                            "Width": 31,
+                            "Height": 13,
+                            "Caption": "Buffer:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_LocalBackupOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 15,
+                            "Top": 32,
+                            "Width": 435,
+                            "Height": 21,
+                            "TabOrder": 0,
+                            "OnChange": "Edt_LocalBackupOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_NomeConexaoOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 113,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 3,
+                            "OnChange": "Edt_NomeConexaoOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioOrigemOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 140,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 4,
+                            "OnChange": "Edt_UsuarioOrigemOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioDestinoOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 167,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 5,
+                            "OnChange": "Edt_UsuarioDestinoOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_UsuarioOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 61,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 1,
+                            "OnChange": "Edt_UsuarioOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_SenhaOracleRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 88,
+                            "Width": 121,
+                            "Height": 21,
+                            "PasswordChar": "*",
+                            "TabOrder": 2,
+                            "OnChange": "Edt_SenhaOracleResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TBitBtn",
+                          "nome": "Btn_RestaurarOracle",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 382,
+                            "Top": 180,
+                            "Width": 95,
+                            "Height": 42,
+                            "Caption": "&Restaurar",
+                            "TabOrder": 9,
+                            "Visible": false,
+                            "OnClick": "Btn_RestaurarOracleClick"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TGroupBox",
+                          "nome": "Grp_Importacao",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 244,
+                            "Top": 58,
+                            "Width": 231,
+                            "Height": 71,
+                            "Caption": "Opções da Importação",
+                            "TabOrder": 7,
+                            "Visible": false
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_PermissoesRes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 14,
+                                "Top": 24,
+                                "Width": 97,
+                                "Height": 17,
+                                "Caption": "Permissões",
+                                "TabOrder": 0,
+                                "OnClick": "Chk_PermissoesResClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_IndicesRes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 14,
+                                "Top": 48,
+                                "Width": 97,
+                                "Height": 17,
+                                "Caption": "Indices",
+                                "TabOrder": 1,
+                                "OnClick": "Chk_IndicesResClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_LinhasRes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 106,
+                                "Top": 24,
+                                "Width": 75,
+                                "Height": 17,
+                                "Caption": "Linhas",
+                                "TabOrder": 2,
+                                "OnClick": "Chk_LinhasResClick"
+                              },
+                              "filhos": []
+                            },
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_ChavesRes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 106,
+                                "Top": 48,
+                                "Width": 117,
+                                "Height": 17,
+                                "Caption": "ChavesEstrangeiras",
+                                "TabOrder": 3,
+                                "OnClick": "Chk_ChavesResClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "classe": "TEdit",
+                          "nome": "Edt_BufferRes",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 118,
+                            "Top": 192,
+                            "Width": 121,
+                            "Height": 21,
+                            "TabOrder": 6,
+                            "OnChange": "Edt_BufferResChange"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TPanel",
+                          "nome": "Panel3",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 316,
+                            "Top": 134,
+                            "Width": 172,
+                            "Height": 25,
+                            "TabOrder": 8
+                          },
+                          "filhos": [
+                            {
+                              "classe": "TCheckBox",
+                              "nome": "Chk_IgnoreRes",
+                              "herdado": false,
+                              "propriedades": {
+                                "Left": 26,
+                                "Top": 7,
+                                "Width": 151,
+                                "Height": 17,
+                                "Caption": "Ignorar Erros de Criação",
+                                "TabOrder": 0,
+                                "Visible": false,
+                                "OnClick": "Chk_IgnoreResClick"
+                              },
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 410,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TImageList",
+      "nome": "ImageList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 442,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMREnter",
+      "nome": "MREnter1",
+      "herdado": false,
+      "propriedades": {
+        "Enabled": true,
+        "Left": 378,
+        "Top": 60
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSaveDialog",
+      "nome": "SaveDialog1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 428,
+        "Top": 104
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 244
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_NovoAlias",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "NovoAlias",
+            "ShortCut": 16462,
+            "OnExecute": "Act_NovoAliasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ExcluirAlias",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_ExcluirAlias",
+            "ShortCut": 16453,
+            "OnExecute": "Act_ExcluirAliasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_SalvarAlias",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_SalvarAlias",
+            "ShortCut": 16467,
+            "OnExecute": "Act_SalvarAliasExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Cancelar",
+            "ShortCut": 16451,
+            "OnExecute": "Act_CancelarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_LocalizarDiretorio",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_LocalizarDiretorio",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarDiretorioExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_ImportaBDE",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_ImportaBDE",
+            "ShortCut": 16457,
+            "OnExecute": "Act_ImportaBDEExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Help",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Help",
+            "ShortCut": 112,
+            "OnExecute": "Act_HelpExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

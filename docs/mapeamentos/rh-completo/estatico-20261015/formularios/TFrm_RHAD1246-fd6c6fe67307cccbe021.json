@@ -1,0 +1,273 @@
+{
+  "classe": "TFrm_RHAD1246",
+  "nome": "Frm_RHAD1246",
+  "herdado": false,
+  "propriedades": {
+    "Left": 166,
+    "Top": 162,
+    "BorderStyle": "bsSingle",
+    "Caption": "Histórico de Contratos Liberados",
+    "ClientHeight": 366,
+    "ClientWidth": 1104,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_DadosResultado",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 330,
+        "Width": 1104,
+        "Height": 36,
+        "Align": "alBottom",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 6,
+            "Width": 97,
+            "Height": 25,
+            "Caption": "OK",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_HistoricoOperadores",
+          "herdado": false,
+          "propriedades": {
+            "Left": 128,
+            "Top": 6,
+            "Width": 99,
+            "Height": 25,
+            "Caption": "Imprimir",
+            "TabOrder": 1,
+            "OnClick": "Btn_HistoricoOperadoresClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDBGrid",
+      "nome": "DBGrid1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 1104,
+        "Height": 330,
+        "Align": "alClient",
+        "DataSource": "Dts_RegExecCalcLib",
+        "ReadOnly": true,
+        "TabOrder": 1,
+        "Columns": [
+          {
+            "FieldName": "UNIDADE",
+            "Width": 45,
+            "Visible": true
+          },
+          {
+            "FieldName": "CONTRATO",
+            "Width": 60,
+            "Visible": true
+          },
+          {
+            "FieldName": "NOMECOMPLETO",
+            "Width": 250,
+            "Visible": true
+          },
+          {
+            "FieldName": "Calculo",
+            "Width": 250,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADOR",
+            "Width": 70,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORA",
+            "Width": 110,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAFOLHA",
+            "Width": 80,
+            "Visible": true
+          },
+          {
+            "FieldName": "DESCRICAOFOLHA",
+            "Width": 200,
+            "Visible": true
+          },
+          {
+            "FieldName": "OPERADORALTERACAO",
+            "Width": 120,
+            "Visible": true
+          },
+          {
+            "FieldName": "DATAHORAALTERACAO",
+            "Width": 120,
+            "Visible": true
+          }
+        ]
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_RegExecCalcLib",
+      "herdado": false,
+      "propriedades": {
+        "Left": 102,
+        "Top": 96
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_RegExecCalcLib",
+      "herdado": false,
+      "propriedades": {
+        "ReadOnly": true,
+        "Left": 104,
+        "Top": 62
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_RegExecCalcLibCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibNOMECOMPLETO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOMECOMPLETO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RegExecCalcLibDATAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data-Base",
+            "FieldName": "DATAFOLHA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibDESCRICAOFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo da Folha",
+            "FieldName": "DESCRICAOFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RegExecCalcLibDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora",
+            "FieldName": "DATAHORA",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibIDREGEXECCALCAGRUPADOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDREGEXECCALCAGRUPADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibIDENTIFICADOREXECUCAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "IDENTIFICADOREXECUCAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibCalculo",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cálculo",
+            "FieldName": "Calculo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_RegExecCalcLibOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador que liberou",
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_RegExecCalcLibDATAHORAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora que liberou",
+            "FieldName": "DATAHORAALTERACAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

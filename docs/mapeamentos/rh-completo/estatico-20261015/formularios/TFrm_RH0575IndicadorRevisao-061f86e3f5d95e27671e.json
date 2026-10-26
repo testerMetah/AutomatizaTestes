@@ -1,0 +1,586 @@
+{
+  "classe": "TFrm_RH0575IndicadorRevisao",
+  "nome": "Frm_RH0575IndicadorRevisao",
+  "herdado": false,
+  "propriedades": {
+    "Left": 606,
+    "Top": 294,
+    "BorderStyle": "bsSingle",
+    "Caption": "Revisão do Indicador",
+    "ClientHeight": 353,
+    "ClientWidth": 394,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 50,
+        "Width": 394,
+        "Height": 262,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label13",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 9,
+            "Width": 92,
+            "Height": 26,
+            "Caption": "A partir do Período de Competência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 189,
+            "Top": 17,
+            "Width": 125,
+            "Height": 13,
+            "Caption": "Lbl_Periodo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_Resultado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 41,
+            "Width": 360,
+            "Height": 114,
+            "Caption": "Resultado do Indicador ",
+            "TabOrder": 2,
+            "OnEnter": "Grp_ResultadoEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 53,
+                "Width": 24,
+                "Height": 13,
+                "Caption": "Tipo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 26,
+                "Width": 36,
+                "Height": 13,
+                "Caption": "Origem:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 81,
+                "Width": 49,
+                "Height": 13,
+                "Caption": "Utilização:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_TipoIndicador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 69,
+                "Top": 50,
+                "Width": 85,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "TIPOINDICADOR",
+                "DataSource": "Dts_IndicadorRevisao",
+                "TabOrder": 1
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_OrigemIndicador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 69,
+                "Top": 23,
+                "Width": 206,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "ORIGEMINDICADOR",
+                "DataSource": "Dts_IndicadorRevisao",
+                "TabOrder": 0,
+                "OnChange": "Dbc_OrigemIndicadorChange"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBComboMeta",
+              "nome": "Dbc_UtilizacaoIndicador",
+              "herdado": false,
+              "propriedades": {
+                "Left": 69,
+                "Top": 78,
+                "Width": 280,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "DataField": "UTILIZACAOINDICADOR",
+                "DataSource": "Dts_IndicadorRevisao",
+                "TabOrder": 2
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grp_Calculo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 160,
+            "Width": 360,
+            "Height": 84,
+            "Caption": "Cálculo ",
+            "TabOrder": 3,
+            "OnEnter": "Grp_CalculoEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TPageControl",
+              "nome": "Pgc_Calculo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 2,
+                "Top": 15,
+                "Width": 356,
+                "Height": 67,
+                "ActivePage": "Tbs_Vdb",
+                "Align": "alClient",
+                "Style": "tsFlatButtons",
+                "TabOrder": 0,
+                "TabStop": false
+              },
+              "filhos": [
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_Vdb",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_Vdb"
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "Panel2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 348,
+                        "Height": 57,
+                        "Align": "alClient",
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label5",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 5,
+                            "Width": 25,
+                            "Height": 13,
+                            "Caption": "VDB:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TRHMetalocalizar",
+                          "nome": "Btn_VDB",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 81,
+                            "Top": 2,
+                            "Width": 23,
+                            "Height": 22,
+                            "Hint": "Localizar (Ctrl + L)",
+                            "ShowHint": true
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Lbl_VDB",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 109,
+                            "Top": 6,
+                            "Width": 230,
+                            "Height": 13,
+                            "Caption": "Lbl_VDB"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label6",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 32,
+                            "Width": 24,
+                            "Height": 13,
+                            "Caption": "Tipo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TNumericEdit",
+                          "nome": "Edt_VDB",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 39,
+                            "Top": 2,
+                            "Width": 41,
+                            "Height": 21,
+                            "MaxLength": 5,
+                            "TabOrder": 0,
+                            "OnExit": "Edt_VDBExit",
+                            "OnKeyPress": "Edt_VDBKeyPress"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TDBComboMeta",
+                          "nome": "Dbc_TipoCalculo",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 39,
+                            "Top": 29,
+                            "Width": 104,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "DataField": "RESULTADOVDB",
+                            "DataSource": "Dts_DefVDBIndicadores",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classe": "TTabSheet",
+                  "nome": "Tbs_UsoIndicador",
+                  "herdado": false,
+                  "propriedades": {
+                    "Caption": "Tbs_UsoIndicador",
+                    "ImageIndex": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TPanel",
+                      "nome": "Pnl_UsoIndividualIndicador",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 0,
+                        "Top": 0,
+                        "Width": 348,
+                        "Height": 57,
+                        "Align": "alClient",
+                        "TabOrder": 0
+                      },
+                      "filhos": [
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label7",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 5,
+                            "Width": 84,
+                            "Height": 13,
+                            "Caption": "Uso do Indicador:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TLabel",
+                          "nome": "Label9",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 9,
+                            "Top": 32,
+                            "Width": 24,
+                            "Height": 13,
+                            "Caption": "Tipo:"
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboMeta",
+                          "nome": "Cmb_UsoIndicador",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 99,
+                            "Top": 4,
+                            "Width": 145,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 0
+                          },
+                          "filhos": []
+                        },
+                        {
+                          "classe": "TComboMeta",
+                          "nome": "Cmb_TipoUsoIndicador",
+                          "herdado": false,
+                          "propriedades": {
+                            "Left": 98,
+                            "Top": 32,
+                            "Width": 145,
+                            "Height": 21,
+                            "Style": "csDropDownList",
+                            "TabOrder": 1
+                          },
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_PeriodoRevisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 13,
+            "Width": 51,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_PeriodoRevisaoExit",
+            "OnKeyPress": "Edt_PeriodoRevisaoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Chk_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Left": 329,
+            "Top": 17,
+            "Width": 44,
+            "Height": 17,
+            "Caption": "Ativo",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_IndicadorRevisao",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chaves",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 312,
+        "Width": 394,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 126,
+            "Top": 6,
+            "Width": 105,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 105,
+            "Height": 25,
+            "Caption": "&Incluir Revisão",
+            "Default": true,
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 394,
+        "Height": 50,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "Caption": "Panel1",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Indicador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 67,
+            "Top": 10,
+            "Width": 305,
+            "Height": 26,
+            "Caption": "Lbl_Indicador"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 10,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Indicador:"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_IndicadorRevisao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 360,
+        "Top": 208
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_DefVDBIndicadores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 360,
+        "Top": 240
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 220,
+        "Top": 268
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "Act_LocalizarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_IndIndividuaisRev",
+      "herdado": false,
+      "propriedades": {
+        "Left": 360,
+        "Top": 273
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMainMenu",
+      "nome": "MainMenu1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 191,
+        "Top": 182
+      },
+      "filhos": []
+    }
+  ]
+}

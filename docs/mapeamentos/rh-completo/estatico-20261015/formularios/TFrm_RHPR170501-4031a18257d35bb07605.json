@@ -1,0 +1,662 @@
+{
+  "classe": "TFrm_RHPR170501",
+  "nome": "Frm_RHPR170501",
+  "herdado": false,
+  "propriedades": {
+    "Left": 290,
+    "Top": 236,
+    "BorderStyle": "bsSingle",
+    "Caption": "Avisos Prévios",
+    "ClientHeight": 435,
+    "ClientWidth": 502,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Coletivo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 103,
+        "Width": 502,
+        "Height": 103,
+        "Align": "alCustom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 41,
+            "Width": 52,
+            "Height": 13,
+            "Caption": "Avisos de :"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 179,
+            "Top": 42,
+            "Width": 18,
+            "Height": 13,
+            "Caption": "até:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 147,
+            "Top": 38,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataFim",
+          "herdado": false,
+          "propriedades": {
+            "Left": 275,
+            "Top": 38,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataInicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 77,
+            "Top": 38,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Msk_DataInicioExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataFim",
+          "herdado": false,
+          "propriedades": {
+            "Left": 205,
+            "Top": 38,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 1,
+            "OnExit": "Msk_DataFimExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 502,
+        "Height": 103,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 18,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Unidade:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 136,
+            "Top": 19,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "Lbl_Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 15,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_UnidadeClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 215,
+            "Top": 66,
+            "Width": 93,
+            "Height": 13,
+            "Caption": "Número de Cópias: "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AlteraTexto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 370,
+            "Top": 64,
+            "Width": 120,
+            "Height": 26,
+            "Caption": "Altera texto para local de acerto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_Opcoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 44,
+            "Width": 185,
+            "Height": 42,
+            "Caption": "Impressão:",
+            "Columns": 2,
+            "Items.Strings": [
+              "Individual",
+              "Coletiva"
+            ],
+            "TabOrder": 1,
+            "OnClick": "Rdg_OpcoesClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 62,
+            "Top": 15,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_UnidadeEnter",
+            "OnExit": "Edt_UnidadeExit",
+            "OnKeyPress": "Edt_UnidadeKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Copias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 308,
+            "Top": 63,
+            "Width": 27,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 2,
+            "OnExit": "Edt_CopiasExit",
+            "OnKeyPress": "Edt_CopiasKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_AlteraTextoLocalAcerto",
+          "herdado": false,
+          "propriedades": {
+            "Left": 353,
+            "Top": 64,
+            "Width": 17,
+            "Height": 17,
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 387,
+        "Width": 502,
+        "Height": 48,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 3
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 8,
+            "Width": 115,
+            "Height": 25,
+            "Caption": "Iniciar Impressão",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_AssinaturaDigital",
+          "herdado": false,
+          "propriedades": {
+            "Left": 134,
+            "Top": 8,
+            "Width": 157,
+            "Height": 25,
+            "Caption": "Gerar Assinatura Digital",
+            "Default": true,
+            "TabOrder": 1,
+            "OnClick": "Btn_AssinaturaDigitalClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Mensagem",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 206,
+        "Width": 502,
+        "Height": 181,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 4
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 8,
+            "Width": 55,
+            "Height": 13,
+            "Caption": "Mensagem:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemo",
+          "nome": "Mem_Mensagem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 17,
+            "Top": 26,
+            "Width": 462,
+            "Height": 138,
+            "ShowHint": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Individual",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 103,
+        "Width": 502,
+        "Height": 103,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 194,
+            "Top": 19,
+            "Width": 289,
+            "Height": 13,
+            "Caption": "Lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 19,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 141,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Anterior",
+          "herdado": false,
+          "propriedades": {
+            "Left": 118,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Anterior",
+            "ShowHint": true,
+            "OnClick": "btn_AnteriorClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Proximo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Próximo ",
+            "ShowHint": true,
+            "OnClick": "btn_ProximoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 59,
+            "Top": 15,
+            "Width": 58,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit",
+            "OnKeyPress": "Edt_ContratoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRadioGroup",
+          "nome": "Rdg_TipoRescisao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 44,
+            "Width": 316,
+            "Height": 42,
+            "Caption": "Aviso de Rescisão por Término do Contrato por iniciativa da(o):",
+            "Columns": 2,
+            "Items.Strings": [
+              "Empresa",
+              "Empregado"
+            ],
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Unidades",
+      "herdado": false,
+      "propriedades": {
+        "Left": 237,
+        "Top": 11
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Unidade",
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_UnidadesDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 311,
+        "Top": 10
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ContratosDATAAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "LOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosOUTROLOCALACERTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Local do Acerto",
+            "FieldName": "OUTROLOCALACERTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosTIPOAVISOPREVIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOAVISOPREVIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_ContratosDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ContratosNOMESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NOMESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_OpcoesRelatorio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 421,
+        "Top": 10
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 9,
+        "Top": 13
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

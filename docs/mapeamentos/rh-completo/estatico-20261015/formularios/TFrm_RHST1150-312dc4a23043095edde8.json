@@ -1,0 +1,268 @@
+{
+  "classe": "TFrm_RHST1150",
+  "nome": "Frm_RHST1150",
+  "herdado": true,
+  "propriedades": {
+    "Left": 284,
+    "Top": 236,
+    "Caption": "Motivos de Ausência",
+    "ClientHeight": 369,
+    "ClientWidth": 640
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Base",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 640,
+        "Height": 369,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 318,
+            "Width": 32,
+            "Height": 13,
+            "Caption": "Motivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 287,
+            "Top": 318,
+            "Width": 96,
+            "Height": 13,
+            "Caption": "Descrição Reduzida"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 78,
+            "Top": 318,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_MotivoAusencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 53,
+            "Top": 336,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 424,
+            "Top": 316,
+            "Width": 85,
+            "Height": 13,
+            "Caption": "Justifica Ausência"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 522,
+            "Top": 316,
+            "Width": 42,
+            "Height": 13,
+            "Caption": "Situação"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 536,
+            "Top": 272,
+            "Width": 9,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_MotivosAusencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 632,
+            "Height": 310,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_MotivosAusencia",
+            "TabOrder": 6,
+            "OnEnter": "Dbg_MotivosAusenciaEnter",
+            "Columns": [
+              {
+                "FieldName": "MOTIVOAUSENCIA",
+                "Width": 59,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 208,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Width": 137,
+                "Visible": true
+              },
+              {
+                "FieldName": "JUSTIFICAAUSENCIA",
+                "Title.Caption": "Justifica",
+                "Width": 97,
+                "Visible": true
+              },
+              {
+                "FieldName": "ATIVADESATIVADA",
+                "Width": 94,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_JustificaAusencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 424,
+            "Top": 336,
+            "Width": 94,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "JUSTIFICAAUSENCIA",
+            "DataSource": "Dts_MotivosAusencia",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Dbc_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 522,
+            "Top": 336,
+            "Width": 100,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_MotivosAusencia",
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_MotivoAusencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 336,
+            "Width": 37,
+            "Height": 21,
+            "MaxLength": 2,
+            "TabOrder": 0,
+            "OnExit": "Edt_MotivoAusenciaExit",
+            "OnKeyPress": "Edt_MotivoAusenciaKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 78,
+            "Top": 336,
+            "Width": 205,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_MotivosAusencia",
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 287,
+            "Top": 336,
+            "Width": 133,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_MotivosAusencia",
+            "TabOrder": 2,
+            "OnEnter": "Dbe_Descricao20Enter"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 492,
+        "Top": 36
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MotivosAusencia",
+      "herdado": false,
+      "propriedades": {
+        "Left": 552,
+        "Top": 40
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,887 @@
+{
+  "classe": "TFrmConfirmacaoEnvioPessoas",
+  "nome": "FrmConfirmacaoEnvioPessoas",
+  "herdado": false,
+  "propriedades": {
+    "Left": 553,
+    "Top": 265,
+    "BorderStyle": "bsDialog",
+    "Caption": "Confirmação de envio de pessoas para o REP",
+    "ClientHeight": 405,
+    "ClientWidth": 746,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Corpo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 746,
+        "Height": 365,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 36,
+            "Width": 738,
+            "Height": 323,
+            "ActivePage": "Tb_PessRep",
+            "Align": "alClient",
+            "TabOrder": 0,
+            "OnChange": "Pgc_ListaChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tb_Operacoes",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Operações"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Operacoes",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 730,
+                    "Height": 267,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Operacoes",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "Width": 11,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "OPERACAO",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Pis",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Cpf",
+                        "Width": 79,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaTitular",
+                        "Title.Caption": "Crachá Tit.",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaProvisorio",
+                        "Title.Caption": "Crachá Prov.",
+                        "Width": 72,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Digital",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Teclado",
+                        "Width": 40,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 267,
+                    "Width": 730,
+                    "Height": 28,
+                    "Align": "alBottom",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 4,
+                        "Top": 7,
+                        "Width": 438,
+                        "Height": 13,
+                        "Caption": "Obs.: Após a execução das operações com as pessoas, serão atualizados todos os crachás."
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tb_PessSelecionadas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pessoas selecionadas",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_PessSelecionadas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 730,
+                    "Height": 295,
+                    "Align": "alClient",
+                    "DataSource": "Dts_PessSelecionadas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Pis",
+                        "Width": 78,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Cpf",
+                        "Width": 78,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaTitular",
+                        "Title.Caption": "Crachá Tit.",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaProvisorio",
+                        "Title.Caption": "Crachá Prov.",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Digital",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Teclado",
+                        "Width": 40,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tb_PessRep",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pessoas do REP",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_PessRep",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 730,
+                    "Height": 295,
+                    "Align": "alClient",
+                    "DataSource": "Dts_PessREP",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Pis",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CPF",
+                        "Title.Caption": "Cpf",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaTitular",
+                        "Title.Caption": "Crachá Tit.",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CrachaProvisorio",
+                        "Title.Caption": "Crachá Prov.",
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Digital",
+                        "Width": 40,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Teclado",
+                        "Width": 40,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tb_VinculoColetor",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Vínculos com Coletor",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_vinculos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 730,
+                    "Height": 295,
+                    "Align": "alClient",
+                    "DataSource": "Dts_vinculo",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "PIS",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CPF",
+                        "Title.Caption": "Cpf",
+                        "Width": 80,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Width": 230,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "VINCULOATUAL",
+                        "Width": 110,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "VINCULONOVO",
+                        "Width": 110,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAOACAO",
+                        "Width": 100,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_Titulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 738,
+            "Height": 34,
+            "Align": "alTop",
+            "BorderStyle": "bsSingle",
+            "Caption": "Coletor 0001 - Coletor X - IP 192.168.0.10",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 365,
+        "Width": 746,
+        "Height": 40,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 499,
+            "Top": 12,
+            "Width": 41,
+            "Height": 16,
+            "Caption": "Total:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Total",
+          "herdado": false,
+          "propriedades": {
+            "Left": 547,
+            "Top": 12,
+            "Width": 9,
+            "Height": 16,
+            "Caption": "0"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 6,
+            "Width": 85,
+            "Height": 26,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 112,
+            "Top": 6,
+            "Width": 85,
+            "Height": 26,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TButton",
+          "nome": "btnGerarListaContratos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 603,
+            "Top": 6,
+            "Width": 130,
+            "Height": 26,
+            "Caption": "Gerar Lista de Contratos",
+            "TabOrder": 2,
+            "OnClick": "btnGerarListaContratosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Client_Operacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesSituacao",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operação",
+            "FieldName": "OPERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesPis",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pis"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesCpf",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Cpf"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesStringField",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Titular",
+            "FieldName": "CrachaTitular"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesCrachaProvisorio",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Provisório",
+            "FieldName": "CrachaProvisorio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesDigital",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Digital"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_OperacoesTeclado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Teclado"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Client_PessSelecionadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 364,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasPis",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pis"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasCracha",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Titular",
+            "FieldName": "CrachaTitular"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasCrachaProvisorio",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Provisório",
+            "FieldName": "CrachaProvisorio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasDigital",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Digital"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasTeclado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Teclado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessSelecionadasCpf",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Cpf"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Client_PessREP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 400,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPPis",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pis"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPStringField",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Titular",
+            "FieldName": "CrachaTitular"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPStringField2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Cracha Provisório",
+            "FieldName": "CrachaProvisorio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPDigital",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Digital"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPTeclado",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Teclado"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_PessREPCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessREP",
+      "herdado": false,
+      "propriedades": {
+        "Left": 404,
+        "Top": 264
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PessSelecionadas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 264
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Operacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 264
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSQLQuery",
+      "nome": "SQLQuery1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 504,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TSQLQuery",
+      "nome": "SQLQuery2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 536,
+        "Top": 168
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Client_Vinculo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 232
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoPIS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pis",
+            "FieldName": "PIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoVINCULOATUAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Vínculo Atual",
+            "FieldName": "VINCULOATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoVINCULONOVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Novo Vínculo",
+            "FieldName": "VINCULONOVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Client_VinculoACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoDESCRICAOACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Ação",
+            "FieldName": "DESCRICAOACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Client_VinculoCPF",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CPF"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_vinculo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 500,
+        "Top": 264
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "popup_Vinculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 188,
+        "Top": 108
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_Remover",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Descartar Selecionado",
+            "OnClick": "mnu_RemoverClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_remover_iguais_atual",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Descartar iguais ao vínculo atual selecionado",
+            "OnClick": "mnu_remover_iguais_atualClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_remove_todos_vinculos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Descartar todos",
+            "OnClick": "mnu_remove_todos_vinculosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_vincular_selecionado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Vincular selecionado",
+            "OnClick": "mnu_vincular_selecionadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_vincular_igual_selecionado",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Vincular iguais ao vínculo atual selecionado",
+            "OnClick": "mnu_vincular_igual_selecionadoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "mnu_vincular_todos",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Vincular todos",
+            "OnClick": "mnu_vincular_todosClick"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

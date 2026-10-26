@@ -1,0 +1,383 @@
+{
+  "classe": "TFrm_RHPA7036",
+  "nome": "Frm_RHPA7036",
+  "herdado": false,
+  "propriedades": {
+    "Left": 475,
+    "Top": 189,
+    "Width": 521,
+    "Height": 222,
+    "Caption": "Digitação Automática",
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Itens",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 513,
+        "Height": 157,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Panel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 505,
+            "Height": 121,
+            "Align": "alClient",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "THeaderControl",
+              "nome": "Hdc_HorariosMarcacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 8,
+                "Width": 505,
+                "Height": 17,
+                "Align": "alNone",
+                "Enabled": false,
+                "Style": "hsFlat"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBGrid",
+              "nome": "Dbg_HorariosMarcacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 8,
+                "Top": 23,
+                "Width": 489,
+                "Height": 98,
+                "DataSource": "Dts_HorariosMarcacoes",
+                "TabOrder": 1,
+                "OnKeyPress": "Dbg_HorariosMarcacoesKeyPress",
+                "Columns": [
+                  {
+                    "Title.Caption": "Gerar",
+                    "Width": 29,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "HORAMARCACAO",
+                    "Title.Caption": "Hora",
+                    "Width": 38,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCCLASSEMARCACAO",
+                    "Title.Caption": "Classificação",
+                    "Width": 115,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "DESCREGISTROMARCACAO",
+                    "Title.Caption": "Tipo Registro",
+                    "Width": 115,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TOLERANCIAANTES",
+                    "Title.Caption": "Antes",
+                    "Width": 38,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "TOLERANCIADEPOIS",
+                    "Title.Caption": "Depois",
+                    "Width": 38,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "MOBILIDADEANTES",
+                    "Title.Caption": "Antes",
+                    "Width": 38,
+                    "Visible": true
+                  },
+                  {
+                    "FieldName": "MOBILIDADEDEPOIS",
+                    "Title.Caption": "Depois",
+                    "Width": 38,
+                    "Visible": true
+                  }
+                ]
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 123,
+            "Width": 505,
+            "Height": 28,
+            "Align": "alBottom",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TituloMotivo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 10,
+                "Top": 8,
+                "Width": 35,
+                "Height": 13,
+                "Caption": "Motivo:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_Motivo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 93,
+                "Top": 5,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "lbl_Motivo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 121,
+                "Top": 9,
+                "Width": 268,
+                "Height": 13,
+                "Caption": "Lbl_MotAltSalario"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Motivo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 51,
+                "Top": 5,
+                "Width": 41,
+                "Height": 21,
+                "MaxLength": 4,
+                "TabOrder": 0,
+                "OnExit": "Edt_MotivoExit"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 157,
+        "Width": 513,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "&OK",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 124,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Todos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 406,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Gerar Todos",
+            "TabOrder": 2,
+            "OnClick": "Btn_TodosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_HorariosMarcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 322,
+        "Top": 154
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPopupMenu",
+      "nome": "Pop_Gerar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 356,
+        "Top": 150
+      },
+      "filhos": [
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Todas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Todas",
+            "Default": true,
+            "OnClick": "Pop_TodasClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Linha1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Jornada",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Jornada",
+            "OnClick": "Pop_JornadaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Refeicao",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Refeição",
+            "OnClick": "Pop_RefeicaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Lanche",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Lanche",
+            "OnClick": "Pop_LancheClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Descanso",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Descanso",
+            "OnClick": "Pop_DescansoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "N1",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "-"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMenuItem",
+          "nome": "Pop_Aleatoriamente",
+          "herdado": false,
+          "propriedades": {
+            "AutoCheck": true,
+            "Caption": "Gerar Aleatoriamente"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 288,
+        "Top": 147
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_CtrlL",
+          "herdado": false,
+          "propriedades": {
+            "Category": "Atalhos",
+            "Caption": "Act_CtrlL",
+            "ShortCut": 16460,
+            "OnExecute": "Act_CtrlLExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

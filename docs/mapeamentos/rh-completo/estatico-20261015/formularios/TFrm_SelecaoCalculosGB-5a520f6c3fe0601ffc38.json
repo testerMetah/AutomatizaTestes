@@ -1,0 +1,471 @@
+{
+  "classe": "TFrm_SelecaoCalculosGB",
+  "nome": "Frm_SelecaoCalculosGB",
+  "herdado": false,
+  "propriedades": {
+    "Left": 312,
+    "Top": 380,
+    "BorderStyle": "bsSingle",
+    "Caption": "Seleção de Cálculos",
+    "ClientHeight": 402,
+    "ClientWidth": 777,
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Periodo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 777,
+        "Height": 49,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnExit": "Pnl_PeriodoExit"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 17,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Período:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mdt_Inicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 127,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mdt_Termino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 244,
+            "Top": 13,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 161,
+            "Top": 17,
+            "Width": 10,
+            "Height": 13,
+            "Caption": "a"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 329,
+            "Top": 17,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 513,
+            "Top": 17,
+            "Width": 47,
+            "Height": 13,
+            "Caption": "Operador:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_Inicio",
+          "herdado": false,
+          "propriedades": {
+            "Left": 61,
+            "Top": 13,
+            "Width": 65,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_Termino",
+          "herdado": false,
+          "propriedades": {
+            "Left": 176,
+            "Top": 13,
+            "Width": 67,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Situacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 379,
+            "Top": 13,
+            "Width": 115,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Operador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 565,
+            "Top": 13,
+            "Width": 115,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 3
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Selecao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 49,
+        "Width": 777,
+        "Height": 304,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_SelecaoCalculos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 769,
+            "Height": 296,
+            "TabStop": false,
+            "Align": "alClient",
+            "DataSource": "Dts_Calculos",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "Selecionar",
+                "Title.Caption": "Selecionar?",
+                "Width": 66,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAHORA",
+                "Title.Caption": "Data",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORA",
+                "Width": 43,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO60",
+                "Width": 178,
+                "Visible": true
+              },
+              {
+                "FieldName": "INICIOPERTRAB",
+                "Title.Caption": "De",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "TERMINOPERTRAB",
+                "Title.Caption": "Até",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "INICIOPERFALTAS",
+                "Title.Caption": "De",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "TERMINOPERFALTAS",
+                "Title.Caption": "Até",
+                "Width": 62,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCSITUACAO",
+                "Title.Caption": "Situação",
+                "Width": 73,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADOR",
+                "Width": 56,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 353,
+        "Width": 777,
+        "Height": 49,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Ok",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 11,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&OK",
+            "TabOrder": 0,
+            "OnClick": "Btn_OkClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 11,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Datas",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Datas",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DatasExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_Calculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 144
+      },
+      "filhos": [
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosDATAHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data Hora",
+            "FieldName": "DATAHORA",
+            "EditMask": "99/99/9999;0; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosHORA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Hora",
+            "FieldName": "HORA",
+            "EditMask": "99:99;0; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosDATAHORACOMPLETA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAHORACOMPLETA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CalculosDESCRICAO60",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO60"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosINICIOPERTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início Período Trabalhado",
+            "FieldName": "INICIOPERTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosTERMINOPERTRAB",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término Período Trabalhado",
+            "FieldName": "TERMINOPERTRAB"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosINICIOPERFALTAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Início Período Faltas",
+            "FieldName": "INICIOPERFALTAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_CalculosTERMINOPERFALTAS",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término Período Faltas",
+            "FieldName": "TERMINOPERFALTAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CalculosSITUACAOCALCULO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação do Cálculo",
+            "FieldName": "SITUACAOCALCULO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CalculosDESCSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Situação Cálculo",
+            "FieldName": "DESCSITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CalculosOPERADOR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Operador",
+            "FieldName": "OPERADOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_CalculosSelecionar",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Selecionar"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Calculos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 600,
+        "Top": 176
+      },
+      "filhos": []
+    }
+  ]
+}

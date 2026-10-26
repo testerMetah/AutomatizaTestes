@@ -1,0 +1,236 @@
+{
+  "classe": "TFrm_RHGB1129",
+  "nome": "Frm_RHGB1129",
+  "herdado": true,
+  "propriedades": {
+    "Left": 141,
+    "Top": 217,
+    "Caption": "Correção da Unidade/Contrato para Lançamento dos Descontos",
+    "ClientWidth": 769,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 769,
+        "Height": 305,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TFrmTrocaContrato",
+          "nome": "Frm_TrocaContratos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 260,
+            "Width": 421,
+            "Height": 37,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_Contratos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 761,
+            "Height": 255,
+            "Align": "alTop",
+            "DataSource": "Dts_Contratos",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "Empresa",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "Pessoa",
+                "Visible": true
+              },
+              {
+                "FieldName": "Nome",
+                "Width": 294,
+                "Visible": true
+              },
+              {
+                "FieldName": "Convenio",
+                "Title.Caption": "Convênio",
+                "Width": 65,
+                "Visible": true
+              },
+              {
+                "FieldName": "Unidade",
+                "Width": 60,
+                "Visible": true
+              },
+              {
+                "FieldName": "Contrato",
+                "Visible": true
+              },
+              {
+                "FieldName": "UnidadeNovo",
+                "Title.Caption": "Unidade",
+                "Width": 58,
+                "Visible": true
+              },
+              {
+                "FieldName": "ContratoNovo",
+                "Title.Caption": "Contrato",
+                "Width": 56,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 305,
+        "Width": 769,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 7,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Atualizar",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {},
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 180,
+        "Top": 72
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosPessoa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosNome",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosUnidade",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosContrato",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosConvenio",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Convenio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosUnidadeNovo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UnidadeNovo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosContratoNovo",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ContratoNovo"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 284,
+        "Top": 52
+      },
+      "filhos": []
+    }
+  ]
+}

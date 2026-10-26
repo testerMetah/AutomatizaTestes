@@ -1,0 +1,506 @@
+{
+  "classe": "TFrm_RH0930ListasContratos",
+  "nome": "Frm_RH0930ListasContratos",
+  "herdado": true,
+  "propriedades": {
+    "Left": 283,
+    "Top": 136,
+    "Caption": "Listas de Contratos",
+    "ClientHeight": 384,
+    "ClientWidth": 629
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "pnl_ListasContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 629,
+        "Height": 54,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnEnter": "pnl_ListasContratosEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EditOcorrencia",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 18,
+            "Width": 25,
+            "Height": 13,
+            "Caption": "Lista:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 86,
+            "Top": 14,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 44,
+            "Top": 14,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Edt_ListaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBCheckBox",
+          "nome": "Dck_AtivaDesativada",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 343,
+            "Top": 17,
+            "Width": 45,
+            "Height": 17,
+            "Caption": "Ativa",
+            "DataField": "ATIVADESATIVADA",
+            "DataSource": "Dts_ListasContratos",
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBRadioGroup",
+          "nome": "Dbg_OrdenarPor",
+          "herdado": false,
+          "propriedades": {
+            "Left": 400,
+            "Top": 2,
+            "Width": 221,
+            "Height": 44,
+            "Caption": "Ordenar Por",
+            "Columns": 2,
+            "DataField": "CLASSIFICACAOLISTA",
+            "DataSource": "Dts_ListasContratos",
+            "Items.Strings": [
+              "Unidade/Contrato",
+              "Empresa/Pessoa",
+              "Ordem Alfabética",
+              "Ordem de Carga"
+            ],
+            "TabOrder": 3,
+            "OnChange": "Dbg_OrdenarPorChange"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoLista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 110,
+            "Top": 14,
+            "Width": 227,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_ListasContratos",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 343,
+        "Width": 629,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Carregar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 169,
+            "Top": 6,
+            "Width": 140,
+            "Height": 25,
+            "Hint": "Localizar (Ctrl + L)",
+            "Caption": "&Carregar Lista Por Filtro",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Esvaziar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 6,
+            "Width": 140,
+            "Height": 25,
+            "Caption": "&Esvaziar Lista",
+            "TabOrder": 0,
+            "OnClick": "Btn_EsvaziarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Carregar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 158,
+            "Top": 17,
+            "Width": 22,
+            "Height": 13,
+            "TabStop": false,
+            "TabOrder": 1,
+            "Visible": false,
+            "OnExit": "Edt_CarregarExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_ListasContratosDad",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 54,
+        "Width": 629,
+        "Height": 289,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Pnl_ListasContratosDadEnter"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 238,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "Ordem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 16,
+            "Top": 255,
+            "Width": 36,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Ordem",
+          "herdado": false,
+          "propriedades": {
+            "Left": 20,
+            "Top": 259,
+            "Width": 31,
+            "Height": 13,
+            "Caption": "Ordem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 92,
+            "Top": 254,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 54,
+            "Top": 238,
+            "Width": 40,
+            "Height": 13,
+            "Caption": "Unidade"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 181,
+            "Top": 254,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 238,
+            "Width": 40,
+            "Height": 13,
+            "Caption": "Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 204,
+            "Top": 255,
+            "Width": 46,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 208,
+            "Top": 259,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Empres"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 204,
+            "Top": 238,
+            "Width": 41,
+            "Height": 13,
+            "Caption": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 251,
+            "Top": 238,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 251,
+            "Top": 255,
+            "Width": 56,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 255,
+            "Top": 259,
+            "Width": 35,
+            "Height": 13,
+            "Caption": "Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 308,
+            "Top": 238,
+            "Width": 28,
+            "Height": 13,
+            "Caption": "Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Nome",
+          "herdado": false,
+          "propriedades": {
+            "Left": 312,
+            "Top": 259,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Lbl_Nome"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBevel",
+          "nome": "Bevel4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 308,
+            "Top": 255,
+            "Width": 297,
+            "Height": 20
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringGrid",
+          "nome": "Grd_Lista",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 621,
+            "Height": 231,
+            "Align": "alTop",
+            "TabOrder": 0,
+            "OnClick": "Grd_ListaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Unidade",
+          "herdado": false,
+          "propriedades": {
+            "Left": 53,
+            "Top": 254,
+            "Width": 38,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnExit": "Edt_UnidadeExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 115,
+            "Top": 254,
+            "Width": 65,
+            "Height": 21,
+            "TabOrder": 2,
+            "OnEnter": "Edt_ContratoEnter",
+            "OnExit": "Edt_ContratoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TListBoxMeta",
+          "nome": "Lsb_Ordenado",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 56,
+            "Width": 121,
+            "Height": 97,
+            "TabOrder": 3,
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 454,
+        "Top": 143
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ListasContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 230,
+        "Top": 143
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ListasContratosDad",
+      "herdado": false,
+      "propriedades": {
+        "Left": 340,
+        "Top": 143
+      },
+      "filhos": []
+    }
+  ]
+}

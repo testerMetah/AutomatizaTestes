@@ -1,0 +1,395 @@
+{
+  "classe": "TFrm_RHTR5119",
+  "nome": "Frm_RHTR5119",
+  "herdado": false,
+  "propriedades": {
+    "Left": 607,
+    "Top": 106,
+    "BorderStyle": "bsSingle",
+    "Caption": "Inclusão/Exclusão",
+    "ClientHeight": 453,
+    "ClientWidth": 688
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 410,
+        "Width": 688,
+        "Height": 43,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AvisoEmpresas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 389,
+            "Top": 7,
+            "Width": 281,
+            "Height": 31,
+            "Caption": "Obs.: O operador atual não tem autorização para acessar pessoas de outras empresas."
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 116,
+            "Height": 25,
+            "Caption": "&Iniciar Inclusão",
+            "ModalResult": 1,
+            "TabOrder": 0,
+            "OnClick": "Btn_IniciarProcessoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 138,
+            "Top": 7,
+            "Width": 116,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Cancelar",
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 688,
+        "Height": 410,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 21,
+            "Top": 9,
+            "Width": 649,
+            "Height": 64,
+            "Caption": "O processo xx - xxxxxxxxx com revisão nn - dd/mm/yyyy foi encontrado nos mapas listados abaixo. Selecione os mapas que deseja realizar a inclusão/exclusão da (o) atividade/treinamento xx - xxxxx"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_Processos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 71,
+            "Width": 680,
+            "Height": 333,
+            "ActivePage": "Tbs_SetorCargo",
+            "Align": "alBottom",
+            "TabOrder": 0,
+            "TabStop": false
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_SetorCargo",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Setor/Cargo"
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_SetorCargo",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 672,
+                    "Height": 305,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_SetorCargo",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Marcado",
+                        "Title.Caption": "ü",
+                        "Width": 20,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Setor",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSetor",
+                        "Title.Caption": "Descrição",
+                        "Width": 236,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Cargo",
+                        "Width": 77,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescCargo",
+                        "Title.Caption": "Descrição",
+                        "Width": 236,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_SetorFuncao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Setor/Função",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_SetorFuncao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 672,
+                    "Height": 305,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_SetorFuncao",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Marcado",
+                        "Title.Caption": "ü",
+                        "Width": 20,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Setor",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSetor",
+                        "Title.Caption": "Descrição",
+                        "Width": 236,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Funcao",
+                        "Title.Caption": "Função",
+                        "Width": 77,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescFuncao",
+                        "Title.Caption": "Descrição",
+                        "Width": 236,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_SetorCargoFuncao",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Setor/Cargo/Função",
+                "ImageIndex": 3
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_SetorCargoFuncao",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 672,
+                    "Height": 305,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_SetorCargoFuncao",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Marcado",
+                        "Title.Caption": "ü",
+                        "Width": 20,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Setor",
+                        "Width": 65,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescSetor",
+                        "Title.Caption": "Descrição",
+                        "Width": 180,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Cargo",
+                        "Width": 77,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescCargo",
+                        "Title.Caption": "Descrição",
+                        "Width": 180,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Funcao",
+                        "Title.Caption": "Função",
+                        "Width": 78,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DescFuncao",
+                        "Title.Caption": "Descrição",
+                        "Width": 180,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_Pessoas",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Pessoa",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_Pessoas",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 672,
+                    "Height": 305,
+                    "TabStop": false,
+                    "Align": "alClient",
+                    "DataSource": "Dts_Pessoas",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "Marcado",
+                        "Title.Caption": "ü",
+                        "Width": 20,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Empresa",
+                        "Width": 95,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Pessoa",
+                        "Width": 86,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "Nome",
+                        "Width": 434,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SetorCargo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 144,
+        "Top": 218
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SetorFuncao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 143,
+        "Top": 256
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 144,
+        "Top": 329
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SetorCargoFuncao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 143,
+        "Top": 294
+      },
+      "filhos": []
+    }
+  ]
+}

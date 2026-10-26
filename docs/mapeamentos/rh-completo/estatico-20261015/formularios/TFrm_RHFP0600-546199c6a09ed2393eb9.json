@@ -1,0 +1,490 @@
+{
+  "classe": "TFrm_RHFP0600",
+  "nome": "Frm_RHFP0600",
+  "herdado": false,
+  "propriedades": {
+    "Left": 239,
+    "Top": 128,
+    "BorderStyle": "bsSingle",
+    "Caption": "Códigos Complementares",
+    "ClientHeight": 330,
+    "ClientWidth": 454,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 454,
+        "Height": 330,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 4,
+            "Width": 177,
+            "Height": 13,
+            "Caption": "Códigos Complementares Habilitados:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 123,
+            "Width": 77,
+            "Height": 13,
+            "Caption": "Opções Válidas:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 246,
+            "Width": 36,
+            "Height": 13,
+            "Caption": "Código:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 275,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 38,
+            "Top": 304,
+            "Width": 60,
+            "Height": 13,
+            "Caption": "Descr. Red.:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 156,
+            "Top": 305,
+            "Width": 17,
+            "Height": 12,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_CodigoCompl",
+          "herdado": false,
+          "propriedades": {
+            "Left": 40,
+            "Top": 138,
+            "Width": 375,
+            "Height": 99,
+            "DataSource": "Dts_CodigoCompl",
+            "TabOrder": 1,
+            "Columns": [
+              {
+                "FieldName": "CODIGOCOMPLEMENTAR",
+                "Width": 44,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 295,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_DescricaoReduzida",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 300,
+            "Width": 152,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_CodigoCompl",
+            "TabOrder": 4
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 102,
+            "Top": 271,
+            "Width": 290,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_CodigoCompl",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Variavel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 40,
+            "Top": 19,
+            "Width": 375,
+            "Height": 99,
+            "DataSource": "Dts_Variavel",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "VARIAVEL",
+                "Width": 44,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 295,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_CodigoComplementar",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 2,
+            "Left": 102,
+            "Top": 242,
+            "Width": 42,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 2,
+            "OnExit": "Edt_CodigoComplementarExit",
+            "OnKeyPress": "Edt_CodigoComplementarKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Variavel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 206,
+        "Top": 49
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Variável",
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelORIGEM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Origem",
+            "FieldName": "ORIGEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelTABELAORIGEM",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tabela de Origem",
+            "FieldName": "TABELAORIGEM"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelHABILITADA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Habilitada",
+            "FieldName": "HABILITADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelALTERAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Alterar",
+            "FieldName": "ALTERAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelCAMPOTABELA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CAMPOTABELA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelTIPOCAMPO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCAMPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VariavelTAMANHOCAMPO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TAMANHOCAMPO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_VariavelNRODECIMAIS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NRODECIMAIS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSASELECAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USASELECAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSACLASSIFICACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USACLASSIFICACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSATABULACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USATABULACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSACALCULOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USACALCULOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSAFOLHA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAFOLHA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSAPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSACARGOSSALARIOS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USACARGOSSALARIOS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSATREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USATREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSASEGURANCA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USASEGURANCA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSAPCMSO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USAPCMSO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_VariavelUSARECRUTAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "USARECRUTAMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_CodigoCompl",
+      "herdado": false,
+      "propriedades": {
+        "Left": 164,
+        "Top": 179
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CodigoComplVARIAVEL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Variável",
+            "FieldName": "VARIAVEL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CodigoComplCODIGOCOMPLEMENTAR",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Código Complementar",
+            "FieldName": "CODIGOCOMPLEMENTAR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CodigoComplDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_CodigoComplDESCRICAO20",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição Reduzida",
+            "FieldName": "DESCRICAO20"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_CodigoCompl",
+      "herdado": false,
+      "propriedades": {
+        "Left": 256,
+        "Top": 177
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Variavel",
+      "herdado": false,
+      "propriedades": {
+        "Left": 276,
+        "Top": 50
+      },
+      "filhos": []
+    }
+  ]
+}

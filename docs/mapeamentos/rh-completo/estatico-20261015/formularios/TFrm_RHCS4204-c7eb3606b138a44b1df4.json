@@ -1,0 +1,207 @@
+{
+  "classe": "TFrm_RHCS4204",
+  "nome": "Frm_RHCS4204",
+  "herdado": false,
+  "propriedades": {
+    "Left": 577,
+    "Top": 249,
+    "BorderStyle": "bsSingle",
+    "Caption": "Alterações Efetuadas",
+    "ClientHeight": 373,
+    "ClientWidth": 851,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 851,
+        "Height": 332,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 15,
+            "Width": 95,
+            "Height": 13,
+            "Caption": "Exibir as Alterações:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Programacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 38,
+            "Width": 843,
+            "Height": 288,
+            "Align": "alBottom",
+            "DataSource": "Dts_Programacoes",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DATAHORA",
+                "Title.Caption": "Data",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Title.Caption": "Unidade",
+                "Width": 46,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO",
+                "Title.Caption": "Contrato",
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Title.Caption": "Nome",
+                "Width": 289,
+                "Visible": true
+              },
+              {
+                "FieldName": "PLANO",
+                "Title.Caption": "Plano",
+                "Width": 38,
+                "Visible": true
+              },
+              {
+                "FieldName": "FAIXA",
+                "Title.Caption": "Classe",
+                "Visible": true
+              },
+              {
+                "FieldName": "CLASSE",
+                "Title.Caption": "Faixa",
+                "Visible": true
+              },
+              {
+                "FieldName": "SALARIOANTERIOR",
+                "Title.Caption": "Salário Anterior",
+                "Width": 117,
+                "Visible": true
+              },
+              {
+                "FieldName": "SALARIOATUAL",
+                "Title.Caption": "Salário Atual",
+                "Width": 117,
+                "Visible": true
+              },
+              {
+                "FieldName": "MOTIVO",
+                "Title.Caption": "Motivo",
+                "Width": 120,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cmb_Alteracoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 11,
+            "Width": 105,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 1,
+            "OnChange": "Cmb_AlteracoesChange",
+            "Items.Strings": [
+              "<Todas>",
+              "Efetuadas",
+              "Não Efetuadas"
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 332,
+        "Width": 851,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_VisualizarImpressao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 6,
+            "Width": 127,
+            "Height": 25,
+            "Caption": "&Visualizar Impressão",
+            "TabOrder": 0,
+            "OnClick": "Btn_VisualizarImpressaoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "BitBtn2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 147,
+            "Top": 6,
+            "Width": 127,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "&Retornar",
+            "ModalResult": 2,
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Programacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 710,
+        "Top": 322
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Programacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 598,
+        "Top": 322
+      },
+      "filhos": []
+    }
+  ]
+}

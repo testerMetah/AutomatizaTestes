@@ -1,0 +1,264 @@
+{
+  "classe": "TFrm_RHPA7120",
+  "nome": "Frm_RHPA7120",
+  "herdado": true,
+  "propriedades": {
+    "Left": 560,
+    "Top": 241,
+    "Caption": "Geração de Lista de Acesso Off-line",
+    "ClientHeight": 351,
+    "ClientWidth": 529
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Tag": 1,
+        "Left": 0,
+        "Top": 306,
+        "Width": 529,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_IniciarProcesso",
+          "herdado": false,
+          "propriedades": {
+            "Left": 10,
+            "Top": 10,
+            "Width": 129,
+            "Height": 25,
+            "Action": "Act_GerarLista",
+            "Caption": "Gerar Lista",
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 529,
+        "Height": 306,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_DataBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 24,
+            "Top": 17,
+            "Width": 53,
+            "Height": 13,
+            "Caption": "Data Base:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Btn_DataBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 156,
+            "Top": 12,
+            "Width": 21,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDualList",
+          "nome": "Lst_ListasAcesso",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 12,
+            "Top": 44,
+            "Width": 501,
+            "Height": 249,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Edt_DataBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 86,
+            "Top": 13,
+            "Width": 69,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Edt_DataBaseExit",
+            "OnKeyPress": "Edt_DataBaseKeyPress"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 344,
+        "Top": 132
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "OnUpdate": "ActionListUpdate",
+        "Left": 148,
+        "Top": 124
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_GerarLista",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Gerar Lista",
+            "OnExecute": "Act_GerarListaExecute"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 76,
+        "Top": 100
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosUNIDADE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "UNIDADE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateField",
+          "nome": "Cds_ContratosDATALOTACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATALOTACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateField",
+          "nome": "Cds_ContratosDATABASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATABASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosTIPODIA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPODIA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosESCALA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESCALA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ContratosESCALACOLETOR",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESCALACOLETOR"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_ContratosDISPENSAPONTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DISPENSAPONTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_ContratosAUTORIZACAOHORASEXTRAS",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "AUTORIZACAOHORASEXTRAS"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_ContratosCONVOCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CONVOCACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBooleanField",
+          "nome": "Cds_ContratosSOBREAVISO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SOBREAVISO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "classe": "TFrm_RHFP2300",
+  "nome": "Frm_RHFP2300",
+  "herdado": false,
+  "propriedades": {
+    "Left": 528,
+    "Top": 370,
+    "BorderStyle": "bsNone",
+    "Caption": "Histórico Salarial",
+    "ClientHeight": 359,
+    "ClientWidth": 630,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Contrato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 630,
+        "Height": 45,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 11,
+            "Top": 14,
+            "Width": 43,
+            "Height": 13,
+            "Caption": "Contrato:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 14,
+            "Width": 285,
+            "Height": 13,
+            "Caption": "lbl_Contrato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 446,
+            "Top": 5,
+            "Width": 74,
+            "Height": 13,
+            "Caption": "Tipo de Salário:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 446,
+            "Top": 22,
+            "Width": 45,
+            "Height": 13,
+            "Caption": "Situação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDbTextMeta",
+          "nome": "dbtm_TipoSalario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 522,
+            "Top": 5,
+            "Width": 90,
+            "Height": 13,
+            "DataField": "TIPOSALARIO",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Contratos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 122,
+            "Top": 10,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_ContratoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBText",
+          "nome": "DBTxtSituacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 522,
+            "Top": 22,
+            "Width": 92,
+            "Height": 13,
+            "DataField": "DescricaoSituacao",
+            "DataSource": "dts_Contratos"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 79,
+            "Top": 13,
+            "Width": 22,
+            "Height": 14,
+            "TabOrder": 1,
+            "OnEnter": "edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Contrato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 59,
+            "Top": 10,
+            "Width": 62,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 0,
+            "OnEnter": "edt_ContratoEnter",
+            "OnExit": "edt_ContratoExit",
+            "OnKeyPress": "edt_ContratoKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPageControl",
+      "nome": "pgc_Principal",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 45,
+        "Width": 630,
+        "Height": 314,
+        "Align": "alClient",
+        "Style": "tsButtons",
+        "TabOrder": 1,
+        "OnChange": "pgc_PrincipalChange"
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 97,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "qry_ContratosCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosTIPOSALARIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOSALARIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Admissão",
+            "FieldName": "DATAADMISSAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "qry_ContratosDATARESCISAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATARESCISAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosCARGO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CARGO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosCLASSESALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSESALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosFAIXASALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "FAIXASALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosTIPOCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TIPOCONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_ContratosSALARIOCONTRATUAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIOCONTRATUAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "qry_ContratosDescricaoSituacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoSituacao",
+            "ReadOnly": true,
+            "Visible": false
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_Contratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 270,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_ContratosFolha",
+      "herdado": false,
+      "propriedades": {
+        "Left": 54,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_QuantContratos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 183,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_Navegacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 140,
+        "Top": 112
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Localizar",
+      "herdado": false,
+      "propriedades": {
+        "Left": 226,
+        "Top": 112
+      },
+      "filhos": [
+        {
+          "classe": "TIntegerField",
+          "nome": "IntegerField1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Contrato",
+            "FieldName": "CONTRATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "StringField1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_LocalizarDATAADMISSAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data de Admissão",
+            "FieldName": "DATAADMISSAO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarESTABELECIMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ESTABELECIMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_LocalizarDATATERMINOSUBCONTRATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Término",
+            "FieldName": "DATATERMINOSUBCONTRATO",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_LocalizarSITUACAO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Situação",
+            "FieldName": "SITUACAO"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "classe": "TFrm_RHPEEXCLUESOCIAL01",
+  "nome": "Frm_RHPEEXCLUESOCIAL01",
+  "herdado": false,
+  "propriedades": {
+    "Left": 597,
+    "Top": 456,
+    "BorderStyle": "bsSingle",
+    "Caption": "Exclusão dos eventos eSocial",
+    "ClientHeight": 165,
+    "ClientWidth": 485,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 118,
+        "Width": 485,
+        "Height": 47,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 19,
+            "Top": 10,
+            "Width": 100,
+            "Height": 25,
+            "Caption": "Excluir",
+            "TabOrder": 0,
+            "OnClick": "Btn_ExcluirClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Erros",
+          "herdado": false,
+          "propriedades": {
+            "Left": 127,
+            "Top": 10,
+            "Width": 130,
+            "Height": 25,
+            "Caption": "Ver Inconsistências",
+            "TabOrder": 1,
+            "Visible": false,
+            "OnClick": "Btn_ErrosClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Cabecalho",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 485,
+        "Height": 118,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaTitulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 30,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 116,
+            "Top": 27,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "Btn_EmpresaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_EmpresaDescricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 144,
+            "Top": 31,
+            "Width": 5,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Tag": 1,
+            "Left": 62,
+            "Top": 26,
+            "Width": 52,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnEnter": "Edt_EmpresaEnter",
+            "OnExit": "Edt_EmpresaExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ExcluirSomenteFase2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 62,
+            "Top": 56,
+            "Width": 333,
+            "Height": 17,
+            "Caption": "Excluir somente Eventos da Fase 2 (Eventos não Periódicos)",
+            "TabOrder": 1,
+            "OnClick": "Chk_ExcluirSomenteFase2Click"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCheckBox",
+          "nome": "Chk_ExcluirInformacoesEmpregador",
+          "herdado": false,
+          "propriedades": {
+            "Left": 62,
+            "Top": 80,
+            "Width": 319,
+            "Height": 17,
+            "Caption": "Excluir Evento S-1000 (Informações do Empregador)",
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientDataSet",
+      "nome": "Cds_ErrosValidacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 424,
+        "Top": 42
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoEmpresa",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Empresa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoDescricaoTipoEvento",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescricaoTipoEvento"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo1",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor1",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor1"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo2",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor2",
+          "herdado": false,
+          "propriedades": {
+            "DisplayWidth": 30,
+            "FieldName": "ChaveValor2"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor3",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor3"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveTitulo4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveTitulo4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoChaveValor4",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ChaveValor4"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_ErrosValidacaoErro",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Erro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacao",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacao"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Cds_ErrosValidacaoOrdemValidacaoSequencia",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OrdemValidacaoSequencia"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Cds_Empresa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 420,
+        "Top": 16
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaRAZAOSOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "RAZAOSOCIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_EmpresaATIVADESATIVADA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ATIVADESATIVADA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EmpresaDATACARGAFASE1ESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATACARGAFASE1ESOCIAL",
+            "EditMask": "99/99/9999;1; "
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Cds_EmpresaDATAINICIOFASE1ESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIOFASE1ESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

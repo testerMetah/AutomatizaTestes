@@ -1,0 +1,228 @@
+{
+  "preparado": false,
+  "timeout_segundos": 180,
+  "intervalo_segundos": 5,
+  "estabilidade_segundos": 10,
+  "casos": [
+    {
+      "id": "ferias-incluir",
+      "descricao": "Conferir férias cadastradas no RH e importadas como afastamento",
+      "acao_origem": "Cadastrar férias no RH antes de iniciar este acompanhamento",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "afastamento do período novo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 1,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ferias-excluir",
+      "descricao": "Aguardar remoção de um afastamento que existia antes da exclusão no RH",
+      "acao_origem": "Conferir existência no Acessus, excluir as férias correspondentes no RH e acompanhar",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "afastamento do período excluído",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ocorrencia-antiga",
+      "descricao": "Verificar ausência de uma ocorrência antiga se essa for a regra esperada do serviço",
+      "acao_origem": "Confirmar a regra de corte, cadastrar a ocorrência antiga no RH e acompanhar",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "afastamento antigo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2020-01-01T00:00:00",
+            "2020-01-02T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "na_janela"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ocorrencia-incluir",
+      "descricao": "Conferir afastamento de uma ocorrência cadastrada no RH",
+      "acao_origem": "PREENCHER ação manual, contrato, tipo e período exatos",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "Conferir afastamento de uma ocorrência cadastrada no RH",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 1,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ocorrencia-excluir",
+      "descricao": "Aguardar remoção de ocorrência previamente importada",
+      "acao_origem": "PREENCHER ação manual, contrato, tipo e período exatos",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "Aguardar remoção de ocorrência previamente importada",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ferias-antigas",
+      "descricao": "Verificar ausência de férias antigas se essa for a regra esperada do serviço",
+      "acao_origem": "PREENCHER ação manual, contrato, tipo e período exatos",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "Verificar ausência de férias antigas se essa for a regra esperada do serviço",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2020-01-01T00:00:00",
+            "2020-01-02T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "na_janela"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ferias-recadastro",
+      "descricao": "Recadastro: período antigo ausente e período novo presente",
+      "acao_origem": "PREENCHER exclusão anterior confirmada e recadastro feito no RH com novas datas",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "período antigo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "convergencia"
+        },
+        {
+          "nome": "período novo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-12-01T00:00:00",
+            "2026-12-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 1,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    },
+    {
+      "id": "ocorrencia-recadastro",
+      "descricao": "Recadastro: período antigo ausente e período novo presente",
+      "acao_origem": "PREENCHER exclusão anterior confirmada e recadastro feito no RH com novas datas",
+      "pessoa": "Id interno do Acessus informado em id_pessoa",
+      "verificacoes": [
+        {
+          "nome": "período antigo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-11-01T00:00:00",
+            "2026-11-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 0,
+          "modo": "convergencia"
+        },
+        {
+          "nome": "período novo",
+          "arquivo_sql": "sql/contar_afastamento.sql",
+          "parametros": [
+            {
+              "campo_caso": "id_pessoa"
+            },
+            "2026-12-01T00:00:00",
+            "2026-12-10T23:59:59",
+            "PREENCHER CAUSA ESPERADA"
+          ],
+          "quantidade_esperada": 1,
+          "modo": "convergencia"
+        }
+      ],
+      "preparado": false,
+      "id_pessoa": 0
+    }
+  ]
+}

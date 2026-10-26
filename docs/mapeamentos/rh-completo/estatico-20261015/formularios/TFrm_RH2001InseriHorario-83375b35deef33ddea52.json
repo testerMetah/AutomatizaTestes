@@ -1,0 +1,316 @@
+{
+  "classe": "TFrm_RH2001InseriHorario",
+  "nome": "Frm_RH2001InseriHorario",
+  "herdado": false,
+  "propriedades": {
+    "Left": 472,
+    "Top": 315,
+    "BorderStyle": "bsSingle",
+    "Caption": "Inserir Horário",
+    "ClientHeight": 346,
+    "ClientWidth": 418,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TRHMetalocalizar",
+      "nome": "RHMetalocalizar1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 201,
+        "Top": 174,
+        "Width": 23,
+        "Height": 22,
+        "Hint": "Localizar (Ctrl + L)",
+        "ShowHint": true
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Meio",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 418,
+        "Height": 308,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 42,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 69,
+            "Width": 99,
+            "Height": 13,
+            "Caption": "Descrição Reduzida:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Horario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 15,
+            "Width": 37,
+            "Height": 13,
+            "Caption": "Horário:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_AlocaBatidas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 96,
+            "Width": 95,
+            "Height": 13,
+            "Caption": "Forma de Alocação:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalizaHorario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 272,
+            "Top": 11,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": false
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_HorariosCadastrados",
+          "herdado": false,
+          "propriedades": {
+            "Left": 164,
+            "Top": 15,
+            "Width": 104,
+            "Height": 13,
+            "Caption": "Horários Cadastrados:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Descricao40",
+          "herdado": false,
+          "propriedades": {
+            "Left": 114,
+            "Top": 38,
+            "Width": 289,
+            "Height": 21,
+            "MaxLength": 40,
+            "TabOrder": 1,
+            "OnExit": "Edt_Descricao40Exit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Descricao20",
+          "herdado": false,
+          "propriedades": {
+            "Left": 114,
+            "Top": 65,
+            "Width": 151,
+            "Height": 21,
+            "MaxLength": 20,
+            "TabOrder": 2
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Horario",
+          "herdado": false,
+          "propriedades": {
+            "Left": 114,
+            "Top": 11,
+            "Width": 41,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnKeyPress": "Edt_HorarioKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Grd_HorariosMarcacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 96,
+            "Top": 122,
+            "Width": 252,
+            "Height": 175,
+            "TabStop": false,
+            "DataSource": "Dts_HorariosMarcacoes",
+            "TabOrder": 3,
+            "Columns": [
+              {
+                "FieldName": "CLASSEMARCACAO",
+                "Title.Caption": "Classificação",
+                "Width": 135,
+                "Visible": true
+              },
+              {
+                "FieldName": "HORAMARCACAO",
+                "Title.Caption": "Hora Marcação",
+                "Width": 80,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 308,
+        "Width": 418,
+        "Height": 38,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 12,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Salvar",
+            "Caption": "Salvar",
+            "Default": true,
+            "TabOrder": 0
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Excluir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 117,
+            "Top": 5,
+            "Width": 100,
+            "Height": 25,
+            "Action": "Act_Cancelar",
+            "Caption": "Cancelar",
+            "TabOrder": 1
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_HorariosMarcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 120,
+        "Top": 141
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "Cds_HorariosMarcacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 273,
+        "Top": 135
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HorariosMarcacoesCLASSEMARCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "CLASSEMARCACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Cds_HorariosMarcacoesHORAMARCACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "HORAMARCACAO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 328,
+        "Top": 64
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Salvar",
+            "OnExecute": "Act_SalvarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Act_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Cancelar",
+            "OnExecute": "Act_CancelarExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

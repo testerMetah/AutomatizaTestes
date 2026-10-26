@@ -1,0 +1,465 @@
+{
+  "classe": "TFrm_RHPA8111",
+  "nome": "Frm_RHPA8111",
+  "herdado": false,
+  "propriedades": {
+    "Left": 0,
+    "Top": 0,
+    "Width": 792,
+    "Height": 500,
+    "TabOrder": 0
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Fundo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 792,
+        "Height": 500,
+        "Align": "alClient",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_CampoChave",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 0,
+            "Width": 792,
+            "Height": 41,
+            "Align": "alTop",
+            "BorderStyle": "bsSingle",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_CampoChave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 11,
+                "Width": 88,
+                "Height": 13,
+                "Caption": "Centro de Custo 1:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TRHMetalocalizar",
+              "nome": "Btn_CampoChave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 184,
+                "Top": 8,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Localizar (Ctrl + L)",
+                "ShowHint": true
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DescCampoChave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 212,
+                "Top": 12,
+                "Width": 109,
+                "Height": 13,
+                "Caption": "Lbl_DescCampoChave"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_CampoChave",
+              "herdado": false,
+              "propriedades": {
+                "Left": 105,
+                "Top": 8,
+                "Width": 78,
+                "Height": 21,
+                "MaxLength": 8,
+                "TabOrder": 0,
+                "OnExit": "Edt_CampoChaveExit",
+                "OnKeyPress": "Edt_CampoChaveKeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPageControl",
+          "nome": "Pgc_ResultadoConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 41,
+            "Width": 792,
+            "Height": 395,
+            "ActivePage": "Tab_Grafico",
+            "Align": "alClient",
+            "TabOrder": 1,
+            "OnChange": "Pgc_ResultadoConsultaChange"
+          },
+          "filhos": [
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Grafico",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Gráfico"
+              },
+              "filhos": [
+                {
+                  "classe": "TChart",
+                  "nome": "Cht_Motivos",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 784,
+                    "Height": 367,
+                    "Align": "alClient",
+                    "TabOrder": 0
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tab_Tabela",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tabela Sintética",
+                "ImageIndex": 1
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_ApropriacaoHoras",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 784,
+                    "Height": 367,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ApropriacaoHoras",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "MOTIVOFA",
+                        "Title.Caption": "Motivo",
+                        "Width": 68,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "DESCRICAO20",
+                        "Title.Caption": "Descrição",
+                        "Width": 215,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TOTALHE",
+                        "Title.Caption": "Horas",
+                        "Width": 83,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "classe": "TTabSheet",
+              "nome": "Tbs_TabelaAnalitica",
+              "herdado": false,
+              "propriedades": {
+                "Caption": "Tabela Analítica",
+                "ImageIndex": 2
+              },
+              "filhos": [
+                {
+                  "classe": "TDBMetaGrid",
+                  "nome": "Dbg_ApropriacaoHorasAnalitica",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 34,
+                    "Width": 784,
+                    "Height": 333,
+                    "Align": "alClient",
+                    "DataSource": "Dts_ContratosApropriacao",
+                    "TabOrder": 0,
+                    "Columns": [
+                      {
+                        "FieldName": "UNIDADE",
+                        "Title.Caption": "Unidade",
+                        "Width": 51,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "CONTRATO",
+                        "Title.Caption": "Contrato",
+                        "Width": 51,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "NOME",
+                        "Title.Caption": "Nome",
+                        "Width": 289,
+                        "Visible": true
+                      },
+                      {
+                        "FieldName": "TOTALHE",
+                        "Title.Caption": "Horas",
+                        "Width": 83,
+                        "Visible": true
+                      }
+                    ]
+                  },
+                  "filhos": []
+                },
+                {
+                  "classe": "TPanel",
+                  "nome": "Panel1",
+                  "herdado": false,
+                  "propriedades": {
+                    "Left": 0,
+                    "Top": 0,
+                    "Width": 784,
+                    "Height": 34,
+                    "Align": "alTop",
+                    "TabOrder": 1
+                  },
+                  "filhos": [
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label1",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 5,
+                        "Top": 9,
+                        "Width": 35,
+                        "Height": 13,
+                        "Caption": "Motivo:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TLabel",
+                      "nome": "Label2",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 251,
+                        "Top": 9,
+                        "Width": 56,
+                        "Height": 13,
+                        "Caption": "Ordenação:"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Motivo",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 45,
+                        "Top": 6,
+                        "Width": 185,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 0,
+                        "OnChange": "Cmb_MotivoChange"
+                      },
+                      "filhos": []
+                    },
+                    {
+                      "classe": "TComboMeta",
+                      "nome": "Cmb_Ordenacao",
+                      "herdado": false,
+                      "propriedades": {
+                        "Left": 311,
+                        "Top": 6,
+                        "Width": 185,
+                        "Height": 21,
+                        "Style": "csDropDownList",
+                        "TabOrder": 1,
+                        "OnChange": "Cmb_OrdenacaoChange",
+                        "Items.Strings": [
+                          "Unidade/Contrato",
+                          "Nome da Pessoa",
+                          "Horas (Ascendente)",
+                          "Horas (Descendente)"
+                        ]
+                      },
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_GraficoConfig",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 436,
+            "Width": 792,
+            "Height": 33,
+            "Align": "alBottom",
+            "TabOrder": 2,
+            "OnEnter": "Pnl_GraficoConfigEnter"
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_FormatoGrafico",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 10,
+                "Width": 93,
+                "Height": 13,
+                "Caption": "Formato do Gráfico:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboBox",
+              "nome": "Cmb_FormatoGrafico",
+              "herdado": false,
+              "propriedades": {
+                "Left": 108,
+                "Top": 7,
+                "Width": 145,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 0,
+                "OnChange": "Cmb_FormatoGraficoChange",
+                "Items.Strings": [
+                  "Barras",
+                  "Pizza"
+                ]
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_ExibirValoresZerados",
+              "herdado": false,
+              "propriedades": {
+                "Left": 329,
+                "Top": 10,
+                "Width": 115,
+                "Height": 17,
+                "Caption": "Exibir Itens Zerados",
+                "TabOrder": 1,
+                "OnClick": "Chk_ExibirValoresZeradosClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TCheckBox",
+              "nome": "Chk_SemMotivos",
+              "herdado": false,
+              "propriedades": {
+                "Left": 493,
+                "Top": 10,
+                "Width": 134,
+                "Height": 17,
+                "Caption": "Exibir Itens Sem Motivo",
+                "TabOrder": 2,
+                "OnClick": "Chk_ExibirValoresZeradosClick"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Pnl_FecharConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 0,
+            "Top": 469,
+            "Width": 792,
+            "Height": 31,
+            "Align": "alBottom",
+            "TabOrder": 3
+          },
+          "filhos": [
+            {
+              "classe": "TBitBtn",
+              "nome": "Btn_FecharConsulta",
+              "herdado": false,
+              "propriedades": {
+                "Left": 12,
+                "Top": 2,
+                "Width": 108,
+                "Height": 26,
+                "Caption": "&Fechar Consulta",
+                "TabOrder": 0,
+                "OnClick": "Btn_FecharConsultaClick"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ApropriacaoHoras",
+      "herdado": false,
+      "propriedades": {
+        "Left": 348,
+        "Top": 124
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_MotApropriacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 352,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Cds_ContratosApropriacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 200
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_ContratosApropriacao",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 124
+      },
+      "filhos": []
+    }
+  ]
+}

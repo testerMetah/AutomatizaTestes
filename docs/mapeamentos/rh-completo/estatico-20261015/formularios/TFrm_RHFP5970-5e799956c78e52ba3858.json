@@ -1,0 +1,231 @@
+{
+  "classe": "TFrm_RHFP5970",
+  "nome": "Frm_RHFP5970",
+  "herdado": true,
+  "propriedades": {
+    "Left": 461,
+    "Top": 298,
+    "Caption": "Consulta Pessoas",
+    "ClientHeight": 473,
+    "ClientWidth": 784
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Pessoa",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 784,
+        "Height": 47,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Titulo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 402,
+            "Top": 15,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_Pessoas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 750,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 15,
+            "Width": 62,
+            "Height": 13,
+            "Caption": "Consulta por:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Campo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 459,
+            "Top": 12,
+            "Width": 290,
+            "Height": 21,
+            "TabOrder": 1,
+            "OnChange": "Edt_CampoChange",
+            "OnExit": "Edt_CampoExit",
+            "OnKeyPress": "Edt_CampoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TComboMeta",
+          "nome": "Cbm_TipoConsulta",
+          "herdado": false,
+          "propriedades": {
+            "Left": 82,
+            "Top": 12,
+            "Width": 307,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "TabOrder": 0,
+            "OnChange": "Cbm_TipoConsultaChange",
+            "Items.Strings": [
+              "Nome da Pessoa"
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 47,
+        "Width": 784,
+        "Height": 426,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "Dbg_Pessoas",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 776,
+            "Height": 418,
+            "Align": "alClient",
+            "DataSource": "Dts_Pessoas",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "EMPRESA",
+                "Title.Caption": "Empresa",
+                "Width": 45,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCEMP",
+                "Title.Caption": "Descrição",
+                "Width": 124,
+                "Visible": true
+              },
+              {
+                "FieldName": "PESSOA",
+                "Title.Caption": "Pessoa",
+                "Visible": true
+              },
+              {
+                "FieldName": "CPF",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "UNIDADE",
+                "Title.Caption": "Unidade",
+                "Width": 44,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCUNI",
+                "Title.Caption": "Descrição",
+                "Width": 124,
+                "Visible": true
+              },
+              {
+                "FieldName": "CONTRATO1",
+                "Title.Caption": "Contrato",
+                "Width": 70,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAADMISSAO",
+                "Title.Caption": "Admissão",
+                "Visible": true
+              },
+              {
+                "FieldName": "DescricaoSit",
+                "Title.Caption": "Situação",
+                "Visible": true
+              },
+              {
+                "FieldName": "DataInicioSubContrato",
+                "Title.Caption": "Início na Função",
+                "Width": 95,
+                "Visible": true
+              },
+              {
+                "FieldName": "DataTerminoSubContrato",
+                "Title.Caption": "Término na Função",
+                "Width": 95,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATARESCISAO",
+                "Title.Caption": "Rescisão",
+                "Visible": true
+              },
+              {
+                "FieldName": "Documento",
+                "Title.Caption": "Doc. s/conteúdo",
+                "Visible": false
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 422,
+        "Top": 148
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 368,
+        "Top": 148
+      },
+      "filhos": []
+    }
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "classe": "TFrm_RHRS1023",
+  "nome": "Frm_RHRS1023",
+  "herdado": true,
+  "propriedades": {
+    "Left": 434,
+    "Top": 294,
+    "Caption": "Cadastro de Empresas",
+    "ClientHeight": 376,
+    "ClientWidth": 691,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 691,
+        "Height": 335,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Empresa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 664,
+            "Height": 183,
+            "Caption": "Informações da Empresa ",
+            "TabOrder": 0
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NroSequencia",
+              "herdado": false,
+              "propriedades": {
+                "Left": 438,
+                "Top": 46,
+                "Width": 3,
+                "Height": 13,
+                "Caption": " ",
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_EmpAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 22,
+                "Width": 44,
+                "Height": 13,
+                "Caption": "Empresa:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label50",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 47,
+                "Width": 102,
+                "Height": 13,
+                "Caption": "Admissão (mm/aaaa):"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_DataRescisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 265,
+                "Top": 47,
+                "Width": 101,
+                "Height": 13,
+                "Caption": "Rescisão (mm/aaaa):"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label55",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 73,
+                "Width": 67,
+                "Height": 13,
+                "Caption": "Último Salário:"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label58",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 92,
+                "Width": 245,
+                "Height": 13,
+                "Caption": "Atividades / Projetos Desenvolvidos / Observações"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataRescisao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 373,
+                "Top": 42,
+                "Width": 53,
+                "Height": 21,
+                "EditMask": "!99/9999;1; ",
+                "MaxLength": 7,
+                "TabOrder": 4,
+                "OnEnter": "Msk_DataRescisaoEnter",
+                "OnExit": "Msk_DataAdmissaoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "Msk_DataAdmissao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 122,
+                "Top": 42,
+                "Width": 55,
+                "Height": 21,
+                "EditMask": "!99/9999;1; ",
+                "MaxLength": 7,
+                "TabOrder": 3,
+                "OnEnter": "Msk_DataAdmissaoEnter",
+                "OnExit": "Msk_DataAdmissaoExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dba_EmpresaAnterior",
+              "herdado": false,
+              "propriedades": {
+                "Left": 122,
+                "Top": 17,
+                "Width": 304,
+                "Height": 21,
+                "DataField": "EMPRESAANTERIOR",
+                "DataSource": "Dts_Empresas",
+                "MaxLength": 40,
+                "TabOrder": 0,
+                "OnEnter": "Dba_EmpresaAnteriorEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dba_EstaTrabalhando",
+              "herdado": false,
+              "propriedades": {
+                "Left": 559,
+                "Top": 19,
+                "Width": 96,
+                "Height": 17,
+                "Caption": "Emprego Atual?",
+                "DataField": "ESTATRABALHANDO",
+                "DataSource": "Dts_Empresas",
+                "TabOrder": 2,
+                "OnClick": "Dba_EstaTrabalhandoClick",
+                "OnEnter": "Dba_EstaTrabalhandoEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "Dba_SalarioFinal",
+              "herdado": false,
+              "propriedades": {
+                "Left": 122,
+                "Top": 67,
+                "Width": 90,
+                "Height": 21,
+                "DataField": "SALARIOFINAL",
+                "DataSource": "Dts_Empresas",
+                "MaxLength": 15,
+                "TabOrder": 5,
+                "OnEnter": "Dba_SalarioFinalEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Dba_Observacoes",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 109,
+                "Width": 612,
+                "Height": 62,
+                "DataField": "OBSERVACOES",
+                "DataSource": "Dts_Empresas",
+                "MaxLength": 800,
+                "TabOrder": 6,
+                "OnEnter": "Dba_ObservacoesEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBCheckBox",
+              "nome": "Dba_PrimeiroEmprego",
+              "herdado": false,
+              "propriedades": {
+                "Left": 436,
+                "Top": 19,
+                "Width": 109,
+                "Height": 17,
+                "Caption": "Primeiro Emprego?",
+                "DataField": "PRIMEIROEMPREGO",
+                "DataSource": "Dts_Empresas",
+                "TabOrder": 1,
+                "OnEnter": "Dba_PrimeiroEmpregoEnter"
+              },
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "classe": "TGroupBox",
+          "nome": "Grb_Experiencias",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 204,
+            "Width": 664,
+            "Height": 119,
+            "Caption": "Informe sua experiência profissional na empresa ",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_TituloAreaAtuacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 20,
+                "Width": 80,
+                "Height": 13,
+                "Caption": "Área de Atuação"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_CargoFuncao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 20,
+                "Width": 69,
+                "Height": 13,
+                "Caption": "Cargo/Função"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Tempo",
+              "herdado": false,
+              "propriedades": {
+                "Left": 452,
+                "Top": 20,
+                "Width": 33,
+                "Height": 13,
+                "Caption": "Tempo"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Anos1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 507,
+                "Top": 41,
+                "Width": 24,
+                "Height": 13,
+                "Caption": "Anos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Meses1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 595,
+                "Top": 40,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Meses"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Anos2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 507,
+                "Top": 67,
+                "Width": 24,
+                "Height": 13,
+                "Caption": "Anos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Meses2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 595,
+                "Top": 66,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Meses"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Anos3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 507,
+                "Top": 95,
+                "Width": 24,
+                "Height": 13,
+                "Caption": "Anos"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_Meses3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 595,
+                "Top": 94,
+                "Width": 31,
+                "Height": 13,
+                "Caption": "Meses"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_OutraExp1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 423,
+                "Top": 37,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Outra Experiência",
+                "ShowHint": true,
+                "OnClick": "Btn_OutraExp1Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_OutraExp2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 423,
+                "Top": 62,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Outra Experiência",
+                "ShowHint": true,
+                "OnClick": "Btn_OutraExp2Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_OutraExp3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 423,
+                "Top": 87,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Outra Experiência",
+                "ShowHint": true,
+                "OnClick": "Btn_OutraExp3Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NroOrdem1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 41,
+                "Width": 3,
+                "Height": 13,
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NroOrdem2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 3,
+                "Top": 66,
+                "Width": 3,
+                "Height": 13,
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Lbl_NroOrdem3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 4,
+                "Top": 90,
+                "Width": 3,
+                "Height": 13,
+                "Visible": false
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Limpar1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 634,
+                "Top": 37,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Limpar Linha",
+                "ShowHint": true,
+                "OnClick": "Btn_Limpar1Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Limpar2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 634,
+                "Top": 62,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Limpar Linha",
+                "ShowHint": true,
+                "OnClick": "Btn_Limpar2Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "Btn_Limpar3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 634,
+                "Top": 87,
+                "Width": 23,
+                "Height": 22,
+                "Hint": "Limpar Linha",
+                "ShowHint": true,
+                "OnClick": "Btn_Limpar3Click"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Outra1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 37,
+                "Width": 235,
+                "Height": 21,
+                "MaxLength": 40,
+                "TabOrder": 2
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_CargoFuncao1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 37,
+                "Width": 235,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 1,
+                "OnEnter": "Cbm_CargoFuncao1Enter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Outra3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 87,
+                "Width": 235,
+                "Height": 21,
+                "MaxLength": 40,
+                "TabOrder": 12
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Outra2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 62,
+                "Width": 235,
+                "Height": 21,
+                "MaxLength": 40,
+                "TabOrder": 7
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_AreaAtuacao1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 37,
+                "Width": 167,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "ShowHint": true,
+                "TabOrder": 0,
+                "OnEnter": "Cbm_AreaAtuacao1Enter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_AreaAtuacao2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 62,
+                "Width": 167,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "ShowHint": true,
+                "TabOrder": 5,
+                "OnEnter": "Cbm_AreaAtuacao1Enter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_AreaAtuacao3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 15,
+                "Top": 87,
+                "Width": 167,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "ShowHint": true,
+                "TabOrder": 10,
+                "OnEnter": "Cbm_AreaAtuacao1Enter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_CargoFuncao2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 62,
+                "Width": 235,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 6
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TComboMeta",
+              "nome": "Cbm_CargoFuncao3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 187,
+                "Top": 87,
+                "Width": 235,
+                "Height": 21,
+                "Style": "csDropDownList",
+                "TabOrder": 11
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Anos1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 452,
+                "Top": 36,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 3,
+                "OnEnter": "Edt_Anos1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Anos2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 452,
+                "Top": 62,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 8,
+                "OnEnter": "Edt_Anos1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Anos3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 452,
+                "Top": 87,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 13,
+                "OnEnter": "Edt_Anos1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Meses1",
+              "herdado": false,
+              "propriedades": {
+                "Left": 541,
+                "Top": 36,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 4,
+                "OnEnter": "Edt_Meses1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Meses2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 541,
+                "Top": 62,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 9,
+                "OnEnter": "Edt_Meses1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Meses3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 541,
+                "Top": 87,
+                "Width": 50,
+                "Height": 21,
+                "MaxLength": 2,
+                "TabOrder": 14,
+                "OnEnter": "Edt_Meses1Enter",
+                "OnKeyPress": "Edt_Anos1KeyPress"
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 335,
+        "Width": 691,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_OK",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Caption": "&Confirmar",
+            "TabOrder": 0,
+            "OnClick": "Btn_OKClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 108,
+            "Top": 7,
+            "Width": 90,
+            "Height": 25,
+            "Cancel": true,
+            "Caption": "Cancelar",
+            "TabOrder": 1,
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 622,
+        "Top": 76
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Empresas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 578,
+        "Top": 76
+      },
+      "filhos": []
+    }
+  ]
+}

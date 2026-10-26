@@ -1,0 +1,193 @@
+{
+  "classe": "TFrm_RHPR182601",
+  "nome": "Frm_RHPR182601",
+  "herdado": false,
+  "propriedades": {
+    "Left": 150,
+    "Top": 180,
+    "BorderStyle": "bsSingle",
+    "Caption": "Relação de Líquidos para Pagamento por Depósito",
+    "ClientHeight": 166,
+    "ClientWidth": 484,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 484,
+        "Height": 127,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 29,
+            "Top": 76,
+            "Width": 322,
+            "Height": 13,
+            "Caption": "Confirme a Data do Crédito em Conta Corrente para os Funcionários:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 29,
+            "Top": 35,
+            "Width": 268,
+            "Height": 13,
+            "Caption": "Confirme a Data do Débito da Conta Salário da Empresa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataDebito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 429,
+            "Top": 31,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "Mtd_DataCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 429,
+            "Top": 72,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataCredito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 358,
+            "Top": 72,
+            "Width": 70,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 1,
+            "OnExit": "Msk_DataCreditoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_DataDebito",
+          "herdado": false,
+          "propriedades": {
+            "Left": 358,
+            "Top": 31,
+            "Width": 70,
+            "Height": 21,
+            "EditMask": "99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnExit": "Msk_DataDebitoExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 127,
+        "Width": 484,
+        "Height": 39,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Imprimir",
+          "herdado": false,
+          "propriedades": {
+            "Left": 25,
+            "Top": 5,
+            "Width": 115,
+            "Height": 25,
+            "Caption": "Iniciar Impressão",
+            "Default": true,
+            "TabOrder": 0,
+            "OnClick": "Btn_ImprimirClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_FolhasCadastradas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 386,
+        "Top": 108
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_FolhasCadastradasDATAPAGAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAPAGAMENTO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList",
+      "herdado": false,
+      "propriedades": {
+        "Left": 20,
+        "Top": 11
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Act_Data",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Act_Data",
+            "ShortCut": 16452,
+            "OnExecute": "Act_DataExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

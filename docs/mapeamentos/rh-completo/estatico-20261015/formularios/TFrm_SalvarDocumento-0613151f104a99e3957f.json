@@ -1,0 +1,289 @@
+{
+  "classe": "TFrm_SalvarDocumento",
+  "nome": "Frm_SalvarDocumento",
+  "herdado": false,
+  "propriedades": {
+    "Left": 448,
+    "Top": 283,
+    "BorderStyle": "bsSingle",
+    "Caption": "Salvar Arquivo",
+    "ClientHeight": 276,
+    "ClientWidth": 527,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Geral",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 68,
+        "Width": 527,
+        "Height": 161,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 12,
+            "Width": 65,
+            "Height": 13,
+            "Caption": "Local Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "Btn_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 76,
+            "Top": 29,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 104,
+            "Top": 33,
+            "Width": 401,
+            "Height": 13
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 57,
+            "Width": 67,
+            "Height": 13,
+            "Caption": "Nome Arquivo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Arquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 488,
+            "Top": 73,
+            "Width": 22,
+            "Height": 22,
+            "Hint": "Selecionar Arquivo... (Crtl+ A)",
+            "ShowHint": true,
+            "OnClick": "Btn_ArquivoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 100,
+            "Width": 63,
+            "Height": 13,
+            "Caption": "Observações"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_LocalArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 29,
+            "Width": 60,
+            "Height": 21,
+            "DataField": "LOCALARQUIVO",
+            "DataSource": "Dts_Arquivos",
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnExit": "Dbe_LocalArquivoExit",
+            "OnKeyPress": "Dbe_LocalArquivoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_NomeArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 74,
+            "Width": 467,
+            "Height": 21,
+            "DataField": "NOMEARQUIVO",
+            "DataSource": "Dts_Arquivos",
+            "MaxLength": 250,
+            "TabOrder": 1,
+            "OnEnter": "Dbe_NomeArquivoEnter",
+            "OnExit": "Dbe_NomeArquivoExit",
+            "OnKeyPress": "Dbe_LocalArquivoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMemo",
+          "nome": "DbmObservacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 116,
+            "Width": 495,
+            "Height": 33,
+            "DataField": "OBSERVACOES",
+            "DataSource": "Dts_Arquivos",
+            "MaxLength": 800,
+            "TabOrder": 2
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Chave",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 527,
+        "Height": 68,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 229,
+        "Width": 527,
+        "Height": 47,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Cancelar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 105,
+            "Top": 10,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Cancelar",
+            "OnClick": "Btn_CancelarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Salvar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 10,
+            "Width": 75,
+            "Height": 25,
+            "Caption": "&Salvar",
+            "ModalResult": 1,
+            "TabOrder": 0
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TOpenDialog",
+      "nome": "OpenDialog",
+      "herdado": false,
+      "propriedades": {
+        "Left": 408,
+        "Top": 80
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Arquivos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 464,
+        "Top": 72
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 296,
+        "Top": 96
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "Localizar",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Localizar",
+            "ShortCut": 16460,
+            "OnExecute": "LocalizarExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "Tab",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "Tab",
+            "ShortCut": 9,
+            "OnExecute": "TabExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "SelecionarArquivo",
+          "herdado": false,
+          "propriedades": {
+            "Caption": "SelecionarArquivo",
+            "ShortCut": 16449,
+            "OnExecute": "SelecionarArquivoExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "classe": "TFrm_RHFP0580",
+  "nome": "Frm_RHFP0580",
+  "herdado": false,
+  "propriedades": {
+    "Left": 526,
+    "Top": 338,
+    "BorderStyle": "bsSingle",
+    "Caption": "Pisos Salariais dos Sindicatos",
+    "ClientHeight": 365,
+    "ClientWidth": 670,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_AnoMesBase",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 670,
+        "Height": 39,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label6",
+          "herdado": false,
+          "propriedades": {
+            "Left": 31,
+            "Top": 10,
+            "Width": 73,
+            "Height": 13,
+            "Caption": "Mês/Ano-base:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "Msk_MesAnoBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 117,
+            "Top": 6,
+            "Width": 51,
+            "Height": 21,
+            "EditMask": "99/9999;1; ",
+            "MaxLength": 7,
+            "TabOrder": 0,
+            "OnEnter": "Msk_MesAnoBaseEnter",
+            "OnExit": "Msk_MesAnoBaseExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TUpDown",
+          "nome": "Ups_Troca",
+          "herdado": false,
+          "propriedades": {
+            "Left": 168,
+            "Top": 5,
+            "Width": 16,
+            "Height": 24,
+            "TabOrder": 1,
+            "OnClick": "Ups_TrocaClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 39,
+        "Width": 670,
+        "Height": 326,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 483,
+            "Top": 268,
+            "Width": 57,
+            "Height": 13,
+            "Caption": "Piso Salarial"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label5",
+          "herdado": false,
+          "propriedades": {
+            "Left": 564,
+            "Top": 268,
+            "Width": 83,
+            "Height": 13,
+            "Caption": "Salário Normativo"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 113,
+            "Top": 268,
+            "Width": 44,
+            "Height": 13,
+            "Caption": "Sindicato"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 177,
+            "Top": 268,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 591,
+            "Top": 286,
+            "Width": 21,
+            "Height": 15,
+            "TabOrder": 3,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "DBE_PisoSalarial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 469,
+            "Top": 283,
+            "Width": 85,
+            "Height": 21,
+            "DataField": "PISOSALARIAL",
+            "DataSource": "Dts_PisosSalariais",
+            "TabOrder": 1,
+            "OnEnter": "DBE_PisoSalarialEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "DBE_SalarioNormativo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 563,
+            "Top": 283,
+            "Width": 88,
+            "Height": 21,
+            "DataField": "SALARIONORMATIVO",
+            "DataSource": "Dts_PisosSalariais",
+            "TabOrder": 2,
+            "OnEnter": "DBE_PisoSalarialEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Lbl_DescricaoSindicato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 177,
+            "Top": 283,
+            "Width": 285,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "Lbl_DescricaoSindicato",
+            "TabOrder": 6
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStaticText",
+          "nome": "Stc_Sindicato",
+          "herdado": false,
+          "propriedades": {
+            "Left": 113,
+            "Top": 283,
+            "Width": 58,
+            "Height": 21,
+            "BorderStyle": "sbsSunken",
+            "Caption": "Stc_Sindicato",
+            "TabOrder": 5
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 100,
+            "Top": 10,
+            "Width": 565,
+            "Height": 256,
+            "DataSource": "Dts_SindicatosGrid",
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "SINDICATO",
+                "Width": 52,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO40",
+                "Width": 278,
+                "Visible": true
+              },
+              {
+                "FieldName": "PISOSALARIAL_CALC",
+                "Width": 99,
+                "Visible": true
+              },
+              {
+                "FieldName": "SALARIONORMATIVO_CALC",
+                "Width": 100,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid_AnoMesBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 4,
+            "Top": 10,
+            "Width": 90,
+            "Height": 309,
+            "TabStop": false,
+            "DataSource": "Dts_MesAno",
+            "TabOrder": 4,
+            "Columns": [
+              {
+                "FieldName": "ANOMESBASE",
+                "Title.Caption": "Mês/Ano",
+                "Width": 60,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Sindicatos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 262,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição do Sindicato",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_PisosSalariais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 530,
+        "Top": 166
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PisosSalariais",
+      "herdado": false,
+      "propriedades": {
+        "Left": 218,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PisosSalariaisSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_PisosSalariaisANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Ano/Mês-base",
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_PisosSalariaisPISOSALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Piso Salarial",
+            "FieldName": "PISOSALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "Qry_PisosSalariaisSALARIONORMATIVO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Salário Normativo",
+            "FieldName": "SALARIONORMATIVO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PisosSalariaisDESC_SINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESC_SINDICATO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_SalarioAnterior",
+      "herdado": false,
+      "propriedades": {
+        "Left": 396,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "qry_SalarioAnteriorSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_SalarioAnteriorPISOSALARIAL",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PISOSALARIAL"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBCDField",
+          "nome": "qry_SalarioAnteriorSALARIONORMATIVO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SALARIONORMATIVO"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_MesAno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 39,
+        "Top": 138
+      },
+      "filhos": [
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_MesAnoANOMESBASE",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ANOMESBASE"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_DescSindicato",
+      "herdado": false,
+      "propriedades": {
+        "Left": 440,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescSindicatoSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescSindicatoDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_SindicatosGrid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 307,
+        "Top": 166
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosGridSINDICATO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Sindicato",
+            "FieldName": "SINDICATO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_SindicatosGridDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_SindicatosGridPISOSALARIAL_CALC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Piso Salarial",
+            "FieldName": "PISOSALARIAL_CALC"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TCurrencyField",
+          "nome": "Qry_SindicatosGridSALARIONORMATIVO_CALC",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Salário Normativo",
+            "FieldName": "SALARIONORMATIVO_CALC"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_SindicatosGrid",
+      "herdado": false,
+      "propriedades": {
+        "Left": 485,
+        "Top": 166
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "qry_AtuMesesPosteriores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 351,
+        "Top": 166
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_MesAno",
+      "herdado": false,
+      "propriedades": {
+        "Left": 39,
+        "Top": 174
+      },
+      "filhos": []
+    }
+  ]
+}

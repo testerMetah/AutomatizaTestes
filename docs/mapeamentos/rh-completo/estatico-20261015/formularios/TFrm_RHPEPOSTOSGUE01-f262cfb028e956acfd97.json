@@ -1,0 +1,415 @@
+{
+  "classe": "TFrm_RHPEPOSTOSGUE01",
+  "nome": "Frm_RHPEPOSTOSGUE01",
+  "herdado": true,
+  "propriedades": {
+    "Left": 280,
+    "Top": 154,
+    "Caption": "Transferência de Postos de Trabalho - GUERRA",
+    "ClientHeight": 483,
+    "ClientWidth": 542,
+    "FormStyle": "fsNormal",
+    "Visible": false
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 542,
+        "Height": 382,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 16,
+            "Width": 197,
+            "Height": 13,
+            "Caption": "Data-base para as Transferências:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaData",
+          "nome": "md_DataBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 293,
+            "Top": 12,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar Data(Ctrl + D)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 41,
+            "Width": 295,
+            "Height": 13,
+            "Caption": "Relação de Postos de Trabalho para Transferência:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 332,
+            "Width": 116,
+            "Height": 13,
+            "Caption": "Novo Posto de Trabalho"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label4",
+          "herdado": false,
+          "propriedades": {
+            "Left": 246,
+            "Top": 333,
+            "Width": 127,
+            "Height": 13,
+            "Caption": "Postos a serem Importados"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TRHMetalocalizar",
+          "nome": "btn_PesqPostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 61,
+            "Top": 348,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBeveledLabel",
+          "nome": "bvld_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 85,
+            "Top": 348,
+            "Width": 157,
+            "Height": 21
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_AdicionaPostos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 501,
+            "Top": 348,
+            "Width": 23,
+            "Height": 22,
+            "TabOrder": 4,
+            "OnClick": "btn_AdicionaPostosClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 364,
+            "Top": 348,
+            "Width": 9,
+            "Height": 21,
+            "TabOrder": 5,
+            "OnEnter": "edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMaskEdit",
+          "nome": "me_DataBase",
+          "herdado": false,
+          "propriedades": {
+            "Left": 217,
+            "Top": 12,
+            "Width": 75,
+            "Height": 21,
+            "EditMask": "!99/99/9999;1; ",
+            "MaxLength": 10,
+            "TabOrder": 0,
+            "OnEnter": "me_DataBaseEnter",
+            "OnExit": "me_DataBaseExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "dbgr_Postos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 56,
+            "Width": 509,
+            "Height": 272,
+            "TabStop": false,
+            "DataSource": "ds_Postos",
+            "ReadOnly": true,
+            "TabOrder": 1,
+            "OnEnter": "dbgr_PostosEnter",
+            "Columns": [
+              {
+                "FieldName": "DescNovoPosto",
+                "Title.Caption": "Novo Posto de Trabalho",
+                "Width": 210,
+                "Visible": true
+              },
+              {
+                "FieldName": "PostosOrigem",
+                "Title.Caption": "Postos a serem Importados",
+                "Width": 268,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "edt_PostoTrabalho",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 348,
+            "Width": 45,
+            "Height": 21,
+            "MaxLength": 8,
+            "TabOrder": 2,
+            "OnExit": "edt_PostoTrabalhoExit",
+            "OnKeyPress": "edt_PostoTrabalhoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "edt_lstPostos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 246,
+            "Top": 348,
+            "Width": 254,
+            "Height": 21,
+            "DataField": "PostosOrigem",
+            "DataSource": "ds_Postos",
+            "TabOrder": 3,
+            "OnEnter": "edt_lstPostosEnter",
+            "OnExit": "edt_lstPostosExit"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 438,
+        "Width": 542,
+        "Height": 45,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1,
+        "OnEnter": "Panel2Enter"
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Iniciar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 15,
+            "Top": 8,
+            "Width": 110,
+            "Height": 25,
+            "Caption": "Iniciar Processo",
+            "TabOrder": 0,
+            "OnClick": "btn_IniciarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Rel",
+          "herdado": false,
+          "propriedades": {
+            "Left": 130,
+            "Top": 8,
+            "Width": 275,
+            "Height": 25,
+            "Caption": "Relatório das Transferências de Posto de Trabalho",
+            "TabOrder": 1,
+            "OnClick": "btn_RelClick"
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 1
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 382,
+        "Width": 542,
+        "Height": 56,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TGauge",
+          "nome": "gg_Parcial",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 17,
+            "Width": 521,
+            "Height": 15
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "lbl_Atualizando",
+          "herdado": false,
+          "propriedades": {
+            "Left": 9,
+            "Top": 3,
+            "Width": 58,
+            "Height": 13,
+            "Caption": "Atualizando:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TGauge",
+          "nome": "gg_total",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 33,
+            "Width": 521,
+            "Height": 15
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 2
+    },
+    {
+      "classe": "TClientDataSet",
+      "nome": "cds_Postos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 324,
+        "Top": 12
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "cds_PostosNovoPosto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "NovoPosto"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cds_PostosPostosOrigem",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PostosOrigem"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "cds_PostosDescNovoPosto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DescNovoPosto"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "ds_Postos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 352,
+        "Top": 12
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TActionList",
+      "nome": "ActionList1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 276,
+        "Top": 84
+      },
+      "filhos": [
+        {
+          "classe": "TAction",
+          "nome": "acData",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16452,
+            "OnExecute": "acDataExecute"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TAction",
+          "nome": "acPesquisa",
+          "herdado": false,
+          "propriedades": {
+            "ShortCut": 16460,
+            "OnExecute": "acPesquisaExecute"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

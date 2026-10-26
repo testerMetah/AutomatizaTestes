@@ -1,0 +1,302 @@
+{
+  "classe": "TFrm_RHTR1130",
+  "nome": "Frm_RHTR1130",
+  "herdado": false,
+  "propriedades": {
+    "Left": 192,
+    "Top": 107,
+    "BorderStyle": "bsSingle",
+    "Caption": "Grupos de Treinamento",
+    "ClientHeight": 321,
+    "ClientWidth": 370,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 370,
+        "Height": 73,
+        "Align": "alTop",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0,
+        "OnExit": "Panel1Exit"
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 12,
+            "Width": 32,
+            "Height": 13,
+            "Caption": "Grupo:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 44,
+            "Width": 51,
+            "Height": 13,
+            "Caption": "Descrição:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "btn_Grupo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 115,
+            "Top": 7,
+            "Width": 23,
+            "Height": 23,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true,
+            "OnClick": "btn_GrupoClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Grupo",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 8,
+            "Width": 40,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 0,
+            "OnChange": "Edt_GrupoChange",
+            "OnEnter": "Edt_GrupoEnter",
+            "OnExit": "Edt_GrupoExit",
+            "OnKeyPress": "Edt_GrupoKeyPress"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 74,
+            "Top": 40,
+            "Width": 260,
+            "Height": 21,
+            "DataField": "DESCRICAO40",
+            "DataSource": "Dts_Grupo",
+            "TabOrder": 1,
+            "OnExit": "Dbe_DescricaoExit"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 73,
+        "Width": 370,
+        "Height": 205,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 16,
+            "Width": 340,
+            "Height": 169,
+            "TabStop": false,
+            "DataSource": "Dts_Pessoas",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "PESSOA",
+                "Width": 43,
+                "Visible": true
+              },
+              {
+                "FieldName": "NOME",
+                "Width": 260,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel3",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 278,
+        "Width": 370,
+        "Height": 43,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 2
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Adicionar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 14,
+            "Top": 7,
+            "Width": 95,
+            "Height": 25,
+            "Caption": "&Adicionar",
+            "TabOrder": 0,
+            "OnClick": "btn_AdicionarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "btn_Remover",
+          "herdado": false,
+          "propriedades": {
+            "Left": 114,
+            "Top": 7,
+            "Width": 95,
+            "Height": 25,
+            "Caption": "&Remover",
+            "TabOrder": 1,
+            "OnClick": "btn_RemoverClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Grupos",
+      "herdado": false,
+      "propriedades": {
+        "Left": 188,
+        "Top": 196
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposGRUPOTREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grupo",
+            "FieldName": "GRUPOTREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_GruposDESCRICAO40",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO40"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 100,
+        "Top": 131
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 190,
+        "Top": 129
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasGRUPOTREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Grupo de Treinamento",
+            "FieldName": "GRUPOTREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Grupo",
+      "herdado": false,
+      "propriedades": {
+        "Left": 94,
+        "Top": 194
+      },
+      "filhos": []
+    }
+  ]
+}

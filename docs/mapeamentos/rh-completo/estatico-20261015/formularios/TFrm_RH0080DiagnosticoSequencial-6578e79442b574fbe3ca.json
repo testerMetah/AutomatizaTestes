@@ -1,0 +1,214 @@
+{
+  "classe": "TFrm_RH0080DiagnosticoSequencial",
+  "nome": "Frm_RH0080DiagnosticoSequencial",
+  "herdado": true,
+  "propriedades": {
+    "Left": 896,
+    "Top": 348,
+    "Caption": "Diagnóstico Seqüencial",
+    "ClientHeight": 423,
+    "ClientWidth": 453
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 453,
+        "Height": 423,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 373,
+            "Width": 56,
+            "Height": 13,
+            "Caption": "Diagnóstico"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 94,
+            "Top": 373,
+            "Width": 48,
+            "Height": 13,
+            "Caption": "Descrição"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Label3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 302,
+            "Top": 373,
+            "Width": 97,
+            "Height": 13,
+            "Caption": "Classificação p/PPP"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMetaLocalizar",
+          "nome": "Btn_DiagnosticoSeq",
+          "herdado": false,
+          "propriedades": {
+            "Left": 64,
+            "Top": 388,
+            "Width": 23,
+            "Height": 22,
+            "Hint": "Localizar (Ctrl + L)",
+            "ShowHint": true
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux2",
+          "herdado": false,
+          "propriedades": {
+            "Left": 25,
+            "Top": 394,
+            "Width": 20,
+            "Height": 10,
+            "TabOrder": 2,
+            "OnEnter": "Edt_Aux2Enter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Aux",
+          "herdado": false,
+          "propriedades": {
+            "Left": 150,
+            "Top": 393,
+            "Width": 20,
+            "Height": 10,
+            "TabOrder": 5,
+            "OnEnter": "Edt_AuxEnter"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBGrid",
+          "nome": "Grb_Diagnosticos",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 445,
+            "Height": 364,
+            "TabStop": false,
+            "Align": "alTop",
+            "DataSource": "Dts_Diagnostico",
+            "TabOrder": 0,
+            "OnEnter": "Grb_DiagnosticosEnter",
+            "Columns": [
+              {
+                "FieldName": "DIAGNOSTICOSEQ",
+                "Title.Caption": "Diagnóstico",
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO20",
+                "Width": 207,
+                "Visible": true
+              },
+              {
+                "FieldName": "CLASSDIAGNOSTICOSEQ",
+                "Title.Caption": "Classificação p/ PPP",
+                "Width": 111,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Diagnostico",
+          "herdado": false,
+          "propriedades": {
+            "Left": 13,
+            "Top": 388,
+            "Width": 50,
+            "Height": 21,
+            "MaxLength": 4,
+            "TabOrder": 1,
+            "OnEnter": "Edt_DiagnosticoEnter",
+            "OnExit": "Edt_DiagnosticoExit"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBEdit",
+          "nome": "Dbe_Descricao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 93,
+            "Top": 388,
+            "Width": 203,
+            "Height": 21,
+            "DataField": "DESCRICAO20",
+            "DataSource": "Dts_Diagnostico",
+            "TabOrder": 3
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDBComboMeta",
+          "nome": "Cmb_Classificacao",
+          "herdado": false,
+          "propriedades": {
+            "Left": 301,
+            "Top": 388,
+            "Width": 122,
+            "Height": 21,
+            "Style": "csDropDownList",
+            "DataField": "CLASSDIAGNOSTICOSEQ",
+            "DataSource": "Dts_Diagnostico",
+            "TabOrder": 4
+          },
+          "filhos": []
+        }
+      ],
+      "ordem_herdada": 0
+    },
+    {
+      "classe": "TRHEventos",
+      "nome": "MetaEventos",
+      "herdado": true,
+      "propriedades": {
+        "Left": 124,
+        "Top": 78
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Diagnostico",
+      "herdado": false,
+      "propriedades": {
+        "Left": 192,
+        "Top": 70
+      },
+      "filhos": []
+    }
+  ]
+}

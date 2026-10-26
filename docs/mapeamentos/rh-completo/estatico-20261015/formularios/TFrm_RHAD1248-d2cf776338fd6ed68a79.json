@@ -1,0 +1,186 @@
+{
+  "classe": "TFrm_RHAD1248",
+  "nome": "Frm_RHAD1248",
+  "herdado": false,
+  "propriedades": {
+    "Left": 480,
+    "Top": 258,
+    "BorderStyle": "bsSingle",
+    "Caption": "Atualização dos Dados Contratuais em Execução",
+    "ClientHeight": 304,
+    "ClientWidth": 388,
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Dados",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 388,
+        "Height": 263,
+        "Align": "alClient",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TDBGrid",
+          "nome": "DBGrid1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 380,
+            "Height": 255,
+            "Align": "alClient",
+            "DataSource": "Dts_Operadores",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "DataHoraInicio",
+                "Width": 120,
+                "Visible": true
+              },
+              {
+                "FieldName": "Operador",
+                "Width": 100,
+                "Visible": true
+              },
+              {
+                "FieldName": "DataRegistro",
+                "Width": 120,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Pnl_Botoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 263,
+        "Width": 388,
+        "Height": 41,
+        "Align": "alBottom",
+        "BorderStyle": "bsSingle",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Liberar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 8,
+            "Top": 6,
+            "Width": 157,
+            "Height": 25,
+            "Caption": "Liberar",
+            "Enabled": false,
+            "TabOrder": 0,
+            "OnClick": "Btn_LiberarClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TBitBtn",
+          "nome": "Btn_Atualizar",
+          "herdado": false,
+          "propriedades": {
+            "Left": 172,
+            "Top": 6,
+            "Width": 116,
+            "Height": 25,
+            "Caption": "Atualizar",
+            "ModalResult": 1,
+            "TabOrder": 1,
+            "OnClick": "Btn_AtualizarClick"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClient",
+      "nome": "Qry_ParametrosDiversos",
+      "herdado": false,
+      "propriedades": {
+        "ReadOnly": true,
+        "Left": 104,
+        "Top": 62
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ParametrosDiversosUsuario",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Usuário",
+            "FieldName": "Usuario"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ParametrosDiversosOperador",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "Operador"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ParametrosDiversosDataRegistro",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data para Registro",
+            "FieldName": "DataRegistro"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TDateTimeField",
+          "nome": "Qry_ParametrosDiversosDataHoraInicio",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Data/Hora de Início",
+            "FieldName": "DataHoraInicio"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_ParametrosDiversosConteudoTexto",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "ConteudoTexto"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "Dts_Operadores",
+      "herdado": false,
+      "propriedades": {
+        "Left": 102,
+        "Top": 96
+      },
+      "filhos": []
+    }
+  ]
+}

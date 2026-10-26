@@ -1,0 +1,565 @@
+{
+  "classe": "TFrm_RHTR9400",
+  "nome": "Frm_RHTR9400",
+  "herdado": false,
+  "propriedades": {
+    "Left": 328,
+    "Top": 247,
+    "Width": 720,
+    "Height": 517,
+    "Caption": "Autorizações da Pessoa ",
+    "FormStyle": "fsMDIChild",
+    "Visible": true,
+    "OnCreate": "FormCreate",
+    "OnShow": "FormShow"
+  },
+  "filhos": [
+    {
+      "classe": "TPanel",
+      "nome": "Panel1",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 42,
+        "Width": 704,
+        "Height": 436,
+        "Align": "alClient",
+        "TabOrder": 1
+      },
+      "filhos": [
+        {
+          "classe": "TDBMetaGrid",
+          "nome": "Dbg_PessoaAutorizacoes",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 2,
+            "Width": 700,
+            "Height": 235,
+            "Align": "alTop",
+            "DataSource": "dts_PessoaAutorizacoes",
+            "ReadOnly": true,
+            "TabOrder": 0,
+            "Columns": [
+              {
+                "FieldName": "TREINAMENTO",
+                "Title.Caption": "Autorização",
+                "Width": 98,
+                "Visible": true
+              },
+              {
+                "FieldName": "DESCRICAO250",
+                "Title.Caption": "Descrição",
+                "Width": 240,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAINICIO",
+                "Title.Caption": "Data Início",
+                "Width": 79,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATATERMINO",
+                "Title.Caption": "Data Término",
+                "Width": 95,
+                "Visible": true
+              },
+              {
+                "FieldName": "OPERADORALTERACAO",
+                "Title.Caption": "Operador",
+                "Width": 76,
+                "Visible": true
+              },
+              {
+                "FieldName": "DATAALTERACAO",
+                "Title.Caption": "Data Alteração",
+                "Width": 108,
+                "Visible": true
+              }
+            ]
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TPanel",
+          "nome": "Panel3",
+          "herdado": false,
+          "propriedades": {
+            "Left": 2,
+            "Top": 237,
+            "Width": 700,
+            "Height": 197,
+            "Align": "alTop",
+            "TabOrder": 1
+          },
+          "filhos": [
+            {
+              "classe": "TLabel",
+              "nome": "Label2",
+              "herdado": false,
+              "propriedades": {
+                "Left": 5,
+                "Top": 3,
+                "Width": 56,
+                "Height": 13,
+                "Caption": "Autorização"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label3",
+              "herdado": false,
+              "propriedades": {
+                "Left": 134,
+                "Top": 3,
+                "Width": 48,
+                "Height": 13,
+                "Caption": "Descrição"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label4",
+              "herdado": false,
+              "propriedades": {
+                "Left": 534,
+                "Top": 3,
+                "Width": 27,
+                "Height": 13,
+                "Caption": "Início"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label5",
+              "herdado": false,
+              "propriedades": {
+                "Left": 616,
+                "Top": 3,
+                "Width": 38,
+                "Height": 13,
+                "Caption": "Término"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TLabel",
+              "nome": "Label6",
+              "herdado": false,
+              "propriedades": {
+                "Left": 5,
+                "Top": 43,
+                "Width": 63,
+                "Height": 13,
+                "Caption": "Observações"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TSpeedButton",
+              "nome": "btn_Treinamento",
+              "herdado": false,
+              "propriedades": {
+                "Left": 104,
+                "Top": 18,
+                "Width": 23,
+                "Height": 22,
+                "OnClick": "btn_TreinamentoClick"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TBeveledLabel",
+              "nome": "lbl_Autorizacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 134,
+                "Top": 19,
+                "Width": 396,
+                "Height": 21,
+                "Caption": "lbl_Autorizacao"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "Edt_Aux",
+              "herdado": false,
+              "propriedades": {
+                "Left": 559,
+                "Top": 162,
+                "Width": 9,
+                "Height": 21,
+                "TabOrder": 4,
+                "OnEnter": "Edt_AuxEnter"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TEdit",
+              "nome": "edt_Autorizacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 5,
+                "Top": 19,
+                "Width": 95,
+                "Height": 21,
+                "TabOrder": 0,
+                "OnEnter": "edt_AutorizacaoEnter",
+                "OnExit": "edt_AutorizacaoExit",
+                "OnKeyPress": "edt_AutorizacaoKeyPress"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TMaskEdit",
+              "nome": "msk_DataIni",
+              "herdado": false,
+              "propriedades": {
+                "Left": 534,
+                "Top": 19,
+                "Width": 79,
+                "Height": 21,
+                "EditMask": "99/99/9999;1; ",
+                "MaxLength": 10,
+                "TabOrder": 1,
+                "OnExit": "msk_DataIniExit"
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBMemo",
+              "nome": "Dbm_Observacao",
+              "herdado": false,
+              "propriedades": {
+                "Left": 5,
+                "Top": 62,
+                "Width": 691,
+                "Height": 132,
+                "DataField": "OBSERVACOES",
+                "DataSource": "dts_PessoaAutorizacoes",
+                "TabOrder": 3
+              },
+              "filhos": []
+            },
+            {
+              "classe": "TDBEdit",
+              "nome": "dbe_DataFin",
+              "herdado": false,
+              "propriedades": {
+                "Left": 616,
+                "Top": 19,
+                "Width": 80,
+                "Height": 21,
+                "DataField": "DATATERMINO",
+                "DataSource": "dts_PessoaAutorizacoes",
+                "TabOrder": 2
+              },
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "classe": "TPanel",
+      "nome": "Panel2",
+      "herdado": false,
+      "propriedades": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 704,
+        "Height": 42,
+        "Align": "alTop",
+        "TabOrder": 0
+      },
+      "filhos": [
+        {
+          "classe": "TLabel",
+          "nome": "Label1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 5,
+            "Top": 13,
+            "Width": 38,
+            "Height": 13,
+            "Caption": "Pessoa:"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSpeedButton",
+          "nome": "Btn_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 113,
+            "Top": 10,
+            "Width": 25,
+            "Height": 21,
+            "OnClick": "Btn_PessoaClick"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TLabel",
+          "nome": "Lbl_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 142,
+            "Top": 13,
+            "Width": 212,
+            "Height": 13,
+            "Caption": "Lbl_Pessoa"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TFrmTrocaContrato",
+          "nome": "FrmTrocaContrato1",
+          "herdado": false,
+          "propriedades": {
+            "Left": 362,
+            "Top": 3,
+            "Width": 421,
+            "Height": 37,
+            "TabOrder": 1
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TEdit",
+          "nome": "Edt_Pessoa",
+          "herdado": false,
+          "propriedades": {
+            "Left": 48,
+            "Top": 10,
+            "Width": 62,
+            "Height": 21,
+            "TabOrder": 0,
+            "OnEnter": "Edt_PessoaEnter",
+            "OnExit": "Edt_PessoaExit",
+            "OnKeyPress": "Edt_PessoaKeyPress"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TDataSource",
+      "nome": "dts_PessoaAutorizacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 439,
+        "Top": 150
+      },
+      "filhos": []
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_PessoaAutorizacoes",
+      "herdado": false,
+      "propriedades": {
+        "Left": 140,
+        "Top": 130
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaAutorizacoesEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoaAutorizacoesPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaAutorizacoesTREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_PessoaAutorizacoesDATAINICIO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAINICIO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_PessoaAutorizacoesDATATERMINO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATATERMINO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TMemoField",
+          "nome": "Qry_PessoaAutorizacoesOBSERVACOES",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OBSERVACOES"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaAutorizacoesOPERADORALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "OPERADORALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TSQLTimeStampField",
+          "nome": "Qry_PessoaAutorizacoesDATAALTERACAO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DATAALTERACAO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoaAutorizacoesDESCRICAO250",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO250"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_DescTreinamento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 172,
+        "Top": 128
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescTreinamentoTREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "TREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_DescTreinamentoDESCRICAO250",
+          "herdado": false,
+          "propriedades": {
+            "FieldName": "DESCRICAO250"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Treinamento",
+      "herdado": false,
+      "propriedades": {
+        "Left": 209,
+        "Top": 128
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TreinamentoTREINAMENTO",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Treinamento",
+            "FieldName": "TREINAMENTO"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TreinamentoDESCRICAO250",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Descrição",
+            "FieldName": "DESCRICAO250"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_TreinamentoTIPOTREINAESOCIAL",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Tipo de Treinamento",
+            "FieldName": "TIPOTREINAESOCIAL"
+          },
+          "filhos": []
+        }
+      ]
+    },
+    {
+      "classe": "TMetaClientAD",
+      "nome": "Qry_Pessoas",
+      "herdado": false,
+      "propriedades": {
+        "Left": 243,
+        "Top": 128
+      },
+      "filhos": [
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasEMPRESA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Empresa",
+            "FieldName": "EMPRESA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TIntegerField",
+          "nome": "Qry_PessoasPESSOA",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Pessoa",
+            "FieldName": "PESSOA"
+          },
+          "filhos": []
+        },
+        {
+          "classe": "TStringField",
+          "nome": "Qry_PessoasNOME",
+          "herdado": false,
+          "propriedades": {
+            "DisplayLabel": "Nome",
+            "FieldName": "NOME"
+          },
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}
