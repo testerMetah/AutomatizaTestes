@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel de Testes Acessus</title>
+<style>
+:root{font:16px system-ui,sans-serif;color:#182536;background:#edf2f7}*{box-sizing:border-box}
+body{margin:0}header{background:#10283f;color:#fff;padding:16px 24px;position:sticky;top:0;z-index:2}
+header strong{font-size:1.2rem}#banco{margin-left:24px;background:#ffe8a3;color:#392d00;padding:6px 10px;border-radius:5px}
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 60px)}
+nav{background:#183b59;padding:16px;display:flex;flex-direction:column;gap:5px}
+nav button{background:transparent;color:#fff;border:0;text-align:left;padding:12px;border-radius:6px;cursor:pointer}
+nav button:hover,nav button.active{background:#2b648c}
+main{padding:24px;max-width:1300px;width:100%;margin:auto}
+section{display:none}section.active{display:block}h1{margin:0 0 20px;font-size:1.7rem}h2{font-size:1.15rem;margin-top:28px}
+.card{background:white;border:1px solid #d5dfe8;border-radius:9px;padding:18px;margin:12px 0;box-shadow:0 2px 5px #1b3a5210}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+label{display:block;font-weight:600;margin:12px 0 4px}input,select,textarea{width:100%;padding:9px;border:1px solid #aebccb;border-radius:5px;font:inherit}
+input[type=checkbox]{width:auto;margin-right:8px}button.primary{background:#075b96;color:#fff;border:0;border-radius:5px;padding:10px 15px;cursor:pointer;margin:10px 6px 4px 0}
+button.danger{background:#9b2727;color:#fff;border:0;border-radius:5px;padding:10px 15px;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}button.copy{border:1px solid #9badbb;background:white;border-radius:5px;padding:7px;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0d2336;color:#d9efff;padding:14px;border-radius:5px;max-height:500px;overflow:auto}
+code{background:#edf2f7;padding:2px 4px}table{width:100%;border-collapse:collapse;background:white}td,th{border:1px solid #cfdae4;padding:8px;text-align:left}
+.warn{background:#fff2c7;border-left:5px solid #b68700;padding:12px}.error{color:#9b2727}.ok{color:#08612c}
+.preview{font-family:ui-monospace,Consolas,monospace;color:#0c3859;background:#e9f2f8;padding:12px;border-radius:5px;overflow-wrap:anywhere}
+a{color:#075b96}.small{font-size:.9rem;color:#4b5c6c}details{border:1px solid #d5dfe8;padding:10px;margin:8px 0;border-radius:5px}
+@media(max-width:800px){.layout{display:block}nav{flex-direction:row;overflow:auto}nav button{white-space:nowrap}main{padding:15px}#banco{display:block;margin:10px 0 0}}
+</style></head><body>
+<header><strong>Painel de Testes Acessus</strong><span id="banco">Banco efetivo: verificando…</span></header>
+<div class="layout"><nav id="nav">
+<button data-page="inicio">Início</button><button data-page="auditorias">Auditorias/Históricos</button>
+<button data-page="sequencias">Sequências e Robot</button><button data-page="observacao">Observação SQL</button>
+<button data-page="conferir">Comparar consultas</button><button data-page="ciclos">Ciclos RH/SIRH</button>
+<button data-page="execucao">Execução ao vivo</button><button data-page="resultados">Resultados</button>
+<button data-page="comandos">Comandos</button><button data-page="build">Preparar nova build</button>
+<button data-page="config">Configuração</button>
+</nav><main>
+<section id="inicio"><h1>Início</h1><p>Estado do ambiente de teste e última rodada.</p>
+<button class="primary" onclick="ambiente()">Rodar checagem do ambiente</button>
+<div id="ambiente" class="grid"></div><h2>Última rodada</h2><div id="ultima" class="card">Carregando…</div></section>
+<section id="auditorias"><h1>Auditorias/Históricos</h1><p class="warn">Esta automação controla o mouse na sessão Windows. Mantenha a tela desbloqueada.</p>
+<div class="grid"><div><label>Módulo</label><select id="a-modulo"><option>acesso</option><option>refeitorio</option><option>portaria</option><option>estacionamento</option><option>escola</option><option>administracao</option><option>todos</option></select></div>
+<div><label>Perfil / banco</label><select id="a-perfil"><option>auditorias</option><option>sequencias</option></select></div></div>
+<label><input type="checkbox" id="a-extremo">Variações extremas</label>
+<div class="grid"><div><label>Filtrar nome da aba (opcional)</label><input id="a-filtro" placeholder="Ex.: Pessoa"></div>
+<div><label>Índices de históricos a pular (opcional)</label><input id="a-pular" placeholder="Ex.: 1,3"></div></div>
+<p>Comando equivalente:</p><div class="preview" id="a-preview"></div><button class="copy" onclick="copiar('a-preview')">Copiar comando</button>
+<button class="primary" data-run onclick="rodar(auditoriaDados())">Executar</button></section>
+<section id="sequencias"><h1>Sequências e Robot</h1><div class="card">
+<label>Arquivo YAML do projeto</label><input id="s-arquivo" value="tests/sequencias/checagem_leitura.yaml">
+<p>Ou use uma semente para gerar uma sequência:</p><div class="grid">
+<div><label>Seed</label><input id="s-seed" type="number" placeholder="4242"></div>
+<div><label>Passos</label><input id="s-passos" type="number" value="8"></div>
+<div><label>Massa</label><input id="s-massa" type="number" value="5"></div></div>
+<p class="small">Para usar a seed, apague o caminho YAML.</p><div class="preview" id="s-preview"></div>
+<button class="copy" onclick="copiar('s-preview')">Copiar</button>
+<button class="primary" data-run onclick="rodar({tipo:'sequencias',arquivo:v('s-arquivo'),seed:v('s-seed'),passos:v('s-passos'),massa:v('s-massa')})">Executar sequência</button></div>
+<div class="card"><label>Tag Robot</label><input id="r-tag" value="smoke"><div class="preview" id="r-preview">automatiza robot --tag smoke</div>
+<button class="primary" data-run onclick="rodar({tipo:'robot',tag:v('r-tag')})">Rodar Robot</button></div></section>
+<section id="observacao"><h1>Observação SQL</h1><p>Monitora o banco enquanto você testa manualmente. O processo não usa o mouse.</p>
+<div class="grid"><div><label>Duração (segundos)</label><input id="o-duracao" type="number" value="1800"></div><div><label>Intervalo (segundos)</label><input id="o-intervalo" type="number" value="15"></div></div>
+<label>Nota da ação manual</label><input id="o-nota" placeholder="O que você fez no RH?">
+<div class="preview" id="o-preview">automatiza observar iniciar --duracao 1800 --intervalo 15</div>
+<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'iniciar',duracao:v('o-duracao'),intervalo:v('o-intervalo')})">Iniciar</button>
+<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'anotar',nota:v('o-nota')})">Anotar</button>
+<button class="primary" data-run onclick="rodar({tipo:'observar',acao:'status'})">Status</button>
+<button class="danger" data-run onclick="rodar({tipo:'observar',acao:'parar'})">Parar observação</button></section>
+<section id="conferir"><h1>Comparar consultas</h1>
+<label>Arquivo JSON de filtros no projeto</label><input id="c-filtros" placeholder="examples/meus-filtros.json">
+<div class="grid"><div><label>Saída antes</label><input id="c-antes" value="reports/antes.json"></div><div><label>Saída depois</label><input id="c-depois" value="reports/depois.json"></div><div><label>Diferenças</label><input id="c-diff" value="reports/diferencas.json"></div></div>
+<div class="preview" id="c-preview"></div><button class="copy" onclick="copiar('c-preview')">Copiar</button>
+<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-antes')})">Salvar antes</button>
+<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'consultar',filtros:v('c-filtros'),saida:v('c-depois')})">Salvar depois</button>
+<button class="primary" data-run onclick="rodar({tipo:'conferir',acao:'comparar',antes:v('c-antes'),depois:v('c-depois'),saida:v('c-diff')})">Comparar</button></section>
+<section id="ciclos"><h1>Ciclos RH/SIRH</h1><p class="warn">Executar e suite alteram dados. O painel valida DB_NAME() e exige confirmação do banco efetivo.</p>
+<label>Perfil</label><select id="y-perfil"><option>sequencias</option><option>auditorias</option></select>
+<label>Manifesto/plano JSON</label><input id="y-arquivo" value="examples/ciclos-sirh.json">
+<label>Saída</label><input id="y-saida" value="reports/ciclos/plano.json">
+<div class="preview" id="y-preview"></div><button class="copy" onclick="copiar('y-preview')">Copiar</button>
+<button class="primary" data-run onclick="rodar(cicloDados('planejar'))">Planejar (sem escrita)</button>
+<button class="danger" data-run onclick="cicloEscrita('executar')">Executar</button>
+<button class="danger" data-run onclick="cicloEscrita('suite')">Suite</button></section>
+<section id="execucao"><h1>Execução ao vivo</h1><p id="job-estado">Nenhuma execução iniciada.</p>
+<button class="danger" id="parar-job" onclick="pararJob()">PARAR execução e processos filhos</button>
+<pre id="console">A saída do comando aparece aqui.</pre></section>
+<section id="resultados"><h1>Resultados</h1><button class="primary" onclick="resultados()">Atualizar lista</button>
+<div id="lista-resultados"></div><h2>Logs permanentes</h2><label>Filtrar por estado/texto</label><input id="log-filtro" placeholder="ERRO_APLICACAO">
+<button class="primary" onclick="abrirLog('resultados/passo-a-passo.log')">Passo a passo</button>
+<button class="primary" onclick="abrirLog('resultados/passo-a-passo-detalhado.jsonl')">JSONL detalhado</button>
+<pre id="log-conteudo"></pre><h2>Comparar rodadas</h2><div class="grid">
+<div><label>Rodada anterior</label><select id="comp-a"></select></div>
+<div><label>Rodada atual</label><select id="comp-b"></select></div></div>
+<button class="primary" data-run onclick="rodar({tipo:'comparar-rodadas',anterior:v('comp-a'),atual:v('comp-b')})">Comparar</button></section>
+<section id="comandos"><h1>Comandos — cola didática</h1><input id="busca" placeholder="Buscar comando, tema ou descrição" oninput="mostrarComandos()"><div id="catalogo"></div></section>
+<section id="build"><h1>Preparar nova build</h1><p class="warn">Feche todos os módulos da cópia antes de substituir arquivos. O assistente cria um backup completo e valida os arquivos principais.</p>
+<div id="build-info" class="card">Carregando…</div>
+<button class="primary" onclick="buildInfo()">Atualizar comparação</button>
+<button class="danger" onclick="copiarBuild()">Fazer backup e copiar build</button></section>
+<section id="config"><h1>Configuração</h1><p>Somente perfis e caminhos não secretos podem ser editados aqui. Senhas ficam no arquivo <code>.env</code> e nunca são exibidas.</p>
+<div id="config-info"></div></section>
+</main></div>
+<script>
+const TOKEN='__TOKEN__'; const $=id=>document.getElementById(id); const v=id=>$(id).value.trim();
+let linhas=0,ocupado=false,catalogo=[],perfis=[];
+async function api(path,body){
+ const opts={headers:{'X-Painel-Token':TOKEN}};
+ if(body!==undefined){opts.method='POST';opts.headers['Content-Type']='application/json';opts.body=JSON.stringify(body)}
+ const res=await fetch(path,opts), data=await res.json();
+ if(!res.ok)throw Error(data.erro||'Falha no painel'); return data;
+}
+function avisar(err){alert(err.message||String(err))}
+function mostrar(page){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id===page));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ if(page==='resultados')resultados(); if(page==='build')buildInfo(); if(page==='config')configInfo()}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>mostrar(b.dataset.page));
+function comando(text,id){$(id).textContent=text}
+function auditoriaDados(){return {tipo:'auditorias',modulo:v('a-modulo'),perfil:v('a-perfil'),extremo:$('a-extremo').checked,filtro:v('a-filtro'),pular:v('a-pular')}}
+function cicloDados(acao){return {tipo:'ciclos',acao,perfil:v('y-perfil'),arquivo:v('y-arquivo'),saida:v('y-saida')}}
+function atualizarPreviews(){
+ let a=auditoriaDados(); comando('automatiza auditorias --modulo '+a.modulo+' --perfil '+a.perfil+(a.extremo?' --extremo':'')+(a.filtro?' --filtro '+JSON.stringify(a.filtro):'')+(a.pular?' --pular '+a.pular:''),'a-preview');
+ comando('automatiza sequencias '+(v('s-arquivo')?'--arquivo '+v('s-arquivo'):'--seed '+v('s-seed')+' --passos '+v('s-passos')+' --massa '+v('s-massa')),'s-preview');
+ comando('automatiza robot --tag '+v('r-tag'),'r-preview');
+ comando('automatiza observar iniciar --duracao '+v('o-duracao')+' --intervalo '+v('o-intervalo'),'o-preview');
+ comando('automatiza conferir consultar --filtros '+v('c-filtros')+' --saida '+v('c-antes'),'c-preview');
+ comando('automatiza ciclos planejar --perfil '+v('y-perfil')+' --arquivo '+v('y-arquivo')+' --saida '+v('y-saida'),'y-preview');
+ let p=perfis.find(x=>x.nome===v('a-perfil')); if(p)$('banco').textContent='Banco do perfil: '+p.banco+' (efetivo: conferir ambiente)';
+}
+document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',atualizarPreviews));
+async function copiar(id){await navigator.clipboard.writeText($(id).textContent)}
+async function rodar(data){try{let job=await api('/api/iniciar',data);linhas=0;mostrar('execucao');$('console').textContent='';await atualizarJob()}catch(e){avisar(e)}}
+async function atualizarJob(){try{let x=await api('/api/job?de='+linhas); if(x.linhas.length){$('console').textContent+=x.linhas.join('\n')+'\n';$('console').scrollTop=$('console').scrollHeight}linhas=x.total;
+ let job=x.job;ocupado=!!job&&job.estado==='rodando';$('job-estado').textContent=job?job.comando+' — '+job.estado:'Nenhuma execução iniciada.';
+ document.querySelectorAll('[data-run]').forEach(b=>b.disabled=ocupado);$('parar-job').disabled=!ocupado}catch(e){$('job-estado').textContent=e.message}}
+async function pararJob(){try{await api('/api/parar',{});await atualizarJob()}catch(e){avisar(e)}}
+async function ambiente(){try{let items=await api('/api/ambiente');$('ambiente').innerHTML=items.map(x=>'<div class="card"><strong>'+esc(x.estado)+'</strong> · '+esc(x.item)+'<p>'+esc(x.detalhe)+'</p></div>').join('');
+ let sql=items.find(x=>x.item==='auditorias: SQL'&&x.estado==='OK');if(sql)$('banco').textContent='Banco efetivo: '+sql.detalhe}catch(e){$('ambiente').textContent=e.message}}
+async function resultados(){try{let rows=await api('/api/resultados');$('ultima').textContent=rows[0]?rows[0].pasta+' — '+JSON.stringify(rows[0].resumo):'Nenhuma rodada';
+ $('lista-resultados').innerHTML=rows.map(x=>'<div class="card"><strong>'+esc(x.pasta)+'</strong> · '+esc(x.data)+'<p>'+esc(JSON.stringify(x.resumo))+'</p>'+(x.relatorio?'<a target="_blank" href="/evidencia/'+encodeURI(x.relatorio)+'">Abrir relatório</a>':'')+' <button class="copy" data-folder="'+esc(x.pasta)+'">Arquivos e screenshots</button><div id="files-'+esc(x.pasta.replaceAll('/','-'))+'"></div></div>').join('');
+ document.querySelectorAll('[data-folder]').forEach(b=>b.onclick=()=>listarArquivos(b.dataset.folder));
+ let options=rows.filter(x=>x.pasta.startsWith('resultados/')).map(x=>'<option>'+esc(x.pasta)+'</option>').join('');$('comp-a').innerHTML=options;$('comp-b').innerHTML=options}catch(e){avisar(e)}}
+async function listarArquivos(pasta){try{let files=await api('/api/arquivos?pasta='+encodeURIComponent(pasta));let id='files-'+pasta.replaceAll('/','-');$(id).innerHTML=files.map(x=>'<p><a target="_blank" href="/evidencia/'+encodeURI(x)+'">'+esc(x)+'</a></p>').join('')}catch(e){avisar(e)}}
+async function abrirLog(arquivo){try{let x=await api('/api/log?arquivo='+encodeURIComponent(arquivo)+'&estado='+encodeURIComponent(v('log-filtro')));$('log-conteudo').textContent=x.linhas.join('\n')}catch(e){avisar(e)}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function mostrarComandos(){let q=v('busca').toLowerCase();$('catalogo').innerHTML=catalogo.filter(x=>JSON.stringify(x).toLowerCase().includes(q)).map(x=>'<div class="card"><small>'+esc(x.tema)+'</small><h2>'+esc(x.comando)+'</h2><p>'+esc(x.descricao)+'</p><p><strong>Opções:</strong> '+esc(x.opcoes)+'</p><div class="preview">'+esc(x.exemplo)+'</div><button class="copy" data-cmd="'+esc(x.exemplo)+'">Copiar</button></div>').join('');document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.dataset.cmd))}
+async function buildInfo(){try{let x=await api('/api/build');$('build-info').innerHTML='<p>Origem: '+esc(x.origem)+' — versão '+esc(x.versao_origem)+'</p><p>Destino: '+esc(x.destino)+' — versão '+esc(x.versao_destino)+'</p><p>product.key: origem '+x.product_key_origem+', destino '+x.product_key_destino+'</p><p>INIs no destino: '+esc(JSON.stringify(x.inis_destino))+'</p>'}catch(e){$('build-info').textContent=e.message}}
+async function copiarBuild(){let conf=prompt('A cópia substituirá arquivos no destino após backup. Digite COPIAR BUILD:');if(conf!=='COPIAR BUILD')return;
+ try{let x=await api('/api/build',{confirmacao:conf});alert('Backup: '+x.backup+'\nVersão nova: '+x.resultado.versao_destino);buildInfo()}catch(e){avisar(e)}}
+async function configInfo(){try{let x=await api('/api/config');$('config-info').innerHTML=x.perfis.map(p=>'<div class="card"><h2>'+esc(p.nome)+'</h2><p>Banco: '+esc(p.banco)+' · Teste confirmado: '+p.confirmado_como_teste+'</p><label>Pasta executáveis</label><input id="cfg-'+p.nome+'-pasta" value="'+esc(p.pasta_executaveis)+'"><label>Servidor</label><input id="cfg-'+p.nome+'-server" value="'+esc(p.servidor)+'"><label>Banco</label><input id="cfg-'+p.nome+'-banco" value="'+esc(p.banco)+'"><button class="primary" data-profile="'+esc(p.nome)+'">Salvar perfil</button></div>').join('')+'<div class="card"><h2>.env (segredos mascarados)</h2><pre>'+esc(JSON.stringify(x.env,null,2))+'</pre><p>Edite credenciais somente no arquivo .env local.</p></div>';document.querySelectorAll('[data-profile]').forEach(b=>b.onclick=()=>salvarPerfil(b.dataset.profile))}catch(e){avisar(e)}}
+async function salvarPerfil(nome){try{let x=await api('/api/perfil',{nome,pasta_executaveis:v('cfg-'+nome+'-pasta'),servidor:v('cfg-'+nome+'-server'),banco:v('cfg-'+nome+'-banco')});alert('Salvo. Banco de teste confirmado: '+x.confirmado_como_teste);configInfo()}catch(e){avisar(e)}}
+async function cicloEscrita(acao){try{let p=await api('/api/banco?perfil='+encodeURIComponent(v('y-perfil')));
+ let banco=prompt('Banco EFETIVO: '+p.servidor+'/'+p.banco+'. Confirme digitando o nome do banco:');
+ if(banco!==p.banco)return;let frase=prompt('Digite: Entendo que isto altera dados');if(frase!=='Entendo que isto altera dados')return;
+ await rodar({...cicloDados(acao),confirmacao:frase,banco_confirmado:banco})}catch(e){avisar(e)}}
+async function iniciar(){try{perfis=await api('/api/perfis');catalogo=await api('/api/catalogo');mostrarComandos();atualizarPreviews();mostrar('inicio');await Promise.all([ambiente(),resultados()]);setInterval(atualizarJob,1000)}catch(e){avisar(e)}}
+iniciar();
+</script></body></html>

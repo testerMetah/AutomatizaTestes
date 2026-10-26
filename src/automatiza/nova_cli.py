@@ -107,8 +107,24 @@ def executar(ns):
         from automatiza.config import Settings
         base = ROOT / "reports/observacao"
         if ns.acao == "iniciar":
-            state = run_observer(Settings.load(), base, duration=ns.duracao, interval=ns.intervalo, people=())
-            print(json.dumps(state, ensure_ascii=False, default=str))
+            if os.environ.get("AUTOMATIZA_OBSERVADOR_WORKER") == "1":
+                state = run_observer(Settings.load(), base, duration=ns.duracao,
+                                     interval=ns.intervalo, people=())
+                print(json.dumps(state, ensure_ascii=False, default=str))
+            else:
+                base.mkdir(parents=True, exist_ok=True)
+                stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+                log = (base / f"processo-{stamp}.log").open("w", encoding="utf-8")
+                env = os.environ.copy()
+                env["AUTOMATIZA_OBSERVADOR_WORKER"] = "1"
+                proc = subprocess.Popen([sys.executable, "-u", "-m", "automatiza.nova_cli",
+                                         "observar", "iniciar", "--duracao", str(ns.duracao),
+                                         "--intervalo", str(ns.intervalo)],
+                                        cwd=ROOT, env=env, stdin=subprocess.DEVNULL,
+                                        stdout=log, stderr=subprocess.STDOUT,
+                                        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+                log.close()
+                print(f"Observação iniciada em segundo plano: PID {proc.pid}; log {base / ('processo-' + stamp + '.log')}")
         elif ns.acao == "status":
             folder, state = observer_status(base)
             print(json.dumps(state, ensure_ascii=False, default=str))
@@ -131,7 +147,18 @@ def executar(ns):
         if ns.acao in {"executar", "suite"}:
             if not ns.confirmo_escrita:
                 raise ValueError("Escrita recusada: informe --confirmo-escrita após conferir o banco de teste.")
-            actual = validar_escrita(configuracao(ns.perfil))
+            from dataclasses import replace
+            from automatiza.database import SqlServer
+            from automatiza.perfis_teste import permitidos
+            manifest = json.loads(Path(ns.arquivo).read_text(encoding="utf-8-sig"))
+            target = manifest.get("configuracao", manifest)
+            profile_settings = configuracao(ns.perfil)
+            if target.get("destino", "").casefold() != profile_settings.sql_database.casefold():
+                raise ValueError("Escrita recusada: destino do manifesto/plano difere do perfil.")
+            if target.get("origem", "").casefold() not in permitidos():
+                raise ValueError("Escrita recusada: origem do manifesto não é banco de teste permitido.")
+            SqlServer(replace(profile_settings, sql_database=target["origem"])).assert_database()
+            actual = validar_escrita(profile_settings)
             print(f"Banco efetivo autorizado: {actual}", flush=True)
         args = ["-m", "automatiza.ciclos_cli", ns.acao, "--arquivo", ns.arquivo,
                 "--saida", ns.saida, "--semente", ns.semente, "--rodadas", ns.rodadas]
