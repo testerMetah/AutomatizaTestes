@@ -192,7 +192,8 @@ def run(pid, module, output, skip):
                 except (ValueError, KeyError, TypeError):
                     continue
     executavel, versao = executavel_e_versao(pid)
-    pasta_resultados = Path(__file__).resolve().parents[1] / "resultados"
+    from automatiza.caminhos import logs_permanentes
+    pasta_resultados = logs_permanentes()
     contexto = {
         "modulo": module, "pid_aplicacao": pid, "pid_automacao": os.getpid(),
         "executavel": executavel, "versao_build": versao,

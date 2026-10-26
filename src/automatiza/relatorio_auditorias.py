@@ -78,7 +78,8 @@ def comparar(anterior, atual):
 def exportar_passo_a_passo(folder, records):
     """Copia para a rodada as ações dos IDs registrados nas tentativas."""
     ids = {x.get("execucao_id") for x in records if x.get("execucao_id")}
-    origem = folder.parent / "passo-a-passo-detalhado.jsonl"
+    from automatiza.caminhos import logs_permanentes
+    origem = logs_permanentes() / "passo-a-passo-detalhado.jsonl"
     if not ids or not origem.exists():
         return None
     destino = folder / "passo-a-passo.log"
@@ -124,6 +125,11 @@ def gerar(rodada):
         if oracle:
             counts[record.get("modulo", "?")]["ORACULO_" + oracle["status"]] += 1
     findings = agrupar_erros(records)
+    from automatiza.log import json_seguro
+    (folder / "achados.json").write_text(json_seguro([
+        {"mensagem": item["mensagem_normalizada"], "contagem": item["quantidade"],
+         "exemplos": item["ocorrencias"][:1]} for item in findings
+    ]), encoding="utf-8")
     def esc(value):
         return html.escape(str(value if value is not None else ""))
     rows = "".join("<tr><td>" + esc(mod) + "</td>" +

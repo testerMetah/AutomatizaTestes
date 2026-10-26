@@ -289,7 +289,7 @@ class Sentinela:
             out.write(json.dumps(local, ensure_ascii=False) + "\n")
         if tipo not in {"PAUSA_INICIADA", "PAUSA_RETOMADA", "CANCELADO_PELO_USUARIO"}:
             return
-        from automatiza.config import ROOT
+        from automatiza.caminhos import logs_permanentes
         linha = (f"[{instante:%d/%m/%Y - %H:%M:%S}] Tela: Execução ao vivo | "
                  f"Módulo: {self.meta.get('nome', 'Teste')} | Histórico: (pausa) | "
                  f"Filtro: (pausa) | {tipo}: {dados}")
@@ -297,7 +297,7 @@ class Sentinela:
                    "evento_id": uuid4().hex, "data_hora_local": instante.isoformat(timespec="milliseconds"),
                    "data_hora_utc": instante.astimezone(timezone.utc).isoformat(timespec="milliseconds"),
                    "contexto_execucao": self.meta, "tipo": tipo, "linha_passo_a_passo": linha, **dados}
-        resultado = ROOT / "resultados"
+        resultado = logs_permanentes()
         resultado.mkdir(exist_ok=True)
         with (resultado / "passo-a-passo.log").open("a", encoding="utf-8") as out:
             out.write(linha + "\n")

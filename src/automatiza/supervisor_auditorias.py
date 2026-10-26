@@ -203,7 +203,10 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
 def _marcar_restante(module, module_output, reason, *, only_filter=None, skip="", status="ERRO_AUTOMACAO"):
     """Usa o mapa da tela para registrar os filtros que ficaram sem execução."""
     from automatiza.diario_auditorias import DiarioAuditorias
-    maps = sorted((ROOT / "resultados").glob(f"auditorias-runtime-*/{module}/resultado.json"))
+    from automatiza.caminhos import mapas
+    maps = list(mapas().glob(f"*/{module}/*/resultado.json"))
+    maps += sorted((ROOT / "resultados").glob(f"auditorias-runtime-*/{module}/resultado.json"))
+    maps.sort(key=lambda p: p.stat().st_mtime)
     completed = set()
     file = module_output / "tentativas.jsonl"
     if file.exists():
@@ -233,7 +236,8 @@ def _marcar_restante(module, module_output, reason, *, only_filter=None, skip=""
                             remaining.append(key)
     if not remaining:
         remaining = [("(módulo)", "(restante não mapeado)", 0, 0)]
-    with DiarioAuditorias(ROOT / "resultados", {"modulo": module,
+    from automatiza.caminhos import logs_permanentes
+    with DiarioAuditorias(logs_permanentes(), {"modulo": module,
                                                 "motivo_interrupcao": reason,
                                                 "pasta_evidencias": str(module_output)}) as diary:
         for history, filt, subcampo, tentativa in remaining:
@@ -253,7 +257,8 @@ def executar(ns):
     load_dotenv(ROOT / ".env", override=False)
     profile = carregar(ns.perfil)
     folder = Path(profile["pasta_executaveis"])
-    output = Path(ns.saida) if ns.saida else ROOT / "resultados" / f"auditorias-{datetime.now():%Y%m%d-%H%M%S}"
+    from automatiza.caminhos import rodadas, nova_rodada, logs_permanentes
+    output = Path(ns.saida) if ns.saida else Path(os.environ.get("AUTOMATIZA_RODADA_DIR") or nova_rodada("auditorias", ns.modulo))
     output.mkdir(parents=True, exist_ok=True)
     os.environ["AUTOMATIZA_RESULTADO_DIR"] = str(output)
     modules = list(MODULOS) if ns.modulo == "todos" else [ns.modulo]
@@ -307,7 +312,7 @@ def executar(ns):
                 args += [x.strip() for x in ns.pular.split(",") if x.strip()]
                 result_code = _executar_monitorado(
                     args, env=env, pid=pid, timeout=ns.timeout,
-                    diario=ROOT / "resultados/passo-a-passo-detalhado.jsonl")
+                    diario=logs_permanentes() / "passo-a-passo-detalhado.jsonl")
                 if result_code == 2 or (base and ler(base / "controle.json").get("estado") == "CANCELANDO"):
                     cancelada = True
                     _marcar_restante(module, module_output, "Cancelado pelo usuário",

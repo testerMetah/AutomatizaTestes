@@ -25,8 +25,10 @@ def mask(value, key=""):
 
 class Report:
     def __init__(self, root="reports"):
-        self.folder = Path(root) / (datetime.now().strftime("%Y%m%d-%H%M%S-%f") + "-" + uuid4().hex[:6])
-        self.folder.mkdir(parents=True, exist_ok=False)
+        from automatiza.caminhos import nova_rodada
+        rodada = os.environ.get("AUTOMATIZA_RODADA_DIR")
+        self.folder = Path(rodada) if rodada else nova_rodada("sequencias", "avulsa")
+        self.folder.mkdir(parents=True, exist_ok=True)
         self.events = []
         self.cases = []
         self.context = {}

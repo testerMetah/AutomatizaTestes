@@ -19,7 +19,7 @@ class DiarioAuditorias:
     def __init__(self, pasta_resultados, contexto):
         self.pasta = Path(pasta_resultados)
         self.contexto = dict(contexto)
-        self.execucao_id = f"{datetime.now():%Y%m%d-%H%M%S}-{uuid4().hex[:8]}"
+        self.execucao_id = os.environ.get("AUTOMATIZA_EXECUCAO_ID") or f"{datetime.now():%Y%m%d-%H%M%S}-{uuid4().hex[:8]}"
         self.sequencia = 0
         self.inicio_monotonico = time.perf_counter()
         self.tentativa_atual = None

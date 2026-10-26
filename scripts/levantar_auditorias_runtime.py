@@ -5,6 +5,7 @@ Não altera dados nem aciona impressão/exportação.
 """
 
 import json
+import os
 import re
 import sys
 from contextlib import redirect_stdout
@@ -55,7 +56,9 @@ def survey(pid, module):
         raise RuntimeError(f"Esperada uma janela de auditoria; encontradas {len(children)}")
     target = children[0]
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    output = ROOT / "resultados" / f"auditorias-runtime-{stamp}" / module
+    from automatiza.caminhos import mapas
+    build = os.environ.get("AUTOMATIZA_BUILD", "build-nao-identificada")
+    output = mapas() / build / module / stamp
     output.mkdir(parents=True, exist_ok=False)
     with (output / "arvore-controles.txt").open("w", encoding="utf-8") as stream:
         with redirect_stdout(stream):

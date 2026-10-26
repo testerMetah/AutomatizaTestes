@@ -67,6 +67,25 @@ def parser_cli():
     sub.add_parser("pausa-teste", help="Testar sentinela e atalhos globais")
     a = sub.add_parser("aviso-teste", help="Visualizar aviso sem executar teste")
     a.add_argument("tipo", choices=("inicio", "fim", "cancelado"))
+    sub.add_parser("indice", help="Recriar índice das rodadas")
+    a = sub.add_parser("organizar", help="Migrar saídas antigas com preservação")
+    g = a.add_mutually_exclusive_group()
+    g.add_argument("--simular", action="store_true", default=True)
+    g.add_argument("--aplicar", action="store_true")
+    sub.add_parser("verificar-estrutura", help="Verificar pastas e manifestos")
+    a = sub.add_parser("limpar", help="Compactar rodadas antigas sem apagar")
+    a.add_argument("--aplicar", action="store_true")
+    a.add_argument("--simular", action="store_true", default=True)
+    a.add_argument("--dias", type=int, default=60)
+    a = sub.add_parser("marcar", help="Marcar rodada importante ou adicionar nota")
+    a.add_argument("id")
+    a.add_argument("--manter", action="store_true")
+    a.add_argument("--nota")
+    a = sub.add_parser("resumo-para-ia", help="Resumo compacto de uma rodada")
+    a.add_argument("id", nargs="?", default="ultima")
+    a = sub.add_parser("exportar", help="Pacote sem segredos para compartilhar")
+    a.add_argument("id")
+    a.add_argument("--com-evidencias", action="store_true")
     return p
 
 
@@ -80,6 +99,42 @@ def _exec(args, *, env=None):
 
 
 def executar(ns):
+    if ns.comando == "indice":
+        from automatiza.organizacao import indice
+        print(f"Índice gerado: {len(indice())} rodadas")
+        return 0
+    if ns.comando == "organizar":
+        from automatiza.manutencao_saidas import organizar
+        plano = organizar(aplicar=ns.aplicar)
+        for origem, destino, arquivo, tamanho in plano:
+            print(f"{origem} -> {destino} | arquivo: {arquivo} | {tamanho} bytes")
+        print(f"{len(plano)} itens {'migrados' if ns.aplicar else 'planejados; use --aplicar para executar'}")
+        return 0
+    if ns.comando == "verificar-estrutura":
+        from automatiza.manutencao_saidas import verificar
+        erros = verificar()
+        for erro in erros: print("ERRO:", erro)
+        print("Estrutura íntegra." if not erros else f"{len(erros)} problemas encontrados.")
+        return 1 if erros else 0
+    if ns.comando == "limpar":
+        from automatiza.manutencao_saidas import limpar
+        itens = limpar(aplicar=ns.aplicar, dias=ns.dias)
+        for item in itens: print(item["id"])
+        print(f"{len(itens)} rodadas {'compactadas' if ns.aplicar else 'candidatas'}; originais preservados.")
+        return 0
+    if ns.comando == "marcar":
+        from automatiza.manutencao_saidas import marcar
+        marcar(ns.id, ns.manter, ns.nota)
+        print(f"Rodada {ns.id} atualizada.")
+        return 0
+    if ns.comando == "resumo-para-ia":
+        from automatiza.resumo_ia import gerar
+        print(gerar(ns.id))
+        return 0
+    if ns.comando == "exportar":
+        from automatiza.resumo_ia import exportar
+        print(exportar(ns.id, ns.com_evidencias))
+        return 0
     if ns.comando in {"pausa-teste", "aviso-teste"}:
         from automatiza.sentinela.autoteste import executar as testar
         return testar(ns)
@@ -211,15 +266,23 @@ def main(argv=None):
         if ns.comando in testes and not (ns.comando == "observar" and ns.acao in {"status", "anotar", "parar"}):
             from automatiza.pausa import TesteCancelado, gravar, ler
             from automatiza.config import ROOT
+            from automatiza.sessao import Rodada
             nome = ("Auditorias — " + ns.modulo) if ns.comando == "auditorias" else ns.comando.capitalize()
             perfil = getattr(ns, "perfil", "auditorias" if ns.comando == "auditorias" else "sequencias")
             try:
                 from automatiza.perfis_teste import carregar, configuracao as perfil_config
                 from automatiza.database import SqlServer
-                carregar(perfil)
-                banco = SqlServer(perfil_config(perfil)).assert_database()
+                perfil_dados = carregar(perfil)
+                ajustes = perfil_config(perfil)
+                banco = SqlServer(ajustes).assert_database()
+                servidor = ajustes.sql_server
+                executavel = perfil_dados.get("pasta_executaveis")
             except Exception:
-                banco = "não confirmado"
+                banco, servidor, executavel = None, None, None
+            alvo = getattr(ns, "modulo", None) or getattr(ns, "tag", None) or getattr(ns, "acao", None) or "geral"
+            rodada = Rodada(ns.comando, alvo, perfil, banco, servidor,
+                            opcoes={k: v for k, v in vars(ns).items() if k not in {"comando", "saida"}},
+                            executavel=executavel)
             base = Path(os.environ.get("AUTOMATIZA_PAUSA_DIR") or tempfile.mkdtemp(prefix="automatiza-pausa-"))
             base.mkdir(parents=True, exist_ok=True)
             os.environ["AUTOMATIZA_PAUSA_DIR"] = str(base)
@@ -246,19 +309,29 @@ def main(argv=None):
             except OSError as exc:
                 print(f"AVISO: sentinela indisponível ({type(exc).__name__}); teste continuará.", flush=True)
             try:
-                codigo = executar(ns)
-                final = "CANCELADO" if ler(base / "controle.json").get("estado") == "CANCELANDO" else ("CONCLUIDO" if codigo == 0 else "FALHOU")
-                return codigo
-            except TesteCancelado:
-                final = "CANCELADO"
-                print("Teste cancelado pelo usuário.", flush=True)
-                return 2
-            except BaseException:
-                final = "FALHOU"
-                raise
+                with rodada:
+                    try:
+                        codigo = executar(ns)
+                        final = "CANCELADO" if ler(base / "controle.json").get("estado") == "CANCELANDO" or codigo == 2 else ("CONCLUIDO" if codigo == 0 else "FALHOU")
+                        return codigo
+                    except TesteCancelado:
+                        final = "CANCELADO"
+                        print("Teste cancelado pelo usuário.", flush=True)
+                        return 2
+                    except BaseException:
+                        final = "FALHOU"
+                        raise
             finally:
+                eventos = []
+                if (base / "eventos.jsonl").is_file():
+                    for line in (base / "eventos.jsonl").read_text(encoding="utf-8").splitlines():
+                        try: eventos.append(json.loads(line))
+                        except ValueError: continue
+                pausas = {"quantidade": sum(e.get("tipo") == "PAUSA_INICIADA" for e in eventos),
+                          "tempo_total_s": round(sum(e.get("duracao_ms", 0) for e in eventos if e.get("tipo") == "PAUSA_RETOMADA") / 1000, 3)}
+                rodada.concluir(final, pausas)
                 gravar(base / "final.json", {"estado": final, "resumo": f"Duração: {int(time.monotonic()-ler(base/'meta.json')['inicio_monotonico'])} s",
-                                              "pasta": str(getattr(ns, "saida", None) or "Consulte Resultados")})
+                                              "pasta": str(rodada.pasta)})
         return executar(ns)
     except (ValueError, RuntimeError, OSError) as exc:
         print(f"ERRO: {exc}", file=sys.stderr)
