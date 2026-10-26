@@ -311,6 +311,12 @@ def run(pid, module, output, skip):
                                 record["contagem"] = count_from(counted)
                                 record["status"] = "CONSULTADO" if record["contagem"] is not None else "SEM_CONTAGEM"
                                 emit(f"Resultado da tentativa: {record['status']}; contagem: {record['contagem']}")
+                                from automatiza.oraculos_auditorias import verificar
+                                oracle = verificar(db, record)
+                                if oracle is not None:
+                                    record["oraculo_contagem"] = oracle
+                                    emit(f"Oráculo de contagem: {oracle['status']}; "
+                                         f"esperado {oracle['esperado']}, obtido {oracle['obtido']}")
                         except Exception as exc:
                             record["status"] = "ERRO_AUTOMACAO"
                             record["erro"] = f"{type(exc).__name__}: {exc}"

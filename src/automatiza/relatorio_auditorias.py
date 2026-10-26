@@ -39,6 +39,9 @@ def normalizar(value):
 def agrupar_erros(records):
     groups = defaultdict(list)
     for record in records:
+        if record.get("oraculo_contagem", {}).get("status") == "FALHOU":
+            key = "contagem divergente: esperado " + str(record["oraculo_contagem"]["esperado"])
+            groups[normalizar(key)].append(record)
         if record.get("status") in {"ERRO_APLICACAO", "ERRO_AUTOMACAO", "FALHOU"}:
             groups[normalizar(mensagem(record))].append(record)
     return [{"mensagem_normalizada": key, "quantidade": len(items),
@@ -78,12 +81,16 @@ def gerar(rodada):
     counts = defaultdict(Counter)
     for record in records:
         counts[record.get("modulo", "?")][record.get("status", "?")] += 1
+        oracle = record.get("oraculo_contagem")
+        if oracle:
+            counts[record.get("modulo", "?")]["ORACULO_" + oracle["status"]] += 1
     findings = agrupar_erros(records)
     def esc(value):
         return html.escape(str(value if value is not None else ""))
     rows = "".join("<tr><td>" + esc(mod) + "</td>" +
                    "".join("<td>" + str(c[status]) + "</td>" for status in
-                           ("CONSULTADO", "SEM_CONTAGEM", "ERRO_APLICACAO", "ERRO_AUTOMACAO")) +
+                           ("CONSULTADO", "SEM_CONTAGEM", "ERRO_APLICACAO", "ERRO_AUTOMACAO",
+                            "ORACULO_PASSOU", "ORACULO_FALHOU")) +
                    "</tr>" for mod, c in sorted(counts.items()))
     errors = []
     for group in findings:
@@ -108,7 +115,8 @@ th{{background:#e9f2f8}}details{{border:1px solid #ccd5dd;padding:12px;margin:8p
 a{{color:#065a9c}}</style>
 <h1>Auditorias/Históricos</h1><p>Rodada: {esc(folder.name)} · Tentativas: {len(records)}</p>
 <table><tr><th>Módulo</th><th>Consultado</th><th>Sem contagem</th>
-<th>Erro da aplicação</th><th>Erro da automação</th></tr>{rows}</table>
+<th>Erro da aplicação</th><th>Erro da automação</th>
+<th>Oráculo passou</th><th>Oráculo falhou</th></tr>{rows}</table>
 <h2>Achados agrupados</h2>{''.join(errors) or '<p>Nenhum erro registrado.</p>'}
 <p>As contagens são exploratórias quando não há regra CONFIRMADA para o filtro.</p></html>"""
     output = folder / "RELATORIO.html"

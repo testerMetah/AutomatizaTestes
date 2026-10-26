@@ -10,14 +10,16 @@ from automatiza.perfis_teste import validar_escrita
 def dados_sinteticos(settings, criar, limpar):
     """Recebe callbacks da entidade; nenhuma tabela/SQL é presumida aqui.
 
-    `criar(prefixo)` prepara dados e devolve identificadores. `limpar(ids)`
-    elimina apenas os dados dessa fixture. Ambos são específicos da entidade.
+    `criar(prefixo)` prepara dados e devolve identificadores.
+    `limpar(prefixo, ids)` elimina apenas os dados dessa fixture, inclusive
+    quando `criar` falha após gravar parcialmente (nesse caso, ids é None).
     """
     validar_escrita(settings)
     prefixo = f"AUTOTEST_{datetime.now():%Y%m%d%H%M%S}_{uuid4().hex[:6]}_"
-    identificadores = criar(prefixo)
+    identificadores = None
     try:
+        identificadores = criar(prefixo)
         yield identificadores
     finally:
         validar_escrita(settings)
-        limpar(identificadores)
+        limpar(prefixo, identificadores)

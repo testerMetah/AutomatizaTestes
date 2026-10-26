@@ -170,7 +170,9 @@ def executar(ns):
         print(json.dumps(comparar(ns.anterior, ns.atual), ensure_ascii=False, indent=2))
         return 0
     if ns.comando == "testes-unitarios":
-        return _exec(["-m", "pytest", "tests/unit", "-q"])
+        temp = ROOT / "resultados" / f"pytest-cli-{datetime.now():%Y%m%d-%H%M%S}"
+        return _exec(["-m", "pytest", "tests/unit", "-q", f"--basetemp={temp}",
+                      "-p", "no:cacheprovider"])
     if ns.comando == "painel":
         from automatiza.painel import iniciar
         iniciar()

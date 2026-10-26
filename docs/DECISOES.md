@@ -22,3 +22,7 @@
 14. A CLI nova usa `automatiza.nova_cli` como entrada principal e delega comandos históricos a `automatiza.cli`; preserva scripts e compatibilidade sem reescrever fluxos maduros.
 15. Dois perfis declarativos separam a cópia de auditorias (`AcessoFagundes`) da instalação principal (`Acessus_AUTOTEST_20261023`); evita banco fixado dentro da suíte.
 16. `psutil` não instala na venv Windows/Python 32 bits atual sem compilar C++; descoberta de processos usa pywin32 já instalado e serviços usam `sc.exe`, sem dependência nova.
+17. O painel usa `http.server` da biblioteca padrão em `127.0.0.1`, sem Node, CDN ou serviço Windows; o terminal do usuário mantém a sessão desktop interativa.
+18. O comando `observar iniciar` cria um processo em segundo plano; assim a coleta SQL não impede iniciar testes de interface pelo painel.
+19. Ao editar um perfil e mudar o banco, a marca `confirmado_como_teste` vira falsa; a escrita só volta após confirmação explícita no arquivo de configuração.
+20. Contagens de históricos permanecem exploratórias até existir regra `CONFIRMADA` com SQL de contagem restrito e parametrizado em `docs/cenarios/`; nenhuma contagem esperada foi inferida do banco.

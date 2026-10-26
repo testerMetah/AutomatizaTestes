@@ -1,5 +1,13 @@
 # Handoff — 2026-10-23
 
+## Atualização de 26/10/2026 — CLI e painel autônomos
+
+O projeto agora tem `Abrir-Painel.bat` e `automatiza.nova_cli` como entrada única. A CLI anterior permanece disponível para comandos históricos. Os perfis `profiles/auditorias.json` (`AcessoFagundes`, cópia `C:\AcessusHostFisico`) e `profiles/sequencias.json` (`Acessus_AUTOTEST_20261023`, instalação principal) substituem o banco fixado na suíte cronológica. A checagem `automatiza ambiente` valida bitness, executáveis, INIs, ODBC, SQL e serviços; `automatiza comandos` imprime o catálogo usado pelo painel.
+
+O supervisor de Auditorias/Históricos encontra PID pelo executável, abre painel/login com credenciais locais, navega, monitora processo/janela/diário, retoma tentativas concluídas após travamento e gera `RELATORIO.html`. Os dois logs permanentes mantêm formato e modo de acréscimo. O painel serve apenas em `127.0.0.1`, oferece execução ao vivo, resultados, build, perfis e confirmação de escrita com `DB_NAME()`. Ações de escrita em ciclos também verificam destino do manifesto/plano contra o perfil; o exemplo antigo `novo123` é bloqueado.
+
+Documentação nova: `docs/GUIA-DE-USO.md`, `docs/ARQUITETURA.md`, `CLAUDE.md`; pendências em `docs/PENDENCIAS.md`. A suíte isolada e rotas HTTP foram testadas. A validação end-to-end de UI em todos os módulos requer sessão aberta e credenciais de teste no `.env`; não foi presumida. Os parágrafos abaixo são histórico anterior e podem citar o banco antigo.
+
 ## Estado
 
 O projeto real fica em `C:\AutomatizaTestes`. Python 32 bits em `C:\python32b\venv32`. Acessus 2.11.1 em `C:\acesso`; banco destino `desk-tec/AcessoFagundes`; RH origem `desk-tec/RHFagundes`, ambos declarados como teste. O repositório de referência solicitado em `C:\Referencia\Acessus` não estava presente; não houve alteração nele. Leia `AGENTS.md` e `docs/CLAUDE-CODE-BRIEFING.md`.

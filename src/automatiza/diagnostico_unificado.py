@@ -61,7 +61,8 @@ def executar(nome_perfil="auditorias"):
                             values[key.strip().casefold()] = value.strip()
                 db = values.get("database", "?")
                 server = values.get("server", "?")
-                state = "OK" if db.casefold() == profile["banco"].casefold() else "ALERTA"
+                state = ("OK" if db.casefold() == profile["banco"].casefold()
+                         and server.casefold() == profile["servidor"].casefold() else "ALERTA")
                 _item(items, f"{name}: {filename}", state, f"Server={server}; Database={db}")
             try:
                 settings = configuracao(name)

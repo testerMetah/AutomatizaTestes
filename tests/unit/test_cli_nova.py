@@ -7,6 +7,7 @@ from automatiza.nova_cli import parser_cli
 from automatiza.processos_auditorias import descobrir
 from automatiza.relatorio_auditorias import agrupar_erros, comparar, normalizar
 from automatiza.perfis_teste import validar_escrita
+from automatiza.oraculos_auditorias import verificar
 
 
 def test_cli_filtros_e_confirmacao():
@@ -49,3 +50,15 @@ def test_valida_banco_antes_de_conectar(monkeypatch):
     settings = Mock(sql_database="producao")
     with pytest.raises(ValueError, match="fora da lista"):
         validar_escrita(settings)
+
+
+def test_oraculo_so_roda_regra_confirmada():
+    record = {"modulo": "acesso", "historico": "Pessoas", "filtro": "Pessoa",
+              "valor_exibido": "123", "contagem": 2}
+    assert verificar(Mock(), record, rules=[]) is None
+    db = Mock()
+    db.scalar.return_value = 2
+    rule = {"modulo": "acesso", "historico": "Pessoas", "filtro": "Pessoa",
+            "sql": "SELECT COUNT(*) FROM [HISTORICO_PESSOAS] WHERE [id_pessoa] = ?"}
+    assert verificar(db, record, rules=[rule])["status"] == "PASSOU"
+    db.scalar.assert_called_once_with(rule["sql"], ("123",))

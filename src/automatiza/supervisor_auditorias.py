@@ -122,6 +122,76 @@ def _capturar(pid, output):
     return None
 
 
+def _executar_monitorado(args, *, env, pid, timeout, diario):
+    """Interrompe automação quando a janela morre, trava ou deixa de progredir."""
+    from automatiza.processos_auditorias import caminho_processo
+    from pywinauto import Desktop
+    proc = subprocess.Popen(args, cwd=ROOT, env=env)
+    ultimo = time.monotonic()
+    tamanho = diario.stat().st_size if diario.exists() else 0
+    try:
+        while True:
+            try:
+                return proc.wait(timeout=0.5)
+            except subprocess.TimeoutExpired:
+                pass
+            try:
+                caminho_processo(pid)
+            except (OSError, PermissionError):
+                raise RuntimeError("O processo do Acessus encerrou durante o teste.")
+            windows = Desktop(backend="win32").windows(process=pid)
+            if windows:
+                import ctypes
+                if ctypes.windll.user32.IsHungAppWindow(windows[0].handle):
+                    raise RuntimeError("A janela do Acessus não está respondendo.")
+            atual = diario.stat().st_size if diario.exists() else 0
+            if atual > tamanho:
+                tamanho, ultimo = atual, time.monotonic()
+            if time.monotonic() - ultimo > timeout:
+                raise RuntimeError(f"Sem novo passo no diário por {timeout}s.")
+    finally:
+        if proc.poll() is None:
+            subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"],
+                           capture_output=True, timeout=15)
+
+
+def _marcar_restante(module, module_output, reason):
+    """Usa o mapa da tela para registrar os filtros que ficaram sem execução."""
+    from automatiza.diario_auditorias import DiarioAuditorias
+    maps = sorted((ROOT / "resultados").glob(f"auditorias-runtime-*/{module}/resultado.json"))
+    completed = set()
+    file = module_output / "tentativas.jsonl"
+    if file.exists():
+        for line in file.read_text(encoding="utf-8").splitlines():
+            try:
+                item = json.loads(line)
+                completed.add((item.get("historico"), item.get("filtro")))
+            except ValueError:
+                continue
+    remaining = []
+    if maps:
+        data = json.loads(maps[-1].read_text(encoding="utf-8"))
+        for history in data.get("historicos", []):
+            for filt in history.get("filtros", []):
+                key = (history.get("historico"), filt.get("nome"))
+                if key not in completed:
+                    remaining.append(key)
+    if not remaining:
+        remaining = [("(módulo)", "(restante não mapeado)")]
+    with DiarioAuditorias(ROOT / "resultados", {"modulo": module,
+                                                "motivo_interrupcao": reason,
+                                                "pasta_evidencias": str(module_output)}) as diary:
+        for history, filt in remaining:
+            record = {"modulo": module, "historico": history, "filtro": filt,
+                      "status": "ERRO_AUTOMACAO", "erro": reason,
+                      "tentativa": 0, "nao_executado": True}
+            diary.iniciar_tentativa(record)
+            diary.acao(module, history, filt, f"Não executado: {reason}")
+            diary.finalizar_tentativa(record)
+            with file.open("a", encoding="utf-8") as out:
+                out.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
 def executar(ns):
     from dotenv import load_dotenv
     from automatiza.relatorio_auditorias import gerar
@@ -162,14 +232,16 @@ def executar(ns):
                 args = [sys.executable, str(ROOT / "scripts/testar_auditorias_cronologico.py"),
                         str(pid), module, str(module_output)]
                 args += [x.strip() for x in ns.pular.split(",") if x.strip()]
-                result = subprocess.run(args, cwd=ROOT, env=env, timeout=ns.timeout * 120)
+                result_code = _executar_monitorado(
+                    args, env=env, pid=pid, timeout=ns.timeout,
+                    diario=ROOT / "resultados/passo-a-passo-detalhado.jsonl")
                 recent = _tail(path, start)
                 av = any("Access violation" in str(x.get("mensagens_consulta", "")) for x in recent)
-                if result.returncode == 0 and not av:
+                if result_code == 0 and not av:
                     print(f"{module}: concluído ({len(recent)} novas tentativas)", flush=True)
                     break
-                if result.returncode != 75 and not av:
-                    raise RuntimeError(f"Suíte encerrada com código {result.returncode}.")
+                if result_code != 75 and not av:
+                    raise RuntimeError(f"Suíte encerrada com código {result_code}.")
                 print(f"{module}: Access violation; retomada após reinício {restart + 1}", flush=True)
                 _capturar(pid, module_output)
                 subprocess.run(["taskkill", "/PID", str(pid), "/F", "/T"], capture_output=True, timeout=10)
@@ -182,10 +254,14 @@ def executar(ns):
                 if restart == ns.reinicios:
                     had_error = True
                     (module_output / "supervisor-erro.txt").write_text(str(exc), encoding="utf-8")
+                    _marcar_restante(module, module_output, str(exc))
                 else:
                     continue
             if restart == ns.reinicios:
                 had_error = True
+                if not (module_output / "supervisor-erro.txt").exists():
+                    _marcar_restante(module, module_output,
+                                    f"Limite de {ns.reinicios} reinícios após erro da aplicação")
                 print(f"{module}: limite de {ns.reinicios} reinícios; restante ERRO_AUTOMACAO", flush=True)
     report = gerar(output)
     print(f"Relatório: {report}", flush=True)
