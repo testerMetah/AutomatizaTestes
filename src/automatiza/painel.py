@@ -13,7 +13,7 @@ import webbrowser
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 from automatiza.catalogo_comandos import COMANDOS, POWERSHELL
 from automatiza.config import ROOT
@@ -39,6 +39,7 @@ class Estado:
                 raise ValueError("Já existe uma execução em andamento; aguarde ou use PARAR.")
             env = os.environ.copy()
             env["PYTHONUNBUFFERED"] = "1"
+            env["PYTHONIOENCODING"] = "utf-8"
             cmd = [sys.executable, "-u", "-m", "automatiza.nova_cli", *args]
             self.process = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=subprocess.PIPE,
                                             stderr=subprocess.STDOUT, text=True, encoding="utf-8",
@@ -112,9 +113,9 @@ def _rodadas():
                 except (ValueError, OSError):
                     pass
             if report.exists() or summary.exists() or list(folder.glob("**/tentativas.jsonl")):
-                rows.append({"pasta": str(folder.relative_to(ROOT)), "data": datetime.fromtimestamp(
+                rows.append({"pasta": folder.relative_to(ROOT).as_posix(), "data": datetime.fromtimestamp(
                     folder.stat().st_mtime).isoformat(timespec="seconds"), "resumo": data.get("modulos", {}),
-                    "relatorio": str(report.relative_to(ROOT)) if report.exists() else None})
+                    "relatorio": report.relative_to(ROOT).as_posix() if report.exists() else None})
     return sorted(rows, key=lambda x: x["data"], reverse=True)[:100]
 
 
@@ -242,7 +243,7 @@ def criar_servidor(porta=8765):
                     self._check()
                 qs = parse_qs(url.query)
                 if url.path.startswith("/evidencia/"):
-                    path = _arquivo_seguro(url.path[len("/evidencia/"):])
+                    path = _arquivo_seguro(unquote(url.path[len("/evidencia/"):]))
                     mime = {".html": "text/html", ".png": "image/png"}.get(path.suffix.lower())
                     if not mime:
                         raise ValueError("Tipo de evidência não permitido.")
@@ -284,7 +285,7 @@ def criar_servidor(porta=8765):
                     folder = (ROOT / base).resolve()
                     if not any(folder == x.resolve() or x.resolve() in folder.parents for x in ROOTS):
                         raise ValueError("Pasta fora das evidências.")
-                    return self._json([str(p.relative_to(ROOT)) for p in folder.glob("**/*")
+                    return self._json([p.relative_to(ROOT).as_posix() for p in folder.glob("**/*")
                                        if p.is_file() and p.suffix.lower() in {".png", ".html", ".jsonl", ".log"}][:500])
                 if url.path == "/api/log":
                     name = qs.get("arquivo", [""])[0]

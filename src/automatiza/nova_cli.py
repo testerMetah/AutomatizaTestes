@@ -144,6 +144,7 @@ def executar(ns):
         return _exec(args)
     if ns.comando == "ciclos":
         from automatiza.perfis_teste import configuracao, validar_escrita
+        ambiente_ciclo = None
         if ns.acao in {"executar", "suite"}:
             if not ns.confirmo_escrita:
                 raise ValueError("Escrita recusada: informe --confirmo-escrita após conferir o banco de teste.")
@@ -160,11 +161,14 @@ def executar(ns):
             SqlServer(replace(profile_settings, sql_database=target["origem"])).assert_database()
             actual = validar_escrita(profile_settings)
             print(f"Banco efetivo autorizado: {actual}", flush=True)
+            ambiente_ciclo = os.environ.copy()
+            ambiente_ciclo["SQL_SERVER"] = profile_settings.sql_server
+            ambiente_ciclo["SQL_DATABASE"] = profile_settings.sql_database
         args = ["-m", "automatiza.ciclos_cli", ns.acao, "--arquivo", ns.arquivo,
                 "--saida", ns.saida, "--semente", ns.semente, "--rodadas", ns.rodadas]
         if ns.acao == "suite":
             args += ["--sementes", ns.sementes]
-        return _exec(args)
+        return _exec(args, env=ambiente_ciclo)
     if ns.comando == "comparar-rodadas":
         from automatiza.relatorio_auditorias import comparar
         print(json.dumps(comparar(ns.anterior, ns.atual), ensure_ascii=False, indent=2))
@@ -181,6 +185,10 @@ def executar(ns):
 
 
 def main(argv=None):
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
     argv = list(sys.argv[1:] if argv is None else argv)
     legacy = {"diagnostico", "banco", "inspecionar", "consulta", "abrir", "acompanhar",
               "rh", "iniciar", "observar-status", "parar-observacao", "anotar", "mapear-delphi",

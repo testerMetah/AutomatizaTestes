@@ -18,7 +18,7 @@ from automatiza.seletores_auditorias import (BOTAO_LOGIN, CLASSE_AUDITORIA,
 def _esperar(func, timeout, descricao):
     from pywinauto.timings import wait_until
     try:
-        wait_until(timeout, 0.3, func)
+        wait_until(timeout, 0.3, lambda: bool(func()))
     except Exception as exc:
         raise RuntimeError(f"Tempo esgotado aguardando {descricao} ({timeout}s).") from exc
 
@@ -46,7 +46,7 @@ def _menu(parent, top, prefix):
     items[0].click_input()
 
 
-def abrir(modulo, pasta, *, pid=None, timeout=45):
+def abrir(modulo, pasta, *, pid=None, timeout=45, evidencias=None):
     """Reutiliza módulo correto ou abre pelo painel da mesma instalação."""
     from pywinauto import Desktop
     exe = pasta / MODULOS[modulo][0]
@@ -91,6 +91,23 @@ def abrir(modulo, pasta, *, pid=None, timeout=45):
         _menu(panel, MENU_MODULOS, MODULOS[modulo][1])
         _esperar(lambda: descobrir(exe) is not None, timeout, f"módulo {modulo}")
         pid = descobrir(exe)
+    # Um aviso modal deixado por uma tentativa anterior desabilita a janela MDI.
+    # Registre a evidência antes de liberar apenas avisos com botão OK.
+    from pywinauto import Desktop
+    for dialog in Desktop(backend="win32").windows(process=pid):
+        if dialog.class_name() != "#32770" or not dialog.is_visible():
+            continue
+        buttons = [item for item in dialog.descendants()
+                   if item.class_name() == "Button" and item.window_text() == "OK"]
+        if len(buttons) != 1:
+            raise RuntimeError(f"Diálogo modal não reconhecido em {modulo}: {dialog.window_text()}")
+        message = " | ".join(item.window_text() for item in dialog.descendants()
+                             if item.class_name() == "Static" and item.window_text())
+        if evidencias:
+            image = Path(evidencias) / f"dialogo-inicial-{datetime.now():%Y%m%d-%H%M%S}.png"
+            dialog.capture_as_image().save(image)
+        print(f"{modulo}: aviso modal existente: {message or dialog.window_text()}", flush=True)
+        buttons[0].click_input()
     _esperar(lambda: _janela(pid, CLASSE_JANELA_PRINCIPAL), timeout, "janela principal")
     main = _janela(pid, CLASSE_JANELA_PRINCIPAL)
     if not any(CLASSE_AUDITORIA in c.class_name() and c.is_visible() for c in main.descendants()):
@@ -126,6 +143,7 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
     """Interrompe automação quando a janela morre, trava ou deixa de progredir."""
     from automatiza.processos_auditorias import caminho_processo
     from pywinauto import Desktop
+    import pywintypes
     proc = subprocess.Popen(args, cwd=ROOT, env=env)
     ultimo = time.monotonic()
     tamanho = diario.stat().st_size if diario.exists() else 0
@@ -137,7 +155,7 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
                 pass
             try:
                 caminho_processo(pid)
-            except (OSError, PermissionError):
+            except (OSError, PermissionError, pywintypes.error):
                 raise RuntimeError("O processo do Acessus encerrou durante o teste.")
             windows = Desktop(backend="win32").windows(process=pid)
             if windows:
@@ -155,7 +173,7 @@ def _executar_monitorado(args, *, env, pid, timeout, diario):
                            capture_output=True, timeout=15)
 
 
-def _marcar_restante(module, module_output, reason):
+def _marcar_restante(module, module_output, reason, *, only_filter=None, skip=""):
     """Usa o mapa da tela para registrar os filtros que ficaram sem execução."""
     from automatiza.diario_auditorias import DiarioAuditorias
     maps = sorted((ROOT / "resultados").glob(f"auditorias-runtime-*/{module}/resultado.json"))
@@ -171,8 +189,13 @@ def _marcar_restante(module, module_output, reason):
     remaining = []
     if maps:
         data = json.loads(maps[-1].read_text(encoding="utf-8"))
-        for history in data.get("historicos", []):
+        skipped = {int(item) for item in skip.split(",") if item.strip().isdigit()}
+        for index, history in enumerate(data.get("historicos", [])):
+            if index in skipped:
+                continue
             for filt in history.get("filtros", []):
+                if only_filter and not filt.get("nome", "").startswith(only_filter):
+                    continue
                 key = (history.get("historico"), filt.get("nome"))
                 if key not in completed:
                     remaining.append(key)
@@ -212,7 +235,8 @@ def executar(ns):
         pid = ns.pid if ns.modulo != "todos" else None
         for restart in range(ns.reinicios + 1):
             try:
-                pid = abrir(module, folder, pid=pid, timeout=ns.timeout)
+                pid = abrir(module, folder, pid=pid, timeout=ns.timeout,
+                            evidencias=module_output)
                 print(f"{module}: PID {pid}, levantamento da tela", flush=True)
                 survey = subprocess.run([sys.executable, str(ROOT / "scripts/levantar_auditorias_runtime.py"),
                                          str(pid), module], cwd=ROOT, timeout=ns.timeout * 5)
@@ -250,18 +274,26 @@ def executar(ns):
                 print(f"{module}: {type(exc).__name__}: {exc}", flush=True)
                 if pid:
                     _capturar(pid, module_output)
+                    try:
+                        validar_pid(pid, folder / MODULOS[module][0])
+                        subprocess.run(["taskkill", "/PID", str(pid), "/F", "/T"],
+                                       capture_output=True, timeout=10)
+                    except (ValueError, OSError, subprocess.TimeoutExpired):
+                        pass
                 pid = None
                 if restart == ns.reinicios:
                     had_error = True
                     (module_output / "supervisor-erro.txt").write_text(str(exc), encoding="utf-8")
-                    _marcar_restante(module, module_output, str(exc))
+                    _marcar_restante(module, module_output, str(exc),
+                                    only_filter=ns.filtro, skip=ns.pular)
                 else:
                     continue
             if restart == ns.reinicios:
                 had_error = True
                 if not (module_output / "supervisor-erro.txt").exists():
                     _marcar_restante(module, module_output,
-                                    f"Limite de {ns.reinicios} reinícios após erro da aplicação")
+                                    f"Limite de {ns.reinicios} reinícios após erro da aplicação",
+                                    only_filter=ns.filtro, skip=ns.pular)
                 print(f"{module}: limite de {ns.reinicios} reinícios; restante ERRO_AUTOMACAO", flush=True)
     report = gerar(output)
     print(f"Relatório: {report}", flush=True)

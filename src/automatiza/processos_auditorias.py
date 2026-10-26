@@ -14,6 +14,7 @@ def caminho_processo(pid):
 
 
 def descobrir(executavel, *, enum_processes=None, resolver=None):
+    import pywintypes
     import win32process
     enum_processes = enum_processes or win32process.EnumProcesses
     resolver = resolver or caminho_processo
@@ -23,7 +24,7 @@ def descobrir(executavel, *, enum_processes=None, resolver=None):
         try:
             if Path(resolver(pid)).resolve() == expected:
                 found.append(pid)
-        except (OSError, PermissionError):
+        except (OSError, PermissionError, pywintypes.error):
             continue
     if len(found) > 1:
         raise RuntimeError(f"Há {len(found)} processos para {expected}; feche os extras ou use --pid.")
