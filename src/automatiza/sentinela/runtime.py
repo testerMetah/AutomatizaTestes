@@ -20,7 +20,9 @@ MOD_NOREPEAT = 0x4000
 MOD_CONTROL = 2
 MOD_SHIFT = 4
 HOTKEYS = {"Pause": (0, 0x13), "Ctrl+Shift+F9": (MOD_CONTROL | MOD_SHIFT, 0x78),
-           "Ctrl+Shift+P": (MOD_CONTROL | MOD_SHIFT, 0x50)}
+           "Ctrl+Shift+P": (MOD_CONTROL | MOD_SHIFT, 0x50),
+           "Ctrl+Shift+F10": (MOD_CONTROL | MOD_SHIFT, 0x79)}
+ATALHO_PARAR = "Ctrl+Shift+F10"
 WS_EX_NOACTIVATE = 0x08000000
 WS_EX_TOOLWINDOW = 0x80
 WS_EX_TRANSPARENT = 0x20
@@ -145,19 +147,23 @@ class Sentinela:
             ids = []
             hook = None
             callback = None
-            for i, nome in enumerate(self.cfg["atalhos"], 1):
+            atalhos = list(dict.fromkeys([*self.cfg["atalhos"], ATALHO_PARAR]))
+            faltantes = []
+            for i, nome in enumerate(atalhos, 1):
                 mods, vk = HOTKEYS[nome]
                 if USER32.RegisterHotKey(None, i, mods | MOD_NOREPEAT, vk):
                     ids.append(i)
-                    self.fila.put(("registrado", nome))
-            if not ids:
+                    self.fila.put(("registrado_parar" if nome == ATALHO_PARAR else "registrado", nome))
+                else:
+                    faltantes.append(nome)
+            if faltantes:
                 # O hook de baixo nível consome a tecla. Polling sozinho deixaria
                 # a tecla chegar ao Acessus e não atende ao requisito de segurança.
                 CALLBACK = ctypes.WINFUNCTYPE(ctypes.c_long, ctypes.c_int, wintypes.WPARAM, wintypes.LPARAM)
                 def interceptar(ncode, wparam, lparam):
                     if ncode >= 0 and wparam in (0x0100, 0x0104):
                         vk = ctypes.cast(lparam, ctypes.POINTER(wintypes.DWORD)).contents.value
-                        for nome in self.cfg["atalhos"]:
+                        for nome in faltantes:
                             mods, tecla = HOTKEYS[nome]
                             ctrl = bool(USER32.GetAsyncKeyState(0x11) & 0x8000)
                             shift = bool(USER32.GetAsyncKeyState(0x10) & 0x8000)
@@ -168,15 +174,19 @@ class Sentinela:
                 callback = CALLBACK(interceptar)
                 hook = USER32.SetWindowsHookExW(13, callback, KERNEL32.GetModuleHandleW(None), 0)
                 if hook:
-                    self.fila.put(("registrado", self.cfg["atalhos"][0]))
+                    for nome in faltantes:
+                        self.fila.put(("registrado_parar" if nome == ATALHO_PARAR else "registrado", nome))
                 else:
-                    self.fila.put(("indisponivel", None))
+                    if not any(atalhos[i - 1] != ATALHO_PARAR for i in ids):
+                        self.fila.put(("indisponivel", None))
+                    if ATALHO_PARAR in faltantes:
+                        self.fila.put(("indisponivel_parar", None))
             msg = wintypes.MSG()
             while USER32.GetMessageW(ctypes.byref(msg), None, 0, 0) > 0:
                 if msg.message == 0x0312:
                     i = msg.wParam
                     if i in ids:
-                        self.fila.put(("atalho", self.cfg["atalhos"][i - 1]))
+                        self.fila.put(("atalho", atalhos[i - 1]))
                 if (self.pasta / "encerrar.json").exists():
                     break
             for i in ids:
@@ -253,7 +263,7 @@ class Sentinela:
 
     def confirmar_cancelamento(self):
         import tkinter.messagebox as mb
-        if mb.askyesno("Cancelar teste", "Cancelar mesmo?", parent=self.dialogo):
+        if mb.askyesno("Cancelar teste", "Cancelar mesmo?", parent=self.dialogo or self.root):
             self.cancelar()
 
     def pedir_pausa(self, origem):
@@ -335,14 +345,22 @@ class Sentinela:
             tipo, valor = self.fila.get_nowait()
             if tipo == "registrado" and self.atalho is None:
                 self.atalho = valor
-                gravar(self.pasta / "sentinela.json", {"estado": "ATIVA", "atalho": valor})
+                gravar(self.pasta / "sentinela.json", {**ler(self.pasta / "sentinela.json"), "estado": "ATIVA", "atalho": valor})
                 self._toast("Teste iniciado", f"{self.meta.get('nome', 'Teste')}\nPerfil: {self.meta.get('perfil', '?')} · Banco: {self.meta.get('banco', '?')}\nPara pausar: {valor}", self.cfg["inicio_segundos"], "#17618b")
+            elif tipo == "registrado_parar":
+                estado = ler(self.pasta / "sentinela.json")
+                gravar(self.pasta / "sentinela.json", {**estado, "atalho_parar": valor})
             elif tipo == "indisponivel":
-                gravar(self.pasta / "sentinela.json", {"estado": "SEM_ATALHO", "atalho": None})
+                gravar(self.pasta / "sentinela.json", {**ler(self.pasta / "sentinela.json"), "estado": "SEM_ATALHO", "atalho": None})
                 self._toast("Teste iniciado", "Atalho indisponível; use Pausar no painel.", self.cfg["inicio_segundos"], "#8b5e17")
+            elif tipo == "indisponivel_parar":
+                estado = ler(self.pasta / "sentinela.json")
+                gravar(self.pasta / "sentinela.json", {**estado, "atalho_parar": None})
             elif tipo == "atalho" and self.repeticao.aceitar():
                 self._evento("ATALHO_DETECTADO", atalho=valor)
-                if self.inicio_pausa is None:
+                if valor == ATALHO_PARAR:
+                    self.confirmar_cancelamento()
+                elif self.inicio_pausa is None:
                     self.pedir_pausa("atalho")
                 else:
                     self.continuar()

@@ -163,5 +163,6 @@ def tecla_reservada(value, atalhos=None):
     norm = str(value).upper().replace(" ", "")
     formas = {"Pause": {"{PAUSE}", "{BREAK}"},
               "Ctrl+Shift+F9": {"^+{F9}", "+^{F9}"},
-              "Ctrl+Shift+P": {"^+P", "+^P"}}
-    return any(norm in formas[name] for name in at)
+              "Ctrl+Shift+P": {"^+P", "+^P"},
+              "Ctrl+Shift+F10": {"^+{F10}", "+^{F10}"}}
+    return norm in formas["Ctrl+Shift+F10"] or any(norm in formas[name] for name in at)

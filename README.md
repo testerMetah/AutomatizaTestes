@@ -12,7 +12,7 @@ Automação local do **Acessus** (desktop Delphi/VCL), RH Metadados/Frequência 
 | Incluir entradas extremas | Marque **Variações extremas** | `automatiza auditorias --modulo escola --extremo` |
 | Ver falhas e screenshots | **Resultados** | Abra `resultados/<rodada>/RELATORIO.html` |
 | Ver cada ação em ordem | **Resultados → Logs permanentes** | Abra `resultados/passo-a-passo.log` |
-| Pausar ou cancelar um teste | **Execução ao vivo → Pausar / Continuar / Cancelar** | `Pause/Break` (alternativas: `Ctrl+Shift+F9` e `Ctrl+Shift+P`) |
+| Pausar ou cancelar um teste | **Execução ao vivo → Pausar / Continuar / Cancelar** | `Pause/Break` pausa/continua (alternativas: `Ctrl+Shift+F9` e `Ctrl+Shift+P`); `Ctrl+Shift+F10` pede confirmação para cancelar |
 | Aprender todos os comandos | **Comandos** | `automatiza comandos` |
 
 O [Guia de Uso](docs/GUIA-DE-USO.md) explica cada tarefa, perfil, aviso, relatório e opção. A [Arquitetura](docs/ARQUITETURA.md) descreve as partes internas e como evoluir o projeto. Leia [AGENTS.md](AGENTS.md) antes de modificar testes.
