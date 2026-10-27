@@ -38,3 +38,22 @@ def test_verificar_detecta_rodada_sem_manifesto(monkeypatch, tmp_path):
     monkeypatch.setenv("AUTOMATIZA_RAIZ", str(tmp_path))
     (tmp_path / "saidas/rodadas/incompleta").mkdir(parents=True)
     assert any("sem manifesto" in erro for erro in verificar())
+
+
+def test_migracao_robot_preserva_pasta_unica(monkeypatch, tmp_path):
+    from automatiza.manutencao_saidas import organizar, digest
+    monkeypatch.setenv("AUTOMATIZA_RAIZ", str(tmp_path))
+    origem = tmp_path / "reports/robot"
+    origem.mkdir(parents=True)
+    (origem / "report.html").write_text("relatorio", encoding="utf-8")
+    hash_antigo = digest(origem / "report.html")
+
+    plano = organizar()
+    assert len(plano) == 1
+    assert plano[0][0] == origem
+    organizar(aplicar=True)
+
+    assert not origem.exists()
+    assert digest(tmp_path / "saidas/arquivo-legado/reports/robot/report.html") == hash_antigo
+    assert digest(plano[0][1] / "report.html") == hash_antigo
+    assert not organizar()

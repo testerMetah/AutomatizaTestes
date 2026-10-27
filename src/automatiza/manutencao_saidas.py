@@ -31,7 +31,7 @@ def _itens():
                *caminhos.legado("resultados").glob("rodada-*"),
                *caminhos.legado("reports").glob("execucoes/*"),
                *caminhos.legado("reports").glob("observacao/*"),
-               *caminhos.legado("reports").glob("robot/*")]
+               caminhos.legado("reports") / "robot"]
     for p in sorted(set(antigos)):
         if p.is_dir() and not p.is_symlink():
             yield p
