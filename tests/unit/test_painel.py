@@ -44,6 +44,11 @@ def test_rotas_basicas_do_painel():
         ajuda = json.load(urllib.request.urlopen(request, timeout=10))
         assert "auditorias.extremo" in ajuda["ajudas"]
         assert len(ajuda["catalogo"]) >= 25
+        request = urllib.request.Request(base + "/api/banco?perfil=auditorias", headers={"X-Painel-Token": token})
+        from unittest.mock import patch
+        with patch("automatiza.database.SqlServer.assert_database", return_value="AcessoFagundes"):
+            banco = json.load(urllib.request.urlopen(request, timeout=10))
+        assert banco["banco"] == "AcessoFagundes"
     finally:
         server.shutdown()
         server.server_close()

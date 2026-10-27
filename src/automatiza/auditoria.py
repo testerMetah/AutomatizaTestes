@@ -35,7 +35,8 @@ class AuditRun:
             return [self.clean(v) for v in value]
         if isinstance(value, str):
             for secret in sorted(self.secrets, key=len, reverse=True):
-                value = value.replace(secret, '[omitido]')
+                if len(secret) >= 3:
+                    value = value.replace(secret, '[omitido]')
             return value
         return value
 

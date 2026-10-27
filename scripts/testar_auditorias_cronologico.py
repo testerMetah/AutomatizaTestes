@@ -94,7 +94,6 @@ def choose_lower(form, label, emit, pid=None, screenshot_dir=None):
         return
     for _ in range(3):
         ponto({"acao": "selecionar aba", "aba": label})
-        form.set_focus()
         items = [t for t in tabs(form.handle, upper=False) if t.window_text() == label]
         if len(items) != 1:
             raise RuntimeError(f"Aba {label}: encontradas {len(items)}")
@@ -126,7 +125,8 @@ def set_period(form, moment, variant, emit, pid, extreme=False, screenshot_dir=N
     names = ("Data inicial", "Hora inicial", "Data final", "Hora final")
     for edit, name, value in zip(edits, names, values):
         ponto({"acao": "preencher periodo", "campo": name})
-        edit.set_edit_text(value)
+        edit.click_input()
+        edit.type_keys("^a{BACKSPACE}" + value + "{TAB}", pause=0.05)
         emit(f"Campo {name} preencheu com: {value}")
     return values
 
@@ -277,10 +277,9 @@ def run(pid, module, output, skip):
                                    "tentativa": variant + 1})
                             emit(f"Iniciou tentativa {variant + 1}/5 no campo {subindex + 1}")
                             dialogs(pid, emit, output)
-                            form.set_focus()
                             ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "limpar filtros"})
-                            button(form, "Limpar Filtros").click()
-                            emit("Clicou em: Limpar Filtros (Ctrl+X)")
+                            button(form, "Limpar Filtros").click_input()
+                            emit("Clicou em: Limpar Filtros")
                             dialogs(pid, emit, output)
                             period = set_period(form, moment, variant if kind == "TMaskEdit" else 0,
                                                 emit, pid, extreme=extreme and kind == "TMaskEdit",
@@ -299,14 +298,14 @@ def run(pid, module, output, skip):
                                     entered = control.window_text()
                                 else:
                                     ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "digitar"})
-                                    control.set_edit_text(value)
+                                    control.click_input()
+                                    control.type_keys("^a{BACKSPACE}" + value + "{TAB}", pause=0.05)
                                     entered = control.window_text()
                                 record["valor_exibido"] = entered
                                 emit(f"Campo {field_name} (posição {subindex + 1}) preencheu com: {entered!r}")
-                            form.set_focus()
                             ponto({"modulo": module, "historico": history, "filtro": field_name, "acao": "consultar"})
-                            button(form, "Consultar").click()
-                            emit("Clicou em: Consultar (F6)")
+                            button(form, "Consultar").click_input()
+                            emit("Clicou em: Consultar")
                             consultation = dialogs(pid, emit, output)
                             record["mensagens_consulta"] = consultation
                             if not consultation:

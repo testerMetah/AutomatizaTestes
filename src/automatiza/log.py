@@ -19,7 +19,9 @@ def mascarar(valor):
         return valor
     for chave in ("TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"):
         segredo = os.environ.get(chave)
-        if segredo:
+        # Segredos de 1 ou 2 caracteres ocorrem em datas, IDs e números.
+        # Campos de credencial continuam mascarados pelas chaves e pelo padrão abaixo.
+        if segredo and len(segredo) >= 3:
             valor = valor.replace(segredo, "[oculto]")
     valor = _CREDENCIAL.sub(lambda m: m.group(1) + "=[oculto]", valor)
     return _CONEXAO.sub("[conexão ocultada]", valor)

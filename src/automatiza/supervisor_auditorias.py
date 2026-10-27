@@ -87,9 +87,11 @@ def abrir(modulo, pasta, *, pid=None, timeout=45, evidencias=None):
                 if len(edits) != 2:
                     raise RuntimeError(f"Login: encontrados {len(edits)} campos TEdit; remapeie.")
                 ponto({"acao": "digitar usuario"})
-                edits[0].set_edit_text(user)
+                edits[0].click_input()
+                edits[0].type_keys("^a{BACKSPACE}" + user, pause=0.05)
                 ponto({"acao": "digitar senha"})
-                edits[1].set_edit_text(password)
+                edits[1].click_input()
+                edits[1].type_keys("^a{BACKSPACE}" + password, pause=0.05)
                 buttons = [x for x in login.descendants() if x.window_text() == BOTAO_LOGIN]
                 if len(buttons) != 1:
                     raise RuntimeError("Botão Login não identificado; remapeie.")

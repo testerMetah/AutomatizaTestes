@@ -73,6 +73,22 @@ def comando(acao, origem="painel"):
     gravar(base / "pedido.json", {"acao": acao, "origem": origem, "instante": time.time_ns()})
 
 
+def _pid_ativo(pid):
+    if os.name != "nt" or not pid:
+        return False
+    import ctypes
+    from ctypes import wintypes
+    kernel = ctypes.windll.kernel32
+    handle = kernel.OpenProcess(0x1000, False, int(pid))
+    if not handle:
+        return False
+    try:
+        codigo = wintypes.DWORD()
+        return bool(kernel.GetExitCodeProcess(handle, ctypes.byref(codigo))) and codigo.value == 259
+    finally:
+        kernel.CloseHandle(handle)
+
+
 def ponto(contexto=None):
     """Bloqueia antes da próxima ação. Não interrompe uma ação já começada."""
     base = pasta()
@@ -95,9 +111,9 @@ def ponto(contexto=None):
                     ctypes.windll.user32.SetForegroundWindow(hwnd)
                 gravar(base / "confirmacao.json", {"estado": "RODANDO", "instante": time.time(), "contexto": contexto or {}})
             return
-        heartbeat = ler(base / "heartbeat.json").get("instante", 0)
-        if time.time() - heartbeat > 2:
-            return  # Falha da sentinela: o teste segue sem pausa.
+        heartbeat = ler(base / "heartbeat.json")
+        if time.time() - heartbeat.get("instante", 0) > 2 and not _pid_ativo(heartbeat.get("pid")):
+            return  # Sentinela realmente morreu: o teste segue sem pausa.
         if visto != "PAUSADO":
             gravar(base / "confirmacao.json", {"estado": "PAUSADO", "instante": time.time(), "contexto": contexto or {}})
             visto = "PAUSADO"

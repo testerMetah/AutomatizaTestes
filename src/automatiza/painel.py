@@ -64,7 +64,7 @@ class Estado:
                     clean = line.rstrip("\r\n")
                     for key in ("TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"):
                         secret = os.getenv(key)
-                        if secret:
+                        if secret and len(secret) >= 3:
                             clean = clean.replace(secret, "[oculto]")
                     self.lines.append(clean)
                     if len(self.lines) > 10000:
@@ -135,7 +135,7 @@ def _erro_publico(exc):
     raw = str(exc)
     for key in ("TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"):
         secret = os.getenv(key)
-        if secret:
+        if secret and len(secret) >= 3:
             raw = raw.replace(secret, "[oculto]")
     lower = raw.casefold()
     if "teste_usuario" in lower or "teste_senha" in lower:
@@ -324,9 +324,9 @@ def criar_servidor(porta=8765):
                     from automatiza.diagnostico_unificado import executar
                     return self._json(executar())
                 if url.path == "/api/config":
-                    from automatiza.pausa import configuracao
+                    from automatiza.pausa import configuracao as configuracao_pausa
                     return self._json({"perfis": [carregar(n) for n in ("auditorias", "sequencias")],
-                                       "notificacoes": configuracao(),
+                                       "notificacoes": configuracao_pausa(),
                                        "env": {key: ("••••" if key in {"TESTE_SENHA", "SQL_PASSWORD", "RH_PASSWORD"}
                                                      and os.getenv(key) else os.getenv(key, ""))
                                                for key in ("TESTE_USUARIO", "TESTE_SENHA", "SQL_SERVER",

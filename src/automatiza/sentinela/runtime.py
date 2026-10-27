@@ -106,6 +106,19 @@ def _suspender(pid, pausa):
         KERNEL32.CloseHandle(handle)
 
 
+def _processo_vivo(pid):
+    if os.name != "nt":
+        return True
+    handle = KERNEL32.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+    if not handle:
+        return False
+    try:
+        codigo = wintypes.DWORD()
+        return bool(KERNEL32.GetExitCodeProcess(handle, ctypes.byref(codigo))) and codigo.value == 259
+    finally:
+        KERNEL32.CloseHandle(handle)
+
+
 class Sentinela:
     def __init__(self, pasta):
         self.pasta = Path(pasta)
@@ -270,6 +283,11 @@ class Sentinela:
         if self.dialogo:
             self.dialogo.destroy()
             self.dialogo = None
+        # A sentinela possui o foco enquanto o diálogo está aberto. Ela pode
+        # devolvê-lo antes da próxima ação física; o processo de teste não pode
+        # contar com permissão para chamar SetForegroundWindow sozinho.
+        if anterior and USER32.IsWindow(int(anterior)):
+            USER32.SetForegroundWindow(int(anterior))
 
     def cancelar(self):
         for pid in reversed(self.suspensos):
@@ -305,6 +323,11 @@ class Sentinela:
             out.write(json.dumps(detalhe, ensure_ascii=False) + "\n")
 
     def _tic(self):
+        if not _processo_vivo(self.meta["pid"]):
+            for pid in reversed(self.suspensos):
+                _suspender(pid, False)
+            self.root.destroy()
+            return
         if time.monotonic() - self.ultimo_heartbeat >= 0.2:
             gravar(self.pasta / "heartbeat.json", {"instante": time.time(), "pid": os.getpid()})
             self.ultimo_heartbeat = time.monotonic()
