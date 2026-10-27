@@ -163,7 +163,9 @@ def executar(ns):
         args += ["--passos", ns.passos, "--massa", ns.massa]
         return _exec(args)
     if ns.comando == "robot":
-        return _exec(["-m", "robot", "--outputdir", str(ROOT / "reports/robot"),
+        rodada = os.environ.get("AUTOMATIZA_RODADA_DIR")
+        destino = (Path(rodada) / "robot") if rodada else (ROOT / "reports/robot")
+        return _exec(["-m", "robot", "--outputdir", str(destino),
                       "--include", ns.tag, str(ROOT / "tests/sequencias/suites.robot")])
     if ns.comando == "observar":
         from automatiza.observador import annotate, observer_status, run_observer, stop_observer
@@ -238,8 +240,10 @@ def executar(ns):
         return 0
     if ns.comando == "testes-unitarios":
         temp = ROOT / "resultados" / f"pytest-cli-{datetime.now():%Y%m%d-%H%M%S}"
+        ambiente_testes = os.environ.copy()
+        ambiente_testes.pop("AUTOMATIZA_EXECUCAO_ID", None)
         return _exec(["-m", "pytest", "tests/unit", "-q", f"--basetemp={temp}",
-                      "-p", "no:cacheprovider"])
+                      "-p", "no:cacheprovider"], env=ambiente_testes)
     if ns.comando == "painel":
         from automatiza.painel import iniciar
         iniciar()
