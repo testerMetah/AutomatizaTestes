@@ -5,6 +5,18 @@ import urllib.request
 from automatiza.painel import _comando, criar_servidor
 
 
+def test_resultados_incluem_rodadas_novas(monkeypatch, tmp_path):
+    import automatiza.painel as painel
+    monkeypatch.setattr(painel, "ROOT", tmp_path)
+    monkeypatch.setattr(painel, "ROOTS", (tmp_path / "saidas" / "rodadas",))
+    rodada = tmp_path / "saidas" / "rodadas" / "20261027-auditorias-acesso"
+    rodada.mkdir(parents=True)
+    (rodada / "RELATORIO.html").write_text("relatorio", encoding="utf-8")
+    rows = painel._rodadas()
+    assert rows[0]["pasta"] == "saidas/rodadas/20261027-auditorias-acesso"
+    assert rows[0]["relatorio"] == "saidas/rodadas/20261027-auditorias-acesso/RELATORIO.html"
+
+
 def test_comando_ciclos_escrita_exige_confirmacao():
     try:
         _comando({"tipo": "ciclos", "acao": "executar", "arquivo": "x", "saida": "y"})

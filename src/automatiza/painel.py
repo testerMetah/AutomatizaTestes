@@ -22,7 +22,7 @@ from automatiza.perfis_teste import carregar, configuracao, validar_escrita
 
 STATIC = Path(__file__).with_name("painel.html")
 AJUDA = Path(__file__).with_name("painel_ajuda.json")
-ROOTS = (ROOT / "resultados", ROOT / "reports")
+ROOTS = (ROOT / "saidas" / "rodadas", ROOT / "resultados", ROOT / "reports")
 UI_COMMANDS = {"auditorias", "robot", "sequencias", "ciclos", "testes-unitarios"}
 
 
@@ -76,7 +76,8 @@ class Estado:
                 self.lines.append(f"Falha ao ler a execução: {type(exc).__name__}")
         with self.lock:
             if self.process is proc and self.job:
-                self.job["estado"] = "concluído" if code == 0 else "falhou"
+                if self.job["estado"] != "interrompido":
+                    self.job["estado"] = "concluído" if code == 0 else ("cancelado" if code == 2 else "falhou")
                 self.job["codigo"] = code
                 self.job["fim"] = datetime.now().isoformat()
 
@@ -112,6 +113,10 @@ class Estado:
                 raise ValueError("Nenhum teste em execução.")
             if acao not in {"pausar", "continuar", "cancelar"}:
                 raise ValueError("Comando de pausa inválido.")
+            from automatiza.pausa import ler
+            sentinel = ler(self.pause_dir / "sentinela.json")
+            if sentinel.get("estado") != "ATIVA":
+                raise ValueError("Sentinela de pausa indisponível nesta execução.")
             gravar(self.pause_dir / "pedido.json", {"acao": acao, "origem": "painel", "instante": time.time_ns()})
             return {"pedido": acao}
 

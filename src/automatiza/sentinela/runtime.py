@@ -319,7 +319,10 @@ class Sentinela:
                 self._toast("Teste iniciado", "Atalho indisponível; use Pausar no painel.", self.cfg["inicio_segundos"], "#8b5e17")
             elif tipo == "atalho" and self.repeticao.aceitar():
                 self._evento("ATALHO_DETECTADO", atalho=valor)
-                self.pedir_pausa("atalho")
+                if self.inicio_pausa is None:
+                    self.pedir_pausa("atalho")
+                else:
+                    self.continuar()
         pedido = ler(self.pasta / "pedido.json")
         if pedido and pedido.get("instante") != self.ultimo_pedido:
             self.ultimo_pedido = pedido.get("instante")

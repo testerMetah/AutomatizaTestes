@@ -168,10 +168,10 @@ async function rodar(data){try{let job=await api('/api/iniciar',data);linhas=0;m
 function linhaTecnica(line){return /^\s*(Traceback|File "|at |\^|[A-Za-z_.]+(?:Error|Exception):)/.test(line)||line.includes('site-packages\\')}
 async function atualizarJob(){try{let x=await api('/api/job?de='+linhas); if(x.linhas.length){let normal=[],technical=[];for(let line of x.linhas)(linhaTecnica(line)?technical:normal).push(line);if(normal.length)$('console').textContent+=normal.join('\n')+'\n';if(technical.length){$('console-tecnico').textContent+=technical.join('\n')+'\n';$('console').textContent+='Houve um erro técnico. Abra “Ver detalhes técnicos” ou o relatório.\n'}$('console').scrollTop=$('console').scrollHeight}linhas=x.total;
  let job=x.job;ocupado=!!job&&job.estado==='rodando';let pausado=x.pausa?.estado==='PAUSADO';$('job-estado').textContent=job?job.comando+' — '+(pausado?'PAUSADO':job.estado):'Nenhuma execução iniciada.';
- $('job-estado').style.color=pausado?'#9a5a00':'';$('atalho-ativo').textContent='Atalho: '+(x.sentinela?.atalho||'indisponível; use os botões');
+ $('job-estado').style.color=pausado?'#9a5a00':'';let pausaAtiva=ocupado&&x.sentinela?.estado==='ATIVA';$('atalho-ativo').textContent='Atalho para pausar/continuar: '+(pausaAtiva?(x.sentinela.atalho==='Pause'?'Pause/Break':x.sentinela.atalho):'indisponível nesta execução');
  $('pausas-linha-tempo').textContent=(x.eventos_pausa||[]).map(e=>e.tipo+(e.latencia_ms?' · '+e.latencia_ms+' ms':'')).join(' → ');
  document.querySelectorAll('[data-run]').forEach(b=>b.disabled=ocupado);$('parar-job').disabled=!ocupado;
- $('pausar-job').disabled=!ocupado||pausado;$('continuar-job').disabled=!ocupado||!pausado;$('cancelar-job').disabled=!ocupado;
+ $('pausar-job').disabled=!pausaAtiva||pausado;$('continuar-job').disabled=!pausaAtiva||!pausado;$('cancelar-job').disabled=!pausaAtiva;
  if(job&&job.estado==='falhou'&&falhaAvisada!==job.id){falhaAvisada=job.id;avisar({message:'O teste terminou com falha. Pode haver erro no Acessus, na conexão ou na automação. Abra Resultados e o relatório da rodada para ver a causa.',detalhe:x.linhas.slice(-10).join('\n')})}
  }catch(e){avisar(e)}}
 async function pararJob(){try{await api('/api/parar',{});await atualizarJob()}catch(e){avisar(e)}}

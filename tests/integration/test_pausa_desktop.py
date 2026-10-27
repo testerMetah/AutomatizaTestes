@@ -56,8 +56,13 @@ def test_pause_break_para_laco_falso(monkeypatch, tmp_path):
         worker.start()
         assert not parado.wait(0.15)
         assert (time.monotonic() - inicio) < 1.5
-        gravar(tmp_path / "pedido.json", {"acao": "continuar", "origem": "teste", "instante": time.time_ns()})
+        while time.monotonic() - inicio < 0.55:
+            assert not parado.wait(0.02)
+        for flag in (0, 2):
+            data = INPUT(1, UNION(ki=KEYBDINPUT(0x13, 0, flag, 0, None)))
+            assert ctypes.windll.user32.SendInput(1, ctypes.byref(data), ctypes.sizeof(data)) == 1
         assert parado.wait(2)
+        assert ler(tmp_path / "controle.json").get("estado") == "RODANDO"
     finally:
         gravar(tmp_path / "final.json", {"estado": "CONCLUIDO", "resumo": "Teste", "pasta": str(tmp_path)})
         proc.terminate()

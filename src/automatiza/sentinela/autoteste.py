@@ -10,8 +10,9 @@ from automatiza.pausa import TesteCancelado, gravar, ler, ponto
 
 
 def executar(ns):
-    base = Path(tempfile.mkdtemp(prefix="automatiza-pausa-teste-"))
     anterior = os.environ.get("AUTOMATIZA_PAUSA_DIR")
+    base = Path(anterior) if anterior else Path(tempfile.mkdtemp(prefix="automatiza-pausa-teste-"))
+    base.mkdir(parents=True, exist_ok=True)
     os.environ["AUTOMATIZA_PAUSA_DIR"] = str(base)
     gravar(base / "meta.json", {"nome": "Autoteste da sentinela", "perfil": "local",
                                 "banco": "sem banco", "pid": os.getpid(),
@@ -24,6 +25,7 @@ def executar(ns):
                             stdout=erro, stderr=subprocess.STDOUT,
                             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     erro.close()
+    final = "CONCLUIDO"
     try:
         limite = time.monotonic() + 10
         while not (base / "sentinela.json").exists() and time.monotonic() < limite and proc.poll() is None:
@@ -43,6 +45,7 @@ def executar(ns):
             try:
                 ponto({"acao": "laço falso de autoteste"})
             except TesteCancelado:
+                final = "CANCELADO"
                 break
             if (base / "eventos.jsonl").exists():
                 linhas = (base / "eventos.jsonl").read_text(encoding="utf-8").splitlines()
@@ -52,11 +55,11 @@ def executar(ns):
                     print(f"{time.strftime('%H:%M:%S', time.localtime(evt['data_hora']))} {evt['tipo']} {evt.get('latencia_ms', '')} ms", flush=True)
                 lidos = len(linhas)
             time.sleep(0.03)
-        return 0
+        return 2 if final == "CANCELADO" else 0
     except KeyboardInterrupt:
         return 0
     finally:
-        gravar(base / "final.json", {"estado": "CONCLUIDO", "resumo": "Autoteste encerrado", "pasta": str(base)})
+        gravar(base / "final.json", {"estado": final, "resumo": "Autoteste encerrado", "pasta": str(base)})
         if anterior is None:
             os.environ.pop("AUTOMATIZA_PAUSA_DIR", None)
         else:
