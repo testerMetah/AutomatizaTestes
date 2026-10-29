@@ -1,5 +1,13 @@
 # AutomatizaTestes
 
+## Suíte de telas por mapa YAML
+
+`Rodar-Telas.bat` ativa o Python 32 bits da venv e executa as suítes Robot em `tests/`, excluindo cenários marcados `bloqueado`; gera `resultados/robot-telas/<data-hora>/log.html`. Exemplos: `Rodar-Telas.bat --tela estacionamento_cadastro_veiculos` e `Rodar-Telas.bat --tag smoke`. Se o módulo não estiver aberto, a biblioteca inicia `Acessus.Modulo.exe`, autentica com `TESTE_USUARIO` e `TESTE_SENHA` do `.env` local e abre o módulo pelo menu. Cada gesto é registrado no log; falhas criam `resultados/<data-hora>/<teste>/falha.txt` e screenshot quando a janela está disponível. Suítes com mapas ainda não validados aparecem como `SKIP`, nunca como aprovação da tela.
+
+O mapa `src/automatiza/mapas/estacionamento_cadastro_veiculos.yaml` foi validado no build 2.11.1. Para validar outra tela, abra o módulo pelo `Acessus.Modulo.exe`, exporte a árvore real de controles e compare com o DFM. O exemplo `scripts/inspecionar_veiculos_ui.py` mostra como salvar `print_control_identifiers` em `docs/mapas-de-tela/`. Complete seletores (`found_index` quando necessário) e marque `validado_na_ui: true` somente após uma fumaça sem gravação. A biblioteca bloqueia interação com mapa não validado.
+
+Para adicionar uma tela, use `python scripts/gerar_catalogo_telas.py` para criar o inventário inicial dos forms ligados ao menu, ou crie `src/automatiza/mapas/<nome>.yaml` com `form_class`, `principal_class`, `menu`, `backend` e `controles` lógicos. Em `tests/telas/<nome>.robot`, use `Abrir Tela`, `Preencher Campo`, `Clicar Controle`, `Ler Mensagem`, `Ler Grid` e `Fechar Tela`. O gerador preserva arquivos existentes. Resultados esperados de regras de negócio precisam ser confirmados no build atual antes de adicionar asserções de cadastro. Consulte [o catálogo estático](docs/telas/README_catalogo_geral.md) e [o diagnóstico da conexão](docs/DIAGNOSTICO-CONEXAO-20261029.md).
+
 Automação local do **Acessus** (desktop Delphi/VCL), RH Metadados/Frequência e SQL Server. O caminho principal é o [Painel de Testes](Abrir-Painel.bat): abra com duplo clique na sessão Windows em que você usa o Acessus. Ele funciona sem internet e mostra o banco de teste, os comandos executados, a saída ao vivo e as evidências.
 
 ## Quero fazer…
@@ -51,3 +59,8 @@ Use `--no-deps` apenas quando as dependências do projeto já estiverem instalad
 `resultados/passo-a-passo.log` e `resultados/passo-a-passo-detalhado.jsonl` são **permanentes**, escritos pelo projeto em modo de acréscimo. Cada rodada tem `tentativas.jsonl`, screenshots, `resumo.json` e `RELATORIO.html`. Outros fluxos gravam em `reports/`. Essas pastas ficam fora do Git.
 
 Auditorias/Históricos é principalmente uma suíte **exploratória**: detecta erros, travamentos, mensagens e contagens. Quando houver regra de contagem `CONFIRMADA` em `docs/cenarios/`, o oráculo poderá declarar `PASSOU` ou `FALHOU`; hoje não há regra desse tipo confirmada. O motor genérico Robot tem ações de escrita ainda bloqueadas. Consulte [Pendências](docs/PENDENCIAS.md) e [Handoff](docs/HANDOFF.md).
+
+O CI executa somente `tests/unit` com Python Windows 32 bits. Cenários com as tags `desktop` e `banco` dependem da VM de teste. Os mapas volumosos em `docs/mapeamentos/` permanecem locais e não são versionados; o catálogo necessário ao explorador está em `config/rotas-explorador-211.json`.
+# Testes exploratórios de Históricos e Relatórios
+
+Execute `Rodar-Relatorios.bat` em uma sessão Windows interativa para testar todos os módulos com a cópia de teste dos executáveis de `C:\acesso`. Consulte [o guia de execução](docs/TESTES-EXPLORATORIOS-RELATORIOS.md) para resultados e execução por módulo.
